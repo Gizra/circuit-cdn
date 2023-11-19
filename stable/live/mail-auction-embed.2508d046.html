@@ -1,0 +1,47 @@
+<head><script src=https://code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><style>iframe.user-block-expaned {
+      height: 500px;
+    }</style></head><body><h1>Testing the mail auctions embed script</h1><div><iframe src="http://localhost:3000?origin=https://example.com&redirect=https://example.com/some-page#/user-block/site1/en" class=user-block data-site-name=site1></iframe></div><div class=item1><h2>an-open-item-on-sale-8</h2><p>Here an iframe with the mail auction is supposed to be loaded.</p><p><iframe src="http://localhost:3000?origin=https://example.com#/mail_auction/an-open-item-on-sale-8/en" width="" height=""></iframe></p></div><div class=item2><h2>an-open-item-on-sale-9</h2><p>body</p><p><iframe src="http://localhost:3000?origin=https://example.com#/mail_auction/an-open-item-on-sale-9/he" width="" height=""></iframe></p></div></body><script>resetUserBlock = function() {
+    // Get the site name.
+    var el = $('iframe.user-block');
+    var siteName = el.data('site-name');
+
+    // Feed the event to the Iframe.
+    var iframeMessage = $('iframe.user-block')[0].contentWindow;
+    var data = {
+      eventName : "resetUserBlock",
+      siteName : siteName
+    };
+
+    iframeMessage.postMessage(data, '*');
+
+    // Remove the class.
+    $('.user-block').removeClass('user-block-expaned');
+  };
+
+  window.onmessage = function(e) {
+    if (e.data.cmd == 'userLoggedIn') {
+      // Set the UUID on the host's localStorage.
+      localStorage.setItem('uuid', e.data.uuid);
+    }
+
+    if (e.data.cmd == 'userLoggedOut') {
+      // Remove the UUID, as user logged out.
+      localStorage.removeItem('uuid');
+
+      // Reload page.
+      location.reload();
+    }
+
+    if (e.data.cmd == 'expandUserBlock') {
+      $('.user-block').addClass('user-block-expaned');
+
+      // Collpase if clicked outside.
+      $(document).one('click', function() {
+        resetUserBlock();
+      });
+    }
+
+    if (e.data.cmd == 'collpaseUserBlock') {
+      resetUserBlock();
+    }
+  };</script>
