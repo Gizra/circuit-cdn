@@ -24405,9 +24405,9 @@ var _gizra$backoffice$Backend_Sale_Model$Fetch = function (a) {
 	return {ctor: 'Fetch', _0: a};
 };
 
-var _gizra$backoffice$Backend_Site_Model$Site = F2(
-	function (a, b) {
-		return {name: a, languages: b};
+var _gizra$backoffice$Backend_Site_Model$Site = F3(
+	function (a, b, c) {
+		return {name: a, languages: b, disableAgent: c};
 	});
 var _gizra$backoffice$Backend_Site_Model$SiteParams = function (a) {
 	return {name: a};
@@ -24669,15 +24669,20 @@ var _gizra$backoffice$Backend_Site_Decoder$decodeLanguage = A2(
 		}
 	},
 	_elm_lang$core$Json_Decode$string);
-var _gizra$backoffice$Backend_Site_Decoder$decodeSite = A3(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-	'languages',
-	_elm_lang$core$Json_Decode$list(_gizra$backoffice$Backend_Site_Decoder$decodeLanguage),
+var _gizra$backoffice$Backend_Site_Decoder$decodeSite = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+	'disable_agent',
+	_elm_lang$core$Json_Decode$bool,
+	true,
 	A3(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'label',
-		_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_gizra$backoffice$Backend_Site_Model$Site)));
+		'languages',
+		_elm_lang$core$Json_Decode$list(_gizra$backoffice$Backend_Site_Decoder$decodeLanguage),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'label',
+			_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_gizra$backoffice$Backend_Site_Model$Site))));
 
 var _gizra$backoffice$Backend_StaticItem_Decoder$decodeStaticItem = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
@@ -48753,6 +48758,21 @@ var _gizra$backoffice$App_Model$GetAnonymousUserAndData = function (a) {
 	return {ctor: 'GetAnonymousUserAndData', _0: a};
 };
 
+var _gizra$backoffice$Pages_ItemPreLiveSale_Fetch$fetch = F4(
+	function (language, siteShortName, modelBackend, model) {
+		var siteFetch = {
+			ctor: '::',
+			_0: A2(
+				_Gizra$elm_essentials$Gizra_WebData$whenNotAsked,
+				_gizra$backoffice$Backend_Model$MsgSite(
+					_gizra$backoffice$Backend_Site_Model$Fetch(
+						_Gizra$elm_restful$Restful_Endpoint$toEntityUuid(siteShortName))),
+				modelBackend.site),
+			_1: {ctor: '[]'}
+		};
+		return A2(_elm_lang$core$List$filterMap, _elm_lang$core$Basics$identity, siteFetch);
+	});
+
 var _gizra$backoffice$Pages_MyAccount_Fetch$fetch = F4(
 	function (language, siteShortName, modelBackend, model) {
 		var siteFetch = {
@@ -49332,7 +49352,7 @@ var _gizra$backoffice$WidgetManager_Fetch$fetch = F4(
 
 var _gizra$backoffice$App_Fetch$fetch = function (model) {
 	var _p0 = {ctor: '_Tuple2', _0: model.activePage, _1: model.userAndData};
-	_v0_4:
+	_v0_5:
 	do {
 		if (_p0.ctor === '_Tuple2') {
 			if (_p0._1.ctor === 'Authenticated') {
@@ -49344,6 +49364,13 @@ var _gizra$backoffice$App_Fetch$fetch = function (model) {
 								return _gizra$backoffice$App_Model$MsgBackend(subMsg);
 							},
 							A4(_gizra$backoffice$Pages_MyAccount_Fetch$fetch, model.language, model.siteShortName, _p0._1._0.data, model.widgetManager));
+					case 'ItemPreLiveSale':
+						return A2(
+							_elm_lang$core$List$map,
+							function (subMsg) {
+								return _gizra$backoffice$App_Model$MsgBackend(subMsg);
+							},
+							A4(_gizra$backoffice$Pages_ItemPreLiveSale_Fetch$fetch, model.language, model.siteShortName, _p0._1._0.data, model.widgetManager));
 					case 'WidgetManager':
 						if (_p0._0._0.ctor === 'Just') {
 							return A2(
@@ -49358,10 +49385,10 @@ var _gizra$backoffice$App_Fetch$fetch = function (model) {
 									_p0._1._0.data,
 									model.widgetManager));
 						} else {
-							break _v0_4;
+							break _v0_5;
 						}
 					default:
-						break _v0_4;
+						break _v0_5;
 				}
 			} else {
 				switch (_p0._0.ctor) {
@@ -49386,14 +49413,14 @@ var _gizra$backoffice$App_Fetch$fetch = function (model) {
 									_p0._1._0.data,
 									model.widgetManager));
 						} else {
-							break _v0_4;
+							break _v0_5;
 						}
 					default:
-						break _v0_4;
+						break _v0_5;
 				}
 			}
 		} else {
-			break _v0_4;
+			break _v0_5;
 		}
 	} while(false);
 	return {ctor: '[]'};
@@ -56392,13 +56419,13 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag = F4(
 var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 	function (_p77, language, currency, login, _p76, _p75, model) {
 		var _p78 = _p77;
-		var _p85 = _p78._0;
+		var _p87 = _p78._0;
 		var _p79 = _p76;
-		var _p84 = _p79._0;
-		var _p83 = _p79._1;
+		var _p86 = _p79._0;
+		var _p85 = _p79._1;
 		var _p80 = _p75;
-		var _p82 = _p80._0;
-		var _p81 = _p80._1;
+		var _p84 = _p80._0;
+		var _p83 = _p80._1;
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -56410,22 +56437,22 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 				ctor: '::',
 				_0: function () {
 					if (_gizra$backoffice$Backend_User_Utils$isActive(login)) {
-						if (_gizra$backoffice$Backend_Item_Utils$isWithdrawn(_p81.status)) {
+						if (_gizra$backoffice$Backend_Item_Utils$isWithdrawn(_p83.status)) {
 							return _gizra$backoffice$Pages_ItemPreLiveSale_View$viewWithdrawnItem(language);
 						} else {
-							if (_gizra$backoffice$Backend_Item_Utils$isSold(_p81.status)) {
+							if (_gizra$backoffice$Backend_Item_Utils$isSold(_p83.status)) {
 								return A5(
 									_gizra$backoffice$Pages_ItemPreLiveSale_View$viewSoldItem,
 									language,
 									currency,
 									login,
-									{ctor: '_Tuple2', _0: _p84, _1: _p83},
-									{ctor: '_Tuple2', _0: _p82, _1: _p81});
+									{ctor: '_Tuple2', _0: _p86, _1: _p85},
+									{ctor: '_Tuple2', _0: _p84, _1: _p83});
 							} else {
-								if (_gizra$backoffice$Backend_Item_Utils$isUnsold(_p81.status)) {
-									if (_gizra$backoffice$Backend_Item_Utils$isUnsoldPostSaleAllow(_p81.status)) {
+								if (_gizra$backoffice$Backend_Item_Utils$isUnsold(_p83.status)) {
+									if (_gizra$backoffice$Backend_Item_Utils$isUnsoldPostSaleAllow(_p83.status)) {
 										var saleObscured = _elm_lang$core$Native_Utils.update(
-											_p83,
+											_p85,
 											{mailAuctionType: _gizra$backoffice$Backend_Sale_Model$Obscured});
 										return A2(
 											_elm_lang$html$Html$div,
@@ -56438,12 +56465,12 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 												ctor: '::',
 												_0: A8(
 													_gizra$backoffice$Pages_ItemPreLiveSale_View$viewMailWidget,
-													_p85,
+													_p87,
 													language,
 													currency,
 													login,
-													{ctor: '_Tuple2', _0: _p84, _1: saleObscured},
-													{ctor: '_Tuple2', _0: _p82, _1: _p81},
+													{ctor: '_Tuple2', _0: _p86, _1: saleObscured},
+													{ctor: '_Tuple2', _0: _p84, _1: _p83},
 													true,
 													model),
 												_1: {
@@ -56452,8 +56479,8 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 														_gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag,
 														language,
 														login,
-														{ctor: '_Tuple2', _0: _p84, _1: _p83},
-														{ctor: '_Tuple2', _0: _p82, _1: _p81}),
+														{ctor: '_Tuple2', _0: _p86, _1: _p85},
+														{ctor: '_Tuple2', _0: _p84, _1: _p83}),
 													_1: {ctor: '[]'}
 												}
 											});
@@ -56461,23 +56488,41 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 										return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 									}
 								} else {
-									if (_gizra$backoffice$Backend_Item_Utils$isItemNotActiveButAlreadyHasLiveBids(_p81.status)) {
+									if (_gizra$backoffice$Backend_Item_Utils$isItemNotActiveButAlreadyHasLiveBids(_p83.status)) {
 										return _gizra$backoffice$Pages_ItemPreLiveSale_View$viewisItemNotActiveButAlreadyHasLiveBids(language);
 									} else {
-										if (_gizra$backoffice$Backend_Item_Utils$isLiveAllowed(_p81.status)) {
+										if (_gizra$backoffice$Backend_Item_Utils$isLiveAllowed(_p83.status)) {
 											return A3(
 												_gizra$backoffice$Pages_ItemPreLiveSale_View$viewLiveAllowed,
 												_p78._1,
 												language,
-												{ctor: '_Tuple2', _0: _p84, _1: _p83});
+												{ctor: '_Tuple2', _0: _p86, _1: _p85});
 										} else {
-											if (_gizra$backoffice$Backend_Item_Utils$isMailAllowed(_p81.status)) {
+											if (_gizra$backoffice$Backend_Item_Utils$isMailAllowed(_p83.status)) {
+												var agentWidget = A2(
+													_krisajenkins$remotedata$RemoteData$withDefault,
+													_Gizra$elm_essentials$Gizra_Html$emptyNode,
+													A2(
+														_krisajenkins$remotedata$RemoteData$map,
+														function (_p81) {
+															var _p82 = _p81;
+															return _p82._1.disableAgent ? _Gizra$elm_essentials$Gizra_Html$emptyNode : A7(
+																_gizra$backoffice$Pages_ItemPreLiveSale_View$viewAgentWidget,
+																_p87,
+																language,
+																currency,
+																login,
+																{ctor: '_Tuple2', _0: _p86, _1: _p85},
+																{ctor: '_Tuple2', _0: _p84, _1: _p83},
+																model);
+														},
+														login.data.site));
 												return A2(
 													_elm_lang$html$Html$div,
 													{ctor: '[]'},
 													{
 														ctor: '::',
-														_0: A4(_gizra$backoffice$Pages_ItemPreLiveSale_View$viewCurrentPrice, language, currency, _p83.mailAuctionType, _p81),
+														_0: A4(_gizra$backoffice$Pages_ItemPreLiveSale_View$viewCurrentPrice, language, currency, _p85.mailAuctionType, _p83),
 														_1: {
 															ctor: '::',
 															_0: A2(
@@ -56491,33 +56536,25 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 																	ctor: '::',
 																	_0: A8(
 																		_gizra$backoffice$Pages_ItemPreLiveSale_View$viewMailWidget,
-																		_p85,
+																		_p87,
 																		language,
 																		currency,
 																		login,
+																		{ctor: '_Tuple2', _0: _p86, _1: _p85},
 																		{ctor: '_Tuple2', _0: _p84, _1: _p83},
-																		{ctor: '_Tuple2', _0: _p82, _1: _p81},
 																		false,
 																		model),
 																	_1: {
 																		ctor: '::',
-																		_0: A7(
-																			_gizra$backoffice$Pages_ItemPreLiveSale_View$viewAgentWidget,
-																			_p85,
-																			language,
-																			currency,
-																			login,
-																			{ctor: '_Tuple2', _0: _p84, _1: _p83},
-																			{ctor: '_Tuple2', _0: _p82, _1: _p81},
-																			model),
+																		_0: agentWidget,
 																		_1: {
 																			ctor: '::',
 																			_0: A4(
 																				_gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag,
 																				language,
 																				login,
-																				{ctor: '_Tuple2', _0: _p84, _1: _p83},
-																				{ctor: '_Tuple2', _0: _p82, _1: _p81}),
+																				{ctor: '_Tuple2', _0: _p86, _1: _p85},
+																				{ctor: '_Tuple2', _0: _p84, _1: _p83}),
 																			_1: {ctor: '[]'}
 																		}
 																	}
@@ -56541,47 +56578,47 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget = F7(
 			});
 	});
 var _gizra$backoffice$Pages_ItemPreLiveSale_View$view = F7(
-	function (_p86, language, currency, login, saleUuid, itemUuid, model) {
-		var _p87 = _p86;
+	function (_p88, language, currency, login, saleUuid, itemUuid, model) {
+		var _p89 = _p88;
 		var saleWebData = _krisajenkins$remotedata$RemoteData$toMaybe(
 			A2(
 				_elm_lang$core$Maybe$withDefault,
 				_krisajenkins$remotedata$RemoteData$NotAsked,
 				A2(_eeue56$elm_all_dict$EveryDict$get, saleUuid, login.data.sales)));
-		var _p88 = {
+		var _p90 = {
 			ctor: '_Tuple2',
 			_0: saleWebData,
 			_1: A3(_gizra$backoffice$PaginatedData$get, saleUuid, itemUuid, login.data.items)
 		};
-		if (((_p88.ctor === '_Tuple2') && (_p88._0.ctor === 'Just')) && (_p88._1.ctor === 'Just')) {
+		if (((_p90.ctor === '_Tuple2') && (_p90._0.ctor === 'Just')) && (_p90._1.ctor === 'Just')) {
 			return A7(
 				_gizra$backoffice$Pages_ItemPreLiveSale_View$viewMainWidget,
-				{ctor: '_Tuple2', _0: _p87._0, _1: _p87._1},
+				{ctor: '_Tuple2', _0: _p89._0, _1: _p89._1},
 				language,
 				currency,
 				login,
-				{ctor: '_Tuple2', _0: saleUuid, _1: _p88._0._0},
-				{ctor: '_Tuple2', _0: itemUuid, _1: _p88._1._0},
+				{ctor: '_Tuple2', _0: saleUuid, _1: _p90._0._0},
+				{ctor: '_Tuple2', _0: itemUuid, _1: _p90._1._0},
 				model);
 		} else {
 			return _gizra$backoffice$Utils_Html$spinner;
 		}
 	});
 var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewAnon = F7(
-	function (_p89, language, currency, login, saleUuid, itemUuid, model) {
-		var _p90 = _p89;
+	function (_p91, language, currency, login, saleUuid, itemUuid, model) {
+		var _p92 = _p91;
 		var saleWebData = _krisajenkins$remotedata$RemoteData$toMaybe(
 			A2(
 				_elm_lang$core$Maybe$withDefault,
 				_krisajenkins$remotedata$RemoteData$NotAsked,
 				A2(_eeue56$elm_all_dict$EveryDict$get, saleUuid, login.data.sales)));
-		var _p91 = {
+		var _p93 = {
 			ctor: '_Tuple2',
 			_0: saleWebData,
 			_1: A3(_gizra$backoffice$PaginatedData$get, saleUuid, itemUuid, login.data.items)
 		};
-		if (((_p91.ctor === '_Tuple2') && (_p91._0.ctor === 'Just')) && (_p91._1.ctor === 'Just')) {
-			return A4(_gizra$backoffice$Pages_ItemPreLiveSale_View$viewCurrentPrice, language, currency, _p91._0._0.mailAuctionType, _p91._1._0);
+		if (((_p93.ctor === '_Tuple2') && (_p93._0.ctor === 'Just')) && (_p93._1.ctor === 'Just')) {
+			return A4(_gizra$backoffice$Pages_ItemPreLiveSale_View$viewCurrentPrice, language, currency, _p93._0._0.mailAuctionType, _p93._1._0);
 		} else {
 			return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 		}
