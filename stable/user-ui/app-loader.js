@@ -1,6 +1,6 @@
 // app-loader.js
 (function() {
-  var baseUrl = 'https://cdn.circuitauction.com/stable/user-ui/';
+  var baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
 
   // Function to dynamically load scripts
   function loadScript(src, defer) {
