@@ -19,7 +19,7 @@
   }
 
   // Load manifest.json and then load assets as defined in it
-  fetch(baseUrl + 'manifest.json')
+  fetch(baseUrl + '/manifest.json')
     .then(function(response) {
       return response.json();
     })
@@ -28,21 +28,9 @@
       loadScript(baseUrl + manifest['main.js'], true);
       loadStylesheet(baseUrl + manifest['main.css']);
 
-      // Other assets can be loaded similarly
-      // Example: Favicon, apple-touch-icon, etc.
-      var linkIcon = document.createElement('link');
-      linkIcon.rel = 'icon';
-      linkIcon.href = baseUrl + 'favicon.ico';
-      document.head.appendChild(linkIcon);
-
-      var linkAppleIcon = document.createElement('link');
-      linkAppleIcon.rel = 'apple-touch-icon';
-      linkAppleIcon.href = baseUrl + 'logo192.png';
-      document.head.appendChild(linkAppleIcon);
-
       var linkManifest = document.createElement('link');
       linkManifest.rel = 'manifest';
-      linkManifest.href = baseUrl + 'manifest.json';
+      linkManifest.href = baseUrl + '/manifest.json';
       document.head.appendChild(linkManifest);
     })
     .catch(function(error) {
