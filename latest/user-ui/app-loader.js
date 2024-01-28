@@ -1,28 +1,39 @@
-  // app-loader.js
-  (function() {
-    // URL of your CDN / server hosting the manifest and build files
-    var baseUrl = 'https://cdn.circuitauction.com/stable/user-ui/';
+// app-loader.js
+(function() {
+  var baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
 
-    // Fetch the manifest file
-    fetch(baseUrl + 'manifest.json')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(manifest) {
-        // Dynamically load the main JavaScript file
-        var mainScript = document.createElement('script');
-        mainScript.src = baseUrl + manifest['main.js']; // Adjust depending on how your manifest structure looks
-        mainScript.async = true;
-        document.body.appendChild(mainScript);
+  // Function to dynamically load scripts
+  function loadScript(src, defer) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.defer = defer;
+    document.head.appendChild(script);
+  }
 
-        // Similarly, you can load other assets like CSS here
-        // For example, if you have a main CSS file:
-        var mainCss = document.createElement('link');
-        mainCss.href = baseUrl + manifest['main.css']; // Adjust for your manifest
-        mainCss.rel = 'stylesheet';
-        document.head.appendChild(mainCss);
-      })
-      .catch(function(error) {
-        console.error('Failed to load the manifest or main script:', error);
-      });
-  })();
+  // Function to dynamically load stylesheets
+  function loadStylesheet(href) {
+    var link = document.createElement('link');
+    link.href = href;
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
+  // Load manifest.json and then load assets as defined in it
+  fetch(baseUrl + '/manifest.json')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(manifest) {
+      // Load main JS and CSS
+      loadScript(baseUrl + manifest['main.js'], true);
+      loadStylesheet(baseUrl + manifest['main.css']);
+
+      var linkManifest = document.createElement('link');
+      linkManifest.rel = 'manifest';
+      linkManifest.href = baseUrl + '/manifest.json';
+      document.head.appendChild(linkManifest);
+    })
+    .catch(function(error) {
+      console.error('Failed to load the manifest or assets:', error);
+    });
+})();
