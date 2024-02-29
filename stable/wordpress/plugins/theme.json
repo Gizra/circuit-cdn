@@ -1,0 +1,13 @@
+{
+	"name": "CircuitAuction Theme",
+	"version": "1.0",
+	"download_url": "https://cdn.circuitauction.com/stable/wordpress/plugins/ca-theme.zip",
+	"details_url": "https://circuitauction.com/",
+	"homepage": "https://circuitauction.com/",
+
+	"sections": {
+		"description": "CircuitAuction is a theme that allows you to create and manage auctions on your website.",
+		"installation": "To install CircuitAuction, simply upload the theme to your WordPress installation and activate it.",
+		"changelog": "1.0: Initial release."
+	}
+}
