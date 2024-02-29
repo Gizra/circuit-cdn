@@ -46457,32 +46457,32 @@ var _gizra$backoffice$Translate$translateBid = function (transId) {
 			return {
 				english: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Duplicated bid of ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' has been accepted')),
+					'Your bid of ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' matches the current highest bid, but it is not the leading bid. Place one more bid to become the highest bidder!')),
 				dutch: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Dubbele bod van ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' is geaccepteerd')),
+					'Uw bieding is gelijk aan het huidige hoogste bod van ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' . U kunt uw bieding verhogen om zelf de hoogste bieder te worden!')),
 				german: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Doppeltes Gebot von ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' wurde akzeptiert')),
+					'Ihr Gebot in Höhe von ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' ist genauso hoch wie das aktuelle führende Gebot. Plazieren Sie ein weiteres Gebot um Höchstbietender zu werden!')),
 				hebrew: A2(
 					_elm_lang$core$Basics_ops['++'],
 					'הצעתך בסך ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' התקבלה')),
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' תואמת להצעת המחיר הגבוהה ביותר כרגע, אך היא אינה ההצעה המובילה. נא להזין הצעה נוספת כדי להפוך למציע המוביל!')),
 				russian: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Дублированное предложение на сумму ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' было принято')),
+					'Ваша ставка в размере ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' соответствует текущей наивысшей ставке, но она не является ведущей. Пожалуйста, разместите еще одну ставку, чтобы стать лидирующим участником!')),
 				french: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'L\'offre dupliquée de ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' a été acceptée')),
+					'Votre offre de ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' correspond à l\'enchère la plus élevée actuelle, mais elle n\'est pas la plus élevée. Placez une autre enchère pour devenir le plus offrant !')),
 				chinese: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'重复的 ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' 出价已被接受'))
+					'您的 ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' 美元的出价与当前最高出价相匹配，但并不是领先出价。请再出价一次，以成为最高出价者！'))
 			};
 		case 'AcceptedOwnMessage':
 			var amountWithCurrency = A2(_gizra$backoffice$Amount$showAmountWithCurrencyAsString, _p40._0, _p40._1);
