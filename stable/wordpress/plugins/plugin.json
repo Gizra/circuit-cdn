@@ -2,5 +2,12 @@
 	"name": "CircuitAuction Plugin",
 	"version": "1.0",
 	"download_url": "https://cdn.circuitauction.com/stable/wordpress/plugins/circuitauction.zip",
-	"homepage": "https://circuitauction.com/"
+	"homepage": "https://circuitauction.com/",
+
+	"sections": {
+		"description": "(Required) Plugin description. Basic HTML can be used in all sections.",
+		"installation": "(Recommended) Installation instructions.",
+		"changelog": "(Recommended) Changelog. <p>This section will be displayed by default when the user clicks 'View version x.y.z details'.</p>",
+		"custom_section": "This is a custom section labeled 'Custom Section'."
+	}
 }
