@@ -46457,32 +46457,32 @@ var _gizra$backoffice$Translate$translateBid = function (transId) {
 			return {
 				english: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Your bid of ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' matches the current highest bid, but it is not the leading bid. Place one more bid to become the highest bidder!')),
+					'Duplicated bid of ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' has been accepted')),
 				dutch: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Uw bieding is gelijk aan het huidige hoogste bod van ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' . U kunt uw bieding verhogen om zelf de hoogste bieder te worden!')),
+					'Dubbele bod van ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' is geaccepteerd')),
 				german: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Ihr Gebot in Höhe von ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' ist genauso hoch wie das aktuelle führende Gebot. Plazieren Sie ein weiteres Gebot um Höchstbietender zu werden!')),
+					'Doppeltes Gebot von ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' wurde akzeptiert')),
 				hebrew: A2(
 					_elm_lang$core$Basics_ops['++'],
 					'הצעתך בסך ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' תואמת להצעת המחיר הגבוהה ביותר כרגע, אך היא אינה ההצעה המובילה. נא להזין הצעה נוספת כדי להפוך למציע המוביל!')),
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' התקבלה')),
 				russian: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Ваша ставка в размере ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' соответствует текущей наивысшей ставке, но она не является ведущей. Пожалуйста, разместите еще одну ставку, чтобы стать лидирующим участником!')),
+					'Дублированное предложение на сумму ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' было принято')),
 				french: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'Votre offre de ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' correspond à l\'enchère la plus élevée actuelle, mais elle n\'est pas la plus élevée. Placez une autre enchère pour devenir le plus offrant !')),
+					'L\'offre dupliquée de ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' a été acceptée')),
 				chinese: A2(
 					_elm_lang$core$Basics_ops['++'],
-					'您的 ',
-					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' 美元的出价与当前最高出价相匹配，但并不是领先出价。请再出价一次，以成为最高出价者！'))
+					'重复的 ',
+					A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' 出价已被接受'))
 			};
 		case 'AcceptedOwnMessage':
 			var amountWithCurrency = A2(_gizra$backoffice$Amount$showAmountWithCurrencyAsString, _p40._0, _p40._1);
@@ -48639,6 +48639,7 @@ var _gizra$backoffice$WidgetManager_Model$emptyModel = {widgetIds: _Gizra$elm_al
 var _gizra$backoffice$WidgetManager_Model$Model = function (a) {
 	return {widgetIds: a};
 };
+var _gizra$backoffice$WidgetManager_Model$UpdateWidgetsOnItemsChange = {ctor: 'UpdateWidgetsOnItemsChange'};
 var _gizra$backoffice$WidgetManager_Model$SetWidgetIds = function (a) {
 	return {ctor: 'SetWidgetIds', _0: a};
 };
@@ -48748,8 +48749,8 @@ var _gizra$backoffice$App_Model$SetUser = function (a) {
 var _gizra$backoffice$App_Model$SetCurrentDate = function (a) {
 	return {ctor: 'SetCurrentDate', _0: a};
 };
-var _gizra$backoffice$App_Model$SetAuthenticatedData = function (a) {
-	return {ctor: 'SetAuthenticatedData', _0: a};
+var _gizra$backoffice$App_Model$SetModelBackendItems = function (a) {
+	return {ctor: 'SetModelBackendItems', _0: a};
 };
 var _gizra$backoffice$App_Model$SetActivePage = function (a) {
 	return {ctor: 'SetActivePage', _0: a};
@@ -49229,13 +49230,25 @@ var _gizra$backoffice$WidgetManager_Utils$getItemUuids = function (model) {
 		{ctor: '[]'},
 		model.widgetIds);
 };
+var _gizra$backoffice$WidgetManager_Utils$getUuidsExcludingPages = F2(
+	function (excluded, model) {
+		return A3(
+			_Gizra$elm_all_set$EverySet$foldl,
+			F2(
+				function (_p3, accum) {
+					var _p4 = _p3;
+					return A2(_elm_lang$core$List$member, _p4._0, excluded) ? accum : {ctor: '::', _0: _p4._1, _1: accum};
+				}),
+			{ctor: '[]'},
+			model.widgetIds);
+	});
 var _gizra$backoffice$WidgetManager_Utils$getUuids = function (model) {
 	return A3(
 		_Gizra$elm_all_set$EverySet$foldl,
 		F2(
-			function (_p3, accum) {
-				var _p4 = _p3;
-				return {ctor: '::', _0: _p4._1, _1: accum};
+			function (_p5, accum) {
+				var _p6 = _p5;
+				return {ctor: '::', _0: _p6._1, _1: accum};
 			}),
 		{ctor: '[]'},
 		model.widgetIds);
@@ -49244,9 +49257,9 @@ var _gizra$backoffice$WidgetManager_Utils$isMyCreditPage = function (model) {
 	return A3(
 		_Gizra$elm_all_set$EverySet$foldl,
 		F2(
-			function (_p5, accum) {
-				var _p6 = _p5;
-				return accum ? accum : _elm_lang$core$Native_Utils.eq(_p6._0, _gizra$backoffice$WidgetManager_Model$MyCredit);
+			function (_p7, accum) {
+				var _p8 = _p7;
+				return accum ? accum : _elm_lang$core$Native_Utils.eq(_p8._0, _gizra$backoffice$WidgetManager_Model$MyCredit);
 			}),
 		false,
 		model.widgetIds);
@@ -49255,9 +49268,9 @@ var _gizra$backoffice$WidgetManager_Utils$isMyBidsPage = function (model) {
 	return A3(
 		_Gizra$elm_all_set$EverySet$foldl,
 		F2(
-			function (_p7, accum) {
-				var _p8 = _p7;
-				return accum ? accum : _elm_lang$core$Native_Utils.eq(_p8._0, _gizra$backoffice$WidgetManager_Model$MyBids);
+			function (_p9, accum) {
+				var _p10 = _p9;
+				return accum ? accum : _elm_lang$core$Native_Utils.eq(_p10._0, _gizra$backoffice$WidgetManager_Model$MyBids);
 			}),
 		false,
 		model.widgetIds);
@@ -49266,13 +49279,13 @@ var _gizra$backoffice$WidgetManager_Utils$isItemPreLiveSalePage = function (mode
 	return A3(
 		_Gizra$elm_all_set$EverySet$foldl,
 		F2(
-			function (_p9, accum) {
-				var _p10 = _p9;
+			function (_p11, accum) {
+				var _p12 = _p11;
 				if (accum) {
 					return accum;
 				} else {
-					var _p11 = _p10._0;
-					if (_p11.ctor === 'ItemPreLiveSale') {
+					var _p13 = _p12._0;
+					if (_p13.ctor === 'ItemPreLiveSale') {
 						return true;
 					} else {
 						return false;
@@ -54067,14 +54080,10 @@ var _gizra$backoffice$Pusher_Update$update = F4(
 							}
 						}();
 						var modelBacknd = login.data;
-						var modelBackendUpdated = _elm_lang$core$Native_Utils.update(
-							modelBacknd,
-							{
-								items: A4(_gizra$backoffice$PaginatedData$update, saleUuid, _p2._1, itemUpdatedFunc, modelBacknd.items)
-							});
+						var itemsUpdated = A4(_gizra$backoffice$PaginatedData$update, saleUuid, _p2._1, itemUpdatedFunc, modelBacknd.items);
 						var appMsgs = {
 							ctor: '::',
-							_0: _gizra$backoffice$App_Model$SetAuthenticatedData(modelBackendUpdated),
+							_0: _gizra$backoffice$App_Model$SetModelBackendItems(itemsUpdated),
 							_1: {ctor: '[]'}
 						};
 						return {ctor: '_Tuple3', _0: _elm_lang$core$Platform_Cmd$none, _1: _gizra$backoffice$Error_Utils$noError, _2: appMsgs};
@@ -54228,48 +54237,77 @@ var _gizra$backoffice$WidgetManager_Update$sendUserAndData = _elm_lang$core$Nati
 var _gizra$backoffice$WidgetManager_Update$update = F4(
 	function (userAndData, maybeSaleUuid, msg, model) {
 		var _p0 = msg;
-		if (_p0.ctor === 'SendUserAndDataToOtherWidgets') {
-			var encodedVal = function () {
-				var _p1 = userAndData;
-				if (_p1.ctor === 'Authenticated') {
-					return A2(_gizra$backoffice$App_Encoder$encodeAuthenticatedUserAndData, maybeSaleUuid, _p1._0);
-				} else {
-					return A2(_gizra$backoffice$App_Encoder$encodeAnonymousUserAndData, maybeSaleUuid, _p1._0);
-				}
-			}();
-			return {
-				ctor: '_Tuple4',
-				_0: model,
-				_1: _gizra$backoffice$WidgetManager_Update$sendUserAndData(
-					{
-						ctor: '_Tuple2',
-						_0: A2(_elm_lang$core$Json_Encode$encode, 0, encodedVal),
-						_1: _gizra$backoffice$WidgetManager_Utils$getUuids(model)
-					}),
-				_2: _gizra$backoffice$Error_Utils$noError,
-				_3: {ctor: '[]'}
-			};
-		} else {
-			var _p2 = A2(_elm_lang$core$Json_Decode$decodeValue, _gizra$backoffice$WidgetManager_Decoder$decodeWidgetIds, _p0._0);
-			if (_p2.ctor === 'Ok') {
-				return {
-					ctor: '_Tuple4',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{widgetIds: _p2._0}),
-					_1: _elm_lang$core$Platform_Cmd$none,
-					_2: _gizra$backoffice$Error_Utils$noError,
-					_3: {ctor: '[]'}
-				};
-			} else {
+		switch (_p0.ctor) {
+			case 'SendUserAndDataToOtherWidgets':
+				var encodedVal = function () {
+					var _p1 = userAndData;
+					if (_p1.ctor === 'Authenticated') {
+						return A2(_gizra$backoffice$App_Encoder$encodeAuthenticatedUserAndData, maybeSaleUuid, _p1._0);
+					} else {
+						return A2(_gizra$backoffice$App_Encoder$encodeAnonymousUserAndData, maybeSaleUuid, _p1._0);
+					}
+				}();
 				return {
 					ctor: '_Tuple4',
 					_0: model,
-					_1: _elm_lang$core$Platform_Cmd$none,
-					_2: A3(_gizra$backoffice$Error_Utils$plainError, 'WidgetManager.Update', 'SetWidgetIds', _p2._0),
+					_1: _gizra$backoffice$WidgetManager_Update$sendUserAndData(
+						{
+							ctor: '_Tuple2',
+							_0: A2(_elm_lang$core$Json_Encode$encode, 0, encodedVal),
+							_1: _gizra$backoffice$WidgetManager_Utils$getUuids(model)
+						}),
+					_2: _gizra$backoffice$Error_Utils$noError,
 					_3: {ctor: '[]'}
 				};
-			}
+			case 'SetWidgetIds':
+				var _p2 = A2(_elm_lang$core$Json_Decode$decodeValue, _gizra$backoffice$WidgetManager_Decoder$decodeWidgetIds, _p0._0);
+				if (_p2.ctor === 'Ok') {
+					return {
+						ctor: '_Tuple4',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{widgetIds: _p2._0}),
+						_1: _elm_lang$core$Platform_Cmd$none,
+						_2: _gizra$backoffice$Error_Utils$noError,
+						_3: {ctor: '[]'}
+					};
+				} else {
+					return {
+						ctor: '_Tuple4',
+						_0: model,
+						_1: _elm_lang$core$Platform_Cmd$none,
+						_2: A3(_gizra$backoffice$Error_Utils$plainError, 'WidgetManager.Update', 'SetWidgetIds', _p2._0),
+						_3: {ctor: '[]'}
+					};
+				}
+			default:
+				var encodedVal = function () {
+					var _p3 = userAndData;
+					if (_p3.ctor === 'Authenticated') {
+						return A2(_gizra$backoffice$App_Encoder$encodeAuthenticatedUserAndData, maybeSaleUuid, _p3._0);
+					} else {
+						return A2(_gizra$backoffice$App_Encoder$encodeAnonymousUserAndData, maybeSaleUuid, _p3._0);
+					}
+				}();
+				return {
+					ctor: '_Tuple4',
+					_0: model,
+					_1: _gizra$backoffice$WidgetManager_Update$sendUserAndData(
+						{
+							ctor: '_Tuple2',
+							_0: A2(_elm_lang$core$Json_Encode$encode, 0, encodedVal),
+							_1: A2(
+								_gizra$backoffice$WidgetManager_Utils$getUuidsExcludingPages,
+								{
+									ctor: '::',
+									_0: _gizra$backoffice$WidgetManager_Model$MyCredit,
+									_1: {ctor: '[]'}
+								},
+								model)
+						}),
+					_2: _gizra$backoffice$Error_Utils$noError,
+					_3: {ctor: '[]'}
+				};
 		}
 	});
 var _gizra$backoffice$WidgetManager_Update$widgetIds = _elm_lang$core$Native_Platform.incomingPort('widgetIds', _elm_lang$core$Json_Decode$value);
@@ -54863,16 +54901,16 @@ var _gizra$backoffice$App_Update$update = F2(
 							{activePage: _p2._0}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
-				case 'SetAuthenticatedData':
+				case 'SetModelBackendItems':
 					var userAndDataUpdated = A2(
 						_Gizra$elm_restful$Restful_Login$mapAuthenticatedData,
-						function (oldModelBackend) {
+						function (modelBackend) {
 							return _elm_lang$core$Native_Utils.update(
-								_p2._0,
-								{creditRequests: oldModelBackend.creditRequests});
+								modelBackend,
+								{items: _p2._0});
 						},
 						model.userAndData);
-					var _v24 = _gizra$backoffice$App_Model$MsgWidgetManager(_gizra$backoffice$WidgetManager_Model$SendUserAndDataToOtherWidgets),
+					var _v24 = _gizra$backoffice$App_Model$MsgWidgetManager(_gizra$backoffice$WidgetManager_Model$UpdateWidgetsOnItemsChange),
 						_v25 = _elm_lang$core$Native_Utils.update(
 						model,
 						{userAndData: userAndDataUpdated});
