@@ -52235,7 +52235,7 @@ var _gizra$backoffice$Backend_Register_Endpoint$endpoint = A2(
 				{ctor: '[]'})),
 		A4(
 			_Gizra$elm_restful$Restful_Endpoint$endpoint,
-			'api/user_registration',
+			'api/v1.0/user_registration',
 			_elm_lang$core$Json_Decode$succeed(
 				{ctor: '_Tuple0'}),
 			_gizra$backoffice$Backend_Register_Decoder$decodeRegisterResult,
