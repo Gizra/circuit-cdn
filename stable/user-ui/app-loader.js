@@ -1,6 +1,13 @@
 // app-loader.js
 (function() {
-  var baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
+  // Base URL for the assets.
+  // Choose between stable and latest folder based on the URL or a specific variable
+  var baseUrl;
+  if (window.location.href.includes('stable') || window.RELEASE_TYPE === 'stable') {
+    baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
+  } else {
+    baseUrl = 'https://cdn.circuitauction.com/latest/user-ui';
+  }
 
   // Function to dynamically load scripts
   function loadScript(src, defer) {
