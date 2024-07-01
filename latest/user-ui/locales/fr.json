@@ -166,6 +166,16 @@
     "clickOnSaleName": "Cliquez sur le nom de la vente ci-dessus pour voir les détails de vos offres et de votre crédit pour cette vente.",
     "error": "Erreur"
   },
+  "userBlock": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "or": "Ou",
+    "user": "Utilisateur",
+    "myAccount": "Mon compte",
+    "myBidsAndCredit": "Mes enchères et crédit",
+    "logout": "Déconnexion",
+    "logoutSuccessful": "Déconnexion réussie"
+  },
   "legacy": {
     "bid": {
       "agentBid": "Agent",

@@ -166,6 +166,16 @@
     "clickOnSaleName": "Klicken Sie oben auf den Verkaufsnamen, um Details zu Ihren Geboten und Krediten für diesen Verkauf anzuzeigen.",
     "error": "Fehler"
   },
+  "userBlock": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "or": "Oder",
+    "user": "Benutzer",
+    "myAccount": "Mein Konto",
+    "myBidsAndCredit": "Meine Gebote & Guthaben",
+    "logout": "Abmelden",
+    "logoutSuccessful": "Abmeldung erfolgreich"
+  },
   "legacy": {
     "bid": {
       "agentBid": "Kommissionär",

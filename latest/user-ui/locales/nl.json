@@ -166,6 +166,16 @@
     "clickOnSaleName": "Klik hierboven op de verkoopnaam om details over uw biedingen en krediet voor die verkoop te zien.",
     "error": "Fout"
   },
+  "userBlock": {
+    "login": "Inloggen",
+    "register": "Registreren",
+    "or": "Of",
+    "user": "Gebruiker",
+    "myAccount": "Mijn account",
+    "myBidsAndCredit": "Mijn biedingen & krediet",
+    "logout": "Uitloggen",
+    "logoutSuccessful": "Uitloggen succesvol"
+  },
   "legacy": {
     "bid": {
       "agentBid": "Commissionair",

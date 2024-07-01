@@ -166,6 +166,16 @@
     "clickOnSaleName": "点击上方的销售名称以查看该销售的出价和信用详情。",
     "error": "错误"
   },
+  "userBlock": {
+    "login": "登录",
+    "register": "注册",
+    "or": "或",
+    "user": "用户",
+    "myAccount": "我的账户",
+    "myBidsAndCredit": "我的出价和信用",
+    "logout": "退出",
+    "logoutSuccessful": "退出成功"
+  },
   "legacy": {
     "bid": {
       "agentBid": "代理",

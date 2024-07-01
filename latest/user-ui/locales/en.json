@@ -166,6 +166,16 @@
     "error": "Error",
     "loading": "Loading..."
   },
+  "userBlock": {
+    "login": "Login",
+    "register": "Register",
+    "or": "Or",
+    "user": "User",
+    "myAccount": "My Account",
+    "myBidsAndCredit": "My Bids & Credit",
+    "logout": "Logout",
+    "logoutSuccessful": "Logout successful"
+  },
   "legacy": {
     "bid": {
       "agentBid": "Agent",
