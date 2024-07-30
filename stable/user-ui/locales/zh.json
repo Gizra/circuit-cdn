@@ -18,7 +18,8 @@
   "register": {
     "title": "创建账户",
     "instructions": "为了参与我们的拍卖，请完成全部注册。",
-    "requiredFields": "带*的字段为必填项。",
+    "requiredFields1": "带 ",
+    "requiredFields2": " 的字段为必填项.",
     "firstName": "名字",
     "lastName": "姓氏",
     "email": "电子邮箱",

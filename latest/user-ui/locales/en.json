@@ -18,7 +18,8 @@
   "register": {
     "title": "Create Account",
     "instructions": "In order to bid in our auctions, please complete full registration.",
-    "requiredFields": "Fields with * are required.",
+    "requiredFields1": "Fields with ",
+    "requiredFields2": " are required.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",

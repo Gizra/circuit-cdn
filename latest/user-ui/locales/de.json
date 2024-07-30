@@ -18,7 +18,8 @@
   "register": {
     "title": "Konto erstellen",
     "instructions": "Um an unseren Auktionen teilnehmen zu können, führen Sie bitte die vollständige Registrierung durch.",
-    "requiredFields": "Felder mit * sind Pflichtfelder.",
+    "requiredFields1": "Felder mit ",
+    "requiredFields2": " sind Pflichtfelder.",
     "firstName": "Vorname",
     "lastName": "Nachname",
     "email": "E-Mail-Adresse",
