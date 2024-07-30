@@ -18,8 +18,7 @@
   "register": {
     "title": "Konto erstellen",
     "instructions": "Um an unseren Auktionen teilnehmen zu können, führen Sie bitte die vollständige Registrierung durch.",
-    "requiredFields1": "Felder mit ",
-    "requiredFields2": " sind Pflichtfelder.",
+    "requiredFields": "Felder mit {{asterisk}} sind Pflichtfelder.",
     "firstName": "Vorname",
     "lastName": "Nachname",
     "email": "E-Mail-Adresse",
@@ -84,7 +83,6 @@
       "ru": "Russisch",
       "zh-hans": "Chinesisch"
     },
-    "requiredFieldsMessage": "Felder mit * sind Pflichtfelder.",
     "updateAccount": "Konto aktualisieren",
     "addNewAddress": "Neue Adresse hinzufügen",
     "error": "Fehler",
@@ -113,8 +111,8 @@
     "careOf": "c/o",
     "country": "Land",
     "selectCountry": "Wählen Sie ein Land",
-    "delete": "Löschen",
-    "save": "Speichern",
+    "delete": "Löschen Adresse",
+    "save": "Speichern Adresse",
     "error": "Fehler",
     "initializationError": "Bei der Initialisierung des Adressformatierers ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "provincesLoadError": "Beim Laden der Provinzen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",

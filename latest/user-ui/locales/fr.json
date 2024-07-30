@@ -18,8 +18,7 @@
   "register": {
     "title": "Créer un compte",
     "instructions": "Pour pouvoir enchérir dans nos ventes aux enchères, veuillez compléter l'inscription complète.",
-    "requiredFields1": "Les champs avec ",
-    "requiredFields2": " sont obligatoires.",
+    "requiredFields": "Les champs marqués d'un {{asterisk}} sont obligatoires.",
     "firstName": "Prénom",
     "lastName": "Nom de famille",
     "email": "Adresse e-mail",
@@ -84,7 +83,6 @@
       "ru": "Russe",
       "zh-hans": "Chinois"
     },
-    "requiredFieldsMessage": "Les champs marqués d'un * sont obligatoires.",
     "updateAccount": "Mettre à jour le compte",
     "addNewAddress": "Ajouter une nouvelle adresse",
     "error": "Erreur",
@@ -113,8 +111,8 @@
     "careOf": "Aux soins de",
     "country": "Pays",
     "selectCountry": "Sélectionnez un pays",
-    "delete": "Supprimer",
-    "save": "Enregistrer",
+    "delete": "Supprimer Adresse",
+    "save": "Enregistrer Adresse",
     "error": "Erreur",
     "initializationError": "Une erreur s'est produite lors de l'initialisation du formateur d'adresse. Veuillez réessayer.",
     "provincesLoadError": "Une erreur s'est produite lors du chargement des provinces. Veuillez réessayer.",
