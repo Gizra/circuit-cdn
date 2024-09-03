@@ -48,6 +48,8 @@
     "generalError": "Une erreur s'est produite. Veuillez réessayer."
   },
   "myAccount": {
+    "connectionFailed": "Connection to user profile failed. Please reload the page to resolve the issue. If the problem persists, please contact our support team for assistance.",
+    "networkError": "Profile loading failed due to network issues. Please reload the page to resolve the problem. If the issue persists, please contact our support team for assistance.",
     "title": "Mon compte",
     "tabs": {
       "personalInfo": "Informations personnelles",
