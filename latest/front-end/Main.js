@@ -44720,13 +44720,7 @@ var _gizra$backoffice$Translate$translateHtml = F2(
 					var linkAttr = {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$href(
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								baseUrl,
-								A2(
-									_elm_lang$core$Basics_ops['++'],
-									'/my-credit/',
-									_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p18._1)))),
+							A2(_elm_lang$core$Basics_ops['++'], baseUrl, '/my-bids')),
 						_1: {ctor: '[]'}
 					};
 					return {
@@ -44876,13 +44870,7 @@ var _gizra$backoffice$Translate$translateHtml = F2(
 					var linkAttr = {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$href(
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								baseUrl,
-								A2(
-									_elm_lang$core$Basics_ops['++'],
-									'/my-credit/',
-									_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p18._1)))),
+							A2(_elm_lang$core$Basics_ops['++'], baseUrl, '/my-bids')),
 						_1: {ctor: '[]'}
 					};
 					return {
@@ -45032,13 +45020,7 @@ var _gizra$backoffice$Translate$translateHtml = F2(
 					var linkAttr = {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$href(
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								baseUrl,
-								A2(
-									_elm_lang$core$Basics_ops['++'],
-									'/my-credit/',
-									_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p18._1)))),
+							A2(_elm_lang$core$Basics_ops['++'], baseUrl, '/my-bids')),
 						_1: {ctor: '[]'}
 					};
 					return {
@@ -59868,13 +59850,7 @@ var _gizra$backoffice$Pages_UserBlock_View$viewAuthenticated = F5(
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$href(
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										baseUrl,
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											'/my-bids/',
-											_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(saleUuid)))),
+									A2(_elm_lang$core$Basics_ops['++'], baseUrl, '/my-bids')),
 								_1: {ctor: '[]'}
 							}
 						},
@@ -59894,13 +59870,7 @@ var _gizra$backoffice$Pages_UserBlock_View$viewAuthenticated = F5(
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$href(
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										baseUrl,
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											'/my-credit/',
-											_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(saleUuid)))),
+									A2(_elm_lang$core$Basics_ops['++'], baseUrl, '/my-bids')),
 								_1: {ctor: '[]'}
 							}
 						},
