@@ -48,6 +48,7 @@
     "generalError": "Произошла ошибка. Пожалуйста, попробуйте еще раз."
   },
   "myAccount": {
+    "noAddressesMessage": "Для участия в нашем аукционе вам необходимо завершить регистрацию, введя адрес. Пожалуйста, заполните адрес в форме ниже.",
     "connectionFailed": "Connection to user profile failed. Please reload the page to resolve the issue. If the problem persists, please contact our support team for assistance.",
     "networkError": "Profile loading failed due to network issues. Please reload the page to resolve the problem. If the issue persists, please contact our support team for assistance.",
     "title": "Мой аккаунт",

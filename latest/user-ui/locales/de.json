@@ -48,6 +48,7 @@
     "generalError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
   },
   "myAccount": {
+    "noAddressesMessage": "Um an unserer Auktion teilzunehmen, müssen Sie Ihre Registrierung durch die Eingabe Ihrer Adresse abschließen. Bitte geben Sie diese im untenstehenden Formular ein.",
     "connectionFailed": "Connection to user profile failed. Please reload the page to resolve the issue. If the problem persists, please contact our support team for assistance.",
     "networkError": "Profile loading failed due to network issues. Please reload the page to resolve the problem. If the issue persists, please contact our support team for assistance.",
     "title": "Mein Konto",

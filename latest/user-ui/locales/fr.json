@@ -48,6 +48,7 @@
     "generalError": "Une erreur s'est produite. Veuillez réessayer."
   },
   "myAccount": {
+    "noAddressesMessage": "Pour participer à notre vente aux enchères, vous devez compléter votre inscription en saisissant une adresse. Veuillez remplir l'adresse dans le formulaire ci-dessous.",
     "connectionFailed": "Connection to user profile failed. Please reload the page to resolve the issue. If the problem persists, please contact our support team for assistance.",
     "networkError": "Profile loading failed due to network issues. Please reload the page to resolve the problem. If the issue persists, please contact our support team for assistance.",
     "title": "Mon compte",

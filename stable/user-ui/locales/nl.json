@@ -48,6 +48,7 @@
     "generalError": "Er is een fout opgetreden. Probeer het opnieuw."
   },
   "myAccount": {
+    "noAddressesMessage": "Om deel te nemen aan onze veiling, moet u uw registratie voltooien door een adres in te voeren. Vul alstublieft het adres in het onderstaande formulier in.",
     "connectionFailed": "Connection to user profile failed. Please reload the page to resolve the issue. If the problem persists, please contact our support team for assistance.",
     "networkError": "Profile loading failed due to network issues. Please reload the page to resolve the problem. If the issue persists, please contact our support team for assistance.",
     "title": "Mijn account",
