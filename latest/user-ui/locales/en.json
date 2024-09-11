@@ -136,6 +136,7 @@
     "generalError": "An error occurred. Please try again."
   },
   "myBids": {
+    "loadingTitle": "Loading title...",
     "currentPrice": "Current Price: {{price}}",
     "youAreHighestBidder": "You are the highest bidder",
     "filterHighest": "Items where I'm the highest bidder",
