@@ -40718,9 +40718,9 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_Model$ProcessConnectedUserStatus = 
 	return {ctor: 'ProcessConnectedUserStatus', _0: a};
 };
 
-var _Gizra$circuit_bid$Backend_Site_Model$Site = F3(
-	function (a, b, c) {
-		return {name: a, currency: b, defaultLanguage: c};
+var _Gizra$circuit_bid$Backend_Site_Model$Site = F4(
+	function (a, b, c, d) {
+		return {name: a, backofficeUrl: b, currency: c, defaultLanguage: d};
 	});
 
 var _Gizra$circuit_bid$Backend_Model$emptyModelBackend = {bidderInfo: _eeue56$elm_all_dict$EveryDict$empty, bidderInfoByBidderNumber: _elm_lang$core$Dict$empty, connectedUsers: _eeue56$elm_all_dict$EveryDict$empty, creditRequests: _krisajenkins$remotedata$RemoteData$NotAsked, site: _krisajenkins$remotedata$RemoteData$NotAsked};
@@ -40851,10 +40851,9 @@ var _Gizra$circuit_bid$Login_Model$Model = F2(
 	});
 var _Gizra$circuit_bid$Login_Model$SalePage = {ctor: 'SalePage'};
 var _Gizra$circuit_bid$Login_Model$LoginPage = {ctor: 'LoginPage'};
-var _Gizra$circuit_bid$Login_Model$TryLogin = F2(
-	function (a, b) {
-		return {ctor: 'TryLogin', _0: a, _1: b};
-	});
+var _Gizra$circuit_bid$Login_Model$TryLogin = function (a) {
+	return {ctor: 'TryLogin', _0: a};
+};
 var _Gizra$circuit_bid$Login_Model$SetPassword = function (a) {
 	return {ctor: 'SetPassword', _0: a};
 };
@@ -47448,9 +47447,13 @@ var _Gizra$circuit_bid$Backend_Site_Decoder$decodeSite = A4(
 		_Gizra$circuit_bid$Currency_Decoder$decodeCurrency,
 		A3(
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-			'label',
-			_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_Site_Model$Site))));
+			'backoffice_url',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'label',
+				_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_Site_Model$Site)))));
 
 var _Gizra$circuit_bid$Backend_Site_Endpoint$siteEndpoint = A2(_Gizra$elm_restful$Restful_Endpoint$drupalEndpoint, 'api/sites', _Gizra$circuit_bid$Backend_Site_Decoder$decodeSite);
 
@@ -49600,16 +49603,12 @@ var _Gizra$circuit_bid$Login_Update$update = F3(
 					_1: _elm_lang$core$Platform_Cmd$batch(
 						{
 							ctor: '::',
-							_0: A3(_Gizra$circuit_bid$Login_Update$fetchAccessTokenFromBackend, backendUrl, _p0._1, model.loginForm),
+							_0: A3(_Gizra$circuit_bid$Login_Update$fetchAccessTokenFromBackend, backendUrl, _p0._0, model.loginForm),
 							_1: {
 								ctor: '::',
 								_0: _Gizra$circuit_bid$Ports$userTryLogin(
 									{ctor: '_Tuple0'}),
-								_1: {
-									ctor: '::',
-									_0: _Gizra$circuit_bid$Ports$loadBackofficeCSS(_p0._0),
-									_1: {ctor: '[]'}
-								}
+								_1: {ctor: '[]'}
 							}
 						}),
 					_2: _Gizra$circuit_bid$Error_Utils$noError,
@@ -62740,7 +62739,7 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 					{
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onSubmit(
-							A2(_Gizra$circuit_bid$Login_Model$TryLogin, backOfficeUrl, siteShortName)),
+							_Gizra$circuit_bid$Login_Model$TryLogin(siteShortName)),
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
@@ -65784,7 +65783,7 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 				return false;
 			}
 		}();
-		var mainContent = function () {
+		var content = function () {
 			var _p2 = model.user;
 			if (_p2.ctor === 'Just') {
 				var _p4 = _p2._0;
@@ -65855,7 +65854,15 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 					});
 			}
 		}();
-		return mainContent;
+		var loadCssCmd = function () {
+			var _p5 = model.backend.site;
+			if ((_p5.ctor === 'Success') && (_p5._0.ctor === '_Tuple2')) {
+				return _Gizra$circuit_bid$Ports$loadBackofficeCSS(_p5._0._1.backofficeUrl);
+			} else {
+				return _elm_lang$core$Platform_Cmd$none;
+			}
+		}();
+		return {ctor: '_Tuple2', _0: content, _1: loadCssCmd};
 	});
 var _Gizra$circuit_bid$App_View$viewConnectionStatus = F2(
 	function (language, offline) {
@@ -65967,10 +65974,10 @@ var _Gizra$circuit_bid$App_View$viewLanguages = F3(
 	});
 var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F4(
 	function (language, user, modelBackend, maybeSale) {
-		var _p5 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
-		if ((_p5.ctor === '_Tuple2') && (_p5._0.ctor === 'Authenticated')) {
-			if (_p5._1.ctor === 'Just') {
-				var _p6 = _p5._1._0;
+		var _p6 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
+		if ((_p6.ctor === '_Tuple2') && (_p6._0.ctor === 'Authenticated')) {
+			if (_p6._1.ctor === 'Just') {
+				var _p7 = _p6._1._0;
 				return A3(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					_elm_lang$html$Html$text('Bidder info not loaded correctly, please refresh.'),
@@ -65983,17 +65990,17 @@ var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F4(
 							A5(
 								_Gizra$circuit_bid$Translate$WelcomeMessage,
 								fullName,
-								_p5._0._0.name,
+								_p6._0._0.name,
 								_elm_lang$core$Basics$toString(bidderNumber),
-								_p6.label,
-								_p6.siteLabel));
+								_p7.label,
+								_p7.siteLabel));
 					},
-					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p6.uuid));
+					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p7.uuid));
 			} else {
 				return A2(
 					_Gizra$circuit_bid$Translate$translateText,
 					language,
-					_Gizra$circuit_bid$Translate$Welcome(_p5._0._0.name));
+					_Gizra$circuit_bid$Translate$Welcome(_p6._0._0.name));
 			}
 		} else {
 			return A2(
@@ -66021,12 +66028,12 @@ var _Gizra$circuit_bid$App_View$roomTopBar = F4(
 							_1: {ctor: '[]'}
 						});
 				}(
-					function (_p7) {
-						var _p8 = _p7;
+					function (_p8) {
+						var _p9 = _p8;
 						return A2(
 							_elm_lang$core$Basics_ops['++'],
-							_p8.siteLabel,
-							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p8.label));
+							_p9.siteLabel,
+							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p9.label));
 					}(sale));
 			},
 			maybeSale);
@@ -66129,15 +66136,18 @@ var _Gizra$circuit_bid$App_View$topBar = F9(
 			});
 	});
 var _Gizra$circuit_bid$App_View$view = function (model) {
-	var _p9 = model.config;
-	switch (_p9.ctor) {
+	var _p10 = model.config;
+	switch (_p10.ctor) {
 		case 'Failure':
-			return _Gizra$circuit_bid$Config_View$error;
+			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Config_View$error, _1: _elm_lang$core$Platform_Cmd$none};
 		case 'Success':
-			var _p11 = _p9._0;
+			var _p13 = _p10._0;
+			var _p11 = A2(_Gizra$circuit_bid$App_View$viewMainContent, _p13, model);
+			var mainContent = _p11._0;
+			var mainContentCmd = _p11._1;
 			var debugErrors = A2(
 				_Gizra$circuit_bid$Utils_Html$showIf,
-				_p11.debug,
+				_p13.debug,
 				A2(_Gizra$circuit_bid$Error_View$view, _Gizra$circuit_bid$Translate$English, model.errors));
 			var page = A2(_Gizra$circuit_bid$App_Utils$pageAfterLogout, model.activePage, model.siteShortName);
 			var maybeSale = _Gizra$circuit_bid$App_Utils$currentSale(model);
@@ -66151,20 +66161,20 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 					},
 					maybeSale));
 			var header = function () {
-				var _p10 = model.activePage;
-				if (_p10.ctor === 'SaleRoom') {
+				var _p12 = model.activePage;
+				if (_p12.ctor === 'SaleRoom') {
 					return _Gizra$circuit_bid$Utils_Html$emptyNode;
 				} else {
 					return A3(
 						_elm_community$maybe_extra$Maybe_Extra$unwrap,
 						_Gizra$circuit_bid$Utils_Html$emptyNode,
 						function (user) {
-							return A9(_Gizra$circuit_bid$App_View$topBar, _p11, availableLanguages, model.language, model.offline, user, model.backend, maybeSale, model.activePage, page);
+							return A9(_Gizra$circuit_bid$App_View$topBar, _p13, availableLanguages, model.language, model.offline, user, model.backend, maybeSale, model.activePage, page);
 						},
 						model.user);
 				}
 			}();
-			return A2(
+			var viewContent = A2(
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
@@ -66219,14 +66229,15 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 							_0: header,
 							_1: {
 								ctor: '::',
-								_0: A2(_Gizra$circuit_bid$App_View$viewMainContent, _p11, model),
+								_0: mainContent,
 								_1: {ctor: '[]'}
 							}
 						}),
 					_1: {ctor: '[]'}
 				});
+			return {ctor: '_Tuple2', _0: viewContent, _1: mainContentCmd};
 		default:
-			return _Gizra$circuit_bid$Config_View$loading;
+			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Config_View$loading, _1: _elm_lang$core$Platform_Cmd$none};
 	}
 };
 
@@ -66288,15 +66299,35 @@ var _Gizra$elm_essentials$Gizra_Update$sequenceExtra = F3(
 			msgs);
 	});
 
+var _Gizra$circuit_bid$Main$viewWrapper = function (model) {
+	var _p0 = _Gizra$circuit_bid$App_View$view(model);
+	var html = _p0._0;
+	return html;
+};
+var _Gizra$circuit_bid$Main$updateWrapper = F2(
+	function (msg, model) {
+		var _p1 = A4(_Gizra$elm_essentials$Gizra_Update$andThenFetch, _Gizra$circuit_bid$App_Fetch$fetch, _Gizra$circuit_bid$App_Update$update, msg, model);
+		var newModel = _p1._0;
+		var cmd = _p1._1;
+		var _p2 = _Gizra$circuit_bid$App_View$view(newModel);
+		var viewCmd = _p2._1;
+		return {
+			ctor: '_Tuple2',
+			_0: newModel,
+			_1: _elm_lang$core$Platform_Cmd$batch(
+				{
+					ctor: '::',
+					_0: cmd,
+					_1: {
+						ctor: '::',
+						_0: viewCmd,
+						_1: {ctor: '[]'}
+					}
+				})
+		};
+	});
 var _Gizra$circuit_bid$Main$main = _rgrempel$elm_route_url$RouteUrl$programWithFlags(
-	{
-		delta2url: _Gizra$circuit_bid$App_Router$delta2url,
-		location2messages: _Gizra$circuit_bid$App_Router$location2messages,
-		init: _Gizra$circuit_bid$App_Update$init,
-		update: A2(_Gizra$elm_essentials$Gizra_Update$andThenFetch, _Gizra$circuit_bid$App_Fetch$fetch, _Gizra$circuit_bid$App_Update$update),
-		view: _Gizra$circuit_bid$App_View$view,
-		subscriptions: _Gizra$circuit_bid$App_Update$subscriptions
-	})(
+	{delta2url: _Gizra$circuit_bid$App_Router$delta2url, location2messages: _Gizra$circuit_bid$App_Router$location2messages, init: _Gizra$circuit_bid$App_Update$init, update: _Gizra$circuit_bid$Main$updateWrapper, view: _Gizra$circuit_bid$Main$viewWrapper, subscriptions: _Gizra$circuit_bid$App_Update$subscriptions})(
 	A2(
 		_elm_lang$core$Json_Decode$andThen,
 		function (accessToken) {
