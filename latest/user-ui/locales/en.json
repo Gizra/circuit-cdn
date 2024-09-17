@@ -117,7 +117,8 @@
     "error": "Error",
     "initializationError": "An error occurred while initializing the address formatter. Please try again.",
     "provincesLoadError": "An error occurred while loading the provinces. Please try again.",
-    "saveError": "An error occurred while saving. Please try again."
+    "saveError": "An error occurred while saving. Please try again.",
+    "override_address_name": "Use this fields only if you want to override Client Name for this address."
   },
   "changePassword": {
     "newPasswordLabel": "Enter New Password",

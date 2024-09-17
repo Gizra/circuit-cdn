@@ -86,6 +86,8 @@
       "ru": "Russisch",
       "zh-hans": "Chinesisch"
     },
+    "shippingInstructions": "Versandanweisungen",
+    "enterShippingInstructions": "Geben Sie hier spezielle Versandanweisungen ein",
     "updateAccount": "Konto aktualisieren",
     "addNewAddress": "Neue Adresse hinzufügen",
     "error": "Fehler",
@@ -114,12 +116,13 @@
     "careOf": "c/o",
     "country": "Land",
     "selectCountry": "Wählen Sie ein Land",
-    "delete": "Löschen Adresse",
-    "save": "Speichern Adresse",
+    "delete": "Adresse Löschen",
+    "save": "Adresse Speichern",
     "error": "Fehler",
     "initializationError": "Bei der Initialisierung des Adressformatierers ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "provincesLoadError": "Beim Laden der Provinzen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "saveError": "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+    "saveError": "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+    "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten."
   },
   "changePassword": {
     "newPasswordLabel": "Neues Passwort eingeben",
@@ -160,9 +163,9 @@
     "currentPrice": "Aktueller Preis: {{price}}",
     "youAreHighestBidder": "Sie sind der Höchstbietende",
     "filterHighest": "Artikel, bei denen ich der Höchstbietende bin",
-    "filterAll": "Alle Objekte",
-    "filterWon": "Gewonnene Objekte",
-    "filterLost": "Nicht gewonnene Objekte",
+    "filterAll": "Alle Lots",
+    "filterWon": "Gewonnene Lots",
+    "filterLost": "Nicht gewonnene Lots",
     "unsold": "Unverkauft",
     "soldFor": "Verkauft für {{price}}",
     "youWonThisLot": "Sie haben dieses Los gewonnen!",
@@ -183,7 +186,7 @@
     "bidderId": "Bieter {{id}}",
     "viewMoreLotDetails": "Weitere Losdetails anzeigen",
     "close": "Schließen",
-    "clickOnSaleName": "Klicken Sie oben auf den Verkaufsnamen, um Details zu Ihren Geboten und Krediten für diesen Verkauf anzuzeigen.",
+    "clickOnSaleName": "Klicken Sie oben auf den Auktionsnamen, um Details zu Ihren Geboten und Krediten für diesen Auktion anzuzeigen.",
     "error": "Fehler"
   },
   "userBlock": {
