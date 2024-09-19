@@ -15201,8 +15201,11 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForKey = F3(
 		var _p28 = _p27._0;
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p28.path),
-			_p28.keyToUrlPart(key));
+			backendUrl,
+			A2(
+				_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
+				_p28.path,
+				_p28.keyToUrlPart(key)));
 	});
 var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 	function (backendUrl, _p29, keys) {
@@ -15212,8 +15215,8 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 			A2(_elm_lang$core$List$map, _p31.keyToUrlPart, keys));
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p31.path),
-			ids);
+			backendUrl,
+			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], _p31.path, ids));
 	});
 var _Gizra$elm_restful$Restful_Endpoint$encodeEmptyObject = function (a) {
 	return _elm_lang$core$Json_Encode$object(
