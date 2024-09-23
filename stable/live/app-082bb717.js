@@ -111,11 +111,16 @@ elmApp.ports.playSoundOnLiveBid.subscribe(function () {
   }, 1);
 });
 
+var cssLoaded = false;
 elmApp.ports.loadBackofficeCSS.subscribe(function(backendOfficeUrl) {
+  if (cssLoaded) {
+    return;
+  }
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = backendOfficeUrl + '/css/live.css';
   document.head.appendChild(link);
+  cssLoaded = true;
 });
 
 window.onmessage = function(e) {
