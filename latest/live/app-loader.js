@@ -1,6 +1,6 @@
 
 (function() {
-    const unifiedHash = 'e1f11af6';
+    const unifiedHash = '95578bf4';
 
     function loadScript(src, callback) {
         const script = document.createElement('script');
@@ -22,7 +22,7 @@
         document.head.appendChild(link);
     }
 
-    const cdnUrl = 'https://cdn.circuitauction.com/latest/live';
+    const cdnUrl = 'https://cdn.circuitauction.com/stable/live';
     const styleUrl = `${cdnUrl}/style-${unifiedHash}.css`;
     const mainJsUrl = `${cdnUrl}/Main-${unifiedHash}.js`;
     const appJsUrl = `${cdnUrl}/app-${unifiedHash}.js`;
