@@ -51812,20 +51812,17 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$getMaxQueuedBidData = function (dict) {
 };
 var _Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData = function (queuedBids) {
 	return A2(
-		_elm_lang$core$Maybe$withDefault,
-		_Gizra$circuit_bid$Pusher_Model$emptyClerkQueuedBidsUpdateData,
-		A2(
-			_elm_lang$core$Maybe$map,
-			function (_p9) {
-				var _p10 = _p9;
-				return A2(
-					_Gizra$circuit_bid$Pusher_Model$ClerkQueuedBidsUpdateData,
-					_elm_lang$core$Maybe$Just(
-						_Gizra$circuit_bid$Amount$extract(_p10._0)),
-					_elm_lang$core$Maybe$Just(
-						_Gizra$circuit_bid$Amount$extract(_p10._1)));
-			},
-			_Gizra$circuit_bid$Pages_Clerk_Utils$getMaxQueuedBidData(queuedBids)));
+		_elm_lang$core$Maybe$andThen,
+		function (_p9) {
+			var _p10 = _p9;
+			var nextBidValue = _elm_lang$core$Maybe$Just(
+				_Gizra$circuit_bid$Amount$extract(_p10._1));
+			var bidValue = _elm_lang$core$Maybe$Just(
+				_Gizra$circuit_bid$Amount$extract(_p10._0));
+			return (_elm_lang$core$Native_Utils.eq(bidValue, _elm_lang$core$Maybe$Nothing) && _elm_lang$core$Native_Utils.eq(nextBidValue, _elm_lang$core$Maybe$Nothing)) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
+				A2(_Gizra$circuit_bid$Pusher_Model$ClerkQueuedBidsUpdateData, bidValue, nextBidValue));
+		},
+		_Gizra$circuit_bid$Pages_Clerk_Utils$getMaxQueuedBidData(queuedBids));
 };
 var _Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk = F2(
 	function (calculated, model) {
@@ -54267,6 +54264,19 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 																	_1: _elm_lang$core$Maybe$Nothing
 																},
 																model.queuedBids));
+														var queuedBidsUpdateCmd = A2(
+															_elm_lang$core$Maybe$withDefault,
+															_elm_lang$core$Platform_Cmd$none,
+															A2(
+																_elm_lang$core$Maybe$map,
+																function (data) {
+																	return A3(
+																		_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
+																		{ctor: '_Tuple2', _0: _p95, _1: _p94},
+																		model.sale,
+																		_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(data));
+																},
+																_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids)));
 														return {
 															ctor: '_Tuple4',
 															_0: _elm_lang$core$Native_Utils.update(
@@ -54275,7 +54285,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 																	queuedBidRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestQueued(_p50),
 																	queuedBids: queuedBids
 																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
+															_1: queuedBidsUpdateCmd,
 															_2: _Gizra$circuit_bid$Error_Utils$noError,
 															_3: {ctor: '[]'}
 														};
@@ -54289,11 +54299,18 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 																_1: _elm_lang$core$Maybe$Nothing
 															},
 															model.queuedBids);
-														var queuedBidsUpdateCmd = A3(
-															_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-															{ctor: '_Tuple2', _0: _p95, _1: _p94},
-															model.sale,
-															_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(
+														var queuedBidsUpdateCmd = A2(
+															_elm_lang$core$Maybe$withDefault,
+															_elm_lang$core$Platform_Cmd$none,
+															A2(
+																_elm_lang$core$Maybe$map,
+																function (data) {
+																	return A3(
+																		_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
+																		{ctor: '_Tuple2', _0: _p95, _1: _p94},
+																		model.sale,
+																		_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(data));
+																},
 																_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids)));
 														return {
 															ctor: '_Tuple4',
@@ -54725,34 +54742,15 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 												case 'PlaceFloorBid':
 													var _p74 = _p22._3;
 													var _p73 = _p22._2;
-													var cmds = _elm_lang$core$Platform_Cmd$batch(
-														{
-															ctor: '::',
-															_0: A7(
-																_Gizra$circuit_bid$Bid_Update$placeFloorBid,
-																backendUrl,
-																accessToken,
-																A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleBidPlaced, _p73, _p74),
-																user,
-																_p22._0,
-																_p22._1,
-																_p73),
-															_1: {
-																ctor: '::',
-																_0: A3(
-																	_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-																	{ctor: '_Tuple2', _0: _p95, _1: _p94},
-																	model.sale,
-																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(
-																		A2(
-																			_Gizra$circuit_bid$Pusher_Model$ClerkQueuedBidsUpdateData,
-																			_elm_lang$core$Maybe$Just(
-																				_Gizra$circuit_bid$Amount$extract(_p73)),
-																			_elm_lang$core$Maybe$Just(
-																				_Gizra$circuit_bid$Amount$extract(_p74))))),
-																_1: {ctor: '[]'}
-															}
-														});
+													var cmds = A7(
+														_Gizra$circuit_bid$Bid_Update$placeFloorBid,
+														backendUrl,
+														accessToken,
+														A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleBidPlaced, _p73, _p74),
+														user,
+														_p22._0,
+														_p22._1,
+														_p73);
 													return {
 														ctor: '_Tuple4',
 														_0: _elm_lang$core$Native_Utils.update(
@@ -55646,14 +55644,19 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				_elm_lang$core$Maybe$Just(_p128._0));
 																		},
 																		_eeue56$elm_all_dict$EveryDict$toList(model.queuedBids)));
-																var queuedBidsUpdateCmd = (!_elm_lang$core$Native_Utils.eq(
-																	_eeue56$elm_all_dict$EveryDict$size(queuedBids),
-																	_eeue56$elm_all_dict$EveryDict$size(model.queuedBids))) ? A3(
-																	_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-																	{ctor: '_Tuple2', _0: _p141, _1: _p140},
-																	model.sale,
-																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(
-																		_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids))) : _elm_lang$core$Platform_Cmd$none;
+																var queuedBidsUpdateCmd = A2(
+																	_elm_lang$core$Maybe$withDefault,
+																	_elm_lang$core$Platform_Cmd$none,
+																	A2(
+																		_elm_lang$core$Maybe$map,
+																		function (data) {
+																			return A3(
+																				_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
+																				{ctor: '_Tuple2', _0: _p141, _1: _p140},
+																				model.sale,
+																				_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(data));
+																		},
+																		_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids)));
 																var _p131 = A2(
 																	verifyQueuedTaskAndProcess,
 																	model.queuedBidRequestState,
@@ -55702,14 +55705,19 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				_elm_lang$core$Maybe$Just(_p128._0));
 																		},
 																		_eeue56$elm_all_dict$EveryDict$toList(model.queuedBids)));
-																var queuedBidsUpdateCmd = (!_elm_lang$core$Native_Utils.eq(
-																	_eeue56$elm_all_dict$EveryDict$size(queuedBids),
-																	_eeue56$elm_all_dict$EveryDict$size(model.queuedBids))) ? A3(
-																	_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-																	{ctor: '_Tuple2', _0: _p141, _1: _p140},
-																	model.sale,
-																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(
-																		_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids))) : _elm_lang$core$Platform_Cmd$none;
+																var queuedBidsUpdateCmd = A2(
+																	_elm_lang$core$Maybe$withDefault,
+																	_elm_lang$core$Platform_Cmd$none,
+																	A2(
+																		_elm_lang$core$Maybe$map,
+																		function (data) {
+																			return A3(
+																				_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
+																				{ctor: '_Tuple2', _0: _p141, _1: _p140},
+																				model.sale,
+																				_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(data));
+																		},
+																		_Gizra$circuit_bid$Pages_Clerk_Utils$generateClerkQueuedBidsUpdateData(queuedBids)));
 																var _p134 = A2(
 																	verifyQueuedTaskAndProcess,
 																	model.queuedBidRequestState,
