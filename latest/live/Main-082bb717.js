@@ -55257,8 +55257,6 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 										return function (saleUuid) {
 											return function (event) {
 												var _p103 = _p102;
-												var _p141 = _p103._0;
-												var _p140 = _p103._1;
 												var noChange = {
 													ctor: '_Tuple3',
 													_0: model,
@@ -55320,11 +55318,6 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 															_elm_lang$core$Task$perform,
 															_elm_lang$core$Basics$identity,
 															_elm_lang$core$Task$succeed(_Gizra$circuit_bid$Pages_Clerk_Model$OpeningPriceStart));
-														var queuedBidsUpdateCmd = A3(
-															_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-															{ctor: '_Tuple2', _0: _p141, _1: _p140},
-															model.sale,
-															_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(_Gizra$circuit_bid$Pusher_Model$emptyClerkQueuedBidsUpdateData));
 														var newSale = A2(
 															_krisajenkins$remotedata$RemoteData$map,
 															function (sale) {
@@ -55401,11 +55394,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																	_1: {
 																		ctor: '::',
 																		_0: sessionCmd,
-																		_1: {
-																			ctor: '::',
-																			_0: queuedBidsUpdateCmd,
-																			_1: {ctor: '[]'}
-																		}
+																		_1: {ctor: '[]'}
 																	}
 																}),
 															_2: {ctor: '[]'}
@@ -55729,7 +55718,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																	model.queuedItemUpdateRequestState,
 																	function () {
 																		var _p137 = _Gizra$circuit_bid$Pages_Clerk_Update$handleItemUpdateSuccess(currentDate)(backendUrl)(
-																			{ctor: '_Tuple2', _0: _p141, _1: _p140})(isDebug)(accessToken)(language)(user)(modelBackend)(model)(
+																			{ctor: '_Tuple2', _0: _p103._0, _1: _p103._1})(isDebug)(accessToken)(language)(user)(modelBackend)(model)(
 																			{ctor: '_Tuple2', _0: _p128._0._0, _1: _p128._0._1});
 																		var updatedModel = _p137._0;
 																		var cmds = _p137._1;
@@ -56098,7 +56087,8 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							sale: newSale,
 							nextBidIncrements: {ctor: '[]'},
 							carouselPosition: newCarouselPosition,
-							asyncGoingItemStatus: false
+							asyncGoingItemStatus: false,
+							clerkHighestQueuedBidData: _Gizra$circuit_bid$Pusher_Model$emptyClerkQueuedBidsUpdateData
 						}),
 					_1: cmd,
 					_2: {ctor: '[]'}
