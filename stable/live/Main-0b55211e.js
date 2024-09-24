@@ -60815,7 +60815,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 			}
 		};
 		var nextBidAmount = A2(
-			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate,
+			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
 			_elm_lang$core$Native_Utils.update(
 				_p28,
 				{
@@ -60833,7 +60833,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 							ctor: '_Tuple2',
 							_0: customBidInput,
 							_1: A2(
-								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate,
+								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
 								_elm_lang$core$Native_Utils.update(
 									_p28,
 									{
