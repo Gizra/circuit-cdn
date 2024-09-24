@@ -51933,6 +51933,31 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceAmountAndRally = F5(
 					}
 				}));
 	});
+var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate = F2(
+	function (calculated, model) {
+		nextBidAmountForQueuedBidsUpdate:
+		while (true) {
+			var currentAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(
+				A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, calculated, model));
+			var nextBidAmount = function () {
+				var nextBidIncrement = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculated.bidSteps, currentAmount);
+				return A2(_Gizra$circuit_bid$Amount$add, currentAmount, nextBidIncrement);
+			}();
+			if (A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts)) {
+				var _v7 = _elm_lang$core$Native_Utils.update(
+					calculated,
+					{
+						currentPrice: _elm_lang$core$Maybe$Just(nextBidAmount)
+					}),
+					_v8 = model;
+				calculated = _v7;
+				model = _v8;
+				continue nextBidAmountForQueuedBidsUpdate;
+			} else {
+				return nextBidAmount;
+			}
+		}
+	});
 var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk = F2(
 	function (calculated, model) {
 		nextBidAmountForClerk:
@@ -51949,14 +51974,14 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk = F2(
 				}
 			}();
 			if (A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts)) {
-				var _v8 = _elm_lang$core$Native_Utils.update(
+				var _v10 = _elm_lang$core$Native_Utils.update(
 					calculated,
 					{
 						currentPrice: _elm_lang$core$Maybe$Just(nextBidAmount)
 					}),
-					_v9 = model;
-				calculated = _v8;
-				model = _v9;
+					_v11 = model;
+				calculated = _v10;
+				model = _v11;
 				continue nextBidAmountForClerk;
 			} else {
 				return nextBidAmount;
@@ -60804,7 +60829,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 			}
 		};
 		var nextBidAmount = A2(
-			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
+			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate,
 			_elm_lang$core$Native_Utils.update(
 				_p28,
 				{
@@ -60822,7 +60847,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 							ctor: '_Tuple2',
 							_0: customBidInput,
 							_1: A2(
-								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
+								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate,
 								_elm_lang$core$Native_Utils.update(
 									_p28,
 									{
