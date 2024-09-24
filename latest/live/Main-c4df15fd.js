@@ -54739,21 +54739,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 																_p22._0,
 																_p22._1,
 																_p73),
-															_1: {
-																ctor: '::',
-																_0: A3(
-																	_Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent,
-																	{ctor: '_Tuple2', _0: _p95, _1: _p94},
-																	model.sale,
-																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate(
-																		A2(
-																			_Gizra$circuit_bid$Pusher_Model$ClerkQueuedBidsUpdateData,
-																			_elm_lang$core$Maybe$Just(
-																				_Gizra$circuit_bid$Amount$extract(_p73)),
-																			_elm_lang$core$Maybe$Just(
-																				_Gizra$circuit_bid$Amount$extract(_p74))))),
-																_1: {ctor: '[]'}
-															}
+															_1: {ctor: '[]'}
 														});
 													return {
 														ctor: '_Tuple4',
