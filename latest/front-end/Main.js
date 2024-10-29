@@ -44207,6 +44207,8 @@ var _gizra$backoffice$Translate$translateItemPreLiveSale = function (transId) {
 			return {english: 'Enter your bid', dutch: 'Voer uw bod in', german: 'Geben Sie Ihr Gebot ein', hebrew: 'להוסיף הצעה', russian: 'Введите свою ставку', french: 'Entrez votre offre', chinese: '输入您的出价'};
 		case 'FollowLot':
 			return {english: 'Follow Lot', dutch: 'Volg Kavel', german: 'Favorit hinzufügen', hebrew: 'עקוב אחר פריט', russian: 'Следить за лотом', french: 'Suivre le lot', chinese: '关注拍品'};
+		case 'Following':
+			return {english: 'Following', dutch: 'Volgend', german: 'Folgend', hebrew: 'עוקב', russian: 'Следующий', french: 'Suivant', chinese: '关注'};
 		case 'ItemNotActiveButAlreadyHasLiveBids_':
 			return {english: 'Item not active but already has live bids', dutch: 'Artikel niet actief maar heeft al live biedingen', german: 'Artikel ist nicht aktiv, hat aber Gebote', hebrew: 'הפריט הוא לא הנוכחי אבל יש לו כבר הצעות חיות', russian: 'Лот неактивен, но уже есть живые ставки', french: 'L\'article n\'est pas actif mais a déjà des offres en direct', chinese: '物品尚未激活，但已有实时出价'};
 		case 'JoinLiveAuction':
@@ -47474,6 +47476,7 @@ var _gizra$backoffice$Translate$LotWithdrawnFromSale = {ctor: 'LotWithdrawnFromS
 var _gizra$backoffice$Translate$LiveAuctionOpen = {ctor: 'LiveAuctionOpen'};
 var _gizra$backoffice$Translate$JoinLiveAuction = {ctor: 'JoinLiveAuction'};
 var _gizra$backoffice$Translate$ItemNotActiveButAlreadyHasLiveBids_ = {ctor: 'ItemNotActiveButAlreadyHasLiveBids_'};
+var _gizra$backoffice$Translate$Following = {ctor: 'Following'};
 var _gizra$backoffice$Translate$FollowLot = {ctor: 'FollowLot'};
 var _gizra$backoffice$Translate$EnterYourBid = {ctor: 'EnterYourBid'};
 var _gizra$backoffice$Translate$DeleteCurrentBid = {ctor: 'DeleteCurrentBid'};
@@ -56936,6 +56939,13 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag = F4(
 		switch (_p81.ctor) {
 			case 'Success':
 				var _p82 = _p81._0;
+				var followText = _p82 ? A2(
+					_gizra$backoffice$Translate$translateText,
+					language,
+					_gizra$backoffice$Translate$ItemPreLiveSale(_gizra$backoffice$Translate$Following)) : A2(
+					_gizra$backoffice$Translate$translateText,
+					language,
+					_gizra$backoffice$Translate$ItemPreLiveSale(_gizra$backoffice$Translate$FollowLot));
 				var iconClass = _p82 ? '' : '-o';
 				return A2(
 					_elm_lang$html$Html$div,
@@ -56960,10 +56970,7 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag = F4(
 							},
 							{
 								ctor: '::',
-								_0: A2(
-									_gizra$backoffice$Translate$translateText,
-									language,
-									_gizra$backoffice$Translate$ItemPreLiveSale(_gizra$backoffice$Translate$FollowLot)),
+								_0: followText,
 								_1: {
 									ctor: '::',
 									_0: A2(
