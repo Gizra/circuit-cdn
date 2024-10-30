@@ -47570,12 +47570,12 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/http-1-test/'
+	serverless: 'http://localhost:5000'
 };
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'localhost', _1: _Gizra$circuit_bid$LocalConfig$local},
+		_0: {ctor: '_Tuple2', _0: '172.24.0.2', _1: _Gizra$circuit_bid$LocalConfig$local},
 		_1: {ctor: '[]'}
 	});
 
@@ -47584,50 +47584,54 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 	_0: 'atlastamps.com',
 	_1: {
 		ctor: '::',
-		_0: 'corinphila.ch',
+		_0: 'americanastamps.com',
 		_1: {
 			ctor: '::',
-			_0: 'corinphila.nl',
+			_0: 'corinphila.ch',
 			_1: {
 				ctor: '::',
-				_0: 'corinphila.circuitauction.com',
+				_0: 'corinphila.nl',
 				_1: {
 					ctor: '::',
-					_0: 'hettinger-liveauktionen.de',
+					_0: 'corinphila.circuitauction.com',
 					_1: {
 						ctor: '::',
-						_0: 'heinrich-koehler.de',
+						_0: 'hettinger-liveauktionen.de',
 						_1: {
 							ctor: '::',
-							_0: 'harlos-auktion.de',
+							_0: 'heinrich-koehler.de',
 							_1: {
 								ctor: '::',
-								_0: 'hrharmer.com',
+								_0: 'harlos-auktion.de',
 								_1: {
 									ctor: '::',
-									_0: 'jbull.com',
+									_0: 'hrharmer.com',
 									_1: {
 										ctor: '::',
-										_0: 'kedem-auctions.com',
+										_0: 'jbull.com',
 										_1: {
 											ctor: '::',
-											_0: 'sellschopp-auktionen.de',
+											_0: 'kedem-auctions.com',
 											_1: {
 												ctor: '::',
-												_0: 'winners-auctions.com',
+												_0: 'sellschopp-auktionen.de',
 												_1: {
 													ctor: '::',
-													_0: 'www.heinrich-koehler.de',
+													_0: 'winners-auctions.com',
 													_1: {
 														ctor: '::',
-														_0: 'www.romanoauctions.com',
+														_0: 'www.heinrich-koehler.de',
 														_1: {
 															ctor: '::',
-															_0: 'www.atlastamps.com',
+															_0: 'www.romanoauctions.com',
 															_1: {
 																ctor: '::',
-																_0: 'www.stampcircuit.com',
-																_1: {ctor: '[]'}
+																_0: 'www.atlastamps.com',
+																_1: {
+																	ctor: '::',
+																	_0: 'www.stampcircuit.com',
+																	_1: {ctor: '[]'}
+																}
 															}
 														}
 													}
