@@ -47575,7 +47575,7 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: '172.24.0.2', _1: _Gizra$circuit_bid$LocalConfig$local},
+		_0: {ctor: '_Tuple2', _0: 'localhost', _1: _Gizra$circuit_bid$LocalConfig$local},
 		_1: {ctor: '[]'}
 	});
 
@@ -51964,33 +51964,18 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate = F2(
 	});
 var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk = F2(
 	function (calculated, model) {
-		nextBidAmountForClerk:
-		while (true) {
-			var currentPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, calculated, model);
-			var currentAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(currentPrice);
-			var nextBidAmount = function () {
-				var _p13 = currentPrice;
-				if (_p13.ctor === 'Opening') {
-					return currentAmount;
-				} else {
-					var nextBidIncrement = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculated.bidSteps, currentAmount);
-					return A2(_Gizra$circuit_bid$Amount$add, currentAmount, nextBidIncrement);
-				}
-			}();
-			if (A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts)) {
-				var _v10 = _elm_lang$core$Native_Utils.update(
-					calculated,
-					{
-						currentPrice: _elm_lang$core$Maybe$Just(nextBidAmount)
-					}),
-					_v11 = model;
-				calculated = _v10;
-				model = _v11;
-				continue nextBidAmountForClerk;
+		var currentPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, calculated, model);
+		var currentAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(currentPrice);
+		var nextBidAmount = function () {
+			var _p13 = currentPrice;
+			if (_p13.ctor === 'Opening') {
+				return currentAmount;
 			} else {
-				return nextBidAmount;
+				var nextBidIncrement = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculated.bidSteps, currentAmount);
+				return A2(_Gizra$circuit_bid$Amount$add, currentAmount, nextBidIncrement);
 			}
-		}
+		}();
+		return A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts) ? nextBidAmount : nextBidAmount;
 	});
 var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally = F5(
 	function (currentDate, language, sale, calculated, model) {
