@@ -160,6 +160,15 @@
     "loading": "Laden..."
   },
   "myBids": {
+    "close": "Schließen",
+    "showMore": "Mehr anzeigen",
+    "detailedView": "Detailansicht",
+    "summaryView": "Übersicht",
+    "lotNumber": "Los Nummer",
+    "openingPrice": "Startpreis",
+    "topBid": "Höchstgebot",
+    "soldFortable": "Verkauft für",
+    "loadingTitle": "Titel wird geladen...",
     "currentPrice": "Aktueller Preis: {{price}}",
     "youAreHighestBidder": "Sie sind der Höchstbietende",
     "filterHighest": "Artikel, bei denen ich der Höchstbietende bin",

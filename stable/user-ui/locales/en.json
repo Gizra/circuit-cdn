@@ -137,6 +137,14 @@
     "generalError": "An error occurred. Please try again."
   },
   "myBids": {
+    "close": "Close",
+    "showMore": "Show more",
+    "detailedView": "Detailed View",
+    "summaryView": "Summary View",
+    "lotNumber": "Lot Number",
+    "openingPrice": "Opening Price",
+    "topBid": "Top Bid",
+    "soldFortable": "Sold For",
     "loadingTitle": "Loading title...",
     "currentPrice": "Current Price: {{price}}",
     "youAreHighestBidder": "You are the highest bidder",
