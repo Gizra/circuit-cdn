@@ -157,6 +157,15 @@
     "loading": "Laden..."
   },
   "myBids": {
+    "close": "Sluiten",
+    "showMore": "Meer tonen",
+    "detailedView": "Gedetailleerde weergave",
+    "summaryView": "Overzicht",
+    "lotNumber": "Kavelnummer",
+    "openingPrice": "Startprijs",
+    "topBid": "Hoogste bod",
+    "soldFortable": "Verkocht voor",
+    "loadingTitle": "Titel laden...",
     "currentPrice": "Huidige prijs: {{price}}",
     "youAreHighestBidder": "U bent de hoogste bieder",
     "filterHighest": "Artikelen waar ik de hoogste bieder ben",

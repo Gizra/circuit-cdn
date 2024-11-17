@@ -157,6 +157,15 @@
     "loading": "Chargement..."
   },
   "myBids": {
+    "close": "Close",
+    "showMore": "Show more",
+    "detailedView": "Detailed View",
+    "summaryView": "Summary View",
+    "lotNumber": "Lot Number",
+    "openingPrice": "Opening Price",
+    "topBid": "Top Bid",
+    "soldFortable": "Sold For",
+    "loadingTitle": "Loading title...",
     "currentPrice": "Prix actuel : {{price}}",
     "youAreHighestBidder": "Vous êtes le plus offrant",
     "filterHighest": "Articles où je suis le plus offrant",

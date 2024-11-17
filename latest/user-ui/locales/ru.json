@@ -157,6 +157,15 @@
     "loading": "Загрузка..."
   },
   "myBids": {
+    "close": "Close",
+    "showMore": "Show more",
+    "detailedView": "Detailed View",
+    "summaryView": "Summary View",
+    "lotNumber": "Lot Number",
+    "openingPrice": "Opening Price",
+    "topBid": "Top Bid",
+    "soldFortable": "Sold For",
+    "loadingTitle": "Loading title...",
     "currentPrice": "Текущая цена: {{price}}",
     "youAreHighestBidder": "Вы являетесь лидирующим участником",
     "filterHighest": "Лоты, где я лидирующий участник",

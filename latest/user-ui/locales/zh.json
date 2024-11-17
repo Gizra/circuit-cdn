@@ -157,6 +157,15 @@
     "loading": "加载中..."
   },
   "myBids": {
+    "close": "Close",
+    "showMore": "Show more",
+    "detailedView": "Detailed View",
+    "summaryView": "Summary View",
+    "lotNumber": "Lot Number",
+    "openingPrice": "Opening Price",
+    "topBid": "Top Bid",
+    "soldFortable": "Sold For",
+    "loadingTitle": "Loading title...",
     "currentPrice": "当前价格：{{price}}",
     "youAreHighestBidder": "您是最高出价者",
     "filterHighest": "我为最高出价者的物品",
