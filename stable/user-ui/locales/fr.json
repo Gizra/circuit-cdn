@@ -157,6 +157,14 @@
     "loading": "Chargement..."
   },
   "myBids": {
+    "summary": {
+      "totalItemsBidOn": "Total Lots Bid On",
+      "openingTotal": "Opening Total",
+      "currentBidsTotal": "Current Bids Total",
+      "wonLots": "Total Lots Won",
+      "wonOpeningTotal": "Opening Total",
+      "soldForTotal": "Sold For Total"
+    },
     "close": "Close",
     "showMore": "Show more",
     "detailedView": "Detailed View",

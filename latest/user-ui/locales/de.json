@@ -160,6 +160,14 @@
     "loading": "Laden..."
   },
   "myBids": {
+    "summary": {
+      "totalItemsBidOn": "Gebotene Lose Insgesamt",
+      "openingTotal": "Startpreis Gesamt",
+      "currentBidsTotal": "Aktuelle Gebote Gesamt",
+      "wonLots": "Gewonnene Lose Insgesamt",
+      "wonOpeningTotal": "Startpreis Gesamt",
+      "soldForTotal": "Verkauft Für Gesamt"
+    },
     "close": "Schließen",
     "showMore": "Mehr anzeigen",
     "detailedView": "Detailansicht",

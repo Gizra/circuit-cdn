@@ -157,6 +157,14 @@
     "loading": "Laden..."
   },
   "myBids": {
+    "summary": {
+      "totalItemsBidOn": "Totaal Geboden Kavels",
+      "openingTotal": "Totaal Openingsbod",
+      "currentBidsTotal": "Totaal Huidige Biedingen",
+      "wonLots": "Totaal Gewonnen Kavels",
+      "wonOpeningTotal": "Totaal Openingsbod",
+      "soldForTotal": "Totaal Verkocht Voor"
+    },
     "close": "Sluiten",
     "showMore": "Meer tonen",
     "detailedView": "Gedetailleerde weergave",
