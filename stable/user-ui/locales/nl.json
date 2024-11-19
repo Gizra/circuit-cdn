@@ -163,7 +163,8 @@
       "currentBidsTotal": "Totaal Huidige Biedingen",
       "wonLots": "Totaal Gewonnen Kavels",
       "wonOpeningTotal": "Totaal Openingsbod",
-      "soldForTotal": "Totaal Verkocht Voor"
+      "soldForTotal": "Totaal Verkocht Voor",
+      "items": "Lots"
     },
     "close": "Sluiten",
     "showMore": "Meer tonen",

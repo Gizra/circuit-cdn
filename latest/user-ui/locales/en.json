@@ -143,7 +143,8 @@
       "currentBidsTotal": "Current Bids Total",
       "wonLots": "Total Lots Won",
       "wonOpeningTotal": "Opening Total",
-      "soldForTotal": "Sold For Total"
+      "soldForTotal": "Sold For Total",
+      "items": "Lots"
     },
     "close": "Close",
     "showMore": "Show more",
