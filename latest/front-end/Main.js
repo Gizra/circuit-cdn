@@ -56960,12 +56960,17 @@ var _gizra$backoffice$Pages_ItemPreLiveSale_View$viewFavoriteFlag = F4(
 							_elm_lang$html$Html$a,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(
-									A3(_gizra$backoffice$Pages_ItemPreLiveSale_Model$SetFavorite, _p79._0, _p80._0, !_p82)),
+								_0: _elm_lang$html$Html_Attributes$class(
+									A2(_elm_lang$core$Basics_ops['++'], 'fav', iconClass)),
 								_1: {
 									ctor: '::',
-									_0: _Gizra$elm_essentials$Gizra_Html$voidHref,
-									_1: {ctor: '[]'}
+									_0: _elm_lang$html$Html_Events$onClick(
+										A3(_gizra$backoffice$Pages_ItemPreLiveSale_Model$SetFavorite, _p79._0, _p80._0, !_p82)),
+									_1: {
+										ctor: '::',
+										_0: _Gizra$elm_essentials$Gizra_Html$voidHref,
+										_1: {ctor: '[]'}
+									}
 								}
 							},
 							{
