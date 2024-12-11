@@ -51975,7 +51975,19 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk = F2(
 				return A2(_Gizra$circuit_bid$Amount$add, currentAmount, nextBidIncrement);
 			}
 		}();
-		return A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts) ? nextBidAmount : nextBidAmount;
+		if (A2(_elm_lang$core$List$member, nextBidAmount, calculated.futureBookBidAmounts)) {
+			var calculatedAfterBookBid = _elm_lang$core$Native_Utils.update(
+				calculated,
+				{
+					currentPrice: _elm_lang$core$Maybe$Just(nextBidAmount)
+				});
+			var currentAmountAfterBookBid = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(
+				A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, calculatedAfterBookBid, model));
+			var nextBidIncrementAfterBookBid = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculatedAfterBookBid.bidSteps, currentAmountAfterBookBid);
+			return A2(_Gizra$circuit_bid$Amount$add, currentAmountAfterBookBid, nextBidIncrementAfterBookBid);
+		} else {
+			return nextBidAmount;
+		}
 	});
 var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally = F5(
 	function (currentDate, language, sale, calculated, model) {
