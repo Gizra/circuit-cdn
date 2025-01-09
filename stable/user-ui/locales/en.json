@@ -118,7 +118,8 @@
     "initializationError": "An error occurred while initializing the address formatter. Please try again.",
     "provincesLoadError": "An error occurred while loading the provinces. Please try again.",
     "saveError": "An error occurred while saving. Please try again.",
-    "override_address_name": "Use this fields only if you want to override Client Name for this address."
+    "override_address_name": "Use this fields only if you want to override Client Name for this address.",
+    "firstAddressDefault": "This address will be set as your default address since it's your first one."
   },
   "changePassword": {
     "newPasswordLabel": "Enter New Password",
