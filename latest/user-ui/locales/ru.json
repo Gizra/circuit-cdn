@@ -148,7 +148,7 @@
     "pendingCreditStatusMessageWithLimit": "Ваш кредитный запрос на сумму {{amount}} находится в ожидании. Ваш текущий кредит составляет {{approvedAmount}}.",
     "approvedFormHeading": "Мой кредитный лимит",
     "approvedButtonLabel": "Отправить новый кредитный запрос",
-    "approvedCreditStatusMessage": "Ваш кредитный запрос на сумму {{amount}} был одобрен.",
+    "approvedCreditStatusMessage": "Ваш кредитный запрос на сумму {{amount_request}} одобрен, ваш кредитный лимит составляет {{amount}}.",
     "rejectedCreditStatusMessage": "Ваш кредитный запрос был отклонен.",
     "creditRequestLabel": "Запрашиваемая сумма кредита ({{currency}})",
     "instructions": "Какую сумму кредита вы хотите запросить? Как только этот лимит будет достигнут, вы не сможете делать дальнейшие ставки.",

@@ -148,7 +148,7 @@
     "pendingCreditStatusMessageWithLimit": "您的信用额度申请{{amount}} 正在处理中。您的当前信用额度为{{approvedAmount}}。",
     "approvedFormHeading": "我的信用额度",
     "approvedButtonLabel": "发送新的信用额度申请",
-    "approvedCreditStatusMessage": "您的信用额度申请{{amount}} 已获批准。",
+    "approvedCreditStatusMessage": "您的信用额度申请 {{amount_request}} 已获批准，您的信用额度为 {{amount}}。",
     "rejectedCreditStatusMessage": "您的信用额度申请已被拒绝。",
     "creditRequestLabel": "申请信用额度 ({{currency}})",
     "instructions": "您希望申请多少信用额度？一旦达到此限额，您将无法继续出价。",

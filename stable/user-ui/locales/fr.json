@@ -148,7 +148,7 @@
     "pendingCreditStatusMessageWithLimit": "Votre demande de crédit de {{amount}} est en attente. Votre crédit actuel est de {{approvedAmount}}.",
     "approvedFormHeading": "Ma limite de crédit",
     "approvedButtonLabel": "Envoyer une nouvelle demande de crédit",
-    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount}} a été approuvée.",
+    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount_request}} a été approuvée, votre limite de crédit est de {{amount}}.",
     "rejectedCreditStatusMessage": "Votre demande de crédit a été rejetée.",
     "creditRequestLabel": "Montant de la demande de crédit ({{currency}})",
     "instructions": "Combien de crédit souhaitez-vous demander ? Une fois cette limite atteinte, vous ne pourrez plus placer d'enchères.",

@@ -151,7 +151,7 @@
     "pendingCreditStatusMessageWithLimit": "Ihre Kreditanfrage über {{amount}} ist ausstehend. Ihr aktueller Kredit beträgt {{approvedAmount}}.",
     "approvedFormHeading": "Mein Kreditlimit",
     "approvedButtonLabel": "Neue Kreditanfrage senden",
-    "approvedCreditStatusMessage": "Ihre Kreditanfrage über {{amount}} wurde genehmigt.",
+    "approvedCreditStatusMessage": "Ihre Kreditanfrage von {{amount_request}} wurde genehmigt, Ihr Kreditlimit beträgt {{amount}}.",
     "rejectedCreditStatusMessage": "Ihre Kreditanfrage wurde abgelehnt.",
     "creditRequestLabel": "Kreditbetrag anfordern ({{currency}})",
     "instructions": "Wie viel Kredit möchten Sie anfordern? Sobald dieses Limit erreicht ist, können Sie keine weiteren Gebote abgeben.",
