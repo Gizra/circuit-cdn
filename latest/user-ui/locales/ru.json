@@ -138,6 +138,7 @@
     "generalError": "Произошла ошибка. Пожалуйста, попробуйте еще раз."
   },
   "myCredit": {
+    "bidderNumber": "Участник № {{number}}",
     "formHeading": "Запросить кредит для онлайн-торгов",
     "buttonLabel": "Отправить запрос",
     "creditStatusMessage": "Кредитный запрос еще не сделан.",
@@ -146,6 +147,7 @@
     "pendingCreditStatusMessage": "Ваш кредитный запрос на сумму {{amount}} находится в ожидании.",
     "pendingCreditStatusMessageUnlimited": "Ваш кредитный запрос на сумму {{amount}} находится в ожидании. У вас неограниченный кредит.",
     "pendingCreditStatusMessageWithLimit": "Ваш кредитный запрос на сумму {{amount}} находится в ожидании. Ваш текущий кредит составляет {{approvedAmount}}.",
+    "approvedCreditStatusMessageUnlimited": "У вас неограниченный кредит.",
     "approvedFormHeading": "Мой кредитный лимит",
     "approvedButtonLabel": "Отправить новый кредитный запрос",
     "approvedCreditStatusMessage": "Ваш кредитный запрос на сумму {{amount_request}} одобрен, ваш кредитный лимит составляет {{amount}}.",

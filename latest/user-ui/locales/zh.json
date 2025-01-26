@@ -138,6 +138,7 @@
     "generalError": "发生错误，请重试。"
   },
   "myCredit": {
+    "bidderNumber": "竞买人编号 {{number}}",
     "formHeading": "申请在线竞标额度",
     "buttonLabel": "提交申请",
     "creditStatusMessage": "暂无信用额度申请记录。",
@@ -146,6 +147,7 @@
     "pendingCreditStatusMessage": "您的信用额度申请{{amount}} 正在处理中。",
     "pendingCreditStatusMessageUnlimited": "您的信用额度申请{{amount}} 正在处理中。您当前的信用额度为无限。",
     "pendingCreditStatusMessageWithLimit": "您的信用额度申请{{amount}} 正在处理中。您的当前信用额度为{{approvedAmount}}。",
+    "approvedCreditStatusMessageUnlimited": "您的信用额度不受限制。",
     "approvedFormHeading": "我的信用额度",
     "approvedButtonLabel": "发送新的信用额度申请",
     "approvedCreditStatusMessage": "您的信用额度申请 {{amount_request}} 已获批准，您的信用额度为 {{amount}}。",
