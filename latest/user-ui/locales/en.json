@@ -187,12 +187,6 @@
     "error": "Error"
   },
   "myCredit": {
-    "save": "Save",
-    "maxBidLimits": "Personal Bid Limits",
-    "maxBidLimit": "My Bid Limit",
-    "unlimited": "Unlimited",
-    "bidderNumber": "Bidder # {{number}}",
-    "maxBidUpdated": "Max bid limit updated successfully",
     "formHeading": "Request Credit for Online Bidding",
     "buttonLabel": "Send Request",
     "creditStatusMessage": "No credit request yet.",
@@ -203,8 +197,7 @@
     "pendingCreditStatusMessageWithLimit": "Your credit request of {{amount}} is pending. Your current credit is {{approvedAmount}}.",
     "approvedFormHeading": "My Credit Limit",
     "approvedButtonLabel": "Send New Credit Request",
-    "approvedCreditStatusMessage": "Your credit request of {{amount_request}} has been approved, your credit limit is {{amount}}.",
-    "approvedCreditStatusMessageUnlimited": "You have unlimited credit.",
+    "approvedCreditStatusMessage": "Your credit request of {{amount}} has been approved.",
     "rejectedCreditStatusMessage": "Your credit request has been rejected.",
     "creditRequestLabel": "Credit Request Amount ({{currency}})",
     "instructions": "How much credit would you like to request? Once this limit is reached, you will not be able to place further bids.",

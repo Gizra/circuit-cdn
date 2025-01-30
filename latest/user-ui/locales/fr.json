@@ -138,7 +138,6 @@
     "generalError": "Une erreur est survenue. Veuillez réessayer."
   },
   "myCredit": {
-    "bidderNumber": "Enchérisseur n° {{number}}",
     "formHeading": "Demande de crédit pour les enchères en ligne",
     "buttonLabel": "Envoyer la demande",
     "creditStatusMessage": "Pas encore de demande de crédit.",
@@ -147,10 +146,9 @@
     "pendingCreditStatusMessage": "Votre demande de crédit de {{amount}} est en attente.",
     "pendingCreditStatusMessageUnlimited": "Votre demande de crédit de {{amount}} est en attente. Vous avez un crédit illimité.",
     "pendingCreditStatusMessageWithLimit": "Votre demande de crédit de {{amount}} est en attente. Votre crédit actuel est de {{approvedAmount}}.",
-    "approvedCreditStatusMessageUnlimited": "Vous disposez d'un crédit illimité.",
     "approvedFormHeading": "Ma limite de crédit",
     "approvedButtonLabel": "Envoyer une nouvelle demande de crédit",
-    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount_request}} a été approuvée, votre limite de crédit est de {{amount}}.",
+    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount}} a été approuvée.",
     "rejectedCreditStatusMessage": "Votre demande de crédit a été rejetée.",
     "creditRequestLabel": "Montant de la demande de crédit ({{currency}})",
     "instructions": "Combien de crédit souhaitez-vous demander ? Une fois cette limite atteinte, vous ne pourrez plus placer d'enchères.",
