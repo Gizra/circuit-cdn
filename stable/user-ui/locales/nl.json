@@ -148,7 +148,7 @@
     "pendingCreditStatusMessageWithLimit": "Uw kredietverzoek van {{amount}} is in behandeling. Uw huidige krediet bedraagt {{approvedAmount}}.",
     "approvedFormHeading": "Mijn kredietlimiet",
     "approvedButtonLabel": "Nieuw kredietverzoek verzenden",
-    "approvedCreditStatusMessage": "Uw kredietverzoek van {{amount_request}} is goedgekeurd, uw kredietlimiet is {{amount}}.",
+    "approvedCreditStatusMessage": "Uw kredietverzoek van {{amount}} is goedgekeurd.",
     "rejectedCreditStatusMessage": "Uw kredietverzoek is afgewezen.",
     "creditRequestLabel": "Kredietaanvraagbedrag ({{currency}})",
     "instructions": "Hoeveel krediet wilt u aanvragen? Zodra deze limiet is bereikt, kunt u geen verdere biedingen plaatsen.",
