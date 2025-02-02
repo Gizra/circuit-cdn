@@ -138,6 +138,7 @@
     "generalError": "Er is een fout opgetreden. Probeer het opnieuw."
   },
   "myCredit": {
+    "bidderNumber": "Bieder nr. {{number}}",
     "formHeading": "Krediet aanvragen voor online bieden",
     "buttonLabel": "Verzoek verzenden",
     "creditStatusMessage": "Nog geen kredietverzoek.",
@@ -146,9 +147,10 @@
     "pendingCreditStatusMessage": "Uw kredietverzoek van {{amount}} is in behandeling.",
     "pendingCreditStatusMessageUnlimited": "Uw kredietverzoek van {{amount}} is in behandeling. U heeft onbeperkt krediet.",
     "pendingCreditStatusMessageWithLimit": "Uw kredietverzoek van {{amount}} is in behandeling. Uw huidige krediet bedraagt {{approvedAmount}}.",
+    "approvedCreditStatusMessageUnlimited": "U heeft onbeperkt krediet.",
     "approvedFormHeading": "Mijn kredietlimiet",
     "approvedButtonLabel": "Nieuw kredietverzoek verzenden",
-    "approvedCreditStatusMessage": "Uw kredietverzoek van {{amount}} is goedgekeurd.",
+    "approvedCreditStatusMessage": "Uw kredietverzoek van {{amount_request}} is goedgekeurd, uw kredietlimiet is {{amount}}.",
     "rejectedCreditStatusMessage": "Uw kredietverzoek is afgewezen.",
     "creditRequestLabel": "Kredietaanvraagbedrag ({{currency}})",
     "instructions": "Hoeveel krediet wilt u aanvragen? Zodra deze limiet is bereikt, kunt u geen verdere biedingen plaatsen.",
