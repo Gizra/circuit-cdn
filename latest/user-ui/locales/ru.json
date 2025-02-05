@@ -13,7 +13,8 @@
     "loginButton": "Войти",
     "forgotPassword": "Забыли пароль?",
     "emailPlaceholder": "Введите ваш адрес электронной почты",
-    "passwordPlaceholder": "Введите ваш пароль"
+    "passwordPlaceholder": "Введите ваш пароль",
+    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them."
   },
   "register": {
     "title": "Создать аккаунт",
@@ -90,7 +91,9 @@
     "addNewAddress": "Добавить новый адрес",
     "error": "Ошибка",
     "standardInternationalFormat": "Стандартный международный формат",
-    "phoneNumberInstructions": "Пожалуйста, введите ваш местный номер телефона. Полный отформатированный номер, включая международный код страны, будет отображен ниже."
+    "phoneNumberInstructions": "Пожалуйста, введите ваш местный номер телефона. Полный отформатированный номер, включая международный код страны, будет отображен ниже.",
+    "shippingInstructions": "[NEEDS_TRANSLATION]Shipping Instructions",
+    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here"
   },
   "addressForm": {
     "firstName": "Имя",
@@ -111,7 +114,6 @@
     },
     "title": "Обращение",
     "selectTitle": "Выберите ваше обращение",
-    "careOf": "На имя",
     "country": "Страна",
     "selectCountry": "Выберите страну",
     "delete": "Удалить Адрес",
@@ -119,7 +121,9 @@
     "error": "Ошибка",
     "initializationError": "Произошла ошибка при инициализации форматирования адреса. Пожалуйста, попробуйте еще раз.",
     "provincesLoadError": "Произошла ошибка при загрузке областей. Пожалуйста, попробуйте еще раз.",
-    "saveError": "Произошла ошибка при сохранении. Пожалуйста, попробуйте еще раз."
+    "saveError": "Произошла ошибка при сохранении. Пожалуйста, попробуйте еще раз.",
+    "override_address_name": "[NEEDS_TRANSLATION]Use this fields only if you want to override Client Name for this address.",
+    "firstAddressDefault": "[NEEDS_TRANSLATION]This address will be set as your default address since it's your first one."
   },
   "changePassword": {
     "newPasswordLabel": "Введите новый пароль",
@@ -156,7 +160,21 @@
     "instructions": "Какую сумму кредита вы хотите запросить? Как только этот лимит будет достигнут, вы не сможете делать дальнейшие ставки.",
     "noCommasOrDecimals": "Пожалуйста, не используйте запятые или десятичные точки.",
     "error": "Ошибка",
-    "loading": "Загрузка..."
+    "loading": "Загрузка...",
+    "pageTitle": "[NEEDS_TRANSLATION]Manage Your Credit & Bidding Limits",
+    "maxBidLimits": "[NEEDS_TRANSLATION]Personal Bidding Limits",
+    "maxBidLimitsHelp": "[NEEDS_TRANSLATION]In this section you can set your own limit to any bidder number you have. Limiting the bids will cut off your potential winnings at that number so you don't end up winning more than you have planned on spending.",
+    "maxBidLimit": "[NEEDS_TRANSLATION]My Bid Limit",
+    "unlimited": "[NEEDS_TRANSLATION]Unlimited",
+    "maxBidUpdated": "[NEEDS_TRANSLATION]Max bid limit updated successfully",
+    "approvedCreditStatusMessageModified": "[NEEDS_TRANSLATION]Following review, your credit request of {{amount_request}} has been set to {{current_amount}}.",
+    "approvedCreditStatusMessageNoRequest": "[NEEDS_TRANSLATION]Your credit limit is {{amount}}.",
+    "creditRequestSubmitted": "[NEEDS_TRANSLATION]Credit Request Submitted",
+    "creditRequestDescription": "[NEEDS_TRANSLATION]Your credit request for {{amount}} has been submitted.",
+    "setBiddingLimit": "[NEEDS_TRANSLATION]Set Bidding Limit",
+    "currentLimit": "[NEEDS_TRANSLATION]Current Limit",
+    "bidLimitSubmitted": "[NEEDS_TRANSLATION]Bid Limit Updated",
+    "rejectedCreditStatusMessageUnlimited": "[NEEDS_TRANSLATION]Your credit request has been rejected. You have unlimited credit."
   },
   "myBids": {
     "summary": {
@@ -168,7 +186,7 @@
       "soldForTotal": "Sold For Total",
       "items": "Lots"
     },
-    "close": "Close",
+    "close": "Закрыть",
     "showMore": "Show more",
     "detailedView": "Detailed View",
     "summaryView": "Summary View",
@@ -202,9 +220,32 @@
     "myBid": "Моя ставка",
     "bidderId": "Участник {{id}}",
     "viewMoreLotDetails": "Посмотреть больше деталей лота",
-    "close": "Закрыть",
     "clickOnSaleName": "Нажмите на название продажи выше, чтобы увидеть детали о ваших ставках и кредите для этой продажи.",
-    "error": "Ошибка"
+    "error": "Ошибка",
+    "filterNotHighest": "[NEEDS_TRANSLATION]Items where I'm not the highest bidder",
+    "addToGroup": "[NEEDS_TRANSLATION]Add to Or Bids Group",
+    "noGroup": "[NEEDS_TRANSLATION]No Or Bids Group",
+    "groupName": "[NEEDS_TRANSLATION]Or Bids Group {{group}}",
+    "save": "[NEEDS_TRANSLATION]Save",
+    "edit": "[NEEDS_TRANSLATION]Edit",
+    "bidGroups": "[NEEDS_TRANSLATION]Or Bid Group",
+    "groupWithLots": "[NEEDS_TRANSLATION]Group {{group}} - Lots {{lots}}",
+    "alternativeLots": "[NEEDS_TRANSLATION]Alternative lots: {{lots}}",
+    "deleted": "[NEEDS_TRANSLATION]deleted",
+    "group": "[NEEDS_TRANSLATION]Or Bid Group",
+    "bidderNumber": "[NEEDS_TRANSLATION]Bidder #",
+    "bidInfo": "[NEEDS_TRANSLATION]({type} #{id})",
+    "cannotEditGroup": "[NEEDS_TRANSLATION]Or Bid Group editing is only available for active items",
+    "groupUpdateSuccess": "[NEEDS_TRANSLATION]Or Bid Group Updated",
+    "groupRemoved": "[NEEDS_TRANSLATION]Item removed from Or Bid Group",
+    "groupAssigned": "[NEEDS_TRANSLATION]Item assigned to Or Bid Group {group}",
+    "groupUpdateError": "[NEEDS_TRANSLATION]Failed to update Or Bid Group",
+    "orGroupExplanation": {
+      "title": "[NEEDS_TRANSLATION]OR Bids Group",
+      "main": "[NEEDS_TRANSLATION]Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
+      "example": "[NEEDS_TRANSLATION]Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
+    },
+    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items"
   },
   "userBlock": {
     "login": "Войти",

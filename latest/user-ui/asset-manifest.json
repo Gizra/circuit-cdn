@@ -1,14 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.d065b071.css",
-    "main.js": "/static/js/main.5f34b6cc.js",
+    "main.css": "/static/css/main.a7f730c8.css",
+    "main.js": "/static/js/main.fe1d2405.js",
+    "static/media/aukphila-webfont.svg": "/static/media/aukphila-webfont.25a5900b4a8dd5fb9a5c.svg",
+    "static/media/aukphila-webfont.ttf": "/static/media/aukphila-webfont.d68d41ea7191c9eb6f9f.ttf",
+    "static/media/aukphila-webfont.woff": "/static/media/aukphila-webfont.1680c7a314bf2be6e38f.woff",
+    "static/media/aukphila-webfont.eot": "/static/media/aukphila-webfont.557d63b8a64066b65457.eot",
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
-    "main.d065b071.css.map": "/static/css/main.d065b071.css.map",
-    "main.5f34b6cc.js.map": "/static/js/main.5f34b6cc.js.map"
+    "main.a7f730c8.css.map": "/static/css/main.a7f730c8.css.map",
+    "main.fe1d2405.js.map": "/static/js/main.fe1d2405.js.map"
   },
   "entrypoints": [
-    "static/css/main.d065b071.css",
-    "static/js/main.5f34b6cc.js"
+    "static/css/main.a7f730c8.css",
+    "static/js/main.fe1d2405.js"
   ]
 }

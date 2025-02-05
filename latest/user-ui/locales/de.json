@@ -13,7 +13,8 @@
     "loginButton": "Anmelden",
     "forgotPassword": "Passwort vergessen?",
     "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
-    "passwordPlaceholder": "Geben Sie Ihr Passwort ein"
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them."
   },
   "register": {
     "title": "Konto erstellen",
@@ -113,7 +114,6 @@
     },
     "title": "Anrede",
     "selectTitle": "Wählen Sie Ihre Anrede",
-    "careOf": "c/o",
     "country": "Land",
     "selectCountry": "Wählen Sie ein Land",
     "delete": "Adresse löschen",
@@ -122,7 +122,8 @@
     "initializationError": "Bei der Initialisierung des Adressformatierers ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "provincesLoadError": "Beim Laden der Provinzen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "saveError": "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten."
+    "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten.",
+    "firstAddressDefault": "[NEEDS_TRANSLATION]This address will be set as your default address since it's your first one."
   },
   "changePassword": {
     "newPasswordLabel": "Neues Passwort eingeben",
@@ -159,7 +160,21 @@
     "instructions": "Wie viel Kredit möchten Sie anfordern? Sobald dieses Limit erreicht ist, können Sie keine weiteren Gebote abgeben.",
     "noCommasOrDecimals": "Bitte verwenden Sie keine Kommas oder Dezimalstellen.",
     "error": "Fehler",
-    "loading": "Laden..."
+    "loading": "Laden...",
+    "pageTitle": "[NEEDS_TRANSLATION]Manage Your Credit & Bidding Limits",
+    "maxBidLimits": "[NEEDS_TRANSLATION]Personal Bidding Limits",
+    "maxBidLimitsHelp": "[NEEDS_TRANSLATION]In this section you can set your own limit to any bidder number you have. Limiting the bids will cut off your potential winnings at that number so you don't end up winning more than you have planned on spending.",
+    "maxBidLimit": "[NEEDS_TRANSLATION]My Bid Limit",
+    "unlimited": "[NEEDS_TRANSLATION]Unlimited",
+    "maxBidUpdated": "[NEEDS_TRANSLATION]Max bid limit updated successfully",
+    "approvedCreditStatusMessageModified": "[NEEDS_TRANSLATION]Following review, your credit request of {{amount_request}} has been set to {{current_amount}}.",
+    "approvedCreditStatusMessageNoRequest": "[NEEDS_TRANSLATION]Your credit limit is {{amount}}.",
+    "creditRequestSubmitted": "[NEEDS_TRANSLATION]Credit Request Submitted",
+    "creditRequestDescription": "[NEEDS_TRANSLATION]Your credit request for {{amount}} has been submitted.",
+    "setBiddingLimit": "[NEEDS_TRANSLATION]Set Bidding Limit",
+    "currentLimit": "[NEEDS_TRANSLATION]Current Limit",
+    "bidLimitSubmitted": "[NEEDS_TRANSLATION]Bid Limit Updated",
+    "rejectedCreditStatusMessageUnlimited": "[NEEDS_TRANSLATION]Your credit request has been rejected. You have unlimited credit."
   },
   "myBids": {
     "summary": {
@@ -171,7 +186,7 @@
       "soldForTotal": "Zuschlagssumme",
       "items": "Lose"
     },
-    "close": "Schließen",
+    "close": "schließen",
     "showMore": "Mehr anzeigen",
     "detailedView": "Detailansicht",
     "summaryView": "Übersicht",
@@ -205,9 +220,32 @@
     "myBid": "Mein Gebot",
     "bidderId": "Bieter {{id}}",
     "viewMoreLotDetails": "weitere Losdetails anzeigen",
-    "close": "schließen",
     "clickOnSaleName": "Klicken Sie oben auf den Auktionsnamen, um Details zu Ihren Geboten und Krediten für diesen Auktion anzuzeigen.",
-    "error": "Fehler"
+    "error": "Fehler",
+    "filterNotHighest": "[NEEDS_TRANSLATION]Items where I'm not the highest bidder",
+    "addToGroup": "[NEEDS_TRANSLATION]Add to Or Bids Group",
+    "noGroup": "[NEEDS_TRANSLATION]No Or Bids Group",
+    "groupName": "[NEEDS_TRANSLATION]Or Bids Group {{group}}",
+    "save": "[NEEDS_TRANSLATION]Save",
+    "edit": "[NEEDS_TRANSLATION]Edit",
+    "bidGroups": "[NEEDS_TRANSLATION]Or Bid Group",
+    "groupWithLots": "[NEEDS_TRANSLATION]Group {{group}} - Lots {{lots}}",
+    "alternativeLots": "[NEEDS_TRANSLATION]Alternative lots: {{lots}}",
+    "deleted": "[NEEDS_TRANSLATION]deleted",
+    "group": "[NEEDS_TRANSLATION]Or Bid Group",
+    "bidderNumber": "[NEEDS_TRANSLATION]Bidder #",
+    "bidInfo": "[NEEDS_TRANSLATION]({type} #{id})",
+    "cannotEditGroup": "[NEEDS_TRANSLATION]Or Bid Group editing is only available for active items",
+    "groupUpdateSuccess": "[NEEDS_TRANSLATION]Or Bid Group Updated",
+    "groupRemoved": "[NEEDS_TRANSLATION]Item removed from Or Bid Group",
+    "groupAssigned": "[NEEDS_TRANSLATION]Item assigned to Or Bid Group {group}",
+    "groupUpdateError": "[NEEDS_TRANSLATION]Failed to update Or Bid Group",
+    "orGroupExplanation": {
+      "title": "[NEEDS_TRANSLATION]OR Bids Group",
+      "main": "[NEEDS_TRANSLATION]Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
+      "example": "[NEEDS_TRANSLATION]Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
+    },
+    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items"
   },
   "userBlock": {
     "login": "Anmelden",
