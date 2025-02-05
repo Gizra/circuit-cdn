@@ -272,7 +272,9 @@
     "myAccount": "My Account",
     "myBidsAndCredit": "My Bids & Credit",
     "logout": "Logout",
-    "logoutSuccessful": "Logout successful"
+    "logoutSuccessful": "Logout successful",
+    "myFavorites": "My Favorites",
+    "myInterests": "My Interests"
   },
   "legacy": {
     "bid": {
