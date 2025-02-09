@@ -270,11 +270,11 @@
     "or": "Or",
     "user": "User",
     "myAccount": "My Account",
-    "myBidsAndCredit": "My Bids & Credit",
+    "myBidsAndCredit": "Bids & Credit",
     "logout": "Logout",
     "logoutSuccessful": "Logout successful",
-    "myFavorites": "My Favorites",
-    "myInterests": "My Interests"
+    "myFavorites": "Favorites",
+    "myInterests": "Area of Interest"
   },
   "legacy": {
     "bid": {
