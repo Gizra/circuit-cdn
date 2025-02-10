@@ -47259,23 +47259,14 @@ var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo = _elm_lang$core$Json_D
 			_1: {ctor: '[]'}
 		}
 	});
-var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfoFromJson = _elm_lang$core$Json_Decode$oneOf(
+var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfoFromJson = A2(
+	_elm_lang$core$Json_Decode$at,
 	{
 		ctor: '::',
-		_0: A2(
-			_elm_lang$core$Json_Decode$at,
-			{
-				ctor: '::',
-				_0: 'currencies_info',
-				_1: {ctor: '[]'}
-			},
-			_Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo),
-		_1: {
-			ctor: '::',
-			_0: _elm_lang$core$Json_Decode$succeed(_eeue56$elm_all_dict$EveryDict$empty),
-			_1: {ctor: '[]'}
-		}
-	});
+		_0: 'currenciesInfo',
+		_1: {ctor: '[]'}
+	},
+	_Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo);
 var _Gizra$circuit_bid$Sale_Decoder$decodeSaleTitleFromJson = A2(
 	_elm_lang$core$Json_Decode$at,
 	{
