@@ -33825,6 +33825,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'Address 1', dutch: 'Adres 1', german: 'Adresse Zeile 1', hebrew: 'שורת כתובת 1', russian: 'Адрес 1', chinese: '地址1', french: 'Adresse ligne 1'};
 				case 'AddressLine2':
 					return {english: 'Address 2', dutch: 'Adres 2', german: 'Adresse Zeile 1', hebrew: 'שורת כתובת 2', russian: 'Адрес 2', chinese: '地址2', french: 'Adresse ligne 2'};
+				case 'Agent':
+					return {english: 'Agent', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'AgentBidder':
 					return {english: 'Online agent', dutch: 'Autobod', german: 'Autogebot ', hebrew: 'סוכן חכם', russian: 'Онлайн-агент', chinese: '在线代理', french: 'Agent en ligne'};
 				case 'AmountLimit':
@@ -34615,6 +34617,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 						chinese: A2(_elm_lang$core$Basics_ops['++'], '估计 ', value),
 						french: A2(_elm_lang$core$Basics_ops['++'], 'Estimation ', value)
 					};
+				case 'External':
+					return {english: 'External', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'FieldIsRequired':
 					return {english: 'This field is required', dutch: 'Dit veld is verplicht', german: 'Dieses Feld ist erforderlich', hebrew: 'שדה זה הוא חובה', russian: 'Это поле обязательно для заполнения', chinese: '该字段是必填的', french: 'Ce champ est obligatoire'};
 				case 'FirstName':
@@ -34627,8 +34631,12 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'Login', dutch: 'Login', german: 'Login', hebrew: 'התחברות', russian: 'Войти', chinese: '登录', french: 'Connexion'};
 				case 'ForgotYourPassword':
 					return {english: 'Forgot your password?', dutch: 'Uw wachtwoord vergeten?', german: 'Passwort vergessen?', hebrew: 'שכחת את הסיסמא?', russian: 'Забыли ваш пароль?', chinese: '忘记了您的密码？', french: 'Vous avez oublié votre mot de passe?'};
+				case 'Floor':
+					return {english: 'Floor', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'FloorBidder':
 					return {english: 'Floor', dutch: 'Zaal', german: 'Saal', hebrew: 'חדר', russian: 'Зал', chinese: '现场', french: 'Salle'};
+				case 'FloorByAgent':
+					return {english: 'Floor by Agent', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'Going':
 					return {english: 'Going', dutch: 'Gaan', german: 'zum ersten...zum zweiten...', hebrew: 'עומד להיסגר', russian: 'Текущая ставка', chinese: '进行中', french: 'En cours'};
 				case 'Gone':
@@ -35115,6 +35123,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'The auction will start shortly.', dutch: 'De veiling start binnenkort.', german: 'Die Auktion beginnt in Kürze.', hebrew: 'המכירה תתחיל בקרוב.', russian: 'Аукцион скоро начнется.', chinese: '拍卖即将开始。', french: 'L\'enchère commencera sous peu.'};
 				case 'Philately':
 					return {english: 'Philately', dutch: 'Philately', german: 'Philately', hebrew: 'בולים', russian: 'Филателия', chinese: '邮票收藏', french: 'Philatélie'};
+				case 'Phone':
+					return {english: 'Phone', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'PhoneNumber':
 					return {english: 'Phone number', dutch: 'Telefoonnummer', german: 'Telefonnummer', hebrew: 'טלפון', russian: 'Номер телефона', chinese: '电话号码', french: 'Numéro de téléphone'};
 				case 'PlaceBid':
@@ -35265,6 +35275,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'To Update Bid', dutch: 'Bod bijwerken', german: 'Um das Gebot aktualisieren', hebrew: 'לעדכון ההצעה', russian: 'Обновить ставку', chinese: '更新出价', french: 'Mettre à jour l\'enchère'};
 				case 'UpdatePausedMessage':
 					return {english: 'Update Paused Message', dutch: 'Update onderbroken bericht', german: 'Pausierte Auktion Nachricht aktualisieren', hebrew: 'עדכון הודעת מכירה בהפסקה', russian: 'Обновить сообщение о паузе', chinese: '更新暂停消息', french: 'Mettre à jour le message en pause'};
+				case 'Website':
+					return {english: 'Website', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'UnknownBidder':
 					return {english: 'Unknown Bidder!', dutch: 'Onbekende bieder!', german: 'Unknown Bidder!', hebrew: 'מציע לא ידוע!', russian: 'Неизвестный участник!', chinese: '未知出价者！', french: 'Enchérisseur inconnu!'};
 				case 'UnrecognizedCredentialsMessage':
@@ -39134,6 +39146,7 @@ var _Gizra$circuit_bid$Translate$WelcomeMessage = F5(
 var _Gizra$circuit_bid$Translate$Welcome = function (a) {
 	return {ctor: 'Welcome', _0: a};
 };
+var _Gizra$circuit_bid$Translate$Website = {ctor: 'Website'};
 var _Gizra$circuit_bid$Translate$UpdatePausedMessage = {ctor: 'UpdatePausedMessage'};
 var _Gizra$circuit_bid$Translate$UsernameEmail = {ctor: 'UsernameEmail'};
 var _Gizra$circuit_bid$Translate$Username = {ctor: 'Username'};
@@ -39198,6 +39211,7 @@ var _Gizra$circuit_bid$Translate$PlaceBidAmount = F2(
 	});
 var _Gizra$circuit_bid$Translate$PlaceBid = {ctor: 'PlaceBid'};
 var _Gizra$circuit_bid$Translate$PhoneNumber = {ctor: 'PhoneNumber'};
+var _Gizra$circuit_bid$Translate$Phone = {ctor: 'Phone'};
 var _Gizra$circuit_bid$Translate$Philately = {ctor: 'Philately'};
 var _Gizra$circuit_bid$Translate$PausedStartingSoonMessage = {ctor: 'PausedStartingSoonMessage'};
 var _Gizra$circuit_bid$Translate$PausedStartingSoon = {ctor: 'PausedStartingSoon'};
@@ -39310,9 +39324,12 @@ var _Gizra$circuit_bid$Translate$ForgotYourPassword = {ctor: 'ForgotYourPassword
 var _Gizra$circuit_bid$Translate$ForgotPasswordLogin = {ctor: 'ForgotPasswordLogin'};
 var _Gizra$circuit_bid$Translate$ForgotPassword = {ctor: 'ForgotPassword'};
 var _Gizra$circuit_bid$Translate$ForgotMyPassword = {ctor: 'ForgotMyPassword'};
+var _Gizra$circuit_bid$Translate$FloorByAgent = {ctor: 'FloorByAgent'};
 var _Gizra$circuit_bid$Translate$FloorBidder = {ctor: 'FloorBidder'};
+var _Gizra$circuit_bid$Translate$Floor = {ctor: 'Floor'};
 var _Gizra$circuit_bid$Translate$FirstName = {ctor: 'FirstName'};
 var _Gizra$circuit_bid$Translate$FieldIsRequired = {ctor: 'FieldIsRequired'};
+var _Gizra$circuit_bid$Translate$External = {ctor: 'External'};
 var _Gizra$circuit_bid$Translate$Estimate = F2(
 	function (a, b) {
 		return {ctor: 'Estimate', _0: a, _1: b};
@@ -39459,6 +39476,7 @@ var _Gizra$circuit_bid$Translate$AmountLimit = function (a) {
 	return {ctor: 'AmountLimit', _0: a};
 };
 var _Gizra$circuit_bid$Translate$AgentBidder = {ctor: 'AgentBidder'};
+var _Gizra$circuit_bid$Translate$Agent = {ctor: 'Agent'};
 var _Gizra$circuit_bid$Translate$AddressLine2 = {ctor: 'AddressLine2'};
 var _Gizra$circuit_bid$Translate$AddressLine1 = {ctor: 'AddressLine1'};
 var _Gizra$circuit_bid$Translate$Address = {ctor: 'Address'};
@@ -40224,9 +40242,9 @@ var _Gizra$circuit_bid$PaginatedData$PaginatedData = F3(
 		return {data: a, pager: b, totalCount: c};
 	});
 
-var _Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfo = F6(
-	function (a, b, c, d, e, f) {
-		return {bidderNumber: a, agent: b, amountRestrictions: c, totalSpent: d, userId: e, userName: f};
+var _Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfo = F7(
+	function (a, b, c, d, e, f, g) {
+		return {bidderNumber: a, agent: b, agentName: c, amountRestrictions: d, totalSpent: e, userId: f, userName: g};
 	});
 var _Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfoParams = F2(
 	function (a, b) {
@@ -40256,6 +40274,7 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Model$LiveCredit = {ctor: 'LiveCredit'
 var _Gizra$circuit_bid$Backend_BidderInfo_Model$emptyBidderInfo = {
 	bidderNumber: _Gizra$circuit_bid$Backend_BidderInfo_Model$Floor(0),
 	agent: _elm_lang$core$Maybe$Nothing,
+	agentName: '',
 	amountRestrictions: _eeue56$elm_all_dict$EveryDict$fromList(
 		{
 			ctor: '::',
@@ -45297,6 +45316,32 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderNumber = function 
 		},
 		A2(_elm_lang$core$Json_Decode$field, 'bidder_type', _elm_lang$core$Json_Decode$string));
 }();
+var _Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeAgentName = A2(
+	_elm_lang$core$Json_Decode$andThen,
+	function (_p3) {
+		var _p4 = _p3;
+		return _elm_lang$core$Json_Decode$succeed(
+			_elm_lang$core$String$trim(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_p4._0,
+					A2(_elm_lang$core$Basics_ops['++'], ' ', _p4._1))));
+	},
+	A4(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+		'agent_last_name',
+		_elm_lang$core$Json_Decode$string,
+		'',
+		A4(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+			'agent_first_name',
+			_elm_lang$core$Json_Decode$string,
+			'',
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(
+				F2(
+					function (v0, v1) {
+						return {ctor: '_Tuple2', _0: v0, _1: v1};
+					})))));
 var _Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderInfo = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
 	'user_name',
@@ -45314,15 +45359,18 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderInfo = A4(
 			A2(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
 				_Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeAmountRestrictionType,
-				A4(
-					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-					'agent',
-					_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Backend_Decoder$decodeUserId),
-					_elm_lang$core$Maybe$Nothing,
-					A2(
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
-						_Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderNumber,
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfo)))))));
+				A2(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+					_Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeAgentName,
+					A4(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+						'agent',
+						_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Backend_Decoder$decodeUserId),
+						_elm_lang$core$Maybe$Nothing,
+						A2(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+							_Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderNumber,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfo))))))));
 
 var _Gizra$circuit_bid$Backend_BidderInfo_Encoder$encodeBidderInfo = function (entity) {
 	var maxBid = {
@@ -45387,42 +45435,60 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Endpoint$endpoint = A2(
 		_Gizra$circuit_bid$Backend_BidderInfo_Encoder$encodeBidderInfo,
 		A2(_Gizra$elm_restful$Restful_Endpoint$drupalEndpoint, 'api/bidder_ids', _Gizra$circuit_bid$Backend_BidderInfo_Decoder$decodeBidderInfo)));
 
+var _Gizra$circuit_bid$Backend_BidderInfo_Utils$getTypeAsString = F2(
+	function (language, entity) {
+		var _p0 = entity.bidderNumber;
+		switch (_p0.ctor) {
+			case 'External':
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$External);
+			case 'Floor':
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Floor);
+			case 'FloorByAgent':
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$FloorByAgent);
+			case 'Mail':
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Mail);
+			case 'Phone':
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Phone);
+			default:
+				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Website);
+		}
+	});
 var _Gizra$circuit_bid$Backend_BidderInfo_Utils$getNumber = function (entity) {
-	var _p0 = entity.bidderNumber;
-	switch (_p0.ctor) {
+	var _p1 = entity.bidderNumber;
+	switch (_p1.ctor) {
 		case 'External':
-			return _p0._0;
+			return _p1._0;
 		case 'Floor':
-			return _p0._0;
+			return _p1._0;
 		case 'FloorByAgent':
-			return _p0._0;
+			return _p1._0;
 		case 'Mail':
-			return _p0._0;
+			return _p1._0;
 		case 'Phone':
-			return _p0._0;
+			return _p1._0;
 		default:
-			return _p0._0;
+			return _p1._0;
 	}
 };
 var _Gizra$circuit_bid$Backend_BidderInfo_Utils$isWebsite = function (entity) {
-	var _p1 = entity.bidderNumber;
-	if (_p1.ctor === 'Website') {
+	var _p2 = entity.bidderNumber;
+	if (_p2.ctor === 'Website') {
 		return true;
 	} else {
 		return false;
 	}
 };
 var _Gizra$circuit_bid$Backend_BidderInfo_Utils$isPhone = function (entity) {
-	var _p2 = entity.bidderNumber;
-	if (_p2.ctor === 'Phone') {
+	var _p3 = entity.bidderNumber;
+	if (_p3.ctor === 'Phone') {
 		return true;
 	} else {
 		return false;
 	}
 };
 var _Gizra$circuit_bid$Backend_BidderInfo_Utils$isFloorByAgent = function (entity) {
-	var _p3 = entity.bidderNumber;
-	if (_p3.ctor === 'FloorByAgent') {
+	var _p4 = entity.bidderNumber;
+	if (_p4.ctor === 'FloorByAgent') {
 		return true;
 	} else {
 		return false;
@@ -45435,7 +45501,7 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Utils$generateBiddersInfoDictByUserId 
 			_eeue56$elm_all_dict$EveryDict$empty,
 			A2(
 				_elm_lang$core$Maybe$map,
-				function (_p4) {
+				function (_p5) {
 					return _eeue56$elm_all_dict$EveryDict$fromList(
 						A2(
 							_elm_lang$core$List$filterMap,
@@ -45449,14 +45515,14 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Utils$generateBiddersInfoDictByUserId 
 							},
 							A2(
 								_elm_lang$core$List$map,
-								function (_p5) {
+								function (_p6) {
 									return _stoeffel$editable$Editable$value(
-										_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p5));
+										_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p6));
 								},
 								_Gizra$elm_dictlist$EveryDictList$values(
 									function (_) {
 										return _.data;
-									}(_p4)))));
+									}(_p5)))));
 				},
 				A2(
 					_elm_lang$core$Maybe$andThen,
@@ -47193,23 +47259,14 @@ var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo = _elm_lang$core$Json_D
 			_1: {ctor: '[]'}
 		}
 	});
-var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfoFromJson = _elm_lang$core$Json_Decode$oneOf(
+var _Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfoFromJson = A2(
+	_elm_lang$core$Json_Decode$at,
 	{
 		ctor: '::',
-		_0: A2(
-			_elm_lang$core$Json_Decode$at,
-			{
-				ctor: '::',
-				_0: 'currencies_info',
-				_1: {ctor: '[]'}
-			},
-			_Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo),
-		_1: {
-			ctor: '::',
-			_0: _elm_lang$core$Json_Decode$succeed(_eeue56$elm_all_dict$EveryDict$empty),
-			_1: {ctor: '[]'}
-		}
-	});
+		_0: 'currenciesInfo',
+		_1: {ctor: '[]'}
+	},
+	_Gizra$circuit_bid$Sale_Decoder$decodeCurrenciesInfo);
 var _Gizra$circuit_bid$Sale_Decoder$decodeSaleTitleFromJson = A2(
 	_elm_lang$core$Json_Decode$at,
 	{
@@ -50765,22 +50822,68 @@ var _Gizra$circuit_bid$Utils_Html$showMaybe = F2(
 			A2(_elm_lang$core$Maybe$map, func, maybe));
 	});
 
-var _Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString = function (bidderInfo) {
-	var number = _Gizra$circuit_bid$Backend_BidderInfo_Utils$getNumber(bidderInfo);
-	var userName = A2(_elm_lang$core$Maybe$withDefault, '', bidderInfo.userName);
-	return A2(
-		_elm_lang$core$Basics_ops['++'],
-		userName,
-		A2(
+var _Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString = F2(
+	function (language, bidderInfo) {
+		var type_ = A2(
 			_elm_lang$core$Basics_ops['++'],
-			' (',
+			', ',
+			A2(_Gizra$circuit_bid$Backend_BidderInfo_Utils$getTypeAsString, language, bidderInfo));
+		var number = _Gizra$circuit_bid$Backend_BidderInfo_Utils$getNumber(bidderInfo);
+		var userName = A2(_elm_lang$core$Maybe$withDefault, '', bidderInfo.userName);
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			userName,
 			A2(
 				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(number),
-				')')));
-};
-var _Gizra$circuit_bid$User_View$viewBidderNameAndInfo = F3(
-	function (currency, modelBackend, bidderInfo) {
+				' (',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(number),
+					A2(_elm_lang$core$Basics_ops['++'], type_, ')'))));
+	});
+var _Gizra$circuit_bid$User_View$viewBidderNameAndInfo = F4(
+	function (language, currency, modelBackend, bidderInfo) {
+		var agentName = _elm_lang$core$String$isEmpty(bidderInfo.agentName) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('agent-name'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'(',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Agent),
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								': ',
+								A2(_elm_lang$core$Basics_ops['++'], bidderInfo.agentName, ')'))))),
+				_1: {ctor: '[]'}
+			});
+		var totalSpent = A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('total-spent'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'(',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, bidderInfo.totalSpent, currency),
+							')'))),
+				_1: {ctor: '[]'}
+			});
 		var remaining = function (amount) {
 			return A2(_Gizra$circuit_bid$Amount$subtract, amount, bidderInfo.totalSpent);
 		};
@@ -51008,7 +51111,7 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfo = F3(
 						{
 							ctor: '::',
 							_0: _elm_lang$html$Html$text(
-								_Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString(bidderInfo)),
+								A2(_Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString, language, bidderInfo)),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -51027,7 +51130,15 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfo = F3(
 						_1: {
 							ctor: '::',
 							_0: totalAmountByCredit,
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: totalSpent,
+								_1: {
+									ctor: '::',
+									_0: agentName,
+									_1: {ctor: '[]'}
+								}
+							}
 						}
 					}
 				}
@@ -51081,7 +51192,7 @@ var _Gizra$circuit_bid$Bid_View$bidUserAsString = F4(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					'',
 					function (bidderInfo) {
-						return _Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString(bidderInfo);
+						return A2(_Gizra$circuit_bid$User_View$viewBidderNameAndIdAsString, language, bidderInfo);
 					},
 					A3(_Gizra$circuit_bid$Backend_BidderInfo_Utils$getByBidderNumber, modelBackend, saleUuid, _p0._0));
 			} else {
@@ -51109,7 +51220,7 @@ var _Gizra$circuit_bid$Bid_View$bidUser = F6(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					_Gizra$circuit_bid$Utils_Html$emptyNode,
 					function (bidderInfo) {
-						return A3(_Gizra$circuit_bid$User_View$viewBidderNameAndInfo, currency, modelBackend, bidderInfo);
+						return A4(_Gizra$circuit_bid$User_View$viewBidderNameAndInfo, language, currency, modelBackend, bidderInfo);
 					},
 					A3(_Gizra$circuit_bid$Backend_BidderInfo_Utils$getByBidderNumber, modelBackend, saleUuid, _p1._0));
 			} else {
@@ -58797,8 +58908,8 @@ var _Gizra$circuit_bid$Error_View$view = F2(
 			});
 	});
 
-var _Gizra$circuit_bid$Backend_ConnectedUser_View$viewRow = F4(
-	function (currency, modelBackend, saleUuid, websiteBidderNumber) {
+var _Gizra$circuit_bid$Backend_ConnectedUser_View$viewRow = F5(
+	function (language, currency, modelBackend, saleUuid, websiteBidderNumber) {
 		return A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			_Gizra$elm_essentials$Gizra_Html$emptyNode,
@@ -58817,7 +58928,7 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_View$viewRow = F4(
 							},
 							{
 								ctor: '::',
-								_0: A3(_Gizra$circuit_bid$User_View$viewBidderNameAndInfo, currency, modelBackend, bidderInfo),
+								_0: A4(_Gizra$circuit_bid$User_View$viewBidderNameAndInfo, language, currency, modelBackend, bidderInfo),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
@@ -58831,7 +58942,7 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_View$viewConnectedUsers = F4(
 		var count = _elm_lang$core$List$length(trimmedList);
 		var rows = A2(
 			_elm_lang$core$List$map,
-			A3(_Gizra$circuit_bid$Backend_ConnectedUser_View$viewRow, currency, modelBackend, saleUuid),
+			A4(_Gizra$circuit_bid$Backend_ConnectedUser_View$viewRow, language, currency, modelBackend, saleUuid),
 			trimmedList);
 		return A2(
 			_elm_lang$html$Html$div,
