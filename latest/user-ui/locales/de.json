@@ -14,7 +14,7 @@
     "forgotPassword": "Passwort vergessen?",
     "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
     "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
-    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them."
+    "termsAgreement": "Ich habe die {0}Allgemeinen Geschäftsbedingungen{1} und die {2}Datenschutzbestimmungen {3} des Auktionators gelesen und akzeptiert und erkläre mich damit einverstanden."
   },
   "register": {
     "title": "Konto erstellen",
@@ -123,7 +123,7 @@
     "provincesLoadError": "Beim Laden der Provinzen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "saveError": "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten.",
-    "firstAddressDefault": "[NEEDS_TRANSLATION]This address will be set as your default address since it's your first one."
+    "firstAddressDefault": "Diese Adresse wird als Ihre Standardadresse festgelegt."
   },
   "changePassword": {
     "newPasswordLabel": "Neues Passwort eingeben",
@@ -161,20 +161,20 @@
     "noCommasOrDecimals": "Bitte verwenden Sie keine Kommas oder Dezimalstellen.",
     "error": "Fehler",
     "loading": "Laden...",
-    "pageTitle": "[NEEDS_TRANSLATION]Manage Your Credit & Bidding Limits",
-    "maxBidLimits": "[NEEDS_TRANSLATION]Personal Bidding Limits",
-    "maxBidLimitsHelp": "[NEEDS_TRANSLATION]In this section you can set your own limit to any bidder number you have. Limiting the bids will cut off your potential winnings at that number so you don't end up winning more than you have planned on spending.",
-    "maxBidLimit": "[NEEDS_TRANSLATION]My Bid Limit",
-    "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-    "maxBidUpdated": "[NEEDS_TRANSLATION]Max bid limit updated successfully",
-    "approvedCreditStatusMessageModified": "[NEEDS_TRANSLATION]Following review, your credit request of {{amount_request}} has been set to {{current_amount}}.",
-    "approvedCreditStatusMessageNoRequest": "[NEEDS_TRANSLATION]Your credit limit is {{amount}}.",
-    "creditRequestSubmitted": "[NEEDS_TRANSLATION]Credit Request Submitted",
-    "creditRequestDescription": "[NEEDS_TRANSLATION]Your credit request for {{amount}} has been submitted.",
-    "setBiddingLimit": "[NEEDS_TRANSLATION]Set Bidding Limit",
-    "currentLimit": "[NEEDS_TRANSLATION]Current Limit",
-    "bidLimitSubmitted": "[NEEDS_TRANSLATION]Bid Limit Updated",
-    "rejectedCreditStatusMessageUnlimited": "[NEEDS_TRANSLATION]Your credit request has been rejected. You have unlimited credit."
+    "pageTitle": "Verwalten Sie Ihre Kredit- und Bietlimite",
+    "maxBidLimits": "Bietlimite",
+    "maxBidLimitsHelp": "In diesem Bereich können Sie für jede Ihrer Bieternummern ein Limit setzen. Wird ein solches Limit erreicht, kann diese Bieternummer keinen weiteren Zuschlag mehr erhalten.",
+    "maxBidLimit": "Mein Limit",
+    "unlimited": "unlimitiert",
+    "maxBidUpdated": "Limit erfolgreich aktualisiert",
+    "approvedCreditStatusMessageModified": "Nachdem Ihre Kreditanfrage in Höhe von {{amount_request}} überprüft wurde, wurde sie auf {{current_amount}} festgelegt.",
+    "approvedCreditStatusMessageNoRequest": "Ihr Kreditlimit beträgt {{amount}}.",
+    "creditRequestSubmitted": "Ihre Kreditanfrage wurde übermittelt",
+    "creditRequestDescription": "Ihre Kreditanfrage über {{amount}} wurde übermittelt.",
+    "setBiddingLimit": "Bietlimite einstellen",
+    "currentLimit": "aktuelles Limit",
+    "bidLimitSubmitted": "Bietlimit aktualisiert",
+    "rejectedCreditStatusMessageUnlimited": "Ihre Kreditanfrage wurde zurückgewiesen. Sie haben bereits unlimitierten Kredit."
   },
   "myBids": {
     "summary": {
@@ -222,30 +222,30 @@
     "viewMoreLotDetails": "weitere Losdetails anzeigen",
     "clickOnSaleName": "Klicken Sie oben auf den Auktionsnamen, um Details zu Ihren Geboten und Krediten für diesen Auktion anzuzeigen.",
     "error": "Fehler",
-    "filterNotHighest": "[NEEDS_TRANSLATION]Items where I'm not the highest bidder",
-    "addToGroup": "[NEEDS_TRANSLATION]Add to Or Bids Group",
-    "noGroup": "[NEEDS_TRANSLATION]No Or Bids Group",
-    "groupName": "[NEEDS_TRANSLATION]Or Bids Group {{group}}",
-    "save": "[NEEDS_TRANSLATION]Save",
-    "edit": "[NEEDS_TRANSLATION]Edit",
-    "bidGroups": "[NEEDS_TRANSLATION]Or Bid Group",
-    "groupWithLots": "[NEEDS_TRANSLATION]Group {{group}} - Lots {{lots}}",
-    "alternativeLots": "[NEEDS_TRANSLATION]Alternative lots: {{lots}}",
-    "deleted": "[NEEDS_TRANSLATION]deleted",
-    "group": "[NEEDS_TRANSLATION]Or Bid Group",
-    "bidderNumber": "[NEEDS_TRANSLATION]Bidder #",
-    "bidInfo": "[NEEDS_TRANSLATION]({type} #{id})",
-    "cannotEditGroup": "[NEEDS_TRANSLATION]Or Bid Group editing is only available for active items",
-    "groupUpdateSuccess": "[NEEDS_TRANSLATION]Or Bid Group Updated",
-    "groupRemoved": "[NEEDS_TRANSLATION]Item removed from Or Bid Group",
-    "groupAssigned": "[NEEDS_TRANSLATION]Item assigned to Or Bid Group {group}",
-    "groupUpdateError": "[NEEDS_TRANSLATION]Failed to update Or Bid Group",
+    "filterNotHighest": "Lose, bei denen ich nicht der Höchstbietende bin.",
+    "addToGroup": "zu Oder-Gebotsgruppe hinzufügen",
+    "noGroup": "Keine Oder-Gebotsgruppe",
+    "groupName": "Oder-Gebotsgruppe {{group}}",
+    "save": "Speichern",
+    "edit": "Editieren",
+    "bidGroups": "Oder-Gebotsgruppe",
+    "groupWithLots": "Gruppe {{group}} - Lose {{lots}}",
+    "alternativeLots": "Alternative Lose: {{lots}}",
+    "deleted": "gelöscht",
+    "group": "Oder-Gebotsgruppe",
+    "bidderNumber": "Bieternummer #",
+    "bidInfo": "({type} #{id})",
+    "cannotEditGroup": "Das Editieren von Oder-Gebotsgruppen ist nur für aktive Lose erlaubt.",
+    "groupUpdateSuccess": "Oder-Gebotsgruppe aktualisiert",
+    "groupRemoved": "Los aus Oder-Gebotsgruppe entfernt",
+    "groupAssigned": "Los zur Oder-Gebotsgruppe {group} hinzugefügt.",
+    "groupUpdateError": "Aktualisierung der Oder-Gebotsgruppe fehlgeschlagen.",
     "orGroupExplanation": {
-      "title": "[NEEDS_TRANSLATION]OR Bids Group",
-      "main": "[NEEDS_TRANSLATION]Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
-      "example": "[NEEDS_TRANSLATION]Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
+      "title": "Oder-Gebotsgruppe",
+      "main": "Fügen Sie Lose zu einer Gruppe (A-J) hinzu, wenn Sie nur ein Los aus dieser Gruppe ersteigern möchten. Sobald Sie ein Los aus einer Gruppe ersteigert haben, werden alle Gebote auf die anderen Lose der gleichen Gruppe gelöscht.'",
+      "example": "Beispiel: Los 1, 2, 3 sind in der Gruppe A und Sie ersteigern Los 1. Ihre Gebote auf Los 2 und 3 werden nun automatisch gelöscht."
     },
-    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items"
+    "groupHasClosedItems": "Das Los kann nicht zu der Oder-Gebotsgruppe hinzugefügt werden. Die Gruppe beinhaltet bereits versteigerte Lose."
   },
   "userBlock": {
     "login": "Anmelden",
@@ -255,7 +255,9 @@
     "myAccount": "Mein Konto",
     "myBidsAndCredit": "Meine Gebote & Guthaben",
     "logout": "Abmelden",
-    "logoutSuccessful": "Abmeldung erfolgreich"
+    "logoutSuccessful": "Abmeldung erfolgreich",
+    "myFavorites": "Favoriten",
+    "myInterests": "Sammelgebiete"
   },
   "legacy": {
     "bid": {
@@ -349,5 +351,100 @@
     },
     "NumberInput": "Bitte geben Sie die Zahl ohne Tausendertrennzeichen und Nachkommastellen ein.",
     "YourBidderLimitHasBeenUpdated": "Ihr Maximalgebot wurde gespeichert"
+  },
+  "userInterests": {
+    "title": "Meine Sammelgebiete",
+    "pageDescription": "Helfen Sie uns, Ihre Sammelgebiete zu verstehen! Fügen Sie Kategorien hinzu, die Sie interessieren. Sie können diese Einstellung jederzeit verändern.",
+    "searchCategories": "Verwalten Sie Ihre Sammelgebiete",
+    "searchInstructions": "Mit Hilfe des Suchfensters können Sie Kategorien suchen und zu Ihren Sammelgebieten hinzufügen. Es reichen bereits Fragmente des Kategorienamens (z.B. Baden, Saar, Ganzsachen oder Vorphila). Kategorien, auf welche Sie in der Vergangenheit Gebote abgegeben haben, bleiben in der Liste, können aber deaktiviert werden. Kategorien ohne Gebote werden entfernt, sobald Sie von Ihnen deaktiviert werden.",
+    "searchPlaceholder": "Geben Sie einen Begriff ein, um die Suche zu starten ...",
+    "noSearchResults": "Keine Kategorien gefunden. Versuchen Sie einen anderen Suchbegriff.",
+    "myCategories": "Meine Kategorien",
+    "category": "Kategorie",
+    "browseCategory": "Kategorien durchsuchen",
+    "categoryHierarchy": "Kategorienbaum",
+    "favorites": "Favoriten",
+    "bids": "Gebote",
+    "won": "Zugeschlagen",
+    "status": "Status",
+    "action": "Aktion",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "add": "Hinzufügen",
+    "reactivate": "Reaktivieren",
+    "browseExplanation": "Lose anzeigen, die den aktuellen Sammelgebieten entsprechen.",
+    "browseSale": "Lose der aktuellen Auktion durchsuchen"
+  },
+  "search": {
+    "placeholder": "Durchsuche Lose ..."
+  },
+  "sort": {
+    "lotAsc": "Losnummer (aufsteigend)",
+    "lotDesc": "Losnummer (absteigend)",
+    "priceAsc": "Startpreis (niedrig zu hoch)",
+    "priceDesc": "Startpreis (hoch zu niedrig)",
+    "reset": "Sortierung zurücksetzen"
+  },
+  "item": {
+    "startingPrice": "Startpreis",
+    "viewDetails": "Details anzeigen",
+    "description": "Beschreibung",
+    "auctionDetails": "Auktionsinfo",
+    "sale": "Auktion",
+    "estimate": "Estimate",
+    "noImage": "Abbildungen anfragen",
+    "photos": "Abbildungen"
+  },
+  "myFavorites": {
+    "allSales": "Alle Auktionen",
+    "noFavorites": "Sie haben bis jetzt noch keine Lose Ihren Favoriten hinzugefügt.",
+    "addFavoritesHint": "Beim stöbern innerhalb der Auktion können Sie mit dem 'Herz-Symbol' das Los zu Ihren Favoriten hinzufügen.",
+    "noMatchingFavorites": "Keine Favoriten entsprechen dem aktuellen Filter.",
+    "noFavoritesInSale": "In dieser Auktion haben Sie keine Favoriten.",
+    "lot": "Los",
+    "title": "Titel",
+    "startPrice": "Startpreis",
+    "estimate": "Estimate",
+    "actions": "Aktionen",
+    "viewItem": "Los anzeigen",
+    "remove": "Entfernen",
+    "hasBids": "Ist beboten",
+    "errorFetching": "Fehler beim einlesen der Favoriten",
+    "soldfor": "Verkauft für",
+    "addToCompare": "Dem Vergleich hinzufügen",
+    "compareItems": "Lose vergleichen",
+    "selectMoreItems": "Wählen Sie mindestens 2 Lose zum vergleichen aus",
+    "selectedItems": "{{count}} Lose ausgewählt",
+    "maxItemsReached": "Es können maximal 4 Lose verglichen werden",
+    "CompareItems": "Lose vergleichen",
+    "image": "Abbildung",
+    "category": "Kategorie",
+    "saleTitle": "Auktion",
+    "soldFor": "Verkauft für",
+    "catalogInfo": "Katalog-Referenz",
+    "symbols": "Erhaltungen",
+    "description": "Beschreibung",
+    "followThisLot": "Dem Los 'folgen'",
+    "following": "Dem Los wird 'gefolgt'",
+    "addTooltip": "Mit diesem Button können Sie das Los zu Ihren Favoriten hinzufügen",
+    "removeTooltip": "Mit diesem Button können Sie das Los aus Ihren Favoriten entfernen",
+    "addSuccess": "Das Los wurde zu Ihren Favoriten hinzugefügt",
+    "removeSuccess": "Das Los wurde aus Ihren Favoriten entfernt",
+    "errorAdding": "Hinzufügen zu Favoriten fehlgeschlagen",
+    "errorRemoving": "Entfernen aus Favoriten fehlgeschlagen",
+    "loginRequired": "Bitte loggen Sie sich ein, um Losen Ihren Favoriten hinzuzufügen"
+  },
+  "filters": {
+    "saleLabel": "Auktion",
+    "searchLabel": "Durchsuche Lose",
+    "sortLabel": "sortiert nach",
+    "itemsPerPage": "Lose pro Seite",
+    "showOnlyBids": "Zeige nur Lose mit Geboten",
+    "reset": "Filter zurücksetzen"
+  },
+  "pagination": {
+    "showing": "Zeige {{start}}-{{end}} von {{total}} Losen",
+    "previous": "vorherige",
+    "next": "nächste"
   }
 }

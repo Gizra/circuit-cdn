@@ -255,7 +255,9 @@
     "myAccount": "Мой аккаунт",
     "myBidsAndCredit": "Мои ставки и кредит",
     "logout": "Выйти",
-    "logoutSuccessful": "Выход выполнен успешно"
+    "logoutSuccessful": "Выход выполнен успешно",
+    "myFavorites": "[NEEDS_TRANSLATION]Favorites",
+    "myInterests": "[NEEDS_TRANSLATION]Area of Interest"
   },
   "legacy": {
     "bid": {
@@ -349,5 +351,100 @@
     },
     "NumberInput": "Пожалуйста, не используйте запятые или десятичные точки.",
     "YourBidderLimitHasBeenUpdated": "Ваш лимит ставок был обновлен"
+  },
+  "userInterests": {
+    "title": "[NEEDS_TRANSLATION]My Interests",
+    "pageDescription": "[NEEDS_TRANSLATION]Help us understand your collecting interests! Add categories of items you'd like to follow, and we'll notify you when matching items become available in our auctions. You can always adjust your preferences here.",
+    "searchCategories": "[NEEDS_TRANSLATION]Manage Your Interests",
+    "searchInstructions": "[NEEDS_TRANSLATION]Use the search box below to find and add categories that interest you. You can search by typing any part of the category path (e.g., 'Stamps', 'Germany', or '1900'). Categories where you've previously bid will remain in your list even when inactive, and you can reactivate them at any time using the search. Categories without bids will be removed when deactivated.",
+    "searchPlaceholder": "[NEEDS_TRANSLATION]Type to search categories...",
+    "noSearchResults": "[NEEDS_TRANSLATION]No matching categories found. Try different search terms.",
+    "myCategories": "[NEEDS_TRANSLATION]My Categories",
+    "category": "[NEEDS_TRANSLATION]Category",
+    "browseCategory": "[NEEDS_TRANSLATION]Browse Category",
+    "categoryHierarchy": "[NEEDS_TRANSLATION]Category Hierarchy",
+    "favorites": "[NEEDS_TRANSLATION]Favorites",
+    "bids": "[NEEDS_TRANSLATION]Bids",
+    "won": "[NEEDS_TRANSLATION]Won",
+    "status": "[NEEDS_TRANSLATION]Status",
+    "action": "[NEEDS_TRANSLATION]Action",
+    "active": "[NEEDS_TRANSLATION]Active",
+    "inactive": "[NEEDS_TRANSLATION]Inactive",
+    "add": "[NEEDS_TRANSLATION]Add",
+    "reactivate": "[NEEDS_TRANSLATION]Reactivate",
+    "browseExplanation": "[NEEDS_TRANSLATION]View items that match your selected categories of interest. The items will be automatically filtered based on your active categories.",
+    "browseSale": "[NEEDS_TRANSLATION]Browse Current Sale Items"
+  },
+  "search": {
+    "placeholder": "[NEEDS_TRANSLATION]Search lots..."
+  },
+  "sort": {
+    "lotAsc": "[NEEDS_TRANSLATION]Lot Number (Ascending)",
+    "lotDesc": "[NEEDS_TRANSLATION]Lot Number (Descending)",
+    "priceAsc": "[NEEDS_TRANSLATION]Price (Low to High)",
+    "priceDesc": "[NEEDS_TRANSLATION]Price (High to Low)",
+    "reset": "[NEEDS_TRANSLATION]Reset Sort"
+  },
+  "item": {
+    "startingPrice": "[NEEDS_TRANSLATION]Starting Price",
+    "viewDetails": "[NEEDS_TRANSLATION]View Details",
+    "description": "[NEEDS_TRANSLATION]Description",
+    "auctionDetails": "[NEEDS_TRANSLATION]Auction Details",
+    "sale": "[NEEDS_TRANSLATION]Sale",
+    "estimate": "[NEEDS_TRANSLATION]Estimate",
+    "noImage": "[NEEDS_TRANSLATION]Request item photos",
+    "photos": "[NEEDS_TRANSLATION]Photos"
+  },
+  "myFavorites": {
+    "allSales": "[NEEDS_TRANSLATION]All Sales",
+    "noFavorites": "[NEEDS_TRANSLATION]You have not added any lots to your favorites yet.",
+    "addFavoritesHint": "[NEEDS_TRANSLATION]Browse auctions and click the heart icon to add lots to your favorites.",
+    "noMatchingFavorites": "[NEEDS_TRANSLATION]No favorites match your current filters.",
+    "noFavoritesInSale": "[NEEDS_TRANSLATION]You have no favorite lots in this sale.",
+    "lot": "[NEEDS_TRANSLATION]Lot",
+    "title": "[NEEDS_TRANSLATION]Title",
+    "startPrice": "[NEEDS_TRANSLATION]Opening",
+    "estimate": "[NEEDS_TRANSLATION]Estimate",
+    "actions": "[NEEDS_TRANSLATION]Actions",
+    "viewItem": "[NEEDS_TRANSLATION]View Item",
+    "remove": "[NEEDS_TRANSLATION]Remove",
+    "hasBids": "[NEEDS_TRANSLATION]Has Bids",
+    "errorFetching": "[NEEDS_TRANSLATION]Error fetching favorites",
+    "soldfor": "[NEEDS_TRANSLATION]Sold for",
+    "addToCompare": "[NEEDS_TRANSLATION]Add to Compare",
+    "compareItems": "[NEEDS_TRANSLATION]Compare Items",
+    "selectMoreItems": "[NEEDS_TRANSLATION]Select at least 2 items to compare",
+    "selectedItems": "[NEEDS_TRANSLATION]{{count}} items selected",
+    "maxItemsReached": "[NEEDS_TRANSLATION]Maximum 4 items can be compared",
+    "CompareItems": "[NEEDS_TRANSLATION]Compare Items",
+    "image": "[NEEDS_TRANSLATION]Image",
+    "category": "[NEEDS_TRANSLATION]Category",
+    "saleTitle": "[NEEDS_TRANSLATION]Sale",
+    "soldFor": "[NEEDS_TRANSLATION]Sold for",
+    "catalogInfo": "[NEEDS_TRANSLATION]Catalog Reference",
+    "symbols": "[NEEDS_TRANSLATION]Symbols",
+    "description": "[NEEDS_TRANSLATION]Description",
+    "followThisLot": "[NEEDS_TRANSLATION]Follow lot",
+    "following": "[NEEDS_TRANSLATION]Following",
+    "addTooltip": "[NEEDS_TRANSLATION]Click this button to add this item to your list of favorite items",
+    "removeTooltip": "[NEEDS_TRANSLATION]Click this button to remove the item from your favorite list",
+    "addSuccess": "[NEEDS_TRANSLATION]Lot has been added to your favorites",
+    "removeSuccess": "[NEEDS_TRANSLATION]Lot has been removed from your favorites",
+    "errorAdding": "[NEEDS_TRANSLATION]Error adding to favorites",
+    "errorRemoving": "[NEEDS_TRANSLATION]Error removing from favorites",
+    "loginRequired": "[NEEDS_TRANSLATION]Please login to add items to favorites"
+  },
+  "filters": {
+    "saleLabel": "[NEEDS_TRANSLATION]Sale",
+    "searchLabel": "[NEEDS_TRANSLATION]Search Lots",
+    "sortLabel": "[NEEDS_TRANSLATION]Sort By",
+    "itemsPerPage": "[NEEDS_TRANSLATION]Items per page",
+    "showOnlyBids": "[NEEDS_TRANSLATION]Show only lots with bids",
+    "reset": "[NEEDS_TRANSLATION]Reset Filters"
+  },
+  "pagination": {
+    "showing": "[NEEDS_TRANSLATION]Showing {{start}}-{{end}} of {{total}} items",
+    "previous": "[NEEDS_TRANSLATION]Previous",
+    "next": "[NEEDS_TRANSLATION]Next"
   }
 }

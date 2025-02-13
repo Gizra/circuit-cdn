@@ -270,11 +270,11 @@
     "or": "Or",
     "user": "User",
     "myAccount": "My Account",
-    "myBidsAndCredit": "My Bids & Credit",
+    "myBidsAndCredit": "Bids & Credit",
     "logout": "Logout",
     "logoutSuccessful": "Logout successful",
-    "myFavorites": "My Favorites",
-    "myInterests": "My Interests"
+    "myFavorites": "Favorites",
+    "myInterests": "Area of Interest"
   },
   "legacy": {
     "bid": {
@@ -385,7 +385,9 @@
     "description": "Description",
     "auctionDetails": "Auction Details",
     "sale": "Sale",
-    "estimate": "Estimate"
+    "estimate": "Estimate",
+    "noImage": "Request item photos",
+    "photos": "Photos"
   },
   "myFavorites": {
     "allSales" : "All Sales",
