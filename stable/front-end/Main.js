@@ -24313,11 +24313,7 @@ var _gizra$backoffice$Backend_User_Model$User = function (a) {
 										return function (k) {
 											return function (l) {
 												return function (m) {
-													return function (n) {
-														return function (o) {
-															return {name: a, firstName: b, lastName: c, email: d, phone: e, address: f, language: g, id: h, siteUuid: i, uuid: j, status: k, userType: l, websiteBidderInfo: m, references: n, subscribeToNewsLetter: o};
-														};
-													};
+													return {name: a, firstName: b, lastName: c, email: d, phone: e, address: f, language: g, id: h, siteUuid: i, uuid: j, status: k, userType: l, websiteBidderInfo: m};
 												};
 											};
 										};
@@ -24949,72 +24945,63 @@ var _gizra$backoffice$Backend_User_Decoder$decodeAddress = A3(
 						'country',
 						_elm_lang$core$Json_Decode$string,
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_gizra$backoffice$Backend_User_Model$Address)))))));
-var _gizra$backoffice$Backend_User_Decoder$decodeUser = A3(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-	'subscribe_to_newsletter',
-	_elm_lang$core$Json_Decode$bool,
-	A4(
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-		'references',
-		_elm_lang$core$Json_Decode$maybe(_elm_lang$core$Json_Decode$string),
-		_elm_lang$core$Maybe$Nothing,
-		A4(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-			'website_bidder_info',
-			_gizra$backoffice$Backend_User_Decoder$decodeWebsiteBidderInfo,
-			_eeue56$elm_all_dict$EveryDict$empty,
+var _gizra$backoffice$Backend_User_Decoder$decodeUser = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+	'website_bidder_info',
+	_gizra$backoffice$Backend_User_Decoder$decodeWebsiteBidderInfo,
+	_eeue56$elm_all_dict$EveryDict$empty,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'user_type',
+		_gizra$backoffice$Backend_User_Decoder$decodeType(_gizra$backoffice$Backend_User_Decoder$stringToUserType),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'status',
+			_gizra$backoffice$Backend_User_Decoder$decodeType(_gizra$backoffice$Backend_User_Decoder$stringToStatus),
 			A3(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-				'user_type',
-				_gizra$backoffice$Backend_User_Decoder$decodeType(_gizra$backoffice$Backend_User_Decoder$stringToUserType),
+				'uuid',
+				_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
 				A3(
 					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-					'status',
-					_gizra$backoffice$Backend_User_Decoder$decodeType(_gizra$backoffice$Backend_User_Decoder$stringToStatus),
+					'site',
+					_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
 					A3(
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'uuid',
-						_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
+						'id',
+						_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
 						A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-							'site',
-							_Gizra$elm_restful$Restful_Endpoint$decodeEntityUuid,
-							A3(
-								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-								'id',
-								_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
-								A3(
-									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-									'language',
-									_gizra$backoffice$Backend_Language_Decoder$decodeLanguage,
-									A4(
-										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-										'address',
-										_elm_lang$core$Json_Decode$maybe(_gizra$backoffice$Backend_User_Decoder$decodeAddress),
-										_elm_lang$core$Maybe$Nothing,
-										A4(
-											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-											'phone',
+							'language',
+							_gizra$backoffice$Backend_Language_Decoder$decodeLanguage,
+							A4(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+								'address',
+								_elm_lang$core$Json_Decode$maybe(_gizra$backoffice$Backend_User_Decoder$decodeAddress),
+								_elm_lang$core$Maybe$Nothing,
+								A4(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+									'phone',
+									_elm_lang$core$Json_Decode$string,
+									'',
+									A3(
+										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+										'mail',
+										_elm_lang$core$Json_Decode$string,
+										A3(
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+											'last_name',
 											_elm_lang$core$Json_Decode$string,
-											'',
-											A3(
-												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-												'mail',
+											A4(
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+												'first_name',
 												_elm_lang$core$Json_Decode$string,
+												'',
 												A3(
 													_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-													'last_name',
+													'label',
 													_elm_lang$core$Json_Decode$string,
-													A4(
-														_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-														'first_name',
-														_elm_lang$core$Json_Decode$string,
-														'',
-														A3(
-															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-															'label',
-															_elm_lang$core$Json_Decode$string,
-															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_gizra$backoffice$Backend_User_Model$User))))))))))))))));
+													_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_gizra$backoffice$Backend_User_Model$User))))))))))))));
 
 var _gizra$backoffice$App_Decoder$decodeAnonymousUserAndData = function (maybeSaleUuid) {
 	return A2(
@@ -26861,23 +26848,7 @@ var _gizra$backoffice$Backend_User_Encoder$encodeUser = function (user) {
 																_0: 'website_bidder_info',
 																_1: _gizra$backoffice$Backend_User_Encoder$encodeWebsiteBidderInfo(user.websiteBidderInfo)
 															},
-															_1: {
-																ctor: '::',
-																_0: {
-																	ctor: '_Tuple2',
-																	_0: 'references',
-																	_1: A2(_elm_community$json_extra$Json_Encode_Extra$maybe, _elm_lang$core$Json_Encode$string, user.references)
-																},
-																_1: {
-																	ctor: '::',
-																	_0: {
-																		ctor: '_Tuple2',
-																		_0: 'subscribe_to_newsletter',
-																		_1: _elm_lang$core$Json_Encode$bool(user.subscribeToNewsLetter)
-																	},
-																	_1: {ctor: '[]'}
-																}
-															}
+															_1: {ctor: '[]'}
 														}
 													}
 												}
@@ -53647,55 +53618,35 @@ var _gizra$backoffice$Pages_MyAccount_Utils$initialForm = function (user) {
 												ctor: '::',
 												_0: {
 													ctor: '_Tuple2',
-													_0: _gizra$backoffice$Utils_UserForms$References,
+													_0: _gizra$backoffice$Utils_UserForms$State,
 													_1: A3(
 														_elm_community$maybe_extra$Maybe_Extra$unwrap,
 														_etaque$elm_form$Form_Field$value(_etaque$elm_form$Form_Field$EmptyField),
 														_etaque$elm_form$Form_Field$string,
-														user.references)
+														A2(
+															_elm_lang$core$Maybe$andThen,
+															function (_) {
+																return _.state;
+															},
+															user.address))
 												},
 												_1: {
 													ctor: '::',
 													_0: {
 														ctor: '_Tuple2',
-														_0: _gizra$backoffice$Utils_UserForms$State,
+														_0: _gizra$backoffice$Utils_UserForms$ZipCode,
 														_1: A3(
 															_elm_community$maybe_extra$Maybe_Extra$unwrap,
 															_etaque$elm_form$Form_Field$value(_etaque$elm_form$Form_Field$EmptyField),
 															_etaque$elm_form$Form_Field$string,
 															A2(
-																_elm_lang$core$Maybe$andThen,
+																_elm_lang$core$Maybe$map,
 																function (_) {
-																	return _.state;
+																	return _.zipCode;
 																},
 																user.address))
 													},
-													_1: {
-														ctor: '::',
-														_0: {
-															ctor: '_Tuple2',
-															_0: _gizra$backoffice$Utils_UserForms$ZipCode,
-															_1: A3(
-																_elm_community$maybe_extra$Maybe_Extra$unwrap,
-																_etaque$elm_form$Form_Field$value(_etaque$elm_form$Form_Field$EmptyField),
-																_etaque$elm_form$Form_Field$string,
-																A2(
-																	_elm_lang$core$Maybe$map,
-																	function (_) {
-																		return _.zipCode;
-																	},
-																	user.address))
-														},
-														_1: {
-															ctor: '::',
-															_0: {
-																ctor: '_Tuple2',
-																_0: _gizra$backoffice$Utils_UserForms$SubscribeToNewsLetter,
-																_1: _etaque$elm_form$Form_Field$bool(user.subscribeToNewsLetter)
-															},
-															_1: {ctor: '[]'}
-														}
-													}
+													_1: {ctor: '[]'}
 												}
 											}
 										}
