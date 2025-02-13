@@ -385,7 +385,9 @@
     "description": "Description",
     "auctionDetails": "Auction Details",
     "sale": "Sale",
-    "estimate": "Estimate"
+    "estimate": "Estimate",
+    "noImage": "Request item photos",
+    "photos": "Photos"
   },
   "myFavorites": {
     "allSales" : "All Sales",

@@ -255,7 +255,9 @@
     "myAccount": "我的账户",
     "myBidsAndCredit": "我的出价和信用额度",
     "logout": "退出",
-    "logoutSuccessful": "退出成功"
+    "logoutSuccessful": "退出成功",
+    "myFavorites": "[NEEDS_TRANSLATION]Favorites",
+    "myInterests": "[NEEDS_TRANSLATION]Area of Interest"
   },
   "legacy": {
     "bid": {
@@ -389,7 +391,9 @@
     "description": "[NEEDS_TRANSLATION]Description",
     "auctionDetails": "[NEEDS_TRANSLATION]Auction Details",
     "sale": "[NEEDS_TRANSLATION]Sale",
-    "estimate": "[NEEDS_TRANSLATION]Estimate"
+    "estimate": "[NEEDS_TRANSLATION]Estimate",
+    "noImage": "[NEEDS_TRANSLATION]Request item photos",
+    "photos": "[NEEDS_TRANSLATION]Photos"
   },
   "myFavorites": {
     "allSales": "[NEEDS_TRANSLATION]All Sales",

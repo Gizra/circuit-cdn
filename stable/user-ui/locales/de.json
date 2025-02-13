@@ -13,7 +13,8 @@
     "loginButton": "Anmelden",
     "forgotPassword": "Passwort vergessen?",
     "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
-    "passwordPlaceholder": "Geben Sie Ihr Passwort ein"
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "termsAgreement": "Ich habe die {0}Allgemeinen Geschäftsbedingungen{1} und die {2}Datenschutzbestimmungen {3} des Auktionators gelesen und akzeptiert und erkläre mich damit einverstanden."
   },
   "register": {
     "title": "Konto erstellen",
@@ -113,7 +114,6 @@
     },
     "title": "Anrede",
     "selectTitle": "Wählen Sie Ihre Anrede",
-    "careOf": "c/o",
     "country": "Land",
     "selectCountry": "Wählen Sie ein Land",
     "delete": "Adresse löschen",
@@ -122,7 +122,8 @@
     "initializationError": "Bei der Initialisierung des Adressformatierers ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "provincesLoadError": "Beim Laden der Provinzen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "saveError": "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten."
+    "override_address_name": "Verwenden Sie diese Felder nur, wenn Sie den Kundennamen für diese Adresse überschreiben möchten.",
+    "firstAddressDefault": "Diese Adresse wird als Ihre Standardadresse festgelegt."
   },
   "changePassword": {
     "newPasswordLabel": "Neues Passwort eingeben",
@@ -141,6 +142,7 @@
     "generalError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
   },
   "myCredit": {
+    "bidderNumber": "Bieter Nr. {{number}}",
     "formHeading": "Kredit für Online-Gebote anfordern",
     "buttonLabel": "Anfrage senden",
     "creditStatusMessage": "Noch keine Kreditanfrage.",
@@ -149,15 +151,30 @@
     "pendingCreditStatusMessage": "Ihre Kreditanfrage über {{amount}} ist ausstehend.",
     "pendingCreditStatusMessageUnlimited": "Ihre Kreditanfrage über {{amount}} ist ausstehend. Sie haben unbegrenzten Kredit.",
     "pendingCreditStatusMessageWithLimit": "Ihre Kreditanfrage über {{amount}} ist ausstehend. Ihr aktueller Kredit beträgt {{approvedAmount}}.",
+    "approvedCreditStatusMessageUnlimited": "Sie haben unbegrenzten Kredit.",
     "approvedFormHeading": "Mein Kreditlimit",
     "approvedButtonLabel": "Neue Kreditanfrage senden",
-    "approvedCreditStatusMessage": "Ihre Kreditanfrage über {{amount}} wurde genehmigt.",
+    "approvedCreditStatusMessage": "Ihre Kreditanfrage von {{amount_request}} wurde genehmigt, Ihr Kreditlimit beträgt {{amount}}.",
     "rejectedCreditStatusMessage": "Ihre Kreditanfrage wurde abgelehnt.",
     "creditRequestLabel": "Kreditbetrag anfordern ({{currency}})",
     "instructions": "Wie viel Kredit möchten Sie anfordern? Sobald dieses Limit erreicht ist, können Sie keine weiteren Gebote abgeben.",
     "noCommasOrDecimals": "Bitte verwenden Sie keine Kommas oder Dezimalstellen.",
     "error": "Fehler",
-    "loading": "Laden..."
+    "loading": "Laden...",
+    "pageTitle": "Verwalten Sie Ihre Kredit- und Bietlimite",
+    "maxBidLimits": "Bietlimite",
+    "maxBidLimitsHelp": "In diesem Bereich können Sie für jede Ihrer Bieternummern ein Limit setzen. Wird ein solches Limit erreicht, kann diese Bieternummer keinen weiteren Zuschlag mehr erhalten.",
+    "maxBidLimit": "Mein Limit",
+    "unlimited": "unlimitiert",
+    "maxBidUpdated": "Limit erfolgreich aktualisiert",
+    "approvedCreditStatusMessageModified": "Nachdem Ihre Kreditanfrage in Höhe von {{amount_request}} überprüft wurde, wurde sie auf {{current_amount}} festgelegt.",
+    "approvedCreditStatusMessageNoRequest": "Ihr Kreditlimit beträgt {{amount}}.",
+    "creditRequestSubmitted": "Ihre Kreditanfrage wurde übermittelt",
+    "creditRequestDescription": "Ihre Kreditanfrage über {{amount}} wurde übermittelt.",
+    "setBiddingLimit": "Bietlimite einstellen",
+    "currentLimit": "aktuelles Limit",
+    "bidLimitSubmitted": "Bietlimit aktualisiert",
+    "rejectedCreditStatusMessageUnlimited": "Ihre Kreditanfrage wurde zurückgewiesen. Sie haben bereits unlimitierten Kredit."
   },
   "myBids": {
     "summary": {
@@ -169,7 +186,7 @@
       "soldForTotal": "Zuschlagssumme",
       "items": "Lose"
     },
-    "close": "Schließen",
+    "close": "schließen",
     "showMore": "Mehr anzeigen",
     "detailedView": "Detailansicht",
     "summaryView": "Übersicht",
@@ -203,9 +220,32 @@
     "myBid": "Mein Gebot",
     "bidderId": "Bieter {{id}}",
     "viewMoreLotDetails": "weitere Losdetails anzeigen",
-    "close": "schließen",
     "clickOnSaleName": "Klicken Sie oben auf den Auktionsnamen, um Details zu Ihren Geboten und Krediten für diesen Auktion anzuzeigen.",
-    "error": "Fehler"
+    "error": "Fehler",
+    "filterNotHighest": "Lose, bei denen ich nicht der Höchstbietende bin.",
+    "addToGroup": "zu Oder-Gebotsgruppe hinzufügen",
+    "noGroup": "Keine Oder-Gebotsgruppe",
+    "groupName": "Oder-Gebotsgruppe {{group}}",
+    "save": "Speichern",
+    "edit": "Editieren",
+    "bidGroups": "Oder-Gebotsgruppe",
+    "groupWithLots": "Gruppe {{group}} - Lose {{lots}}",
+    "alternativeLots": "Alternative Lose: {{lots}}",
+    "deleted": "gelöscht",
+    "group": "Oder-Gebotsgruppe",
+    "bidderNumber": "Bieternummer #",
+    "bidInfo": "({type} #{id})",
+    "cannotEditGroup": "Das Editieren von Oder-Gebotsgruppen ist nur für aktive Lose erlaubt.",
+    "groupUpdateSuccess": "Oder-Gebotsgruppe aktualisiert",
+    "groupRemoved": "Los aus Oder-Gebotsgruppe entfernt",
+    "groupAssigned": "Los zur Oder-Gebotsgruppe {group} hinzugefügt.",
+    "groupUpdateError": "Aktualisierung der Oder-Gebotsgruppe fehlgeschlagen.",
+    "orGroupExplanation": {
+      "title": "Oder-Gebotsgruppe",
+      "main": "Fügen Sie Lose zu einer Gruppe (A-J) hinzu, wenn Sie nur ein Los aus dieser Gruppe ersteigern möchten. Sobald Sie ein Los aus einer Gruppe ersteigert haben, werden alle Gebote auf die anderen Lose der gleichen Gruppe gelöscht.'",
+      "example": "Beispiel: Los 1, 2, 3 sind in der Gruppe A und Sie ersteigern Los 1. Ihre Gebote auf Los 2 und 3 werden nun automatisch gelöscht."
+    },
+    "groupHasClosedItems": "Das Los kann nicht zu der Oder-Gebotsgruppe hinzugefügt werden. Die Gruppe beinhaltet bereits versteigerte Lose."
   },
   "userBlock": {
     "login": "Anmelden",
@@ -215,7 +255,9 @@
     "myAccount": "Mein Konto",
     "myBidsAndCredit": "Meine Gebote & Guthaben",
     "logout": "Abmelden",
-    "logoutSuccessful": "Abmeldung erfolgreich"
+    "logoutSuccessful": "Abmeldung erfolgreich",
+    "myFavorites": "Favoriten",
+    "myInterests": "Sammelgebiete"
   },
   "legacy": {
     "bid": {
@@ -309,5 +351,100 @@
     },
     "NumberInput": "Bitte geben Sie die Zahl ohne Tausendertrennzeichen und Nachkommastellen ein.",
     "YourBidderLimitHasBeenUpdated": "Ihr Maximalgebot wurde gespeichert"
+  },
+  "userInterests": {
+    "title": "Meine Sammelgebiete",
+    "pageDescription": "Helfen Sie uns, Ihre Sammelgebiete zu verstehen! Fügen Sie Kategorien hinzu, die Sie interessieren. Sie können diese Einstellung jederzeit verändern.",
+    "searchCategories": "Verwalten Sie Ihre Sammelgebiete",
+    "searchInstructions": "Mit Hilfe des Suchfensters können Sie Kategorien suchen und zu Ihren Sammelgebieten hinzufügen. Es reichen bereits Fragmente des Kategorienamens (z.B. Baden, Saar, Ganzsachen oder Vorphila). Kategorien, auf welche Sie in der Vergangenheit Gebote abgegeben haben, bleiben in der Liste, können aber deaktiviert werden. Kategorien ohne Gebote werden entfernt, sobald Sie von Ihnen deaktiviert werden.",
+    "searchPlaceholder": "Geben Sie einen Begriff ein, um die Suche zu starten ...",
+    "noSearchResults": "Keine Kategorien gefunden. Versuchen Sie einen anderen Suchbegriff.",
+    "myCategories": "Meine Kategorien",
+    "category": "Kategorie",
+    "browseCategory": "Kategorien durchsuchen",
+    "categoryHierarchy": "Kategorienbaum",
+    "favorites": "Favoriten",
+    "bids": "Gebote",
+    "won": "Zugeschlagen",
+    "status": "Status",
+    "action": "Aktion",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "add": "Hinzufügen",
+    "reactivate": "Reaktivieren",
+    "browseExplanation": "Lose anzeigen, die den aktuellen Sammelgebieten entsprechen.",
+    "browseSale": "Lose der aktuellen Auktion durchsuchen"
+  },
+  "search": {
+    "placeholder": "Durchsuche Lose ..."
+  },
+  "sort": {
+    "lotAsc": "Losnummer (aufsteigend)",
+    "lotDesc": "Losnummer (absteigend)",
+    "priceAsc": "Startpreis (niedrig zu hoch)",
+    "priceDesc": "Startpreis (hoch zu niedrig)",
+    "reset": "Sortierung zurücksetzen"
+  },
+  "item": {
+    "startingPrice": "Startpreis",
+    "viewDetails": "Details anzeigen",
+    "description": "Beschreibung",
+    "auctionDetails": "Auktionsinfo",
+    "sale": "Auktion",
+    "estimate": "Estimate",
+    "noImage": "Abbildungen anfragen",
+    "photos": "Abbildungen"
+  },
+  "myFavorites": {
+    "allSales": "Alle Auktionen",
+    "noFavorites": "Sie haben bis jetzt noch keine Lose Ihren Favoriten hinzugefügt.",
+    "addFavoritesHint": "Beim stöbern innerhalb der Auktion können Sie mit dem 'Herz-Symbol' das Los zu Ihren Favoriten hinzufügen.",
+    "noMatchingFavorites": "Keine Favoriten entsprechen dem aktuellen Filter.",
+    "noFavoritesInSale": "In dieser Auktion haben Sie keine Favoriten.",
+    "lot": "Los",
+    "title": "Titel",
+    "startPrice": "Startpreis",
+    "estimate": "Estimate",
+    "actions": "Aktionen",
+    "viewItem": "Los anzeigen",
+    "remove": "Entfernen",
+    "hasBids": "Ist beboten",
+    "errorFetching": "Fehler beim einlesen der Favoriten",
+    "soldfor": "Verkauft für",
+    "addToCompare": "Dem Vergleich hinzufügen",
+    "compareItems": "Lose vergleichen",
+    "selectMoreItems": "Wählen Sie mindestens 2 Lose zum vergleichen aus",
+    "selectedItems": "{{count}} Lose ausgewählt",
+    "maxItemsReached": "Es können maximal 4 Lose verglichen werden",
+    "CompareItems": "Lose vergleichen",
+    "image": "Abbildung",
+    "category": "Kategorie",
+    "saleTitle": "Auktion",
+    "soldFor": "Verkauft für",
+    "catalogInfo": "Katalog-Referenz",
+    "symbols": "Erhaltungen",
+    "description": "Beschreibung",
+    "followThisLot": "Dem Los 'folgen'",
+    "following": "Dem Los wird 'gefolgt'",
+    "addTooltip": "Mit diesem Button können Sie das Los zu Ihren Favoriten hinzufügen",
+    "removeTooltip": "Mit diesem Button können Sie das Los aus Ihren Favoriten entfernen",
+    "addSuccess": "Das Los wurde zu Ihren Favoriten hinzugefügt",
+    "removeSuccess": "Das Los wurde aus Ihren Favoriten entfernt",
+    "errorAdding": "Hinzufügen zu Favoriten fehlgeschlagen",
+    "errorRemoving": "Entfernen aus Favoriten fehlgeschlagen",
+    "loginRequired": "Bitte loggen Sie sich ein, um Losen Ihren Favoriten hinzuzufügen"
+  },
+  "filters": {
+    "saleLabel": "Auktion",
+    "searchLabel": "Durchsuche Lose",
+    "sortLabel": "sortiert nach",
+    "itemsPerPage": "Lose pro Seite",
+    "showOnlyBids": "Zeige nur Lose mit Geboten",
+    "reset": "Filter zurücksetzen"
+  },
+  "pagination": {
+    "showing": "Zeige {{start}}-{{end}} von {{total}} Losen",
+    "previous": "vorherige",
+    "next": "nächste"
   }
 }

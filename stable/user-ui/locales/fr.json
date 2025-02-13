@@ -13,7 +13,8 @@
     "loginButton": "Se connecter",
     "forgotPassword": "Mot de passe oublié ?",
     "emailPlaceholder": "Entrez votre adresse e-mail",
-    "passwordPlaceholder": "Entrez votre mot de passe"
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them."
   },
   "register": {
     "title": "Créer un compte",
@@ -90,12 +91,14 @@
     "addNewAddress": "Ajouter une nouvelle adresse",
     "error": "Erreur",
     "standardInternationalFormat": "Format international standard",
-    "phoneNumberInstructions": "Veuillez entrer votre numéro de téléphone local. Le numéro complet formaté, y compris l'indicatif international du pays, s'affichera ci-dessous."
+    "phoneNumberInstructions": "Veuillez entrer votre numéro de téléphone local. Le numéro complet formaté, y compris l'indicatif international du pays, s'affichera ci-dessous.",
+    "shippingInstructions": "[NEEDS_TRANSLATION]Shipping Instructions",
+    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here"
   },
   "addressForm": {
     "firstName": "Prénom",
     "lastName": "Nom",
-    "careOf": "a/s",
+    "careOf": "Aux soins de",
     "address": "Adresse",
     "apartmentSuite": "Appartement, suite, etc.",
     "city": "Ville",
@@ -111,7 +114,6 @@
     },
     "title": "Titre",
     "selectTitle": "Sélectionnez votre titre",
-    "careOf": "Aux soins de",
     "country": "Pays",
     "selectCountry": "Sélectionnez un pays",
     "delete": "Supprimer Adresse",
@@ -119,7 +121,9 @@
     "error": "Erreur",
     "initializationError": "Une erreur s'est produite lors de l'initialisation du formateur d'adresse. Veuillez réessayer.",
     "provincesLoadError": "Une erreur s'est produite lors du chargement des provinces. Veuillez réessayer.",
-    "saveError": "Une erreur s'est produite lors de l'enregistrement. Veuillez réessayer."
+    "saveError": "Une erreur s'est produite lors de l'enregistrement. Veuillez réessayer.",
+    "override_address_name": "[NEEDS_TRANSLATION]Use this fields only if you want to override Client Name for this address.",
+    "firstAddressDefault": "[NEEDS_TRANSLATION]This address will be set as your default address since it's your first one."
   },
   "changePassword": {
     "newPasswordLabel": "Entrez le nouveau mot de passe",
@@ -138,6 +142,7 @@
     "generalError": "Une erreur est survenue. Veuillez réessayer."
   },
   "myCredit": {
+    "bidderNumber": "Enchérisseur n° {{number}}",
     "formHeading": "Demande de crédit pour les enchères en ligne",
     "buttonLabel": "Envoyer la demande",
     "creditStatusMessage": "Pas encore de demande de crédit.",
@@ -146,15 +151,30 @@
     "pendingCreditStatusMessage": "Votre demande de crédit de {{amount}} est en attente.",
     "pendingCreditStatusMessageUnlimited": "Votre demande de crédit de {{amount}} est en attente. Vous avez un crédit illimité.",
     "pendingCreditStatusMessageWithLimit": "Votre demande de crédit de {{amount}} est en attente. Votre crédit actuel est de {{approvedAmount}}.",
+    "approvedCreditStatusMessageUnlimited": "Vous disposez d'un crédit illimité.",
     "approvedFormHeading": "Ma limite de crédit",
     "approvedButtonLabel": "Envoyer une nouvelle demande de crédit",
-    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount}} a été approuvée.",
+    "approvedCreditStatusMessage": "Votre demande de crédit de {{amount_request}} a été approuvée, votre limite de crédit est de {{amount}}.",
     "rejectedCreditStatusMessage": "Votre demande de crédit a été rejetée.",
     "creditRequestLabel": "Montant de la demande de crédit ({{currency}})",
     "instructions": "Combien de crédit souhaitez-vous demander ? Une fois cette limite atteinte, vous ne pourrez plus placer d'enchères.",
     "noCommasOrDecimals": "Veuillez ne pas utiliser de virgules ou de points décimaux.",
     "error": "Erreur",
-    "loading": "Chargement..."
+    "loading": "Chargement...",
+    "pageTitle": "[NEEDS_TRANSLATION]Manage Your Credit & Bidding Limits",
+    "maxBidLimits": "[NEEDS_TRANSLATION]Personal Bidding Limits",
+    "maxBidLimitsHelp": "[NEEDS_TRANSLATION]In this section you can set your own limit to any bidder number you have. Limiting the bids will cut off your potential winnings at that number so you don't end up winning more than you have planned on spending.",
+    "maxBidLimit": "[NEEDS_TRANSLATION]My Bid Limit",
+    "unlimited": "[NEEDS_TRANSLATION]Unlimited",
+    "maxBidUpdated": "[NEEDS_TRANSLATION]Max bid limit updated successfully",
+    "approvedCreditStatusMessageModified": "[NEEDS_TRANSLATION]Following review, your credit request of {{amount_request}} has been set to {{current_amount}}.",
+    "approvedCreditStatusMessageNoRequest": "[NEEDS_TRANSLATION]Your credit limit is {{amount}}.",
+    "creditRequestSubmitted": "[NEEDS_TRANSLATION]Credit Request Submitted",
+    "creditRequestDescription": "[NEEDS_TRANSLATION]Your credit request for {{amount}} has been submitted.",
+    "setBiddingLimit": "[NEEDS_TRANSLATION]Set Bidding Limit",
+    "currentLimit": "[NEEDS_TRANSLATION]Current Limit",
+    "bidLimitSubmitted": "[NEEDS_TRANSLATION]Bid Limit Updated",
+    "rejectedCreditStatusMessageUnlimited": "[NEEDS_TRANSLATION]Your credit request has been rejected. You have unlimited credit."
   },
   "myBids": {
     "summary": {
@@ -166,7 +186,7 @@
       "soldForTotal": "Sold For Total",
       "items": "Lots"
     },
-    "close": "Close",
+    "close": "Fermer",
     "showMore": "Show more",
     "detailedView": "Detailed View",
     "summaryView": "Summary View",
@@ -200,9 +220,32 @@
     "myBid": "Mon Offre",
     "bidderId": "Enchérisseur {{id}}",
     "viewMoreLotDetails": "Voir plus de détails sur le lot",
-    "close": "Fermer",
     "clickOnSaleName": "Cliquez sur le nom de la vente ci-dessus pour voir les détails de vos offres et de votre crédit pour cette vente.",
-    "error": "Erreur"
+    "error": "Erreur",
+    "filterNotHighest": "[NEEDS_TRANSLATION]Items where I'm not the highest bidder",
+    "addToGroup": "[NEEDS_TRANSLATION]Add to Or Bids Group",
+    "noGroup": "[NEEDS_TRANSLATION]No Or Bids Group",
+    "groupName": "[NEEDS_TRANSLATION]Or Bids Group {{group}}",
+    "save": "[NEEDS_TRANSLATION]Save",
+    "edit": "[NEEDS_TRANSLATION]Edit",
+    "bidGroups": "[NEEDS_TRANSLATION]Or Bid Group",
+    "groupWithLots": "[NEEDS_TRANSLATION]Group {{group}} - Lots {{lots}}",
+    "alternativeLots": "[NEEDS_TRANSLATION]Alternative lots: {{lots}}",
+    "deleted": "[NEEDS_TRANSLATION]deleted",
+    "group": "[NEEDS_TRANSLATION]Or Bid Group",
+    "bidderNumber": "[NEEDS_TRANSLATION]Bidder #",
+    "bidInfo": "[NEEDS_TRANSLATION]({type} #{id})",
+    "cannotEditGroup": "[NEEDS_TRANSLATION]Or Bid Group editing is only available for active items",
+    "groupUpdateSuccess": "[NEEDS_TRANSLATION]Or Bid Group Updated",
+    "groupRemoved": "[NEEDS_TRANSLATION]Item removed from Or Bid Group",
+    "groupAssigned": "[NEEDS_TRANSLATION]Item assigned to Or Bid Group {group}",
+    "groupUpdateError": "[NEEDS_TRANSLATION]Failed to update Or Bid Group",
+    "orGroupExplanation": {
+      "title": "[NEEDS_TRANSLATION]OR Bids Group",
+      "main": "[NEEDS_TRANSLATION]Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
+      "example": "[NEEDS_TRANSLATION]Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
+    },
+    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items"
   },
   "userBlock": {
     "login": "Connexion",
@@ -212,7 +255,9 @@
     "myAccount": "Mon compte",
     "myBidsAndCredit": "Mes enchères et crédit",
     "logout": "Déconnexion",
-    "logoutSuccessful": "Déconnexion réussie"
+    "logoutSuccessful": "Déconnexion réussie",
+    "myFavorites": "[NEEDS_TRANSLATION]Favorites",
+    "myInterests": "[NEEDS_TRANSLATION]Area of Interest"
   },
   "legacy": {
     "bid": {
@@ -306,5 +351,100 @@
     },
     "NumberInput": "Veuillez ne pas utiliser de virgules ou de points décimaux.",
     "YourBidderLimitHasBeenUpdated": "Votre limite d'enchère a été mise à jour"
+  },
+  "userInterests": {
+    "title": "[NEEDS_TRANSLATION]My Interests",
+    "pageDescription": "[NEEDS_TRANSLATION]Help us understand your collecting interests! Add categories of items you'd like to follow, and we'll notify you when matching items become available in our auctions. You can always adjust your preferences here.",
+    "searchCategories": "[NEEDS_TRANSLATION]Manage Your Interests",
+    "searchInstructions": "[NEEDS_TRANSLATION]Use the search box below to find and add categories that interest you. You can search by typing any part of the category path (e.g., 'Stamps', 'Germany', or '1900'). Categories where you've previously bid will remain in your list even when inactive, and you can reactivate them at any time using the search. Categories without bids will be removed when deactivated.",
+    "searchPlaceholder": "[NEEDS_TRANSLATION]Type to search categories...",
+    "noSearchResults": "[NEEDS_TRANSLATION]No matching categories found. Try different search terms.",
+    "myCategories": "[NEEDS_TRANSLATION]My Categories",
+    "category": "[NEEDS_TRANSLATION]Category",
+    "browseCategory": "[NEEDS_TRANSLATION]Browse Category",
+    "categoryHierarchy": "[NEEDS_TRANSLATION]Category Hierarchy",
+    "favorites": "[NEEDS_TRANSLATION]Favorites",
+    "bids": "[NEEDS_TRANSLATION]Bids",
+    "won": "[NEEDS_TRANSLATION]Won",
+    "status": "[NEEDS_TRANSLATION]Status",
+    "action": "[NEEDS_TRANSLATION]Action",
+    "active": "[NEEDS_TRANSLATION]Active",
+    "inactive": "[NEEDS_TRANSLATION]Inactive",
+    "add": "[NEEDS_TRANSLATION]Add",
+    "reactivate": "[NEEDS_TRANSLATION]Reactivate",
+    "browseExplanation": "[NEEDS_TRANSLATION]View items that match your selected categories of interest. The items will be automatically filtered based on your active categories.",
+    "browseSale": "[NEEDS_TRANSLATION]Browse Current Sale Items"
+  },
+  "search": {
+    "placeholder": "[NEEDS_TRANSLATION]Search lots..."
+  },
+  "sort": {
+    "lotAsc": "[NEEDS_TRANSLATION]Lot Number (Ascending)",
+    "lotDesc": "[NEEDS_TRANSLATION]Lot Number (Descending)",
+    "priceAsc": "[NEEDS_TRANSLATION]Price (Low to High)",
+    "priceDesc": "[NEEDS_TRANSLATION]Price (High to Low)",
+    "reset": "[NEEDS_TRANSLATION]Reset Sort"
+  },
+  "item": {
+    "startingPrice": "[NEEDS_TRANSLATION]Starting Price",
+    "viewDetails": "[NEEDS_TRANSLATION]View Details",
+    "description": "[NEEDS_TRANSLATION]Description",
+    "auctionDetails": "[NEEDS_TRANSLATION]Auction Details",
+    "sale": "[NEEDS_TRANSLATION]Sale",
+    "estimate": "[NEEDS_TRANSLATION]Estimate",
+    "noImage": "[NEEDS_TRANSLATION]Request item photos",
+    "photos": "[NEEDS_TRANSLATION]Photos"
+  },
+  "myFavorites": {
+    "allSales": "[NEEDS_TRANSLATION]All Sales",
+    "noFavorites": "[NEEDS_TRANSLATION]You have not added any lots to your favorites yet.",
+    "addFavoritesHint": "[NEEDS_TRANSLATION]Browse auctions and click the heart icon to add lots to your favorites.",
+    "noMatchingFavorites": "[NEEDS_TRANSLATION]No favorites match your current filters.",
+    "noFavoritesInSale": "[NEEDS_TRANSLATION]You have no favorite lots in this sale.",
+    "lot": "[NEEDS_TRANSLATION]Lot",
+    "title": "[NEEDS_TRANSLATION]Title",
+    "startPrice": "[NEEDS_TRANSLATION]Opening",
+    "estimate": "[NEEDS_TRANSLATION]Estimate",
+    "actions": "[NEEDS_TRANSLATION]Actions",
+    "viewItem": "[NEEDS_TRANSLATION]View Item",
+    "remove": "[NEEDS_TRANSLATION]Remove",
+    "hasBids": "[NEEDS_TRANSLATION]Has Bids",
+    "errorFetching": "[NEEDS_TRANSLATION]Error fetching favorites",
+    "soldfor": "[NEEDS_TRANSLATION]Sold for",
+    "addToCompare": "[NEEDS_TRANSLATION]Add to Compare",
+    "compareItems": "[NEEDS_TRANSLATION]Compare Items",
+    "selectMoreItems": "[NEEDS_TRANSLATION]Select at least 2 items to compare",
+    "selectedItems": "[NEEDS_TRANSLATION]{{count}} items selected",
+    "maxItemsReached": "[NEEDS_TRANSLATION]Maximum 4 items can be compared",
+    "CompareItems": "[NEEDS_TRANSLATION]Compare Items",
+    "image": "[NEEDS_TRANSLATION]Image",
+    "category": "[NEEDS_TRANSLATION]Category",
+    "saleTitle": "[NEEDS_TRANSLATION]Sale",
+    "soldFor": "[NEEDS_TRANSLATION]Sold for",
+    "catalogInfo": "[NEEDS_TRANSLATION]Catalog Reference",
+    "symbols": "[NEEDS_TRANSLATION]Symbols",
+    "description": "[NEEDS_TRANSLATION]Description",
+    "followThisLot": "[NEEDS_TRANSLATION]Follow lot",
+    "following": "[NEEDS_TRANSLATION]Following",
+    "addTooltip": "[NEEDS_TRANSLATION]Click this button to add this item to your list of favorite items",
+    "removeTooltip": "[NEEDS_TRANSLATION]Click this button to remove the item from your favorite list",
+    "addSuccess": "[NEEDS_TRANSLATION]Lot has been added to your favorites",
+    "removeSuccess": "[NEEDS_TRANSLATION]Lot has been removed from your favorites",
+    "errorAdding": "[NEEDS_TRANSLATION]Error adding to favorites",
+    "errorRemoving": "[NEEDS_TRANSLATION]Error removing from favorites",
+    "loginRequired": "[NEEDS_TRANSLATION]Please login to add items to favorites"
+  },
+  "filters": {
+    "saleLabel": "[NEEDS_TRANSLATION]Sale",
+    "searchLabel": "[NEEDS_TRANSLATION]Search Lots",
+    "sortLabel": "[NEEDS_TRANSLATION]Sort By",
+    "itemsPerPage": "[NEEDS_TRANSLATION]Items per page",
+    "showOnlyBids": "[NEEDS_TRANSLATION]Show only lots with bids",
+    "reset": "[NEEDS_TRANSLATION]Reset Filters"
+  },
+  "pagination": {
+    "showing": "[NEEDS_TRANSLATION]Showing {{start}}-{{end}} of {{total}} items",
+    "previous": "[NEEDS_TRANSLATION]Previous",
+    "next": "[NEEDS_TRANSLATION]Next"
   }
 }
