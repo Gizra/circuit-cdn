@@ -38003,7 +38003,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 						_elm_lang$html$Html$span,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('med reserve-price'),
+							_0: _elm_lang$html$Html_Attributes$class('med'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -38011,153 +38011,270 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p31._0, _p31._1),
 							_1: {ctor: '[]'}
 						});
+					var icon = A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-minus-circle'),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-hidden', 'true'),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'});
 					return {
 						english: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Reserve '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('Reserve '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						dutch: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Reserve '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('Reserve '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						german: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Limit '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('Limit '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						hebrew: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('מחיר שמור '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('מחיר שמור '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						russian: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Резерв '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('Резерв '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						chinese: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('保留价 '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('保留价 '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						},
 						french: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Réserve '),
-							_1: {
-								ctor: '::',
-								_0: amountHtml,
-								_1: {
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' ('),
+									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: icon,
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p42),
+										_0: _elm_lang$html$Html$text('Réserve '),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(')'),
-											_1: {ctor: '[]'}
+											_0: amountHtml,
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' ('),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(_p42),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(')'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
-								}
-							}
+								}),
+							_1: {ctor: '[]'}
 						}
 					};
 				case 'RoomCurrentPriceAmount':
