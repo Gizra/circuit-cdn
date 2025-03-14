@@ -32953,11 +32953,7 @@ var _Gizra$circuit_bid$Item_Model$CalculatedItem = function (a) {
 																return function (q) {
 																	return function (r) {
 																		return function (s) {
-																			return function (t) {
-																				return function (u) {
-																					return {startingPrice: a, openingPrice: b, currentPrice: c, nextPrice: d, status: e, note: f, publicMessage: g, bidSteps: h, bids: i, bookBids: j, agentBids: k, minimumPrice: l, winningBid: m, winningUserTotalWon: n, callRequests: o, rallyStatus: p, reservePrice: q, reserveType: r, consigner: s, autoClerk: t, futureBookBidAmounts: u};
-																				};
-																			};
+																			return {startingPrice: a, openingPrice: b, currentPrice: c, nextPrice: d, status: e, note: f, publicMessage: g, bidSteps: h, bids: i, bookBids: j, agentBids: k, minimumPrice: l, winningBid: m, winningUserTotalWon: n, callRequests: o, rallyStatus: p, consigner: q, autoClerk: r, futureBookBidAmounts: s};
 																		};
 																	};
 																};
@@ -37803,7 +37799,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 						_elm_lang$html$Html$span,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('med pipeline minimum-price'),
+							_0: _elm_lang$html$Html_Attributes$class('med minimum-price'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -37997,289 +37993,9 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							french: {ctor: '[]'}
 						};
 					}
-				case 'ReservePriceWithType':
-					var _p42 = _p31._2;
-					var amountHtml = A2(
-						_elm_lang$html$Html$span,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('med'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p31._0, _p31._1),
-							_1: {ctor: '[]'}
-						});
-					var icon = A2(
-						_elm_lang$html$Html$i,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('fa fa-minus-circle'),
-							_1: {
-								ctor: '::',
-								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-hidden', 'true'),
-								_1: {ctor: '[]'}
-							}
-						},
-						{ctor: '[]'});
-					return {
-						english: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Reserve '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						dutch: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Reserve '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						german: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Limit '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						hebrew: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('מחיר שמור '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						russian: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Резерв '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						chinese: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('保留价 '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						},
-						french: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('reserve-price'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: icon,
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Réserve '),
-										_1: {
-											ctor: '::',
-											_0: amountHtml,
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html$text(' ('),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(_p42),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(')'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						}
-					};
 				case 'RoomCurrentPriceAmount':
-					var _p44 = _p31._1;
-					var _p43 = _p31._0;
+					var _p43 = _p31._1;
+					var _p42 = _p31._0;
 					return {
 						english: {
 							ctor: '::',
@@ -38301,7 +38017,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38328,7 +38044,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38355,7 +38071,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38382,7 +38098,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38409,7 +38125,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38436,7 +38152,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38463,7 +38179,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p43, _p44),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p42, _p43),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38472,8 +38188,8 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 						}
 					};
 				case 'RoomOpeningPriceAmount':
-					var _p46 = _p31._1;
-					var _p45 = _p31._0;
+					var _p45 = _p31._1;
+					var _p44 = _p31._0;
 					return {
 						english: {
 							ctor: '::',
@@ -38495,7 +38211,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38522,7 +38238,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38549,7 +38265,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38576,7 +38292,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38603,7 +38319,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38630,7 +38346,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38657,7 +38373,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p45, _p46),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p44, _p45),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -38666,7 +38382,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 						}
 					};
 				case 'Seconds':
-					var _p47 = _p31._0;
+					var _p46 = _p31._0;
 					var getText = function (txt) {
 						return {
 							ctor: '::',
@@ -38680,7 +38396,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								{
 									ctor: '::',
 									_0: _elm_lang$html$Html$text(
-										_elm_lang$core$Basics$toString(_p47)),
+										_elm_lang$core$Basics$toString(_p46)),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
@@ -38705,7 +38421,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							}
 						};
 					};
-					return _elm_lang$core$Native_Utils.eq(_p47, 1) ? {
+					return _elm_lang$core$Native_Utils.eq(_p46, 1) ? {
 						english: getText('second'),
 						dutch: getText('tweede'),
 						german: getText('Sekunde'),
@@ -39289,8 +39005,8 @@ var _Gizra$circuit_bid$Translate$allLanguages = {
 	}
 };
 var _Gizra$circuit_bid$Translate$languageFromString = function (str) {
-	var _p48 = str;
-	switch (_p48) {
+	var _p47 = str;
+	switch (_p47) {
 		case 'English':
 			return _elm_lang$core$Result$Ok(_Gizra$circuit_bid$Translate$English);
 		case 'Chinese':
@@ -39310,8 +39026,8 @@ var _Gizra$circuit_bid$Translate$languageFromString = function (str) {
 	}
 };
 var _Gizra$circuit_bid$Translate$languageFromCode = function (str) {
-	var _p49 = str;
-	switch (_p49) {
+	var _p48 = str;
+	switch (_p48) {
 		case 'en':
 			return _elm_lang$core$Result$Ok(_Gizra$circuit_bid$Translate$English);
 		case 'zh-hans':
@@ -39359,10 +39075,6 @@ var _Gizra$circuit_bid$Translate$RoomOpeningPriceAmount = F2(
 var _Gizra$circuit_bid$Translate$RoomCurrentPriceAmount = F2(
 	function (a, b) {
 		return {ctor: 'RoomCurrentPriceAmount', _0: a, _1: b};
-	});
-var _Gizra$circuit_bid$Translate$ReservePriceWithType = F3(
-	function (a, b, c) {
-		return {ctor: 'ReservePriceWithType', _0: a, _1: b, _2: c};
 	});
 var _Gizra$circuit_bid$Translate$PendingRequest = F2(
 	function (a, b) {
@@ -47363,90 +47075,80 @@ var _Gizra$circuit_bid$Item_Decoder$decodeCalculatedItem = F2(
 					_elm_lang$core$Maybe$Nothing,
 					A4(
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-						'reserve_type',
-						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
-						_elm_lang$core$Maybe$Nothing,
+						'rally',
+						_Gizra$circuit_bid$Item_Decoder$decodeRallyStatus,
+						_Gizra$circuit_bid$Item_Model$None,
 						A4(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-							'reserve_price',
-							_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Amount$decodeAmount),
-							_elm_lang$core$Maybe$Nothing,
+							'call_requests',
+							_elm_lang$core$Json_Decode$list(_Gizra$circuit_bid$Item_Decoder$decodeCallRequest),
+							{ctor: '[]'},
 							A4(
 								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-								'rally',
-								_Gizra$circuit_bid$Item_Decoder$decodeRallyStatus,
-								_Gizra$circuit_bid$Item_Model$None,
+								'winning_user_total_won',
+								_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Amount$decodeAmount),
+								_elm_lang$core$Maybe$Nothing,
 								A4(
 									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-									'call_requests',
-									_elm_lang$core$Json_Decode$list(_Gizra$circuit_bid$Item_Decoder$decodeCallRequest),
-									{ctor: '[]'},
+									'winning_bid',
+									_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Bid_Decoder$decodeBidKey),
+									_elm_lang$core$Maybe$Nothing,
 									A4(
 										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-										'winning_user_total_won',
+										'minimum_price',
 										_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Amount$decodeAmount),
 										_elm_lang$core$Maybe$Nothing,
 										A4(
 											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-											'winning_bid',
-											_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Bid_Decoder$decodeBidKey),
-											_elm_lang$core$Maybe$Nothing,
+											'agent_bid',
+											_Gizra$circuit_bid$Bid_Decoder$decodeBidDict(user),
+											_Gizra$elm_dictlist$EveryDictList$empty,
 											A4(
 												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-												'minimum_price',
-												_elm_lang$core$Json_Decode$maybe(_Gizra$circuit_bid$Amount$decodeAmount),
-												_elm_lang$core$Maybe$Nothing,
+												'book_bid',
+												_Gizra$circuit_bid$Bid_Decoder$decodeBidDict(user),
+												_Gizra$elm_dictlist$EveryDictList$empty,
 												A4(
 													_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-													'agent_bid',
+													'bid',
 													_Gizra$circuit_bid$Bid_Decoder$decodeBidDict(user),
 													_Gizra$elm_dictlist$EveryDictList$empty,
-													A4(
-														_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-														'book_bid',
-														_Gizra$circuit_bid$Bid_Decoder$decodeBidDict(user),
-														_Gizra$elm_dictlist$EveryDictList$empty,
+													A3(
+														_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+														'steps',
+														_Gizra$circuit_bid$BidStep_Decoder$decodeBidSteps,
 														A4(
 															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-															'bid',
-															_Gizra$circuit_bid$Bid_Decoder$decodeBidDict(user),
-															_Gizra$elm_dictlist$EveryDictList$empty,
-															A3(
-																_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																'steps',
-																_Gizra$circuit_bid$BidStep_Decoder$decodeBidSteps,
-																A4(
-																	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-																	'public_message',
-																	_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
-																	_elm_lang$core$Maybe$Nothing,
+															'public_message',
+															_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+															_elm_lang$core$Maybe$Nothing,
+															A4(
+																_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+																'note',
+																_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+																_elm_lang$core$Maybe$Nothing,
+																A2(
+																	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+																	_Gizra$circuit_bid$Item_Decoder$decodeStatus,
 																	A4(
 																		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-																		'note',
-																		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+																		'next_price',
+																		_elm_lang$core$Json_Decode$nullable(_Gizra$circuit_bid$Amount$decodeAmount),
 																		_elm_lang$core$Maybe$Nothing,
-																		A2(
-																			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
-																			_Gizra$circuit_bid$Item_Decoder$decodeStatus,
-																			A4(
-																				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-																				'next_price',
-																				_elm_lang$core$Json_Decode$nullable(_Gizra$circuit_bid$Amount$decodeAmount),
-																				_elm_lang$core$Maybe$Nothing,
-																				A4(
-																					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-																					'current_price',
-																					_elm_lang$core$Json_Decode$nullable(_Gizra$circuit_bid$Amount$decodeAmount),
-																					_elm_lang$core$Maybe$Nothing,
-																					A3(
-																						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																						'opening_price',
-																						_Gizra$circuit_bid$Amount$decodeAmount,
-																						A3(
-																							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-																							'starting_price',
-																							_Gizra$circuit_bid$Amount$decodeAmount,
-																							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$CalculatedItem))))))))))))))))))))));
+																		A4(
+																			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+																			'current_price',
+																			_elm_lang$core$Json_Decode$nullable(_Gizra$circuit_bid$Amount$decodeAmount),
+																			_elm_lang$core$Maybe$Nothing,
+																			A3(
+																				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+																				'opening_price',
+																				_Gizra$circuit_bid$Amount$decodeAmount,
+																				A3(
+																					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+																					'starting_price',
+																					_Gizra$circuit_bid$Amount$decodeAmount,
+																					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$CalculatedItem))))))))))))))))))));
 	});
 var _Gizra$circuit_bid$Item_Decoder$decodeCalculatedItemDict = F2(
 	function (currentDate, user) {
@@ -47925,7 +47627,7 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'http://localhost:5000'
+	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
 };
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
@@ -47985,7 +47687,11 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																_1: {
 																	ctor: '::',
 																	_0: 'www.stampcircuit.com',
-																	_1: {ctor: '[]'}
+																	_1: {
+																		ctor: '::',
+																		_0: 'pennypost.circuitauction.com',
+																		_1: {ctor: '[]'}
+																	}
 																}
 															}
 														}
@@ -51766,32 +51472,6 @@ var _Gizra$circuit_bid$Item_View$pricesInfoView = F3(
 						return _.startingPrice;
 					},
 					_krisajenkins$remotedata$RemoteData$toMaybe(item.calculated))));
-		var reservePriceWithType = function () {
-			var maybeCalculated = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-			var _p3 = {
-				ctor: '_Tuple2',
-				_0: A2(
-					_elm_lang$core$Maybe$andThen,
-					function (_) {
-						return _.reservePrice;
-					},
-					maybeCalculated),
-				_1: A2(
-					_elm_lang$core$Maybe$andThen,
-					function (_) {
-						return _.reserveType;
-					},
-					maybeCalculated)
-			};
-			if (((_p3.ctor === '_Tuple2') && (_p3._0.ctor === 'Just')) && (_p3._1.ctor === 'Just')) {
-				return A2(
-					_Gizra$circuit_bid$Translate$translateHtml,
-					language,
-					A3(_Gizra$circuit_bid$Translate$ReservePriceWithType, _p3._0._0, currency, _p3._1._0));
-			} else {
-				return {ctor: '[]'};
-			}
-		}();
 		var minimumPrice = A2(
 			_elm_lang$core$Maybe$withDefault,
 			{ctor: '[]'},
@@ -51828,35 +51508,10 @@ var _Gizra$circuit_bid$Item_View$pricesInfoView = F3(
 				_0: _elm_lang$html$Html_Attributes$class('prices'),
 				_1: {ctor: '[]'}
 			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$span,
-					{ctor: '[]'},
-					startPrice),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$span,
-						{ctor: '[]'},
-						estimatedPrice),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$span,
-							{ctor: '[]'},
-							minimumPrice),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{ctor: '[]'},
-								reservePriceWithType),
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			});
+			A2(
+				_elm_lang$core$List$append,
+				startPrice,
+				A2(_elm_lang$core$List$append, estimatedPrice, minimumPrice)));
 	});
 
 var _elm_community$result_extra$Result_Extra$merge = function (r) {
