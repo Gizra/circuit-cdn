@@ -47690,7 +47690,11 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																	_1: {
 																		ctor: '::',
 																		_0: 'pennypost.circuitauction.com',
-																		_1: {ctor: '[]'}
+																		_1: {
+																			ctor: '::',
+																			_0: 'kelleher.anecdotesolutions.com',
+																			_1: {ctor: '[]'}
+																		}
 																	}
 																}
 															}
