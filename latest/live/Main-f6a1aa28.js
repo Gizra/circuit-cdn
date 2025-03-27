@@ -15201,8 +15201,11 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForKey = F3(
 		var _p28 = _p27._0;
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p28.path),
-			_p28.keyToUrlPart(key));
+			backendUrl,
+			A2(
+				_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
+				_p28.path,
+				_p28.keyToUrlPart(key)));
 	});
 var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 	function (backendUrl, _p29, keys) {
@@ -15212,8 +15215,8 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 			A2(_elm_lang$core$List$map, _p31.keyToUrlPart, keys));
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p31.path),
-			ids);
+			backendUrl,
+			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], _p31.path, ids));
 	});
 var _Gizra$elm_restful$Restful_Endpoint$encodeEmptyObject = function (a) {
 	return _elm_lang$core$Json_Encode$object(
@@ -47627,12 +47630,12 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
+	serverless: 'http://localhost:5000'
 };
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'localhost', _1: _Gizra$circuit_bid$LocalConfig$local},
+		_0: {ctor: '_Tuple2', _0: '172.18.0.3', _1: _Gizra$circuit_bid$LocalConfig$local},
 		_1: {ctor: '[]'}
 	});
 
@@ -52247,7 +52250,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$userOrFloorBidderInput = F7(
 												_krisajenkins$remotedata$RemoteData$isLoading(status)),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$value(inputValue),
+												_0: _elm_lang$html$Html_Attributes$defaultValue(inputValue),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$id('winning-floor-id'),
@@ -60440,6 +60443,155 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewDebug = F3(
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		}
 	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewPublicMessageInput = F4(
+	function (language, currency, request, publicMessageInput) {
+		var isDisabled = _krisajenkins$remotedata$RemoteData$isLoading(request) || (_krisajenkins$remotedata$RemoteData$isNotAsked(request) || _elm_lang$core$String$isEmpty(publicMessageInput));
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('public-message'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$textarea,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$rows(2),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetPublicMessageInput),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$defaultValue(publicMessageInput),
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('button primary send-public-message'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$SubmitPublicMessage),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$classList(
+										{
+											ctor: '::',
+											_0: {ctor: '_Tuple2', _0: 'disabled', _1: isDisabled},
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						{
+							ctor: '::',
+							_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Send),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			});
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewClerkCurrentItem = F4(
+	function (language, model, _p7, _p6) {
+		var _p8 = _p7;
+		var _p11 = _p8._1;
+		var _p9 = _p6;
+		var _p10 = _p9._1;
+		var existingPublicMessage = A2(
+			_Gizra$circuit_bid$Utils_Html$showMaybe,
+			function (calcualted) {
+				return A2(
+					_Gizra$circuit_bid$Utils_Html$showMaybe,
+					function (publicMessage) {
+						return A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('existing-public-message'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(publicMessage),
+								_1: {ctor: '[]'}
+							});
+					},
+					calcualted.publicMessage);
+			},
+			_krisajenkins$remotedata$RemoteData$toMaybe(_p10.calculated));
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('clerk-current-item'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('lotnum'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(_p10.lotId),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A3(_Gizra$circuit_bid$Item_View$pricesInfoView, language, _p11.currency, _p10),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('title'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$img,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$src(_p10.image.big),
+										_1: {ctor: '[]'}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(_p10.name),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A4(_Gizra$circuit_bid$Pages_Clerk_View$viewPublicMessageInput, language, _p11.currency, model.publicMessagesSendRequest, model.publicMessageInput),
+							_1: {
+								ctor: '::',
+								_0: existingPublicMessage,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			});
+	});
 var _Gizra$circuit_bid$Pages_Clerk_View$itemStatusErrorView = F2(
 	function (language, err) {
 		return A2(
@@ -60457,14 +60609,14 @@ var _Gizra$circuit_bid$Pages_Clerk_View$itemStatusErrorView = F2(
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$clerkStatusButton = F6(
 	function (language, model, saleUuid, itemId, status, clerkStatus) {
-		var _p6 = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$itemStatusButton, model, saleUuid, itemId, status, clerkStatus);
-		var loading = _p6.loading;
-		var disabled = _p6.disabled;
-		var active = _p6.active;
-		var msg = _p6.msg;
-		var _p7 = function () {
-			var _p8 = clerkStatus;
-			switch (_p8.ctor) {
+		var _p12 = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$itemStatusButton, model, saleUuid, itemId, status, clerkStatus);
+		var loading = _p12.loading;
+		var disabled = _p12.disabled;
+		var active = _p12.active;
+		var msg = _p12.msg;
+		var _p13 = function () {
+			var _p14 = clerkStatus;
+			switch (_p14.ctor) {
 				case 'Paused':
 					return {
 						ctor: '_Tuple3',
@@ -60528,9 +60680,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkStatusButton = F6(
 					};
 			}
 		}();
-		var className = _p7._0;
-		var label = _p7._1;
-		var htmlSuffix = _p7._2;
+		var className = _p13._0;
+		var label = _p13._1;
+		var htmlSuffix = _p13._2;
 		return A2(
 			_elm_lang$html$Html$button,
 			A2(
@@ -60613,11 +60765,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$itemStatusButtonsView = F6(
 				}));
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$viewLastToFloorButton = F5(
-	function (language, model, saleUuid, _p9, lastBidWasFloor) {
-		var _p10 = _p9;
-		var _p11 = _p10._1;
+	function (language, model, saleUuid, _p15, lastBidWasFloor) {
+		var _p16 = _p15;
+		var _p17 = _p16._1;
 		var lastBidLoading = _Gizra$circuit_bid$QueuedRequest_Utils$queuedRequestLoading(model.queuedSetToFloorRequestState);
-		var isDisabled = lastBidLoading || (A2(_Gizra$circuit_bid$Pages_Clerk_Utils$itemIsLoading, model, _p11.status) || (_Gizra$circuit_bid$Item_Utils$isClosed(_p11.status) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p11.status) || (lastBidWasFloor || (!_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p11))))));
+		var isDisabled = lastBidLoading || (A2(_Gizra$circuit_bid$Pages_Clerk_Utils$itemIsLoading, model, _p17.status) || (_Gizra$circuit_bid$Item_Utils$isClosed(_p17.status) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p17.status) || (lastBidWasFloor || (!_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p17))))));
 		return A2(
 			_elm_lang$html$Html$button,
 			A2(
@@ -60643,7 +60795,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewLastToFloorButton = F5(
 				isDisabled ? {ctor: '[]'} : {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Events$onClick(
-						A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetItemLastToFloor, saleUuid, _p10._0)),
+						A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetItemLastToFloor, saleUuid, _p16._0)),
 					_1: {ctor: '[]'}
 				}),
 			{
@@ -60652,24 +60804,543 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewLastToFloorButton = F5(
 				_1: {ctor: '[]'}
 			});
 	});
-var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F6(
-	function (currentDate, modelBackend, language, model, _p13, _p12) {
-		var _p14 = _p13;
-		var _p20 = _p14._1;
-		var _p15 = _p12;
-		var _p19 = _p15._1;
-		var _p16 = _krisajenkins$remotedata$RemoteData$toMaybe(_p19.calculated);
-		if (_p16.ctor === 'Nothing') {
+var _Gizra$circuit_bid$Pages_Clerk_View$bidStepView = F6(
+	function (language, currency, model, itemId, itemStatus, _p18) {
+		var _p19 = _p18;
+		var manualStepInput = A2(
+			_elm_lang$core$Maybe$withDefault,
+			'',
+			A2(_elm_lang$core$Maybe$map, _elm_lang$core$Basics$toString, model.manualStepInput));
+		var buttonClasses = function (hasBidStepInput) {
+			return _elm_lang$html$Html_Attributes$classList(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'add-bid', _1: true},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'disabled',
+							_1: (!hasBidStepInput) || (_Gizra$circuit_bid$Item_Utils$isClosed(itemStatus) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(itemStatus) || _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading)))
+						},
+						_1: {ctor: '[]'}
+					}
+				});
+		};
+		var _p20 = function () {
+			var _p21 = model.manualStepInput;
+			if (_p21.ctor === 'Just') {
+				return {
+					ctor: '_Tuple2',
+					_0: {
+						ctor: '::',
+						_0: buttonClasses(true),
+						_1: {ctor: '[]'}
+					},
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onSubmit(
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetBidStep, itemId, _p21._0)),
+						_1: {ctor: '[]'}
+					}
+				};
+			} else {
+				return {
+					ctor: '_Tuple2',
+					_0: {
+						ctor: '::',
+						_0: buttonClasses(false),
+						_1: {ctor: '[]'}
+					},
+					_1: {ctor: '[]'}
+				};
+			}
+		}();
+		var buttonAttributes = _p20._0;
+		var formAttr = _p20._1;
+		return A2(
+			_elm_lang$html$Html$form,
+			A2(
+				_elm_lang$core$List$append,
+				formAttr,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('change-step'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$action('javascript: void(0)'),
+						_1: {ctor: '[]'}
+					}
+				}),
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$span,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('enter-step'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ChangeBidStep),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('current-step'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'(',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_elm_lang$core$Basics$toString(_p19._0),
+												')'))),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$input,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('enter-step'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$defaultValue(manualStepInput),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('number'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$min('1'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetBidStepInput),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							buttonAttributes,
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$i,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
+										_1: {ctor: '[]'}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
+	function (language, currency, saleUuid, model, _p22, bidAmount, lastBidWasFloor) {
+		var _p23 = _p22;
+		var _p29 = _p23._0;
+		var _p28 = _p23._1;
+		var onSubmitBidPlaceAttr = function (msg) {
+			var _p24 = msg;
+			if (_p24.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				return {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onSubmit(_p24._0),
+					_1: {ctor: '[]'}
+				};
+			}
+		};
+		var onClickBidPlaceAttr = function (msg) {
+			var _p25 = msg;
+			if (_p25.ctor === 'Nothing') {
+				return {ctor: '[]'};
+			} else {
+				return {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onClick(_p25._0),
+					_1: {ctor: '[]'}
+				};
+			}
+		};
+		var nextBidAmount = A2(
+			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
+			_elm_lang$core$Native_Utils.update(
+				_p28,
+				{
+					currentPrice: _elm_lang$core$Maybe$Just(bidAmount)
+				}),
+			model);
+		var customFloorBidButton = function () {
+			var _p26 = A2(
+				_elm_lang$core$Maybe$withDefault,
+				{ctor: '_Tuple2', _0: bidAmount, _1: nextBidAmount},
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (customBidInput) {
+						return {
+							ctor: '_Tuple2',
+							_0: customBidInput,
+							_1: A2(
+								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
+								_elm_lang$core$Native_Utils.update(
+									_p28,
+									{
+										currentPrice: _elm_lang$core$Maybe$Just(customBidInput)
+									}),
+								model)
+						};
+					},
+					model.customBidInput));
+			var customBidAmount = _p26._0;
+			var nextCustomBidAmount = _p26._1;
+			return A6(_Gizra$circuit_bid$Pages_Clerk_Utils$customFloorBidButton, model, _p29, saleUuid, _p28.status, customBidAmount, nextCustomBidAmount);
+		}();
+		var nextFloorBidButton = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$nextFloorBidButton, _p29, saleUuid, _p28.status, bidAmount, nextBidAmount);
+		var customBidInput = function () {
+			var _p27 = model.customBidInput;
+			if (_p27.ctor === 'Just') {
+				return _elm_lang$core$Basics$toString(_p27._0._0);
+			} else {
+				return '';
+			}
+		}();
+		return {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$classList(
+							{
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: 'btn place-bid next-bid', _1: true},
+								_1: {
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'disabled', _1: nextFloorBidButton.disabled},
+									_1: {
+										ctor: '::',
+										_0: {ctor: '_Tuple2', _0: 'loading', _1: nextFloorBidButton.loading},
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					},
+					onClickBidPlaceAttr(nextFloorBidButton.msg)),
+				{
+					ctor: '::',
+					_0: A2(
+						_Gizra$circuit_bid$Translate$translateText,
+						language,
+						A2(_Gizra$circuit_bid$Translate$AddNextBid, bidAmount, currency)),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('shortcut'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('F9'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Or),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$form,
+						A2(
+							_elm_lang$core$List$append,
+							onSubmitBidPlaceAttr(customFloorBidButton.msg),
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$action('javascript: void(0)'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('next-bid'),
+									_1: {ctor: '[]'}
+								}
+							}),
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('enter-bid'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$NextBid)),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$input,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$classList(
+											{
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'enter-bid', _1: true},
+												_1: {
+													ctor: '::',
+													_0: {ctor: '_Tuple2', _0: 'disabled', _1: nextFloorBidButton.disabled},
+													_1: {ctor: '[]'}
+												}
+											}),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$CustomBidAmountUpdate),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$defaultValue(customBidInput),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$disabled(nextFloorBidButton.disabled),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$classList(
+												{
+													ctor: '::',
+													_0: {ctor: '_Tuple2', _0: 'btn button add-bid', _1: true},
+													_1: {
+														ctor: '::',
+														_0: {ctor: '_Tuple2', _0: 'disabled', _1: customFloorBidButton.disabled},
+														_1: {
+															ctor: '::',
+															_0: {ctor: '_Tuple2', _0: 'loading', _1: customFloorBidButton.loading},
+															_1: {ctor: '[]'}
+														}
+													}
+												}),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$i,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
+													_1: {ctor: '[]'}
+												},
+												{ctor: '[]'}),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A5(
+							_Gizra$circuit_bid$Pages_Clerk_View$viewLastToFloorButton,
+							language,
+							model,
+							saleUuid,
+							{ctor: '_Tuple2', _0: _p29, _1: _p28},
+							lastBidWasFloor),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		};
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
+	function (language, model, _p31, _p30) {
+		var _p32 = _p31;
+		var _p41 = _p32._1;
+		var _p33 = _p30;
+		var _p40 = _p33._0;
+		var maybeErrorMessage = function () {
+			var _p34 = model.itemChangeRequest;
+			if (_p34.ctor === 'Failure') {
+				var _p35 = _p34._0;
+				if (_p35.ctor === 'Http') {
+					return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p35._0);
+				} else {
+					return A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('alert alert-danger'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(_p35._0),
+							_1: {ctor: '[]'}
+						});
+				}
+			} else {
+				return _Gizra$circuit_bid$Utils_Html$emptyNode;
+			}
+		}();
+		var _p36 = _krisajenkins$remotedata$RemoteData$toMaybe(_p33._1.calculated);
+		if (_p36.ctor === 'Nothing') {
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		} else {
-			var _p18 = _p16._0;
+			var _p39 = _p36._0;
+			var lastBidWasFloor = A2(
+				_elm_lang$core$Maybe$withDefault,
+				false,
+				A2(
+					_elm_lang$core$Maybe$map,
+					_Gizra$circuit_bid$Bid_Utils$isFloorBid,
+					_Gizra$circuit_bid$Item_Utils$getWinningBid(_p39)));
+			var isLoading = _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading);
+			var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p39, model);
+			var currentBidStepAmount = function () {
+				var _p37 = {ctor: '_Tuple2', _0: _p39.nextPrice, _1: _p39.currentPrice};
+				if (((_p37.ctor === '_Tuple2') && (_p37._0.ctor === 'Just')) && (_p37._1.ctor === 'Just')) {
+					return A2(_Gizra$circuit_bid$Amount$subtract, _p37._0._0, _p37._1._0);
+				} else {
+					return _Gizra$circuit_bid$Amount$zero;
+				}
+			}();
+			var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p39, model);
+			var lastBidAmount = function () {
+				var _p38 = highestPrice;
+				if (_p38.ctor === 'Opening') {
+					return _Gizra$circuit_bid$Amount$zero;
+				} else {
+					return _p38._0;
+				}
+			}();
+			var addStep = function (bid) {
+				return A2(
+					_Gizra$circuit_bid$Amount$add,
+					bid,
+					A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, _p39.bidSteps, bid));
+			};
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('clerkapp'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('bidding'),
+							_1: {ctor: '[]'}
+						},
+						A7(
+							_Gizra$circuit_bid$Pages_Clerk_View$floorBidView,
+							language,
+							_p41.currency,
+							_p41.uuid,
+							model,
+							{ctor: '_Tuple2', _0: _p40, _1: _p39},
+							bidAmount,
+							lastBidWasFloor)),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('itemstatus'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$itemStatusButtonsView, language, model, _p32._0, _p40, _p39.status, lastBidWasFloor),
+								_1: {
+									ctor: '::',
+									_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$bidStepView, language, _p41.currency, model, _p40, _p39.status, currentBidStepAmount),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('item-status-error'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: maybeErrorMessage,
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}
+				});
+		}
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F6(
+	function (currentDate, modelBackend, language, model, _p43, _p42) {
+		var _p44 = _p43;
+		var _p50 = _p44._1;
+		var _p45 = _p42;
+		var _p49 = _p45._1;
+		var _p46 = _krisajenkins$remotedata$RemoteData$toMaybe(_p49.calculated);
+		if (_p46.ctor === 'Nothing') {
+			return _Gizra$circuit_bid$Utils_Html$emptyNode;
+		} else {
+			var _p48 = _p46._0;
 			var priceOrWithdrawnDisplay = function () {
-				if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p18.status)) {
+				if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p48.status)) {
 					return _Gizra$circuit_bid$Pages_Clerk_Utils$viewWithdrawnItem(language);
 				} else {
-					var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p18, model);
-					var _p17 = highestPrice;
-					if (_p17.ctor === 'Opening') {
+					var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p48, model);
+					var _p47 = highestPrice;
+					if (_p47.ctor === 'Opening') {
 						return A2(
 							_elm_lang$html$Html$div,
 							{
@@ -60702,14 +61373,14 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F6(
 										},
 										{
 											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p18.openingPrice, _p20.currency),
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p48.openingPrice, _p50.currency),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
 								}
 							});
 					} else {
-						return A3(_Gizra$circuit_bid$Pages_Clerk_Utils$clerkCurrentPriceView, language, highestPrice, _p20.currency);
+						return A3(_Gizra$circuit_bid$Pages_Clerk_Utils$clerkCurrentPriceView, language, highestPrice, _p50.currency);
 					}
 				}
 			}();
@@ -60728,17 +61399,17 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F6(
 						_0: A6(
 							_Gizra$circuit_bid$Pages_Clerk_Utils$viewWinningBidder,
 							language,
-							_p20.currency,
+							_p50.currency,
 							modelBackend,
-							_p14._0,
-							{ctor: '_Tuple2', _0: _p15._0, _1: _p19},
+							_p44._0,
+							{ctor: '_Tuple2', _0: _p45._0, _1: _p49},
 							false),
 						_1: {
 							ctor: '::',
-							_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$openingPriceEditor, language, _p18, _p20.currency, model.openingPriceForm, model.itemChangeRequest),
+							_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$openingPriceEditor, language, _p48, _p50.currency, model.openingPriceForm, model.itemChangeRequest),
 							_1: {
 								ctor: '::',
-								_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally, currentDate, language, _p20, _p18, model),
+								_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally, currentDate, language, _p50, _p48, model),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -60747,8 +61418,8 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F6(
 		}
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus = F2(
-	function (language, _p21) {
-		var _p22 = _p21;
+	function (language, _p51) {
+		var _p52 = _p51;
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -60769,11 +61440,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus = F2(
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$checked(
-									_Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p22._1.autoClerk)),
+									_Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p52._1.autoClerk)),
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Events$onCheck(
-										_Gizra$circuit_bid$Pages_Clerk_Model$SetAutoClerkStatus(_p22._0)),
+										_Gizra$circuit_bid$Pages_Clerk_Model$SetAutoClerkStatus(_p52._0)),
 									_1: {ctor: '[]'}
 								}
 							}
@@ -60781,6 +61452,157 @@ var _Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus = F2(
 						{ctor: '[]'}),
 					_1: {ctor: '[]'}
 				}
+			});
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$selectCurrentItem = F7(
+	function (language, saleBeingUpdated, itemBeingUpdated, saleUuid, maybeCurrentInputValue, currentItemId, items) {
+		var currentItemIsLoaded = A2(_Gizra$elm_dictlist$EveryDictList$member, currentItemId, items);
+		var lotInputValue = function () {
+			var _p53 = {
+				ctor: '_Tuple2',
+				_0: maybeCurrentInputValue,
+				_1: A2(_Gizra$elm_dictlist$EveryDictList$get, currentItemId, items)
+			};
+			_v24_2:
+			do {
+				if (_p53.ctor === '_Tuple2') {
+					if (_p53._0.ctor === 'Just') {
+						return _p53._0._0;
+					} else {
+						if (_p53._1.ctor === 'Just') {
+							return _p53._1._0.lotId;
+						} else {
+							break _v24_2;
+						}
+					}
+				} else {
+					break _v24_2;
+				}
+			} while(false);
+			return '';
+		}();
+		var isLoading = saleBeingUpdated;
+		var maybeItem = A2(
+			_elm_lang$core$Maybe$andThen,
+			function (currentInputValue) {
+				return _Gizra$elm_dictlist$EveryDictList$head(
+					A2(
+						_Gizra$elm_dictlist$EveryDictList$filter,
+						F2(
+							function (_p54, item) {
+								return _elm_lang$core$Native_Utils.eq(item.lotId, currentInputValue);
+							}),
+						items));
+			},
+			maybeCurrentInputValue);
+		var _p55 = A3(
+			_elm_community$maybe_extra$Maybe_Extra$unwrap,
+			{
+				ctor: '_Tuple2',
+				_0: false,
+				_1: {ctor: '[]'}
+			},
+			function (_p56) {
+				var _p57 = _p56;
+				return {
+					ctor: '_Tuple2',
+					_0: true,
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onSubmit(
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p57._0)),
+						_1: {ctor: '[]'}
+					}
+				};
+			},
+			maybeItem);
+		var itemExists = _p55._0;
+		var formAttr = _p55._1;
+		var isDisabled = itemBeingUpdated || ((_elm_community$maybe_extra$Maybe_Extra$isJust(maybeCurrentInputValue) && (!currentItemIsLoaded)) || (!itemExists));
+		var buttonAttr = {
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$classList(
+				{
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'btn now-bidding', _1: true},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'disabled', _1: isDisabled},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'loading', _1: isLoading},
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		};
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('nowbidding'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$form,
+					A2(
+						_elm_lang$core$List$append,
+						formAttr,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
+							_1: {ctor: '[]'}
+						}),
+					{
+						ctor: '::',
+						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$NowBidding),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('text'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('enter-item'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$defaultValue(lotInputValue),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItemSelection),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									buttonAttr,
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$i,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
+												_1: {ctor: '[]'}
+											},
+											{ctor: '[]'}),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$statusMenuOption = F3(
@@ -60887,9 +61709,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$decodeTargetSessionId = A2(
 	},
 	_Gizra$elm_restful$Restful_Endpoint$decodeEntityId);
 var _Gizra$circuit_bid$Pages_Clerk_View$sessionOption = F2(
-	function (currentSessionId, _p23) {
-		var _p24 = _p23;
-		var _p25 = _p24._0;
+	function (currentSessionId, _p58) {
+		var _p59 = _p58;
+		var _p60 = _p59._0;
 		return A2(
 			_elm_lang$html$Html$option,
 			{
@@ -60899,18 +61721,18 @@ var _Gizra$circuit_bid$Pages_Clerk_View$sessionOption = F2(
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$value(
 						_elm_lang$core$Basics$toString(
-							_Gizra$elm_restful$Restful_Endpoint$fromEntityId(_p25))),
+							_Gizra$elm_restful$Restful_Endpoint$fromEntityId(_p60))),
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$selected(
-							_elm_lang$core$Native_Utils.eq(currentSessionId, _p25)),
+							_elm_lang$core$Native_Utils.eq(currentSessionId, _p60)),
 						_1: {ctor: '[]'}
 					}
 				}
 			},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text(_p24._1.name),
+				_0: _elm_lang$html$Html$text(_p59._1.name),
 				_1: {ctor: '[]'}
 			});
 	});
@@ -60918,9 +61740,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F6(
 	function (language, saleBeingUpdated, saleUuid, currentId, currentSessionId, dict) {
 		var currentSessionIsLoaded = A2(_Gizra$elm_dictlist$EveryDictList$member, currentSessionId, dict);
 		var buttonAttr = function () {
-			var _p26 = currentId;
-			if (_p26.ctor === 'Just') {
-				var _p27 = _p26._0;
+			var _p61 = currentId;
+			if (_p61.ctor === 'Just') {
+				var _p62 = _p61._0;
 				return {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$classList(
@@ -60932,7 +61754,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F6(
 								_0: {
 									ctor: '_Tuple2',
 									_0: 'disabled',
-									_1: saleBeingUpdated || _elm_lang$core$Native_Utils.eq(currentSessionId, _p27)
+									_1: saleBeingUpdated || _elm_lang$core$Native_Utils.eq(currentSessionId, _p62)
 								},
 								_1: {
 									ctor: '::',
@@ -60944,7 +61766,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F6(
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onClick(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSession, saleUuid, _p27)),
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSession, saleUuid, _p62)),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -60967,12 +61789,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F6(
 		}();
 		var options = A2(
 			_elm_lang$core$List$map,
-			function (_p28) {
-				var _p29 = _p28;
+			function (_p63) {
+				var _p64 = _p63;
 				return A2(
 					_Gizra$circuit_bid$Pages_Clerk_View$sessionOption,
 					currentSessionId,
-					{ctor: '_Tuple2', _0: _p29._0, _1: _p29._1});
+					{ctor: '_Tuple2', _0: _p64._0, _1: _p64._1});
 			},
 			_Gizra$elm_dictlist$EveryDictList$toList(dict));
 		return A2(
@@ -61020,18 +61842,6 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F6(
 				}
 			});
 	});
-var _Gizra$circuit_bid$Pages_Clerk_View$targetValue = A2(
-	_elm_lang$core$Json_Decode$at,
-	{
-		ctor: '::',
-		_0: 'target',
-		_1: {
-			ctor: '::',
-			_0: 'value',
-			_1: {ctor: '[]'}
-		}
-	},
-	_elm_lang$core$Json_Decode$string);
 var _Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor = F3(
 	function (language, status, editData) {
 		var inputValue = _elm_lang$html$Html_Attributes$value(
@@ -61076,16 +61886,15 @@ var _Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor = F3(
 										_0: _elm_lang$html$Html_Attributes$name('pausedmessage'),
 										_1: {
 											ctor: '::',
-											_0: inputValue,
+											_0: _elm_lang$html$Html_Attributes$defaultValue(
+												_stoeffel$editable$Editable$value(
+													_Gizra$elm_editable_webdata$Editable_WebData$toEditable(editData))),
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Attributes$disabled(isLoading),
 												_1: {
 													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html_Events$on,
-														'blur',
-														A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Pages_Clerk_Model$SetPausedMessage, _Gizra$circuit_bid$Pages_Clerk_View$targetValue)),
+													_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetPausedMessage),
 													_1: {ctor: '[]'}
 												}
 											}
@@ -61129,837 +61938,6 @@ var _Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor = F3(
 						}),
 					_1: {ctor: '[]'}
 				}));
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$selectCurrentItem = F7(
-	function (language, saleBeingUpdated, itemBeingUpdated, saleUuid, maybeCurrentInputValue, currentItemId, items) {
-		var currentItemIsLoaded = A2(_Gizra$elm_dictlist$EveryDictList$member, currentItemId, items);
-		var lotInputValue = function () {
-			var _p30 = {
-				ctor: '_Tuple2',
-				_0: maybeCurrentInputValue,
-				_1: A2(_Gizra$elm_dictlist$EveryDictList$get, currentItemId, items)
-			};
-			_v12_2:
-			do {
-				if (_p30.ctor === '_Tuple2') {
-					if (_p30._0.ctor === 'Just') {
-						return _p30._0._0;
-					} else {
-						if (_p30._1.ctor === 'Just') {
-							return _p30._1._0.lotId;
-						} else {
-							break _v12_2;
-						}
-					}
-				} else {
-					break _v12_2;
-				}
-			} while(false);
-			return '';
-		}();
-		var isLoading = saleBeingUpdated;
-		var maybeItem = A2(
-			_elm_lang$core$Maybe$andThen,
-			function (currentInputValue) {
-				return _Gizra$elm_dictlist$EveryDictList$head(
-					A2(
-						_Gizra$elm_dictlist$EveryDictList$filter,
-						F2(
-							function (_p31, item) {
-								return _elm_lang$core$Native_Utils.eq(item.lotId, currentInputValue);
-							}),
-						items));
-			},
-			maybeCurrentInputValue);
-		var _p32 = A3(
-			_elm_community$maybe_extra$Maybe_Extra$unwrap,
-			{
-				ctor: '_Tuple2',
-				_0: false,
-				_1: {ctor: '[]'}
-			},
-			function (_p33) {
-				var _p34 = _p33;
-				return {
-					ctor: '_Tuple2',
-					_0: true,
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onSubmit(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p34._0)),
-						_1: {ctor: '[]'}
-					}
-				};
-			},
-			maybeItem);
-		var itemExists = _p32._0;
-		var formAttr = _p32._1;
-		var isDisabled = itemBeingUpdated || ((_elm_community$maybe_extra$Maybe_Extra$isJust(maybeCurrentInputValue) && (!currentItemIsLoaded)) || (!itemExists));
-		var buttonAttr = {
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$classList(
-				{
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'btn now-bidding', _1: true},
-					_1: {
-						ctor: '::',
-						_0: {ctor: '_Tuple2', _0: 'disabled', _1: isDisabled},
-						_1: {
-							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'loading', _1: isLoading},
-							_1: {ctor: '[]'}
-						}
-					}
-				}),
-			_1: {ctor: '[]'}
-		};
-		return A2(
-			_elm_lang$html$Html$span,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('nowbidding'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$form,
-					A2(
-						_elm_lang$core$List$append,
-						formAttr,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
-							_1: {ctor: '[]'}
-						}),
-					{
-						ctor: '::',
-						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$NowBidding),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$input,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$type_('text'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('enter-item'),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$value(lotInputValue),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html_Events$on,
-													'blur',
-													A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItemSelection, _Gizra$circuit_bid$Pages_Clerk_View$targetValue)),
-												_1: {ctor: '[]'}
-											}
-										}
-									}
-								},
-								{ctor: '[]'}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$button,
-									buttonAttr,
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$i,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
-												_1: {ctor: '[]'}
-											},
-											{ctor: '[]'}),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							}
-						}
-					}),
-				_1: {ctor: '[]'}
-			});
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
-	function (language, currency, saleUuid, model, _p35, bidAmount, lastBidWasFloor) {
-		var _p36 = _p35;
-		var _p42 = _p36._0;
-		var _p41 = _p36._1;
-		var onSubmitBidPlaceAttr = function (msg) {
-			var _p37 = msg;
-			if (_p37.ctor === 'Nothing') {
-				return {ctor: '[]'};
-			} else {
-				return {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Events$onSubmit(_p37._0),
-					_1: {ctor: '[]'}
-				};
-			}
-		};
-		var onClickBidPlaceAttr = function (msg) {
-			var _p38 = msg;
-			if (_p38.ctor === 'Nothing') {
-				return {ctor: '[]'};
-			} else {
-				return {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Events$onClick(_p38._0),
-					_1: {ctor: '[]'}
-				};
-			}
-		};
-		var nextBidAmount = A2(
-			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
-			_elm_lang$core$Native_Utils.update(
-				_p41,
-				{
-					currentPrice: _elm_lang$core$Maybe$Just(bidAmount)
-				}),
-			model);
-		var customFloorBidButton = function () {
-			var _p39 = A2(
-				_elm_lang$core$Maybe$withDefault,
-				{ctor: '_Tuple2', _0: bidAmount, _1: nextBidAmount},
-				A2(
-					_elm_lang$core$Maybe$map,
-					function (customBidInput) {
-						return {
-							ctor: '_Tuple2',
-							_0: customBidInput,
-							_1: A2(
-								_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
-								_elm_lang$core$Native_Utils.update(
-									_p41,
-									{
-										currentPrice: _elm_lang$core$Maybe$Just(customBidInput)
-									}),
-								model)
-						};
-					},
-					model.customBidInput));
-			var customBidAmount = _p39._0;
-			var nextCustomBidAmount = _p39._1;
-			return A6(_Gizra$circuit_bid$Pages_Clerk_Utils$customFloorBidButton, model, _p42, saleUuid, _p41.status, customBidAmount, nextCustomBidAmount);
-		}();
-		var nextFloorBidButton = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$nextFloorBidButton, _p42, saleUuid, _p41.status, bidAmount, nextBidAmount);
-		var customBidInput = function () {
-			var _p40 = model.customBidInput;
-			if (_p40.ctor === 'Just') {
-				return _elm_lang$core$Basics$toString(_p40._0._0);
-			} else {
-				return '';
-			}
-		}();
-		return {
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$button,
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$classList(
-							{
-								ctor: '::',
-								_0: {ctor: '_Tuple2', _0: 'btn place-bid next-bid', _1: true},
-								_1: {
-									ctor: '::',
-									_0: {ctor: '_Tuple2', _0: 'disabled', _1: nextFloorBidButton.disabled},
-									_1: {
-										ctor: '::',
-										_0: {ctor: '_Tuple2', _0: 'loading', _1: nextFloorBidButton.loading},
-										_1: {ctor: '[]'}
-									}
-								}
-							}),
-						_1: {ctor: '[]'}
-					},
-					onClickBidPlaceAttr(nextFloorBidButton.msg)),
-				{
-					ctor: '::',
-					_0: A2(
-						_Gizra$circuit_bid$Translate$translateText,
-						language,
-						A2(_Gizra$circuit_bid$Translate$AddNextBid, bidAmount, currency)),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$span,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('shortcut'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('F9'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
-					}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Or),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$form,
-						A2(
-							_elm_lang$core$List$append,
-							onSubmitBidPlaceAttr(customFloorBidButton.msg),
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$action('javascript: void(0)'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('next-bid'),
-									_1: {ctor: '[]'}
-								}
-							}),
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('enter-bid'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(
-										A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$NextBid)),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$input,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$classList(
-											{
-												ctor: '::',
-												_0: {ctor: '_Tuple2', _0: 'enter-bid', _1: true},
-												_1: {
-													ctor: '::',
-													_0: {ctor: '_Tuple2', _0: 'disabled', _1: nextFloorBidButton.disabled},
-													_1: {ctor: '[]'}
-												}
-											}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html_Events$on,
-												'blur',
-												A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Pages_Clerk_Model$CustomBidAmountUpdate, _Gizra$circuit_bid$Pages_Clerk_View$targetValue)),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$value(customBidInput),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$disabled(nextFloorBidButton.disabled),
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$button,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$classList(
-												{
-													ctor: '::',
-													_0: {ctor: '_Tuple2', _0: 'btn button add-bid', _1: true},
-													_1: {
-														ctor: '::',
-														_0: {ctor: '_Tuple2', _0: 'disabled', _1: customFloorBidButton.disabled},
-														_1: {
-															ctor: '::',
-															_0: {ctor: '_Tuple2', _0: 'loading', _1: customFloorBidButton.loading},
-															_1: {ctor: '[]'}
-														}
-													}
-												}),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$i,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
-													_1: {ctor: '[]'}
-												},
-												{ctor: '[]'}),
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
-								}
-							}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A5(
-							_Gizra$circuit_bid$Pages_Clerk_View$viewLastToFloorButton,
-							language,
-							model,
-							saleUuid,
-							{ctor: '_Tuple2', _0: _p42, _1: _p41},
-							lastBidWasFloor),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		};
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$bidStepView = F6(
-	function (language, currency, model, itemId, itemStatus, _p43) {
-		var _p44 = _p43;
-		var manualStepInput = A2(
-			_elm_lang$core$Maybe$withDefault,
-			'',
-			A2(_elm_lang$core$Maybe$map, _elm_lang$core$Basics$toString, model.manualStepInput));
-		var buttonClasses = function (hasBidStepInput) {
-			return _elm_lang$html$Html_Attributes$classList(
-				{
-					ctor: '::',
-					_0: {ctor: '_Tuple2', _0: 'add-bid', _1: true},
-					_1: {
-						ctor: '::',
-						_0: {
-							ctor: '_Tuple2',
-							_0: 'disabled',
-							_1: (!hasBidStepInput) || (_Gizra$circuit_bid$Item_Utils$isClosed(itemStatus) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(itemStatus) || _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading)))
-						},
-						_1: {ctor: '[]'}
-					}
-				});
-		};
-		var _p45 = function () {
-			var _p46 = model.manualStepInput;
-			if (_p46.ctor === 'Just') {
-				return {
-					ctor: '_Tuple2',
-					_0: {
-						ctor: '::',
-						_0: buttonClasses(true),
-						_1: {ctor: '[]'}
-					},
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onSubmit(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetBidStep, itemId, _p46._0)),
-						_1: {ctor: '[]'}
-					}
-				};
-			} else {
-				return {
-					ctor: '_Tuple2',
-					_0: {
-						ctor: '::',
-						_0: buttonClasses(false),
-						_1: {ctor: '[]'}
-					},
-					_1: {ctor: '[]'}
-				};
-			}
-		}();
-		var buttonAttributes = _p45._0;
-		var formAttr = _p45._1;
-		return A2(
-			_elm_lang$html$Html$form,
-			A2(
-				_elm_lang$core$List$append,
-				formAttr,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('change-step'),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$action('javascript: void(0)'),
-						_1: {ctor: '[]'}
-					}
-				}),
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$span,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('enter-step'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ChangeBidStep),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('current-step'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											'(',
-											A2(
-												_elm_lang$core$Basics_ops['++'],
-												_elm_lang$core$Basics$toString(_p44._0),
-												')'))),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$input,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('enter-step'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$value(manualStepInput),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$type_('number'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$min('1'),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html_Events$on,
-												'blur',
-												A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Pages_Clerk_Model$SetBidStepInput, _Gizra$circuit_bid$Pages_Clerk_View$targetValue)),
-											_1: {ctor: '[]'}
-										}
-									}
-								}
-							}
-						},
-						{ctor: '[]'}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$button,
-							buttonAttributes,
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$i,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
-										_1: {ctor: '[]'}
-									},
-									{ctor: '[]'}),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
-					}
-				}
-			});
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
-	function (language, model, _p48, _p47) {
-		var _p49 = _p48;
-		var _p58 = _p49._1;
-		var _p50 = _p47;
-		var _p57 = _p50._0;
-		var maybeErrorMessage = function () {
-			var _p51 = model.itemChangeRequest;
-			if (_p51.ctor === 'Failure') {
-				var _p52 = _p51._0;
-				if (_p52.ctor === 'Http') {
-					return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p52._0);
-				} else {
-					return A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('alert alert-danger'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text(_p52._0),
-							_1: {ctor: '[]'}
-						});
-				}
-			} else {
-				return _Gizra$circuit_bid$Utils_Html$emptyNode;
-			}
-		}();
-		var _p53 = _krisajenkins$remotedata$RemoteData$toMaybe(_p50._1.calculated);
-		if (_p53.ctor === 'Nothing') {
-			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-		} else {
-			var _p56 = _p53._0;
-			var lastBidWasFloor = A2(
-				_elm_lang$core$Maybe$withDefault,
-				false,
-				A2(
-					_elm_lang$core$Maybe$map,
-					_Gizra$circuit_bid$Bid_Utils$isFloorBid,
-					_Gizra$circuit_bid$Item_Utils$getWinningBid(_p56)));
-			var isLoading = _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading);
-			var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p56, model);
-			var currentBidStepAmount = function () {
-				var _p54 = {ctor: '_Tuple2', _0: _p56.nextPrice, _1: _p56.currentPrice};
-				if (((_p54.ctor === '_Tuple2') && (_p54._0.ctor === 'Just')) && (_p54._1.ctor === 'Just')) {
-					return A2(_Gizra$circuit_bid$Amount$subtract, _p54._0._0, _p54._1._0);
-				} else {
-					return _Gizra$circuit_bid$Amount$zero;
-				}
-			}();
-			var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p56, model);
-			var lastBidAmount = function () {
-				var _p55 = highestPrice;
-				if (_p55.ctor === 'Opening') {
-					return _Gizra$circuit_bid$Amount$zero;
-				} else {
-					return _p55._0;
-				}
-			}();
-			var addStep = function (bid) {
-				return A2(
-					_Gizra$circuit_bid$Amount$add,
-					bid,
-					A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, _p56.bidSteps, bid));
-			};
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('clerkapp'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('bidding'),
-							_1: {ctor: '[]'}
-						},
-						A7(
-							_Gizra$circuit_bid$Pages_Clerk_View$floorBidView,
-							language,
-							_p58.currency,
-							_p58.uuid,
-							model,
-							{ctor: '_Tuple2', _0: _p57, _1: _p56},
-							bidAmount,
-							lastBidWasFloor)),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('itemstatus'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$itemStatusButtonsView, language, model, _p49._0, _p57, _p56.status, lastBidWasFloor),
-								_1: {
-									ctor: '::',
-									_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$bidStepView, language, _p58.currency, model, _p57, _p56.status, currentBidStepAmount),
-									_1: {ctor: '[]'}
-								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('item-status-error'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: maybeErrorMessage,
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}
-				});
-		}
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$viewPublicMessageInput = F4(
-	function (language, currency, request, publicMessageInput) {
-		var isDisabled = _krisajenkins$remotedata$RemoteData$isLoading(request) || (_krisajenkins$remotedata$RemoteData$isNotAsked(request) || _elm_lang$core$String$isEmpty(publicMessageInput));
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('public-message'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$textarea,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$rows(2),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html_Events$on,
-								'blur',
-								A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Pages_Clerk_Model$SetPublicMessageInput, _Gizra$circuit_bid$Pages_Clerk_View$targetValue)),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$value(publicMessageInput),
-								_1: {ctor: '[]'}
-							}
-						}
-					},
-					{ctor: '[]'}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('button primary send-public-message'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$SubmitPublicMessage),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$classList(
-										{
-											ctor: '::',
-											_0: {ctor: '_Tuple2', _0: 'disabled', _1: isDisabled},
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
-								}
-							}
-						},
-						{
-							ctor: '::',
-							_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Send),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
-			});
-	});
-var _Gizra$circuit_bid$Pages_Clerk_View$viewClerkCurrentItem = F4(
-	function (language, model, _p60, _p59) {
-		var _p61 = _p60;
-		var _p64 = _p61._1;
-		var _p62 = _p59;
-		var _p63 = _p62._1;
-		var existingPublicMessage = A2(
-			_Gizra$circuit_bid$Utils_Html$showMaybe,
-			function (calcualted) {
-				return A2(
-					_Gizra$circuit_bid$Utils_Html$showMaybe,
-					function (publicMessage) {
-						return A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('existing-public-message'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(publicMessage),
-								_1: {ctor: '[]'}
-							});
-					},
-					calcualted.publicMessage);
-			},
-			_krisajenkins$remotedata$RemoteData$toMaybe(_p63.calculated));
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('clerk-current-item'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('lotnum'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text(_p63.lotId),
-						_1: {ctor: '[]'}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A3(_Gizra$circuit_bid$Item_View$pricesInfoView, language, _p64.currency, _p63),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('title'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$img,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$src(_p63.image.big),
-										_1: {ctor: '[]'}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(_p63.name),
-									_1: {ctor: '[]'}
-								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A4(_Gizra$circuit_bid$Pages_Clerk_View$viewPublicMessageInput, language, _p64.currency, model.publicMessagesSendRequest, model.publicMessageInput),
-							_1: {
-								ctor: '::',
-								_0: existingPublicMessage,
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				}
-			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 	function (config, currentDate, language, user, modelBackend, model, _p65) {
