@@ -15201,11 +15201,8 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForKey = F3(
 		var _p28 = _p27._0;
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			backendUrl,
-			A2(
-				_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-				_p28.path,
-				_p28.keyToUrlPart(key)));
+			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p28.path),
+			_p28.keyToUrlPart(key));
 	});
 var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 	function (backendUrl, _p29, keys) {
@@ -15215,8 +15212,8 @@ var _Gizra$elm_restful$Restful_Endpoint$urlForManyKeys = F3(
 			A2(_elm_lang$core$List$map, _p31.keyToUrlPart, keys));
 		return A2(
 			_Gizra$elm_restful$Restful_Endpoint_ops['</>'],
-			backendUrl,
-			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], _p31.path, ids));
+			A2(_Gizra$elm_restful$Restful_Endpoint_ops['</>'], backendUrl, _p31.path),
+			ids);
 	});
 var _Gizra$elm_restful$Restful_Endpoint$encodeEmptyObject = function (a) {
 	return _elm_lang$core$Json_Encode$object(
@@ -47630,12 +47627,12 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'http://localhost:5000'
+	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
 };
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: '172.18.0.3', _1: _Gizra$circuit_bid$LocalConfig$local},
+		_0: {ctor: '_Tuple2', _0: 'localhost', _1: _Gizra$circuit_bid$LocalConfig$local},
 		_1: {ctor: '[]'}
 	});
 
@@ -47690,7 +47687,11 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																_1: {
 																	ctor: '::',
 																	_0: 'www.stampcircuit.com',
-																	_1: {ctor: '[]'}
+																	_1: {
+																		ctor: '::',
+																		_0: 'pennypost.circuitauction.com',
+																		_1: {ctor: '[]'}
+																	}
 																}
 															}
 														}
