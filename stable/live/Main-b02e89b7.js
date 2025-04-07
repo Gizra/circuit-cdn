@@ -47690,7 +47690,11 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																	_1: {
 																		ctor: '::',
 																		_0: 'pennypost.circuitauction.com',
-																		_1: {ctor: '[]'}
+																		_1: {
+																			ctor: '::',
+																			_0: 'kelleher.anecdotesolutions.com',
+																			_1: {ctor: '[]'}
+																		}
 																	}
 																}
 															}
@@ -47757,6 +47761,9 @@ var _Gizra$circuit_bid$Config$ddevLocal = {
 var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 	var localRegex = _elm_lang$core$Regex$regex('backoffice\\.local');
 	var ddevLocalRegex = _elm_lang$core$Regex$regex('.*\\.ddev\\.site');
+	var upsunRegex = '-[a-z-]+\\.circuit\\.auction';
+	var testUpsunRegex = _elm_lang$core$Regex$regex(
+		A2(_elm_lang$core$Basics_ops['++'], 'test', upsunRegex));
 	var common = '-[a-z-]+\\.pantheonsite\\.io';
 	var devRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'dev', common));
@@ -47764,7 +47771,7 @@ var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 		A2(_elm_lang$core$Basics_ops['++'], 'test', common));
 	var liveRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'live', common));
-	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$demoDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$demoPantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs))))));
+	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$demoDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$demoPantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
 };
 
 var _Gizra$circuit_bid$Utils_Order$reverse = F3(
@@ -61135,7 +61142,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$disabled(nextFloorBidButton.disabled),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$id('custom-bid-input'),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}
