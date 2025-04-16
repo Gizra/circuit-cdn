@@ -93,7 +93,10 @@
     "addNewAddress": "Neue Adresse hinzufügen",
     "error": "Fehler",
     "standardInternationalFormat": "Internationales Standardformat",
-    "phoneNumberInstructions": "Bitte geben Sie Ihre lokale Telefonnummer ein. Die vollständige formatierte Nummer, einschließlich der internationalen Ländervorwahl, wird unten angezeigt."
+    "phoneNumberInstructions": "Bitte geben Sie Ihre lokale Telefonnummer ein. Die vollständige formatierte Nummer, einschließlich der internationalen Ländervorwahl, wird unten angezeigt.",
+    "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
+    "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
   },
   "addressForm": {
     "firstName": "Vorname",

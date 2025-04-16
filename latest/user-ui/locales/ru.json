@@ -93,7 +93,10 @@
     "standardInternationalFormat": "Стандартный международный формат",
     "phoneNumberInstructions": "Пожалуйста, введите ваш местный номер телефона. Полный отформатированный номер, включая международный код страны, будет отображен ниже.",
     "shippingInstructions": "[NEEDS_TRANSLATION]Shipping Instructions",
-    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here"
+    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here",
+    "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
+    "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
   },
   "addressForm": {
     "firstName": "Имя",

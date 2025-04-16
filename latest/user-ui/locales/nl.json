@@ -116,7 +116,10 @@
     "standardInternationalFormat": "Standaard internationaal formaat",
     "phoneNumberInstructions": "Voer uw lokale telefoonnummer in. Het volledige geformatteerde nummer, inclusief de internationale landcode, wordt hieronder weergegeven.",
     "shippingInstructions": "Verzend instructies",
-    "enterShippingInstructions": "Laat uw speciale verzendinstructies achter"
+    "enterShippingInstructions": "Laat uw speciale verzendinstructies achter",
+    "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
+    "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
   },
   "addressForm": {
     "firstName": "Voornaam",
