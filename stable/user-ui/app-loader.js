@@ -6,7 +6,7 @@
   if (window.location.href.includes('stable') || window.RELEASE_TYPE === 'stable') {
     baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
   } else {
-    baseUrl = 'https://cdn.circuitauction.com/latest/user-ui';
+    baseUrl = 'https://cdn.circuitauction.com/stable/user-ui';
   }
 
   // Function to dynamically load scripts
