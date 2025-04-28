@@ -93,7 +93,10 @@
     "standardInternationalFormat": "标准国际格式",
     "phoneNumberInstructions": "请输入您的本地电话号码。完整的国际格式号码会显示在下方。",
     "shippingInstructions": "[NEEDS_TRANSLATION]Shipping Instructions",
-    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here"
+    "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here",
+    "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
+    "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
   },
   "addressForm": {
     "firstName": "名字",

@@ -111,7 +111,10 @@
     "addNewAddress": "Add New Address",
     "error": "Error",
     "standardInternationalFormat": "Standard International Format",
-    "phoneNumberInstructions": "Please enter your local phone number. The full formatted number, including the international country code, will be displayed below."
+    "phoneNumberInstructions": "Please enter your local phone number. The full formatted number, including the international country code, will be displayed below.",
+    "professionalReferences": "Professional References",
+    "enterProfessionalReferences": "Please provide names of other auction companies you've worked with.",
+    "optInCommunications": "I consent to receiving marketing communications and updates via email, SMS, and mail."
   },
   "addressForm": {
     "firstName": "First Name",
