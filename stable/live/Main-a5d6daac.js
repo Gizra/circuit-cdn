@@ -47715,7 +47715,7 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 };
 var _Gizra$circuit_bid$Config$demoDomains = {
 	ctor: '::',
-	_0: 'dev-backoffice-hk-eu.pantheonsite.io',
+	_0: 'dev-hk.circuit.auction',
 	_1: {ctor: '[]'}
 };
 var _Gizra$circuit_bid$Config$livePantheon = {
@@ -47762,15 +47762,15 @@ var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 	var localRegex = _elm_lang$core$Regex$regex('backoffice\\.local');
 	var ddevLocalRegex = _elm_lang$core$Regex$regex('.*\\.ddev\\.site');
 	var upsunRegex = '-[a-z-]+\\.circuit\\.auction';
+	var devRegex = _elm_lang$core$Regex$regex(
+		A2(_elm_lang$core$Basics_ops['++'], 'dev', upsunRegex));
 	var testUpsunRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'test', upsunRegex));
+	var liveRegex = _elm_lang$core$Regex$regex(
+		A2(_elm_lang$core$Basics_ops['++'], 'live', upsunRegex));
 	var common = '-[a-z-]+\\.pantheonsite\\.io';
-	var devRegex = _elm_lang$core$Regex$regex(
-		A2(_elm_lang$core$Basics_ops['++'], 'dev', common));
 	var testRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'test', common));
-	var liveRegex = _elm_lang$core$Regex$regex(
-		A2(_elm_lang$core$Basics_ops['++'], 'live', common));
 	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$demoDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$demoPantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
 };
 
