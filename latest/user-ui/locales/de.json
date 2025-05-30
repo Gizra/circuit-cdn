@@ -14,7 +14,11 @@
     "forgotPassword": "Passwort vergessen?",
     "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
     "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
-    "termsAgreement": "Ich habe die {0}Allgemeinen Geschäftsbedingungen{1} und die {2}Datenschutzbestimmungen {3} des Auktionators gelesen und akzeptiert und erkläre mich damit einverstanden."
+    "termsAgreement": "Ich habe die {0}Allgemeinen Geschäftsbedingungen{1} und die {2}Datenschutzbestimmungen {3} des Auktionators gelesen und akzeptiert und erkläre mich damit einverstanden.",
+    "errors": {
+      "badCredentials": "Wir konnten Ihre Angaben nicht verifizieren. Bitte Prüfen Sie, ob Sie die korrekte eMail-Adresse und das richtige Passwort verwenden. Sollten Sie weiterhin Probleme haben sich anzumelden, benutzen Sie bitte die 'Passwort vergessen' - Funktion, oder kontaktieren Sie uns.",
+      "networkError": "Verbindungsproblem. Bitte versuchen Sie es später erneut."
+    }
   },
   "register": {
     "title": "Konto erstellen",
@@ -58,6 +62,7 @@
       "changePassword": "Passwort ändern",
       "addresses": "Adressen"
     },
+    "namePrefix": "Anrede",
     "selectTitle": "Wählen Sie Ihre Anrede",
     "firstName": "Vorname",
     "enterFirstName": "Geben Sie Ihren Vornamen ein",
@@ -69,12 +74,12 @@
     "enterMobileNumber": "Geben Sie Ihre Mobilnummer ein",
     "phoneNumber": "Telefonnummer",
     "enterPhoneNumber": "Geben Sie Ihre Telefonnummer ein",
-    "company": "Unternehmen",
+    "company": "Unternehmen (optional)",
     "enterCompany": "Geben Sie Ihren Firmennamen ein",
-    "website": "Webseite",
+    "website": "Webseite (optional)",
     "enterWebsite": "Geben Sie Ihre Website-URL ein, beginnend mit http:// oder https://",
     "validUrlMessage": "Bitte geben Sie eine gültige URL ein, die mit http:// oder https:// beginnt",
-    "birthDate": "Geburtsdatum",
+    "birthDate": "Geburtsdatum (optional)",
     "selectBirthDate": "Wählen Sie Ihr Geburtsdatum",
     "language": "Sprache",
     "selectLanguage": "Wählen Sie Ihre Sprache",
@@ -94,9 +99,9 @@
     "error": "Fehler",
     "standardInternationalFormat": "Internationales Standardformat",
     "phoneNumberInstructions": "Bitte geben Sie Ihre lokale Telefonnummer ein. Die vollständige formatierte Nummer, einschließlich der internationalen Ländervorwahl, wird unten angezeigt.",
-    "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
-    "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
-    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
+    "professionalReferences": "Referenzen",
+    "enterProfessionalReferences": "Bei welchen anderen Auktionshäusern/Händlern haben Sie bereits gekauft?",
+    "optInCommunications": "Ich willige in den Erhalt von Marketinginformation und Nachrichten via eMail, SMS und per Post ein."
   },
   "addressForm": {
     "firstName": "Vorname",
@@ -207,10 +212,10 @@
     "unsold": "Unverkauft",
     "soldFor": "Verkauft für {{price}}",
     "youWonThisLot": "Sie haben dieses Los ersteigert!",
-    "activeSales": "Aktive Auktionen",
+    "activeSales": "Aktuelle Auktionen",
     "pastSales": "Vergangene Auktionen",
     "selectPastSale": "Bitte wählen Sie eine Auktion aus",
-    "noActiveSales": "Momentan gibt es keine aktiven Auktionen",
+    "noActiveSales": "Momentan gibt es keine aktuellen Auktionen",
     "navigateToSaleOrItemPage": "Navigieren Sie zur Verkaufs- oder Artikelseite",
     "networkResponseError": "Netzwerkantwort war nicht in Ordnung für Benutzerdetails",
     "noSaleInfo": "Keine Verkaufsinformationen verfügbar.",
