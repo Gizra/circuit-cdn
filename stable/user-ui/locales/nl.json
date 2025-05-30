@@ -37,7 +37,11 @@
     "forgotPassword": "Wachtwoord vergeten?",
     "emailPlaceholder": "Voer uw e-mailadres in",
     "passwordPlaceholder": "Voer uw wachtwoord in",
-    "termsAgreement": "Ik heb de algemene verkoopvoorwaarden en ons privacy policy gelezen en geaccepteerd"
+    "termsAgreement": "Ik heb de algemene verkoopvoorwaarden en ons privacy policy gelezen en geaccepteerd",
+    "errors": {
+      "badCredentials": "[NEEDS_TRANSLATION]We couldn't verify your account. Please check that you've entered the correct email and password. If you continue to have trouble, you can reset your password using the 'Forgot Password' link below, or contact us for more assistance.",
+      "networkError": "[NEEDS_TRANSLATION]Connection problem. Please try again later."
+    }
   },
   "register": {
     "title": "Account aanmaken",
@@ -119,7 +123,8 @@
     "enterShippingInstructions": "Laat uw speciale verzendinstructies achter",
     "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
     "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
-    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail.",
+    "namePrefix": "[NEEDS_TRANSLATION]Title"
   },
   "addressForm": {
     "firstName": "Voornaam",
@@ -193,7 +198,7 @@
     "maxBidLimit": "Mijn bied limiet",
     "unlimited": "onbeperkt",
     "maxBidUpdated": "Uw maximale gewijzigde bied limiet is geaccepteerd",
-    "approvedCreditStatusMessageModified": "[NEEDS_TRANSLATION]Na beoordeling, is uw krediet limiet {{amount_request}} gewijzigd in {{current_amount}}.",
+    "approvedCreditStatusMessageModified": "Na beoordeling, is uw krediet limiet {{amount_request}} gewijzigd in {{current_amount}}.",
     "approvedCreditStatusMessageNoRequest": "Uw krediet limiet is {{amount}}.",
     "creditRequestSubmitted": "Krediet verzoek is ingediend",
     "creditRequestDescription": "Uw kredite limiet voor een  {{amount}} is ingediend.",

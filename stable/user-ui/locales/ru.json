@@ -14,7 +14,11 @@
     "forgotPassword": "Забыли пароль?",
     "emailPlaceholder": "Введите ваш адрес электронной почты",
     "passwordPlaceholder": "Введите ваш пароль",
-    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them."
+    "termsAgreement": "[NEEDS_TRANSLATION]I have read and accepted the {0}Auctioneers Terms and Conditions{1} and {2}Data Privacy Terms{3} and I agree to abide by them.",
+    "errors": {
+      "badCredentials": "[NEEDS_TRANSLATION]We couldn't verify your account. Please check that you've entered the correct email and password. If you continue to have trouble, you can reset your password using the 'Forgot Password' link below, or contact us for more assistance.",
+      "networkError": "[NEEDS_TRANSLATION]Connection problem. Please try again later."
+    }
   },
   "register": {
     "title": "Создать аккаунт",
@@ -96,7 +100,8 @@
     "enterShippingInstructions": "[NEEDS_TRANSLATION]Enter any special shipping instructions here",
     "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
     "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
-    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail."
+    "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail.",
+    "namePrefix": "[NEEDS_TRANSLATION]Title"
   },
   "addressForm": {
     "firstName": "Имя",

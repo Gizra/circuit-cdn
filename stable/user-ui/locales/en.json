@@ -10,7 +10,7 @@
     "category": "Category",
     "browseCategory": "Browse Category",
     "categoryHierarchy": "Category Hierarchy",
-    "favorites": "Favorites",
+    "favorites": "Watching",
     "bids": "Bids",
     "won": "Won",
     "status": "Status",
@@ -32,7 +32,11 @@
     "loginButton": "Login",
     "forgotPassword": "Forgot your password?",
     "emailPlaceholder": "Enter your email address",
-    "passwordPlaceholder": "Enter your password"
+    "passwordPlaceholder": "Enter your password",
+    "errors": {
+      "badCredentials": "We couldn't verify your account. Please check that you've entered the correct email and password. If you continue to have trouble, you can reset your password using the 'Forgot Password' link below, or contact us for more assistance.",
+      "networkError": "Connection problem. Please try again later."
+    }
   },
   "register": {
     "title": "Create Account",
@@ -76,6 +80,7 @@
       "changePassword": "Change Password",
       "addresses": "Addresses"
     },
+    "namePrefix": "Title",
     "selectTitle": "Select your title",
     "firstName": "First Name",
     "enterFirstName": "Enter your First name",
@@ -87,12 +92,12 @@
     "enterMobileNumber": "Enter Local Mobile number",
     "phoneNumber": "Phone Number",
     "enterPhoneNumber": "Enter Local Phone number",
-    "company": "Company",
+    "company": "Company (optional)",
     "enterCompany": "Enter your Company name",
-    "website": "Website",
+    "website": "Website (optional)",
     "enterWebsite": "Enter your website URL starting with http:// or https://",
     "validUrlMessage": "Please enter a valid URL starting with http:// or https://",
-    "birthDate": "Birth Date",
+    "birthDate": "Birth Date (optional)",
     "selectBirthDate": "Select your birth date",
     "language": "Language",
     "selectLanguage": "Select your language",
@@ -190,7 +195,7 @@
     "unsold": "Unsold",
     "soldFor": "Sold for {{price}}",
     "youWonThisLot": "You won this lot!",
-    "activeSales": "Active Sales",
+    "activeSales": "Current Sales",
     "pastSales": "Past Sales",
     "selectPastSale": "Please select a Sale",
     "noActiveSales": "There are no active sales at the moment",
@@ -276,7 +281,7 @@
     "myBidsAndCredit": "Bids & Credit",
     "logout": "Logout",
     "logoutSuccessful": "Logout successful",
-    "myFavorites": "Favorites",
+    "myFavorites": "Watch List",
     "myInterests": "Area of Interest"
   },
   "legacy": {
@@ -394,10 +399,10 @@
   },
   "myFavorites": {
     "allSales" : "All Sales",
-    "noFavorites": "You have not added any lots to your favorites yet.",
-    "addFavoritesHint": "Browse auctions and click the heart icon to add lots to your favorites.",
-    "noMatchingFavorites": "No favorites match your current filters.",
-    "noFavoritesInSale": "You have no favorite lots in this sale.",
+    "noFavorites": "You have not added any lots to your Watch List yet.",
+    "addFavoritesHint": "Browse auctions and click the heart icon to add lots to your Watch List.",
+    "noMatchingFavorites": "No watch list items match your current filters.",
+    "noFavoritesInSale": "You have no lots on your watch list in this sale.",
     "lot": "Lot",
     "title": "Title",
     "startPrice": "Opening",
@@ -406,7 +411,7 @@
     "viewItem": "View Item",
     "remove": "Remove",
     "hasBids": "Has Bids",
-    "errorFetching": "Error fetching favorites",
+    "errorFetching": "Error fetching watch list",
     "soldfor": "Sold for",
     "addToCompare": "Add to Compare",
     "compareItems": "Compare Items",
@@ -423,13 +428,13 @@
     "description": "Description",
     "followThisLot": "Follow lot",
     "following": "Following",
-    "addTooltip": "Click this button to add this item to your list of favorite items",
-    "removeTooltip": "Click this button to remove the item from your favorite list",
-    "addSuccess": "Lot has been added to your favorites",
-    "removeSuccess": "Lot has been removed from your favorites",
-    "errorAdding": "Error adding to favorites",
-    "errorRemoving": "Error removing from favorites",
-    "loginRequired": "Please login to add items to favorites"
+    "addTooltip": "Click this button to add this item to your watch list",
+    "removeTooltip": "Click this button to remove the item from your watch list",
+    "addSuccess": "Lot has been added to your watch list",
+    "removeSuccess": "Lot has been removed from your watch list",
+    "errorAdding": "Error adding to watch list",
+    "errorRemoving": "Error removing from watch list",
+    "loginRequired": "Please login to add items to watch list"
   
   },
   "filters": {
