@@ -47771,7 +47771,7 @@ var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 	var common = '-[a-z-]+\\.pantheonsite\\.io';
 	var testRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'test', common));
-	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$jbullDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$jbull) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
+	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$jbullDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$jbull) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
 };
 
 var _Gizra$circuit_bid$Utils_Order$reverse = F3(
@@ -62954,16 +62954,7 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 									{
 										ctor: '::',
 										_0: _elm_lang$html$Html_Attributes$href(
-											A2(
-												_elm_lang$core$Basics_ops['++'],
-												backOfficeUrl,
-												A2(
-													_elm_lang$core$Basics_ops['++'],
-													'/',
-													A2(
-														_elm_lang$core$Basics_ops['++'],
-														_Gizra$circuit_bid$Translate$languageToCode(language),
-														'/register')))),
+											A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/register')),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$class('pipeline join'),
@@ -62982,16 +62973,7 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 										{
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$href(
-												A2(
-													_elm_lang$core$Basics_ops['++'],
-													backOfficeUrl,
-													A2(
-														_elm_lang$core$Basics_ops['++'],
-														'/',
-														A2(
-															_elm_lang$core$Basics_ops['++'],
-															_Gizra$circuit_bid$Translate$languageToCode(language),
-															'/forgot_password')))),
+												A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/forgot_password')),
 											_1: {ctor: '[]'}
 										},
 										{
