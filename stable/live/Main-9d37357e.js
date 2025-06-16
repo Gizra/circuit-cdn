@@ -62973,7 +62973,7 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 										{
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$href(
-												A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/forgot_password')),
+												A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/forgot-password')),
 											_1: {ctor: '[]'}
 										},
 										{
