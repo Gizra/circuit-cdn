@@ -47713,9 +47713,9 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 		}
 	}
 };
-var _Gizra$circuit_bid$Config$jbullDomains = {
+var _Gizra$circuit_bid$Config$demoDomains = {
 	ctor: '::',
-	_0: 'jbull.com',
+	_0: 'dev-backoffice-hk-eu.pantheonsite.io',
 	_1: {ctor: '[]'}
 };
 var _Gizra$circuit_bid$Config$livePantheon = {
@@ -47726,10 +47726,10 @@ var _Gizra$circuit_bid$Config$livePantheon = {
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '59f70767c9e77c00010984c9', '655C28D8064A14579AFF25B5A0627427251540FA0681575DA1F91444C59C1C7B2026FA57F3CA861882C6F940C3AF82A914A502784693A4A99184E254C4504FCB6E88E9F6E5916AE58E38FD57C907998FADD9D196CCFCBEAF487F7DACB381E03A'),
 	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu/'
 };
-var _Gizra$circuit_bid$Config$jbull = {
-	backendUrl: 'https://live-bids.jbull.com',
-	name: 'jbull',
-	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '67608a61bc1954f76bf1', _Gizra$circuit_bid$Pusher_Model$EuWest1),
+var _Gizra$circuit_bid$Config$demoPantheon = {
+	backendUrl: 'https://aq-live-app-bids-eu.circuitauction.com',
+	name: 'demoPantheon',
+	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: false,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
 	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu/'
@@ -47762,16 +47762,16 @@ var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 	var localRegex = _elm_lang$core$Regex$regex('backoffice\\.local');
 	var ddevLocalRegex = _elm_lang$core$Regex$regex('.*\\.ddev\\.site');
 	var upsunRegex = '-[a-z-]+\\.circuit\\.auction';
-	var devRegex = _elm_lang$core$Regex$regex(
-		A2(_elm_lang$core$Basics_ops['++'], 'dev', upsunRegex));
 	var testUpsunRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'test', upsunRegex));
-	var liveRegex = _elm_lang$core$Regex$regex(
-		A2(_elm_lang$core$Basics_ops['++'], 'live', upsunRegex));
 	var common = '-[a-z-]+\\.pantheonsite\\.io';
+	var devRegex = _elm_lang$core$Regex$regex(
+		A2(_elm_lang$core$Basics_ops['++'], 'dev', common));
 	var testRegex = _elm_lang$core$Regex$regex(
 		A2(_elm_lang$core$Basics_ops['++'], 'test', common));
-	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$jbullDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$jbull) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
+	var liveRegex = _elm_lang$core$Regex$regex(
+		A2(_elm_lang$core$Basics_ops['++'], 'live', common));
+	return A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$liveDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$List$member, hostname, _Gizra$circuit_bid$Config$demoDomains) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$demoPantheon) : (A2(_elm_lang$core$Regex$contains, liveRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$livePantheon) : (A2(_elm_lang$core$Regex$contains, testRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, testUpsunRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$testPantheon) : (A2(_elm_lang$core$Regex$contains, devRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$devPantheon) : (A2(_elm_lang$core$Regex$contains, ddevLocalRegex, hostname) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Config$ddevLocal) : A2(_elm_lang$core$Dict$get, hostname, _Gizra$circuit_bid$LocalConfig$localConfigs)))))));
 };
 
 var _Gizra$circuit_bid$Utils_Order$reverse = F3(
@@ -52258,7 +52258,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$userOrFloorBidderInput = F7(
 												_krisajenkins$remotedata$RemoteData$isLoading(status)),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$defaultValue(inputValue),
+												_0: _elm_lang$html$Html_Attributes$value(inputValue),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$id('winning-floor-id'),
@@ -60473,8 +60473,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewPublicMessageInput = F4(
 							_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetPublicMessageInput),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$defaultValue(publicMessageInput),
-								_1: {ctor: '[]'}
+								_0: _elm_lang$html$Html_Attributes$value(publicMessageInput),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$id('public-message-input'),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					},
@@ -60925,7 +60929,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$bidStepView = F6(
 							_0: _elm_lang$html$Html_Attributes$class('enter-step'),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$defaultValue(manualStepInput),
+								_0: _elm_lang$html$Html_Attributes$value(manualStepInput),
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Attributes$type_('number'),
@@ -61138,7 +61142,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 											_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$CustomBidAmountUpdate),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$defaultValue(customBidInput),
+												_0: _elm_lang$html$Html_Attributes$value(customBidInput),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$disabled(nextFloorBidButton.disabled),
@@ -61907,7 +61911,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor = F3(
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Pages_Clerk_Model$SetPausedMessage),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$id('paused-message-input'),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}
@@ -62954,7 +62962,16 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 									{
 										ctor: '::',
 										_0: _elm_lang$html$Html_Attributes$href(
-											A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/register')),
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												backOfficeUrl,
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													'/',
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														_Gizra$circuit_bid$Translate$languageToCode(language),
+														'/register')))),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$class('pipeline join'),
@@ -62973,7 +62990,16 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 										{
 											ctor: '::',
 											_0: _elm_lang$html$Html_Attributes$href(
-												A2(_elm_lang$core$Basics_ops['++'], backOfficeUrl, '/forgot-password')),
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													backOfficeUrl,
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														'/',
+														A2(
+															_elm_lang$core$Basics_ops['++'],
+															_Gizra$circuit_bid$Translate$languageToCode(language),
+															'/forgot_password')))),
 											_1: {ctor: '[]'}
 										},
 										{
