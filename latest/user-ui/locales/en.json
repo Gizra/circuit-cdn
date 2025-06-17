@@ -237,7 +237,9 @@
       "title": "OR Bids Group",
       "main": "Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
       "example": "Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
-    }
+    },
+    "duplicateBid": "Duplicate bid",
+    "duplicatedAmountTooltip": "A previous bid for the same amount has already been placed for this lot"
   },
   "myCredit": {
     "pageTitle": "Manage Your Credit & Bidding Limits",
