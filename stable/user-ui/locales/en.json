@@ -119,7 +119,28 @@
     "phoneNumberInstructions": "Please enter your local phone number. The full formatted number, including the international country code, will be displayed below.",
     "professionalReferences": "Professional References",
     "enterProfessionalReferences": "Please provide names of other auction companies you've worked with.",
-    "optInCommunications": "I consent to receiving marketing communications and updates via email, SMS, and mail."
+    "optInCommunications": "I consent to receiving marketing communications and updates via email, SMS, and mail.",
+    "subscription": {
+      "title": "Magazine Subscription",
+      "digitalOnly": "Digital",
+      "digitalAndPrint": "Digital and Print Copy",
+      "none": "No Subscription",
+      "noSubscription": "No Active Subscription",
+      "noSubscriptionMessage": "You don't currently have an active magazine subscription.",
+      "subscriptionExpired": "Subscription Expired",
+      "expiredMessage": "Your subscription has expired.",
+      "activeSubscription": "Active Subscription",
+      "activeMessage": "Access your digital magazine issues online.",
+      "purchaseSubscription": "Purchase Subscription",
+      "renewSubscription": "Renew Subscription",
+      "viewMagazine": "View Online Magazine",
+      "statusNoSubscription": "You currently do not have any subscription.",
+      "statusActive": "Your {{type}} subscription will expire on {{date}}.",
+      "statusExpired": "Your subscription has expired on {{date}}.",
+      "statusError": "There is an issue with your subscription (expires {{date}}). Please contact our office.",
+      "errorMessage": "There appears to be an issue with your subscription status. Please contact our office to resolve this.",
+      "contactOffice": "Contact Office"
+    }
   },
   "addressForm": {
     "firstName": "First Name",
@@ -451,5 +472,69 @@
     "showing": "Showing {{start}}-{{end}} of {{total}} items",
     "previous": "Previous",
     "next": "Next"
+  },
+  "subscriptionMagazine": {
+    "title": "Stamp Collector's Quarterly",
+    "connectionFailed": "Failed to connect to the server",
+    "networkError": "Network error occurred",
+    "cannotAccessSiteSettings": "Cannot access site settings",
+    "error": "Error",
+    "subscriptionRequired": "A subscription is required to access magazine content.",
+    "subscriptionExpired": "Your subscription has expired.",
+    "renewSubscription": "Renew Subscription",
+    "learnAboutPlans": "Learn About Plans",
+    "loginToAccess": "Please log in to access magazine content. Click on any magazine to continue.",
+    "subscriptionRequiredTitle": "Subscription Required",
+    "subscriptionRequiredMessage": "To read \"{{magazineTitle}}\" and access our full magazine library, you need an active subscription.",
+    "subscriptionBenefits": "With a subscription, you'll get unlimited access to all magazines, exclusive content, and new issues as soon as they're published.",
+    "cancel": "Cancel",
+    "purchaseSubscription": "Get Subscription",
+    "subscriptionError": "There is an issue with your subscription status. Please contact our office.",
+    "contactOffice": "Contact Office"
+  },
+  "subscriptionPurchase": {
+    "title": "Choose Your Subscription Plan",
+    "subtitle": "Get unlimited access to our entire magazine library with exclusive content and new issues delivered monthly.",
+    "backToMagazines": "Back to Magazines",
+    "mostPopular": "Most Popular",
+    "choosePlan": "Choose This Plan",
+    "processing": "Processing...",
+    "loginRequired": "Please log in to purchase a subscription.",
+    "goToLogin": "Go to Login",
+    "securePayment": "🔒 Secure payment processing with 256-bit SSL encryption",
+    "cancelAnytime": "Cancel anytime. No hidden fees or long-term commitments.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "contactSupport": "Contact Support",
+    "redirectingToPayment": "Redirecting to secure payment...",
+    "purchaseError": "There was an error processing your purchase. Please try again.",
+    "plans": {
+      "monthly": {
+        "name": "Monthly Plan",
+        "period": "per month",
+        "description": "Perfect for getting started with our magazine collection."
+      },
+      "yearly": {
+        "name": "Annual Plan", 
+        "period": "per year",
+        "description": "Best value! Save 17% compared to monthly billing.",
+        "savings": "Save $19.89"
+      },
+      "lifetime": {
+        "name": "Lifetime Access",
+        "period": "one-time payment",
+        "description": "Never pay again! Complete access to all current and future content."
+      }
+    },
+    "features": {
+      "unlimitedAccess": "Unlimited access to all magazines",
+      "monthlyIssues": "New issues every month", 
+      "mobileAccess": "Mobile and tablet access",
+      "customerSupport": "Customer support",
+      "exclusiveContent": "Exclusive subscriber content",
+      "archiveAccess": "Complete archive access",
+      "earlyAccess": "Early access to new issues",
+      "prioritySupport": "Priority customer support"
+    }
   }
 }

@@ -101,7 +101,25 @@
     "professionalReferences": "[NEEDS_TRANSLATION]Professional References",
     "enterProfessionalReferences": "[NEEDS_TRANSLATION]Please provide names of other auction companies you've worked with",
     "optInCommunications": "[NEEDS_TRANSLATION]I consent to receiving marketing communications and updates via email, SMS, and mail.",
-    "namePrefix": "[NEEDS_TRANSLATION]Title"
+    "namePrefix": "[NEEDS_TRANSLATION]Title",
+    "subscription": {
+      "title": "[NEEDS_TRANSLATION]Magazine Subscription",
+      "digitalOnly": "[NEEDS_TRANSLATION]Digital",
+      "digitalAndPrint": "[NEEDS_TRANSLATION]Digital and Print Copy",
+      "none": "[NEEDS_TRANSLATION]No Subscription",
+      "noSubscription": "[NEEDS_TRANSLATION]No Active Subscription",
+      "noSubscriptionMessage": "[NEEDS_TRANSLATION]You don't currently have an active magazine subscription.",
+      "subscriptionExpired": "[NEEDS_TRANSLATION]Subscription Expired",
+      "expiredMessage": "[NEEDS_TRANSLATION]Your subscription has expired.",
+      "activeSubscription": "[NEEDS_TRANSLATION]Active Subscription",
+      "activeMessage": "[NEEDS_TRANSLATION]Access your digital magazine issues online.",
+      "purchaseSubscription": "[NEEDS_TRANSLATION]Purchase Subscription",
+      "renewSubscription": "[NEEDS_TRANSLATION]Renew Subscription",
+      "viewMagazine": "[NEEDS_TRANSLATION]View Online Magazine",
+      "statusNoSubscription": "[NEEDS_TRANSLATION]You currently do not have any subscription.",
+      "statusActive": "[NEEDS_TRANSLATION]Your {{type}} subscription will expire on {{date}}.",
+      "statusExpired": "[NEEDS_TRANSLATION]Your {{type}} subscription has expired on {{date}}."
+    }
   },
   "addressForm": {
     "firstName": "Prénom",
@@ -253,7 +271,9 @@
       "main": "[NEEDS_TRANSLATION]Add lots to a group (A-J) when you want to win only one item. Once you win an item in the group, your other group bids are cancelled'",
       "example": "[NEEDS_TRANSLATION]Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
     },
-    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items"
+    "groupHasClosedItems": "[NEEDS_TRANSLATION]Cannot add to this group - it contains closed items",
+    "duplicateBid": "[NEEDS_TRANSLATION]Duplicate bid",
+    "duplicatedAmountTooltip": "[NEEDS_TRANSLATION]A previous bid for the same amount has already been placed for this lot"
   },
   "userBlock": {
     "login": "Connexion",
@@ -454,5 +474,67 @@
     "showing": "[NEEDS_TRANSLATION]Showing {{start}}-{{end}} of {{total}} items",
     "previous": "[NEEDS_TRANSLATION]Previous",
     "next": "[NEEDS_TRANSLATION]Next"
+  },
+  "subscriptionMagazine": {
+    "title": "[NEEDS_TRANSLATION]Stamp Collector's Quarterly",
+    "connectionFailed": "[NEEDS_TRANSLATION]Failed to connect to the server",
+    "networkError": "[NEEDS_TRANSLATION]Network error occurred",
+    "cannotAccessSiteSettings": "[NEEDS_TRANSLATION]Cannot access site settings",
+    "error": "[NEEDS_TRANSLATION]Error",
+    "subscriptionRequired": "[NEEDS_TRANSLATION]A subscription is required to access magazine content. Click on any magazine to learn more about our subscription plans.",
+    "loginToAccess": "[NEEDS_TRANSLATION]Please log in to access magazine content. Click on any magazine to continue.",
+    "subscriptionRequiredTitle": "[NEEDS_TRANSLATION]Subscription Required",
+    "subscriptionRequiredMessage": "[NEEDS_TRANSLATION]To read \"{{magazineTitle}}\" and access our full magazine library, you need an active subscription.",
+    "subscriptionBenefits": "[NEEDS_TRANSLATION]With a subscription, you'll get unlimited access to all magazines, exclusive content, and new issues as soon as they're published.",
+    "cancel": "[NEEDS_TRANSLATION]Cancel",
+    "purchaseSubscription": "[NEEDS_TRANSLATION]Get Subscription",
+    "subscriptionExpired": "[NEEDS_TRANSLATION]Your subscription has expired.",
+    "renewSubscription": "[NEEDS_TRANSLATION]Renew Subscription",
+    "learnAboutPlans": "[NEEDS_TRANSLATION]Learn About Plans"
+  },
+  "subscriptionPurchase": {
+    "title": "[NEEDS_TRANSLATION]Choose Your Subscription Plan",
+    "subtitle": "[NEEDS_TRANSLATION]Get unlimited access to our entire magazine library with exclusive content and new issues delivered monthly.",
+    "backToMagazines": "[NEEDS_TRANSLATION]Back to Magazines",
+    "mostPopular": "[NEEDS_TRANSLATION]Most Popular",
+    "choosePlan": "[NEEDS_TRANSLATION]Choose This Plan",
+    "processing": "[NEEDS_TRANSLATION]Processing...",
+    "loginRequired": "[NEEDS_TRANSLATION]Please log in to purchase a subscription.",
+    "goToLogin": "[NEEDS_TRANSLATION]Go to Login",
+    "securePayment": "[NEEDS_TRANSLATION]🔒 Secure payment processing with 256-bit SSL encryption",
+    "cancelAnytime": "[NEEDS_TRANSLATION]Cancel anytime. No hidden fees or long-term commitments.",
+    "termsOfService": "[NEEDS_TRANSLATION]Terms of Service",
+    "privacyPolicy": "[NEEDS_TRANSLATION]Privacy Policy",
+    "contactSupport": "[NEEDS_TRANSLATION]Contact Support",
+    "redirectingToPayment": "[NEEDS_TRANSLATION]Redirecting to secure payment...",
+    "purchaseError": "[NEEDS_TRANSLATION]There was an error processing your purchase. Please try again.",
+    "plans": {
+      "monthly": {
+        "name": "[NEEDS_TRANSLATION]Monthly Plan",
+        "period": "[NEEDS_TRANSLATION]per month",
+        "description": "[NEEDS_TRANSLATION]Perfect for getting started with our magazine collection."
+      },
+      "yearly": {
+        "name": "[NEEDS_TRANSLATION]Annual Plan",
+        "period": "[NEEDS_TRANSLATION]per year",
+        "description": "[NEEDS_TRANSLATION]Best value! Save 17% compared to monthly billing.",
+        "savings": "[NEEDS_TRANSLATION]Save $19.89"
+      },
+      "lifetime": {
+        "name": "[NEEDS_TRANSLATION]Lifetime Access",
+        "period": "[NEEDS_TRANSLATION]one-time payment",
+        "description": "[NEEDS_TRANSLATION]Never pay again! Complete access to all current and future content."
+      }
+    },
+    "features": {
+      "unlimitedAccess": "[NEEDS_TRANSLATION]Unlimited access to all magazines",
+      "monthlyIssues": "[NEEDS_TRANSLATION]New issues every month",
+      "mobileAccess": "[NEEDS_TRANSLATION]Mobile and tablet access",
+      "customerSupport": "[NEEDS_TRANSLATION]Customer support",
+      "exclusiveContent": "[NEEDS_TRANSLATION]Exclusive subscriber content",
+      "archiveAccess": "[NEEDS_TRANSLATION]Complete archive access",
+      "earlyAccess": "[NEEDS_TRANSLATION]Early access to new issues",
+      "prioritySupport": "[NEEDS_TRANSLATION]Priority customer support"
+    }
   }
 }
