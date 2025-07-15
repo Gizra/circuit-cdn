@@ -110,6 +110,8 @@
       "ru": "Russian",
       "zh-hans": "Chinese"
     },
+    "billingInstructions": "Billing Instructions",
+    "enterBillingInstructions": "Enter any special billing instructions here",
     "shippingInstructions": "Shipping Instructions",
     "enterShippingInstructions": "Enter any special shipping instructions here",
     "updateAccount": "Update Account",
@@ -260,7 +262,9 @@
       "example": "Example: If lots 1, 2, 3 are in Group A and you win lot 1, your bids on lots 2 and 3 will be automatically cancelled"
     },
     "duplicateBid": "Duplicate bid",
-    "duplicatedAmountTooltip": "A previous bid for the same amount has already been placed for this lot"
+    "duplicatedAmountTooltip": "A previous bid for the same amount has already been placed for this lot",
+    "deletedByGroup": "Deleted by group",
+    "deletedByGroupTooltip": "This bid was automatically cancelled because you won another lot in the same Or Bids group"
   },
   "myCredit": {
     "pageTitle": "Manage Your Credit & Bidding Limits",
@@ -536,5 +540,14 @@
       "earlyAccess": "Early access to new issues",
       "prioritySupport": "Priority customer support"
     }
+  },
+  "balance": {
+    "loading": "Fetching account balance...",
+    "error": "Balance unavailable",
+    "networkError": "Unable to retrieve balance information",
+    "loginToSeeBalance": "View My Account Balance",
+    "payBalance": "Pay Balance: {{amount}}",
+    "noOpenBalance": "Balance: Paid in Full",
+    "retryBalance": "Retry balance check"
   }
 }

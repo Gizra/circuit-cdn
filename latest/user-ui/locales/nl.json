@@ -296,7 +296,9 @@
     },
     "groupHasClosedItems": "Kan niet toevoegen- het bevat verkochte items",
     "duplicateBid": "[NEEDS_TRANSLATION]Duplicate bid",
-    "duplicatedAmountTooltip": "[NEEDS_TRANSLATION]A previous bid for the same amount has already been placed for this lot"
+    "duplicatedAmountTooltip": "[NEEDS_TRANSLATION]A previous bid for the same amount has already been placed for this lot",
+    "deletedByGroup": "[NEEDS_TRANSLATION]Deleted by group",
+    "deletedByGroupTooltip": "[NEEDS_TRANSLATION]This bid was automatically cancelled because you won another lot in the same Or Bids group"
   },
   "userBlock": {
     "login": "Inloggen",
