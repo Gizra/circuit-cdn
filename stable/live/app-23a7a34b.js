@@ -153,3 +153,16 @@ function waitForElement(selector, fn, model, tryCount) {
         }
     }, 50);
 }
+
+// Handle browser detection ports
+if (elmApp.ports.getUserAgent) {
+    elmApp.ports.getUserAgent.subscribe(function() {
+        const userAgent = navigator.userAgent;
+        elmApp.ports.receiveUserAgent.send(userAgent);
+    });
+}
+
+// Send browser info immediately when the app starts
+if (elmApp.ports.receiveUserAgent) {
+    elmApp.ports.receiveUserAgent.send(navigator.userAgent);
+}
