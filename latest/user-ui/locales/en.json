@@ -64,7 +64,7 @@
     "methods": "Payment Methods",
     "addNew": "Add New Card",
     "cardholderName": "Cardholder Name",
-    "cardholderNamePlaceholder": "John Doe",
+    "cardholderNamePlaceholder": "Alex Smith",
     "cardNumber": "Card Number",
     "month": "Month",
     "year": "Year",
@@ -104,7 +104,9 @@
     "useExistingAddress": "Use Existing Address",  
     "addNewAddress": "Add New Address",  
     "selectAddress": "Select Address",
-    "noSavedCards": "No saved payment methods. Please add a payment method first."
+    "noSavedCards": "No saved payment methods. Please add a payment method first.",
+    "noCards": "No saved payment methods found.",
+    "addFirstCard": "Add your first payment method to get started."
   },
   "transactions": {
     "authorizenetTitle": "Authorize.net",
@@ -202,7 +204,7 @@
     "emailPlaceholder": "Enter your email address",
     "submitButton": "Reset Password",
     "captchaError": "Please complete the captcha.",
-    "successMessage": "Password reset link has been sent to your email.",
+    "successMessage": "If this email address is registered with us, you will receive a password reset link shortly.",
     "errorMessage": "Failed to send password reset link. Please try again.",
     "generalError": "An error occurred. Please try again."
   },
