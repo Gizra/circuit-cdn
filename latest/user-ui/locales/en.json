@@ -637,7 +637,6 @@
   "subscriptionPurchase": {
     "title": "Choose Your Subscription Plan",
     "subtitle": "Get unlimited access to our entire magazine library with exclusive content and new issues delivered monthly.",
-    "backToMagazines": "Back to Magazines",
     "mostPopular": "Most Popular",
     "choosePlan": "Choose This Plan",
     "processing": "Processing...",
@@ -645,39 +644,37 @@
     "goToLogin": "Go to Login",
     "securePayment": "🔒 Secure payment processing with 256-bit SSL encryption",
     "cancelAnytime": "Cancel anytime. No hidden fees or long-term commitments.",
-    "termsOfService": "Terms of Service",
-    "privacyPolicy": "Privacy Policy",
-    "contactSupport": "Contact Support",
     "redirectingToPayment": "Redirecting to secure payment...",
     "purchaseError": "There was an error processing your purchase. Please try again.",
     "plans": {
-      "monthly": {
-        "name": "Monthly Plan",
-        "period": "per month",
-        "description": "Perfect for getting started with our magazine collection."
-      },
-      "yearly": {
-        "name": "Annual Plan", 
+      "digital": {
+        "name": "Digital Subscription",
         "period": "per year",
-        "description": "Best value! Save 17% compared to monthly billing.",
-        "savings": "Save $19.89"
+        "description": "Access all magazines digitally for one full year"
       },
-      "lifetime": {
-        "name": "Lifetime Access",
-        "period": "one-time payment",
-        "description": "Never pay again! Complete access to all current and future content."
+      "printDomestic": {
+        "name": "Print + Digital (Domestic)",
+        "period": "per year",
+        "description": "4 magazines mailed to domestic address plus digital access"
+      },
+      "printInternational": {
+        "name": "Print + Digital (International)",
+        "period": "per year",
+        "description": "4 magazines mailed internationally plus digital access"
       }
     },
     "features": {
-      "unlimitedAccess": "Unlimited access to all magazines",
-      "monthlyIssues": "New issues every month", 
-      "mobileAccess": "Mobile and tablet access",
+      "digitalAccess": "Digital access to all magazines",
+      "oneYearSubscription": "One year subscription from date of purchase",
+      "instantAccess": "Instant access after purchase",
+      "readAnyDevice": "Read on any device",
       "customerSupport": "Customer support",
-      "exclusiveContent": "Exclusive subscriber content",
-      "archiveAccess": "Complete archive access",
-      "earlyAccess": "Early access to new issues",
+      "physicalMagazines": "4 physical magazines mailed to you",
+      "domesticShipping": "Domestic shipping included",
+      "internationalShipping": "International shipping included",
+      "mobileAccess": "Mobile and tablet access",
       "prioritySupport": "Priority customer support"
-    }
+    }  
   },
   "balance": {
     "loading": "Fetching account balance...",
