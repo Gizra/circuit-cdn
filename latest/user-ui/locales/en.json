@@ -106,7 +106,8 @@
     "selectAddress": "Select Address",
     "noSavedCards": "No saved payment methods. Please add a payment method first.",
     "noCards": "No saved payment methods found.",
-    "addFirstCard": "Add your first payment method to get started."
+    "addFirstCard": "Add your first payment method to get started.",
+    "goToPaymentMethods": "Go to Payment Methods"
   },
   "transactions": {
     "authorizenetTitle": "Authorize.net",

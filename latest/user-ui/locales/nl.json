@@ -534,6 +534,21 @@
         "name": "[NEEDS_TRANSLATION]Lifetime Access",
         "period": "[NEEDS_TRANSLATION]one-time payment",
         "description": "[NEEDS_TRANSLATION]Never pay again! Complete access to all current and future content."
+      },
+      "digital": {
+        "name": "[NEEDS_TRANSLATION]Digital Subscription",
+        "period": "[NEEDS_TRANSLATION]per year",
+        "description": "[NEEDS_TRANSLATION]Access all magazines digitally for one full year"
+      },
+      "printDomestic": {
+        "name": "[NEEDS_TRANSLATION]Print + Digital (Domestic)",
+        "period": "[NEEDS_TRANSLATION]per year",
+        "description": "[NEEDS_TRANSLATION]4 magazines mailed to domestic address plus digital access"
+      },
+      "printInternational": {
+        "name": "[NEEDS_TRANSLATION]Print + Digital (International)",
+        "period": "[NEEDS_TRANSLATION]per year",
+        "description": "[NEEDS_TRANSLATION]4 magazines mailed internationally plus digital access"
       }
     },
     "features": {
@@ -544,7 +559,14 @@
       "exclusiveContent": "[NEEDS_TRANSLATION]Exclusive subscriber content",
       "archiveAccess": "[NEEDS_TRANSLATION]Complete archive access",
       "earlyAccess": "[NEEDS_TRANSLATION]Early access to new issues",
-      "prioritySupport": "[NEEDS_TRANSLATION]Priority customer support"
+      "prioritySupport": "[NEEDS_TRANSLATION]Priority customer support",
+      "digitalAccess": "[NEEDS_TRANSLATION]Digital access to all magazines",
+      "oneYearSubscription": "[NEEDS_TRANSLATION]One year subscription from date of purchase",
+      "instantAccess": "[NEEDS_TRANSLATION]Instant access after purchase",
+      "readAnyDevice": "[NEEDS_TRANSLATION]Read on any device",
+      "physicalMagazines": "[NEEDS_TRANSLATION]4 physical magazines mailed to you",
+      "domesticShipping": "[NEEDS_TRANSLATION]Domestic shipping included",
+      "internationalShipping": "[NEEDS_TRANSLATION]International shipping included"
     }
   },
   "billing": {
@@ -654,7 +676,8 @@
     "selectAddress": "[NEEDS_TRANSLATION]Select Address",
     "noSavedCards": "[NEEDS_TRANSLATION]No saved payment methods. Please add a payment method first.",
     "noCards": "[NEEDS_TRANSLATION]No saved payment methods found.",
-    "addFirstCard": "[NEEDS_TRANSLATION]Add your first payment method to get started."
+    "addFirstCard": "[NEEDS_TRANSLATION]Add your first payment method to get started.",
+    "goToPaymentMethods": "[NEEDS_TRANSLATION]Go to Payment Methods"
   },
   "transactions": {
     "authorizenetTitle": "[NEEDS_TRANSLATION]Authorize.net",
