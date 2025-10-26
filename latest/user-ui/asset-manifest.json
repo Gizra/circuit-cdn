@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "https://cdn.circuitauction.com/latest/user-ui/static/css/main.b15fa61b.css",
-    "main.js": "https://cdn.circuitauction.com/latest/user-ui/static/js/main.7131a84a.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "https://cdn.circuitauction.com/latest/user-ui/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/fontawesome-webfont.eot": "https://cdn.circuitauction.com/latest/user-ui/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
-    "static/media/fontawesome-webfont.ttf?v=4.7.0": "https://cdn.circuitauction.com/latest/user-ui/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/fontawesome-webfont.woff?v=4.7.0": "https://cdn.circuitauction.com/latest/user-ui/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
-    "static/media/fontawesome-webfont.woff2?v=4.7.0": "https://cdn.circuitauction.com/latest/user-ui/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "index.html": "https://cdn.circuitauction.com/latest/user-ui/index.html",
-    "static/media/getFetch.cjs": "https://cdn.circuitauction.com/latest/user-ui/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
-    "main.b15fa61b.css.map": "https://cdn.circuitauction.com/latest/user-ui/static/css/main.b15fa61b.css.map",
-    "main.7131a84a.js.map": "https://cdn.circuitauction.com/latest/user-ui/static/js/main.7131a84a.js.map"
+    "main.css": "/latest/user-ui/static/css/main.218373b5.css",
+    "main.js": "/latest/user-ui/static/js/main.f3b38535.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/latest/user-ui/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/latest/user-ui/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/latest/user-ui/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/latest/user-ui/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/latest/user-ui/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "index.html": "/latest/user-ui/index.html",
+    "static/media/getFetch.cjs": "/latest/user-ui/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
+    "main.218373b5.css.map": "/latest/user-ui/static/css/main.218373b5.css.map",
+    "main.f3b38535.js.map": "/latest/user-ui/static/js/main.f3b38535.js.map"
   },
   "entrypoints": [
-    "static/css/main.b15fa61b.css",
-    "static/js/main.7131a84a.js"
+    "static/css/main.218373b5.css",
+    "static/js/main.f3b38535.js"
   ]
 }
