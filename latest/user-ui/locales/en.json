@@ -586,6 +586,7 @@
     "bidError": "Failed to place bid",
     "bidPlaced": "Bid placed successfully",
     "deleteError": "Failed to delete bid",
+    "bidDeleted": "Bid deleted successfully",
     "favoriteError": "Failed to update favorite",
     "enterBid": "Enter Your Bid",
     "makeOffer": "Make an Offer",
