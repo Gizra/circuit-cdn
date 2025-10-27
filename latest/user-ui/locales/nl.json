@@ -777,6 +777,9 @@
     "noKeep": "[NEEDS_TRANSLATION]No, Keep Bid",
     "itemNotActiveButHasLiveBids": "[NEEDS_TRANSLATION]This item is no longer accepting bids",
     "liveAuctionOpen": "[NEEDS_TRANSLATION]This item is available in the live auction",
-    "joinLiveAuction": "[NEEDS_TRANSLATION]Join Live Auction"
+    "joinLiveAuction": "[NEEDS_TRANSLATION]Join Live Auction",
+    "noCreditLimitPrefix": "[NEEDS_TRANSLATION]In order to place Agent bids, you must have a Credit limit set.",
+    "noCreditLimitLink": "[NEEDS_TRANSLATION]Click here",
+    "noCreditLimitSuffix": "[NEEDS_TRANSLATION]to set the Credit."
   }
 }

@@ -603,7 +603,10 @@
     "noKeep": "No, Keep Bid",
     "itemNotActiveButHasLiveBids": "This item is no longer accepting bids",
     "liveAuctionOpen": "This item is available in the live auction",
-    "joinLiveAuction": "Join Live Auction"
+    "joinLiveAuction": "Join Live Auction",
+    "noCreditLimitPrefix": "In order to participate in the Live auction, you must have a Credit limit set.",
+    "noCreditLimitLink": "Click here",
+    "noCreditLimitSuffix": "to request a Credit."
   },
   "search": {
     "placeholder": "Search lots..."
