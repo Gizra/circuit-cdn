@@ -631,7 +631,13 @@
     
     "makeOfferTooltip": "This item is available for post-sale offers. Submit your best offer and the seller will review it.",
     "submitOffer": "Submit Offer",
-    "deleteOffer": "Delete Offer"
+    "deleteOffer": "Delete Offer",
+
+    "bidRejected": "Your bid was rejected. Please try again or contact support.",
+    "bidRejectedBelowReserve": "Your bid is below the reserve price and cannot be accepted. Please bid higher.",
+    "bidRejectedOutbid": "Your bid was rejected because another bidder has placed a higher bid. Please increase your bid.",
+    "bidRejectedNoCreditLimit": "Your bid cannot be registered because you do not have a credit limit set. Please contact the auction house or set your credit limit in My Bids."
+  
   },
   "search": {
     "placeholder": "Search lots..."
