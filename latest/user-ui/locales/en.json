@@ -579,24 +579,29 @@
   "placeBid": {
     "soldFor": "Sold for {{amount}}",
     "youWon": "You won for {{amount}}",
+    "unsold": "Unsold",
     "withdrawn": "This item has been withdrawn",
     "currentPrice": "Current Price",
     "noData": "No data available",
     "noBackendUrl": "Backend URL is not configured",
     "bidError": "Failed to place bid",
-    "bidPlaced": "Bid placed successfully",
+    "bidPlaced": "Your bid of {{amount}} was placed successfully",
     "deleteError": "Failed to delete bid",
     "bidDeleted": "Bid deleted successfully",
     "favoriteError": "Failed to update favorite",
     "enterBid": "Enter Your Bid",
     "makeOffer": "Make an Offer",
     "changeBid": "Change Bid",
-    "currentBid": "Your current bid is",
-    "currentAgentBid": "Current Agent Bid",
+    "currentBid": "Current bid",
+    
     "deleteBid": "Delete Bid",
     "onlineAgent": "Online Agent",
-    "enterAmount": "Enter amount",
+    "enterAmount": "Enter Amount",
     "placeBid": "Place Bid",
+    "youAreHighestBidder": "You are the highest bidder!",
+    "youWonThisLot": "You won this lot!",
+    "changeOffer": "Change Offer",
+    "currentOffer": "Current offer",
     "cancel": "Cancel",
     "confirmDelete": "Are you sure you want to delete your bid?",
     "yesDelete": "Yes, Delete",
@@ -606,7 +611,27 @@
     "joinLiveAuction": "Join Live Auction",
     "noCreditLimitPrefix": "In order to participate in the Live auction, you must have a Credit limit set.",
     "noCreditLimitLink": "Click here",
-    "noCreditLimitSuffix": "to request a Credit."
+    "noCreditLimitSuffix": "to request a Credit.",
+
+    "onlineAgentBid": "Online Agent Bids",
+    "changeAgentBid": "Change Agent Bid",
+    "agentBidTooltip": "Online Agent bidding allows you to set a maximum bid amount. The system will automatically bid on your behalf up to your maximum during the live auction.",
+    "placeAgentBid": "Place Agent Bid",
+    "updateAgentBid": "Update Agent Bid",
+    "deleteAgentBid": "Delete Agent Bid",
+    
+    "mailBid": "Mail Bids",
+    "mailBidTooltip": "Mail bids (also called absentee or book bids) are pre-auction bids that compete with live bidders. Your bid will be executed automatically during the auction.",
+    "placeMailBid": "Place Mail Bid",
+    "deleteMailBid": "Delete Mail Bid",
+    "updateMailBid": "Update Mail Bid",
+    
+    "obscuredBid": "Your Bid",
+    "obscuredBidTooltip": "In an obscured auction, bid amounts are hidden from other bidders. Submit your best offer and it will be revealed after the auction closes.",
+    
+    "makeOfferTooltip": "This item is available for post-sale offers. Submit your best offer and the seller will review it.",
+    "submitOffer": "Submit Offer",
+    "deleteOffer": "Delete Offer"
   },
   "search": {
     "placeholder": "Search lots..."
