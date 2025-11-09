@@ -813,6 +813,10 @@
     "buyNowFor": "[NEEDS_TRANSLATION]Buy Now for {{amount}}",
     "buyNowError": "[NEEDS_TRANSLATION]Failed to purchase item. Please try again or contact support.",
     "buyNowSuccess": "[NEEDS_TRANSLATION]Congratulations! You have successfully purchased this item for {{amount}}.",
-    "payItemInvoice": "[NEEDS_TRANSLATION]Click here to pay item invoice"
+    "payItemInvoice": "[NEEDS_TRANSLATION]Click here to pay item invoice",
+    "cancelBuyNow": "[NEEDS_TRANSLATION]Cancel Buy Now",
+    "buyNowCancelled": "[NEEDS_TRANSLATION]Your buy now purchase has been cancelled successfully.",
+    "cancelBuyNowError": "[NEEDS_TRANSLATION]Failed to cancel buy now purchase. Please try again or contact support.",
+    "noBuyNowBidFound": "[NEEDS_TRANSLATION]No buy now purchase found to cancel."
   }
 }
