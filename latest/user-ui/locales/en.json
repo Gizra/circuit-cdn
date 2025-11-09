@@ -440,7 +440,7 @@
   "userBlock": {
     "login": "Login",
     "register": "Register",
-    "or": "Or",
+    "or": "or",
     "user": "User",
     "myAccount": "My Account",
     "myBidsAndCredit": "Bids & Credit",
@@ -571,6 +571,8 @@
     "passwordPlaceholder": "Password",
     "login": "Login",
     "loginPrompt": "Please login or register to place bids",
+    "pleaseText": "Please",
+    "toPlaceBids": "to place bids",
     "highestBidderMessage": "You are the highest bidder!",
     "placeBid": "Place Bid {{amount}}",
     "pass": "Pass",
@@ -639,7 +641,6 @@
     "bidRejectedNoCreditLimit": "Your bid cannot be registered because you do not have a credit limit set. Please contact the auction house or request credit limit in My Bids.",
     "agentBidNoCreditWarning": "Your bid was placed, but you do not have a credit limit set. Your bid may not be executed during the live auction. Please set your credit limit in My Bids.",
     "bidExceedsCreditLimit": "Your bid exceeds your available credit limit. Please request more credit in My Bids or contact the auction house to increase your credit limit.",
-
     "buyNow": "Buy Now",
     "buyNowTooltip": "Purchase this item immediately at a fixed price. This item is only available for direct purchase and does not accept bids.",
     "buyNowFor": "Buy Now for {{amount}}",
@@ -649,8 +650,9 @@
     "cancelBuyNow": "Cancel Buy Now",
     "buyNowCancelled": "Your buy now purchase has been cancelled successfully.",
     "cancelBuyNowError": "Failed to cancel buy now purchase. Please try again or contact support.",
-    "noBuyNowBidFound": "No buy now purchase found to cancel."
-
+    "noBuyNowBidFound": "No buy now purchase found to cancel.",
+    "creditExceededMessage": "Your bid exceeds your available credit limit. Please visit",
+    "viewMyBids": "My Bids & Credit"
   },
   "search": {
     "placeholder": "Search lots..."
