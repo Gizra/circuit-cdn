@@ -624,7 +624,8 @@
       "cheque": "[NEEDS_TRANSLATION]Cheque",
       "credit_card": "[NEEDS_TRANSLATION]Credit Card",
       "paypal": "[NEEDS_TRANSLATION]PayPal"
-    }
+    },
+    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment."
   },
   "payment": {
     "selectCard": "[NEEDS_TRANSLATION]Select Payment Method",
@@ -748,7 +749,9 @@
     "highestBidderMessage": "[NEEDS_TRANSLATION]You are the highest bidder!",
     "placeBid": "[NEEDS_TRANSLATION]Place Bid {{amount}}",
     "pass": "[NEEDS_TRANSLATION]Pass",
-    "lastBid": "[NEEDS_TRANSLATION]Your last bid: {{amount}}"
+    "lastBid": "[NEEDS_TRANSLATION]Your last bid: {{amount}}",
+    "pleaseText": "[NEEDS_TRANSLATION]Please",
+    "toPlaceBids": "[NEEDS_TRANSLATION]to place bids"
   },
   "placeBid": {
     "soldFor": "[NEEDS_TRANSLATION]Sold for {{amount}}",
@@ -817,6 +820,16 @@
     "cancelBuyNow": "[NEEDS_TRANSLATION]Cancel Buy Now",
     "buyNowCancelled": "[NEEDS_TRANSLATION]Your buy now purchase has been cancelled successfully.",
     "cancelBuyNowError": "[NEEDS_TRANSLATION]Failed to cancel buy now purchase. Please try again or contact support.",
-    "noBuyNowBidFound": "[NEEDS_TRANSLATION]No buy now purchase found to cancel."
+    "noBuyNowBidFound": "[NEEDS_TRANSLATION]No buy now purchase found to cancel.",
+    "startingPrice": "[NEEDS_TRANSLATION]Starting Price",
+    "loginToPlaceBid": "[NEEDS_TRANSLATION]Please login or register to place bids",
+    "login": "[NEEDS_TRANSLATION]Login",
+    "register": "[NEEDS_TRANSLATION]Register",
+    "youBoughtThisLot": "[NEEDS_TRANSLATION]You bought this lot",
+    "youBoughtThisLotFor": "[NEEDS_TRANSLATION]You bought this lot for {{amount}}",
+    "confirmCancelBuyNow": "[NEEDS_TRANSLATION]Are you sure you want to cancel this purchase?",
+    "yesCancel": "[NEEDS_TRANSLATION]Yes, Cancel",
+    "creditExceededMessage": "[NEEDS_TRANSLATION]Your bid exceeds your available credit limit. Please visit",
+    "viewMyBids": "[NEEDS_TRANSLATION]My Bids & Credit"
   }
 }

@@ -48,9 +48,10 @@
     "page": "Page",
     "of": "of",
     "closeCheckout": "Close Checkout",
+    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment.",
     "paymentMethods": {
       "cash": "Cash",
-      "bank_transfer": "Bank Transfer", 
+      "bank_transfer": "Bank Transfer",
       "cheque": "Cheque",
       "credit_card": "Credit Card",
       "paypal": "PayPal"
