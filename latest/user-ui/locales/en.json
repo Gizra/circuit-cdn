@@ -160,7 +160,13 @@
     "add": "Add",
     "reactivate": "Reactivate",
     "browseExplanation": "View items that match your selected categories of interest. The items will be automatically filtered based on your active categories.",
-    "browseSale": "Browse Current Sale Items"
+    "browseSale": "Browse Current Sale Items",
+    "additionalInterests": "Additional Interests",
+    "additionalInterestsHelp": "Use this field to tell us about any specific interests or items you're looking for that might not be covered by the categories above. For example, specific themes, origins, time periods, or particular types of items.",
+    "additionalInterestsPlaceholder": "E.g., specific themes, origins, conditions, or particular collections...",
+    "saveAdditionalInterests": "Save Additional Interests",
+    "additionalInterestsSaved": "Additional interests saved successfully",
+    "saving": "Saving..."
   },
   "login": {
     "title": "Sign in to your account",
