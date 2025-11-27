@@ -34144,7 +34144,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 						english: A2(
 							_elm_lang$core$Basics_ops['++'],
 							'Your bid of amount ',
-							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' was rejected for exceeding your credit limit')),
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' was rejected for exceeding your credit limit.')),
 						dutch: A2(
 							_elm_lang$core$Basics_ops['++'],
 							'Uw bod van ',
@@ -64936,22 +64936,26 @@ var _Gizra$circuit_bid$Pages_Sale_View$myCredit = F4(
 											_0: _elm_lang$html$Html_Attributes$class('form-control'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$min('1'),
+												_0: _elm_lang$html$Html_Attributes$id('credit-request-input'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$max(
-														_elm_lang$core$Basics$toString(_Gizra$circuit_bid$Utils_Number$maximalInt)),
+													_0: _elm_lang$html$Html_Attributes$min('1'),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onInput(
-															_Gizra$circuit_bid$Pages_Sale_Model$CreditRequestSetAmount(storageKey)),
+														_0: _elm_lang$html$Html_Attributes$max(
+															_elm_lang$core$Basics$toString(_Gizra$circuit_bid$Utils_Number$maximalInt)),
 														_1: {
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$value(amountAsString),
+															_0: _elm_lang$html$Html_Events$onInput(
+																_Gizra$circuit_bid$Pages_Sale_Model$CreditRequestSetAmount(storageKey)),
 															_1: {
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$required(true),
-																_1: {ctor: '[]'}
+																_0: _elm_lang$html$Html_Attributes$value(amountAsString),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$required(true),
+																	_1: {ctor: '[]'}
+																}
 															}
 														}
 													}
