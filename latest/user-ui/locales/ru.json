@@ -38,7 +38,8 @@
     "signUpButton": "Зарегистрироваться сейчас",
     "errorTitle": "Ошибка",
     "cannotAccessSettings": "Невозможно получить доступ к настройкам сайта.",
-    "successMessage": "Регистрация успешна! Вы будете перенаправлены на страницу вашего аккаунта."
+    "successMessage": "Регистрация успешна! Вы будете перенаправлены на страницу вашего аккаунта.",
+    "partnerCompaniesConsent": "[NEEDS_TRANSLATION]I consent to registration with our partner companies:"
   },
   "forgotPassword": {
     "title": "Забыли пароль",

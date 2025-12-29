@@ -199,8 +199,9 @@
     "passwordsDoNotMatch": "Passwords do not match",
     "passwordsMatch": "Both passwords match",
     "termsAcceptance": "I have read and accepted the Auctioneers <1>Terms and Conditions</1> and <3>Data Privacy Terms</3> and I agree to abide by them.",
+    "partnerCompaniesConsent": "I consent to registration with our partner companies:",
     "signUpButton": "Sign Up Now",
-    "errorTitle": "Error",
+    "errorTitle": "Error", 
     "cannotAccessSettings": "Cannot access site settings.",
     "successMessage": "Registration successful! You will be redirected to your account page."
   },
@@ -265,8 +266,9 @@
     "error": "Error",
     "standardInternationalFormat": "Standard International Format",
     "phoneNumberInstructions": "Please enter your local phone number. The full formatted number, including the international country code, will be displayed below.",
-    "professionalReferences": "Professional References",
+    "professionalReferences": "Professional References (list all applicable)",
     "enterProfessionalReferences": "Please provide names of other auction companies you've worked with.",
+    "professionalReferencesInstructions": "You may list multiple auction houses or companies where you have previously participated in auctions. This helps us verify your identity and ensure a smooth bidding experience.",
     "optInCommunications": "I consent to receiving marketing communications and updates via email, SMS, and mail.",
     "subscription": {
       "title": "Magazine Subscription",
@@ -586,7 +588,7 @@
     "lastBid": "Your last bid: {{amount}}"
   },
   "placeBid": {
-    "soldFor": "Sold for {{amount}}",
+    "soldFor": "Sold for",
     "youWon": "You won for {{amount}}",
     "unsold": "Unsold",
     "withdrawn": "This item has been withdrawn",
@@ -727,7 +729,6 @@
     "errorAdding": "Error adding to watch list",
     "errorRemoving": "Error removing from watch list",
     "loginRequired": "Please login to add items to watch list"
-  
   },
   "filters": {
     "saleLabel": "Sale",
@@ -811,5 +812,85 @@
     "payBalance": "Pay Balance: {{amount}}",
     "noOpenBalance": "Balance: Paid in Full",
     "retryBalance": "Retry balance check"
+  },
+  "sale": {
+    "title": "Sale Items",
+    "resultsFound": "{{count}} results found",
+    "showAdvanced": "Show Advanced Filters",
+    "hideAdvanced": "Hide Advanced Filters",
+    "lotNumber": "Lot Number",
+    "enterLotNumber": "Enter lot#",
+    "searchText": "Search Text",
+    "enterSearchText": "Enter keywords",
+    "soldStatus": "Status",
+    "any": "Any",
+    "sold": "Sold",
+    "unsold": "Unsold",
+    "search": "Search",
+    "reset": "Reset",
+    "error": "Error",
+    "connectionFailed": "Connection to server failed",
+    "networkError": "Network error occurred",
+    "totalResults": "Total Results: {{count}}",
+    "clearFilter": "Clear",
+    "filters": "Filters",
+    "applyFilter": "Click to apply this filter",
+    "removeFilter": "Click to remove this filter"
+  },
+  "itempage": {
+    "loading": "Loading...",
+    "error": "Error",
+    "itemNotFound": "Item not found",
+    "home": "Home",
+    "lot": "Lot {{number}}",
+    "withdrawn": "Withdrawn",
+    "withdrawnMessage": "This item has been withdrawn and details are not available.",
+    "pricing": {
+      "opening": "Opening",
+      "estimate": "Estimate",
+      "retail": "Retail"
+    },
+    "dimensions": "Dimensions",
+    "caption": "Caption",
+    "essay": "Essay",
+    "literature": "Literature",
+    "catalogues": "Catalogues",
+    "catalogue": "Catalogue:",
+    "catalogueValue": "Value:",
+    "medium": "Medium",
+    "category": "Category",
+    "certificates": "Certificates",
+    "provenance": "Provenance",
+    "references": "References/Links",
+    "footer": "Additional Information",
+    "askAboutItem": "Ask about this item",
+    "previousLot": "Previous Lot",
+    "nextLot": "Next Lot",
+    "aboutThisSale": "About This Sale",
+    "backToSale": "Back to Sale",
+    "viewMoreDetails": "View more details",
+    "modal": {
+      "title": "Ask about this item",
+      "lotInfo": "Lot {{number}}{{title}}",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "Enter your phone number",
+      "question": "Your Question",
+      "questionPlaceholder": "Enter your question about this item",
+      "cancel": "Cancel",
+      "submit": "Submit Question",
+      "submitting": "Submitting..."
+    },
+    "messages": {
+      "missingFields": "Missing required fields",
+      "missingFieldsDescription": "Please fill in name, email, and your question.",
+      "questionSubmitted": "Question submitted",
+      "questionSubmittedDescription": "Your question has been sent successfully. We'll get back to you soon!",
+      "submitError": "Error",
+      "submitErrorDescription": "Failed to submit question. Please try again."
+    }
   }
 }

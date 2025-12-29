@@ -61,7 +61,8 @@
     "signUpButton": "Nu aanmelden",
     "errorTitle": "Fout",
     "cannotAccessSettings": "Kan de site-instellingen niet openen.",
-    "successMessage": "Registratie succesvol! U wordt doorgestuurd naar uw accountpagina."
+    "successMessage": "Registratie succesvol! U wordt doorgestuurd naar uw accountpagina.",
+    "partnerCompaniesConsent": "[NEEDS_TRANSLATION]I consent to registration with our partner companies:"
   },
   "forgotPassword": {
     "title": "Wachtwoord vergeten",

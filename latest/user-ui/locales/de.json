@@ -38,7 +38,8 @@
     "signUpButton": "Jetzt registrieren",
     "errorTitle": "Fehler",
     "cannotAccessSettings": "Auf die Seiteneinstellungen kann nicht zugegriffen werden.",
-    "successMessage": "Registrierung erfolgreich! Sie werden auf Ihre Kontoseite weitergeleitet."
+    "successMessage": "Registrierung erfolgreich! Sie werden auf Ihre Kontoseite weitergeleitet.",
+    "partnerCompaniesConsent": "[NEEDS_TRANSLATION]I consent to registration with our partner companies:"
   },
   "forgotPassword": {
     "title": "Passwort vergessen",
