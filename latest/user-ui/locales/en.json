@@ -835,7 +835,10 @@
     "clearFilter": "Clear",
     "filters": "Filters",
     "applyFilter": "Click to apply this filter",
-    "removeFilter": "Click to remove this filter"
+    "removeFilter": "Click to remove this filter",
+    "aboutThisSale": "About This Sale",
+    "tableOfContents": "Table of Contents",
+    "departments": "Departments"
   },
   "itempage": {
     "loading": "Loading...",
@@ -892,5 +895,45 @@
       "submitError": "Error",
       "submitErrorDescription": "Failed to submit question. Please try again."
     }
+  },
+  "sales": {
+    "title": "Sales",
+    "searchPlaceholder": "Search sales...",
+    "allYears": "All Years",
+    "allDepartments": "All Departments",
+    "statusBoth": "All Sales",
+    "statusLive": "Active",
+    "statusFinished": "Closed",
+    "search": "Search",
+    "reset": "Reset",
+    "clearFilters": "Clear Filters",
+    "noSales": "No sales found",
+    "pdfCatalogue": "PDF Catalogue",
+    "ebook": "E-Book",
+    "saleResults": "Sale Results",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "pricesRealized": {
+    "title": "Prices Realized",
+    "noSaleUuid": "Please provide a sale UUID to view prices realized.",
+    "startAtLot": "Start at Lot no",
+    "enterLotNumber": "Enter lot number",
+    "status": "Status",
+    "any": "Any",
+    "sold": "Sold",
+    "unsold": "Unsold",
+    "withdrawn": "Withdrawn",
+    "unknown": "Unknown",
+    "itemsPerPage": "Items per page",
+    "apply": "Apply",
+    "reset": "Reset",
+    "noResults": "No items found matching your criteria.",
+    "lotNo": "Lot no.",
+    "opening": "Opening",
+    "soldFor": "Sold for",
+    "prev": "prev",
+    "next": "next",
+    "last": "last"
   }
 }
