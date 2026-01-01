@@ -21,6 +21,16 @@
     document.head.appendChild(link);
   }
 
+  // Helper function to get full URL (handles both relative and absolute paths)
+  function getFullUrl(path) {
+    // If path already starts with http:// or https://, return as-is
+    if (path.indexOf('http://') === 0 || path.indexOf('https://') === 0) {
+      return path;
+    }
+    // Otherwise, prepend baseUrl
+    return baseUrl + path;
+  }
+
   // Load manifest.json and then load assets as defined in it
   fetch(baseUrl + '/manifest.json')
     .then(function(response) {
@@ -28,8 +38,8 @@
     })
     .then(function(manifest) {
       // Load main JS and CSS
-      loadScript(baseUrl + manifest['main.js'], true);
-      loadStylesheet(baseUrl + manifest['main.css']);
+      loadScript(getFullUrl(manifest['main.js']), true);
+      loadStylesheet(getFullUrl(manifest['main.css']));
 
       var linkManifest = document.createElement('link');
       linkManifest.rel = 'manifest';
