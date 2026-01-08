@@ -1,12 +1,12 @@
 {
 	"name": "CircuitAuction Plugin",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"download_url": "https://cdn.circuitauction.com/latest/wordpress/plugins/circuitauction.zip",
 	"homepage": "https://circuitauction.com/",
 
 	"sections": {
 		"description": "CircuitAuction is a plugin that allows you to create and manage auctions on your website.",
 		"installation": "To install CircuitAuction, simply upload the plugin to your WordPress installation and activate it.",
-		"changelog": "1.0: Initial release."
+		"changelog": "2.0: Last release."
 	}
 }
