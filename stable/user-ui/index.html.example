@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+<!-- <div id="circuit-setup"site="backoffice-hk-eu" hostname="test-hk.circuit.auction"></div>-->
+<!-- <div id="circuit-setup" site="backoffice-hk-eu" hostname="backoffice.ddev.site"></div>-->
+    <div id="circuit-setup" site="backoffice-hk-eu" hostname="backoffice.ddev.site" language="de"></div>
+<!--    <div id="billing-history"></div>-->
+<!--       <div id="subscription-purchase"></div> -->
+<!--       <div id="login"></div>-->
+<!--       <div id="my-bids"></div>-->
+<!--       <div id="my-favorites"></div>-->
+<!--       <div id="my-interests"></div>-->
+<!--       <div id="billing-history"></div>-->
+<!--       <div id="my-account"></div>-->
+<!--       <div id="billing-history"></div> -->
+<!--       <div id="user-block"></div>-->
+<!--       <div id="place-bid-standalone"></div>-->
+<!--       <div id="my-bids"></div>-->
+<!--       <div id="my-account"></div>-->
+<!--       <div id="register"></div> -->
+<!--       <div id="forgotpassword"></div>-->
+<!--       <div id="subscription-magazine"></div>-->
+<!--       <div id="ca-sale-page" data-sale-nid="1890911"></div>-->
+<!--       <div id="ca-item-page" data-item-id="1902261" data-display-mode="full" ></div>-->
+<!--       <div id="ca-sale-page" data-sale-nid="1833159" data-show-featured></div>-->
+<!--       <div id="ca-sales-list" data-first-year="2020" data-display-mode="grid" data-remove-filters="true"></div>-->
+<!--       <div id="ca-featured-items"  data-sale-nid="8" data-item-display="lot-number"></div> -->
+<!--       <div id="ca-prices-realized"-->
+<!--            data-sale-uuid="backoffice-hk-eu-live-65cbb2d1aa6643-50388531"-->
+<!--            data-items-per-page="40"-->
+<!--            data-columns="4"-->
+<!--            data-show-filters="true"-->
+<!--            data-show-lot-filter="true"-->
+<!--            data-show-status-filter="true"-->
+<!--            data-show-items-per-page="true"-->
+<!--            data-show-pagination="true"-->
+<!--            data-title="Prices Realized">-->
+<!--        </div>-->
+
+    <!--       <div class="place-bid" -->
+    <!--             data-sale-uuid="live-68f657cdd8e3a5-18178142"-->
+    <!--             data-item-uuid="live-68f793c6759514-56806752"-->
+    <!--             hide-sold-unsold="true"-->
+    <!--        ></div>-->
+
+
+
+
+</body>
+</html>

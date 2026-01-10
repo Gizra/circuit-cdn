@@ -38,7 +38,8 @@
     "signUpButton": "S'inscrire maintenant",
     "errorTitle": "Erreur",
     "cannotAccessSettings": "Impossible d'accéder aux paramètres du site.",
-    "successMessage": "Inscription réussie ! Vous serez redirigé vers votre page de compte."
+    "successMessage": "Inscription réussie ! Vous serez redirigé vers votre page de compte.",
+    "partnerCompaniesConsent": "[NEEDS_TRANSLATION]I consent to registration with our partner companies:"
   },
   "forgotPassword": {
     "title": "Mot de passe oublié",

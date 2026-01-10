@@ -38,7 +38,8 @@
     "signUpButton": "立即注册",
     "errorTitle": "错误",
     "cannotAccessSettings": "无法访问网站设置。",
-    "successMessage": "注册成功！系统将自动跳转至您的账户页面。"
+    "successMessage": "注册成功！系统将自动跳转至您的账户页面。",
+    "partnerCompaniesConsent": "[NEEDS_TRANSLATION]I consent to registration with our partner companies:"
   },
   "forgotPassword": {
     "title": "忘记密码",
