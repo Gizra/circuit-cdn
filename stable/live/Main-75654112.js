@@ -3169,6 +3169,7 @@ var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
 
 var _Gizra$circuit_bid$Currency_Model$UAH = {ctor: 'UAH'};
+var _Gizra$circuit_bid$Currency_Model$CAD = {ctor: 'CAD'};
 var _Gizra$circuit_bid$Currency_Model$USD = {ctor: 'USD'};
 var _Gizra$circuit_bid$Currency_Model$ILS = {ctor: 'ILS'};
 var _Gizra$circuit_bid$Currency_Model$HRN = {ctor: 'HRN'};
@@ -13767,6 +13768,8 @@ var _Gizra$circuit_bid$Amount$getLocalFromCurrency = function (currency) {
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 		case 'USD':
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
+		case 'CAD':
+			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 		default:
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 	}
@@ -13839,6 +13842,16 @@ var _Gizra$circuit_bid$Amount$showWithCurrency = F3(
 				return {
 					ctor: '::',
 					_0: wrapper('$'),
+					_1: {
+						ctor: '::',
+						_0: value,
+						_1: {ctor: '[]'}
+					}
+				};
+			case 'CAD':
+				return {
+					ctor: '::',
+					_0: wrapper('CA$'),
 					_1: {
 						ctor: '::',
 						_0: value,
@@ -33866,7 +33879,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'Bidder':
 					return {english: 'Bidder', dutch: 'Bieder', german: 'Bieter', hebrew: 'קונה', russian: 'Участник торгов', chinese: '出价者', french: 'Enchérisseur'};
 				case 'BidderLimit':
-					return {english: 'Bidder Limit', dutch: 'Biederslimiet', german: 'Bieter-Limit', hebrew: 'הגבלה עצמית', russian: 'Лимит участника', chinese: '出价者限制', french: 'Limite de l\'enchérisseur'};
+					return {english: 'Personal Limit', dutch: 'Biederslimiet', german: 'Bieter-Limit', hebrew: 'הגבלה עצמית', russian: 'Лимит участника', chinese: '出价者限制', french: 'Limite de l\'enchérisseur'};
 				case 'BidderLimitDescription':
 					return {english: 'Set your own limit over the bids you will place.', dutch: 'Stel uw eigen limiet in op de biedingen die u plaatst.', german: 'Legen Sie ein eigenes Limit für die Gebote fest, die Sie platzieren.', hebrew: 'קבע את ההגבלה שלך להצעות אותן תגיש', russian: 'Установите свой собственный лимит для ставок, которые вы будете размещать.', chinese: '为您要放置的出价设置自己的限制。', french: 'Définissez votre propre limite pour les offres que vous allez placer.'};
 				case 'Bids':
@@ -34144,7 +34157,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 						english: A2(
 							_elm_lang$core$Basics_ops['++'],
 							'Your bid of amount ',
-							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' was rejected for exceeding your credit limit.')),
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' was rejected for exceeding your Bidding limit.')),
 						dutch: A2(
 							_elm_lang$core$Basics_ops['++'],
 							'Uw bod van ',
@@ -34435,24 +34448,24 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'CreateAccount':
 					return {english: 'Create an account', dutch: 'Account aanmaken', german: 'Ein Konto erstellen', hebrew: 'פתיחת חשבון', russian: 'Создать учетную запись', chinese: '创建帐户', french: 'Créer un compte'};
 				case 'CreditRequest':
-					return {english: 'Credit request for Online Live Bidding', dutch: 'Kredietaanvraag voor online live bieden', german: 'Limitanfrage für das Online-Live-Bieten', hebrew: 'בקש אשראי', russian: 'Запрос на кредит для онлайн-ставок', chinese: '在线直播竞标的信用要求', french: 'Demande de crédit pour les enchères en ligne en direct'};
+					return {english: 'Bidding Limit request for Online Live Bidding', dutch: 'Kredietaanvraag voor online live bieden', german: 'Limitanfrage für das Online-Live-Bieten', hebrew: 'בקש אשראי', russian: 'Запрос на кредит для онлайн-ставок', chinese: '在线直播竞标的信用要求', french: 'Demande de crédit pour les enchères en ligne en direct'};
 				case 'CreditRequests':
-					return {english: 'Credit Requests', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
+					return {english: 'Bidding Limit Requests', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'CreditRequestDescription':
-					return {english: 'Enter the amount you want set as credit for the online live bidding. Once this limit is reached during the live auction you are not able to place further bids.', dutch: 'Voer het bedrag in dat u wilt instellen als tegoed voor het online live bieden. Zodra deze limiet is bereikt tijdens de live veiling, kunt u niet meer bieden.', german: 'Geben Sie die Summe ein, für die Sie voraussichtlich während der Online-Live-Auktion bieten werden. Sobald dieses Limit während der Online-Live-Auktion erreicht wird, können Sie keine weiteren Gebote mehr abgeben.', hebrew: 'הכנס את הסכום אותו תרצה כאשראי ממנהל המכירה.', russian: 'Введите сумму, которую вы хотите установить в качестве кредита для онлайн-ставок в реальном времени. Как только это ограничение будет достигнуто во время аукциона, вы не сможете делать дальнейшие ставки.', chinese: '请输入您希望设置为在线实时竞标的信用额度。在实时拍卖中达到此限额后，您将无法再进一步出价。', french: 'Entrez le montant que vous souhaitez définir comme crédit pour les enchères en direct en ligne. Une fois cette limite atteinte lors de la vente aux enchères en direct, vous ne pourrez plus enchérir.'};
+					return {english: 'Enter the amount you want set as Bidding Limit for the online live bidding. Once this limit is reached during the live auction you are not able to place further bids.', dutch: 'Voer het bedrag in dat u wilt instellen als tegoed voor het online live bieden. Zodra deze limiet is bereikt tijdens de live veiling, kunt u niet meer bieden.', german: 'Geben Sie die Summe ein, für die Sie voraussichtlich während der Online-Live-Auktion bieten werden. Sobald dieses Limit während der Online-Live-Auktion erreicht wird, können Sie keine weiteren Gebote mehr abgeben.', hebrew: 'הכנס את הסכום אותו תרצה כאשראי ממנהל המכירה.', russian: 'Введите сумму, которую вы хотите установить в качестве кредита для онлайн-ставок в реальном времени. Как только это ограничение будет достигнуто во время аукциона, вы не сможете делать дальнейшие ставки.', chinese: '请输入您希望设置为在线实时竞标的信用额度。在实时拍卖中达到此限额后，您将无法再进一步出价。', french: 'Entrez le montant que vous souhaitez définir comme crédit pour les enchères en direct en ligne. Une fois cette limite atteinte lors de la vente aux enchères en direct, vous ne pourrez plus enchérir.'};
 				case 'CreditRequestPending':
 					return {english: 'Thank you very much for your request. We\'ll check it out immediately. ', dutch: 'Hartelijk dank voor uw verzoek. We gaan het meteen bekijken.', german: 'Vielen Dank für die Beantragung des Kredit-Limits. Wir werden es umgehend prüfen.', hebrew: 'תודה על בקשתך, נבדוק את הבקשה מיידית', russian: 'Большое спасибо за ваш запрос. Мы немедленно его рассмотрим.', chinese: '感谢您的请求，我们会立即查看。', french: 'Merci beaucoup pour votre demande. Nous l\'examinerons immédiatement.'};
 				case 'CreditUnlimited':
-					return {english: 'You have unlimited credit.', dutch: 'Je hebt onbeperkt tegoed', german: 'Sie haben unbegrenzten Kredit', hebrew: 'יש לך אשראי ללא הגבלה', russian: 'У вас неограниченный кредит.', chinese: '您有无限的信用额度。', french: 'Vous avez un crédit illimité.'};
+					return {english: 'You have unlimited Bidding Limit.', dutch: 'Je hebt onbeperkt tegoed', german: 'Sie haben unbegrenzten Kredit', hebrew: 'יש לך אשראי ללא הגבלה', russian: 'У вас неограниченный кредит.', chinese: '您有无限的信用额度。', french: 'Vous avez un crédit illimité.'};
 				case 'CurrentCredit':
 					var _p8 = _p4._0;
 					switch (_p8.ctor) {
 						case 'None':
-							return {english: 'No credit', dutch: 'Geen krediet', german: 'Kein Kredit', hebrew: 'אין אשראי', russian: 'У вас нет кредита', chinese: '您没有信用额度', french: 'Vous n\'avez pas de crédit'};
+							return {english: 'No Bidding Limit', dutch: 'Geen krediet', german: 'Kein Kredit', hebrew: 'אין אשראי', russian: 'У вас нет кредита', chinese: '您没有信用额度', french: 'Vous n\'avez pas de crédit'};
 						case 'Regular':
 							var value = A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p8._0, _p4._1);
 							return {
-								english: A2(_elm_lang$core$Basics_ops['++'], 'Your current credit is ', value),
+								english: A2(_elm_lang$core$Basics_ops['++'], 'Your current Bidding Limit is ', value),
 								dutch: A2(_elm_lang$core$Basics_ops['++'], 'Uw huidige tegoed is ', value),
 								german: A2(_elm_lang$core$Basics_ops['++'], 'Ihr aktuelles Limit beträgt ', value),
 								hebrew: A2(_elm_lang$core$Basics_ops['++'], 'האשראי שלך הוא ', value),
@@ -34461,7 +34474,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 								french: A2(_elm_lang$core$Basics_ops['++'], 'Votre crédit actuel est de ', value)
 							};
 						default:
-							return {english: 'Your current credit is unlimited', dutch: 'Uw huidige tegoed is onbeperkt', german: 'Ihr aktuelles Guthaben ist unbegrenzt', hebrew: 'האשראי שלך הוא ללא הגבלה', russian: 'Ваш текущий кредит неограничен', chinese: '您当前的信用额度是无限的', french: 'Votre crédit actuel est illimité'};
+							return {english: 'Your current Bidding Limit is unlimited', dutch: 'Uw huidige tegoed is onbeperkt', german: 'Ihr aktuelles Guthaben ist unbegrenzt', hebrew: 'האשראי שלך הוא ללא הגבלה', russian: 'Ваш текущий кредит неограничен', chinese: '您当前的信用额度是无限的', french: 'Votre crédit actuel est illimité'};
 					}
 				case 'CurrentCreditAndPending':
 					var _p10 = _p4._2;
@@ -34472,7 +34485,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 						return {
 							english: A2(
 								_elm_lang$core$Basics_ops['++'],
-								'Your current credit is ',
+								'Your current Bidding Limit is ',
 								A2(
 									_elm_lang$core$Basics_ops['++'],
 									existing,
@@ -34515,7 +34528,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 									A2(_elm_lang$core$Basics_ops['++'], ' et vous avez une demande en attente de ', pending)))
 						};
 					} else {
-						return {english: 'Your current credit is unlimited', dutch: 'Uw huidige tegoed is onbeperkt', german: 'Ihr aktuelles Guthaben ist unbegrenzt', hebrew: 'האשראי שלך הוא ללא הגבלה', russian: 'Ваш текущий кредит неограничен', chinese: '您当前的信用额度是无限的', french: 'Votre crédit actuel est illimité'};
+						return {english: 'Your current Bidding Limit is unlimited', dutch: 'Uw huidige tegoed is onbeperkt', german: 'Ihr aktuelles Guthaben ist unbegrenzt', hebrew: 'האשראי שלך הוא ללא הגבלה', russian: 'Ваш текущий кредит неограничен', chinese: '您当前的信用额度是无限的', french: 'Votre crédit actuel est illimité'};
 					}
 				case 'CurrentPrice':
 					return {english: 'Current price', dutch: 'Huidige prijs', german: 'Aktuelles Gebot', hebrew: 'מחיר נוכחי', russian: 'Текущая цена', chinese: '当前价格', french: 'Prix actuel'};
@@ -35013,7 +35026,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'NoConnectedSales':
 					return {english: 'No connected sales', dutch: 'No connected sales', german: 'No connected sales', hebrew: 'אין מכירות מקושרות', russian: 'Нет связанных продаж', chinese: '没有关联的销售', french: 'Aucune vente connectée'};
 				case 'MyCredit':
-					return {english: 'My Credit', dutch: 'Mijn tegoed', german: 'Mein Kredit', hebrew: 'האשראי שלי', russian: 'Мой кредит', chinese: '我的信用', french: 'Mon crédit'};
+					return {english: 'Bidding Limits', dutch: 'Mijn tegoed', german: 'Mein Kredit', hebrew: 'האשראי שלי', russian: 'Мой кредит', chinese: '我的信用', french: 'Mon crédit'};
 				case 'NextBid':
 					return {english: 'Next bid', dutch: 'Volgend bod', german: 'Nächstes Gebot', hebrew: 'הצעה הבאה', russian: 'Следующая ставка', chinese: '下一个出价', french: 'Prochaine offre'};
 				case 'NoSelectedItem':
@@ -35196,7 +35209,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'RejectedBidderMax':
 					return {english: 'Maxed out (Bidder max)', dutch: 'Limiet bereikt (Bidder max)', german: 'Maximalgeböt erschöpft!', hebrew: 'סכום מעבר ליתרה (יתרת מגישה)', russian: 'Достигнут предел (Максимум для участника)', chinese: '已达最大限制（出价者最大）', french: 'Limite atteinte (Max de l\'enchérisseur)'};
 				case 'RejectedCreditLimit':
-					return {english: 'Maxed out (Credit limit)', dutch: 'Limiet bereikt (Krediet)', german: 'Kreditlimit erschöpft', hebrew: 'סכום מעבר ליתרה (הקצאת אשראי)', russian: 'Достигнут кредитный лимит', chinese: '已达信用额度上限', french: 'Limite de crédit atteinte'};
+					return {english: 'Maxed out (Bidding limit)', dutch: 'Limiet bereikt (Bidding limiet)', german: 'Bidding Limit erschöpft', hebrew: 'סכום מעבר ליתרה (הקצאת אשראי)', russian: 'Достигнут лимит ставки', chinese: '已达信用额度上限', french: 'Limite de crédit atteinte'};
 				case 'Requested':
 					return {english: 'Requested', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'References':
@@ -35204,7 +35217,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'ReloadSale':
 					return {english: 'Re-load Sale', dutch: 'Uitverkoop opnieuw laden', german: 'Auktion neu laden', hebrew: 'טען מכירה מחדש', russian: 'Перезагрузить продажу', chinese: '重新加载销售', french: 'Recharger la vente'};
 				case 'RequestMoreCredit':
-					return {english: 'Request more credit', dutch: 'Vraag meer krediet aan', german: 'Verlangen Sie mehr Kredit', hebrew: 'בקש עוד אשראי', russian: 'Запросить больше кредита', chinese: '请求更多的信用', french: 'Demander plus de crédit'};
+					return {english: 'Request more Bidding Limit', dutch: 'Vraag meer krediet aan', german: 'Verlangen Sie mehr Kredit', hebrew: 'בקש עוד אשראי', russian: 'Запросить больше кредита', chinese: '请求更多的信用', french: 'Demander plus de crédit'};
 				case 'ResetPassword':
 					return {english: 'Reset password', dutch: 'Wachtwoord opnieuw instellen', german: 'Schicke mein Passwort', hebrew: 'שלח את הסיסמא שלי', russian: 'Сбросить пароль', chinese: '重设密码', french: 'Réinitialiser le mot de passe'};
 				case 'Retry':
@@ -35723,7 +35736,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bidder Limit'),
+									_0: _elm_lang$html$Html$text('Personal Limit'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35743,7 +35756,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								dutch: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Biederslimiet'),
+									_0: _elm_lang$html$Html$text('Persoonlijke limiet'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35763,7 +35776,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								german: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bieter-Limit'),
+									_0: _elm_lang$html$Html$text('Persönliches Limit'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35783,7 +35796,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								hebrew: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('הגבלה עצמית'),
+									_0: _elm_lang$html$Html$text('הגבלה אישית'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35803,7 +35816,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								russian: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Лимит участников'),
+									_0: _elm_lang$html$Html$text('Личный лимит'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35823,7 +35836,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								chinese: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('出价者限制'),
+									_0: _elm_lang$html$Html$text('个人限制'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35878,7 +35891,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bidder Limit'),
+									_0: _elm_lang$html$Html$text('Personal Limit'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35887,7 +35900,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								dutch: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Biederslimiet'),
+									_0: _elm_lang$html$Html$text('Persoonlijke limiet'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35896,7 +35909,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								german: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bieter-Limit'),
+									_0: _elm_lang$html$Html$text('Persönliches Limit'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35905,7 +35918,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								hebrew: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('הגבלה עצמית'),
+									_0: _elm_lang$html$Html$text('הגבלה אישית'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35914,7 +35927,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								russian: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Лимит участников'),
+									_0: _elm_lang$html$Html$text('Личный лимит'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35923,7 +35936,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								chinese: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('出价者限制'),
+									_0: _elm_lang$html$Html$text('个人限制'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -35944,7 +35957,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bidder Limit'),
+									_0: _elm_lang$html$Html$text('Personal Limit'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35964,7 +35977,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								dutch: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Biederslimiet'),
+									_0: _elm_lang$html$Html$text('Persoonlijke limiet'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -35984,7 +35997,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								german: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Bieter-Limit'),
+									_0: _elm_lang$html$Html$text('Persönliches Limit'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -36004,7 +36017,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								hebrew: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('הגבלה עצמית'),
+									_0: _elm_lang$html$Html$text('הגבלה אישית'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -36024,7 +36037,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								russian: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Лимит участников'),
+									_0: _elm_lang$html$Html$text('Личный лимит'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -36044,7 +36057,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								},
 								chinese: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('出价者限制'),
+									_0: _elm_lang$html$Html$text('个人限制'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -36496,7 +36509,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Credit'),
+									_0: _elm_lang$html$Html$text('Bidding Limit'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -36574,7 +36587,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Credit'),
+									_0: _elm_lang$html$Html$text('Bidding Limit'),
 									_1: {
 										ctor: '::',
 										_0: amountHtml,
@@ -36640,7 +36653,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 							return {
 								english: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Credit'),
+									_0: _elm_lang$html$Html$text('Bidding Limit'),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -36775,7 +36788,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('You have no credit!'),
+									_0: _elm_lang$html$Html$text('You have no bidding limit!'),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
@@ -36788,7 +36801,7 @@ var _Gizra$circuit_bid$Translate$translateHtml = F2(
 										aAttrs,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('Request Credit'),
+											_0: _elm_lang$html$Html$text('Request Bidding Limit'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -47092,6 +47105,8 @@ var _Gizra$circuit_bid$Currency_Decoder$decodeCurrency = A2(
 				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$ILS);
 			case 'USD':
 				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$USD);
+			case 'CAD':
+				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$CAD);
 			case 'UAH':
 				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$UAH);
 			default:
@@ -48157,7 +48172,7 @@ var _Gizra$circuit_bid$LocalConfig$local = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
+	serverless: 'https://test-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 	{
@@ -48232,7 +48247,15 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																					_1: {
 																						ctor: '::',
 																						_0: 'www.stampsinc.com',
-																						_1: {ctor: '[]'}
+																						_1: {
+																							ctor: '::',
+																							_0: 'local-auction.co.uk',
+																							_1: {
+																								ctor: '::',
+																								_0: 'live-localauction.circuit.auction',
+																								_1: {ctor: '[]'}
+																							}
+																						}
 																					}
 																				}
 																			}
@@ -48266,7 +48289,7 @@ var _Gizra$circuit_bid$Config$livePantheon = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '67608a61bc1954f76bf1', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: false,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '59f70767c9e77c00010984c9', '655C28D8064A14579AFF25B5A0627427251540FA0681575DA1F91444C59C1C7B2026FA57F3CA861882C6F940C3AF82A914A502784693A4A99184E254C4504FCB6E88E9F6E5916AE58E38FD57C907998FADD9D196CCFCBEAF487F7DACB381E03A'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu/'
+	serverless: 'https://live-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$Config$jbull = {
 	backendUrl: 'https://live-bids.jbull.com',
@@ -48274,7 +48297,7 @@ var _Gizra$circuit_bid$Config$jbull = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '67608a61bc1954f76bf1', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: false,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu/'
+	serverless: 'https://live-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$Config$testPantheon = {
 	backendUrl: 'https://test-bids-eu.circuitauction.com',
@@ -48282,7 +48305,7 @@ var _Gizra$circuit_bid$Config$testPantheon = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: false,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
+	serverless: 'https://test-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$Config$devPantheon = {
 	backendUrl: 'https://dev-bids-eu.circuitauction.com',
@@ -48290,7 +48313,7 @@ var _Gizra$circuit_bid$Config$devPantheon = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
+	serverless: 'https://test-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$Config$ddevLocal = {
 	backendUrl: 'https://circuit-bid.ddev.site:4443',
@@ -48298,7 +48321,7 @@ var _Gizra$circuit_bid$Config$ddevLocal = {
 	pusherKey: A2(_Gizra$circuit_bid$Pusher_Model$PusherAppKey, '34bb72def989ed6efc60', _Gizra$circuit_bid$Pusher_Model$EuWest1),
 	debug: true,
 	keen: A2(_Gizra$circuit_bid$Keen_Model$AppKey, '54c2905fd2eaaa36ab21d6c7', '472574cd29a7fb6bb702ebe94117a35d2d4664608d6f6c51dceec78542a71212dba9eb89d21d33642a2037d3ad5943f9987533f09a8453e3662896af33b57388a68c62ad53e9e95f688b3bff2d441e9bea4b35fc8ce9385ccdd99015b45dfb8464eb3903671943eb95174ea24af1bcc0'),
-	serverless: 'https://europe-west3-circuit-bid-184512.cloudfunctions.net/serverless-eu-test'
+	serverless: 'https://test-serverless.circuit.auction'
 };
 var _Gizra$circuit_bid$Config$getConfigByHostname = function (hostname) {
 	var localRegex = _elm_lang$core$Regex$regex('backoffice\\.local');
