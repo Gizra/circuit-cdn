@@ -838,7 +838,9 @@
     "confirmCancelBuyNow": "[NEEDS_TRANSLATION]Are you sure you want to cancel this purchase?",
     "yesCancel": "[NEEDS_TRANSLATION]Yes, Cancel",
     "creditExceededMessage": "[NEEDS_TRANSLATION]Your bid exceeds your available credit limit. Please visit",
-    "viewMyBids": "[NEEDS_TRANSLATION]My Bids & Credit"
+    "viewMyBids": "[NEEDS_TRANSLATION]My Bids & Credit",
+    "accountPendingTitle": "[NEEDS_TRANSLATION]Account Pending Approval",
+    "accountPendingMessage": "[NEEDS_TRANSLATION]Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding."
   },
   "sale": {
     "title": "[NEEDS_TRANSLATION]Sale Items",
