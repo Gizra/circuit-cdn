@@ -506,6 +506,8 @@
     "register": "Register",
     "noData": "No data available",
     "noBackendUrl": "Backend URL is not configured",
+    "accountPendingTitle": "Account Pending Approval",
+    "accountPendingMessage": "Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding.",
     "bidError": "Failed to place bid",
     "bidPlaced": "Your bid of {{amount}} was placed successfully",
     "deleteError": "Failed to delete bid",
@@ -536,18 +538,18 @@
     "noCreditLimitLink": "Click here",
     "noCreditLimitSuffix": "to request a Bidding Limit.",
 
-    "onlineAgentBid": "Online Agent Bids",
+    "onlineAgentBid": "Agent Bids",
     "changeAgentBid": "Change Agent Bid",
-    "agentBidTooltip": "Online Agent bidding allows you to set a maximum bid amount. The system will automatically bid on your behalf up to your maximum during the live auction.",
+    "agentBidTooltip": "Agent bidding allows you to set a maximum bid amount. The system will automatically bid on your behalf up to your maximum during the live auction.",
     "placeAgentBid": "Place Agent Bid",
     "updateAgentBid": "Update Agent Bid",
     "deleteAgentBid": "Delete Agent Bid",
     
-    "mailBid": "Mail Bids",
-    "mailBidTooltip": "Mail bids (also called absentee or book bids) are pre-auction bids that compete with live bidders. Your bid will be executed automatically during the auction.",
-    "placeMailBid": "Place Mail Bid",
-    "deleteMailBid": "Delete Mail Bid",
-    "updateMailBid": "Update Mail Bid",
+    "mailBid": "Online Bids",
+    "mailBidTooltip": "Online bids (also called absentee or book bids) are pre-auction bids that compete with live bidders. Your bid will be executed automatically during the auction.",
+    "placeMailBid": "Place Online Bid",
+    "deleteMailBid": "Delete Online Bid",
+    "updateMailBid": "Update Online Bid",
     
     "obscuredBid": "Your Bid",
     "obscuredBidTooltip": "In an obscured auction, bid amounts are hidden from other bidders. Submit your best offer and it will be revealed after the auction closes.",
@@ -576,7 +578,15 @@
     "cancelBuyNowError": "Failed to cancel buy now purchase. Please try again or contact support.",
     "noBuyNowBidFound": "No buy now purchase found to cancel.",
     "creditExceededMessage": "Your bid exceeds your available Bidding limit. Please visit",
-    "viewMyBids": "My Bids & Bidding Limits"
+    "viewMyBids": "My Bids & Bidding Limits",
+    "termsApprovalTitle": "Terms of Sale Approval Required",
+    "termsApprovalMessage": "To participate in sale {{saleTitle}} you must approve the",
+    "termsOfSale": "terms of sale",
+    "approve": "Approve",
+    "reject": "Reject",
+    "termsApprovalError": "Failed to approve terms. Please try again.",
+    "termsRejected": "Terms Not Approved",
+    "termsRejectedMessage": "You must approve the terms of sale to place bids in this sale."
   },
   "search": {
     "placeholder": "Search lots..."
