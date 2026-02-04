@@ -691,6 +691,13 @@
     "cancelAnytime": "Cancel anytime. No hidden fees or long-term commitments.",
     "redirectingToPayment": "Redirecting to secure payment...",
     "purchaseError": "There was an error processing your purchase. Please try again.",
+    "confirmPurchase": "Confirm Purchase",
+    "confirmMessage": "Are you sure you want to purchase this subscription plan?",
+    "cancel": "Cancel",
+    "approve": "Approve & Continue",
+    "error": "Error",
+    "networkError": "Network error. Please try again.",
+    "cannotAccessSiteSettings": "Cannot access site settings. Please try again later.",
     "plans": {
       "digital": {
         "name": "Digital Subscription",
