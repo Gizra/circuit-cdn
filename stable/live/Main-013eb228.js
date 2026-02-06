@@ -48252,8 +48252,12 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																							_0: 'local-auction.co.uk',
 																							_1: {
 																								ctor: '::',
-																								_0: 'live-localauction.circuit.auction',
-																								_1: {ctor: '[]'}
+																								_0: 'office.local-auction.co.uk',
+																								_1: {
+																									ctor: '::',
+																									_0: 'live-localauction.circuit.auction',
+																									_1: {ctor: '[]'}
+																								}
 																							}
 																						}
 																					}
