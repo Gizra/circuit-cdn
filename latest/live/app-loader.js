@@ -22,7 +22,7 @@
         document.head.appendChild(link);
     }
 
-    const cdnUrl = 'https://cdn.circuitauction.com/stable/live';
+    const cdnUrl = 'https://cdn.circuitauction.com/latest/live';
     const styleUrl = `${cdnUrl}/style-${unifiedHash}.css`;
     const mainJsUrl = `${cdnUrl}/Main-${unifiedHash}.js`;
     const appJsUrl = `${cdnUrl}/app-${unifiedHash}.js`;
