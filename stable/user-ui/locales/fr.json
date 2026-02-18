@@ -793,7 +793,7 @@
     "error": "Erreur",
     "itemNotFound": "Article non trouvé",
     "home": "Accueil",
-    "lot": "Lot {{number}}",
+    "lot": "Lot #{{number}}",
     "withdrawn": "Retiré",
     "withdrawnMessage": "Cet article a été retiré et les détails ne sont pas disponibles.",
     "pricing": {
