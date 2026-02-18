@@ -793,7 +793,7 @@
     "error": "Fehler",
     "itemNotFound": "Los nicht gefunden",
     "home": "Startseite",
-    "lot": "Los {{number}}",
+    "lot": "Los #{{number}}",
     "withdrawn": "Zurückgezogen",
     "withdrawnMessage": "Dieses Los wurde zurückgezogen, Details sind nicht verfügbar.",
     "pricing": {

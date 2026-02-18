@@ -888,7 +888,7 @@
     "error": "[NEEDS_TRANSLATION]Error",
     "itemNotFound": "[NEEDS_TRANSLATION]Item not found",
     "home": "[NEEDS_TRANSLATION]Home",
-    "lot": "[NEEDS_TRANSLATION]Lot {{number}}",
+    "lot": "[NEEDS_TRANSLATION]Lot #{{number}}",
     "withdrawn": "[NEEDS_TRANSLATION]Withdrawn",
     "withdrawnMessage": "[NEEDS_TRANSLATION]This item has been withdrawn and details are not available.",
     "pricing": {

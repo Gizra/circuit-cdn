@@ -783,7 +783,7 @@
     "error": "Error",
     "itemNotFound": "Item not found",
     "home": "Home",
-    "lot": "Lot {{number}}",
+    "lot": "Lot #{{number}}",
     "withdrawn": "Withdrawn",
     "withdrawnMessage": "This item has been withdrawn and details are not available.",
     "pricing": {
