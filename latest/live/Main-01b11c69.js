@@ -48110,7 +48110,15 @@ var _Gizra$circuit_bid$LocalConfig$localConfigs = _elm_lang$core$Dict$fromList(
 var _Gizra$circuit_bid$Config$testDomains = {
 	ctor: '::',
 	_0: 'wordpress.circuit.auction',
-	_1: {ctor: '[]'}
+	_1: {
+		ctor: '::',
+		_0: 'kelleher.anecdotesolutions.com',
+		_1: {
+			ctor: '::',
+			_0: 'hkauctiontest.madebyjs.de',
+			_1: {ctor: '[]'}
+		}
+	}
 };
 var _Gizra$circuit_bid$Config$liveDomains = {
 	ctor: '::',
