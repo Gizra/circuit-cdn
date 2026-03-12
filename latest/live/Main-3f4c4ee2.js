@@ -64150,39 +64150,43 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 									_0: _fapian$elm_html_aria$Html_Attributes_Aria$ariaLabel(enterYourPassword),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('form-control form-text required'),
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'autocomplete', 'current-password'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$id('edit-pass'),
+											_0: _elm_lang$html$Html_Attributes$class('form-control form-text required'),
 											_1: {
 												ctor: '::',
-												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'maxlength', '128'),
+												_0: _elm_lang$html$Html_Attributes$id('edit-pass'),
 												_1: {
 													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'size', '25'),
+													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'maxlength', '128'),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$name('pass[pass1]'),
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'size', '25'),
 														_1: {
 															ctor: '::',
-															_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
+															_0: _elm_lang$html$Html_Attributes$name('pass[pass1]'),
 															_1: {
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$pattern('\\S+'),
+																_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
 																_1: {
 																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$placeholder(
-																		A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
+																	_0: _elm_lang$html$Html_Attributes$pattern('\\S+'),
 																	_1: {
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$required(true),
+																		_0: _elm_lang$html$Html_Attributes$placeholder(
+																			A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
 																		_1: {
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$type_('password'),
+																			_0: _elm_lang$html$Html_Attributes$required(true),
 																			_1: {
 																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$value(_p9.pass),
-																				_1: {ctor: '[]'}
+																				_0: _elm_lang$html$Html_Attributes$type_('password'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$value(_p9.pass),
+																					_1: {ctor: '[]'}
+																				}
 																			}
 																		}
 																	}
@@ -64245,39 +64249,43 @@ var _Gizra$circuit_bid$Login_View$view = F5(
 									_0: _fapian$elm_html_aria$Html_Attributes_Aria$ariaLabel(enterYourPassword),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('password-field form-control form-text password-processed'),
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'autocomplete', 'current-password'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$id('edit-pass'),
+											_0: _elm_lang$html$Html_Attributes$class('password-field form-control form-text password-processed'),
 											_1: {
 												ctor: '::',
-												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'maxlength', '128'),
+												_0: _elm_lang$html$Html_Attributes$id('edit-pass'),
 												_1: {
 													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'size', '25'),
+													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'maxlength', '128'),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$name('pass[pass1]'),
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'size', '25'),
 														_1: {
 															ctor: '::',
-															_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
+															_0: _elm_lang$html$Html_Attributes$name('pass[pass1]'),
 															_1: {
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$pattern('\\S+'),
+																_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
 																_1: {
 																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$placeholder(
-																		A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
+																	_0: _elm_lang$html$Html_Attributes$pattern('\\S+'),
 																	_1: {
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$required(true),
+																		_0: _elm_lang$html$Html_Attributes$placeholder(
+																			A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
 																		_1: {
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$type_('password'),
+																			_0: _elm_lang$html$Html_Attributes$required(true),
 																			_1: {
 																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$value(_p9.pass),
-																				_1: {ctor: '[]'}
+																				_0: _elm_lang$html$Html_Attributes$type_('password'),
+																				_1: {
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$value(_p9.pass),
+																					_1: {ctor: '[]'}
+																				}
 																			}
 																		}
 																	}
