@@ -50986,7 +50986,8 @@ var _Gizra$circuit_bid$Item_Utils$isWinningUser = F4(
 					if (_p15.ctor === 'Nothing') {
 						return false;
 					} else {
-						return A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p15._0);
+						var _p16 = _p15._0;
+						return _Gizra$circuit_bid$Bid_Utils$isValid(_p16) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p16);
 					}
 				};
 				return hasOwnBid(calculated.bids) || hasOwnBid(calculated.bookBids);
