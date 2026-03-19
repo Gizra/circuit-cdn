@@ -32935,17 +32935,17 @@ var _mgold$elm_nonempty_list$List_Nonempty$unzip = function (_p97) {
 };
 
 var _Gizra$circuit_bid$Item_Model$emptyImageStyle = {original: '', big: '', small: ''};
-var _Gizra$circuit_bid$Item_Model$Item = F8(
-	function (a, b, c, d, e, f, g, h) {
-		return {uuid: a, lotId: b, name: c, image: d, description: e, estimatedPrice: f, openingPrice: g, calculated: h};
+var _Gizra$circuit_bid$Item_Model$Item = F9(
+	function (a, b, c, d, e, f, g, h, i) {
+		return {uuid: a, lotId: b, name: c, image: d, description: e, estimatedPrice: f, openingPrice: g, subtitle: h, calculated: i};
 	});
 var _Gizra$circuit_bid$Item_Model$ImageStyle = F3(
 	function (a, b, c) {
 		return {original: a, big: b, small: c};
 	});
-var _Gizra$circuit_bid$Item_Model$StaticItem = F6(
-	function (a, b, c, d, e, f) {
-		return {name: a, image: b, description: c, estimatedPrice: d, lotId: e, openingPrice: f};
+var _Gizra$circuit_bid$Item_Model$StaticItem = F7(
+	function (a, b, c, d, e, f, g) {
+		return {name: a, image: b, description: c, estimatedPrice: d, lotId: e, openingPrice: f, subtitle: g};
 	});
 var _Gizra$circuit_bid$Item_Model$CalculatedItem = function (a) {
 	return function (b) {
@@ -47443,30 +47443,35 @@ var _Gizra$circuit_bid$Item_Decoder$decodeImageStyle = A3(
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$ImageStyle))));
 var _Gizra$circuit_bid$Item_Decoder$decodeStaticItem = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-	'startPrice',
-	A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _Gizra$circuit_bid$Amount$decodeAmount),
+	'subtitle',
+	A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$string),
 	_elm_lang$core$Maybe$Nothing,
-	A2(
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$hardcoded,
-		'',
-		A4(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-			'estimatedPrice',
-			A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _Gizra$circuit_bid$Amount$decodeAmount),
-			_elm_lang$core$Maybe$Nothing,
+	A4(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+		'startPrice',
+		A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _Gizra$circuit_bid$Amount$decodeAmount),
+		_elm_lang$core$Maybe$Nothing,
+		A2(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$hardcoded,
+			'',
 			A4(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-				'body',
-				A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$string),
+				'estimatedPrice',
+				A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _Gizra$circuit_bid$Amount$decodeAmount),
 				_elm_lang$core$Maybe$Nothing,
-				A2(
-					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
-					_Gizra$circuit_bid$Item_Decoder$decodeImageStyle,
-					A3(
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'title',
-						_elm_lang$core$Json_Decode$string,
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$StaticItem)))))));
+				A4(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+					'body',
+					A2(_elm_lang$core$Json_Decode$map, _elm_lang$core$Maybe$Just, _elm_lang$core$Json_Decode$string),
+					_elm_lang$core$Maybe$Nothing,
+					A2(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+						_Gizra$circuit_bid$Item_Decoder$decodeImageStyle,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'title',
+							_elm_lang$core$Json_Decode$string,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$StaticItem))))))));
 var _Gizra$circuit_bid$Item_Decoder$decodeStaticItemDict = A3(_Gizra$circuit_bid$Utils_Json$decodeListAsEveryDictListByProperty, 'uuid', _Gizra$circuit_bid$Backend_Decoder$decodeItemUuid, _Gizra$circuit_bid$Item_Decoder$decodeStaticItem);
 var _Gizra$circuit_bid$Item_Decoder$RawAutoClerk = F3(
 	function (a, b, c) {
@@ -48697,7 +48702,7 @@ var _Gizra$circuit_bid$ItemManager_Utils$emptyItemManagerFromLotMap = function (
 				return A3(
 					_Gizra$elm_dictlist$EveryDictList$insert,
 					lotMap.itemId,
-					{uuid: uuid, lotId: lotMap.lotId, name: '', image: _Gizra$circuit_bid$Item_Model$emptyImageStyle, description: _elm_lang$core$Maybe$Nothing, estimatedPrice: _elm_lang$core$Maybe$Nothing, openingPrice: _elm_lang$core$Maybe$Nothing, calculated: _krisajenkins$remotedata$RemoteData$NotAsked},
+					{uuid: uuid, lotId: lotMap.lotId, name: '', image: _Gizra$circuit_bid$Item_Model$emptyImageStyle, description: _elm_lang$core$Maybe$Nothing, estimatedPrice: _elm_lang$core$Maybe$Nothing, openingPrice: _elm_lang$core$Maybe$Nothing, subtitle: _elm_lang$core$Maybe$Nothing, calculated: _krisajenkins$remotedata$RemoteData$NotAsked},
 					accum);
 			}),
 		_Gizra$elm_dictlist$EveryDictList$empty,
@@ -48820,7 +48825,7 @@ var _Gizra$circuit_bid$ItemManager_Utils$insertStaticItems = F2(
 						if (_p9.ctor === 'Just') {
 							var itemUpdated = _elm_lang$core$Native_Utils.update(
 								_p9._0,
-								{name: staticItem.name, image: staticItem.image, description: staticItem.description, estimatedPrice: staticItem.estimatedPrice, lotId: _p10.lotId, openingPrice: staticItem.openingPrice});
+								{name: staticItem.name, image: staticItem.image, description: staticItem.description, estimatedPrice: staticItem.estimatedPrice, lotId: _p10.lotId, openingPrice: staticItem.openingPrice, subtitle: staticItem.subtitle});
 							return A3(_Gizra$elm_dictlist$EveryDictList$insert, _p10.itemId, itemUpdated, accum);
 						} else {
 							return accum;
@@ -50786,7 +50791,7 @@ var _Gizra$circuit_bid$BidderId_Utils$validateFloorBidderId = F2(
 	});
 
 var _Gizra$circuit_bid$Item_Utils$getStaticItem = function (item) {
-	return {name: item.name, image: item.image, description: item.description, estimatedPrice: item.estimatedPrice, lotId: item.lotId, openingPrice: item.openingPrice};
+	return {name: item.name, image: item.image, description: item.description, estimatedPrice: item.estimatedPrice, lotId: item.lotId, openingPrice: item.openingPrice, subtitle: item.subtitle};
 };
 var _Gizra$circuit_bid$Item_Utils$withPrice = F2(
 	function (func, price) {
@@ -50964,7 +50969,10 @@ var _Gizra$circuit_bid$Item_Utils$getWinningBid = function (calculated) {
 		function (winningBid) {
 			var maybeMailBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bookBids);
 			var maybeLiveBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bids);
-			return A2(_elm_community$maybe_extra$Maybe_Extra$or, maybeLiveBid, maybeMailBid);
+			return A2(
+				_elm_community$maybe_extra$Maybe_Extra$filter,
+				_Gizra$circuit_bid$Bid_Utils$isValid,
+				A2(_elm_community$maybe_extra$Maybe_Extra$or, maybeLiveBid, maybeMailBid));
 		},
 		calculated.winningBid);
 };
@@ -60899,11 +60907,31 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewStaticAndPricesInfo = F3(
 					}),
 				_1: {
 					ctor: '::',
-					_0: A3(_Gizra$circuit_bid$Item_View$pricesInfoView, language, currency, item),
+					_0: A2(
+						_Gizra$circuit_bid$Utils_Html$showMaybe,
+						function (subtitle) {
+							return A2(
+								_elm_lang$html$Html$h4,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('item-subtitle'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(subtitle),
+									_1: {ctor: '[]'}
+								});
+						},
+						item.subtitle),
 					_1: {
 						ctor: '::',
-						_0: consignerHtml,
-						_1: {ctor: '[]'}
+						_0: A3(_Gizra$circuit_bid$Item_View$pricesInfoView, language, currency, item),
+						_1: {
+							ctor: '::',
+							_0: consignerHtml,
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			});
@@ -61996,7 +62024,27 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewClerkCurrentItem = F4(
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html$text(_p27.name),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_Gizra$circuit_bid$Utils_Html$showMaybe,
+											function (subtitle) {
+												return A2(
+													_elm_lang$html$Html$h4,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('item-subtitle'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text(subtitle),
+														_1: {ctor: '[]'}
+													});
+											},
+											_p27.subtitle),
+										_1: {ctor: '[]'}
+									}
 								}
 							}),
 						_1: {
@@ -66879,99 +66927,119 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewCenteredSliderPopup = F3(
 							ctor: '::',
 							_0: A2(
 								_Gizra$circuit_bid$Utils_Html$showMaybe,
-								function (description) {
+								function (subtitle) {
 									return A2(
-										_elm_lang$html$Html$div,
+										_elm_lang$html$Html$h3,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('item-description'),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html_Attributes$property,
-													'innerHTML',
-													_elm_lang$core$Json_Encode$string(description)),
-												_1: {ctor: '[]'}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('item-subtitle'),
+											_1: {ctor: '[]'}
 										},
-										{ctor: '[]'});
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(subtitle),
+											_1: {ctor: '[]'}
+										});
 								},
-								item.description),
+								item.subtitle),
 							_1: {
 								ctor: '::',
-								_0: function () {
-									var startingPrice = function () {
-										var _p30 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-										if (_p30.ctor === 'Just') {
-											return _elm_lang$core$Maybe$Just(_p30._0.startingPrice);
-										} else {
-											return item.openingPrice;
-										}
-									}();
-									var _p31 = startingPrice;
-									if (_p31.ctor === 'Just') {
+								_0: A2(
+									_Gizra$circuit_bid$Utils_Html$showMaybe,
+									function (description) {
 										return A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('item-prices'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{ctor: '[]'},
-													{
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$strong,
-															{ctor: '[]'},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('Starting Price: '),
-																_1: {ctor: '[]'}
-															}),
-														_1: {
-															ctor: '::',
-															_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p31._0, currency),
-															_1: {ctor: '[]'}
-														}
-													}),
+												_0: _elm_lang$html$Html_Attributes$class('item-description'),
 												_1: {
 													ctor: '::',
 													_0: A2(
-														_Gizra$circuit_bid$Utils_Html$showMaybe,
-														function (estimatedPrice) {
-															return A2(
-																_elm_lang$html$Html$div,
+														_elm_lang$html$Html_Attributes$property,
+														'innerHTML',
+														_elm_lang$core$Json_Encode$string(description)),
+													_1: {ctor: '[]'}
+												}
+											},
+											{ctor: '[]'});
+									},
+									item.description),
+								_1: {
+									ctor: '::',
+									_0: function () {
+										var startingPrice = function () {
+											var _p30 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
+											if (_p30.ctor === 'Just') {
+												return _elm_lang$core$Maybe$Just(_p30._0.startingPrice);
+											} else {
+												return item.openingPrice;
+											}
+										}();
+										var _p31 = startingPrice;
+										if (_p31.ctor === 'Just') {
+											return A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('item-prices'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{ctor: '[]'},
+														{
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$strong,
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$strong,
-																		{ctor: '[]'},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Estimated Price: '),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {
+																	_0: _elm_lang$html$Html$text('Starting Price: '),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p31._0, currency),
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_Gizra$circuit_bid$Utils_Html$showMaybe,
+															function (estimatedPrice) {
+																return A2(
+																	_elm_lang$html$Html$div,
+																	{ctor: '[]'},
+																	{
 																		ctor: '::',
-																		_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
-																		_1: {ctor: '[]'}
-																	}
-																});
-														},
-														item.estimatedPrice),
-													_1: {ctor: '[]'}
-												}
-											});
-									} else {
-										return _Gizra$circuit_bid$Utils_Html$emptyNode;
-									}
-								}(),
-								_1: {ctor: '[]'}
+																		_0: A2(
+																			_elm_lang$html$Html$strong,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Estimated Price: '),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
+																			_1: {ctor: '[]'}
+																		}
+																	});
+															},
+															item.estimatedPrice),
+														_1: {ctor: '[]'}
+													}
+												});
+										} else {
+											return _Gizra$circuit_bid$Utils_Html$emptyNode;
+										}
+									}(),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}),
@@ -67176,99 +67244,119 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewSliderItemDetailsPopup = F4(
 							ctor: '::',
 							_0: A2(
 								_Gizra$circuit_bid$Utils_Html$showMaybe,
-								function (description) {
+								function (subtitle) {
 									return A2(
-										_elm_lang$html$Html$div,
+										_elm_lang$html$Html$h3,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('item-description'),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html_Attributes$property,
-													'innerHTML',
-													_elm_lang$core$Json_Encode$string(description)),
-												_1: {ctor: '[]'}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('item-subtitle'),
+											_1: {ctor: '[]'}
 										},
-										{ctor: '[]'});
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(subtitle),
+											_1: {ctor: '[]'}
+										});
 								},
-								item.description),
+								item.subtitle),
 							_1: {
 								ctor: '::',
-								_0: function () {
-									var startingPrice = function () {
-										var _p35 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-										if (_p35.ctor === 'Just') {
-											return _elm_lang$core$Maybe$Just(_p35._0.startingPrice);
-										} else {
-											return item.openingPrice;
-										}
-									}();
-									var _p36 = startingPrice;
-									if (_p36.ctor === 'Just') {
+								_0: A2(
+									_Gizra$circuit_bid$Utils_Html$showMaybe,
+									function (description) {
 										return A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('item-prices'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{ctor: '[]'},
-													{
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$strong,
-															{ctor: '[]'},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('Starting Price: '),
-																_1: {ctor: '[]'}
-															}),
-														_1: {
-															ctor: '::',
-															_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p36._0, currency),
-															_1: {ctor: '[]'}
-														}
-													}),
+												_0: _elm_lang$html$Html_Attributes$class('item-description'),
 												_1: {
 													ctor: '::',
 													_0: A2(
-														_Gizra$circuit_bid$Utils_Html$showMaybe,
-														function (estimatedPrice) {
-															return A2(
-																_elm_lang$html$Html$div,
+														_elm_lang$html$Html_Attributes$property,
+														'innerHTML',
+														_elm_lang$core$Json_Encode$string(description)),
+													_1: {ctor: '[]'}
+												}
+											},
+											{ctor: '[]'});
+									},
+									item.description),
+								_1: {
+									ctor: '::',
+									_0: function () {
+										var startingPrice = function () {
+											var _p35 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
+											if (_p35.ctor === 'Just') {
+												return _elm_lang$core$Maybe$Just(_p35._0.startingPrice);
+											} else {
+												return item.openingPrice;
+											}
+										}();
+										var _p36 = startingPrice;
+										if (_p36.ctor === 'Just') {
+											return A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('item-prices'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{ctor: '[]'},
+														{
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$strong,
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$strong,
-																		{ctor: '[]'},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Estimated Price: '),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {
+																	_0: _elm_lang$html$Html$text('Starting Price: '),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p36._0, currency),
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_Gizra$circuit_bid$Utils_Html$showMaybe,
+															function (estimatedPrice) {
+																return A2(
+																	_elm_lang$html$Html$div,
+																	{ctor: '[]'},
+																	{
 																		ctor: '::',
-																		_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
-																		_1: {ctor: '[]'}
-																	}
-																});
-														},
-														item.estimatedPrice),
-													_1: {ctor: '[]'}
-												}
-											});
-									} else {
-										return _Gizra$circuit_bid$Utils_Html$emptyNode;
-									}
-								}(),
-								_1: {ctor: '[]'}
+																		_0: A2(
+																			_elm_lang$html$Html$strong,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Estimated Price: '),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
+																			_1: {ctor: '[]'}
+																		}
+																	});
+															},
+															item.estimatedPrice),
+														_1: {ctor: '[]'}
+													}
+												});
+										} else {
+											return _Gizra$circuit_bid$Utils_Html$emptyNode;
+										}
+									}(),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}),
@@ -67314,99 +67402,119 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewItemDetailsPopup = F4(
 							ctor: '::',
 							_0: A2(
 								_Gizra$circuit_bid$Utils_Html$showMaybe,
-								function (description) {
+								function (subtitle) {
 									return A2(
-										_elm_lang$html$Html$div,
+										_elm_lang$html$Html$h3,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('item-description'),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html_Attributes$property,
-													'innerHTML',
-													_elm_lang$core$Json_Encode$string(description)),
-												_1: {ctor: '[]'}
-											}
+											_0: _elm_lang$html$Html_Attributes$class('item-subtitle'),
+											_1: {ctor: '[]'}
 										},
-										{ctor: '[]'});
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(subtitle),
+											_1: {ctor: '[]'}
+										});
 								},
-								item.description),
+								item.subtitle),
 							_1: {
 								ctor: '::',
-								_0: function () {
-									var startingPrice = function () {
-										var _p38 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-										if (_p38.ctor === 'Just') {
-											return _elm_lang$core$Maybe$Just(_p38._0.startingPrice);
-										} else {
-											return item.openingPrice;
-										}
-									}();
-									var _p39 = startingPrice;
-									if (_p39.ctor === 'Just') {
+								_0: A2(
+									_Gizra$circuit_bid$Utils_Html$showMaybe,
+									function (description) {
 										return A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('item-prices'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{ctor: '[]'},
-													{
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$strong,
-															{ctor: '[]'},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('Starting Price: '),
-																_1: {ctor: '[]'}
-															}),
-														_1: {
-															ctor: '::',
-															_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p39._0, currency),
-															_1: {ctor: '[]'}
-														}
-													}),
+												_0: _elm_lang$html$Html_Attributes$class('item-description'),
 												_1: {
 													ctor: '::',
 													_0: A2(
-														_Gizra$circuit_bid$Utils_Html$showMaybe,
-														function (estimatedPrice) {
-															return A2(
-																_elm_lang$html$Html$div,
+														_elm_lang$html$Html_Attributes$property,
+														'innerHTML',
+														_elm_lang$core$Json_Encode$string(description)),
+													_1: {ctor: '[]'}
+												}
+											},
+											{ctor: '[]'});
+									},
+									item.description),
+								_1: {
+									ctor: '::',
+									_0: function () {
+										var startingPrice = function () {
+											var _p38 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
+											if (_p38.ctor === 'Just') {
+												return _elm_lang$core$Maybe$Just(_p38._0.startingPrice);
+											} else {
+												return item.openingPrice;
+											}
+										}();
+										var _p39 = startingPrice;
+										if (_p39.ctor === 'Just') {
+											return A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('item-prices'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{ctor: '[]'},
+														{
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$strong,
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$strong,
-																		{ctor: '[]'},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Estimated Price: '),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {
+																	_0: _elm_lang$html$Html$text('Starting Price: '),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p39._0, currency),
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_Gizra$circuit_bid$Utils_Html$showMaybe,
+															function (estimatedPrice) {
+																return A2(
+																	_elm_lang$html$Html$div,
+																	{ctor: '[]'},
+																	{
 																		ctor: '::',
-																		_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
-																		_1: {ctor: '[]'}
-																	}
-																});
-														},
-														item.estimatedPrice),
-													_1: {ctor: '[]'}
-												}
-											});
-									} else {
-										return _Gizra$circuit_bid$Utils_Html$emptyNode;
-									}
-								}(),
-								_1: {ctor: '[]'}
+																		_0: A2(
+																			_elm_lang$html$Html$strong,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('Estimated Price: '),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, estimatedPrice, currency),
+																			_1: {ctor: '[]'}
+																		}
+																	});
+															},
+															item.estimatedPrice),
+														_1: {ctor: '[]'}
+													}
+												});
+										} else {
+											return _Gizra$circuit_bid$Utils_Html$emptyNode;
+										}
+									}(),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}),
