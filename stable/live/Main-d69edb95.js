@@ -48848,10 +48848,10 @@ var _Gizra$circuit_bid$ItemManager_Utils$insertCalculatedItems = F3(
 				function (uuid, calculatedItem, accum) {
 					var _p11 = A2(_Gizra$elm_dictlist$EveryDictList$get, uuid, model.lotMap);
 					if (_p11.ctor === 'Just') {
-						var _p15 = _p11._0;
-						var _p12 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p15.itemId, model.items);
+						var _p16 = _p11._0;
+						var _p12 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p16.itemId, model.items);
 						if (_p12.ctor === 'Just') {
-							var _p14 = _p12._0;
+							var _p15 = _p12._0;
 							var localWinningBid = A2(
 								_krisajenkins$remotedata$RemoteData$withDefault,
 								_elm_lang$core$Maybe$Nothing,
@@ -48860,10 +48860,39 @@ var _Gizra$circuit_bid$ItemManager_Utils$insertCalculatedItems = F3(
 									function (_) {
 										return _.winningBid;
 									},
-									_p14.calculated));
+									_p15.calculated));
+							var bookBidDict = A2(
+								_krisajenkins$remotedata$RemoteData$withDefault,
+								_Gizra$elm_dictlist$EveryDictList$empty,
+								A2(
+									_krisajenkins$remotedata$RemoteData$map,
+									function (_) {
+										return _.bookBids;
+									},
+									_p15.calculated));
+							var bidDict = A2(
+								_krisajenkins$remotedata$RemoteData$withDefault,
+								_Gizra$elm_dictlist$EveryDictList$empty,
+								A2(
+									_krisajenkins$remotedata$RemoteData$map,
+									function (_) {
+										return _.bids;
+									},
+									_p15.calculated));
 							var winningBid = function () {
 								var _p13 = {ctor: '_Tuple2', _0: localWinningBid, _1: calculatedItem.winningBid};
 								if (((_p13.ctor === '_Tuple2') && (_p13._0.ctor === 'Just')) && (_p13._1.ctor === 'Just')) {
+									var _p14 = _p13._0._0._0;
+									var localBidIsValid = A2(
+										_elm_lang$core$Maybe$withDefault,
+										false,
+										A2(
+											_elm_lang$core$Maybe$map,
+											_Gizra$circuit_bid$Bid_Utils$isValid,
+											A2(
+												_Gizra$elm_dictlist$EveryDictList$get,
+												_Gizra$circuit_bid$Bid_Model$BidKey(_p14),
+												bidDict)));
 									var pusherInt = A2(
 										_elm_lang$core$Maybe$withDefault,
 										0,
@@ -48873,30 +48902,12 @@ var _Gizra$circuit_bid$ItemManager_Utils$insertCalculatedItems = F3(
 										_elm_lang$core$Maybe$withDefault,
 										0,
 										_elm_lang$core$Result$toMaybe(
-											_elm_lang$core$String$toInt(_p13._0._0._0)));
-									return (_elm_lang$core$Native_Utils.cmp(localInt, pusherInt) > 0) ? localWinningBid : calculatedItem.winningBid;
+											_elm_lang$core$String$toInt(_p14)));
+									return ((_elm_lang$core$Native_Utils.cmp(localInt, pusherInt) > 0) && localBidIsValid) ? localWinningBid : calculatedItem.winningBid;
 								} else {
 									return calculatedItem.winningBid;
 								}
 							}();
-							var bookBidDict = A2(
-								_krisajenkins$remotedata$RemoteData$withDefault,
-								_Gizra$elm_dictlist$EveryDictList$empty,
-								A2(
-									_krisajenkins$remotedata$RemoteData$map,
-									function (_) {
-										return _.bookBids;
-									},
-									_p14.calculated));
-							var bidDict = A2(
-								_krisajenkins$remotedata$RemoteData$withDefault,
-								_Gizra$elm_dictlist$EveryDictList$empty,
-								A2(
-									_krisajenkins$remotedata$RemoteData$map,
-									function (_) {
-										return _.bids;
-									},
-									_p14.calculated));
 							var updatedCalculatedItem = _elm_lang$core$Native_Utils.update(
 								calculatedItem,
 								{
@@ -48906,9 +48917,9 @@ var _Gizra$circuit_bid$ItemManager_Utils$insertCalculatedItems = F3(
 								});
 							return A3(
 								_Gizra$elm_dictlist$EveryDictList$insert,
-								_p15.itemId,
+								_p16.itemId,
 								_elm_lang$core$Native_Utils.update(
-									_p14,
+									_p15,
 									{
 										calculated: _krisajenkins$remotedata$RemoteData$Success(updatedCalculatedItem)
 									}),
