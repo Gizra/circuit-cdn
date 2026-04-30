@@ -48209,7 +48209,11 @@ var _Gizra$circuit_bid$Config$liveDomains = {
 																									_1: {
 																										ctor: '::',
 																										_0: 'live-localauction.circuit.auction',
-																										_1: {ctor: '[]'}
+																										_1: {
+																											ctor: '::',
+																											_0: 'joelshaferauctions.com',
+																											_1: {ctor: '[]'}
+																										}
 																									}
 																								}
 																							}
