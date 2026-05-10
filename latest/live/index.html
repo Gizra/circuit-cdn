@@ -9,14 +9,25 @@
   <!--  <link rel="stylesheet" href="https://cdn.example.com/style.css">-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.circuitauction.com/stable/live/bower_components/copy-button/bundled.min.js"></script>
-  <script src="https://cdn.circuitauction.com/stable/live/bower_components/offline/offline.min.js"></script>
-  <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+  <script src="https://cdn.circuitauction.com/stable/live/vendor/copy-button.min.js"></script>
+  <script src="https://cdn.circuitauction.com/stable/live/vendor/offline.min.js"></script>
+  <script src="https://js.pusher.com/8.4/pusher.min.js"></script>
 
 
 </head>
 <body>
 <div id="elm-app-container"></div>
+<!--
+  TODO: the bidder live-video player needs two scripts that the local
+  index.html loads inline:
+    1. <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js"></script>
+    2. <script src="nano-player-4baefa80.js"></script>  (custom element wrapping the SDK)
+
+  Both must be available before Elm's first render so any <nano-player>
+  elements get upgraded immediately. The CDN bundle at
+  https://cdn.circuitauction.com/stable/live/app-loader.js is built
+  outside this repo and needs to be updated to include them.
+-->
 <script src="https://cdn.circuitauction.com/stable/live/app-loader.js"></script>
 </body>
 
