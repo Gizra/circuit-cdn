@@ -5,13 +5,22 @@
 // may live on the same page (desktop sidebar + mobile copy on the bidder
 // sale view), so each instance gets its own unique target-div id.
 //
+// Visibility-gated mount: the bidder Sale view renders both copies into the
+// DOM unconditionally; CSS `display: none` hides the inactive one based on
+// viewport width. We mount the underlying NanoPlayer only while the host
+// element is actually visible — otherwise both players initialize and we
+// get double audio when one is unmuted. Visibility is observed via
+// IntersectionObserver: a `display: none` element reports
+// `isIntersecting: false`, and CSS-driven flips re-fire the observer.
+//
 // Lifecycle:
-//   connectedCallback        — create target div + initial setup.
-//   attributeChangedCallback — when streamname changes, destroy + re-setup.
-//   disconnectedCallback     — destroy.
+//   connectedCallback        — create target div, start observing.
+//   IntersectionObserver     — setup when visible, destroy when hidden.
+//   attributeChangedCallback — destroy current player; rebuild iff visible.
+//   disconnectedCallback     — destroy + stop observing.
 //
 // Player config is fixed: every value is a deliberate latency / autoplay
-// choice tuned for live auctioneering (fastadaptive + MoQ + single-entry
+// choice tuned for live auctioneering (balancedadaptive + MoQ + single-entry
 // ABR-disabled).
 
 (function () {
@@ -53,14 +62,16 @@
       this._player = null;
       this._targetId = null;
       this._connected = false;
+      this._observer = null;
+      this._isVisible = false;
     }
 
     connectedCallback() {
       this._connected = true;
 
       // Create the target div the SDK mounts into. Same div is reused
-      // across attribute changes — only the player instance is torn
-      // down and rebuilt.
+      // across visibility flips and attribute changes — only the player
+      // instance is destroyed and rebuilt.
       //
       // Inline width/height: NanoPlayer's `style: { width: 'auto', height:
       // 'auto' }` sizes the player to its container, so the target div
@@ -76,12 +87,29 @@
       target.style.height = '100%';
       this.appendChild(target);
 
-      this._setup();
+      this._observer = new IntersectionObserver((entries) => {
+        // Use the latest entry — under rapid layout changes the callback
+        // can be invoked with multiple coalesced entries.
+        const visible = entries[entries.length - 1].isIntersecting;
+        if (visible === this._isVisible) return;
+        this._isVisible = visible;
+        if (visible) {
+          this._setup();
+        } else {
+          this._destroyPlayer();
+        }
+      });
+      this._observer.observe(this);
     }
 
     disconnectedCallback() {
       this._connected = false;
+      if (this._observer) {
+        this._observer.disconnect();
+        this._observer = null;
+      }
       this._destroyPlayer();
+      this._isVisible = false;
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -89,10 +117,14 @@
       if (!this._connected) return;
       if (oldValue === newValue) return;
 
-      // Streamname changed mid-session (sale switch). Tear down the
-      // existing player and rebuild against the new stream.
+      // Stream changed mid-session. Drop the current player; if we're
+      // currently visible, rebuild against the new stream. If hidden,
+      // the visibility observer will rebuild when we become visible
+      // (and read the now-current attribute via _setup).
       this._destroyPlayer();
-      this._setup();
+      if (this._isVisible) {
+        this._setup();
+      }
     }
 
     _setup() {
@@ -107,7 +139,7 @@
       try {
         const player = new NanoPlayer(this._targetId);
         // Hold the reference before setup() resolves so a fast
-        // disconnectedCallback can still tear it down.
+        // disconnectedCallback or visibility flip can still tear it down.
         this._player = player;
         player.setup(buildConfig(streamname)).catch((error) => {
           console.error('nano-player: setup failed', error);

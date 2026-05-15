@@ -3,6 +3,20 @@
 const urlParams = new URLSearchParams(window.location.search);
 const languageCode = urlParams.get('language') || localStorage.getItem('languageCode') || '';
 
+// Per-page theme persistence. The room view is a set-and-forget venue
+// display that should keep its own theme independent of the operator
+// pages, so it reads/writes a dedicated key. Every other page shares
+// the global `themeCode`. The current URL is hash-based
+// (`#/sale/.../room/...`), so we sniff the hash to pick the key. The
+// body class is applied synchronously here so the page renders in the
+// right theme before Elm boots, avoiding a light→dark flash.
+const isRoomView = /\/room\//.test(window.location.hash);
+const themeStorageKey = isRoomView ? 'themeCode_room' : 'themeCode';
+const themeCode = localStorage.getItem(themeStorageKey) || 'light';
+if (themeCode === 'dark') {
+    document.body.classList.add('theme-dark');
+}
+
 // `<meta id="circuit-setup">` carries the configured hostname/sitename for the
 // serverless /get-config call. The meta hostname can differ from
 // window.location.hostname (e.g. backoffice.ddev.site → test-americana...).
@@ -19,6 +33,7 @@ var elmApp = Elm.Main.fullscreen({
     metaHostname: metaHostname,
     siteName: siteName,
     languageCode: languageCode,
+    themeCode: themeCode,
     // Pass the location, which might have an `origin` query string, that
     // indicates the base url of the host, in case the app is loaded as an
     // IFrame.
@@ -123,6 +138,24 @@ elmApp.ports.saveAccessToken.subscribe(function(accessToken) {
 
 elmApp.ports.clearAccessToken.subscribe(function() {
     localStorage.removeItem('bs_access_token');
+});
+
+// Persist the chosen theme and apply/remove the `theme-dark` class on
+// <body> so the CSS-variable overrides under `body.theme-dark` cascade
+// into every styled element. Same value gets read back on the next
+// page load via the `themeCode` flag passed into Elm.Main.fullscreen.
+elmApp.ports.saveTheme.subscribe(function(theme) {
+    // Write to whichever key was selected at load (room vs global).
+    // If the user navigates between room and operator pages without a
+    // reload, the JS keeps using the originally-resolved key — which
+    // is the desired behaviour since each tab is typically a dedicated
+    // display anyway.
+    localStorage.setItem(themeStorageKey, theme);
+    if (theme === 'dark') {
+        document.body.classList.add('theme-dark');
+    } else {
+        document.body.classList.remove('theme-dark');
+    }
 });
 
 
