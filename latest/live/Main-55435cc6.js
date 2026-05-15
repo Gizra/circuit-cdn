@@ -49353,7 +49353,7 @@ var _Gizra$circuit_bid$Config_Fetch$jbullBypass = function (hostname) {
 };
 var _Gizra$circuit_bid$Config_Fetch$pickServerless = function (hostname) {
 	var liveServerless = 'https://live-serverless.circuit.auction/';
-	var testServerless = 'http://localhost:5001/';
+	var testServerless = 'https://test-serverless.circuit.auction/';
 	var testRegex = _elm_lang$core$Regex$regex('test-[a-z-]+\\.circuit\\.auction');
 	var devRegex = _elm_lang$core$Regex$regex('dev-[a-z-]+\\.circuit\\.auction');
 	var ddevRegex = _elm_lang$core$Regex$regex('.*\\.ddev\\.site');
