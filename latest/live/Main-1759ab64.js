@@ -43953,7 +43953,6 @@ var _Gizra$circuit_bid$App_Fetch$shouldFetchConsignerStats = F2(
 			return !_elm_lang$core$Native_Utils.eq(_p1._0.itemUuid, itemUuid);
 		}
 	});
-var _Gizra$circuit_bid$App_Fetch$debugBackofficeUrl = 'https://backoffice.ddev.site';
 var _Gizra$circuit_bid$App_Fetch$auctioneerExtraFetch = F2(
 	function (user, model) {
 		return A3(
@@ -43961,25 +43960,30 @@ var _Gizra$circuit_bid$App_Fetch$auctioneerExtraFetch = F2(
 			{ctor: '[]'},
 			user,
 			function (authUser) {
-				var _p2 = _krisajenkins$remotedata$RemoteData$toMaybe(model.pageClerk.sale);
+				var _p2 = _krisajenkins$remotedata$RemoteData$toMaybe(model.config);
 				if (_p2.ctor === 'Nothing') {
 					return {ctor: '[]'};
 				} else {
-					var _p3 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p2._0.item, model.pageClerk.item.items);
+					var _p3 = _krisajenkins$remotedata$RemoteData$toMaybe(model.pageClerk.sale);
 					if (_p3.ctor === 'Nothing') {
 						return {ctor: '[]'};
 					} else {
-						var _p4 = _p3._0;
-						return A2(_Gizra$circuit_bid$App_Fetch$shouldFetchConsignerStats, model.backend.consignerStats, _p4.uuid) ? {
-							ctor: '::',
-							_0: _Gizra$circuit_bid$App_Model$MsgBackend(
-								_Gizra$circuit_bid$Backend_Model$FetchConsignerStats(
-									{
-										url: A3(_Gizra$circuit_bid$App_Fetch$consignerStatsUrl, _Gizra$circuit_bid$App_Fetch$debugBackofficeUrl, authUser.boAccessToken, _p4.uuid),
-										itemUuid: _p4.uuid
-									})),
-							_1: {ctor: '[]'}
-						} : {ctor: '[]'};
+						var _p4 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p3._0.item, model.pageClerk.item.items);
+						if (_p4.ctor === 'Nothing') {
+							return {ctor: '[]'};
+						} else {
+							var _p5 = _p4._0;
+							return A2(_Gizra$circuit_bid$App_Fetch$shouldFetchConsignerStats, model.backend.consignerStats, _p5.uuid) ? {
+								ctor: '::',
+								_0: _Gizra$circuit_bid$App_Model$MsgBackend(
+									_Gizra$circuit_bid$Backend_Model$FetchConsignerStats(
+										{
+											url: A3(_Gizra$circuit_bid$App_Fetch$consignerStatsUrl, _p2._0.siteConfig.backofficeUrl, authUser.boAccessToken, _p5.uuid),
+											itemUuid: _p5.uuid
+										})),
+								_1: {ctor: '[]'}
+							} : {ctor: '[]'};
+						}
 					}
 				}
 			});
@@ -44003,8 +44007,8 @@ var _Gizra$circuit_bid$App_Fetch$fetch = function (model) {
 							A4(_Gizra$circuit_bid$Pages_Clerk_Fetch$fetch, authUser, model.backend, saleUuid, model.pageClerk));
 					});
 			};
-			var _p5 = model.activePage;
-			switch (_p5.ctor) {
+			var _p6 = model.activePage;
+			switch (_p6.ctor) {
 				case 'Sale':
 					return A3(
 						_Gizra$circuit_bid$User_Utils$withAuthenticatedUser,
@@ -44016,15 +44020,15 @@ var _Gizra$circuit_bid$App_Fetch$fetch = function (model) {
 								function (subMsg) {
 									return _Gizra$circuit_bid$App_Model$MsgBackend(subMsg);
 								},
-								A3(_Gizra$circuit_bid$Pages_Sale_Fetch$fetch, authUser, model.backend, _p5._0));
+								A3(_Gizra$circuit_bid$Pages_Sale_Fetch$fetch, authUser, model.backend, _p6._0));
 						});
 				case 'SaleAuctioneer':
 					return A2(
 						_elm_lang$core$Basics_ops['++'],
-						clerkFetch(_p5._0),
+						clerkFetch(_p6._0),
 						A2(_Gizra$circuit_bid$App_Fetch$auctioneerExtraFetch, user, model));
 				case 'SaleClerk':
-					return clerkFetch(_p5._0);
+					return clerkFetch(_p6._0);
 				case 'SaleV1':
 					return A3(
 						_Gizra$circuit_bid$User_Utils$withAuthenticatedUser,
@@ -44036,15 +44040,15 @@ var _Gizra$circuit_bid$App_Fetch$fetch = function (model) {
 								function (subMsg) {
 									return _Gizra$circuit_bid$App_Model$MsgBackend(subMsg);
 								},
-								A3(_Gizra$circuit_bid$Pages_Sale_Fetch$fetch, authUser, model.backend, _p5._0));
+								A3(_Gizra$circuit_bid$Pages_Sale_Fetch$fetch, authUser, model.backend, _p6._0));
 						});
 				case 'SaleAuctioneerV1':
 					return A2(
 						_elm_lang$core$Basics_ops['++'],
-						clerkFetch(_p5._0),
+						clerkFetch(_p6._0),
 						A2(_Gizra$circuit_bid$App_Fetch$auctioneerExtraFetch, user, model));
 				case 'SaleClerkV1':
-					return clerkFetch(_p5._0);
+					return clerkFetch(_p6._0);
 				default:
 					return {ctor: '[]'};
 			}
