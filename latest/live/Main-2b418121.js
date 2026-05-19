@@ -46174,6 +46174,212 @@ var _Gizra$circuit_bid$App_Router$delta2url = F2(
 		}
 	});
 
+var _Gizra$circuit_bid$Error_Encoder$encodeHttpUrl = function (errType) {
+	var _p0 = errType;
+	_v0_3:
+	do {
+		if (_p0.ctor === 'Http') {
+			switch (_p0._0.ctor) {
+				case 'BadUrl':
+					return _elm_lang$core$Json_Encode$string(_p0._0._0);
+				case 'BadStatus':
+					return _elm_lang$core$Json_Encode$string(_p0._0._0.url);
+				case 'BadPayload':
+					return _elm_lang$core$Json_Encode$string(_p0._0._1.url);
+				default:
+					break _v0_3;
+			}
+		} else {
+			break _v0_3;
+		}
+	} while(false);
+	return _elm_lang$core$Json_Encode$null;
+};
+var _Gizra$circuit_bid$Error_Encoder$encodeHttpStatus = function (errType) {
+	var _p1 = errType;
+	_v1_2:
+	do {
+		if (_p1.ctor === 'Http') {
+			switch (_p1._0.ctor) {
+				case 'BadStatus':
+					return _elm_lang$core$Json_Encode$int(_p1._0._0.status.code);
+				case 'BadPayload':
+					return _elm_lang$core$Json_Encode$int(_p1._0._1.status.code);
+				default:
+					break _v1_2;
+			}
+		} else {
+			break _v1_2;
+		}
+	} while(false);
+	return _elm_lang$core$Json_Encode$null;
+};
+var _Gizra$circuit_bid$Error_Encoder$errorMessage = function (errType) {
+	var _p2 = errType;
+	if (_p2.ctor === 'Http') {
+		return A2(_Gizra$circuit_bid$Utils_WebData$errorString, _Gizra$circuit_bid$Translate$English, _p2._0);
+	} else {
+		return _p2._0;
+	}
+};
+var _Gizra$circuit_bid$Error_Encoder$errorTypeTag = function (errType) {
+	var _p3 = errType;
+	if (_p3.ctor === 'Http') {
+		return 'Http';
+	} else {
+		return 'Plain';
+	}
+};
+var _Gizra$circuit_bid$Error_Encoder$encodeError = function (error) {
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'module',
+				_1: _elm_lang$core$Json_Encode$string(error.module_)
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'location',
+					_1: _elm_lang$core$Json_Encode$string(error.location)
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'level',
+						_1: _elm_lang$core$Json_Encode$string('error')
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'type',
+							_1: _elm_lang$core$Json_Encode$string(
+								_Gizra$circuit_bid$Error_Encoder$errorTypeTag(error.error))
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'message',
+								_1: _elm_lang$core$Json_Encode$string(
+									_Gizra$circuit_bid$Error_Encoder$errorMessage(error.error))
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'httpStatus',
+									_1: _Gizra$circuit_bid$Error_Encoder$encodeHttpStatus(error.error)
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'httpUrl',
+										_1: _Gizra$circuit_bid$Error_Encoder$encodeHttpUrl(error.error)
+									},
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+
+var _Gizra$circuit_bid$Ports$saveAccessToken = _elm_lang$core$Native_Platform.outgoingPort(
+	'saveAccessToken',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$clearAccessToken = _elm_lang$core$Native_Platform.outgoingPort(
+	'clearAccessToken',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$offline = _elm_lang$core$Native_Platform.incomingPort('offline', _elm_lang$core$Json_Decode$value);
+var _Gizra$circuit_bid$Ports$userLoggedIn = _elm_lang$core$Native_Platform.outgoingPort(
+	'userLoggedIn',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$userLoggedOut = _elm_lang$core$Native_Platform.outgoingPort(
+	'userLoggedOut',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$userTryLogin = _elm_lang$core$Native_Platform.outgoingPort(
+	'userTryLogin',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$delayedReload = _elm_lang$core$Native_Platform.outgoingPort(
+	'delayedReload',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$immediateReload = _elm_lang$core$Native_Platform.outgoingPort(
+	'immediateReload',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$playSoundOnLiveBid = _elm_lang$core$Native_Platform.outgoingPort(
+	'playSoundOnLiveBid',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$focus = _elm_lang$core$Native_Platform.outgoingPort(
+	'focus',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$loadBackofficeCSS = _elm_lang$core$Native_Platform.outgoingPort(
+	'loadBackofficeCSS',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$getUserAgent = _elm_lang$core$Native_Platform.outgoingPort(
+	'getUserAgent',
+	function (v) {
+		return null;
+	});
+var _Gizra$circuit_bid$Ports$receiveUserAgent = _elm_lang$core$Native_Platform.incomingPort('receiveUserAgent', _elm_lang$core$Json_Decode$string);
+var _Gizra$circuit_bid$Ports$saveTheme = _elm_lang$core$Native_Platform.outgoingPort(
+	'saveTheme',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$reportError = _elm_lang$core$Native_Platform.outgoingPort(
+	'reportError',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$setSentryUser = _elm_lang$core$Native_Platform.outgoingPort(
+	'setSentryUser',
+	function (v) {
+		return {id: v.id};
+	});
+var _Gizra$circuit_bid$Ports$clearSentryUser = _elm_lang$core$Native_Platform.outgoingPort(
+	'clearSentryUser',
+	function (v) {
+		return null;
+	});
+
+var _Gizra$circuit_bid$Error_Utils$reportErrorCmd = function (maybeError) {
+	var _p0 = maybeError;
+	if (_p0.ctor === 'Just') {
+		return _Gizra$circuit_bid$Ports$reportError(
+			_Gizra$circuit_bid$Error_Encoder$encodeError(_p0._0));
+	} else {
+		return _elm_lang$core$Platform_Cmd$none;
+	}
+};
 var _Gizra$circuit_bid$Error_Utils$plainError = F3(
 	function (module_, location, error) {
 		return _elm_lang$core$Maybe$Just(
@@ -46195,17 +46401,17 @@ var _Gizra$circuit_bid$Error_Utils$httpError = F3(
 var _Gizra$circuit_bid$Error_Utils$noError = _elm_lang$core$Maybe$Nothing;
 var _Gizra$circuit_bid$Error_Utils$maybeHttpError = F3(
 	function (webdata, module_, location) {
-		var _p0 = webdata;
-		if (_p0.ctor === 'Failure') {
-			return A3(_Gizra$circuit_bid$Error_Utils$httpError, module_, location, _p0._0);
+		var _p1 = webdata;
+		if (_p1.ctor === 'Failure') {
+			return A3(_Gizra$circuit_bid$Error_Utils$httpError, module_, location, _p1._0);
 		} else {
 			return _Gizra$circuit_bid$Error_Utils$noError;
 		}
 	});
 var _Gizra$circuit_bid$Error_Utils$is401 = function (err) {
-	var _p1 = err;
-	if (_p1.ctor === 'BadStatus') {
-		return _elm_lang$core$Native_Utils.eq(_p1._0.status.code, 401);
+	var _p2 = err;
+	if (_p2.ctor === 'BadStatus') {
+		return _elm_lang$core$Native_Utils.eq(_p2._0.status.code, 401);
 	} else {
 		return false;
 	}
@@ -46216,11 +46422,11 @@ var _Gizra$circuit_bid$Error_Utils$debugLog = function (error) {
 		error.module_,
 		A2(_elm_lang$core$Basics_ops['++'], '.', error.location));
 	var message = function () {
-		var _p2 = error.error;
-		if (_p2.ctor === 'Http') {
-			return A2(_Gizra$circuit_bid$Utils_WebData$errorString, _Gizra$circuit_bid$Translate$English, _p2._0);
+		var _p3 = error.error;
+		if (_p3.ctor === 'Http') {
+			return A2(_Gizra$circuit_bid$Utils_WebData$errorString, _Gizra$circuit_bid$Translate$English, _p3._0);
 		} else {
-			return _p2._0;
+			return _p3._0;
 		}
 	}();
 	return A2(_elm_lang$core$Debug$log, id, message);
@@ -50992,69 +51198,6 @@ var _Gizra$circuit_bid$Login_Decoder$decodeAccessToken = A2(
 		_1: {ctor: '[]'}
 	},
 	_elm_lang$core$Json_Decode$string);
-
-var _Gizra$circuit_bid$Ports$saveAccessToken = _elm_lang$core$Native_Platform.outgoingPort(
-	'saveAccessToken',
-	function (v) {
-		return v;
-	});
-var _Gizra$circuit_bid$Ports$clearAccessToken = _elm_lang$core$Native_Platform.outgoingPort(
-	'clearAccessToken',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$offline = _elm_lang$core$Native_Platform.incomingPort('offline', _elm_lang$core$Json_Decode$value);
-var _Gizra$circuit_bid$Ports$userLoggedIn = _elm_lang$core$Native_Platform.outgoingPort(
-	'userLoggedIn',
-	function (v) {
-		return v;
-	});
-var _Gizra$circuit_bid$Ports$userLoggedOut = _elm_lang$core$Native_Platform.outgoingPort(
-	'userLoggedOut',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$userTryLogin = _elm_lang$core$Native_Platform.outgoingPort(
-	'userTryLogin',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$delayedReload = _elm_lang$core$Native_Platform.outgoingPort(
-	'delayedReload',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$immediateReload = _elm_lang$core$Native_Platform.outgoingPort(
-	'immediateReload',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$playSoundOnLiveBid = _elm_lang$core$Native_Platform.outgoingPort(
-	'playSoundOnLiveBid',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$focus = _elm_lang$core$Native_Platform.outgoingPort(
-	'focus',
-	function (v) {
-		return v;
-	});
-var _Gizra$circuit_bid$Ports$loadBackofficeCSS = _elm_lang$core$Native_Platform.outgoingPort(
-	'loadBackofficeCSS',
-	function (v) {
-		return v;
-	});
-var _Gizra$circuit_bid$Ports$getUserAgent = _elm_lang$core$Native_Platform.outgoingPort(
-	'getUserAgent',
-	function (v) {
-		return null;
-	});
-var _Gizra$circuit_bid$Ports$receiveUserAgent = _elm_lang$core$Native_Platform.incomingPort('receiveUserAgent', _elm_lang$core$Json_Decode$string);
-var _Gizra$circuit_bid$Ports$saveTheme = _elm_lang$core$Native_Platform.outgoingPort(
-	'saveTheme',
-	function (v) {
-		return v;
-	});
 
 var _Gizra$circuit_bid$User_Decoder$decodeWebsiteBidderInfo = A2(
 	_elm_lang$core$Json_Decode$andThen,
@@ -61069,7 +61212,11 @@ var _Gizra$circuit_bid$App_Update$updateSubModel = F6(
 					_1: {
 						ctor: '::',
 						_0: appCmds,
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: _Gizra$circuit_bid$Error_Utils$reportErrorCmd(maybeError),
+							_1: {ctor: '[]'}
+						}
 					}
 				})
 		};
@@ -61524,7 +61671,12 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 											ctor: '::',
 											_0: _Gizra$circuit_bid$Ports$userLoggedOut(
 												{ctor: '_Tuple0'}),
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: _Gizra$circuit_bid$Ports$clearSentryUser(
+													{ctor: '_Tuple0'}),
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}
@@ -61764,7 +61916,7 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						if (_p43.ctor === 'Just') {
 							if (_p43._0._1.ctor === 'Authenticated') {
 								return {
-									ctor: '_Tuple2',
+									ctor: '_Tuple3',
 									_0: _elm_lang$core$Native_Utils.update(
 										model,
 										{
@@ -61776,11 +61928,15 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 										_elm_lang$core$Task$perform,
 										_elm_lang$core$Basics$identity,
 										_elm_lang$core$Task$succeed(
-											A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, model.activePage)))
+											A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, model.activePage))),
+									_2: _Gizra$circuit_bid$Ports$setSentryUser(
+										{
+											id: _Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p43._0._1._0.uuid)
+										})
 								};
 							} else {
 								return {
-									ctor: '_Tuple2',
+									ctor: '_Tuple3',
 									_0: _elm_lang$core$Native_Utils.update(
 										model,
 										{
@@ -61788,21 +61944,25 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 											user: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$User_Model$Anonymous),
 											login: loginModel
 										}),
-									_1: _elm_lang$core$Platform_Cmd$none
+									_1: _elm_lang$core$Platform_Cmd$none,
+									_2: _Gizra$circuit_bid$Ports$clearSentryUser(
+										{ctor: '_Tuple0'})
 								};
 							}
 						} else {
 							return {
-								ctor: '_Tuple2',
+								ctor: '_Tuple3',
 								_0: _elm_lang$core$Native_Utils.update(
 									model,
 									{login: loginModel}),
-								_1: _elm_lang$core$Platform_Cmd$none
+								_1: _elm_lang$core$Platform_Cmd$none,
+								_2: _elm_lang$core$Platform_Cmd$none
 							};
 						}
 					}();
 					var modelWithRedirect = _p42._0;
 					var redirectCmd = _p42._1;
+					var sentryUserCmd = _p42._2;
 					var modelWithError = A2(_Gizra$circuit_bid$App_Utils$handleErrors, maybeError, modelWithRedirect);
 					return {
 						ctor: '_Tuple2',
@@ -61817,7 +61977,15 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 									_1: {
 										ctor: '::',
 										_0: redirectCmd,
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: sentryUserCmd,
+											_1: {
+												ctor: '::',
+												_0: _Gizra$circuit_bid$Error_Utils$reportErrorCmd(maybeError),
+												_1: {ctor: '[]'}
+											}
+										}
 									}
 								}
 							})

@@ -13,6 +13,11 @@
   <script src="https://cdn.circuitauction.com/stable/live/vendor/offline.min.js"></script>
   <script src="https://js.pusher.com/8.4/pusher.min.js"></script>
 
+  <!-- Sentry SDK + GlitchTip DSN. `dsn` and `environment` are
+       injected by the deploy pipeline (same one that writes
+       `circuit-setup`). Empty `dsn` is a no-op. -->
+  <meta id="error-monitoring" dsn="https://5505c8b31c5a4a579e6ddd18e37ee9a2@glitchtip.circuit.auction/2" environment="">
+  <script src="https://browser.sentry-cdn.com/8.50.0/bundle.min.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -21,7 +26,7 @@
   TODO: the bidder live-video player needs two scripts that the local
   index.html loads inline:
     1. <script src="https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js"></script>
-    2. <script src="nano-player-1759ab64.js"></script>  (custom element wrapping the SDK)
+    2. <script src="nano-player-2b418121.js"></script>  (custom element wrapping the SDK)
 
   Both must be available before Elm's first render so any <nano-player>
   elements get upgraded immediately. The CDN bundle at

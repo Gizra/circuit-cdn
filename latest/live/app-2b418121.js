@@ -27,6 +27,90 @@ if (!siteName) {
     console.error('Circuit config - No site name found in the DOM.');
 }
 
+// --- Sentry / GlitchTip ----------------------------------------------------
+// Init the browser SDK before Elm boots so unhandled promise rejections
+// fired during startup are still captured. `dsn=""` is a no-op so dev
+// contributors don't need GlitchTip running. The SDK script is loaded
+// synchronously from `index.html` (Sentry CDN); `window.Sentry` is
+// guaranteed to be defined here when the bundle loaded successfully.
+const errorMonitoringMeta = document.getElementById('error-monitoring');
+const errorDsn = (errorMonitoringMeta && errorMonitoringMeta.getAttribute('dsn')) || '';
+const errorEnv = (errorMonitoringMeta && errorMonitoringMeta.getAttribute('environment')) || '';
+
+// Remove values for query-param keys that commonly carry tokens before
+// the event leaves the browser. Belt-and-suspenders alongside
+// GlitchTip's server-side scrubbers. Pattern matches everything
+// containing `token`, `auth`, `password`, or `secret` (case-insensitive).
+const SENSITIVE_KEY_RE = /(token|auth|password|secret|key)/i;
+function scrubUrl(url) {
+    if (!url || url.indexOf('?') === -1) return url;
+    const [base, query] = url.split('?');
+    const scrubbed = query.split('&').map(function (pair) {
+        const eq = pair.indexOf('=');
+        if (eq === -1) return pair;
+        const k = pair.slice(0, eq);
+        return SENSITIVE_KEY_RE.test(k) ? k + '=REDACTED' : pair;
+    }).join('&');
+    return base + '?' + scrubbed;
+}
+function scrubEvent(event) {
+    if (event.request) {
+        if (event.request.url) event.request.url = scrubUrl(event.request.url);
+        if (event.request.headers) {
+            // Drop Authorization-like headers wholesale.
+            Object.keys(event.request.headers).forEach(function (h) {
+                if (SENSITIVE_KEY_RE.test(h)) event.request.headers[h] = 'REDACTED';
+            });
+        }
+        delete event.request.cookies;
+    }
+    if (event.breadcrumbs) {
+        event.breadcrumbs.forEach(function (b) {
+            if (b.data && b.data.url) b.data.url = scrubUrl(b.data.url);
+        });
+    }
+    if (event.extra && event.extra.httpUrl) {
+        event.extra.httpUrl = scrubUrl(event.extra.httpUrl);
+    }
+    return event;
+}
+
+if (errorDsn && window.Sentry) {
+    Sentry.init({
+        dsn: errorDsn,
+        environment: errorEnv,
+        // Drop the `GlobalHandlers` integration's window.onerror hook;
+        // unhandled-rejection capture stays on. Per the agreed scope:
+        // sync JS throws are out of scope for v1. Flip these flags to
+        // re-enable later.
+        //
+        // SDK v8 removed `Sentry.Integrations.GlobalHandlers` in favour
+        // of a factory function. Fall back to dropping the default
+        // integration entirely on older / unexpected SDK builds — that
+        // disables both handlers, which is closer to the agreed scope
+        // than leaving the unwanted `onerror` enabled.
+        integrations: function (defaultIntegrations) {
+            var hasFactory = typeof Sentry.globalHandlersIntegration === 'function';
+            return defaultIntegrations
+                .filter(function (i) { return i.name !== 'GlobalHandlers'; })
+                .concat(hasFactory
+                    ? [Sentry.globalHandlersIntegration({
+                          onerror: false,
+                          onunhandledrejection: true
+                      })]
+                    : []);
+        },
+        beforeSend: scrubEvent,
+        maxBreadcrumbs: 50,
+        initialScope: {
+            tags: {
+                siteName: siteName,
+                metaHostname: metaHostname
+            }
+        }
+    });
+}
+
 var elmApp = Elm.Main.fullscreen({
     accessToken: localStorage.getItem('bs_access_token') || '',
     hostname: window.location.hostname,
@@ -138,6 +222,41 @@ elmApp.ports.saveAccessToken.subscribe(function(accessToken) {
 
 elmApp.ports.clearAccessToken.subscribe(function() {
     localStorage.removeItem('bs_access_token');
+});
+
+// --- Sentry / GlitchTip port subscribers ----------------------------------
+// All three are guarded on `errorDsn && window.Sentry` because the SDK
+// is absent when the dsn is empty (no-op mode) or when the CDN bundle
+// failed to load. We don't want a missing SDK to break Elm.
+
+elmApp.ports.reportError.subscribe(function (payload) {
+    if (!errorDsn || !window.Sentry) return;
+    Sentry.withScope(function (scope) {
+        scope.setTag('elmModule', payload.module);
+        scope.setTag('elmLocation', payload.location);
+        if (payload.type) scope.setTag('errorType', payload.type);
+        if (payload.httpStatus !== null && payload.httpStatus !== undefined) {
+            scope.setTag('httpStatus', String(payload.httpStatus));
+        }
+        scope.setExtras({
+            httpUrl: payload.httpUrl || null,
+            locationHash: window.location.hash
+        });
+        Sentry.captureMessage(
+            payload.module + '.' + payload.location + ': ' + payload.message,
+            payload.level || 'error'
+        );
+    });
+});
+
+elmApp.ports.setSentryUser.subscribe(function (user) {
+    if (!errorDsn || !window.Sentry) return;
+    Sentry.setUser({ id: user.id });
+});
+
+elmApp.ports.clearSentryUser.subscribe(function () {
+    if (!errorDsn || !window.Sentry) return;
+    Sentry.setUser(null);
 });
 
 // Persist the chosen theme and apply/remove the `theme-dark` class on
