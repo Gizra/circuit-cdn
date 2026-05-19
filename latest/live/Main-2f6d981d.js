@@ -43570,7 +43570,9 @@ var _Gizra$circuit_bid$App_Model$Model = function (a) {
 																	return function (r) {
 																		return function (s) {
 																			return function (t) {
-																				return {accessToken: a, activePage: b, backend: c, config: d, currentDate: e, errors: f, language: g, offline: h, pageAuctioneer: i, pageClerk: j, pageItem: k, pageRoom: l, pageSale: m, pusher: n, parentBaseUrl: o, redirectUrl: p, siteShortName: q, theme: r, user: s, login: t};
+																				return function (u) {
+																					return {accessToken: a, activePage: b, backend: c, config: d, currentDate: e, errors: f, language: g, offline: h, pageAuctioneer: i, pageClerk: j, pageItem: k, pageRoom: l, pageSale: m, pusher: n, parentBaseUrl: o, redirectUrl: p, siteShortName: q, theme: r, user: s, login: t, appVersion: u};
+																				};
 																			};
 																		};
 																	};
@@ -43591,9 +43593,9 @@ var _Gizra$circuit_bid$App_Model$Model = function (a) {
 		};
 	};
 };
-var _Gizra$circuit_bid$App_Model$Flags = F7(
-	function (a, b, c, d, e, f, g) {
-		return {accessToken: a, hostname: b, metaHostname: c, siteName: d, languageCode: e, parentBaseUrl: f, themeCode: g};
+var _Gizra$circuit_bid$App_Model$Flags = F8(
+	function (a, b, c, d, e, f, g, h) {
+		return {accessToken: a, hostname: b, metaHostname: c, siteName: d, languageCode: e, parentBaseUrl: f, themeCode: g, appVersion: h};
 	});
 var _Gizra$circuit_bid$App_Model$Tick = function (a) {
 	return {ctor: 'Tick', _0: a};
@@ -43667,7 +43669,8 @@ var _Gizra$circuit_bid$App_Model$emptyModel = {
 	siteShortName: '',
 	theme: _Gizra$circuit_bid$App_Model$Light,
 	user: _elm_lang$core$Maybe$Nothing,
-	login: _Gizra$circuit_bid$Login_Model$emptyModel
+	login: _Gizra$circuit_bid$Login_Model$emptyModel,
+	appVersion: ''
 };
 
 var _elm_lang$html$Html_Keyed$node = _elm_lang$virtual_dom$VirtualDom$keyedNode;
@@ -62282,7 +62285,8 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 				language: _Gizra$circuit_bid$App_Utils$decodeLanguageCode(flags.languageCode),
 				theme: _Gizra$circuit_bid$App_Model$themeFromString(flags.themeCode),
 				parentBaseUrl: parentBaseUrl,
-				redirectUrl: redirectUrl
+				redirectUrl: redirectUrl,
+				appVersion: flags.appVersion
 			}),
 		_1: _elm_lang$core$Platform_Cmd$batch(
 			{
@@ -90762,6 +90766,27 @@ var _Gizra$circuit_bid$App_View$viewConnectionStatus = F2(
 				}
 			});
 	});
+var _Gizra$circuit_bid$App_View$viewAppVersion = function (version) {
+	var label = _elm_lang$core$String$isEmpty(version) ? 'dev' : version;
+	return A2(
+		_elm_lang$html$Html$span,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('app-version'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$title(
+					A2(_elm_lang$core$Basics_ops['++'], 'Build ', label)),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(
+				A2(_elm_lang$core$Basics_ops['++'], 'v', label)),
+			_1: {ctor: '[]'}
+		});
+};
 var _Gizra$circuit_bid$App_View$roomThemeToggle = function (theme) {
 	var isActive = _elm_lang$core$Native_Utils.eq(theme, _Gizra$circuit_bid$App_Model$Dark);
 	var _p0 = function () {
@@ -91421,148 +91446,159 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 									return function (maybeSale) {
 										return function (activePage) {
 											return function (pageAfterLogout) {
-												var saleSiteShortName = A2(
-													_elm_lang$core$Maybe$withDefault,
-													siteShortName,
-													A2(
-														_elm_lang$core$Maybe$map,
-														function (_) {
-															return _.siteShortName;
-														},
-														maybeSale));
-												var backOfficeUrl = A3(
-													_Gizra$circuit_bid$Config_Utils$withLanguagePrefix,
-													config.siteConfig.defaultLanguage,
-													language,
-													A2(
+												return function (appVersion) {
+													var saleSiteShortName = A2(
 														_elm_lang$core$Maybe$withDefault,
-														'',
+														siteShortName,
 														A2(
 															_elm_lang$core$Maybe$map,
 															function (_) {
-																return _.siteBackofficeUrl;
+																return _.siteShortName;
 															},
-															maybeSale)));
-												var themeToggle = _Gizra$circuit_bid$App_View$viewThemeToggle(theme);
-												var languages = A3(_Gizra$circuit_bid$App_View$viewLanguages, language, availableLanguages, activePage);
-												var connection = A2(_Gizra$circuit_bid$App_View$viewConnectionStatus, language, offline);
-												var content = function () {
-													var _p17 = maybeUser;
-													if ((_p17.ctor === 'Just') && (_p17._0.ctor === 'Authenticated')) {
-														var user = A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$User_Model$Anonymous, maybeUser);
-														return {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('welcome'),
-																	_1: {ctor: '[]'}
+															maybeSale));
+													var backOfficeUrl = A3(
+														_Gizra$circuit_bid$Config_Utils$withLanguagePrefix,
+														config.siteConfig.defaultLanguage,
+														language,
+														A2(
+															_elm_lang$core$Maybe$withDefault,
+															'',
+															A2(
+																_elm_lang$core$Maybe$map,
+																function (_) {
+																	return _.siteBackofficeUrl;
 																},
-																{
-																	ctor: '::',
-																	_0: A4(_Gizra$circuit_bid$App_View$viewWelcomeMessage, language, user, modelBackend, maybeSale),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {
+																maybeSale)));
+													var themeToggle = _Gizra$circuit_bid$App_View$viewThemeToggle(theme);
+													var languages = A3(_Gizra$circuit_bid$App_View$viewLanguages, language, availableLanguages, activePage);
+													var versionTag = _Gizra$circuit_bid$App_View$viewAppVersion(appVersion);
+													var connection = A2(_Gizra$circuit_bid$App_View$viewConnectionStatus, language, offline);
+													var content = function () {
+														var _p17 = maybeUser;
+														if ((_p17.ctor === 'Just') && (_p17._0.ctor === 'Authenticated')) {
+															var user = A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$User_Model$Anonymous, maybeUser);
+															return {
 																ctor: '::',
 																_0: A2(
 																	_elm_lang$html$Html$div,
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('top-controls'),
+																		_0: _elm_lang$html$Html_Attributes$class('welcome'),
 																		_1: {ctor: '[]'}
 																	},
 																	{
 																		ctor: '::',
-																		_0: connection,
-																		_1: {
+																		_0: A4(_Gizra$circuit_bid$App_View$viewWelcomeMessage, language, user, modelBackend, maybeSale),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$div,
+																		{
 																			ctor: '::',
-																			_0: languages,
+																			_0: _elm_lang$html$Html_Attributes$class('top-controls'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: versionTag,
 																			_1: {
 																				ctor: '::',
-																				_0: themeToggle,
+																				_0: connection,
 																				_1: {
 																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$a,
-																						{
+																					_0: languages,
+																					_1: {
+																						ctor: '::',
+																						_0: themeToggle,
+																						_1: {
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class('log-out'),
-																							_1: {
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Events$onClick(
-																									_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
-																								_1: {ctor: '[]'}
-																							}
-																						},
-																						{
-																							ctor: '::',
-																							_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
+																							_0: A2(
+																								_elm_lang$html$Html$a,
+																								{
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Attributes$class('log-out'),
+																									_1: {
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Events$onClick(
+																											_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
+																										_1: {ctor: '[]'}
+																									}
+																								},
+																								{
+																									ctor: '::',
+																									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
+																									_1: {ctor: '[]'}
+																								}),
 																							_1: {ctor: '[]'}
-																						}),
-																					_1: {ctor: '[]'}
+																						}
+																					}
 																				}
 																			}
-																		}
-																	}),
-																_1: {ctor: '[]'}
-															}
-														};
-													} else {
-														var loginFormOrEmpty = _elm_lang$core$String$isEmpty(saleSiteShortName) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
-															_elm_lang$html$Html$map,
-															_Gizra$circuit_bid$App_Model$MsgLogin,
-															A4(_Gizra$circuit_bid$App_View$viewCompactLoginForm, language, loginModel, saleSiteShortName, backOfficeUrl));
-														return {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('welcome'),
+																		}),
 																	_1: {ctor: '[]'}
-																},
-																{ctor: '[]'}),
-															_1: {
+																}
+															};
+														} else {
+															var loginFormOrEmpty = _elm_lang$core$String$isEmpty(saleSiteShortName) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+																_elm_lang$html$Html$map,
+																_Gizra$circuit_bid$App_Model$MsgLogin,
+																A4(_Gizra$circuit_bid$App_View$viewCompactLoginForm, language, loginModel, saleSiteShortName, backOfficeUrl));
+															return {
 																ctor: '::',
 																_0: A2(
 																	_elm_lang$html$Html$div,
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('top-login'),
+																		_0: _elm_lang$html$Html_Attributes$class('welcome'),
 																		_1: {ctor: '[]'}
 																	},
-																	{
-																		ctor: '::',
-																		_0: loginFormOrEmpty,
-																		_1: {
+																	{ctor: '[]'}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$div,
+																		{
 																			ctor: '::',
-																			_0: connection,
+																			_0: _elm_lang$html$Html_Attributes$class('top-login'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: loginFormOrEmpty,
 																			_1: {
 																				ctor: '::',
-																				_0: languages,
+																				_0: versionTag,
 																				_1: {
 																					ctor: '::',
-																					_0: themeToggle,
-																					_1: {ctor: '[]'}
+																					_0: connection,
+																					_1: {
+																						ctor: '::',
+																						_0: languages,
+																						_1: {
+																							ctor: '::',
+																							_0: themeToggle,
+																							_1: {ctor: '[]'}
+																						}
+																					}
 																				}
 																			}
-																		}
-																	}),
-																_1: {ctor: '[]'}
-															}
-														};
-													}
-												}();
-												return A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('top-welcome'),
-														_1: {ctor: '[]'}
-													},
-													content);
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															};
+														}
+													}();
+													return A2(
+														_elm_lang$html$Html$div,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('top-welcome'),
+															_1: {ctor: '[]'}
+														},
+														content);
+												};
 											};
 										};
 									};
@@ -91716,7 +91752,7 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 					case 'SaleRoomV1':
 						return _Gizra$circuit_bid$App_View$roomThemeToggle(model.theme);
 					default:
-						return _Gizra$circuit_bid$App_View$topBar(_p27)(availableLanguages)(model.language)(model.theme)(model.offline)(model.user)(model.login)(model.siteShortName)(model.backend)(maybeSale)(model.activePage)(page);
+						return _Gizra$circuit_bid$App_View$topBar(_p27)(availableLanguages)(model.language)(model.theme)(model.offline)(model.user)(model.login)(model.siteShortName)(model.backend)(maybeSale)(model.activePage)(page)(model.appVersion);
 				}
 			}();
 			var viewContent = A2(
@@ -91878,36 +91914,41 @@ var _Gizra$circuit_bid$Main$main = _rgrempel$elm_route_url$RouteUrl$programWithF
 		function (accessToken) {
 			return A2(
 				_elm_lang$core$Json_Decode$andThen,
-				function (hostname) {
+				function (appVersion) {
 					return A2(
 						_elm_lang$core$Json_Decode$andThen,
-						function (languageCode) {
+						function (hostname) {
 							return A2(
 								_elm_lang$core$Json_Decode$andThen,
-								function (metaHostname) {
+								function (languageCode) {
 									return A2(
 										_elm_lang$core$Json_Decode$andThen,
-										function (parentBaseUrl) {
+										function (metaHostname) {
 											return A2(
 												_elm_lang$core$Json_Decode$andThen,
-												function (siteName) {
+												function (parentBaseUrl) {
 													return A2(
 														_elm_lang$core$Json_Decode$andThen,
-														function (themeCode) {
-															return _elm_lang$core$Json_Decode$succeed(
-																{accessToken: accessToken, hostname: hostname, languageCode: languageCode, metaHostname: metaHostname, parentBaseUrl: parentBaseUrl, siteName: siteName, themeCode: themeCode});
+														function (siteName) {
+															return A2(
+																_elm_lang$core$Json_Decode$andThen,
+																function (themeCode) {
+																	return _elm_lang$core$Json_Decode$succeed(
+																		{accessToken: accessToken, appVersion: appVersion, hostname: hostname, languageCode: languageCode, metaHostname: metaHostname, parentBaseUrl: parentBaseUrl, siteName: siteName, themeCode: themeCode});
+																},
+																A2(_elm_lang$core$Json_Decode$field, 'themeCode', _elm_lang$core$Json_Decode$string));
 														},
-														A2(_elm_lang$core$Json_Decode$field, 'themeCode', _elm_lang$core$Json_Decode$string));
+														A2(_elm_lang$core$Json_Decode$field, 'siteName', _elm_lang$core$Json_Decode$string));
 												},
-												A2(_elm_lang$core$Json_Decode$field, 'siteName', _elm_lang$core$Json_Decode$string));
+												A2(_elm_lang$core$Json_Decode$field, 'parentBaseUrl', _elm_lang$core$Json_Decode$string));
 										},
-										A2(_elm_lang$core$Json_Decode$field, 'parentBaseUrl', _elm_lang$core$Json_Decode$string));
+										A2(_elm_lang$core$Json_Decode$field, 'metaHostname', _elm_lang$core$Json_Decode$string));
 								},
-								A2(_elm_lang$core$Json_Decode$field, 'metaHostname', _elm_lang$core$Json_Decode$string));
+								A2(_elm_lang$core$Json_Decode$field, 'languageCode', _elm_lang$core$Json_Decode$string));
 						},
-						A2(_elm_lang$core$Json_Decode$field, 'languageCode', _elm_lang$core$Json_Decode$string));
+						A2(_elm_lang$core$Json_Decode$field, 'hostname', _elm_lang$core$Json_Decode$string));
 				},
-				A2(_elm_lang$core$Json_Decode$field, 'hostname', _elm_lang$core$Json_Decode$string));
+				A2(_elm_lang$core$Json_Decode$field, 'appVersion', _elm_lang$core$Json_Decode$string));
 		},
 		A2(_elm_lang$core$Json_Decode$field, 'accessToken', _elm_lang$core$Json_Decode$string)));
 

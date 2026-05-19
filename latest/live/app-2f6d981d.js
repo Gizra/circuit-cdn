@@ -75,10 +75,17 @@ function scrubEvent(event) {
     return event;
 }
 
+// Build version string is set by scripts/write-version.js into
+// `serve/version.js` (or `dist/version.js` for prod). If that file
+// didn't get generated (fresh checkout without `npm run version`),
+// fall back to "dev" so the UI still has something to render.
+const appVersion = window.APP_VERSION || 'dev';
+
 if (errorDsn && window.Sentry) {
     Sentry.init({
         dsn: errorDsn,
         environment: errorEnv,
+        release: appVersion,
         // Drop the `GlobalHandlers` integration's window.onerror hook;
         // unhandled-rejection capture stays on. Per the agreed scope:
         // sync JS throws are out of scope for v1. Flip these flags to
@@ -118,6 +125,7 @@ var elmApp = Elm.Main.fullscreen({
     siteName: siteName,
     languageCode: languageCode,
     themeCode: themeCode,
+    appVersion: appVersion,
     // Pass the location, which might have an `origin` query string, that
     // indicates the base url of the host, in case the app is loaded as an
     // IFrame.
