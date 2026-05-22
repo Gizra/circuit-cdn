@@ -117,11 +117,16 @@ if (errorDsn && window.Sentry) {
         }
     });
 }
+// Optional `<meta id="serverless" url="...">` override. Empty/missing
+// means the Elm side falls back to the test endpoint.
+const serverlessMeta = document.getElementById('serverless');
+const serverlessUrl = (serverlessMeta && serverlessMeta.getAttribute('url')) || '';
 
 var elmApp = Elm.Main.fullscreen({
     accessToken: localStorage.getItem('bs_access_token') || '',
     hostname: window.location.hostname,
     metaHostname: metaHostname,
+    serverlessUrl: serverlessUrl,
     siteName: siteName,
     languageCode: languageCode,
     themeCode: themeCode,
