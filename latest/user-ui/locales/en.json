@@ -460,7 +460,9 @@
     "logoutSuccessful": "Logout successful",
     "Billing": "Billing & Payments",
     "myFavorites": "Watch List",
-    "myInterests": "Area of Interest"
+    "myInterests": "Area of Interest",
+    "clearCache": "Clear Cache (Admin)",
+    "cacheCleared": "Cache cleared"
   },
   "liveauctionpage": {
     "myCredit": "My Bidding Limit",
@@ -800,8 +802,8 @@
     "essay": "Essay",
     "literature": "Literature",
     "catalogues": "Catalogues",
-    "catalogue": "Catalogue:",
-    "catalogueValue": "Value:",
+    "catalogue": "Catalogue",
+    "catalogueValue": "Value",
     "medium": "Medium",
     "category": "Category",
     "certificates": "Certificates",
