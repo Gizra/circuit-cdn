@@ -1,6 +1,6 @@
 
 (function() {
-    const unifiedHash = '1759ab64';
+    const unifiedHash = '8c596283';
 
     function loadScript(src, callback) {
         const script = document.createElement('script');
@@ -24,6 +24,7 @@
 
     const cdnUrl = 'https://cdn.circuitauction.com/stable/live';
     const styleUrl = `${cdnUrl}/style-${unifiedHash}.css`;
+    const versionJsUrl = `${cdnUrl}/version-${unifiedHash}.js`;
     const mainJsUrl = `${cdnUrl}/Main-${unifiedHash}.js`;
     const appJsUrl = `${cdnUrl}/app-${unifiedHash}.js`;
     const pusherJsUrl = `${cdnUrl}/pusher-${unifiedHash}.js`;
@@ -31,14 +32,18 @@
     // Load stylesheet
     loadStyle(styleUrl);
 
-    // Load scripts in order
-    loadScript(mainJsUrl, function() {
-        console.log('Main.js loaded');
-        loadScript(appJsUrl, function() {
-            console.log('app.js loaded');
-            loadScript(pusherJsUrl, function() {
-                console.log('pusher.js loaded');
-                console.log('All scripts loaded');
+    // version.js sets window.APP_VERSION; load it first so the value
+    // is on the global before app.js reads it for the Elm flag.
+    loadScript(versionJsUrl, function() {
+        console.log('version.js loaded');
+        loadScript(mainJsUrl, function() {
+            console.log('Main.js loaded');
+            loadScript(appJsUrl, function() {
+                console.log('app.js loaded');
+                loadScript(pusherJsUrl, function() {
+                    console.log('pusher.js loaded');
+                    console.log('All scripts loaded');
+                });
             });
         });
     });
