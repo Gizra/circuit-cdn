@@ -1,0 +1,32 @@
+name: Purge Cloudflare Cache
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge cdn.circuitauction.com cache
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          ZONE_ID: ${{ vars.CF_ZONE_ID }}
+        run: |
+          response=$(curl -sS -w "\n%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"hosts":["cdn.circuitauction.com"]}')
+          body=$(echo "$response" | sed '$d')
+          status=$(echo "$response" | tail -n1)
+          echo "HTTP $status"
+          echo "$body"
+          if [ "$status" != "200" ]; then
+            exit 1
+          fi
+          success=$(echo "$body" | python3 -c "import json,sys;print(json.load(sys.stdin).get('success'))")
+          if [ "$success" != "True" ]; then
+            exit 1
+          fi
