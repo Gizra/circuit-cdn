@@ -3168,6 +3168,7 @@ var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
 
+var _Gizra$circuit_bid$Currency_Model$ZAR = {ctor: 'ZAR'};
 var _Gizra$circuit_bid$Currency_Model$UAH = {ctor: 'UAH'};
 var _Gizra$circuit_bid$Currency_Model$CAD = {ctor: 'CAD'};
 var _Gizra$circuit_bid$Currency_Model$USD = {ctor: 'USD'};
@@ -13770,6 +13771,8 @@ var _Gizra$circuit_bid$Amount$getLocalFromCurrency = function (currency) {
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 		case 'CAD':
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
+		case 'UAH':
+			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 		default:
 			return _cuducos$elm_format_number$FormatNumber_Locales$usLocale;
 	}
@@ -13858,10 +13861,20 @@ var _Gizra$circuit_bid$Amount$showWithCurrency = F3(
 						_1: {ctor: '[]'}
 					}
 				};
-			default:
+			case 'UAH':
 				return {
 					ctor: '::',
 					_0: wrapper('₴'),
+					_1: {
+						ctor: '::',
+						_0: value,
+						_1: {ctor: '[]'}
+					}
+				};
+			default:
+				return {
+					ctor: '::',
+					_0: wrapper('R'),
 					_1: {
 						ctor: '::',
 						_0: value,
@@ -48371,6 +48384,8 @@ var _Gizra$circuit_bid$Currency_Decoder$decodeCurrency = A2(
 				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$CAD);
 			case 'UAH':
 				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$UAH);
+			case 'ZAR':
+				return _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Currency_Model$ZAR);
 			default:
 				return _elm_lang$core$Json_Decode$fail(
 					A2(_elm_lang$core$Basics_ops['++'], 'Could not recognise currency: ', currency));
