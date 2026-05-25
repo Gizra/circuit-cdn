@@ -460,7 +460,9 @@
     "logoutSuccessful": "Logout successful",
     "Billing": "Billing & Payments",
     "myFavorites": "Watch List",
-    "myInterests": "Area of Interest"
+    "myInterests": "Area of Interest",
+    "clearCache": "Clear Cache (Admin)",
+    "cacheCleared": "Cache cleared"
   },
   "liveauctionpage": {
     "myCredit": "My Bidding Limit",
@@ -512,6 +514,8 @@
     "accountPendingTitle": "Account Pending Approval",
     "accountPendingMessage": "Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding.",
     "bidError": "Failed to place bid",
+    "bidServerErrorTitle": "Bidding temporarily unavailable",
+    "bidServerErrorLead": "We couldn't reach the bid server. This is usually temporary — please try again in a moment.",
     "bidPlaced": "Your bid of {{amount}} was placed successfully",
     "deleteError": "Failed to delete bid",
     "bidDeleted": "Bid deleted successfully",
@@ -796,12 +800,15 @@
       "retail": "Retail"
     },
     "dimensions": "Dimensions",
+    "grade": "Grade",
+    "country": "Country",
+    "year": "Year",
     "caption": "Caption",
     "essay": "Essay",
     "literature": "Literature",
     "catalogues": "Catalogues",
-    "catalogue": "Catalogue:",
-    "catalogueValue": "Value:",
+    "catalogue": "Catalogue",
+    "catalogueValue": "Value",
     "medium": "Medium",
     "category": "Category",
     "certificates": "Certificates",
