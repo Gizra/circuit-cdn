@@ -63182,9 +63182,9 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 											ctor: '::',
 											_0: lbl(
 												A2(
-													_elm_lang$core$Basics_ops['++'],
-													'sold for ',
-													A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p25._0, sale.currency))),
+													_Gizra$circuit_bid$Translate$translateString,
+													language,
+													A2(_Gizra$circuit_bid$Translate$SoldFor, _p25._0, sale.currency))),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -63203,10 +63203,7 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 										_1: {
 											ctor: '::',
 											_0: lbl(
-												A2(
-													_Gizra$circuit_bid$Translate$translateString,
-													language,
-													A3(_Gizra$circuit_bid$Translate$ItemSoldMessage, lotId, _Gizra$circuit_bid$Amount$zero, sale.currency))),
+												A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Sold)),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -63225,7 +63222,8 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 									_0: lotSpan(lotId),
 									_1: {
 										ctor: '::',
-										_0: lbl('Unsold'),
+										_0: lbl(
+											A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Unsold)),
 										_1: {ctor: '[]'}
 									}
 								}
@@ -63243,9 +63241,9 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 								ctor: '::',
 								_0: lbl(
 									A2(
-										_elm_lang$core$Basics_ops['++'],
-										'Lot ',
-										A2(_elm_lang$core$Basics_ops['++'], lotId, ' withdrawn'))),
+										_Gizra$circuit_bid$Translate$translateString,
+										language,
+										_Gizra$circuit_bid$Translate$ItemWithdrawnMessage(lotId))),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -69393,7 +69391,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F7(
 							_elm_lang$html$Html$audio,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$src('assets/audio/ping.mp3'),
+								_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Attributes$controls(false),
@@ -78318,7 +78316,7 @@ var _Gizra$circuit_bid$Pages_AuctioneerV1_View$viewSaleInfo = F7(
 											_elm_lang$html$Html$audio,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$src('assets/audio/ping.mp3'),
+												_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$controls(false),
@@ -82289,6 +82287,14 @@ var _Gizra$circuit_bid$Pages_Room_View$imageCarousel = F3(
 				return _elm_lang$core$Maybe$Nothing;
 			}
 		}();
+		var incomingClass = function () {
+			var _p17 = prevIndex;
+			if (_p17.ctor === 'Just') {
+				return 'img-carousel-slide incoming';
+			} else {
+				return 'img-carousel-slide initial';
+			}
+		}();
 		var urlAt = function (idx) {
 			return A2(
 				_elm_lang$core$Maybe$withDefault,
@@ -82304,8 +82310,8 @@ var _Gizra$circuit_bid$Pages_Room_View$imageCarousel = F3(
 		var activeUrl = urlAt(activeIndex);
 		var preloadUrls = (_elm_lang$core$Native_Utils.cmp(total, 1) < 1) ? {ctor: '[]'} : A2(
 			_elm_lang$core$List$filter,
-			function (_p17) {
-				return !_elm_lang$core$String$isEmpty(_p17);
+			function (_p18) {
+				return !_elm_lang$core$String$isEmpty(_p18);
 			},
 			A2(
 				_elm_lang$core$List$map,
@@ -82359,13 +82365,13 @@ var _Gizra$circuit_bid$Pages_Room_View$imageCarousel = F3(
 				_1: {
 					ctor: '::',
 					_0: _mbr$elm_mouse_events$MouseEvents$onMouseEnter(
-						function (_p18) {
+						function (_p19) {
 							return _Gizra$circuit_bid$Pages_Sale_Model$SetImageCarouselPaused(true);
 						}),
 					_1: {
 						ctor: '::',
 						_0: _mbr$elm_mouse_events$MouseEvents$onMouseLeave(
-							function (_p19) {
+							function (_p20) {
 								return _Gizra$circuit_bid$Pages_Sale_Model$SetImageCarouselPaused(false);
 							}),
 						_1: {ctor: '[]'}
@@ -82448,7 +82454,7 @@ var _Gizra$circuit_bid$Pages_Room_View$imageCarousel = F3(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('img-carousel-slide incoming'),
+												_0: _elm_lang$html$Html_Attributes$class(incomingClass),
 												_1: {ctor: '[]'}
 											},
 											{
@@ -82689,13 +82695,13 @@ var _Gizra$circuit_bid$Pages_Room_View$firstLotMessage = F3(
 	});
 var _Gizra$circuit_bid$Pages_Room_View$lastLotStrip = F4(
 	function (language, sale, currentItemId, items) {
-		var _p20 = A2(_Gizra$circuit_bid$Pages_Room_View$findLastClosedBefore, currentItemId, items);
-		if (_p20.ctor === 'Just') {
-			var _p23 = _p20._0;
-			var _p21 = _krisajenkins$remotedata$RemoteData$toMaybe(_p23.calculated);
-			if (_p21.ctor === 'Just') {
-				var _p22 = _p21._0;
-				var resultHtml = _Gizra$circuit_bid$Item_Utils$isSold(_p22.status) ? A2(
+		var _p21 = A2(_Gizra$circuit_bid$Pages_Room_View$findLastClosedBefore, currentItemId, items);
+		if (_p21.ctor === 'Just') {
+			var _p24 = _p21._0;
+			var _p22 = _krisajenkins$remotedata$RemoteData$toMaybe(_p24.calculated);
+			if (_p22.ctor === 'Just') {
+				var _p23 = _p22._0;
+				var resultHtml = _Gizra$circuit_bid$Item_Utils$isSold(_p23.status) ? A2(
 					_elm_lang$html$Html$span,
 					{
 						ctor: '::',
@@ -82730,7 +82736,7 @@ var _Gizra$circuit_bid$Pages_Room_View$lastLotStrip = F4(
 									_0: A2(
 										_Gizra$circuit_bid$Amount$showAmountWithCurrency,
 										_Gizra$circuit_bid$Item_Utils$getAmountFromPrice(
-											_Gizra$circuit_bid$Item_Utils$getPrice(_p22)),
+											_Gizra$circuit_bid$Item_Utils$getPrice(_p23)),
 										sale.currency),
 									_1: {ctor: '[]'}
 								}),
@@ -82820,7 +82826,7 @@ var _Gizra$circuit_bid$Pages_Room_View$lastLotStrip = F4(
 														}),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html$text(_p23.lotId),
+														_0: _elm_lang$html$Html$text(_p24.lotId),
 														_1: {ctor: '[]'}
 													}
 												}),
@@ -82869,9 +82875,9 @@ var _Gizra$circuit_bid$Pages_Room_View$lastLotStrip = F4(
 		}
 	});
 var _Gizra$circuit_bid$Pages_Room_View$view = F8(
-	function (currentDate, parentBaseUrl, language, user, modelBackend, _p24, model, maybePublicMessages) {
-		var _p25 = _p24;
-		var _p31 = _p25._1;
+	function (currentDate, parentBaseUrl, language, user, modelBackend, _p25, model, maybePublicMessages) {
+		var _p26 = _p25;
+		var _p32 = _p26._1;
 		var sessionTitle = A2(
 			_elm_lang$core$Maybe$withDefault,
 			_Gizra$circuit_bid$Utils_Html$emptyNode,
@@ -82880,21 +82886,21 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 				function (session) {
 					return _elm_lang$html$Html$text(session.name);
 				},
-				A2(_Gizra$elm_dictlist$EveryDictList$get, _p31.session, _p31.sessions)));
+				A2(_Gizra$elm_dictlist$EveryDictList$get, _p32.session, _p32.sessions)));
 		var startingSoonHtml = A2(
 			_Gizra$circuit_bid$Pages_Room_View$startingSoon,
 			language,
-			{ctor: '_Tuple2', _0: _p25._0, _1: _p31});
+			{ctor: '_Tuple2', _0: _p26._0, _1: _p32});
 		var items = model.item.items;
-		var _p26 = _p31.status;
-		if (_p26.ctor === 'LiveAuctionOpen') {
+		var _p27 = _p32.status;
+		if (_p27.ctor === 'LiveAuctionOpen') {
 			return A3(
 				_elm_community$maybe_extra$Maybe_Extra$unwrap,
 				_Gizra$circuit_bid$Utils_Html$emptyNode,
-				function (_p27) {
-					var _p28 = _p27;
-					var _p30 = _p28._1;
-					var _p29 = _p28._0;
+				function (_p28) {
+					var _p29 = _p28;
+					var _p31 = _p29._1;
+					var _p30 = _p29._0;
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -82926,7 +82932,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 												_elm_lang$html$Html$img,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$src(_p31.siteLogoUrl),
+													_0: _elm_lang$html$Html_Attributes$src(_p32.siteLogoUrl),
 													_1: {ctor: '[]'}
 												},
 												{ctor: '[]'}),
@@ -82955,8 +82961,8 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 														_0: _elm_lang$html$Html$text(
 															A2(
 																_elm_lang$core$Basics_ops['++'],
-																_p31.siteLabel,
-																A2(_elm_lang$core$Basics_ops['++'], ' - ', _p31.label))),
+																_p32.siteLabel,
+																A2(_elm_lang$core$Basics_ops['++'], ' - ', _p32.label))),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -82991,7 +82997,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 														_elm_lang$html$Html$img,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$src(_p31.siteLogoUrl),
+															_0: _elm_lang$html$Html_Attributes$src(_p32.siteLogoUrl),
 															_1: {ctor: '[]'}
 														},
 														{ctor: '[]'}),
@@ -83021,7 +83027,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 											},
 											{
 												ctor: '::',
-												_0: A3(_Gizra$circuit_bid$Pages_Room_View$sidebar, language, _p31, _p30),
+												_0: A3(_Gizra$circuit_bid$Pages_Room_View$sidebar, language, _p32, _p31),
 												_1: {ctor: '[]'}
 											}),
 										_1: {
@@ -83035,7 +83041,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 												},
 												{
 													ctor: '::',
-													_0: A3(_Gizra$circuit_bid$Pages_Room_View$imageCarousel, model, _p29, _p30),
+													_0: A3(_Gizra$circuit_bid$Pages_Room_View$imageCarousel, model, _p30, _p31),
 													_1: {ctor: '[]'}
 												}),
 											_1: {ctor: '[]'}
@@ -83043,7 +83049,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 									}),
 								_1: {
 									ctor: '::',
-									_0: A4(_Gizra$circuit_bid$Pages_Room_View$lastLotStrip, language, _p31, _p29, items),
+									_0: A4(_Gizra$circuit_bid$Pages_Room_View$lastLotStrip, language, _p32, _p30, items),
 									_1: {ctor: '[]'}
 								}
 							}
@@ -83051,7 +83057,7 @@ var _Gizra$circuit_bid$Pages_Room_View$view = F8(
 				},
 				function (id) {
 					return A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, id, items);
-				}(_p31.item));
+				}(_p32.item));
 		} else {
 			return startingSoonHtml;
 		}
@@ -86062,6 +86068,14 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewImage = F5(
 				return _elm_lang$core$Maybe$Nothing;
 			}
 		}();
+		var incomingClass = function () {
+			var _p58 = prevIndex;
+			if (_p58.ctor === 'Just') {
+				return 'img-carousel-slide incoming';
+			} else {
+				return 'img-carousel-slide initial';
+			}
+		}();
 		var urlAt = function (idx) {
 			return A2(
 				_elm_lang$core$Maybe$withDefault,
@@ -86109,13 +86123,13 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewImage = F5(
 				_1: {
 					ctor: '::',
 					_0: _mbr$elm_mouse_events$MouseEvents$onMouseEnter(
-						function (_p58) {
+						function (_p59) {
 							return _Gizra$circuit_bid$Pages_Sale_Model$SetImageCarouselPaused(true);
 						}),
 					_1: {
 						ctor: '::',
 						_0: _mbr$elm_mouse_events$MouseEvents$onMouseLeave(
-							function (_p59) {
+							function (_p60) {
 								return _Gizra$circuit_bid$Pages_Sale_Model$SetImageCarouselPaused(false);
 							}),
 						_1: {ctor: '[]'}
@@ -86202,7 +86216,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewImage = F5(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('img-carousel-slide incoming'),
+												_0: _elm_lang$html$Html_Attributes$class(incomingClass),
 												_1: {ctor: '[]'}
 											},
 											{
@@ -86507,10 +86521,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$bidButton = F8(
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$viewCurrentPrice = F4(
 	function (language, currency, item, model) {
-		var _p60 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-		if (_p60.ctor === 'Just') {
-			var _p62 = _p60._0;
-			if (_Gizra$circuit_bid$Item_Utils$isPaused(_p62.status)) {
+		var _p61 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
+		if (_p61.ctor === 'Just') {
+			var _p63 = _p61._0;
+			if (_Gizra$circuit_bid$Item_Utils$isPaused(_p63.status)) {
 				return A2(
 					_elm_lang$html$Html$div,
 					{
@@ -86524,11 +86538,11 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewCurrentPrice = F4(
 						_1: {ctor: '[]'}
 					});
 			} else {
-				var _p61 = A2(_Gizra$circuit_bid$Pages_Sale_Utils$getPriceForBidder, _p62, model);
-				if (_p61.ctor === 'Current') {
-					return A3(_Gizra$circuit_bid$Item_View$currentPriceView, language, _p61._0, currency);
+				var _p62 = A2(_Gizra$circuit_bid$Pages_Sale_Utils$getPriceForBidder, _p63, model);
+				if (_p62.ctor === 'Current') {
+					return A3(_Gizra$circuit_bid$Item_View$currentPriceView, language, _p62._0, currency);
 				} else {
-					return A3(_Gizra$circuit_bid$Item_View$openingPriceView, language, _p61._0, currency);
+					return A3(_Gizra$circuit_bid$Item_View$openingPriceView, language, _p62._0, currency);
 				}
 			}
 		} else {
@@ -86542,18 +86556,18 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 				return function (user) {
 					return function (modelBackend) {
 						return function (model) {
-							return function (_p64) {
-								return function (_p63) {
+							return function (_p65) {
+								return function (_p64) {
 									return function (calculated) {
-										var _p65 = _p64;
-										var _p70 = _p65._1;
-										var _p66 = _p63;
-										var _p69 = _p66._0;
-										var _p68 = _p66._1;
+										var _p66 = _p65;
+										var _p71 = _p66._1;
+										var _p67 = _p64;
+										var _p70 = _p67._0;
+										var _p69 = _p67._1;
 										var popup = function () {
-											var _p67 = model.alert;
-											if (_p67.ctor === 'Just') {
-												return A3(_Gizra$circuit_bid$Alert$viewAlert, language, _p70.currency, _p67._0._1);
+											var _p68 = model.alert;
+											if (_p68.ctor === 'Just') {
+												return A3(_Gizra$circuit_bid$Alert$viewAlert, language, _p71.currency, _p68._0._1);
 											} else {
 												return _Gizra$circuit_bid$Utils_Html$emptyNode;
 											}
@@ -86614,7 +86628,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 													});
 											};
 											var activeUserButton = function () {
-												var isWinner = A4(_Gizra$circuit_bid$Item_Utils$isWinningUser, user, modelBackend, _p65._0, calculated);
+												var isWinner = A4(_Gizra$circuit_bid$Item_Utils$isWinningUser, user, modelBackend, _p66._0, calculated);
 												if (_Gizra$circuit_bid$Item_Utils$isSold(itemStatus)) {
 													var lablelTransId = isWinner ? _Gizra$circuit_bid$Translate$YouWon : _Gizra$circuit_bid$Translate$SoldFor;
 													var highestBidAmount = A2(
@@ -86626,7 +86640,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																return _.amount;
 															},
 															_Gizra$circuit_bid$Bid_Utils$getHighestLiveBid(calculated)));
-													var amountsInOtherCurrencies = A2(_Gizra$circuit_bid$Pages_Sale_View$viewAmountsInOtherCurrencies, _p70, highestBidAmount);
+													var amountsInOtherCurrencies = A2(_Gizra$circuit_bid$Pages_Sale_View$viewAmountsInOtherCurrencies, _p71, highestBidAmount);
 													return messageBlock(
 														{
 															ctor: '::',
@@ -86642,7 +86656,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																	_0: A2(
 																		_Gizra$circuit_bid$Translate$translateText,
 																		language,
-																		A2(lablelTransId, highestBidAmount, _p70.currency)),
+																		A2(lablelTransId, highestBidAmount, _p71.currency)),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {
@@ -86752,20 +86766,20 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																	return A8(
 																		_Gizra$circuit_bid$Pages_Sale_View$bidButton,
 																		language,
-																		_p70,
+																		_p71,
 																		bidAmount,
 																		isBidAmountMinimum,
 																		nextBidIncrement,
 																		_Gizra$circuit_bid$Bid_Utils$bidBeingPlaced(model.queuedRequestState),
 																		itemStatus,
-																		_p69);
+																		_p70);
 																}
 															}
 														}
 													}
 												}
 											}();
-											return _Gizra$circuit_bid$User_Utils$isAuthenticated(user) ? (_Gizra$circuit_bid$User_Utils$isActive(user) ? (_elm_lang$core$Native_Utils.eq(_p70.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen) ? activeUserButton : _Gizra$circuit_bid$Utils_Html$emptyNode) : messageBlock(
+											return _Gizra$circuit_bid$User_Utils$isAuthenticated(user) ? (_Gizra$circuit_bid$User_Utils$isActive(user) ? (_elm_lang$core$Native_Utils.eq(_p71.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen) ? activeUserButton : _Gizra$circuit_bid$Utils_Html$emptyNode) : messageBlock(
 												{
 													ctor: '::',
 													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$AccountPendingApproval),
@@ -86822,7 +86836,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																	_1: {
 																		ctor: '::',
 																		_0: _elm_lang$html$Html_Events$onSubmit(
-																			_Gizra$circuit_bid$Login_Model$TryLogin(_p70.siteShortName)),
+																			_Gizra$circuit_bid$Login_Model$TryLogin(_p71.siteShortName)),
 																		_1: {
 																			ctor: '::',
 																			_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
@@ -86970,10 +86984,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 												},
 												{
 													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Pages_Sale_View$itemViewOverlay, language, _p70),
+													_0: A2(_Gizra$circuit_bid$Pages_Sale_View$itemViewOverlay, language, _p71),
 													_1: {
 														ctor: '::',
-														_0: A2(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeaderTop, language, _p68),
+														_0: A2(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeaderTop, language, _p69),
 														_1: {
 															ctor: '::',
 															_0: A2(
@@ -86994,15 +87008,15 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																		},
 																		{
 																			ctor: '::',
-																			_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeader, language, _p70.currency, _p68, model),
+																			_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeader, language, _p71.currency, _p69, model),
 																			_1: {
 																				ctor: '::',
-																				_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p70, calculated),
+																				_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p71, calculated),
 																				_1: {
 																					ctor: '::',
 																					_0: A2(
 																						_Gizra$circuit_bid$Utils_Html$showIf,
-																						!_Gizra$circuit_bid$Pages_Sale_View$salePaused(_p70),
+																						!_Gizra$circuit_bid$Pages_Sale_View$salePaused(_p71),
 																						A2(
 																							_elm_lang$html$Html$div,
 																							{
@@ -87012,7 +87026,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																							},
 																							{
 																								ctor: '::',
-																								_0: A3(_Gizra$circuit_bid$Pages_Sale_View$bidderPriceBlock, language, _p70, calculated),
+																								_0: A3(_Gizra$circuit_bid$Pages_Sale_View$bidderPriceBlock, language, _p71, calculated),
 																								_1: {
 																									ctor: '::',
 																									_0: A2(
@@ -87060,7 +87074,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																			},
 																			{
 																				ctor: '::',
-																				_0: A5(_Gizra$circuit_bid$Pages_Sale_View$viewImage, language, user, model, _p69, _p68),
+																				_0: A5(_Gizra$circuit_bid$Pages_Sale_View$viewImage, language, user, model, _p70, _p69),
 																				_1: {
 																					ctor: '::',
 																					_0: A2(
@@ -87098,33 +87112,33 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 	};
 };
 var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
-	function (language, user, _p71, modelBackend) {
-		var _p72 = _p71;
-		var _p79 = _p72._0;
-		var _p78 = _p72._1;
+	function (language, user, _p72, modelBackend) {
+		var _p73 = _p72;
+		var _p80 = _p73._0;
+		var _p79 = _p73._1;
 		return _Gizra$circuit_bid$User_Utils$isActive(user) ? A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			_Gizra$circuit_bid$Utils_Html$emptyNode,
 			function (bidderInfo) {
-				var _p73 = bidderInfo.totalSpent;
-				var spent = _p73._0;
+				var _p74 = bidderInfo.totalSpent;
+				var spent = _p74._0;
 				var maybeLiveCreditAndCritical = function () {
-					var _p74 = A2(_eeue56$elm_all_dict$EveryDict$get, _Gizra$circuit_bid$Backend_BidderInfo_Model$LiveCredit, bidderInfo.amountRestrictions);
-					if ((_p74.ctor === 'Just') && (_p74._0.ctor === 'Regular')) {
-						var _p75 = _p74._0._0._0;
-						return ((_elm_lang$core$Native_Utils.cmp(_p75, 0) > 0) && (_elm_lang$core$Native_Utils.cmp(5 * spent, 4 * _p75) > 0)) ? _elm_lang$core$Maybe$Just(
+					var _p75 = A2(_eeue56$elm_all_dict$EveryDict$get, _Gizra$circuit_bid$Backend_BidderInfo_Model$LiveCredit, bidderInfo.amountRestrictions);
+					if ((_p75.ctor === 'Just') && (_p75._0.ctor === 'Regular')) {
+						var _p76 = _p75._0._0._0;
+						return ((_elm_lang$core$Native_Utils.cmp(_p76, 0) > 0) && (_elm_lang$core$Native_Utils.cmp(5 * spent, 4 * _p76) > 0)) ? _elm_lang$core$Maybe$Just(
 							{
 								ctor: '_Tuple2',
-								_0: _p75,
-								_1: _elm_lang$core$Native_Utils.cmp(20 * spent, 19 * _p75) > 0
+								_0: _p76,
+								_1: _elm_lang$core$Native_Utils.cmp(20 * spent, 19 * _p76) > 0
 							}) : _elm_lang$core$Maybe$Nothing;
 					} else {
 						return _elm_lang$core$Maybe$Nothing;
 					}
 				}();
-				var _p76 = maybeLiveCreditAndCritical;
-				if (_p76.ctor === 'Just') {
-					var _p77 = _p76._0._1;
+				var _p77 = maybeLiveCreditAndCritical;
+				if (_p77.ctor === 'Just') {
+					var _p78 = _p77._0._1;
 					var statsChip = A2(
 						_elm_lang$html$Html$div,
 						{
@@ -87137,7 +87151,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
 							A2(
 								_Gizra$circuit_bid$Translate$translateHtml,
 								language,
-								A2(_Gizra$circuit_bid$Translate$BiddingLimitSpent, bidderInfo.totalSpent, _p78.currency)),
+								A2(_Gizra$circuit_bid$Translate$BiddingLimitSpent, bidderInfo.totalSpent, _p79.currency)),
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								{
@@ -87162,9 +87176,9 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
 									A2(
 										_Gizra$circuit_bid$Translate$BiddingLimitLeft,
 										_Gizra$circuit_bid$Amount$Amount(
-											A2(_elm_lang$core$Basics$max, 0, _p76._0._0 - spent)),
-										_p78.currency)))));
-					var heading = _p77 ? _Gizra$circuit_bid$Translate$CriticalBiddingLimitMessage : _Gizra$circuit_bid$Translate$LowBiddingLimitMessage;
+											A2(_elm_lang$core$Basics$max, 0, _p77._0._0 - spent)),
+										_p79.currency)))));
+					var heading = _p78 ? _Gizra$circuit_bid$Translate$CriticalBiddingLimitMessage : _Gizra$circuit_bid$Translate$LowBiddingLimitMessage;
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -87175,7 +87189,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
 									_0: {ctor: '_Tuple2', _0: 'low-credit', _1: true},
 									_1: {
 										ctor: '::',
-										_0: {ctor: '_Tuple2', _0: 'is-critical', _1: _p77},
+										_0: {ctor: '_Tuple2', _0: 'is-critical', _1: _p78},
 										_1: {ctor: '[]'}
 									}
 								}),
@@ -87189,10 +87203,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
 								_0: statsChip,
 								_1: {
 									ctor: '::',
-									_0: A5(_Gizra$circuit_bid$Pages_Sale_View$creditRequestForm, language, user, modelBackend, _p79, _p78.currency),
+									_0: A5(_Gizra$circuit_bid$Pages_Sale_View$creditRequestForm, language, user, modelBackend, _p80, _p79.currency),
 									_1: {
 										ctor: '::',
-										_0: A4(_Gizra$circuit_bid$Pages_Sale_View$pendingCreditRequestInfo, language, user, modelBackend, _p78.currency),
+										_0: A4(_Gizra$circuit_bid$Pages_Sale_View$pendingCreditRequestInfo, language, user, modelBackend, _p79.currency),
 										_1: {ctor: '[]'}
 									}
 								}
@@ -87201,7 +87215,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock = F4(
 					return _Gizra$circuit_bid$Utils_Html$emptyNode;
 				}
 			},
-			A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p79)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
+			A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p80)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$softBanner = function (title) {
 	return A2(
@@ -87266,10 +87280,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$softBanner = function (title) {
 		});
 };
 var _Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock = F6(
-	function (softBidderLimit, nextBidAmount, language, user, _p80, modelBackend) {
-		var _p81 = _p80;
-		var _p84 = _p81._0;
-		var _p83 = _p81._1;
+	function (softBidderLimit, nextBidAmount, language, user, _p81, modelBackend) {
+		var _p82 = _p81;
+		var _p85 = _p82._0;
+		var _p84 = _p82._1;
 		return _Gizra$circuit_bid$User_Utils$isActive(user) ? A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			_Gizra$circuit_bid$Utils_Html$emptyNode,
@@ -87289,11 +87303,11 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock = F6(
 						_Gizra$circuit_bid$Amount$add(bidderInfo.totalSpent),
 						nextBidAmount));
 				var overMaxBid = function () {
-					var _p82 = A2(_eeue56$elm_all_dict$EveryDict$get, _Gizra$circuit_bid$Backend_BidderInfo_Model$MaxBid, bidderInfo.amountRestrictions);
-					_v41_2:
+					var _p83 = A2(_eeue56$elm_all_dict$EveryDict$get, _Gizra$circuit_bid$Backend_BidderInfo_Model$MaxBid, bidderInfo.amountRestrictions);
+					_v42_2:
 					do {
-						if (_p82.ctor === 'Just') {
-							switch (_p82._0.ctor) {
+						if (_p83.ctor === 'Just') {
+							switch (_p83._0.ctor) {
 								case 'None':
 									return true;
 								case 'Regular':
@@ -87304,12 +87318,12 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock = F6(
 											function (x, y) {
 												return _elm_lang$core$Native_Utils.cmp(x, y) > -1;
 											}),
-										_p82._0._0);
+										_p83._0._0);
 								default:
-									break _v41_2;
+									break _v42_2;
 							}
 						} else {
-							break _v41_2;
+							break _v42_2;
 						}
 					} while(false);
 					return false;
@@ -87326,20 +87340,20 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock = F6(
 						A2(_Gizra$circuit_bid$Translate$translateHtml, language, _Gizra$circuit_bid$Translate$NoBiddingLimitMessage),
 						{
 							ctor: '::',
-							_0: A5(_Gizra$circuit_bid$Pages_Sale_View$creditRequestForm, language, user, modelBackend, _p84, _p83.currency),
+							_0: A5(_Gizra$circuit_bid$Pages_Sale_View$creditRequestForm, language, user, modelBackend, _p85, _p84.currency),
 							_1: {
 								ctor: '::',
-								_0: A4(_Gizra$circuit_bid$Pages_Sale_View$pendingCreditRequestInfo, language, user, modelBackend, _p83.currency),
+								_0: A4(_Gizra$circuit_bid$Pages_Sale_View$pendingCreditRequestInfo, language, user, modelBackend, _p84.currency),
 								_1: {ctor: '[]'}
 							}
 						})) : ((softBidderLimit && overMaxBid) ? _Gizra$circuit_bid$Pages_Sale_View$softBanner('You\'re at or over your bidder max') : _Gizra$circuit_bid$Utils_Html$emptyNode);
 			},
-			A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p84)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
+			A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p85)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$sidebar = F6(
-	function (language, user, modelBackend, _p85, itemsDict, maybeMessages) {
-		var _p86 = _p85;
-		var _p87 = _p86._1;
+	function (language, user, modelBackend, _p86, itemsDict, maybeMessages) {
+		var _p87 = _p86;
+		var _p88 = _p87._1;
 		var videoFrame = function (streamname) {
 			return A3(
 				_elm_lang$html$Html$node,
@@ -87351,7 +87365,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$sidebar = F6(
 				},
 				{ctor: '[]'});
 		};
-		var maybeVideoFrame = A2(_Gizra$circuit_bid$Utils_Html$showMaybe, videoFrame, _p87.videoStream);
+		var maybeVideoFrame = A2(_Gizra$circuit_bid$Utils_Html$showMaybe, videoFrame, _p88.videoStream);
 		var currentIndex = A2(
 			_elm_lang$core$Maybe$withDefault,
 			0,
@@ -87361,7 +87375,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$sidebar = F6(
 					function (x, y) {
 						return x + y;
 					})(1),
-				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p87.item, itemsDict)));
+				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p88.item, itemsDict)));
 		var numberOfItems = _Gizra$elm_dictlist$EveryDictList$size(itemsDict);
 		var progressPct = _elm_lang$core$Native_Utils.eq(numberOfItems, 0) ? 0 : ((_elm_lang$core$Basics$toFloat(currentIndex) / _elm_lang$core$Basics$toFloat(numberOfItems)) * 100);
 		var progressBar = A2(
@@ -87493,7 +87507,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$sidebar = F6(
 								language,
 								user,
 								modelBackend,
-								{ctor: '_Tuple2', _0: _p86._0, _1: _p87},
+								{ctor: '_Tuple2', _0: _p87._0, _1: _p88},
 								itemsDict),
 							maybeMessages),
 						_1: {ctor: '[]'}
@@ -87503,10 +87517,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$sidebar = F6(
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning = F2(
 	function (language, maybeBrowserInfo) {
-		var _p88 = maybeBrowserInfo;
-		if (_p88.ctor === 'Just') {
-			var _p89 = _p88._0;
-			return _p89.isOld ? A2(
+		var _p89 = maybeBrowserInfo;
+		if (_p89.ctor === 'Just') {
+			var _p90 = _p89._0;
+			return _p90.isOld ? A2(
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
@@ -87537,7 +87551,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning = F2(
 								_0: A2(
 									_Gizra$circuit_bid$Translate$translateText,
 									language,
-									A2(_Gizra$circuit_bid$Translate$BrowserOutdatedWarning, _p89.name, _p89.version)),
+									A2(_Gizra$circuit_bid$Translate$BrowserOutdatedWarning, _p90.name, _p90.version)),
 								_1: {ctor: '[]'}
 							}
 						}),
@@ -87548,23 +87562,23 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning = F2(
 		}
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
-	function (currentDate, parentBaseUrl, config, language, user, modelBackend, _p90, model, maybePublicMessages) {
-		var _p91 = _p90;
-		var _p94 = _p91._0;
-		var _p93 = _p91._1;
+	function (currentDate, parentBaseUrl, config, language, user, modelBackend, _p91, model, maybePublicMessages) {
+		var _p92 = _p91;
+		var _p95 = _p92._0;
+		var _p94 = _p92._1;
 		var items = model.item.items;
 		var currentCalculated = A2(
 			_elm_lang$core$Maybe$andThen,
-			function (_p92) {
+			function (_p93) {
 				return _krisajenkins$remotedata$RemoteData$toMaybe(
 					function (_) {
 						return _.calculated;
-					}(_p92));
+					}(_p93));
 			},
 			A2(
 				_elm_lang$core$Maybe$map,
 				_elm_lang$core$Tuple$second,
-				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p93.item, items)));
+				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p94.item, items)));
 		var nextBidAmount = A2(
 			_elm_lang$core$Maybe$map,
 			function (calculated) {
@@ -87607,8 +87621,8 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 					user,
 					modelBackend,
 					model,
-					{ctor: '_Tuple2', _0: _p94, _1: _p93}),
-				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p93.item, items),
+					{ctor: '_Tuple2', _0: _p95, _1: _p94}),
+				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p94.item, items),
 				currentCalculated));
 		var softBidderLimit = config.siteConfig.softBidderLimit;
 		return A2(
@@ -87654,7 +87668,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 										nextBidAmount,
 										language,
 										user,
-										{ctor: '_Tuple2', _0: _p94, _1: _p93},
+										{ctor: '_Tuple2', _0: _p95, _1: _p94},
 										modelBackend),
 									_1: {
 										ctor: '::',
@@ -87662,7 +87676,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 											_Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock,
 											language,
 											user,
-											{ctor: '_Tuple2', _0: _p94, _1: _p93},
+											{ctor: '_Tuple2', _0: _p95, _1: _p94},
 											modelBackend),
 										_1: {
 											ctor: '::',
@@ -87683,14 +87697,14 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 															language,
 															user,
 															modelBackend,
-															{ctor: '_Tuple2', _0: _p94, _1: _p93},
+															{ctor: '_Tuple2', _0: _p95, _1: _p94},
 															items,
 															maybePublicMessages),
 														_1: {ctor: '[]'}
 													})),
 											_1: {
 												ctor: '::',
-												_0: A4(_Gizra$circuit_bid$Pages_Sale_View$carousel, language, model, _p93, items),
+												_0: A4(_Gizra$circuit_bid$Pages_Sale_View$carousel, language, model, _p94, items),
 												_1: {
 													ctor: '::',
 													_0: A2(
@@ -87705,13 +87719,13 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 															_0: A2(
 																_Gizra$circuit_bid$Utils_Html$showIf,
 																_Gizra$circuit_bid$User_Utils$isAuthenticated(user),
-																A6(_Gizra$circuit_bid$Pages_Sale_View$bidHistory, language, _p93.currency, user, modelBackend, _p94, items)),
+																A6(_Gizra$circuit_bid$Pages_Sale_View$bidHistory, language, _p94.currency, user, modelBackend, _p95, items)),
 															_1: {
 																ctor: '::',
 																_0: A4(
 																	_Gizra$circuit_bid$Pages_Sale_View$myCredit,
 																	language,
-																	{ctor: '_Tuple2', _0: _p94, _1: _p93},
+																	{ctor: '_Tuple2', _0: _p95, _1: _p94},
 																	user,
 																	modelBackend),
 																_1: {ctor: '[]'}
@@ -87741,7 +87755,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 																			},
 																			{ctor: '[]'});
 																	},
-																	_p93.videoStream),
+																	_p94.videoStream),
 																_1: {ctor: '[]'}
 															}),
 														_1: {ctor: '[]'}
@@ -87781,8 +87795,8 @@ var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
 	});
 var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
 	function (currentDate, parentBaseUrl, config, language, user, modelBackend, saleUuid, isSalePage, model) {
-		var _p95 = model.sale;
-		switch (_p95.ctor) {
+		var _p96 = model.sale;
+		switch (_p96.ctor) {
 			case 'NotAsked':
 				return A2(
 					_elm_lang$html$Html$div,
@@ -87820,7 +87834,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p95._0),
+						_0: A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p96._0),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -87844,10 +87858,10 @@ var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
 						}
 					});
 			default:
-				var _p96 = _p95._0;
+				var _p97 = _p96._0;
 				return A2(
 					_Gizra$circuit_bid$Utils_Html$showIf,
-					A2(_elm_lang$core$List$member, language, _p96.languages),
+					A2(_elm_lang$core$List$member, language, _p97.languages),
 					isSalePage ? A9(
 						_Gizra$circuit_bid$Pages_Sale_View$saleView,
 						currentDate,
@@ -87856,7 +87870,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
 						language,
 						user,
 						modelBackend,
-						{ctor: '_Tuple2', _0: saleUuid, _1: _p96},
+						{ctor: '_Tuple2', _0: saleUuid, _1: _p97},
 						model,
 						_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)) : A8(
 						_Gizra$circuit_bid$Pages_Room_View$view,
@@ -87865,7 +87879,7 @@ var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
 						language,
 						user,
 						modelBackend,
-						{ctor: '_Tuple2', _0: saleUuid, _1: _p96},
+						{ctor: '_Tuple2', _0: saleUuid, _1: _p97},
 						model,
 						_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)));
 		}
