@@ -63182,9 +63182,9 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 											ctor: '::',
 											_0: lbl(
 												A2(
-													_elm_lang$core$Basics_ops['++'],
-													'sold for ',
-													A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p25._0, sale.currency))),
+													_Gizra$circuit_bid$Translate$translateString,
+													language,
+													A2(_Gizra$circuit_bid$Translate$SoldFor, _p25._0, sale.currency))),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -63203,10 +63203,7 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 										_1: {
 											ctor: '::',
 											_0: lbl(
-												A2(
-													_Gizra$circuit_bid$Translate$translateString,
-													language,
-													A3(_Gizra$circuit_bid$Translate$ItemSoldMessage, lotId, _Gizra$circuit_bid$Amount$zero, sale.currency))),
+												A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Sold)),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -63225,7 +63222,8 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 									_0: lotSpan(lotId),
 									_1: {
 										ctor: '::',
-										_0: lbl('Unsold'),
+										_0: lbl(
+											A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Unsold)),
 										_1: {ctor: '[]'}
 									}
 								}
@@ -63243,9 +63241,9 @@ var _Gizra$circuit_bid$Message_View$itemStatusRow = F5(
 								ctor: '::',
 								_0: lbl(
 									A2(
-										_elm_lang$core$Basics_ops['++'],
-										'Lot ',
-										A2(_elm_lang$core$Basics_ops['++'], lotId, ' withdrawn'))),
+										_Gizra$circuit_bid$Translate$translateString,
+										language,
+										_Gizra$circuit_bid$Translate$ItemWithdrawnMessage(lotId))),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -69393,7 +69391,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F7(
 							_elm_lang$html$Html$audio,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$src('assets/audio/ping.mp3'),
+								_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Attributes$controls(false),
@@ -78318,7 +78316,7 @@ var _Gizra$circuit_bid$Pages_AuctioneerV1_View$viewSaleInfo = F7(
 											_elm_lang$html$Html$audio,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$src('assets/audio/ping.mp3'),
+												_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$controls(false),
