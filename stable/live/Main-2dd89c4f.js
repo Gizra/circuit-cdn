@@ -48813,10 +48813,12 @@ var _Gizra$circuit_bid$Item_Decoder$decodeStatus = A2(
 		}
 	},
 	A2(_elm_lang$core$Json_Decode$field, 'availability_status', _elm_lang$core$Json_Decode$string));
-var _Gizra$circuit_bid$Item_Decoder$decodeImageStyle = A3(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+var _Gizra$circuit_bid$Item_Decoder$defaultItemImage = 'https://s3.eu-central-1.amazonaws.com/circuit-bid/default-image.png';
+var _Gizra$circuit_bid$Item_Decoder$decodeImageStyle = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
 	'imageSmall',
 	_elm_lang$core$Json_Decode$string,
+	_Gizra$circuit_bid$Item_Decoder$defaultItemImage,
 	A2(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
 		_elm_lang$core$Json_Decode$oneOf(
@@ -48826,13 +48828,18 @@ var _Gizra$circuit_bid$Item_Decoder$decodeImageStyle = A3(
 				_1: {
 					ctor: '::',
 					_0: A2(_elm_lang$core$Json_Decode$field, 'image', _elm_lang$core$Json_Decode$string),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Json_Decode$succeed(_Gizra$circuit_bid$Item_Decoder$defaultItemImage),
+						_1: {ctor: '[]'}
+					}
 				}
 			}),
-		A3(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		A4(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
 			'image',
 			_elm_lang$core$Json_Decode$string,
+			_Gizra$circuit_bid$Item_Decoder$defaultItemImage,
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Item_Model$ImageStyle))));
 var _Gizra$circuit_bid$Item_Decoder$decodeReserveBid = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
