@@ -1,6 +1,6 @@
 
 (function() {
-    const unifiedHash = '94d7ed84';
+    const unifiedHash = '8f259ea9';
 
     function loadScript(src, callback) {
         const script = document.createElement('script');
@@ -29,8 +29,9 @@
     const appJsUrl = `${cdnUrl}/app-${unifiedHash}.js`;
     const pusherJsUrl = `${cdnUrl}/pusher-${unifiedHash}.js`;
     const nanoPlayerJsUrl = `${cdnUrl}/nano-player-${unifiedHash}.js`;
-    // External — the nanocosmos demo SDK that nano-player.js wraps.
-    const nanoSdkUrl = 'https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js';
+    // The nanocosmos SDK is loaded statically from index-cdn.html (in
+    // <head>) so window.NanoPlayer is already defined by the time this
+    // loader fetches the nano-player.js wrapper.
 
     // Load stylesheet
     loadStyle(styleUrl);
@@ -42,20 +43,18 @@
             console.log('version.js loaded');
             loadScript(mainJsUrl, function() {
                 console.log('Main.js loaded');
-                // Define the <nano-player> custom element BEFORE app.js
-                // boots Elm — once Elm renders any <nano-player> nodes,
-                // they need the element to be registered or they won't
-                // upgrade. Load the nanocosmos SDK first, then our wrapper.
-                loadScript(nanoSdkUrl, function() {
-                    console.log('nanoplayer SDK loaded');
-                    loadScript(nanoPlayerJsUrl, function() {
-                        console.log('nano-player.js loaded');
-                        loadScript(appJsUrl, function() {
-                            console.log('app.js loaded');
-                            loadScript(pusherJsUrl, function() {
-                                console.log('pusher.js loaded');
-                                console.log('All scripts loaded');
-                            });
+                // Register the <nano-player> custom element BEFORE app.js
+                // boots Elm — once Elm renders any <nano-player> nodes
+                // they need the element to be defined or they won't
+                // upgrade. The nanocosmos SDK is already on window from
+                // the static <script> in <head>.
+                loadScript(nanoPlayerJsUrl, function() {
+                    console.log('nano-player.js loaded');
+                    loadScript(appJsUrl, function() {
+                        console.log('app.js loaded');
+                        loadScript(pusherJsUrl, function() {
+                            console.log('pusher.js loaded');
+                            console.log('All scripts loaded');
                         });
                     });
                 });
