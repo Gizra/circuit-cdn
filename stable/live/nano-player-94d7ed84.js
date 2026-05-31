@@ -160,7 +160,25 @@
     }
   }
 
-  if (!customElements.get('nano-player')) {
-    customElements.define('nano-player', NanoPlayerElement);
+  // Defining the custom element only after the document is parsed avoids
+  // a race seen via the CDN app-loader: under slow network, app.js (which
+  // boots Elm and renders <nano-player>) can finish before the parser has
+  // settled, and the element slips through Elm's DOM patcher without ever
+  // triggering an upgrade. Wait for DOMContentLoaded, then define +
+  // explicitly upgrade anything already in the tree as a belt-and-braces
+  // catch for elements Elm inserted while we were waiting.
+  function registerNanoPlayer() {
+    if (!customElements.get('nano-player')) {
+      customElements.define('nano-player', NanoPlayerElement);
+    }
+    if (typeof customElements.upgrade === 'function' && document.body) {
+      customElements.upgrade(document.body);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', registerNanoPlayer);
+  } else {
+    registerNanoPlayer();
   }
 })();

@@ -1,6 +1,6 @@
 
 (function() {
-    const unifiedHash = '7dc6dc2f';
+    const unifiedHash = '94d7ed84';
 
     function loadScript(src, callback) {
         const script = document.createElement('script');
@@ -28,24 +28,49 @@
     const mainJsUrl = `${cdnUrl}/Main-${unifiedHash}.js`;
     const appJsUrl = `${cdnUrl}/app-${unifiedHash}.js`;
     const pusherJsUrl = `${cdnUrl}/pusher-${unifiedHash}.js`;
+    const nanoPlayerJsUrl = `${cdnUrl}/nano-player-${unifiedHash}.js`;
+    // External — the nanocosmos demo SDK that nano-player.js wraps.
+    const nanoSdkUrl = 'https://demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.5.min.js';
 
     // Load stylesheet
     loadStyle(styleUrl);
 
-    // version.js sets window.APP_VERSION; load it first so the value
-    // is on the global before app.js reads it for the Elm flag.
-    loadScript(versionJsUrl, function() {
-        console.log('version.js loaded');
-        loadScript(mainJsUrl, function() {
-            console.log('Main.js loaded');
-            loadScript(appJsUrl, function() {
-                console.log('app.js loaded');
-                loadScript(pusherJsUrl, function() {
-                    console.log('pusher.js loaded');
-                    console.log('All scripts loaded');
+    function bootApp() {
+        // version.js sets window.APP_VERSION; load it first so the value
+        // is on the global before app.js reads it for the Elm flag.
+        loadScript(versionJsUrl, function() {
+            console.log('version.js loaded');
+            loadScript(mainJsUrl, function() {
+                console.log('Main.js loaded');
+                // Define the <nano-player> custom element BEFORE app.js
+                // boots Elm — once Elm renders any <nano-player> nodes,
+                // they need the element to be registered or they won't
+                // upgrade. Load the nanocosmos SDK first, then our wrapper.
+                loadScript(nanoSdkUrl, function() {
+                    console.log('nanoplayer SDK loaded');
+                    loadScript(nanoPlayerJsUrl, function() {
+                        console.log('nano-player.js loaded');
+                        loadScript(appJsUrl, function() {
+                            console.log('app.js loaded');
+                            loadScript(pusherJsUrl, function() {
+                                console.log('pusher.js loaded');
+                                console.log('All scripts loaded');
+                            });
+                        });
+                    });
                 });
             });
         });
-    });
+    }
+
+    // Don't start the script chain until the parser has settled. The
+    // chain ends with app.js, which boots Elm — without this gate, under
+    // slow networks Elm can render <nano-player> against an unsettled
+    // DOM and the custom-element upgrade gets skipped.
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootApp);
+    } else {
+        bootApp();
+    }
 })();
   
