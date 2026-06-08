@@ -55,9 +55,29 @@
       "cheque": "Cheque",
       "credit_card": "Credit Card",
       "paypal": "PayPal"
+    },
+    "shipment": "Shipment",
+    "viewShipment": "View Shipment",
+    "hideShipment": "Hide Shipment",
+    "shipmentDetails": "Shipment Details",
+    "trackingNumber": "Tracking Number",
+    "trackPackage": "Track Package",
+    "carrier": "Carrier",
+    "service": "Service",
+    "weight": "Weight",
+    "shippedOn": "Shipped on",
+    "estimatedDelivery": "Estimated Delivery",
+    "deliveredOn": "Delivered on",
+    "shipmentCount": "{{count}} shipments",
+    "noShipmentInfo": "No shipment information available.",
+    "notShipped": "Not shipped yet",
+    "deliveryStatus": {
+      "sent_via_post_mail": "Out of the door",
+      "received": "Received"
     }
   },
   "payment": {
+    "default": "Default",
     "selectCard": "Select Payment Method",
     "editCard": "Edit Card",
     "updateCard": "Update Card",
@@ -111,6 +131,7 @@
     "goToPaymentMethods": "Go to Payment Methods"
   },
   "transactions": {
+    "error": "Error",
     "authorizenetTitle": "Authorize.net",
     "creditCardLabel": "Credit Card",
     "selectCreditCard": "-- Select Credit Card --",

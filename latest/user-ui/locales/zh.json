@@ -126,7 +126,10 @@
     },
     "billingInstructions": "账单说明",
     "enterBillingInstructions": "请在此输入任何特殊的账单说明",
-    "professionalReferencesInstructions": "您可以列出您曾参加过拍卖的多个拍卖行或公司。这有助于我们验证您的身份并确保顺畅的竞拍体验。"
+    "professionalReferencesInstructions": "您可以列出您曾参加过拍卖的多个拍卖行或公司。这有助于我们验证您的身份并确保顺畅的竞拍体验。",
+    "optInCommunicationsHelp": "[NEEDS_TRANSLATION]By opting in, you will receive sale announcements, online catalog link & PDF, and promotional updates. You will always receive essential transactional emails such as invoices, bid confirmations, and consignment statements regardless of this setting. For special arrangements, please contact our office.",
+    "receivePrintedMaterials": "[NEEDS_TRANSLATION]I would like to receive printed materials",
+    "receivePrintedMaterialsHelp": "[NEEDS_TRANSLATION]By opting in, you will receive our printed catalog and other printed materials from us by mail."
   },
   "addressForm": {
     "firstName": "名字",
@@ -295,7 +298,9 @@
     "logoutSuccessful": "退出成功",
     "myFavorites": "Favorites",
     "myInterests": "Area of Interest",
-    "Billing": "账单与付款"
+    "Billing": "账单与付款",
+    "clearCache": "[NEEDS_TRANSLATION]Clear Cache (Admin)",
+    "cacheCleared": "[NEEDS_TRANSLATION]Cache cleared"
   },
   "userInterests": {
     "title": "My Interests",
@@ -383,7 +388,8 @@
     "removeSuccess": "Lot has been removed from your favorites",
     "errorAdding": "Error adding to favorites",
     "errorRemoving": "Error removing from favorites",
-    "loginRequired": "Please login to add items to favorites"
+    "loginRequired": "Please login to add items to favorites",
+    "provenance": "[NEEDS_TRANSLATION]Provenance"
   },
   "filters": {
     "saleLabel": "Sale",
@@ -482,7 +488,14 @@
       "physicalMagazines": "4本纸质杂志邮寄给您",
       "domesticShipping": "包含国内运输",
       "internationalShipping": "包含国际运输"
-    }
+    },
+    "confirmPurchase": "[NEEDS_TRANSLATION]Confirm Purchase",
+    "confirmMessage": "[NEEDS_TRANSLATION]Are you sure you want to purchase this subscription plan?",
+    "cancel": "[NEEDS_TRANSLATION]Cancel",
+    "approve": "[NEEDS_TRANSLATION]Approve & Continue",
+    "error": "[NEEDS_TRANSLATION]Error",
+    "networkError": "[NEEDS_TRANSLATION]Network error. Please try again.",
+    "cannotAccessSiteSettings": "[NEEDS_TRANSLATION]Cannot access site settings. Please try again later."
   },
   "billing": {
     "amountDue": "应付金额",
@@ -540,7 +553,26 @@
       "credit_card": "信用卡",
       "paypal": "PayPal"
     },
-    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment."
+    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment.",
+    "shipment": "[NEEDS_TRANSLATION]Shipment",
+    "viewShipment": "[NEEDS_TRANSLATION]View Shipment",
+    "hideShipment": "[NEEDS_TRANSLATION]Hide Shipment",
+    "shipmentDetails": "[NEEDS_TRANSLATION]Shipment Details",
+    "trackingNumber": "[NEEDS_TRANSLATION]Tracking Number",
+    "trackPackage": "[NEEDS_TRANSLATION]Track Package",
+    "carrier": "[NEEDS_TRANSLATION]Carrier",
+    "service": "[NEEDS_TRANSLATION]Service",
+    "weight": "[NEEDS_TRANSLATION]Weight",
+    "shippedOn": "[NEEDS_TRANSLATION]Shipped on",
+    "estimatedDelivery": "[NEEDS_TRANSLATION]Estimated Delivery",
+    "deliveredOn": "[NEEDS_TRANSLATION]Delivered on",
+    "shipmentCount": "[NEEDS_TRANSLATION]{{count}} shipments",
+    "noShipmentInfo": "[NEEDS_TRANSLATION]No shipment information available.",
+    "deliveryStatus": {
+      "sent_via_post_mail": "[NEEDS_TRANSLATION]Out of the door",
+      "received": "[NEEDS_TRANSLATION]Received"
+    },
+    "notShipped": "[NEEDS_TRANSLATION]Not shipped yet"
   },
   "payment": {
     "selectCard": "选择付款方式",
@@ -593,7 +625,8 @@
     "noSavedCards": "无已保存的付款方式。请先添加付款方式。",
     "noCards": "未找到已保存的付款方式。",
     "addFirstCard": "添加您的第一个付款方式以开始。",
-    "goToPaymentMethods": "前往付款方式"
+    "goToPaymentMethods": "前往付款方式",
+    "default": "[NEEDS_TRANSLATION]Default"
   },
   "transactions": {
     "authorizenetTitle": "Authorize.net",
@@ -622,7 +655,8 @@
     "errorInsufficientFundsHelp": "请尝试其他付款方式或联系您的银行。",
     "errorCardExpiredHelp": "请使用有效的信用卡。",
     "errorInvalidCardHelp": "请检查卡片信息后重试。",
-    "errorTransactionLimitHelp": "联系您的银行以授权此交易。"
+    "errorTransactionLimitHelp": "联系您的银行以授权此交易。",
+    "error": "[NEEDS_TRANSLATION]Error"
   },
   "balance": {
     "loading": "获取账户余额中...",
@@ -745,7 +779,19 @@
     "confirmCancelBuyNow": "您确定要取消此购买吗？",
     "yesCancel": "是的，取消",
     "creditExceededMessage": "您的出价超出了您的可用信用额度。请访问",
-    "viewMyBids": "我的出价与信用额度"
+    "viewMyBids": "我的出价与信用额度",
+    "accountPendingTitle": "[NEEDS_TRANSLATION]Account Pending Approval",
+    "accountPendingMessage": "[NEEDS_TRANSLATION]Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding.",
+    "bidServerErrorTitle": "[NEEDS_TRANSLATION]Bidding temporarily unavailable",
+    "bidServerErrorLead": "[NEEDS_TRANSLATION]We couldn't reach the bid server. This is usually temporary — please try again in a moment.",
+    "termsApprovalTitle": "[NEEDS_TRANSLATION]Terms of Sale Approval Required",
+    "termsApprovalMessage": "[NEEDS_TRANSLATION]To participate in sale {{saleTitle}} you must approve the",
+    "termsOfSale": "[NEEDS_TRANSLATION]terms of sale",
+    "approve": "[NEEDS_TRANSLATION]Approve",
+    "reject": "[NEEDS_TRANSLATION]Reject",
+    "termsApprovalError": "[NEEDS_TRANSLATION]Failed to approve terms. Please try again.",
+    "termsRejected": "[NEEDS_TRANSLATION]Terms Not Approved",
+    "termsRejectedMessage": "[NEEDS_TRANSLATION]You must approve the terms of sale to place bids in this sale."
   },
   "sale": {
     "title": "拍卖品",
@@ -842,7 +888,10 @@
       "questionSubmittedDescription": "您的问题已成功发送。我们会尽快回复您！",
       "submitError": "错误",
       "submitErrorDescription": "提交问题失败。请重试。"
-    }
+    },
+    "grade": "[NEEDS_TRANSLATION]Grade",
+    "country": "[NEEDS_TRANSLATION]Country",
+    "year": "[NEEDS_TRANSLATION]Year"
   },
   "sales": {
     "title": "拍卖",
