@@ -158,7 +158,14 @@
     "errorInsufficientFundsHelp": "Please try a different payment method or contact your bank.",
     "errorCardExpiredHelp": "Please use a valid credit card.",
     "errorInvalidCardHelp": "Please check the card information and try again.",
-    "errorTransactionLimitHelp": "Contact your bank to authorize this transaction."    
+    "errorTransactionLimitHelp": "Contact your bank to authorize this transaction.",
+    "payWithPaypal": "Pay with PayPal",
+    "redirectingButton": "Redirecting to PayPal...",
+    "paypalCompleting": "Finalizing your PayPal payment...",
+    "paypalCancelled": "PayPal payment was cancelled.",
+    "paypalSuccessful": "PayPal Payment Successful!",
+    "paypalFailed": "PayPal payment failed. Please try again.",
+    "payerEmail": "PayPal Account"    
   },
   "userInterests": {
     "title": "My Interests",
