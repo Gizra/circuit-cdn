@@ -126,7 +126,10 @@
     },
     "billingInstructions": "[NEEDS_TRANSLATION]Billing Instructions",
     "enterBillingInstructions": "[NEEDS_TRANSLATION]Enter any special billing instructions here",
-    "professionalReferencesInstructions": "[NEEDS_TRANSLATION]You may list multiple auction houses or companies where you have previously participated in auctions. This helps us verify your identity and ensure a smooth bidding experience."
+    "professionalReferencesInstructions": "[NEEDS_TRANSLATION]You may list multiple auction houses or companies where you have previously participated in auctions. This helps us verify your identity and ensure a smooth bidding experience.",
+    "optInCommunicationsHelp": "[NEEDS_TRANSLATION]By opting in, you will receive sale announcements, online catalog link & PDF, and promotional updates. You will always receive essential transactional emails such as invoices, bid confirmations, and consignment statements regardless of this setting. For special arrangements, please contact our office.",
+    "receivePrintedMaterials": "[NEEDS_TRANSLATION]I would like to receive printed materials",
+    "receivePrintedMaterialsHelp": "[NEEDS_TRANSLATION]By opting in, you will receive our printed catalog and other printed materials from us by mail."
   },
   "addressForm": {
     "firstName": "Имя",
@@ -295,7 +298,9 @@
     "logoutSuccessful": "Выход выполнен успешно",
     "myFavorites": "[NEEDS_TRANSLATION]Favorites",
     "myInterests": "[NEEDS_TRANSLATION]Area of Interest",
-    "Billing": "[NEEDS_TRANSLATION]Billing & Payments"
+    "Billing": "[NEEDS_TRANSLATION]Billing & Payments",
+    "clearCache": "[NEEDS_TRANSLATION]Clear Cache (Admin)",
+    "cacheCleared": "[NEEDS_TRANSLATION]Cache cleared"
   },
   "userInterests": {
     "title": "[NEEDS_TRANSLATION]My Interests",
@@ -383,7 +388,8 @@
     "removeSuccess": "[NEEDS_TRANSLATION]Lot has been removed from your favorites",
     "errorAdding": "[NEEDS_TRANSLATION]Error adding to favorites",
     "errorRemoving": "[NEEDS_TRANSLATION]Error removing from favorites",
-    "loginRequired": "[NEEDS_TRANSLATION]Please login to add items to favorites"
+    "loginRequired": "[NEEDS_TRANSLATION]Please login to add items to favorites",
+    "provenance": "[NEEDS_TRANSLATION]Provenance"
   },
   "filters": {
     "saleLabel": "[NEEDS_TRANSLATION]Sale",
@@ -482,7 +488,14 @@
       "physicalMagazines": "[NEEDS_TRANSLATION]4 physical magazines mailed to you",
       "domesticShipping": "[NEEDS_TRANSLATION]Domestic shipping included",
       "internationalShipping": "[NEEDS_TRANSLATION]International shipping included"
-    }
+    },
+    "confirmPurchase": "[NEEDS_TRANSLATION]Confirm Purchase",
+    "confirmMessage": "[NEEDS_TRANSLATION]Are you sure you want to purchase this subscription plan?",
+    "cancel": "[NEEDS_TRANSLATION]Cancel",
+    "approve": "[NEEDS_TRANSLATION]Approve & Continue",
+    "error": "[NEEDS_TRANSLATION]Error",
+    "networkError": "[NEEDS_TRANSLATION]Network error. Please try again.",
+    "cannotAccessSiteSettings": "[NEEDS_TRANSLATION]Cannot access site settings. Please try again later."
   },
   "billing": {
     "amountDue": "[NEEDS_TRANSLATION]Amount Due",
@@ -540,7 +553,26 @@
       "credit_card": "[NEEDS_TRANSLATION]Credit Card",
       "paypal": "[NEEDS_TRANSLATION]PayPal"
     },
-    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment."
+    "phonePaymentNotice": "Your invoice will be processed with assisted payment. Continue adding items as needed - our billing team will reach out to arrange payment.",
+    "shipment": "[NEEDS_TRANSLATION]Shipment",
+    "viewShipment": "[NEEDS_TRANSLATION]View Shipment",
+    "hideShipment": "[NEEDS_TRANSLATION]Hide Shipment",
+    "shipmentDetails": "[NEEDS_TRANSLATION]Shipment Details",
+    "trackingNumber": "[NEEDS_TRANSLATION]Tracking Number",
+    "trackPackage": "[NEEDS_TRANSLATION]Track Package",
+    "carrier": "[NEEDS_TRANSLATION]Carrier",
+    "service": "[NEEDS_TRANSLATION]Service",
+    "weight": "[NEEDS_TRANSLATION]Weight",
+    "shippedOn": "[NEEDS_TRANSLATION]Shipped on",
+    "estimatedDelivery": "[NEEDS_TRANSLATION]Estimated Delivery",
+    "deliveredOn": "[NEEDS_TRANSLATION]Delivered on",
+    "shipmentCount": "[NEEDS_TRANSLATION]{{count}} shipments",
+    "noShipmentInfo": "[NEEDS_TRANSLATION]No shipment information available.",
+    "deliveryStatus": {
+      "sent_via_post_mail": "[NEEDS_TRANSLATION]Out of the door",
+      "received": "[NEEDS_TRANSLATION]Received"
+    },
+    "notShipped": "[NEEDS_TRANSLATION]Not shipped yet"
   },
   "payment": {
     "selectCard": "[NEEDS_TRANSLATION]Select Payment Method",
@@ -593,7 +625,8 @@
     "noSavedCards": "[NEEDS_TRANSLATION]No saved payment methods. Please add a payment method first.",
     "noCards": "[NEEDS_TRANSLATION]No saved payment methods found.",
     "addFirstCard": "[NEEDS_TRANSLATION]Add your first payment method to get started.",
-    "goToPaymentMethods": "[NEEDS_TRANSLATION]Go to Payment Methods"
+    "goToPaymentMethods": "[NEEDS_TRANSLATION]Go to Payment Methods",
+    "default": "[NEEDS_TRANSLATION]Default"
   },
   "transactions": {
     "authorizenetTitle": "[NEEDS_TRANSLATION]Authorize.net",
@@ -622,7 +655,8 @@
     "errorInsufficientFundsHelp": "[NEEDS_TRANSLATION]Please try a different payment method or contact your bank.",
     "errorCardExpiredHelp": "[NEEDS_TRANSLATION]Please use a valid credit card.",
     "errorInvalidCardHelp": "[NEEDS_TRANSLATION]Please check the card information and try again.",
-    "errorTransactionLimitHelp": "[NEEDS_TRANSLATION]Contact your bank to authorize this transaction."
+    "errorTransactionLimitHelp": "[NEEDS_TRANSLATION]Contact your bank to authorize this transaction.",
+    "error": "[NEEDS_TRANSLATION]Error"
   },
   "balance": {
     "loading": "[NEEDS_TRANSLATION]Fetching account balance...",
@@ -747,7 +781,17 @@
     "creditExceededMessage": "[NEEDS_TRANSLATION]Your bid exceeds your available credit limit. Please visit",
     "viewMyBids": "[NEEDS_TRANSLATION]My Bids & Credit",
     "accountPendingTitle": "[NEEDS_TRANSLATION]Account Pending Approval",
-    "accountPendingMessage": "[NEEDS_TRANSLATION]Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding."
+    "accountPendingMessage": "[NEEDS_TRANSLATION]Your account is currently pending approval. Please contact our office to complete your registration and gain approval for bidding.",
+    "bidServerErrorTitle": "[NEEDS_TRANSLATION]Bidding temporarily unavailable",
+    "bidServerErrorLead": "[NEEDS_TRANSLATION]We couldn't reach the bid server. This is usually temporary — please try again in a moment.",
+    "termsApprovalTitle": "[NEEDS_TRANSLATION]Terms of Sale Approval Required",
+    "termsApprovalMessage": "[NEEDS_TRANSLATION]To participate in sale {{saleTitle}} you must approve the",
+    "termsOfSale": "[NEEDS_TRANSLATION]terms of sale",
+    "approve": "[NEEDS_TRANSLATION]Approve",
+    "reject": "[NEEDS_TRANSLATION]Reject",
+    "termsApprovalError": "[NEEDS_TRANSLATION]Failed to approve terms. Please try again.",
+    "termsRejected": "[NEEDS_TRANSLATION]Terms Not Approved",
+    "termsRejectedMessage": "[NEEDS_TRANSLATION]You must approve the terms of sale to place bids in this sale."
   },
   "sale": {
     "title": "[NEEDS_TRANSLATION]Sale Items",
@@ -844,7 +888,10 @@
       "questionSubmittedDescription": "[NEEDS_TRANSLATION]Your question has been sent successfully. We'll get back to you soon!",
       "submitError": "[NEEDS_TRANSLATION]Error",
       "submitErrorDescription": "[NEEDS_TRANSLATION]Failed to submit question. Please try again."
-    }
+    },
+    "grade": "[NEEDS_TRANSLATION]Grade",
+    "country": "[NEEDS_TRANSLATION]Country",
+    "year": "[NEEDS_TRANSLATION]Year"
   },
   "sales": {
     "title": "[NEEDS_TRANSLATION]Sales",

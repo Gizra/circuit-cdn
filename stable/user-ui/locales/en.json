@@ -55,9 +55,29 @@
       "cheque": "Cheque",
       "credit_card": "Credit Card",
       "paypal": "PayPal"
+    },
+    "shipment": "Shipment",
+    "viewShipment": "View Shipment",
+    "hideShipment": "Hide Shipment",
+    "shipmentDetails": "Shipment Details",
+    "trackingNumber": "Tracking Number",
+    "trackPackage": "Track Package",
+    "carrier": "Carrier",
+    "service": "Service",
+    "weight": "Weight",
+    "shippedOn": "Shipped on",
+    "estimatedDelivery": "Estimated Delivery",
+    "deliveredOn": "Delivered on",
+    "shipmentCount": "{{count}} shipments",
+    "noShipmentInfo": "No shipment information available.",
+    "notShipped": "Not shipped yet",
+    "deliveryStatus": {
+      "sent_via_post_mail": "Out of the door",
+      "received": "Received"
     }
   },
   "payment": {
+    "default": "Default",
     "selectCard": "Select Payment Method",
     "editCard": "Edit Card",
     "updateCard": "Update Card",
@@ -111,6 +131,7 @@
     "goToPaymentMethods": "Go to Payment Methods"
   },
   "transactions": {
+    "error": "Error",
     "authorizenetTitle": "Authorize.net",
     "creditCardLabel": "Credit Card",
     "selectCreditCard": "-- Select Credit Card --",
@@ -137,7 +158,14 @@
     "errorInsufficientFundsHelp": "Please try a different payment method or contact your bank.",
     "errorCardExpiredHelp": "Please use a valid credit card.",
     "errorInvalidCardHelp": "Please check the card information and try again.",
-    "errorTransactionLimitHelp": "Contact your bank to authorize this transaction."    
+    "errorTransactionLimitHelp": "Contact your bank to authorize this transaction.",
+    "payWithPaypal": "Pay with PayPal",
+    "redirectingButton": "Redirecting to PayPal...",
+    "paypalCompleting": "Finalizing your PayPal payment...",
+    "paypalCancelled": "PayPal payment was cancelled.",
+    "paypalSuccessful": "PayPal Payment Successful!",
+    "paypalFailed": "PayPal payment failed. Please try again.",
+    "payerEmail": "PayPal Account"    
   },
   "userInterests": {
     "title": "My Interests",
