@@ -384,7 +384,7 @@
     "summaryView": "Summary View",
     "lotNumber": "Lot Number",
     "openingPrice": "Opening Price",
-    "topBid": "Top Bid",
+    "topBid": "My Bid",
     "soldFortable": "Sold For",
     "loadingTitle": "Loading title...",
     "currentPrice": "Current Price: {{price}}",

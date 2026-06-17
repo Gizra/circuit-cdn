@@ -228,7 +228,7 @@
     "summaryView": "Summary View",
     "lotNumber": "拍品编号",
     "openingPrice": "起拍价",
-    "topBid": "最高出价",
+    "topBid": "我的出价",
     "soldFortable": "落槌价",
     "loadingTitle": "正在加载标题...",
     "currentPrice": "当前价格：{{price}}",

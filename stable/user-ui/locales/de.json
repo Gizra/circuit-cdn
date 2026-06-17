@@ -228,7 +228,7 @@
     "summaryView": "Übersicht",
     "lotNumber": "Losnummer",
     "openingPrice": "Startpreis",
-    "topBid": "Höchstgebot",
+    "topBid": "Mein Gebot",
     "soldFortable": "Zuschlagspreis",
     "loadingTitle": "Titel wird geladen...",
     "currentPrice": "Aktueller Preis: {{price}}",
