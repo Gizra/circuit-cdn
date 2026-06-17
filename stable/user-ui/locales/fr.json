@@ -329,7 +329,8 @@
     "additionalInterestsPlaceholder": "Par ex., thèmes spécifiques, origines, états ou collections particulières...",
     "saveAdditionalInterests": "Enregistrer les intérêts supplémentaires",
     "additionalInterestsSaved": "Intérêts supplémentaires enregistrés avec succès",
-    "saving": "Enregistrement..."
+    "saving": "Enregistrement...",
+    "addedToList": "[NEEDS_TRANSLATION]Added to list"
   },
   "search": {
     "placeholder": "Rechercher des lots..."
@@ -932,6 +933,7 @@
     "soldFor": "Vendu pour",
     "prev": "préc.",
     "next": "suiv.",
-    "last": "dernier"
+    "last": "dernier",
+    "downloadPdf": "[NEEDS_TRANSLATION]Download PDF"
   }
 }

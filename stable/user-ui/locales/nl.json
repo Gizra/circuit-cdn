@@ -26,7 +26,8 @@
     "additionalInterestsPlaceholder": "[NEEDS_TRANSLATION]E.g., specific themes, origins, conditions, or particular collections...",
     "saveAdditionalInterests": "[NEEDS_TRANSLATION]Save Additional Interests",
     "additionalInterestsSaved": "[NEEDS_TRANSLATION]Additional interests saved successfully",
-    "saving": "[NEEDS_TRANSLATION]Saving..."
+    "saving": "[NEEDS_TRANSLATION]Saving...",
+    "addedToList": "[NEEDS_TRANSLATION]Added to list"
   },
   "login": {
     "title": "Log in op uw account",
@@ -932,6 +933,7 @@
     "soldFor": "[NEEDS_TRANSLATION]Sold for",
     "prev": "[NEEDS_TRANSLATION]prev",
     "next": "[NEEDS_TRANSLATION]next",
-    "last": "[NEEDS_TRANSLATION]last"
+    "last": "[NEEDS_TRANSLATION]last",
+    "downloadPdf": "[NEEDS_TRANSLATION]Download PDF"
   }
 }
