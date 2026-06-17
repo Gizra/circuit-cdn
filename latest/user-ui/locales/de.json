@@ -228,7 +228,7 @@
     "summaryView": "Übersicht",
     "lotNumber": "Losnummer",
     "openingPrice": "Startpreis",
-    "topBid": "Höchstgebot",
+    "topBid": "Mein Gebot",
     "soldFortable": "Zuschlagspreis",
     "loadingTitle": "Titel wird geladen...",
     "currentPrice": "Aktueller Preis: {{price}}",
@@ -329,7 +329,8 @@
     "additionalInterestsPlaceholder": "z.B. bestimmte Themen, Herkünfte, Erhaltungen oder spezielle Sammlungen...",
     "saveAdditionalInterests": "Weitere Sammelgebiete speichern",
     "additionalInterestsSaved": "Weitere Sammelgebiete erfolgreich gespeichert",
-    "saving": "Speichern..."
+    "saving": "Speichern...",
+    "addedToList": "[NEEDS_TRANSLATION]Added to list"
   },
   "search": {
     "placeholder": "Durchsuche Lose ..."
@@ -932,6 +933,7 @@
     "soldFor": "Zuschlag",
     "prev": "zurück",
     "next": "weiter",
-    "last": "letzte"
+    "last": "letzte",
+    "downloadPdf": "[NEEDS_TRANSLATION]Download PDF"
   }
 }

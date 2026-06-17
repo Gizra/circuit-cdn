@@ -228,7 +228,7 @@
     "summaryView": "Summary View",
     "lotNumber": "拍品编号",
     "openingPrice": "起拍价",
-    "topBid": "最高出价",
+    "topBid": "我的出价",
     "soldFortable": "落槌价",
     "loadingTitle": "正在加载标题...",
     "currentPrice": "当前价格：{{price}}",
@@ -329,7 +329,8 @@
     "additionalInterestsPlaceholder": "例如，特定主题、来源、品相或特定收藏系列...",
     "saveAdditionalInterests": "保存其他兴趣",
     "additionalInterestsSaved": "其他兴趣已成功保存",
-    "saving": "保存中..."
+    "saving": "保存中...",
+    "addedToList": "[NEEDS_TRANSLATION]Added to list"
   },
   "search": {
     "placeholder": "Search lots..."
@@ -932,6 +933,7 @@
     "soldFor": "成交价",
     "prev": "上一页",
     "next": "下一页",
-    "last": "最后一页"
+    "last": "最后一页",
+    "downloadPdf": "[NEEDS_TRANSLATION]Download PDF"
   }
 }
