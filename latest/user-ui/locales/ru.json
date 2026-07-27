@@ -390,7 +390,9 @@
     "errorAdding": "[NEEDS_TRANSLATION]Error adding to favorites",
     "errorRemoving": "[NEEDS_TRANSLATION]Error removing from favorites",
     "loginRequired": "[NEEDS_TRANSLATION]Please login to add items to favorites",
-    "provenance": "[NEEDS_TRANSLATION]Provenance"
+    "provenance": "[NEEDS_TRANSLATION]Provenance",
+    "showDescription": "[NEEDS_TRANSLATION]Show description",
+    "hideDescription": "[NEEDS_TRANSLATION]Hide description"
   },
   "filters": {
     "saleLabel": "[NEEDS_TRANSLATION]Sale",
@@ -657,7 +659,14 @@
     "errorCardExpiredHelp": "[NEEDS_TRANSLATION]Please use a valid credit card.",
     "errorInvalidCardHelp": "[NEEDS_TRANSLATION]Please check the card information and try again.",
     "errorTransactionLimitHelp": "[NEEDS_TRANSLATION]Contact your bank to authorize this transaction.",
-    "error": "[NEEDS_TRANSLATION]Error"
+    "error": "[NEEDS_TRANSLATION]Error",
+    "payWithPaypal": "[NEEDS_TRANSLATION]Pay with PayPal",
+    "redirectingButton": "[NEEDS_TRANSLATION]Redirecting to PayPal...",
+    "paypalCompleting": "[NEEDS_TRANSLATION]Finalizing your PayPal payment...",
+    "paypalCancelled": "[NEEDS_TRANSLATION]PayPal payment was cancelled.",
+    "paypalSuccessful": "[NEEDS_TRANSLATION]PayPal Payment Successful!",
+    "paypalFailed": "[NEEDS_TRANSLATION]PayPal payment failed. Please try again.",
+    "payerEmail": "[NEEDS_TRANSLATION]PayPal Account"
   },
   "balance": {
     "loading": "[NEEDS_TRANSLATION]Fetching account balance...",
@@ -745,11 +754,11 @@
     "placeAgentBid": "[NEEDS_TRANSLATION]Place Agent Bid",
     "updateAgentBid": "[NEEDS_TRANSLATION]Update Agent Bid",
     "deleteAgentBid": "[NEEDS_TRANSLATION]Delete Agent Bid",
-    "mailBid": "[NEEDS_TRANSLATION]Mail Bids",
-    "mailBidTooltip": "[NEEDS_TRANSLATION]Mail bids (also called absentee or book bids) are pre-auction bids that compete with live bidders. Your bid will be executed automatically during the auction.",
-    "placeMailBid": "[NEEDS_TRANSLATION]Place Mail Bid",
-    "deleteMailBid": "[NEEDS_TRANSLATION]Delete Mail Bid",
-    "updateMailBid": "[NEEDS_TRANSLATION]Update Mail Bid",
+    "mailBid": "Макс. ставки",
+    "mailBidTooltip": "Укажите максимальную сумму, которую вы готовы заплатить. Мы будем автоматически повышать ставку ровно настолько, чтобы удерживать ваше лидерство — вы заплатите лишь на один шаг больше следующей по величине ставки, в пределах вашего максимума.",
+    "placeMailBid": "Задать макс. ставку",
+    "deleteMailBid": "Удалить макс. ставку",
+    "updateMailBid": "Изменить макс. ставку",
     "obscuredBid": "[NEEDS_TRANSLATION]Your Bid",
     "obscuredBidTooltip": "[NEEDS_TRANSLATION]In an obscured auction, bid amounts are hidden from other bidders. Submit your best offer and it will be revealed after the auction closes.",
     "makeOfferTooltip": "[NEEDS_TRANSLATION]This item is available for post-sale offers. Submit your best offer and the seller will review it.",

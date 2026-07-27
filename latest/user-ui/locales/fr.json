@@ -390,7 +390,9 @@
     "errorAdding": "Erreur lors de l'ajout aux favoris",
     "errorRemoving": "Erreur lors du retrait des favoris",
     "loginRequired": "Veuillez vous connecter pour ajouter des articles aux favoris",
-    "provenance": "[NEEDS_TRANSLATION]Provenance"
+    "provenance": "[NEEDS_TRANSLATION]Provenance",
+    "showDescription": "[NEEDS_TRANSLATION]Show description",
+    "hideDescription": "[NEEDS_TRANSLATION]Hide description"
   },
   "filters": {
     "saleLabel": "Vente",
@@ -657,7 +659,14 @@
     "errorCardExpiredHelp": "Veuillez utiliser une carte de crédit valide.",
     "errorInvalidCardHelp": "Veuillez vérifier les informations de la carte et réessayer.",
     "errorTransactionLimitHelp": "Contactez votre banque pour autoriser cette transaction.",
-    "error": "[NEEDS_TRANSLATION]Error"
+    "error": "[NEEDS_TRANSLATION]Error",
+    "payWithPaypal": "[NEEDS_TRANSLATION]Pay with PayPal",
+    "redirectingButton": "[NEEDS_TRANSLATION]Redirecting to PayPal...",
+    "paypalCompleting": "[NEEDS_TRANSLATION]Finalizing your PayPal payment...",
+    "paypalCancelled": "[NEEDS_TRANSLATION]PayPal payment was cancelled.",
+    "paypalSuccessful": "[NEEDS_TRANSLATION]PayPal Payment Successful!",
+    "paypalFailed": "[NEEDS_TRANSLATION]PayPal payment failed. Please try again.",
+    "payerEmail": "[NEEDS_TRANSLATION]PayPal Account"
   },
   "balance": {
     "loading": "Récupération du solde du compte...",
@@ -745,11 +754,11 @@
     "placeAgentBid": "Placer une enchère automatique",
     "updateAgentBid": "Mettre à jour l'enchère automatique",
     "deleteAgentBid": "Supprimer l'enchère automatique",
-    "mailBid": "Enchères par correspondance",
-    "mailBidTooltip": "Les enchères par correspondance (également appelées enchères par absence ou ordres d'achat) sont des enchères pré-vente qui concurrencent les enchérisseurs en direct. Votre enchère sera exécutée automatiquement pendant la vente.",
-    "placeMailBid": "Placer une enchère par correspondance",
-    "deleteMailBid": "Supprimer l'enchère par correspondance",
-    "updateMailBid": "Mettre à jour l'enchère par correspondance",
+    "mailBid": "Enchères maximales",
+    "mailBidTooltip": "Indiquez le montant maximum que vous êtes prêt à payer. Nous enchérissons automatiquement juste ce qu'il faut pour vous maintenir en tête — vous ne payez qu'un palier au-dessus de l'enchère la plus élevée suivante, dans la limite de votre maximum.",
+    "placeMailBid": "Définir l'enchère maximale",
+    "deleteMailBid": "Supprimer l'enchère maximale",
+    "updateMailBid": "Modifier l'enchère maximale",
     "obscuredBid": "Votre enchère",
     "obscuredBidTooltip": "Dans une vente aux enchères masquée, les montants des enchères sont cachés aux autres enchérisseurs. Soumettez votre meilleure offre et elle sera révélée après la clôture de la vente.",
     "makeOfferTooltip": "Cet article est disponible pour des offres après-vente. Soumettez votre meilleure offre et le vendeur l'examinera.",

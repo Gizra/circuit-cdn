@@ -390,7 +390,9 @@
     "errorAdding": "Error adding to favorites",
     "errorRemoving": "Error removing from favorites",
     "loginRequired": "Please login to add items to favorites",
-    "provenance": "[NEEDS_TRANSLATION]Provenance"
+    "provenance": "[NEEDS_TRANSLATION]Provenance",
+    "showDescription": "[NEEDS_TRANSLATION]Show description",
+    "hideDescription": "[NEEDS_TRANSLATION]Hide description"
   },
   "filters": {
     "saleLabel": "Sale",
@@ -657,7 +659,14 @@
     "errorCardExpiredHelp": "请使用有效的信用卡。",
     "errorInvalidCardHelp": "请检查卡片信息后重试。",
     "errorTransactionLimitHelp": "联系您的银行以授权此交易。",
-    "error": "[NEEDS_TRANSLATION]Error"
+    "error": "[NEEDS_TRANSLATION]Error",
+    "payWithPaypal": "[NEEDS_TRANSLATION]Pay with PayPal",
+    "redirectingButton": "[NEEDS_TRANSLATION]Redirecting to PayPal...",
+    "paypalCompleting": "[NEEDS_TRANSLATION]Finalizing your PayPal payment...",
+    "paypalCancelled": "[NEEDS_TRANSLATION]PayPal payment was cancelled.",
+    "paypalSuccessful": "[NEEDS_TRANSLATION]PayPal Payment Successful!",
+    "paypalFailed": "[NEEDS_TRANSLATION]PayPal payment failed. Please try again.",
+    "payerEmail": "[NEEDS_TRANSLATION]PayPal Account"
   },
   "balance": {
     "loading": "获取账户余额中...",
@@ -745,11 +754,11 @@
     "placeAgentBid": "出代理价",
     "updateAgentBid": "更新代理出价",
     "deleteAgentBid": "删除代理出价",
-    "mailBid": "书面竞价",
-    "mailBidTooltip": "书面竞价（也称为缺席竞价或账本竞价）是在拍卖前提交的出价，与现场竞拍者竞争。您的出价将在拍卖期间自动执行。",
-    "placeMailBid": "出书面价",
-    "deleteMailBid": "删除书面出价",
-    "updateMailBid": "更新书面出价",
+    "mailBid": "最高出价",
+    "mailBidTooltip": "输入您愿意支付的最高金额。我们会自动出价，刚好足以让您保持领先——您只需在次高出价的基础上加一档，最多不超过您的上限。",
+    "placeMailBid": "设置最高出价",
+    "deleteMailBid": "删除最高出价",
+    "updateMailBid": "更新最高出价",
     "obscuredBid": "您的出价",
     "obscuredBidTooltip": "在隐藏式拍卖中，出价金额对其他竞拍者是隐藏的。提交您的最佳出价，它将在拍卖结束后显示。",
     "makeOfferTooltip": "此拍品可接受售后出价。提交您的最佳出价，卖家将审查它。",

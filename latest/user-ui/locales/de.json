@@ -390,7 +390,9 @@
     "errorAdding": "Hinzufügen zu Favoriten fehlgeschlagen",
     "errorRemoving": "Entfernen aus Favoriten fehlgeschlagen",
     "loginRequired": "Bitte loggen Sie sich ein, um Losen Ihren Favoriten hinzuzufügen",
-    "provenance": "[NEEDS_TRANSLATION]Provenance"
+    "provenance": "[NEEDS_TRANSLATION]Provenance",
+    "showDescription": "[NEEDS_TRANSLATION]Show description",
+    "hideDescription": "[NEEDS_TRANSLATION]Hide description"
   },
   "filters": {
     "saleLabel": "Auktion",
@@ -657,7 +659,14 @@
     "errorCardExpiredHelp": "Bitte verwenden Sie eine gültige Kreditkarte.",
     "errorInvalidCardHelp": "Bitte überprüfen Sie die Karteninformationen und versuchen Sie es erneut.",
     "errorTransactionLimitHelp": "Kontaktieren Sie Ihre Bank, um diese Transaktion zu autorisieren.",
-    "error": "[NEEDS_TRANSLATION]Error"
+    "error": "[NEEDS_TRANSLATION]Error",
+    "payWithPaypal": "[NEEDS_TRANSLATION]Pay with PayPal",
+    "redirectingButton": "[NEEDS_TRANSLATION]Redirecting to PayPal...",
+    "paypalCompleting": "[NEEDS_TRANSLATION]Finalizing your PayPal payment...",
+    "paypalCancelled": "[NEEDS_TRANSLATION]PayPal payment was cancelled.",
+    "paypalSuccessful": "[NEEDS_TRANSLATION]PayPal Payment Successful!",
+    "paypalFailed": "[NEEDS_TRANSLATION]PayPal payment failed. Please try again.",
+    "payerEmail": "[NEEDS_TRANSLATION]PayPal Account"
   },
   "balance": {
     "loading": "Kontostand wird abgerufen...",
@@ -745,11 +754,11 @@
     "placeAgentBid": "Auto-Gebot abgeben",
     "updateAgentBid": "Auto-Gebot aktualisieren",
     "deleteAgentBid": "Auto-Gebot löschen",
-    "mailBid": "Schriftliche Gebote",
-    "mailBidTooltip": "Schriftliche Gebote (auch Abwesenheits- oder Buchgebote genannt) sind Vor-Auktions-Gebote, die mit Live-Bietern konkurrieren. Ihr Gebot wird automatisch während der Auktion ausgeführt.",
-    "placeMailBid": "Schriftliches Gebot abgeben",
-    "deleteMailBid": "Schriftliches Gebot löschen",
-    "updateMailBid": "Schriftliches Gebot aktualisieren",
+    "mailBid": "Maximalgebote",
+    "mailBidTooltip": "Geben Sie den Höchstbetrag ein, den Sie zu zahlen bereit sind. Wir bieten automatisch nur so viel, wie nötig ist, damit Sie in Führung bleiben – Sie zahlen nur einen Bietschritt über dem zweithöchsten Gebot, bis zu Ihrem Maximum.",
+    "placeMailBid": "Maximalgebot festlegen",
+    "deleteMailBid": "Maximalgebot löschen",
+    "updateMailBid": "Maximalgebot aktualisieren",
     "obscuredBid": "Ihr Gebot",
     "obscuredBidTooltip": "In einer verdeckten Auktion sind Gebotsbeträge für andere Bieter verborgen. Geben Sie Ihr bestes Angebot ab und es wird nach Auktionsende enthüllt.",
     "makeOfferTooltip": "Dieses Los ist für Nachverkaufsangebote verfügbar. Geben Sie Ihr bestes Angebot ab und wir werden es prüfen.",

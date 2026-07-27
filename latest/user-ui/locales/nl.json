@@ -390,7 +390,9 @@
     "errorAdding": "Fout toevoeging aan mijn favorieten",
     "errorRemoving": "Fout verwijdering van mijn favorieten",
     "loginRequired": "Svp inloggen om items aan de favorieten toe te voegen",
-    "provenance": "[NEEDS_TRANSLATION]Provenance"
+    "provenance": "[NEEDS_TRANSLATION]Provenance",
+    "showDescription": "[NEEDS_TRANSLATION]Show description",
+    "hideDescription": "[NEEDS_TRANSLATION]Hide description"
   },
   "filters": {
     "saleLabel": "veiling",
@@ -657,7 +659,14 @@
     "errorCardExpiredHelp": "[NEEDS_TRANSLATION]Please use a valid credit card.",
     "errorInvalidCardHelp": "[NEEDS_TRANSLATION]Please check the card information and try again.",
     "errorTransactionLimitHelp": "[NEEDS_TRANSLATION]Contact your bank to authorize this transaction.",
-    "error": "[NEEDS_TRANSLATION]Error"
+    "error": "[NEEDS_TRANSLATION]Error",
+    "payWithPaypal": "[NEEDS_TRANSLATION]Pay with PayPal",
+    "redirectingButton": "[NEEDS_TRANSLATION]Redirecting to PayPal...",
+    "paypalCompleting": "[NEEDS_TRANSLATION]Finalizing your PayPal payment...",
+    "paypalCancelled": "[NEEDS_TRANSLATION]PayPal payment was cancelled.",
+    "paypalSuccessful": "[NEEDS_TRANSLATION]PayPal Payment Successful!",
+    "paypalFailed": "[NEEDS_TRANSLATION]PayPal payment failed. Please try again.",
+    "payerEmail": "[NEEDS_TRANSLATION]PayPal Account"
   },
   "balance": {
     "loading": "[NEEDS_TRANSLATION]Fetching account balance...",
@@ -745,11 +754,11 @@
     "placeAgentBid": "[NEEDS_TRANSLATION]Place Agent Bid",
     "updateAgentBid": "[NEEDS_TRANSLATION]Update Agent Bid",
     "deleteAgentBid": "[NEEDS_TRANSLATION]Delete Agent Bid",
-    "mailBid": "[NEEDS_TRANSLATION]Mail Bids",
-    "mailBidTooltip": "[NEEDS_TRANSLATION]Mail bids (also called absentee or book bids) are pre-auction bids that compete with live bidders. Your bid will be executed automatically during the auction.",
-    "placeMailBid": "[NEEDS_TRANSLATION]Place Mail Bid",
-    "deleteMailBid": "[NEEDS_TRANSLATION]Delete Mail Bid",
-    "updateMailBid": "[NEEDS_TRANSLATION]Update Mail Bid",
+    "mailBid": "Maximumboden",
+    "mailBidTooltip": "Voer het maximale bedrag in dat u bereid bent te betalen. Wij bieden automatisch net genoeg om u aan de leiding te houden — u betaalt slechts één stap boven het op één na hoogste bod, tot aan uw maximum.",
+    "placeMailBid": "Maximumbod instellen",
+    "deleteMailBid": "Maximumbod verwijderen",
+    "updateMailBid": "Maximumbod bijwerken",
     "obscuredBid": "[NEEDS_TRANSLATION]Your Bid",
     "obscuredBidTooltip": "[NEEDS_TRANSLATION]In an obscured auction, bid amounts are hidden from other bidders. Submit your best offer and it will be revealed after the auction closes.",
     "makeOfferTooltip": "[NEEDS_TRANSLATION]This item is available for post-sale offers. Submit your best offer and the seller will review it.",
