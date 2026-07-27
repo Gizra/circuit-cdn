@@ -22,9 +22,18 @@ elmApp.ports.pusherLogin.subscribe(function(config) {
         pusherConnections.push(pusher);
 
         pusher.connection.bind('error', function(error) {
+            // Pusher emits several error shapes: protocol errors carry
+            // `{ data: { code, message } }` directly on the error,
+            // wrapped WebSocket errors nest it under `error.error`, and
+            // low-level connection errors may have neither. The Elm
+            // port expects { code : Maybe Int, message : Maybe String },
+            // so anything else must collapse to null.
+            var details = (error && error.error) || error || {};
+            var data = details.data || {};
             elmApp.ports.pusherError.send({
-                message: error.error.data.message ? error.error.data.message : null,
-                code: error.error.code ? error.error.code : null
+                message: typeof data.message === 'string' ? data.message : null,
+                code: typeof data.code === 'number' ? data.code
+                    : (typeof details.code === 'number' ? details.code : null)
             });
         });
 
