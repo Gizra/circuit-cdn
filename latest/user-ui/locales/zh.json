@@ -325,7 +325,8 @@
     "successTitle": "成功",
     "successMessage": "密码更改成功",
     "errorTitle": "错误",
-    "networkError": "网络响应异常，无法更改密码"
+    "networkError": "网络响应异常，无法更改密码",
+    "passwordRequired": "请输入新密码。"
   },
   "myBids": {
     "summary": {

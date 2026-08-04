@@ -325,7 +325,8 @@
     "successTitle": "Succès",
     "successMessage": "Mot de passe changé avec succès",
     "errorTitle": "Erreur",
-    "networkError": "La réponse réseau n'était pas correcte pour la réinitialisation du mot de passe"
+    "networkError": "La réponse réseau n'était pas correcte pour la réinitialisation du mot de passe",
+    "passwordRequired": "Veuillez saisir un nouveau mot de passe."
   },
   "myBids": {
     "summary": {

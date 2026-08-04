@@ -325,7 +325,8 @@
     "successTitle": "Erfolg",
     "successMessage": "Passwort erfolgreich geändert",
     "errorTitle": "Fehler",
-    "networkError": "Netzwerkfehler beim Zurücksetzen des Passworts"
+    "networkError": "Netzwerkfehler beim Zurücksetzen des Passworts",
+    "passwordRequired": "Bitte geben Sie ein neues Passwort ein."
   },
   "myBids": {
     "summary": {

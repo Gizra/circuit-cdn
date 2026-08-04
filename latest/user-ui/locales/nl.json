@@ -325,7 +325,8 @@
     "successTitle": "Succes",
     "successMessage": "Wachtwoord succesvol gewijzigd",
     "errorTitle": "Fout",
-    "networkError": "Netwerkreactie was niet in orde voor het opnieuw instellen van het wachtwoord"
+    "networkError": "Netwerkreactie was niet in orde voor het opnieuw instellen van het wachtwoord",
+    "passwordRequired": "Voer een nieuw wachtwoord in."
   },
   "myBids": {
     "summary": {

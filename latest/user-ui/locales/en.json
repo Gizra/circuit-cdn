@@ -325,7 +325,8 @@
     "successTitle": "Success",
     "successMessage": "Password changed successfully",
     "errorTitle": "Error",
-    "networkError": "Network response was not ok for resetting password"
+    "networkError": "Network response was not ok for resetting password",
+    "passwordRequired": "Please enter a new password."
   },
   "myBids": {
     "summary": {

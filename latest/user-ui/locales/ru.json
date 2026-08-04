@@ -325,7 +325,8 @@
     "successTitle": "Успех",
     "successMessage": "Пароль успешно изменен",
     "errorTitle": "Ошибка",
-    "networkError": "Ответ сети не был корректен для сброса пароля"
+    "networkError": "Ответ сети не был корректен для сброса пароля",
+    "passwordRequired": "Введите новый пароль."
   },
   "myBids": {
     "summary": {
