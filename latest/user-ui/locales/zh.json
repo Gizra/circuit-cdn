@@ -831,7 +831,9 @@
     "goHome": "返回首页",
     "itemNotFoundTitle": "未找到拍品",
     "saleInformation": "拍卖会信息",
-    "tryAgain": "重试"
+    "tryAgain": "重试",
+    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
+    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "搜索拍卖...",

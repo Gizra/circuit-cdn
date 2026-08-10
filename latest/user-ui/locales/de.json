@@ -831,7 +831,9 @@
     "goHome": "Zur Startseite",
     "itemNotFoundTitle": "Los nicht gefunden",
     "saleInformation": "Wann wird dieses Los versteigert?",
-    "tryAgain": "Erneut versuchen"
+    "tryAgain": "Erneut versuchen",
+    "addToCalendar": "Zu meinem Kalender hinzufügen",
+    "addToCalendarIcs": "Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Auktionen durchsuchen...",

@@ -831,7 +831,9 @@
     "goHome": "На главную",
     "itemNotFoundTitle": "Лот не найден",
     "saleInformation": "Информация об аукционе",
-    "tryAgain": "Попробовать снова"
+    "tryAgain": "Попробовать снова",
+    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
+    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Поиск аукционов...",

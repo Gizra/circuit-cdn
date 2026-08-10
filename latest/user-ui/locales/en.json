@@ -831,7 +831,9 @@
     "goHome": "Go to Home",
     "itemNotFoundTitle": "Lot not found",
     "saleInformation": "When will this lot be auctioned?",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "addToCalendar": "Add to my calendar",
+    "addToCalendarIcs": "Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Search sales...",

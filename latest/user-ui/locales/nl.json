@@ -831,7 +831,9 @@
     "goHome": "Naar de startpagina",
     "itemNotFoundTitle": "Kavel niet gevonden",
     "saleInformation": "Veilinginformatie",
-    "tryAgain": "Opnieuw proberen"
+    "tryAgain": "Opnieuw proberen",
+    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
+    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Veilingen zoeken...",

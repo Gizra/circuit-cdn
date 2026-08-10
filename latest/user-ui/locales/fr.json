@@ -831,7 +831,9 @@
     "goHome": "Aller à l'accueil",
     "itemNotFoundTitle": "Lot introuvable",
     "saleInformation": "Informations sur la vente",
-    "tryAgain": "Réessayer"
+    "tryAgain": "Réessayer",
+    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
+    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Rechercher des ventes...",
