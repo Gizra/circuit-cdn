@@ -325,7 +325,8 @@
     "successTitle": "Success",
     "successMessage": "Password changed successfully",
     "errorTitle": "Error",
-    "networkError": "Network response was not ok for resetting password"
+    "networkError": "Network response was not ok for resetting password",
+    "passwordRequired": "Please enter a new password."
   },
   "myBids": {
     "summary": {
@@ -550,7 +551,7 @@
     "noCreditLimitLink": "Click here",
     "noCreditLimitSuffix": "to request a Bidding Limit.",
     "onlineAgentBid": "Agent Bids",
-    "agentBidTooltip": "Agent bidding allows you to set a maximum bid amount. The system will automatically bid on your behalf up to your maximum during the live auction.",
+    "agentBidTooltip": "Agent bidding allows you to set a maximum bid amount. During the live auction, the system automatically bids on your behalf up to your maximum. We have no insight into your maximum bid.",
     "placeAgentBid": "Place Agent Bid",
     "updateAgentBid": "Update Agent Bid",
     "deleteAgentBid": "Delete Agent Bid",
@@ -559,7 +560,7 @@
     "placeMailBid": "Set Max Bid",
     "deleteMailBid": "Delete Max Bid",
     "updateMailBid": "Update Max Bid",
-    "obscuredBidTooltip": "In an obscured auction, bid amounts are hidden from other bidders. Submit your best offer and it will be revealed after the auction closes.",
+    "obscuredBidTooltip": "In a sealed-bid auction, bid amounts are not visible to other bidders. We execute your bid while safeguarding your interests, bidding only as high as necessary.",
     "makeOfferTooltip": "This item is available for post-sale offers. Submit your best offer and the seller will review it.",
     "deleteOffer": "Delete Offer",
     "bidRejected": "Your bid was rejected. Please try again or contact support.",
@@ -604,7 +605,8 @@
   },
   "item": {
     "noImage": "Request item photos",
-    "photos": "Photos"
+    "photos": "Photos",
+    "noMedia": "No media available"
   },
   "myFavorites": {
     "allSales": "All Sales",
@@ -828,8 +830,10 @@
     "fromSale": "From Sale",
     "goHome": "Go to Home",
     "itemNotFoundTitle": "Lot not found",
-    "saleInformation": "Sale Information",
-    "tryAgain": "Try Again"
+    "saleInformation": "When will this lot be auctioned?",
+    "tryAgain": "Try Again",
+    "addToCalendar": "Add to my calendar",
+    "addToCalendarIcs": "Apple / Outlook (.ics)"
   },
   "sales": {
     "searchPlaceholder": "Search sales...",
@@ -901,5 +905,117 @@
   },
   "featured": {
     "noSaleNid": "Please provide a sale NID to view featured items."
+  },
+  "clerk": {
+    "noSales": "No ongoing sales right now.",
+    "tabs": {
+      "credit": "Credit",
+      "bids": "Bids",
+      "registrations": "Registrations",
+      "account": "Account"
+    },
+    "credit": {
+      "title": "Credit Requests",
+      "loading": "Loading…",
+      "empty": "No pending credit requests.",
+      "emptySale": "No pending requests for this sale.",
+      "approve": "Approve",
+      "decline": "Decline",
+      "cancel": "Cancel",
+      "current": "Current",
+      "requested": "Requested",
+      "unlimited": "Unlimited",
+      "none": "None",
+      "showHandled": "Show handled",
+      "confirmApprove": "Approve {{amount}} credit for {{name}}?",
+      "confirmDecline": "Decline the {{amount}} credit request from {{name}}?",
+      "actionFailed": "Could not update the request. Please try again.",
+      "unknownBidder": "User #{{uid}}",
+      "status": {
+        "approved": "Approved",
+        "rejected": "Declined"
+      }
+    },
+    "bids": {
+      "title": "Mail & Agent Bids",
+      "loading": "Loading…",
+      "empty": "No mail or agent bids yet.",
+      "emptySale": "No mail or agent bids for this sale.",
+      "lot": "Lot",
+      "agent": "Agent",
+      "bidderNumber": "Bidder #{{number}}",
+      "showDeleted": "Show deleted",
+      "orderNewest": "Newest first",
+      "orderLot": "Lot order",
+      "type": {
+        "mail": "Mail",
+        "agent": "Agent"
+      },
+      "searchPlaceholder": "Search bidder # or name",
+      "results": "{{count}} bids",
+      "noMatches": "No bids match the current filters."
+    },
+    "registrations": {
+      "title": "Registrations",
+      "empty": "New registrations will appear here live while the app is open.",
+      "paddle": "Paddle",
+      "unknown": "New bidder"
+    },
+    "notAuthorized": {
+      "title": "Staff only",
+      "body": "This app is for auction staff. Your account does not have clerk access on this site.",
+      "logout": "Log out"
+    },
+    "account": {
+      "site": "Site",
+      "role": "Role",
+      "clerk": "Clerk",
+      "changePassword": "Change password",
+      "logout": "Log out"
+    },
+    "connection": {
+      "offline": "Connection lost — live updates paused. Reconnecting…"
+    },
+    "saleStatus": {
+      "open_mail": "Mail bidding",
+      "open_live": "Live",
+      "paused_starting_soon": "Starting soon",
+      "paused_back_shortly": "Back shortly",
+      "closed_not_started": "Not started",
+      "closed_ended": "Ended"
+    },
+    "stats": {
+      "bids": "Bids",
+      "mailBids": "Mail bids",
+      "bidders": "Bidders",
+      "lotsWithBids": "Lots w/ bids",
+      "soldUnsold": "Sold / Unsold",
+      "totalWinning": "Total winning",
+      "startValueWithBids": "Start value (lots w/ bids)",
+      "bidderType": {
+        "external": "External",
+        "floor": "Floor",
+        "floor_by_agent": "Agent floor",
+        "phone": "Phone",
+        "mail": "Mail",
+        "website": "Website"
+      }
+    },
+    "bidderSheet": {
+      "bidsCount": "Bids",
+      "bidsSum": "Bid total",
+      "paddles": "Paddles",
+      "type": "Bidder type",
+      "agent": "Agent",
+      "liveCredit": "Live credit",
+      "mailCredit": "Mail credit",
+      "maxBid": "Max bid",
+      "totalSpent": "Total spent",
+      "close": "Close",
+      "error": "Could not load bidder statistics."
+    },
+    "filter": {
+      "allSales": "All sales"
+    }
   }
 }
