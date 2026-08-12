@@ -771,7 +771,8 @@
     "sessions": "сессий",
     "close": "Закрыть",
     "dateAndLocation": "Дата и место",
-    "noResults": "Ничего не найдено"
+    "noResults": "Ничего не найдено",
+    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
   },
   "itempage": {
     "error": "Ошибка",

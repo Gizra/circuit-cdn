@@ -771,7 +771,8 @@
     "sessions": "sessies",
     "close": "Sluiten",
     "dateAndLocation": "Datum & locatie",
-    "noResults": "Geen resultaten gevonden"
+    "noResults": "Geen resultaten gevonden",
+    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
   },
   "itempage": {
     "error": "Fout",

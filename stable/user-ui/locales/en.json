@@ -771,7 +771,8 @@
     "sessions": "sessions",
     "close": "Close",
     "dateAndLocation": "Date & Location",
-    "noResults": "No results found"
+    "noResults": "No results found",
+    "resetSearchFilters": "Reset search filters"
   },
   "itempage": {
     "error": "Error",

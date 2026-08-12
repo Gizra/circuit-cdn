@@ -771,7 +771,8 @@
     "sessions": "场次",
     "close": "关闭",
     "dateAndLocation": "日期与地点",
-    "noResults": "未找到结果"
+    "noResults": "未找到结果",
+    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
   },
   "itempage": {
     "error": "错误",
