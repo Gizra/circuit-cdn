@@ -804,6 +804,8 @@
     "nextLot": "Next Lot",
     "viewMoreDetails": "View more details",
     "askQuestion": "Ask a question",
+    "requestImages": "Request images",
+    "requestImagesPrefill": "I would like you to add images to this item",
     "modal": {
       "title": "Ask about this item",
       "name": "Name",

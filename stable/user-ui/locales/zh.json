@@ -837,7 +837,9 @@
     "saleInformation": "拍卖会信息",
     "tryAgain": "重试",
     "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
-    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)"
+    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)",
+    "requestImages": "[NEEDS_TRANSLATION]Request images",
+    "requestImagesPrefill": "[NEEDS_TRANSLATION]I would like you to add images to this item"
   },
   "sales": {
     "searchPlaceholder": "搜索拍卖...",

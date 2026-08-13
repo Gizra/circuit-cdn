@@ -837,7 +837,9 @@
     "saleInformation": "Wann wird dieses Los versteigert?",
     "tryAgain": "Erneut versuchen",
     "addToCalendar": "Zu meinem Kalender hinzufügen",
-    "addToCalendarIcs": "Apple / Outlook (.ics)"
+    "addToCalendarIcs": "Apple / Outlook (.ics)",
+    "requestImages": "Bilder anfordern",
+    "requestImagesPrefill": "Ich möchte Sie bitten, Bilder zu diesem Los hinzuzufügen"
   },
   "sales": {
     "searchPlaceholder": "Auktionen durchsuchen...",
