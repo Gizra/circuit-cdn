@@ -803,6 +803,7 @@
     "previousLot": "Previous Lot",
     "nextLot": "Next Lot",
     "viewMoreDetails": "View more details",
+    "askQuestion": "Ask a question",
     "modal": {
       "title": "Ask about this item",
       "name": "Name",
@@ -823,7 +824,9 @@
       "questionSubmitted": "Question submitted",
       "questionSubmittedDescription": "Your question has been sent successfully. We'll get back to you soon!",
       "submitError": "Error",
-      "submitErrorDescription": "Failed to submit question. Please try again."
+      "submitErrorDescription": "Failed to submit question. Please try again.",
+      "captchaRequired": "Captcha required",
+      "captchaRequiredDescription": "Please complete the captcha before submitting."
     },
     "saleSession": "Session",
     "errorLead": "Something went wrong while fetching the lot details. This is usually temporary — please try again in a moment.",

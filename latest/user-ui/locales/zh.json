@@ -771,7 +771,8 @@
     "sessions": "场次",
     "close": "关闭",
     "dateAndLocation": "日期与地点",
-    "noResults": "未找到结果"
+    "noResults": "未找到结果",
+    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
   },
   "itempage": {
     "error": "错误",
@@ -802,6 +803,7 @@
     "previousLot": "上一个拍品",
     "nextLot": "下一个拍品",
     "viewMoreDetails": "查看更多详情",
+    "askQuestion": "提出问题",
     "modal": {
       "title": "咨询此物品",
       "name": "姓名",
@@ -822,7 +824,9 @@
       "questionSubmitted": "问题已提交",
       "questionSubmittedDescription": "您的问题已成功发送。我们会尽快回复您！",
       "submitError": "错误",
-      "submitErrorDescription": "提交问题失败。请重试。"
+      "submitErrorDescription": "提交问题失败。请重试。",
+      "captchaRequired": "需要验证码",
+      "captchaRequiredDescription": "提交前请完成验证码验证。"
     },
     "saleSession": "场次",
     "errorLead": "获取拍品详情时出错。这通常是暂时的——请稍后重试。",

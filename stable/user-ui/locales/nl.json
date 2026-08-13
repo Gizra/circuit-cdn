@@ -803,6 +803,7 @@
     "previousLot": "Vorige kavel",
     "nextLot": "Volgende kavel",
     "viewMoreDetails": "Meer details bekijken",
+    "askQuestion": "Stel een vraag",
     "modal": {
       "title": "Stel een vraag over deze kavel",
       "name": "Naam",
@@ -823,7 +824,9 @@
       "questionSubmitted": "Vraag verzonden",
       "questionSubmittedDescription": "Uw vraag is succesvol verzonden. Wij nemen spoedig contact met u op!",
       "submitError": "Fout",
-      "submitErrorDescription": "Het verzenden van de vraag is mislukt. Probeer het opnieuw."
+      "submitErrorDescription": "Het verzenden van de vraag is mislukt. Probeer het opnieuw.",
+      "captchaRequired": "Captcha vereist",
+      "captchaRequiredDescription": "Vul de captcha in voordat u verzendt."
     },
     "saleSession": "Sessie",
     "errorLead": "Er is iets misgegaan bij het laden van de kavelgegevens. Dit is meestal tijdelijk — probeer het zo weer.",

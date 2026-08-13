@@ -803,6 +803,7 @@
     "previousLot": "Lot précédent",
     "nextLot": "Lot suivant",
     "viewMoreDetails": "Voir plus de détails",
+    "askQuestion": "Poser une question",
     "modal": {
       "title": "Poser une question sur cet article",
       "name": "Nom",
@@ -823,7 +824,9 @@
       "questionSubmitted": "Question soumise",
       "questionSubmittedDescription": "Votre question a été envoyée avec succès. Nous vous répondrons bientôt !",
       "submitError": "Erreur",
-      "submitErrorDescription": "Échec de la soumission de la question. Veuillez réessayer."
+      "submitErrorDescription": "Échec de la soumission de la question. Veuillez réessayer.",
+      "captchaRequired": "Captcha requis",
+      "captchaRequiredDescription": "Veuillez compléter le captcha avant d'envoyer."
     },
     "saleSession": "Session",
     "errorLead": "Une erreur est survenue lors du chargement des détails du lot. Cela est généralement temporaire — veuillez réessayer dans un instant.",

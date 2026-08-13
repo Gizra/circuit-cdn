@@ -771,7 +771,8 @@
     "sessions": "Sessions",
     "close": "Schließen",
     "dateAndLocation": "Datum & Ort",
-    "noResults": "Keine Ergebnisse gefunden"
+    "noResults": "Keine Ergebnisse gefunden",
+    "resetSearchFilters": "Suchfilter zurücksetzen"
   },
   "itempage": {
     "error": "Fehler",
@@ -802,6 +803,7 @@
     "previousLot": "Vorheriges Los",
     "nextLot": "Nächstes Los",
     "viewMoreDetails": "Weitere Details anzeigen",
+    "askQuestion": "Eine Frage stellen",
     "modal": {
       "title": "Fragen zu diesem Los",
       "name": "Name",
@@ -822,7 +824,9 @@
       "questionSubmitted": "Frage gesendet",
       "questionSubmittedDescription": "Ihre Frage wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen!",
       "submitError": "Fehler",
-      "submitErrorDescription": "Frage konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+      "submitErrorDescription": "Frage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "captchaRequired": "Captcha erforderlich",
+      "captchaRequiredDescription": "Bitte füllen Sie das Captcha aus, bevor Sie absenden."
     },
     "saleSession": "Sitzung",
     "errorLead": "Beim Laden der Losdetails ist ein Fehler aufgetreten. Das ist in der Regel nur vorübergehend — bitte versuchen Sie es gleich noch einmal.",
