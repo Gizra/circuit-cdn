@@ -446,7 +446,7 @@
     "allTitle": "Cataloguscache is gereset",
     "allBody": "Het veilinghuis heeft de catalogus van deze site vernieuwd. Opnieuw laden…",
     "partialTitle": "Catalogus bijgewerkt",
-    "partialBody": "Sommige kavels of veilingen zijn door het veilinghuis vernieuwd.",
+    "partialBody": "Een kavel of veiling is door het veilinghuis vernieuwd. Opnieuw laden…",
     "reloadNow": "Nu opnieuw laden",
     "dismiss": "Sluiten"
   },

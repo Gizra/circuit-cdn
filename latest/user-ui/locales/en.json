@@ -446,7 +446,7 @@
     "allTitle": "Catalog cache was reset",
     "allBody": "The auction house refreshed this site's catalog. Reloading…",
     "partialTitle": "Catalog updated",
-    "partialBody": "Some lots or sales were refreshed from the auction house.",
+    "partialBody": "A lot or sale was refreshed from the auction house. Reloading…",
     "reloadNow": "Reload now",
     "dismiss": "Dismiss"
   },

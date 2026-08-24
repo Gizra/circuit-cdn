@@ -446,7 +446,7 @@
     "allTitle": "Le cache du catalogue a été réinitialisé",
     "allBody": "La maison de ventes a actualisé le catalogue de ce site. Rechargement…",
     "partialTitle": "Catalogue mis à jour",
-    "partialBody": "Certains lots ou ventes ont été actualisés par la maison de ventes.",
+    "partialBody": "Un lot ou une vente a été actualisé par la maison de ventes. Rechargement…",
     "reloadNow": "Recharger maintenant",
     "dismiss": "Fermer"
   },

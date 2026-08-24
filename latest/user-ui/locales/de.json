@@ -446,7 +446,7 @@
     "allTitle": "Katalog-Cache wurde zurückgesetzt",
     "allBody": "Das Auktionshaus hat den Katalog dieser Seite aktualisiert. Wird neu geladen…",
     "partialTitle": "Katalog aktualisiert",
-    "partialBody": "Einige Lose oder Auktionen wurden vom Auktionshaus aktualisiert.",
+    "partialBody": "Ein Los oder eine Auktion wurde vom Auktionshaus aktualisiert. Wird neu geladen…",
     "reloadNow": "Jetzt neu laden",
     "dismiss": "Schließen"
   },
