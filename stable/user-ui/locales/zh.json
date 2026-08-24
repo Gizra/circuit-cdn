@@ -442,6 +442,14 @@
     "clearCache": "清除缓存（管理员）",
     "cacheCleared": "缓存已清除"
   },
+  "cacheInvalidation": {
+    "allTitle": "目录缓存已重置",
+    "allBody": "拍卖行已刷新本站目录。正在重新加载…",
+    "partialTitle": "目录已更新",
+    "partialBody": "部分拍品或拍卖会已由拍卖行刷新。",
+    "reloadNow": "立即重新加载",
+    "dismiss": "关闭"
+  },
   "liveauctionpage": {
     "myCredit": "我的信用额度",
     "credit": "信用额度",

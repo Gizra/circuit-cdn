@@ -442,6 +442,14 @@
     "clearCache": "Vider le cache (Admin)",
     "cacheCleared": "Cache vidé"
   },
+  "cacheInvalidation": {
+    "allTitle": "Le cache du catalogue a été réinitialisé",
+    "allBody": "La maison de ventes a actualisé le catalogue de ce site. Rechargement…",
+    "partialTitle": "Catalogue mis à jour",
+    "partialBody": "Certains lots ou ventes ont été actualisés par la maison de ventes.",
+    "reloadNow": "Recharger maintenant",
+    "dismiss": "Fermer"
+  },
   "liveauctionpage": {
     "myCredit": "Mon crédit",
     "credit": "Crédit",

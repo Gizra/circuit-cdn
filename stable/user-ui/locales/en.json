@@ -442,6 +442,14 @@
     "clearCache": "Clear Cache (Admin)",
     "cacheCleared": "Cache cleared"
   },
+  "cacheInvalidation": {
+    "allTitle": "Catalog cache was reset",
+    "allBody": "The auction house refreshed this site's catalog. Reloading…",
+    "partialTitle": "Catalog updated",
+    "partialBody": "Some lots or sales were refreshed from the auction house.",
+    "reloadNow": "Reload now",
+    "dismiss": "Dismiss"
+  },
   "liveauctionpage": {
     "myCredit": "My Bidding Limit",
     "credit": "My Bidding Limit",

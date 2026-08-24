@@ -442,6 +442,14 @@
     "clearCache": "Cache wissen (beheerder)",
     "cacheCleared": "Cache gewist"
   },
+  "cacheInvalidation": {
+    "allTitle": "Cataloguscache is gereset",
+    "allBody": "Het veilinghuis heeft de catalogus van deze site vernieuwd. Opnieuw laden…",
+    "partialTitle": "Catalogus bijgewerkt",
+    "partialBody": "Sommige kavels of veilingen zijn door het veilinghuis vernieuwd.",
+    "reloadNow": "Nu opnieuw laden",
+    "dismiss": "Sluiten"
+  },
   "liveauctionpage": {
     "myCredit": "Mijn biedlimiet",
     "credit": "Mijn biedlimiet",

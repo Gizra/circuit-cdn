@@ -442,6 +442,14 @@
     "clearCache": "Cache leeren (Admin)",
     "cacheCleared": "Cache geleert"
   },
+  "cacheInvalidation": {
+    "allTitle": "Katalog-Cache wurde zurückgesetzt",
+    "allBody": "Das Auktionshaus hat den Katalog dieser Seite aktualisiert. Wird neu geladen…",
+    "partialTitle": "Katalog aktualisiert",
+    "partialBody": "Einige Lose oder Auktionen wurden vom Auktionshaus aktualisiert.",
+    "reloadNow": "Jetzt neu laden",
+    "dismiss": "Schließen"
+  },
   "liveauctionpage": {
     "myCredit": "Mein Kreditrahmen",
     "credit": "Kreditrahmen",
