@@ -41269,9 +41269,9 @@ var _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestQueued = function (a) {
 };
 var _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestSent = {ctor: 'QueuedRequestSent'};
 
-var _Gizra$circuit_bid$Backend_Session_Model$Session = F6(
-	function (a, b, c, d, e, f) {
-		return {name: a, firstItem: b, lastItem: c, delta: d, itemCount: e, batchCount: f};
+var _Gizra$circuit_bid$Backend_Session_Model$Session = F5(
+	function (a, b, c, d, e) {
+		return {name: a, firstItem: b, lastItem: c, delta: d, itemCount: e};
 	});
 
 var _Gizra$circuit_bid$Sale_Model$Sale = function (a) {
@@ -46703,9 +46703,6 @@ var _Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled = function (autoClerk) {
 		return true;
 	}
 };
-var _Gizra$circuit_bid$Sale_Utils$getActiveSession = function (sale) {
-	return A2(_Gizra$elm_dictlist$EveryDictList$get, sale.session, sale.sessions);
-};
 
 var _Gizra$circuit_bid$App_Utils$decodeLanguageCode = function (langCode) {
 	var _p0 = langCode;
@@ -48573,29 +48570,25 @@ var _Gizra$circuit_bid$Currency_Decoder$decodeCurrency = A2(
 
 var _Gizra$circuit_bid$Backend_Session_Decoder$decodeSession = A3(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-	'batch_count',
+	'item_count',
 	_Gizra$elm_essentials$Gizra_Json$decodeInt,
 	A3(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'item_count',
+		'delta',
 		_Gizra$elm_essentials$Gizra_Json$decodeInt,
 		A3(
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-			'delta',
-			_Gizra$elm_essentials$Gizra_Json$decodeInt,
+			'last_item',
+			_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
 			A3(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-				'last_item',
+				'first_item',
 				_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
 				A3(
 					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-					'first_item',
-					_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
-					A3(
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'label',
-						_elm_lang$core$Json_Decode$string,
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_Session_Model$Session)))))));
+					'label',
+					_elm_lang$core$Json_Decode$string,
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Backend_Session_Model$Session))))));
 var _Gizra$circuit_bid$Backend_Session_Decoder$decodeSessionDict = A3(_Gizra$circuit_bid$Utils_Json$decodeListAsEveryDictListByProperty, 'id', _Gizra$elm_restful$Restful_Endpoint$decodeEntityId, _Gizra$circuit_bid$Backend_Session_Decoder$decodeSession);
 
 var _Gizra$circuit_bid$Bid_Decoder$decodeAlternativeBid = A3(
