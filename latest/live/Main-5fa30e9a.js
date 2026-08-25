@@ -34469,6 +34469,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'Israeliana', dutch: 'Israeliana', german: 'Israeliana', hebrew: 'ישראלינה', russian: 'Израилиана', chinese: '以色列艺术品', french: 'Israéliana'};
 				case 'ConfirmPassword':
 					return {english: 'Confirm password', dutch: 'Bevestig wachtwoord', german: 'Passwort bestätigen', hebrew: 'אישור סיסמא', russian: 'Подтвердите пароль', chinese: '确认密码', french: 'Confirmer le mot de passe'};
+				case 'ClearMessageStream':
+					return {english: 'Clear message stream', dutch: 'Berichtenstroom wissen', german: 'Nachrichtenverlauf leeren', hebrew: 'נקה את זרם ההודעות', russian: 'Очистить ленту сообщений', chinese: '清除消息流', french: 'Effacer le flux de messages'};
 				case 'Connected':
 					return {english: 'Connected', dutch: 'Verbonden', german: 'Verbunden', hebrew: 'מחובר', russian: 'Подключено', chinese: '已连接', french: 'Connecté'};
 				case 'ConnectedUsers':
@@ -40155,6 +40157,7 @@ var _Gizra$circuit_bid$Translate$ConnectedUsers = function (a) {
 	return {ctor: 'ConnectedUsers', _0: a};
 };
 var _Gizra$circuit_bid$Translate$Connected = {ctor: 'Connected'};
+var _Gizra$circuit_bid$Translate$ClearMessageStream = {ctor: 'ClearMessageStream'};
 var _Gizra$circuit_bid$Translate$ConfirmPassword = {ctor: 'ConfirmPassword'};
 var _Gizra$circuit_bid$Translate$ClosedNotStarted = {ctor: 'ClosedNotStarted'};
 var _Gizra$circuit_bid$Translate$ClosedItems = {ctor: 'ClosedItems'};
@@ -41319,9 +41322,9 @@ var _Gizra$circuit_bid$Sale_Model$Sale = function (a) {
 		};
 	};
 };
-var _Gizra$circuit_bid$Sale_Model$SaleUpdateData = F6(
-	function (a, b, c, d, e, f) {
-		return {label: a, status: b, autoClerk: c, pausedMessage: d, item: e, session: f};
+var _Gizra$circuit_bid$Sale_Model$SaleUpdateData = F7(
+	function (a, b, c, d, e, f, g) {
+		return {label: a, status: b, autoClerk: c, pausedMessage: d, item: e, session: f, messageClearId: g};
 	});
 var _Gizra$circuit_bid$Sale_Model$AutoClerkEnabled = F2(
 	function (a, b) {
@@ -43141,6 +43144,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Model$HandleBidPlaced = F3(
 var _Gizra$circuit_bid$Pages_Clerk_Model$HandleClerkEvent = function (a) {
 	return {ctor: 'HandleClerkEvent', _0: a};
 };
+var _Gizra$circuit_bid$Pages_Clerk_Model$HandleClearedMessageStream = function (a) {
+	return {ctor: 'HandleClearedMessageStream', _0: a};
+};
 var _Gizra$circuit_bid$Pages_Clerk_Model$FocusResult = function (a) {
 	return {ctor: 'FocusResult', _0: a};
 };
@@ -43168,6 +43174,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Model$DeleteBid = F2(
 var _Gizra$circuit_bid$Pages_Clerk_Model$CustomBidAmountUpdate = function (a) {
 	return {ctor: 'CustomBidAmountUpdate', _0: a};
 };
+var _Gizra$circuit_bid$Pages_Clerk_Model$ClearMessageStream = {ctor: 'ClearMessageStream'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$Save = {ctor: 'Save'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$Cancel = {ctor: 'Cancel'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$Update = function (a) {
@@ -49431,30 +49438,35 @@ var _Gizra$circuit_bid$Sale_Decoder$decodeStatus = A2(
 	_elm_lang$core$Json_Decode$string);
 var _Gizra$circuit_bid$Sale_Decoder$decodeSaleUpdate = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-	'session',
-	_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
-	_Gizra$elm_restful$Restful_Endpoint$toEntityId(0),
-	A3(
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'item',
-		_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
-		A4(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-			'paused_message',
-			_elm_lang$core$Json_Decode$string,
-			'',
-			A2(
-				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
-				_Gizra$circuit_bid$Sale_Decoder$decodeAutoClerk,
-				A3(
-					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-					'status',
-					_Gizra$circuit_bid$Sale_Decoder$decodeStatus,
+	'message_clear_id',
+	_Gizra$circuit_bid$Utils_Json$decodeInt,
+	0,
+	A4(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+		'session',
+		_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
+		_Gizra$elm_restful$Restful_Endpoint$toEntityId(0),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'item',
+			_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
+			A4(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+				'paused_message',
+				_elm_lang$core$Json_Decode$string,
+				'',
+				A2(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+					_Gizra$circuit_bid$Sale_Decoder$decodeAutoClerk,
 					A3(
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'title',
-						_elm_lang$core$Json_Decode$string,
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Sale_Model$SaleUpdateData)))))));
+						'status',
+						_Gizra$circuit_bid$Sale_Decoder$decodeStatus,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'title',
+							_elm_lang$core$Json_Decode$string,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Sale_Model$SaleUpdateData))))))));
 var _Gizra$circuit_bid$Sale_Decoder$decodeLanguageFromCode = A2(
 	_elm_lang$core$Json_Decode$andThen,
 	_Gizra$circuit_bid$Utils_Json$resultToDecoder,
@@ -53084,6 +53096,35 @@ var _Gizra$circuit_bid$Message_Update$sendClerkPublicMessage = F5(
 					_lukewestby$elm_http_builder$HttpBuilder$post(
 						A2(_elm_lang$core$Basics_ops['++'], backendUrl, '/api/messages')))));
 	});
+var _Gizra$circuit_bid$Message_Update$clearMessageStream = F4(
+	function (backendUrl, accessToken, saleUuid, tagger) {
+		return A3(
+			_Gizra$circuit_bid$Utils_WebData$sendWithHandler,
+			_elm_lang$core$Json_Decode$succeed(
+				{ctor: '_Tuple0'}),
+			tagger,
+			A2(
+				_lukewestby$elm_http_builder$HttpBuilder$withJsonBody,
+				_elm_lang$core$Json_Encode$object(
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'sale_uuid',
+							_1: _Gizra$elm_restful$Restful_Endpoint$encodeEntityUuid(saleUuid)
+						},
+						_1: {ctor: '[]'}
+					}),
+				A2(
+					_lukewestby$elm_http_builder$HttpBuilder$withQueryParams,
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'access_token', _1: accessToken},
+						_1: {ctor: '[]'}
+					},
+					_lukewestby$elm_http_builder$HttpBuilder$post(
+						A2(_elm_lang$core$Basics_ops['++'], backendUrl, '/api/messages/clear')))));
+	});
 var _Gizra$circuit_bid$Message_Update$addMessage = F3(
 	function (id, message, messages) {
 		return A3(_Gizra$elm_dictlist$EveryDictList$cons, id, message, messages);
@@ -53149,31 +53190,47 @@ var _Gizra$circuit_bid$Message_Update$fetchMessages = F3(
 						A2(_elm_lang$core$Basics_ops['++'], backendUrl, '/api/messages')))));
 	});
 
+var _Gizra$circuit_bid$Message_Utils$pruneClearedMessages = F2(
+	function (clearId, messages) {
+		return (_elm_lang$core$Native_Utils.cmp(clearId, 0) < 1) ? messages : A2(
+			_Gizra$elm_dictlist$EveryDictList$filter,
+			F2(
+				function (_p1, _p0) {
+					var _p2 = _p1;
+					var _p3 = _elm_lang$core$String$toInt(_p2._0);
+					if (_p3.ctor === 'Ok') {
+						return _elm_lang$core$Native_Utils.cmp(_p3._0, clearId) > 0;
+					} else {
+						return true;
+					}
+				}),
+			messages);
+	});
 var _Gizra$circuit_bid$Message_Utils$getItemsIds = function (messages) {
 	return _elm_community$maybe_extra$Maybe_Extra$values(
 		A2(
 			_elm_lang$core$List$map,
 			function (message) {
-				var _p0 = message.messageType;
-				switch (_p0.ctor) {
+				var _p4 = message.messageType;
+				switch (_p4.ctor) {
 					case 'BidAccepted':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidChangedToFloor':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidDeleted':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidOutbid':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidRejected':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidRejectedBidderMax':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'BidRejectedCreditLimit':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'ItemUpdate':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					case 'SaleUpdateActiveItem':
-						return _elm_lang$core$Maybe$Just(_p0._0);
+						return _elm_lang$core$Maybe$Just(_p4._0);
 					default:
 						return _elm_lang$core$Maybe$Nothing;
 				}
@@ -53181,19 +53238,19 @@ var _Gizra$circuit_bid$Message_Utils$getItemsIds = function (messages) {
 			_Gizra$elm_dictlist$EveryDictList$values(messages)));
 };
 var _Gizra$circuit_bid$Message_Utils$privatePartner = function (messageType) {
-	var _p1 = messageType;
-	switch (_p1.ctor) {
+	var _p5 = messageType;
+	switch (_p5.ctor) {
 		case 'PrivateByBidder':
-			return _elm_lang$core$Maybe$Just(_p1._0);
+			return _elm_lang$core$Maybe$Just(_p5._0);
 		case 'PrivateByClerk':
-			return _elm_lang$core$Maybe$Just(_p1._0);
+			return _elm_lang$core$Maybe$Just(_p5._0);
 		default:
 			return _elm_lang$core$Maybe$Nothing;
 	}
 };
 var _Gizra$circuit_bid$Message_Utils$isPrivate = function (messageType) {
-	var _p2 = messageType;
-	switch (_p2.ctor) {
+	var _p6 = messageType;
+	switch (_p6.ctor) {
 		case 'PrivateByBidder':
 			return true;
 		case 'PrivateByClerk':
@@ -56872,7 +56929,48 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard = F6(
 											_1: {ctor: '[]'}
 										}
 									}),
-								_1: {ctor: '[]'}
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_Gizra$circuit_bid$Utils_Html$showIf,
+										_elm_lang$core$Native_Utils.eq(model.messagesTab, _Gizra$circuit_bid$Pages_Clerk_Model$TabPublic),
+										A2(
+											_elm_lang$html$Html$button,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('msgs-clear'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$ClearMessageStream),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$title(
+															A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$ClearMessageStream)),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html_Attributes$attribute,
+																'aria-label',
+																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$ClearMessageStream)),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$i,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('fa fa-eraser'),
+														_1: {ctor: '[]'}
+													},
+													{ctor: '[]'}),
+												_1: {ctor: '[]'}
+											})),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}),
@@ -61426,6 +61524,47 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 														} else {
 															return noChange;
 														}
+													case 'ClearMessageStream':
+														return {
+															ctor: '_Tuple4',
+															_0: model,
+															_1: A2(
+																_krisajenkins$remotedata$RemoteData$withDefault,
+																_elm_lang$core$Platform_Cmd$none,
+																A2(
+																	_krisajenkins$remotedata$RemoteData$map,
+																	function (sale) {
+																		return A4(_Gizra$circuit_bid$Message_Update$clearMessageStream, backendUrl, accessToken, sale.uuid, _Gizra$circuit_bid$Pages_Clerk_Model$HandleClearedMessageStream);
+																	},
+																	model.sale)),
+															_2: _elm_lang$core$Maybe$Nothing,
+															_3: {ctor: '[]'}
+														};
+													case 'HandleClearedMessageStream':
+														if (_p22._0.ctor === 'Ok') {
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		publicMessages: A2(
+																			_krisajenkins$remotedata$RemoteData$map,
+																			_elm_lang$core$Basics$always(_Gizra$elm_dictlist$EveryDictList$empty),
+																			model.publicMessages)
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _elm_lang$core$Maybe$Nothing,
+																_3: {ctor: '[]'}
+															};
+														} else {
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Clerk.Update', 'HandleClearedMessageStream', _p22._0._0),
+																_3: {ctor: '[]'}
+															};
+														}
 													case 'SubmitPublicMessage':
 														var updatedModel = _elm_lang$core$Native_Utils.update(
 															model,
@@ -61862,7 +62001,16 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																model.sale);
 															var modelUpdated = _elm_lang$core$Native_Utils.update(
 																model,
-																{sale: newSale, queuedBids: _eeue56$elm_all_dict$EveryDict$empty, queuedSaleUpdateRequestState: saleUpdateRequestState, publicMessageJustSent: false});
+																{
+																	sale: newSale,
+																	publicMessages: A2(
+																		_krisajenkins$remotedata$RemoteData$map,
+																		_Gizra$circuit_bid$Message_Utils$pruneClearedMessages(_p131.messageClearId),
+																		model.publicMessages),
+																	queuedBids: _eeue56$elm_all_dict$EveryDict$empty,
+																	queuedSaleUpdateRequestState: saleUpdateRequestState,
+																	publicMessageJustSent: false
+																});
 															var editWinningBidderCmd = A3(
 																_elm_community$maybe_extra$Maybe_Extra$unwrap,
 																_elm_lang$core$Platform_Cmd$none,
@@ -62625,6 +62773,10 @@ var _Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate = F2(
 			model,
 			{
 				sale: newSale,
+				publicMessages: A2(
+					_krisajenkins$remotedata$RemoteData$map,
+					_Gizra$circuit_bid$Message_Utils$pruneClearedMessages(updateData.messageClearId),
+					model.publicMessages),
 				nextBidIncrements: {ctor: '[]'},
 				carouselPosition: newCarouselPosition,
 				asyncGoingItemStatus: false,
