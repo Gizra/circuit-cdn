@@ -41322,9 +41322,9 @@ var _Gizra$circuit_bid$Sale_Model$Sale = function (a) {
 		};
 	};
 };
-var _Gizra$circuit_bid$Sale_Model$SaleUpdateData = F7(
-	function (a, b, c, d, e, f, g) {
-		return {label: a, status: b, autoClerk: c, pausedMessage: d, item: e, session: f, messageClearId: g};
+var _Gizra$circuit_bid$Sale_Model$SaleUpdateData = F8(
+	function (a, b, c, d, e, f, g, h) {
+		return {label: a, status: b, autoClerk: c, pausedMessage: d, item: e, session: f, messageClearId: g, currenciesInfo: h};
 	});
 var _Gizra$circuit_bid$Sale_Model$AutoClerkEnabled = F2(
 	function (a, b) {
@@ -49296,34 +49296,32 @@ var _Gizra$circuit_bid$ItemManager_Decoder$decodeStaticItemFromResponse = functi
 		},
 		_Gizra$circuit_bid$Item_Decoder$decodeStaticItemDict);
 };
+var _Gizra$circuit_bid$ItemManager_Decoder$decodeCurrenciesInfo = _elm_lang$core$Json_Decode$oneOf(
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$core$Json_Decode$map,
+			_eeue56$elm_all_dict$EveryDict$fromList,
+			_elm_lang$core$Json_Decode$list(
+				A3(
+					_elm_lang$core$Json_Decode$map2,
+					F2(
+						function (v0, v1) {
+							return {ctor: '_Tuple2', _0: v0, _1: v1};
+						}),
+					A2(_elm_lang$core$Json_Decode$field, 'currency', _Gizra$circuit_bid$Currency_Decoder$decodeCurrency),
+					A2(_elm_lang$core$Json_Decode$field, 'rate', _Gizra$circuit_bid$Utils_Json$decodeFloat)))),
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$core$Json_Decode$succeed(_eeue56$elm_all_dict$EveryDict$empty),
+			_1: {ctor: '[]'}
+		}
+	});
 var _Gizra$circuit_bid$ItemManager_Decoder$decodeSaleMeta = A3(
 	_elm_lang$core$Json_Decode$map2,
 	_Gizra$circuit_bid$ItemManager_Model$SaleMeta,
 	A2(_elm_lang$core$Json_Decode$field, 'sale_title', _elm_lang$core$Json_Decode$string),
-	A2(
-		_elm_lang$core$Json_Decode$field,
-		'currenciesInfo',
-		_elm_lang$core$Json_Decode$oneOf(
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$core$Json_Decode$map,
-					_eeue56$elm_all_dict$EveryDict$fromList,
-					_elm_lang$core$Json_Decode$list(
-						A3(
-							_elm_lang$core$Json_Decode$map2,
-							F2(
-								function (v0, v1) {
-									return {ctor: '_Tuple2', _0: v0, _1: v1};
-								}),
-							A2(_elm_lang$core$Json_Decode$field, 'currency', _Gizra$circuit_bid$Currency_Decoder$decodeCurrency),
-							A2(_elm_lang$core$Json_Decode$field, 'rate', _Gizra$circuit_bid$Utils_Json$decodeFloat)))),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$core$Json_Decode$succeed(_eeue56$elm_all_dict$EveryDict$empty),
-					_1: {ctor: '[]'}
-				}
-			})));
+	A2(_elm_lang$core$Json_Decode$field, 'currenciesInfo', _Gizra$circuit_bid$ItemManager_Decoder$decodeCurrenciesInfo));
 var _Gizra$circuit_bid$ItemManager_Decoder$decodeStaticItemsFromResponse = A2(
 	_elm_lang$core$Json_Decode$at,
 	{
@@ -49438,42 +49436,49 @@ var _Gizra$circuit_bid$Sale_Decoder$decodeStatus = A2(
 	_elm_lang$core$Json_Decode$string);
 var _Gizra$circuit_bid$Sale_Decoder$decodeSaleUpdate = A4(
 	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-	'message_clear_id',
-	_Gizra$circuit_bid$Utils_Json$decodeInt,
-	0,
+	'currencies_info',
+	_Gizra$circuit_bid$ItemManager_Decoder$decodeCurrenciesInfo,
+	_eeue56$elm_all_dict$EveryDict$empty,
 	A4(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-		'session',
-		_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
-		_Gizra$elm_restful$Restful_Endpoint$toEntityId(0),
-		A3(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-			'item',
-			_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
-			A4(
-				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
-				'paused_message',
-				_elm_lang$core$Json_Decode$string,
-				'',
-				A2(
-					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
-					_Gizra$circuit_bid$Sale_Decoder$decodeAutoClerk,
-					A3(
-						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'status',
-						_Gizra$circuit_bid$Sale_Decoder$decodeStatus,
+		'message_clear_id',
+		_Gizra$circuit_bid$Utils_Json$decodeInt,
+		0,
+		A4(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+			'session',
+			_Gizra$elm_restful$Restful_Endpoint$decodeEntityId,
+			_Gizra$elm_restful$Restful_Endpoint$toEntityId(0),
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'item',
+				_Gizra$circuit_bid$Backend_Decoder$decodeItemId,
+				A4(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+					'paused_message',
+					_elm_lang$core$Json_Decode$string,
+					'',
+					A2(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+						_Gizra$circuit_bid$Sale_Decoder$decodeAutoClerk,
 						A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-							'title',
-							_elm_lang$core$Json_Decode$string,
-							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Sale_Model$SaleUpdateData))))))));
+							'status',
+							_Gizra$circuit_bid$Sale_Decoder$decodeStatus,
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'title',
+								_elm_lang$core$Json_Decode$string,
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Sale_Model$SaleUpdateData)))))))));
 var _Gizra$circuit_bid$Sale_Decoder$decodeLanguageFromCode = A2(
 	_elm_lang$core$Json_Decode$andThen,
 	_Gizra$circuit_bid$Utils_Json$resultToDecoder,
 	A2(_elm_lang$core$Json_Decode$map, _Gizra$circuit_bid$Translate$languageFromCode, _elm_lang$core$Json_Decode$string));
 var _Gizra$circuit_bid$Sale_Decoder$decodeLanguages = _elm_lang$core$Json_Decode$list(_Gizra$circuit_bid$Sale_Decoder$decodeLanguageFromCode);
-var _Gizra$circuit_bid$Sale_Decoder$decodeSale = A2(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$hardcoded,
+var _Gizra$circuit_bid$Sale_Decoder$decodeSale = A4(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional,
+	'currencies_info',
+	_Gizra$circuit_bid$ItemManager_Decoder$decodeCurrenciesInfo,
 	_eeue56$elm_all_dict$EveryDict$empty,
 	A2(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
@@ -61996,7 +62001,13 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																function (sale) {
 																	return _elm_lang$core$Native_Utils.update(
 																		sale,
-																		{status: _p131.status, label: _p131.label, item: _p131.item, pausedMessage: _p131.pausedMessage});
+																		{
+																			status: _p131.status,
+																			label: _p131.label,
+																			item: _p131.item,
+																			pausedMessage: _p131.pausedMessage,
+																			currenciesInfo: _eeue56$elm_all_dict$EveryDict$isEmpty(_p131.currenciesInfo) ? sale.currenciesInfo : _p131.currenciesInfo
+																		});
 																},
 																model.sale);
 															var modelUpdated = _elm_lang$core$Native_Utils.update(
@@ -62765,7 +62776,14 @@ var _Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate = F2(
 			function (sale) {
 				return _elm_lang$core$Native_Utils.update(
 					sale,
-					{status: updateData.status, label: updateData.label, pausedMessage: updateData.pausedMessage, item: updateData.item, autoClerk: updateData.autoClerk});
+					{
+						status: updateData.status,
+						label: updateData.label,
+						pausedMessage: updateData.pausedMessage,
+						item: updateData.item,
+						autoClerk: updateData.autoClerk,
+						currenciesInfo: _eeue56$elm_all_dict$EveryDict$isEmpty(updateData.currenciesInfo) ? sale.currenciesInfo : updateData.currenciesInfo
+					});
 			},
 			model.sale);
 		var newCarouselPosition = A3(_Gizra$circuit_bid$Pages_Sale_Update$calculateCarouselPosition, model.numberOfCarouselItems, updateData.item, model.item.items);
