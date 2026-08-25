@@ -288,6 +288,7 @@ elmApp.ports.saveTheme.subscribe(function(theme) {
     } else {
         document.body.classList.remove('theme-dark');
     }
+    syncSiteCssWithTheme();
 });
 
 
@@ -381,6 +382,22 @@ elmApp.ports.playSoundOnLiveBid.subscribe(function () {
 });
 
 var cssLoaded = false;
+var siteCssLink = null;
+
+// The per-site branding stylesheet (loadBackofficeCSS below) is authored
+// against the light theme only — it forces light backgrounds with
+// !important, which would override the `body.theme-dark` variable
+// overrides. Keep it disabled while dark mode is active.
+function syncSiteCssWithTheme() {
+  if (siteCssLink) {
+    // Toggled via the `media` attribute rather than the `disabled`
+    // property: `disabled` set while the stylesheet is still loading is
+    // dropped when the load completes, so it can't be trusted at
+    // injection time.
+    siteCssLink.media = document.body.classList.contains('theme-dark') ? 'not all' : 'all';
+  }
+}
+
 elmApp.ports.loadBackofficeCSS.subscribe(function(backendOfficeUrl) {
   if (cssLoaded) {
     return;
@@ -390,6 +407,8 @@ elmApp.ports.loadBackofficeCSS.subscribe(function(backendOfficeUrl) {
   link.href = backendOfficeUrl + '/css/live.css';
   document.head.appendChild(link);
   cssLoaded = true;
+  siteCssLink = link;
+  syncSiteCssWithTheme();
 });
 
 window.onmessage = function(e) {
