@@ -450,6 +450,12 @@
     "reloadNow": "Reload now",
     "dismiss": "Dismiss"
   },
+  "errorReport": {
+    "title": "Oops — an error occurred",
+    "body": "Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
+    "emailButton": "Email this report to support",
+    "dismiss": "Dismiss"
+  },
   "liveauctionpage": {
     "myCredit": "My Bidding Limit",
     "credit": "My Bidding Limit",
