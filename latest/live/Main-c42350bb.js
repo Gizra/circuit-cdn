@@ -50432,6 +50432,7 @@ var _Gizra$circuit_bid$ItemManager_Utils$getUuidsByItemIds = F2(
 			},
 			_Gizra$elm_dictlist$EveryDictList$toList(model.lotMap));
 	});
+var _Gizra$circuit_bid$ItemManager_Utils$carouselTileCount = 5;
 var _Gizra$circuit_bid$ItemManager_Utils$getWindowItemIds = F3(
 	function (count, model, itemId) {
 		var _p4 = A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, itemId, model.items);
@@ -50443,12 +50444,19 @@ var _Gizra$circuit_bid$ItemManager_Utils$getWindowItemIds = F3(
 			};
 		} else {
 			var _p5 = _p4._0;
-			var startIndex = A2(_elm_lang$core$Basics$max, 0, _p5 - 2);
+			var viewportStart = A2(
+				_elm_lang$core$Basics$max,
+				0,
+				A2(
+					_elm_lang$core$Basics$min,
+					_Gizra$elm_dictlist$EveryDictList$size(model.items) - _Gizra$circuit_bid$ItemManager_Utils$carouselTileCount,
+					_p5 - 2));
+			var lastIndex = A2(_elm_lang$core$Basics$max, (viewportStart + _Gizra$circuit_bid$ItemManager_Utils$carouselTileCount) - 1, (_p5 + count) - 1);
 			return _Gizra$elm_dictlist$EveryDictList$keys(
 				A2(
 					_Gizra$elm_dictlist$EveryDictList$take,
-					count + (_p5 - startIndex),
-					A2(_Gizra$elm_dictlist$EveryDictList$drop, startIndex, model.items)));
+					(lastIndex - viewportStart) + 1,
+					A2(_Gizra$elm_dictlist$EveryDictList$drop, viewportStart, model.items)));
 		}
 	});
 var _Gizra$circuit_bid$ItemManager_Utils$emptyItemManagerFromLotMap = function (lotMap) {
