@@ -620,7 +620,11 @@
   "item": {
     "noImage": "Request item photos",
     "photos": "Photos",
-    "noMedia": "No Image available"
+    "noMedia": "No Image available",
+    "gallery": {
+      "showAll": "Show all {{total}} images",
+      "showFewer": "Show fewer"
+    }
   },
   "myFavorites": {
     "allSales": "All Sales",

@@ -614,7 +614,11 @@
   "item": {
     "noImage": "Demander des photos de l'article",
     "photos": "Photos",
-    "noMedia": "[NEEDS_TRANSLATION]No Image available"
+    "noMedia": "[NEEDS_TRANSLATION]No Image available",
+    "gallery": {
+      "showAll": "[NEEDS_TRANSLATION]Show all {{total}} images",
+      "showFewer": "[NEEDS_TRANSLATION]Show fewer"
+    }
   },
   "myFavorites": {
     "allSales": "Toutes les ventes",
@@ -1031,5 +1035,11 @@
     "filter": {
       "allSales": "[NEEDS_TRANSLATION]All sales"
     }
+  },
+  "errorReport": {
+    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
+    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
+    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
+    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
   }
 }
