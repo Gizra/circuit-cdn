@@ -921,6 +921,9 @@
       "paused": "Pausiert"
     }
   },
+  "poweredBy": {
+    "label": "<0>Auction Software by Circuit AI</0> © {{year}}"
+  },
   "featured": {
     "noSaleNid": "Bitte geben Sie eine Auktions-NID an, um hervorgehobene Lose anzuzeigen."
   },

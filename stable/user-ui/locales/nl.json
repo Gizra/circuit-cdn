@@ -921,6 +921,9 @@
       "paused": "Gepauzeerd"
     }
   },
+  "poweredBy": {
+    "label": "<0>Auction Software by Circuit AI</0> © {{year}}"
+  },
   "featured": {
     "noSaleNid": "Geef een veiling-NID op om uitgelichte kavels te bekijken."
   },
