@@ -927,6 +927,9 @@
       "paused": "Paused"
     }
   },
+  "poweredBy": {
+    "label": "<0>Auction Software by Circuit AI</0> © {{year}}"
+  },
   "featured": {
     "noSaleNid": "Please provide a sale NID to view featured items."
   },

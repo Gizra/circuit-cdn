@@ -454,3 +454,37 @@ if (elmApp.ports.getUserAgent) {
 if (elmApp.ports.receiveUserAgent) {
     elmApp.ports.receiveUserAgent.send(navigator.userAgent);
 }
+
+// Connected-users list mirror for the clerk / auctioneer pages. Elm sends
+// the whole list on every change; on reload it asks for the copy back so
+// the clerk doesn't wait for each bidder's next heartbeat. Keyed per sale
+// so switching sales never restores another sale's list. Storage failures
+// are swallowed: the list then simply refills from live events.
+function connectedUsersStorageKey(saleUuid) {
+    return 'bs_connected_users_' + saleUuid;
+}
+
+if (elmApp.ports.saveConnectedUsers) {
+    elmApp.ports.saveConnectedUsers.subscribe(function (payload) {
+        try {
+            if (payload && payload.saleUuid) {
+                localStorage.setItem(connectedUsersStorageKey(payload.saleUuid), JSON.stringify(payload));
+            }
+        } catch (e) { /* storage unavailable or full */ }
+    });
+}
+
+if (elmApp.ports.loadConnectedUsers && elmApp.ports.receiveConnectedUsers) {
+    elmApp.ports.loadConnectedUsers.subscribe(function (saleUuid) {
+        var payload = null;
+        try {
+            var raw = localStorage.getItem(connectedUsersStorageKey(saleUuid));
+            payload = raw ? JSON.parse(raw) : null;
+        } catch (e) { /* corrupt or unavailable storage */ }
+        if (!payload) { return; }
+        // Defer so Elm has finished wiring the page's subscriptions.
+        setTimeout(function () {
+            elmApp.ports.receiveConnectedUsers.send(payload);
+        }, 0);
+    });
+}

@@ -921,6 +921,9 @@
       "paused": "Пауза"
     }
   },
+  "poweredBy": {
+    "label": "<0>Auction Software by Circuit AI</0> © {{year}}"
+  },
   "featured": {
     "noSaleNid": "Укажите NID аукциона для просмотра избранных лотов."
   },

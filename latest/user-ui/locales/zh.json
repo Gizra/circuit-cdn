@@ -921,6 +921,9 @@
       "paused": "已暂停"
     }
   },
+  "poweredBy": {
+    "label": "<0>Auction Software by Circuit AI</0> © {{year}}"
+  },
   "featured": {
     "noSaleNid": "请提供拍卖会 NID 以查看精选拍品。"
   },
