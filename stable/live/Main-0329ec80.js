@@ -54755,293 +54755,6 @@ var _Gizra$circuit_bid$BidStep_Utils$getAllAmountsList = F2(
 			{ctor: '[]'});
 	});
 
-var _Gizra$circuit_bid$Item_View$viewAutoClerk = F4(
-	function (currentDate, language, sale, calculated) {
-		var _p0 = {
-			ctor: '_Tuple2',
-			_0: _Gizra$circuit_bid$Sale_Utils$getRoundAndBumpTimeFromAutoClerk(sale.autoClerk),
-			_1: calculated.autoClerk
-		};
-		if ((((_p0.ctor === '_Tuple2') && (_p0._0.ctor === 'Just')) && (_p0._0._0.ctor === '_Tuple2')) && (_p0._1.ctor === 'Just')) {
-			var getDiff = function (date) {
-				return _elm_lang$core$Basics$round(
-					(_elm_lang$core$Date$toTime(date) - _elm_lang$core$Date$toTime(currentDate)) / 1000);
-			};
-			var diffOrZero = function (date) {
-				return (_elm_lang$core$Native_Utils.cmp(
-					getDiff(date),
-					0) > 0) ? getDiff(date) : 0;
-			};
-			var _p1 = function () {
-				var _p2 = _p0._1._0;
-				if (_p2.ctor === 'Round') {
-					return {
-						ctor: '_Tuple2',
-						_0: diffOrZero(_p2._0) + _p0._0._0._1,
-						_1: 'round'
-					};
-				} else {
-					return {
-						ctor: '_Tuple2',
-						_0: diffOrZero(_p2._0),
-						_1: 'bump'
-					};
-				}
-			}();
-			var timeLeft = _p1._0;
-			var className = _p1._1;
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class(
-						A2(_elm_lang$core$Basics_ops['++'], 'auto-clerk ', className)),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotCloseIn),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html$text(' '),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{ctor: '[]'},
-								A2(
-									_Gizra$circuit_bid$Translate$translateHtml,
-									language,
-									_Gizra$circuit_bid$Translate$Seconds(timeLeft))),
-							_1: {ctor: '[]'}
-						}
-					}
-				});
-		} else {
-			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-		}
-	});
-var _Gizra$circuit_bid$Item_View$currentPriceView = F3(
-	function (language, amount, currency) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('current-price'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_Gizra$circuit_bid$Translate$translateText,
-					language,
-					A2(_Gizra$circuit_bid$Translate$CurrentPriceAmount, amount, currency)),
-				_1: {ctor: '[]'}
-			});
-	});
-var _Gizra$circuit_bid$Item_View$minimumPriceView = F3(
-	function (language, currency, minimumPrice) {
-		return A2(
-			_elm_lang$html$Html$span,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('med minimum-price'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_Gizra$circuit_bid$Translate$translateText,
-					language,
-					A2(_Gizra$circuit_bid$Translate$MinimumPrice, currency, minimumPrice)),
-				_1: {ctor: '[]'}
-			});
-	});
-var _Gizra$circuit_bid$Item_View$openingPriceView = F3(
-	function (language, amount, currency) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('current-price'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_Gizra$circuit_bid$Translate$translateText,
-					language,
-					A2(_Gizra$circuit_bid$Translate$OpeningPriceAmount, amount, currency)),
-				_1: {ctor: '[]'}
-			});
-	});
-var _Gizra$circuit_bid$Item_View$pricesInfoView = F3(
-	function (language, currency, item) {
-		var estimatedRange = function () {
-			var _p3 = {ctor: '_Tuple2', _0: item.estimatedLow, _1: item.estimatedHigh};
-			if (_p3._0.ctor === 'Just') {
-				if (_p3._1.ctor === 'Just') {
-					return {
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Est. '),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._0._0, currency),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text(' - '),
-										_1: {
-											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._1._0, currency),
-											_1: {ctor: '[]'}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						}
-					};
-				} else {
-					return {
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Est. '),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._0._0, currency),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					};
-				}
-			} else {
-				if (_p3._1.ctor === 'Just') {
-					return {
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Est. '),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._1._0, currency),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					};
-				} else {
-					return {ctor: '[]'};
-				}
-			}
-		}();
-		var startPrice = A2(
-			_elm_lang$core$Maybe$withDefault,
-			{ctor: '[]'},
-			A2(
-				_elm_lang$core$Maybe$map,
-				function (startingPrice) {
-					return A2(
-						_Gizra$circuit_bid$Translate$translateHtml,
-						language,
-						A2(_Gizra$circuit_bid$Translate$Start, startingPrice, currency));
-				},
-				A2(
-					_elm_lang$core$Maybe$map,
-					function (_) {
-						return _.startingPrice;
-					},
-					_krisajenkins$remotedata$RemoteData$toMaybe(item.calculated))));
-		var minimumPrice = A2(
-			_elm_lang$core$Maybe$withDefault,
-			{ctor: '[]'},
-			A2(
-				_elm_lang$core$Maybe$map,
-				function (minPrice) {
-					return A2(
-						_Gizra$circuit_bid$Translate$translateHtml,
-						language,
-						A2(_Gizra$circuit_bid$Translate$MinPrice, minPrice, currency));
-				},
-				A2(
-					_elm_lang$core$Maybe$andThen,
-					function (_) {
-						return _.minimumPrice;
-					},
-					_krisajenkins$remotedata$RemoteData$toMaybe(item.calculated))));
-		var estimatedPrice = A2(
-			_elm_lang$core$Maybe$withDefault,
-			{ctor: '[]'},
-			A2(
-				_elm_lang$core$Maybe$map,
-				function (estimatedPrice) {
-					return A2(
-						_Gizra$circuit_bid$Translate$translateHtml,
-						language,
-						A2(_Gizra$circuit_bid$Translate$EstPrice, estimatedPrice, currency));
-				},
-				item.estimatedPrice));
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('prices'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$span,
-					{ctor: '[]'},
-					startPrice),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$span,
-						{ctor: '[]'},
-						estimatedPrice),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$span,
-							{ctor: '[]'},
-							minimumPrice),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{ctor: '[]'},
-								estimatedRange),
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			});
-	});
-
 var _mgold$elm_date_format$Date_Local$dutch = {
 	date: {
 		months: {jan: 'januari', feb: 'februari', mar: 'maart', apr: 'april', may: 'mei', jun: 'juni', jul: 'juli', aug: 'augustus', sep: 'september', oct: 'oktober', nov: 'november', dec: 'december'},
@@ -58225,108 +57938,61 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk = F2(
 				},
 				_Gizra$circuit_bid$Pages_Clerk_Utils$getMaxQueuedBidData(model.queuedBids)));
 	});
-var _Gizra$circuit_bid$Pages_Clerk_Utils$viewRallyStatus = F2(
-	function (language, calculated) {
-		var _p27 = calculated.rallyStatus;
-		switch (_p27.ctor) {
-			case 'None':
-				return _Gizra$circuit_bid$Utils_Html$emptyNode;
-			case 'OnStep':
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('rally-status on-step'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$i,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('fa fa-thumbs-up'),
-								_1: {ctor: '[]'}
-							},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('On Step'),
-							_1: {ctor: '[]'}
-						}
-					});
-			default:
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('rally-status off-step'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$i,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('fa fa-thumbs-down'),
-								_1: {ctor: '[]'}
-							},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('Off Step'),
-							_1: {ctor: '[]'}
-						}
-					});
-		}
-	});
-var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceAmountAndRally = F5(
-	function (currentDate, language, sale, calculated, nextAmount) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('next-bid'),
-				_1: {ctor: '[]'}
-			},
-			_elm_lang$core$List$concat(
+var _Gizra$circuit_bid$Pages_Clerk_Utils$viewRallyBadge = function (calculated) {
+	var _p27 = calculated.rallyStatus;
+	switch (_p27.ctor) {
+		case 'None':
+			return _Gizra$circuit_bid$Utils_Html$emptyNode;
+		case 'OnStep':
+			return A2(
+				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
-					_0: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('clerk-auto-clerk'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, sale, calculated),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
-					},
+					_0: _elm_lang$html$Html_Attributes$class('sbadge rally-badge on-step'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$span,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('sb-dot'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
 					_1: {
 						ctor: '::',
-						_0: A2(
-							_Gizra$circuit_bid$Translate$translateHtml,
-							language,
-							A2(_Gizra$circuit_bid$Translate$NextBidWithAmount, nextAmount, sale.currency)),
-						_1: {
-							ctor: '::',
-							_0: {
-								ctor: '::',
-								_0: A2(_Gizra$circuit_bid$Pages_Clerk_Utils$viewRallyStatus, language, calculated),
-								_1: {ctor: '[]'}
-							},
-							_1: {ctor: '[]'}
-						}
+						_0: _elm_lang$html$Html$text('On Step'),
+						_1: {ctor: '[]'}
 					}
-				}));
-	});
+				});
+		default:
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('sbadge rally-badge off-step'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$span,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('sb-dot'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Off Step'),
+						_1: {ctor: '[]'}
+					}
+				});
+	}
+};
 var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForQueuedBidsUpdate = F2(
 	function (calculated, model) {
 		nextBidAmountForQueuedBidsUpdate:
@@ -58378,26 +58044,6 @@ var _Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk = F2(
 		} else {
 			return nextBidAmount;
 		}
-	});
-var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally = F5(
-	function (currentDate, language, sale, calculated, model) {
-		return A5(
-			_Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceAmountAndRally,
-			currentDate,
-			language,
-			sale,
-			calculated,
-			A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, calculated, model));
-	});
-var _Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceAndRally = F4(
-	function (currentDate, language, sale, calculated) {
-		return A5(
-			_Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceAmountAndRally,
-			currentDate,
-			language,
-			sale,
-			calculated,
-			_Gizra$circuit_bid$Item_Utils$getNextPriceAmount(calculated));
 	});
 var _Gizra$circuit_bid$Pages_Clerk_Utils$viewWithdrawnItem = function (language) {
 	return A2(
@@ -67433,6 +67079,295 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_View$viewConnectedUsers = F6(
 			});
 	});
 
+var _Gizra$circuit_bid$Item_View$viewAutoClerk = F4(
+	function (currentDate, language, sale, calculated) {
+		var _p0 = {
+			ctor: '_Tuple2',
+			_0: _Gizra$circuit_bid$Sale_Utils$getRoundAndBumpTimeFromAutoClerk(sale.autoClerk),
+			_1: calculated.autoClerk
+		};
+		if ((((_p0.ctor === '_Tuple2') && (_p0._0.ctor === 'Just')) && (_p0._0._0.ctor === '_Tuple2')) && (_p0._1.ctor === 'Just')) {
+			var getDiff = function (date) {
+				return _elm_lang$core$Basics$round(
+					(_elm_lang$core$Date$toTime(date) - _elm_lang$core$Date$toTime(currentDate)) / 1000);
+			};
+			var diffOrZero = function (date) {
+				return (_elm_lang$core$Native_Utils.cmp(
+					getDiff(date),
+					0) > 0) ? getDiff(date) : 0;
+			};
+			var _p1 = function () {
+				var _p2 = _p0._1._0;
+				if (_p2.ctor === 'Round') {
+					return {
+						ctor: '_Tuple2',
+						_0: diffOrZero(_p2._0) + _p0._0._0._1,
+						_1: 'round'
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: diffOrZero(_p2._0),
+						_1: 'bump'
+					};
+				}
+			}();
+			var timeLeft = _p1._0;
+			var className = _p1._1;
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class(
+						A2(_elm_lang$core$Basics_ops['++'], 'auto-clerk ', className)),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotCloseIn),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(' '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{ctor: '[]'},
+								A2(
+									_Gizra$circuit_bid$Translate$translateHtml,
+									language,
+									_Gizra$circuit_bid$Translate$Seconds(timeLeft))),
+							_1: {ctor: '[]'}
+						}
+					}
+				});
+		} else {
+			return _Gizra$circuit_bid$Utils_Html$emptyNode;
+		}
+	});
+var _Gizra$circuit_bid$Item_View$currentPriceView = F3(
+	function (language, amount, currency) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('current-price'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_Gizra$circuit_bid$Translate$translateText,
+					language,
+					A2(_Gizra$circuit_bid$Translate$CurrentPriceAmount, amount, currency)),
+				_1: {ctor: '[]'}
+			});
+	});
+var _Gizra$circuit_bid$Item_View$minimumPriceView = F3(
+	function (language, currency, minimumPrice) {
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('med minimum-price'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_Gizra$circuit_bid$Translate$translateText,
+					language,
+					A2(_Gizra$circuit_bid$Translate$MinimumPrice, currency, minimumPrice)),
+				_1: {ctor: '[]'}
+			});
+	});
+var _Gizra$circuit_bid$Item_View$openingPriceView = F3(
+	function (language, amount, currency) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('current-price'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_Gizra$circuit_bid$Translate$translateText,
+					language,
+					A2(_Gizra$circuit_bid$Translate$OpeningPriceAmount, amount, currency)),
+				_1: {ctor: '[]'}
+			});
+	});
+var _Gizra$circuit_bid$Item_View$pricesInfoView = F3(
+	function (language, currency, item) {
+		var estimatedRange = function () {
+			var _p3 = {ctor: '_Tuple2', _0: item.estimatedLow, _1: item.estimatedHigh};
+			if (_p3._0.ctor === 'Just') {
+				if (_p3._1.ctor === 'Just') {
+					return {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Est. '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._0._0, currency),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(' - '),
+										_1: {
+											ctor: '::',
+											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._1._0, currency),
+											_1: {ctor: '[]'}
+										}
+									}
+								}),
+							_1: {ctor: '[]'}
+						}
+					};
+				} else {
+					return {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Est. '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._0._0, currency),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					};
+				}
+			} else {
+				if (_p3._1.ctor === 'Just') {
+					return {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Est. '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('med estimated-range'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p3._1._0, currency),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					};
+				} else {
+					return {ctor: '[]'};
+				}
+			}
+		}();
+		var startPrice = A2(
+			_elm_lang$core$Maybe$withDefault,
+			{ctor: '[]'},
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (startingPrice) {
+					return A2(
+						_Gizra$circuit_bid$Translate$translateHtml,
+						language,
+						A2(_Gizra$circuit_bid$Translate$Start, startingPrice, currency));
+				},
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (_) {
+						return _.startingPrice;
+					},
+					_krisajenkins$remotedata$RemoteData$toMaybe(item.calculated))));
+		var minimumPrice = A2(
+			_elm_lang$core$Maybe$withDefault,
+			{ctor: '[]'},
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (minPrice) {
+					return A2(
+						_Gizra$circuit_bid$Translate$translateHtml,
+						language,
+						A2(_Gizra$circuit_bid$Translate$MinPrice, minPrice, currency));
+				},
+				A2(
+					_elm_lang$core$Maybe$andThen,
+					function (_) {
+						return _.minimumPrice;
+					},
+					_krisajenkins$remotedata$RemoteData$toMaybe(item.calculated))));
+		var estimatedPrice = A2(
+			_elm_lang$core$Maybe$withDefault,
+			{ctor: '[]'},
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (estimatedPrice) {
+					return A2(
+						_Gizra$circuit_bid$Translate$translateHtml,
+						language,
+						A2(_Gizra$circuit_bid$Translate$EstPrice, estimatedPrice, currency));
+				},
+				item.estimatedPrice));
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('prices'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$span,
+					{ctor: '[]'},
+					startPrice),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$span,
+						{ctor: '[]'},
+						estimatedPrice),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{ctor: '[]'},
+							minimumPrice),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{ctor: '[]'},
+								estimatedRange),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			});
+	});
+
+var _Gizra$circuit_bid$Audio_PingSound$pingDataUri = 'data:audio/mpeg;base64,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lq8QWTRcRg0BUeo7LJ7C3Dr6xRnUPqlaIisquGGmM2CHg948tRXYFpnMuOkApYRgCwRblTQu01VTV6EwllLOUxdRUztqldBTZmRTDdRg9RvjhMJBHMtoa8Vz85VIdS6Qo/Vg0mM6V5RQEOTKVOZnOVWE6O5HnTC3ZtcTmYDqX0JRTScqsNJsOpfQk3ls0VIdS6Qo3UoW47x4hqgtI7yGFiUsz67K3UfWbXFXN6pUwoAQ8v//83FACOK2xUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVX/+6Bkbg/2Fle6my8uxgAADSAAAAEAAAGkAAAAIAAANIAAAARVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=';
+
 var _Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus = F2(
 	function (language, status) {
 		return _Gizra$circuit_bid$Item_Utils$isPaused(status) ? {
@@ -68875,309 +68810,6 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$winningBidderTotalSpent = F3(
 				language,
 				A2(_Gizra$circuit_bid$Translate$TotalSpentAmount, totalSpent, currency)));
 	});
-var _Gizra$circuit_bid$Pages_Auctioneer_View$viewCurrentItemInfo = F6(
-	function (softBidderLimit, currentDate, language, modelBackend, _p59, _p58) {
-		var _p60 = _p59;
-		var _p67 = _p60._1;
-		var _p61 = _p58;
-		var _p66 = _p61._1;
-		var _p62 = _krisajenkins$remotedata$RemoteData$toMaybe(_p66.calculated);
-		if (_p62.ctor === 'Nothing') {
-			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-		} else {
-			var _p65 = _p62._0;
-			if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p65.status)) {
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('cur-card cur-card-withdrawn'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$i,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('fa fa-ban cur-card-withdrawn-icon'),
-								_1: {ctor: '[]'}
-							},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('cur-card-withdrawn-text'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotWithdrawnFromSale),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					});
-			} else {
-				var rallyView = function () {
-					var _p63 = _p65.rallyStatus;
-					switch (_p63.ctor) {
-						case 'OnStep':
-							return A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('on-step'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('on-step-dot'),
-											_1: {ctor: '[]'}
-										},
-										{ctor: '[]'}),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('On Step'),
-										_1: {ctor: '[]'}
-									}
-								});
-						case 'OffStep':
-							return A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('off-step'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$i,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('fa fa-thumbs-down'),
-											_1: {ctor: '[]'}
-										},
-										{ctor: '[]'}),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Off Step'),
-										_1: {ctor: '[]'}
-									}
-								});
-						default:
-							return _Gizra$circuit_bid$Utils_Html$emptyNode;
-					}
-				}();
-				var totalWonView = A2(
-					_elm_lang$core$Maybe$withDefault,
-					_Gizra$circuit_bid$Utils_Html$emptyNode,
-					A2(
-						_elm_lang$core$Maybe$map,
-						function (totalSpent) {
-							return A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('tot'),
-									_1: {ctor: '[]'}
-								},
-								A2(
-									_Gizra$circuit_bid$Translate$translateHtml,
-									language,
-									A2(_Gizra$circuit_bid$Translate$TotalSpentAmount, totalSpent, _p67.currency)));
-						},
-						A2(
-							_elm_lang$core$Maybe$andThen,
-							function (_) {
-								return _.winningUserTotalWon;
-							},
-							_krisajenkins$remotedata$RemoteData$toMaybe(_p66.calculated))));
-				var _p64 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p65.status);
-				var statusClass = _p64._0;
-				var statusName = _p64._1;
-				var nextAmount = _Gizra$circuit_bid$Item_Utils$getNextPriceAmount(_p65);
-				var highestPrice = _Gizra$circuit_bid$Item_Utils$getPrice(_p65);
-				var priceAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(highestPrice);
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('cur-card'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('cur-hero'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{ctor: '[]'},
-									A2(
-										_Gizra$circuit_bid$Translate$translateHtml,
-										language,
-										A2(_Gizra$circuit_bid$Translate$ClerkCurrentPriceAmount, highestPrice, _p67.currency))),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{ctor: '[]'},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('cur-lbl'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Bidder),
-													_1: {ctor: '[]'}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('cur-bidder'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: A7(
-															_Gizra$circuit_bid$Pages_Clerk_Utils$viewWinningBidder,
-															softBidderLimit,
-															language,
-															_p67.currency,
-															modelBackend,
-															_p60._0,
-															{ctor: '_Tuple2', _0: _p61._0, _1: _p66},
-															true),
-														_1: {ctor: '[]'}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('cur-bidder-meta'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: totalWonView,
-															_1: {ctor: '[]'}
-														}),
-													_1: {ctor: '[]'}
-												}
-											}
-										}),
-									_1: {ctor: '[]'}
-								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('cur-footer'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{ctor: '[]'},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('cur-next-lbl'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$NextBid),
-													_1: {ctor: '[]'}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('cur-next-val'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, nextAmount, _p67.currency),
-														_1: {ctor: '[]'}
-													}),
-												_1: {ctor: '[]'}
-											}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$div,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('cur-badges'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: rallyView,
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class(
-																A2(_elm_lang$core$Basics_ops['++'], 'sbadge ', statusClass)),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text(statusName),
-															_1: {ctor: '[]'}
-														}),
-													_1: {ctor: '[]'}
-												}
-											}),
-										_1: {ctor: '[]'}
-									}
-								}),
-							_1: {ctor: '[]'}
-						}
-					});
-			}
-		}
-	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$viewStaticAndPricesInfo = F3(
 	function (language, currency, item) {
 		var consignerHtml = A3(
@@ -69276,9 +68908,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip = F4(
 			0,
 			A2(
 				_elm_lang$core$Maybe$map,
-				function (_p68) {
-					var _p69 = _p68;
-					return _p69._0;
+				function (_p58) {
+					var _p59 = _p58;
+					return _p59._0;
 				},
 				maybeCurrentPrice));
 		var actionButton = reserve.isDeleted ? A2(
@@ -69337,8 +68969,8 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip = F4(
 				}
 			}));
 		var typeLabel = function () {
-			var _p70 = reserve.reserveType;
-			switch (_p70) {
+			var _p60 = reserve.reserveType;
+			switch (_p60) {
 				case 'soft':
 					return 'Soft';
 				case 'net':
@@ -69349,7 +68981,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip = F4(
 					return reserve.reserveType;
 			}
 		}();
-		var _p71 = reserve.isDeleted ? {
+		var _p61 = reserve.isDeleted ? {
 			ctor: '_Tuple3',
 			_0: 'undo',
 			_1: 'fa fa-undo',
@@ -69620,9 +69252,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip = F4(
 				}
 			}
 		});
-		var stateClass = _p71._0;
-		var iconClass = _p71._1;
-		var content = _p71._2;
+		var stateClass = _p61._0;
+		var iconClass = _p61._1;
+		var content = _p61._2;
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -69681,828 +69313,6 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip = F4(
 				_1: {ctor: '[]'}
 			});
 	});
-var _Gizra$circuit_bid$Pages_Auctioneer_View$viewAuctionHeader = F9(
-	function (softBidderLimit, currentDate, language, currency, modelBackend, _p73, items, _p72, openingPriceEditorSlot) {
-		var _p74 = _p73;
-		var _p86 = _p74._1;
-		var _p75 = _p72;
-		var _p85 = _p75._0;
-		var _p84 = _p75._1;
-		var _p76 = _krisajenkins$remotedata$RemoteData$toMaybe(_p84.calculated);
-		if (_p76.ctor === 'Nothing') {
-			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-		} else {
-			var _p83 = _p76._0;
-			var publicMessageView = function () {
-				var _p77 = _p83.publicMessage;
-				if (_p77.ctor === 'Just') {
-					var _p78 = _p77._0;
-					return _elm_lang$core$String$isEmpty(
-						_elm_lang$core$String$trim(_p78)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('note-line'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('note-tag'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$PublicMessage),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(_p78),
-								_1: {ctor: '[]'}
-							}
-						});
-				} else {
-					return _Gizra$circuit_bid$Utils_Html$emptyNode;
-				}
-			}();
-			var noteView = function () {
-				var _p79 = _p83.note;
-				if (_p79.ctor === 'Just') {
-					var _p80 = _p79._0;
-					return _elm_lang$core$String$isEmpty(
-						_elm_lang$core$String$trim(_p80)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('note-line'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('note-tag'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$AuctioneerNotes),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(_p80),
-								_1: {ctor: '[]'}
-							}
-						});
-				} else {
-					return _Gizra$circuit_bid$Utils_Html$emptyNode;
-				}
-			}();
-			var rallyView = function () {
-				var _p81 = _p83.rallyStatus;
-				switch (_p81.ctor) {
-					case 'OnStep':
-						return A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('sbadge on-step'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('on-step-dot'),
-										_1: {ctor: '[]'}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('On Step'),
-									_1: {ctor: '[]'}
-								}
-							});
-					case 'OffStep':
-						return A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('sbadge off-step'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$i,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('fa fa-thumbs-down'),
-										_1: {ctor: '[]'}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(' Off Step'),
-									_1: {ctor: '[]'}
-								}
-							});
-					default:
-						return _Gizra$circuit_bid$Utils_Html$emptyNode;
-				}
-			}();
-			var totalWonView = A2(
-				_elm_lang$core$Maybe$withDefault,
-				_Gizra$circuit_bid$Utils_Html$emptyNode,
-				A2(
-					_elm_lang$core$Maybe$map,
-					function (totalSpent) {
-						return A2(
-							_elm_lang$html$Html$span,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('cur-spent'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										'Spent ',
-										A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, totalSpent, _p86.currency))),
-								_1: {ctor: '[]'}
-							});
-					},
-					A2(
-						_elm_lang$core$Maybe$andThen,
-						function (_) {
-							return _.winningUserTotalWon;
-						},
-						_krisajenkins$remotedata$RemoteData$toMaybe(_p84.calculated))));
-			var isOpening = !_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p83);
-			var stateLbl = isOpening ? A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$OpeningPrice) : A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$CurrentPrice);
-			var priceClass = isOpening ? 'cur-price opening' : 'cur-price';
-			var bidderView = isOpening ? A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('cur-bidder no-bids'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$NoBidsPlaced),
-					_1: {ctor: '[]'}
-				}) : A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('cur-bidder'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('cur-bidder-dot'),
-							_1: {ctor: '[]'}
-						},
-						{ctor: '[]'}),
-					_1: {
-						ctor: '::',
-						_0: A7(
-							_Gizra$circuit_bid$Pages_Clerk_Utils$viewWinningBidder,
-							softBidderLimit,
-							language,
-							_p86.currency,
-							modelBackend,
-							_p74._0,
-							{ctor: '_Tuple2', _0: _p85, _1: _p84},
-							true),
-						_1: {
-							ctor: '::',
-							_0: totalWonView,
-							_1: {ctor: '[]'}
-						}
-					}
-				});
-			var _p82 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p83.status);
-			var statusClass = _p82._0;
-			var statusName = _p82._1;
-			var nextAmount = _Gizra$circuit_bid$Item_Utils$getNextPriceAmount(_p83);
-			var highestPrice = _Gizra$circuit_bid$Item_Utils$getPrice(_p83);
-			var priceAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(highestPrice);
-			var consignerHtml = A3(
-				_elm_community$maybe_extra$Maybe_Extra$unwrap,
-				_Gizra$circuit_bid$Utils_Html$emptyNode,
-				function (consigner) {
-					return A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('lot-consignor'),
-							_1: {ctor: '[]'}
-						},
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							A2(
-								_Gizra$circuit_bid$Translate$translateHtml,
-								language,
-								_Gizra$circuit_bid$Translate$Consigner(consigner.name)),
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$span,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('total-spent'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Est. $20,000 - Sold $12,800 / $6,200'),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							}));
-				},
-				_p83.consigner);
-			var itemCounter = function () {
-				var maybeIndex = A2(
-					_elm_lang$core$Maybe$map,
-					F2(
-						function (x, y) {
-							return x + y;
-						})(1),
-					A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p85, items));
-				var numberOfItems = _Gizra$elm_dictlist$EveryDictList$size(items);
-				return A3(
-					_elm_community$maybe_extra$Maybe_Extra$unwrap,
-					_Gizra$circuit_bid$Utils_Html$emptyNode,
-					function (index) {
-						var progressPct = _elm_lang$core$Native_Utils.eq(numberOfItems, 0) ? 0 : ((_elm_lang$core$Basics$toFloat(index) / _elm_lang$core$Basics$toFloat(numberOfItems)) * 100);
-						return A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('lot-progress'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('lot-progress-hd'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$span,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('lot-progress-lbl'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotProgress),
-												_1: {ctor: '[]'}
-											}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$span,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('lot-progress-count'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(
-														_elm_lang$core$Basics$toString(index)),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$span,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('of'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text(
-																	A2(
-																		_elm_lang$core$Basics_ops['++'],
-																		' / ',
-																		_elm_lang$core$Basics$toString(numberOfItems))),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}
-												}),
-											_1: {ctor: '[]'}
-										}
-									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('lot-progress-track'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('lot-progress-fill'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$style(
-															{
-																ctor: '::',
-																_0: {
-																	ctor: '_Tuple2',
-																	_0: 'width',
-																	_1: A2(
-																		_elm_lang$core$Basics_ops['++'],
-																		_elm_lang$core$Basics$toString(progressPct),
-																		'%')
-																},
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}
-												},
-												{ctor: '[]'}),
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
-								}
-							});
-					},
-					maybeIndex);
-			}();
-			return _Gizra$circuit_bid$Item_Utils$isWithdrawn(_p83.status) ? A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('auction-hdr-wrap'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('auction-hdr'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('lot-side'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('lot-num-block'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('lnb-hero'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$span,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('hash'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text(
-																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Lot)),
-															_1: {ctor: '[]'}
-														}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$span,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('digits'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text(_p84.lotId),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}
-												}),
-											_1: {
-												ctor: '::',
-												_0: itemCounter,
-												_1: {ctor: '[]'}
-											}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$div,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('lot-info'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: _Gizra$circuit_bid$Pages_Clerk_Utils$viewWithdrawnItem(language),
-												_1: {ctor: '[]'}
-											}),
-										_1: {ctor: '[]'}
-									}
-								}),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}) : A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('auction-hdr-wrap'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('auction-hdr'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('lot-side'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('lot-num-block'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('lnb-hero'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$span,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('hash'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text(
-																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Lot)),
-															_1: {ctor: '[]'}
-														}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$span,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('digits'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text(_p84.lotId),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$img,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('lot-img'),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$src(_p84.image.big),
-															_1: {ctor: '[]'}
-														}
-													},
-													{ctor: '[]'}),
-												_1: {
-													ctor: '::',
-													_0: itemCounter,
-													_1: {ctor: '[]'}
-												}
-											}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$div,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('lot-info'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('lot-title'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html$text(_p84.name),
-														_1: {ctor: '[]'}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_Gizra$circuit_bid$Utils_Html$showMaybe,
-														function (subtitle) {
-															return A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('lot-subtitle'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text(subtitle),
-																	_1: {ctor: '[]'}
-																});
-														},
-														_p84.subtitle),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_Gizra$circuit_bid$Utils_Html$showMaybe,
-															function (description) {
-																return A2(
-																	_elm_lang$html$Html$div,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('lot-desc'),
-																		_1: {
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html_Attributes$property,
-																				'innerHTML',
-																				_elm_lang$core$Json_Encode$string(description)),
-																			_1: {ctor: '[]'}
-																		}
-																	},
-																	{ctor: '[]'});
-															},
-															_p84.description),
-														_1: {
-															ctor: '::',
-															_0: A3(_Gizra$circuit_bid$Item_View$pricesInfoView, language, currency, _p84),
-															_1: {
-																ctor: '::',
-																_0: consignerHtml,
-																_1: {ctor: '[]'}
-															}
-														}
-													}
-												}
-											}),
-										_1: {ctor: '[]'}
-									}
-								}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('cur-side'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$div,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('cur-badges'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: rallyView,
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class(
-																A2(_elm_lang$core$Basics_ops['++'], 'sbadge ', statusClass)),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$span,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('sb-dot'),
-																	_1: {ctor: '[]'}
-																},
-																{ctor: '[]'}),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html$text(statusName),
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {ctor: '[]'}
-												}
-											}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('cur-state-lbl'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: stateLbl,
-													_1: {ctor: '[]'}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class(priceClass),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, priceAmount, _p86.currency),
-														_1: {ctor: '[]'}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('cur-bidder-row'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: bidderView,
-															_1: {
-																ctor: '::',
-																_0: openingPriceEditorSlot,
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('next-side'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('next-lbl'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$NextBid),
-													_1: {ctor: '[]'}
-												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('next-val'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, nextAmount, _p86.currency),
-														_1: {ctor: '[]'}
-													}),
-												_1: {ctor: '[]'}
-											}
-										}),
-									_1: {ctor: '[]'}
-								}
-							}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_Gizra$circuit_bid$Utils_Html$showMaybe,
-							A3(_Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip, _p86.currency, _p85, _p83.currentPrice),
-							_p83.reserveBid),
-						_1: {
-							ctor: '::',
-							_0: noteView,
-							_1: {
-								ctor: '::',
-								_0: publicMessageView,
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				});
-		}
-	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$viewImageAndDescription = function (item) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -70545,9 +69355,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewImageAndDescription = function 
 };
 var _Gizra$circuit_bid$Pages_Auctioneer_View$viewCurrentBid = F3(
 	function (language, currency, price) {
-		var _p87 = price;
-		if (_p87.ctor === 'Current') {
-			return A3(_Gizra$circuit_bid$Item_View$currentPriceView, language, _p87._0, currency);
+		var _p62 = price;
+		if (_p62.ctor === 'Current') {
+			return A3(_Gizra$circuit_bid$Item_View$currentPriceView, language, _p62._0, currency);
 		} else {
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		}
@@ -70629,23 +69439,23 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$callRequestTable = F6(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
-	function (softBidderLimit, currentDate, language, currency, modelBackend, _p89, _p88) {
-		var _p90 = _p89;
-		var _p114 = _p90._1;
-		var _p91 = _p88;
-		var _p113 = _p91._0;
-		var _p112 = _p91._1;
-		var _p92 = _krisajenkins$remotedata$RemoteData$toMaybe(_p112.calculated);
-		if (_p92.ctor === 'Nothing') {
+	function (softBidderLimit, currentDate, language, currency, modelBackend, _p64, _p63) {
+		var _p65 = _p64;
+		var _p89 = _p65._1;
+		var _p66 = _p63;
+		var _p88 = _p66._0;
+		var _p87 = _p66._1;
+		var _p67 = _krisajenkins$remotedata$RemoteData$toMaybe(_p87.calculated);
+		if (_p67.ctor === 'Nothing') {
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		} else {
-			var _p111 = _p92._0;
+			var _p86 = _p67._0;
 			var publicMessageView = function () {
-				var _p93 = _p111.publicMessage;
-				if (_p93.ctor === 'Just') {
-					var _p94 = _p93._0;
+				var _p68 = _p86.publicMessage;
+				if (_p68.ctor === 'Just') {
+					var _p69 = _p68._0;
 					return _elm_lang$core$String$isEmpty(
-						_elm_lang$core$String$trim(_p94)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+						_elm_lang$core$String$trim(_p69)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
@@ -70668,7 +69478,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 								}),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html$text(_p94),
+								_0: _elm_lang$html$Html$text(_p69),
 								_1: {ctor: '[]'}
 							}
 						});
@@ -70677,11 +69487,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 				}
 			}();
 			var noteView = function () {
-				var _p95 = _p111.note;
-				if (_p95.ctor === 'Just') {
-					var _p96 = _p95._0;
+				var _p70 = _p86.note;
+				if (_p70.ctor === 'Just') {
+					var _p71 = _p70._0;
 					return _elm_lang$core$String$isEmpty(
-						_elm_lang$core$String$trim(_p96)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+						_elm_lang$core$String$trim(_p71)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
@@ -70704,7 +69514,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 								}),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html$text(_p96),
+								_0: _elm_lang$html$Html$text(_p71),
 								_1: {ctor: '[]'}
 							}
 						});
@@ -70795,25 +69605,25 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 					function (prevVal, prevSlot, remaining, value) {
 						piecewiseFold:
 						while (true) {
-							var _p97 = remaining;
-							if (_p97.ctor === '[]') {
+							var _p72 = remaining;
+							if (_p72.ctor === '[]') {
 								return 100;
 							} else {
-								var _p99 = _p97._0._0;
-								var _p98 = _p97._0._1;
+								var _p74 = _p72._0._0;
+								var _p73 = _p72._0._1;
 								if (_elm_lang$core$Native_Utils.cmp(
 									value,
-									_elm_lang$core$Basics$toFloat(_p99)) < 1) {
-									return _elm_lang$core$Native_Utils.eq(_p99, prevVal) ? _p98 : (prevSlot + (((value - _elm_lang$core$Basics$toFloat(prevVal)) / _elm_lang$core$Basics$toFloat(_p99 - prevVal)) * (_p98 - prevSlot)));
+									_elm_lang$core$Basics$toFloat(_p74)) < 1) {
+									return _elm_lang$core$Native_Utils.eq(_p74, prevVal) ? _p73 : (prevSlot + (((value - _elm_lang$core$Basics$toFloat(prevVal)) / _elm_lang$core$Basics$toFloat(_p74 - prevVal)) * (_p73 - prevSlot)));
 								} else {
-									var _v44 = _p99,
-										_v45 = _p98,
-										_v46 = _p97._1,
-										_v47 = value;
-									prevVal = _v44;
-									prevSlot = _v45;
-									remaining = _v46;
-									value = _v47;
+									var _v34 = _p74,
+										_v35 = _p73,
+										_v36 = _p72._1,
+										_v37 = value;
+									prevVal = _v34;
+									prevSlot = _v35;
+									remaining = _v36;
+									value = _v37;
 									continue piecewiseFold;
 								}
 							}
@@ -70829,11 +69639,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						},
 						A2(
 							_elm_lang$core$Maybe$andThen,
-							function (_p100) {
+							function (_p75) {
 								return _krisajenkins$remotedata$RemoteData$toMaybe(
 									function (_) {
 										return _.data;
-									}(_p100));
+									}(_p75));
 							},
 							modelBackend.consignerStats)));
 				var parSum = A2(
@@ -70846,11 +69656,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						},
 						A2(
 							_elm_lang$core$Maybe$andThen,
-							function (_p101) {
+							function (_p76) {
 								return _krisajenkins$remotedata$RemoteData$toMaybe(
 									function (_) {
 										return _.data;
-									}(_p101));
+									}(_p76));
 							},
 							modelBackend.consignerStats)));
 				var slotsFor = function (n) {
@@ -70884,11 +69694,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 								fieldGetter,
 								A2(
 									_elm_lang$core$Maybe$andThen,
-									function (_p102) {
+									function (_p77) {
 										return _krisajenkins$remotedata$RemoteData$toMaybe(
 											function (_) {
 												return _.data;
-											}(_p102));
+											}(_p77));
 									},
 									modelBackend.consignerStats)));
 					});
@@ -70923,9 +69733,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 					_elm_lang$core$Tuple$second,
 					A2(
 						_elm_lang$core$List$filter,
-						function (_p103) {
-							var _p104 = _p103;
-							return _elm_lang$core$Native_Utils.cmp(_p104._1, 0) > 0;
+						function (_p78) {
+							var _p79 = _p78;
+							return _elm_lang$core$Native_Utils.cmp(_p79._1, 0) > 0;
 						},
 						{
 							ctor: '::',
@@ -70954,9 +69764,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 				var sortedStaticSlots = A3(
 					_elm_lang$core$List$map2,
 					F2(
-						function (_p105, slot) {
-							var _p106 = _p105;
-							return {label: _p106._0, value: _p106._1, slot: slot};
+						function (_p80, slot) {
+							var _p81 = _p80;
+							return {label: _p81._0, value: _p81._1, slot: slot};
 						}),
 					sortedStatic,
 					slots);
@@ -71010,7 +69820,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 				var paceRatio = _elm_lang$core$Basics$toFloat(realizedSum) / _elm_lang$core$Basics$toFloat(parSum);
 				var pacePct = _elm_lang$core$Basics$round((paceRatio - 1) * 100);
 				var projectingPaceRatio = (_elm_lang$core$Native_Utils.cmp(parSum, 0) > 0) ? paceRatio : 1.0;
-				var _p107 = (_elm_lang$core$Native_Utils.cmp(paceRatio, 1.05) > -1) ? {
+				var _p82 = (_elm_lang$core$Native_Utils.cmp(paceRatio, 1.05) > -1) ? {
 					ctor: '_Tuple3',
 					_0: 'pace-pill--ahead',
 					_1: 'fa fa-arrow-up',
@@ -71030,9 +69840,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						_elm_lang$core$Basics$toString(pacePct),
 						'% behind par')
 				} : {ctor: '_Tuple3', _0: 'pace-pill--on-par', _1: 'fa fa-minus', _2: 'on par'});
-				var paceClass = _p107._0;
-				var paceIcon = _p107._1;
-				var paceText = _p107._2;
+				var paceClass = _p82._0;
+				var paceIcon = _p82._1;
+				var paceText = _p82._2;
 				var projectingSum = realizedSum + _elm_lang$core$Basics$round(
 					projectingPaceRatio * _elm_lang$core$Basics$toFloat(remainingExpected));
 				var isOverHigh = (_elm_lang$core$Native_Utils.cmp(highestStatic, 0) > 0) && (_elm_lang$core$Native_Utils.cmp(realizedSum, highestStatic) > 0);
@@ -71049,11 +69859,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						},
 						A2(
 							_elm_lang$core$Maybe$andThen,
-							function (_p108) {
+							function (_p83) {
 								return _krisajenkins$remotedata$RemoteData$toMaybe(
 									function (_) {
 										return _.data;
-									}(_p108));
+									}(_p83));
 							},
 							modelBackend.consignerStats)));
 				return A2(
@@ -71550,7 +70360,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 																	A2(
 																		_Gizra$circuit_bid$Amount$showAmountWithCurrencyText,
 																		_Gizra$circuit_bid$Amount$Amount(realizedSum),
-																		_p114.currency)),
+																		_p89.currency)),
 																_1: {ctor: '[]'}
 															}),
 														_1: {ctor: '[]'}
@@ -71594,7 +70404,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 																		A2(
 																			_Gizra$circuit_bid$Amount$showAmountWithCurrencyText,
 																			_Gizra$circuit_bid$Amount$Amount(totalUnsold),
-																			_p114.currency)),
+																			_p89.currency)),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {ctor: '[]'}
@@ -71636,17 +70446,17 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 					_elm_lang$core$Basics$always(true),
 					A2(
 						_elm_lang$core$Maybe$andThen,
-						function (_p109) {
+						function (_p84) {
 							return _krisajenkins$remotedata$RemoteData$toMaybe(
 								function (_) {
 									return _.data;
-								}(_p109));
+								}(_p84));
 						},
 						modelBackend.consignerStats)));
-			var nextAmount = _Gizra$circuit_bid$Item_Utils$getNextPriceAmount(_p111);
+			var nextAmount = _Gizra$circuit_bid$Item_Utils$getNextPriceAmount(_p86);
 			var priceAmount = _Gizra$circuit_bid$Item_Utils$getAmountFromPrice(
-				_Gizra$circuit_bid$Item_Utils$getPrice(_p111));
-			var isOpening = !_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p111);
+				_Gizra$circuit_bid$Item_Utils$getPrice(_p86));
+			var isOpening = !_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p86);
 			var stateLbl = isOpening ? A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$OpeningPrice) : A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$CurrentPrice);
 			var priceClass = isOpening ? 'cur-price opening' : 'cur-price';
 			var bidderView = isOpening ? A2(
@@ -71673,16 +70483,16 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						_Gizra$circuit_bid$Pages_Clerk_Utils$viewWinningBidder,
 						softBidderLimit,
 						language,
-						_p114.currency,
+						_p89.currency,
 						modelBackend,
-						_p90._0,
-						{ctor: '_Tuple2', _0: _p113, _1: _p112},
+						_p65._0,
+						{ctor: '_Tuple2', _0: _p88, _1: _p87},
 						true),
 					_1: {ctor: '[]'}
 				});
-			var _p110 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p111.status);
-			var statusClass = _p110._0;
-			var statusName = _p110._1;
+			var _p85 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p86.status);
+			var statusClass = _p85._0;
+			var statusName = _p85._1;
 			return A2(
 				_elm_lang$html$Html$div,
 				{
@@ -71692,7 +70502,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 				},
 				{
 					ctor: '::',
-					_0: _Gizra$circuit_bid$Item_Utils$isWithdrawn(_p111.status) ? A2(
+					_0: _Gizra$circuit_bid$Item_Utils$isWithdrawn(_p86.status) ? A2(
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
@@ -71799,13 +70609,28 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 														_elm_lang$html$Html$div,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class(priceClass),
+															_0: _elm_lang$html$Html_Attributes$class('cur-price-row'),
 															_1: {ctor: '[]'}
 														},
 														{
 															ctor: '::',
-															_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, priceAmount, _p114.currency),
-															_1: {ctor: '[]'}
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class(priceClass),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, priceAmount, _p89.currency),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {
+																ctor: '::',
+																_0: _Gizra$circuit_bid$Pages_Clerk_Utils$viewRallyBadge(_p86),
+																_1: {ctor: '[]'}
+															}
 														}),
 													_1: {
 														ctor: '::',
@@ -71848,7 +70673,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 															},
 															{
 																ctor: '::',
-																_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, nextAmount, _p114.currency),
+																_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, nextAmount, _p89.currency),
 																_1: {ctor: '[]'}
 															}),
 														_1: {ctor: '[]'}
@@ -71872,11 +70697,11 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 											},
 											{
 												ctor: '::',
-												_0: A4(_Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip, _p114.currency, _p113, _p111.currentPrice, reserve),
+												_0: A4(_Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip, _p89.currency, _p88, _p86.currentPrice, reserve),
 												_1: {ctor: '[]'}
 											});
 									},
-									_p111.reserveBid),
+									_p86.reserveBid),
 								_1: {ctor: '[]'}
 							}
 						}),
@@ -71932,8 +70757,8 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta = F3(
 	function (language, currency, item) {
 		var metaRow = F2(
 			function (lbl, maybeVal) {
-				var _p115 = maybeVal;
-				if (_p115.ctor === 'Just') {
+				var _p90 = maybeVal;
+				if (_p90.ctor === 'Just') {
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -71966,7 +70791,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta = F3(
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p115._0),
+										_0: _elm_lang$html$Html$text(_p90._0),
 										_1: {ctor: '[]'}
 									}),
 								_1: {ctor: '[]'}
@@ -71998,25 +70823,25 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta = F3(
 			return A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, amt, currency);
 		};
 		var estimateText = function () {
-			var _p116 = {ctor: '_Tuple2', _0: item.estimatedLow, _1: item.estimatedHigh};
-			if (_p116._0.ctor === 'Just') {
-				if (_p116._1.ctor === 'Just') {
+			var _p91 = {ctor: '_Tuple2', _0: item.estimatedLow, _1: item.estimatedHigh};
+			if (_p91._0.ctor === 'Just') {
+				if (_p91._1.ctor === 'Just') {
 					return _elm_lang$core$Maybe$Just(
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							showAmt(_p116._0._0),
+							showAmt(_p91._0._0),
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								' – ',
-								showAmt(_p116._1._0))));
+								showAmt(_p91._1._0))));
 				} else {
 					return _elm_lang$core$Maybe$Just(
-						showAmt(_p116._0._0));
+						showAmt(_p91._0._0));
 				}
 			} else {
-				if (_p116._1.ctor === 'Just') {
+				if (_p91._1.ctor === 'Just') {
 					return _elm_lang$core$Maybe$Just(
-						showAmt(_p116._1._0));
+						showAmt(_p91._1._0));
 				} else {
 					return A2(_elm_lang$core$Maybe$map, showAmt, item.estimatedPrice);
 				}
@@ -72057,15 +70882,15 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta = F3(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
-	function (language, currency, items, _p117) {
-		var _p118 = _p117;
-		var _p121 = _p118._1;
+	function (language, currency, items, _p92) {
+		var _p93 = _p92;
+		var _p96 = _p93._1;
 		var statusBadge = function () {
-			var _p119 = _krisajenkins$remotedata$RemoteData$toMaybe(_p121.calculated);
-			if (_p119.ctor === 'Just') {
-				var _p120 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p119._0.status);
-				var statusClass = _p120._0;
-				var statusName = _p120._1;
+			var _p94 = _krisajenkins$remotedata$RemoteData$toMaybe(_p96.calculated);
+			if (_p94.ctor === 'Just') {
+				var _p95 = A2(_Gizra$circuit_bid$Pages_Auctioneer_Utils$getClassAndNameFromStatus, language, _p94._0.status);
+				var statusClass = _p95._0;
+				var statusName = _p95._1;
 				return A2(
 					_elm_lang$html$Html$div,
 					{
@@ -72104,7 +70929,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 					function (x, y) {
 						return x + y;
 					})(1),
-				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p118._0, items)));
+				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p93._0, items)));
 		var progressPct = _elm_lang$core$Native_Utils.eq(totalCount, 0) ? 0 : ((_elm_lang$core$Basics$toFloat(currentIndex) / _elm_lang$core$Basics$toFloat(totalCount)) * 100);
 		return A2(
 			_elm_lang$html$Html$aside,
@@ -72175,7 +71000,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text(_p121.lotId),
+															_0: _elm_lang$html$Html$text(_p96.lotId),
 															_1: {ctor: '[]'}
 														}),
 													_1: {ctor: '[]'}
@@ -72209,7 +71034,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(_p121.name),
+											_0: _elm_lang$html$Html$text(_p96.name),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -72230,7 +71055,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 														_1: {ctor: '[]'}
 													});
 											},
-											_p121.subtitle),
+											_p96.subtitle),
 										_1: {ctor: '[]'}
 									}
 								}),
@@ -72245,7 +71070,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$core$String$isEmpty(_p121.image.big) ? A2(
+										_0: _elm_lang$core$String$isEmpty(_p96.image.big) ? A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
@@ -72270,7 +71095,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 												_0: _elm_lang$html$Html_Attributes$class('lot-svg'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$src(_p121.image.big),
+													_0: _elm_lang$html$Html_Attributes$src(_p96.image.big),
 													_1: {ctor: '[]'}
 												}
 											},
@@ -72288,7 +71113,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 										},
 										{
 											ctor: '::',
-											_0: A3(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta, language, currency, _p121),
+											_0: A3(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLotMeta, language, currency, _p96),
 											_1: {
 												ctor: '::',
 												_0: A2(
@@ -72379,7 +71204,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol = F4(
 																}
 															});
 													},
-													_p121.description),
+													_p96.description),
 												_1: {ctor: '[]'}
 											}
 										}),
@@ -72758,22 +71583,22 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard = F2(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
-	function (softBidderLimit, currentDate, language, user, modelBackend, model, _p122, item) {
-		var _p123 = _p122;
-		var _p127 = _p123._0;
-		var _p126 = _p123._1;
-		var _p124 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
-		if (_p124.ctor === 'Just') {
-			var _p125 = _p124._0;
-			var creditRequests = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p126.currency, _p127, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend);
+	function (softBidderLimit, currentDate, language, user, modelBackend, model, _p97, item) {
+		var _p98 = _p97;
+		var _p102 = _p98._0;
+		var _p101 = _p98._1;
+		var _p99 = _krisajenkins$remotedata$RemoteData$toMaybe(item.calculated);
+		if (_p99.ctor === 'Just') {
+			var _p100 = _p99._0;
+			var creditRequests = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p101.currency, _p102, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend);
 			var items = model.item.items;
 			var messagesCard = A6(
 				_Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard,
 				language,
 				modelBackend,
-				_p127,
+				_p102,
 				model,
-				A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewPublicMessageInput, language, _p126.currency, model.publicMessagesSendRequest, model.publicMessageInput, _elm_lang$core$Maybe$Nothing),
+				A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewPublicMessageInput, language, _p101.currency, model.publicMessagesSendRequest, model.publicMessageInput, _elm_lang$core$Maybe$Nothing),
 				A2(
 					_Gizra$circuit_bid$Utils_Html$showMaybe,
 					A5(
@@ -72781,7 +71606,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 						language,
 						user,
 						modelBackend,
-						{ctor: '_Tuple2', _0: _p127, _1: _p126},
+						{ctor: '_Tuple2', _0: _p102, _1: _p101},
 						items),
 					_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)));
 			return A2(
@@ -72805,9 +71630,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 							_0: A4(
 								_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerLeftCol,
 								language,
-								_p126.currency,
+								_p101.currency,
 								items,
-								{ctor: '_Tuple2', _0: _p126.item, _1: item}),
+								{ctor: '_Tuple2', _0: _p101.item, _1: item}),
 							_1: {
 								ctor: '::',
 								_0: A2(
@@ -72824,10 +71649,10 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 											softBidderLimit,
 											currentDate,
 											language,
-											_p126.currency,
+											_p101.currency,
 											modelBackend,
-											{ctor: '_Tuple2', _0: _p127, _1: _p126},
-											{ctor: '_Tuple2', _0: _p126.item, _1: item}),
+											{ctor: '_Tuple2', _0: _p102, _1: _p101},
+											{ctor: '_Tuple2', _0: _p101.item, _1: item}),
 										_1: {
 											ctor: '::',
 											_0: A2(
@@ -72851,7 +71676,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 															_0: A2(
 																_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard,
 																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$BookBids),
-																A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p126.currency, modelBackend, _p127, _p126.item, _p125.bookBids)),
+																A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p101.currency, modelBackend, _p102, _p101.item, _p100.bookBids)),
 															_1: {
 																ctor: '::',
 																_0: A2(
@@ -72863,7 +71688,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 																	},
 																	{
 																		ctor: '::',
-																		_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p126.currency, modelBackend, _p127, item, _p125.bookBids),
+																		_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p101.currency, modelBackend, _p102, item, _p100.bookBids),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -72885,7 +71710,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 																	A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Bids),
 																	A3(
 																		_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-																		_p126,
+																		_p101,
 																		items,
 																		A5(
 																			_Gizra$circuit_bid$Pages_Clerk_Utils$viewItemBidsList,
@@ -72893,13 +71718,13 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 																			_eeue56$elm_all_dict$EveryDict$empty,
 																			language,
 																			modelBackend,
-																			{ctor: '_Tuple2', _0: _p127, _1: _p126}))),
+																			{ctor: '_Tuple2', _0: _p102, _1: _p101}))),
 																_1: {
 																	ctor: '::',
 																	_0: A2(
 																		_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard,
 																		A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Closed),
-																		A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p126.currency, modelBackend, _p127, items, _p126.item, model.editableBidderIds)),
+																		A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p101.currency, modelBackend, _p102, items, _p101.item, model.editableBidderIds)),
 																	_1: {ctor: '[]'}
 																}
 															}),
@@ -72920,10 +71745,10 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$core$List$isEmpty(_p125.callRequests) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+											_0: _elm_lang$core$List$isEmpty(_p100.callRequests) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
 												_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard,
 												A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$CallRequests),
-												A6(_Gizra$circuit_bid$Pages_Auctioneer_View$callRequestTable, softBidderLimit, language, _p126.currency, modelBackend, _p127, _p125.callRequests)),
+												A6(_Gizra$circuit_bid$Pages_Auctioneer_View$callRequestTable, softBidderLimit, language, _p101.currency, modelBackend, _p102, _p100.callRequests)),
 											_1: {
 												ctor: '::',
 												_0: creditRequests,
@@ -72932,7 +71757,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 													_0: messagesCard,
 													_1: {
 														ctor: '::',
-														_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerBroadcastCard, currentDate, softBidderLimit, language, _p126.currency, modelBackend, _p127, model.connectedUsersSearch),
+														_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerBroadcastCard, currentDate, softBidderLimit, language, _p101.currency, modelBackend, _p102, model.connectedUsersSearch),
 														_1: {ctor: '[]'}
 													}
 												}
@@ -72949,7 +71774,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 											},
 											{
 												ctor: '::',
-												_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p126.currency, modelBackend, _p127, item, _p125.bookBids),
+												_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p101.currency, modelBackend, _p102, item, _p100.bookBids),
 												_1: {ctor: '[]'}
 											}),
 										_1: {ctor: '[]'}
@@ -72963,7 +71788,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 							_elm_lang$html$Html$audio,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
+								_0: _elm_lang$html$Html_Attributes$src(_Gizra$circuit_bid$Audio_PingSound$pingDataUri),
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Attributes$controls(false),
@@ -72983,9 +71808,9 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 		}
 	});
 var _Gizra$circuit_bid$Pages_Auctioneer_View$view = F7(
-	function (config, date, language, user, modelBackend, model, _p128) {
-		var _p129 = _p128;
-		var _p130 = _p129._1;
+	function (config, date, language, user, modelBackend, model, _p103) {
+		var _p104 = _p103;
+		var _p105 = _p104._1;
 		var softBidderLimit = config.siteConfig.softBidderLimit;
 		return A2(
 			_Gizra$circuit_bid$Utils_Html$showMaybe,
@@ -72997,8 +71822,8 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$view = F7(
 				user,
 				modelBackend,
 				model,
-				{ctor: '_Tuple2', _0: _p129._0, _1: _p130}),
-			A2(_Gizra$elm_dictlist$EveryDictList$get, _p130.item, model.item.items));
+				{ctor: '_Tuple2', _0: _p104._0, _1: _p105}),
+			A2(_Gizra$elm_dictlist$EveryDictList$get, _p105.item, model.item.items));
 	});
 
 var _Gizra$circuit_bid$Pages_Clerk_View$queuedRequestStateToString = function (state) {
@@ -74370,115 +73195,20 @@ var _Gizra$circuit_bid$Pages_Clerk_View$floorBidView = F7(
 			}
 		};
 	});
-var _Gizra$circuit_bid$Pages_Clerk_View$viewCurrentItemInfo = F7(
-	function (softBidderLimit, currentDate, modelBackend, language, model, _p49, _p48) {
-		var _p50 = _p49;
-		var _p56 = _p50._1;
-		var _p51 = _p48;
-		var _p55 = _p51._1;
-		var _p52 = _krisajenkins$remotedata$RemoteData$toMaybe(_p55.calculated);
-		if (_p52.ctor === 'Nothing') {
-			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-		} else {
-			var _p54 = _p52._0;
-			var priceOrWithdrawnDisplay = function () {
-				if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p54.status)) {
-					return _Gizra$circuit_bid$Pages_Clerk_Utils$viewWithdrawnItem(language);
-				} else {
-					var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p54, model);
-					var _p53 = highestPrice;
-					if (_p53.ctor === 'Opening') {
-						return A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('clerk-current-price'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$span,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('label opening'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Opening),
-										_1: {ctor: '[]'}
-									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$span,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('current-amount'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: A2(_Gizra$circuit_bid$Amount$showAmountWithCurrency, _p54.openingPrice, _p56.currency),
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
-								}
-							});
-					} else {
-						return A3(_Gizra$circuit_bid$Pages_Clerk_Utils$clerkCurrentPriceView, language, highestPrice, _p56.currency);
-					}
-				}
-			}();
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('clerk-current'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: priceOrWithdrawnDisplay,
-					_1: {
-						ctor: '::',
-						_0: A7(
-							_Gizra$circuit_bid$Pages_Clerk_Utils$viewWinningBidder,
-							softBidderLimit,
-							language,
-							_p56.currency,
-							modelBackend,
-							_p50._0,
-							{ctor: '_Tuple2', _0: _p51._0, _1: _p55},
-							false),
-						_1: {
-							ctor: '::',
-							_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$openingPriceEditor, language, _p54, _p56.currency, model.openingPriceForm, model.itemChangeRequest),
-							_1: {
-								ctor: '::',
-								_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewNextPriceForClerkAndRally, currentDate, language, _p56, _p54, model),
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				});
-		}
-	});
 var _Gizra$circuit_bid$Pages_Clerk_View$manualBumpButton = F4(
-	function (language, model, _p57, items) {
-		var _p58 = _p57;
-		var _p62 = _p58._1;
+	function (language, model, _p48, items) {
+		var _p49 = _p48;
+		var _p53 = _p49._1;
 		var isManualBumpLoading = _elm_lang$core$Native_Utils.eq(model.manualBumpRequestState, _krisajenkins$remotedata$RemoteData$Loading);
 		var isItemGoing = function () {
-			var _p59 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p62.item, items);
-			if (_p59.ctor === 'Just') {
-				var _p60 = _krisajenkins$remotedata$RemoteData$toMaybe(_p59._0.calculated);
-				if (_p60.ctor === 'Just') {
-					var _p61 = _p60._0.status;
-					if ((_p61.ctor === 'EditableStatus') && (_p61._0.ctor === 'LiveOnly')) {
+			var _p50 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p53.item, items);
+			if (_p50.ctor === 'Just') {
+				var _p51 = _krisajenkins$remotedata$RemoteData$toMaybe(_p50._0.calculated);
+				if (_p51.ctor === 'Just') {
+					var _p52 = _p51._0.status;
+					if ((_p52.ctor === 'EditableStatus') && (_p52._0.ctor === 'LiveOnly')) {
 						var currentStatus = _stoeffel$editable$Editable$value(
-							_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p61._0._0));
+							_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p52._0._0));
 						return _elm_lang$core$Native_Utils.eq(currentStatus, _Gizra$circuit_bid$Item_Model$Going);
 					} else {
 						return false;
@@ -74490,7 +73220,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$manualBumpButton = F4(
 				return false;
 			}
 		}();
-		var isDisabled = (!_Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p62.autoClerk)) || (!isItemGoing);
+		var isDisabled = (!_Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p53.autoClerk)) || (!isItemGoing);
 		var baseAttrs = {
 			ctor: '::',
 			_0: _elm_lang$html$Html_Attributes$classList(
@@ -74529,7 +73259,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$manualBumpButton = F4(
 				isDisabled ? {ctor: '[]'} : {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Events$onClick(
-						_Gizra$circuit_bid$Pages_Clerk_Model$AddManualBump(_p58._0)),
+						_Gizra$circuit_bid$Pages_Clerk_Model$AddManualBump(_p49._0)),
 					_1: {ctor: '[]'}
 				}),
 			{
@@ -74572,9 +73302,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$manualBumpButton = F4(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$viewAutoClerkConfirm = function (model) {
-	var _p63 = model.autoClerkConfirm;
-	if (_p63.ctor === 'Just') {
-		var action = _p63._0._1 ? 'ON' : 'OFF';
+	var _p54 = model.autoClerkConfirm;
+	if (_p54.ctor === 'Just') {
+		var action = _p54._0._1 ? 'ON' : 'OFF';
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -74690,18 +73420,18 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewAutoClerkConfirm = function (model) 
 	}
 };
 var _Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus = F4(
-	function (language, model, _p64, items) {
-		var _p65 = _p64;
-		var _p66 = _p65._1;
-		var isSaleLive = _elm_lang$core$Native_Utils.eq(_p66.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen);
-		var isEnabled = _Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p66.autoClerk);
+	function (language, model, _p55, items) {
+		var _p56 = _p55;
+		var _p57 = _p56._1;
+		var isSaleLive = _elm_lang$core$Native_Utils.eq(_p57.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen);
+		var isEnabled = _Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p57.autoClerk);
 		var toggleAttrs = isSaleLive ? {
 			ctor: '::',
 			_0: _elm_lang$html$Html_Attributes$class('autoclerk-toggle'),
 			_1: {
 				ctor: '::',
 				_0: _elm_lang$html$Html_Events$onClick(
-					A2(_Gizra$circuit_bid$Pages_Clerk_Model$ShowAutoClerkConfirm, _p65._0, !isEnabled)),
+					A2(_Gizra$circuit_bid$Pages_Clerk_Model$ShowAutoClerkConfirm, _p56._0, !isEnabled)),
 				_1: {ctor: '[]'}
 			}
 		} : {
@@ -74770,35 +73500,35 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectCurrentItem = F7(
 					A2(
 						_Gizra$elm_dictlist$EveryDictList$filter,
 						F2(
-							function (_p67, item) {
+							function (_p58, item) {
 								return _elm_lang$core$Native_Utils.eq(item.lotId, currentInputValue);
 							}),
 						items));
 			},
 			maybeCurrentInputValue);
-		var _p68 = A3(
+		var _p59 = A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			{
 				ctor: '_Tuple2',
 				_0: false,
 				_1: {ctor: '[]'}
 			},
-			function (_p69) {
-				var _p70 = _p69;
+			function (_p60) {
+				var _p61 = _p60;
 				return {
 					ctor: '_Tuple2',
 					_0: true,
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onSubmit(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p70._0)),
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p61._0)),
 						_1: {ctor: '[]'}
 					}
 				};
 			},
 			maybeItem);
-		var itemExists = _p68._0;
-		var formAttr = _p68._1;
+		var itemExists = _p59._0;
+		var formAttr = _p59._1;
 		var isDisabled = itemBeingUpdated || ((_elm_community$maybe_extra$Maybe_Extra$isJust(maybeCurrentInputValue) && (!currentItemIsLoaded)) || (!itemExists));
 		var buttonAttr = {
 			ctor: '::',
@@ -74904,12 +73634,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectCurrentItem = F7(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillLabel = function (status) {
-	var _p71 = status;
-	if (_p71.ctor === 'EditableStatus') {
-		if (_p71._0.ctor === 'LiveOnly') {
-			var _p72 = _stoeffel$editable$Editable$value(
-				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p71._0._0));
-			switch (_p72.ctor) {
+	var _p62 = status;
+	if (_p62.ctor === 'EditableStatus') {
+		if (_p62._0.ctor === 'LiveOnly') {
+			var _p63 = _stoeffel$editable$Editable$value(
+				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p62._0._0));
+			switch (_p63.ctor) {
 				case 'Going':
 					return 'Going';
 				case 'GoneTransition':
@@ -74923,9 +73653,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillLabel = function (status) {
 			return 'Mail Only';
 		}
 	} else {
-		switch (_p71._0.ctor) {
+		switch (_p62._0.ctor) {
 			case 'ItemClosed':
-				if (_p71._0._0.ctor === 'Sold') {
+				if (_p62._0._0.ctor === 'Sold') {
 					return 'Gone';
 				} else {
 					return 'Gone';
@@ -74942,12 +73672,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillLabel = function (status) {
 	}
 };
 var _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillClass = function (status) {
-	var _p73 = status;
-	if (_p73.ctor === 'EditableStatus') {
-		if (_p73._0.ctor === 'LiveOnly') {
-			var _p74 = _stoeffel$editable$Editable$value(
-				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p73._0._0));
-			switch (_p74.ctor) {
+	var _p64 = status;
+	if (_p64.ctor === 'EditableStatus') {
+		if (_p64._0.ctor === 'LiveOnly') {
+			var _p65 = _stoeffel$editable$Editable$value(
+				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p64._0._0));
+			switch (_p65.ctor) {
 				case 'Going':
 					return 'st-going';
 				case 'GoneTransition':
@@ -74961,24 +73691,24 @@ var _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillClass = function (status) {
 			return 'st-standby';
 		}
 	} else {
-		if (_p73._0.ctor === 'ItemClosed') {
+		if (_p64._0.ctor === 'ItemClosed') {
 			return 'st-gone';
 		} else {
 			return 'st-standby';
 		}
 	}
 };
-var _Gizra$circuit_bid$Pages_Clerk_View$extractAmount = function (_p75) {
-	var _p76 = _p75;
-	return _p76._0;
+var _Gizra$circuit_bid$Pages_Clerk_View$extractAmount = function (_p66) {
+	var _p67 = _p66;
+	return _p67._0;
 };
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerStateTile = F9(
 	function (model, saleUuid, itemId, status, clerkStatus, fkey, toneClass, iconClass, label) {
-		var _p77 = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$itemStatusButton, model, saleUuid, itemId, status, clerkStatus);
-		var loading = _p77.loading;
-		var disabled = _p77.disabled;
-		var active = _p77.active;
-		var msg = _p77.msg;
+		var _p68 = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$itemStatusButton, model, saleUuid, itemId, status, clerkStatus);
+		var loading = _p68.loading;
+		var disabled = _p68.disabled;
+		var active = _p68.active;
+		var msg = _p68.msg;
 		return A2(
 			_elm_lang$html$Html$button,
 			A2(
@@ -75101,7 +73831,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerStateTile = F9(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerStateStrip = F6(
-	function (language, model, saleUuid, itemId, status, _p78) {
+	function (language, model, saleUuid, itemId, status, _p69) {
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -75111,9 +73841,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerStateStrip = F6(
 			},
 			A2(
 				_elm_lang$core$List$map,
-				function (_p79) {
-					var _p80 = _p79;
-					return A9(_Gizra$circuit_bid$Pages_Clerk_View$controllerStateTile, model, saleUuid, itemId, status, _p80._0, _p80._1, _p80._2, _p80._3, _p80._4);
+				function (_p70) {
+					var _p71 = _p70;
+					return A9(_Gizra$circuit_bid$Pages_Clerk_View$controllerStateTile, model, saleUuid, itemId, status, _p71._0, _p71._1, _p71._2, _p71._3, _p71._4);
 				},
 				{
 					ctor: '::',
@@ -75138,8 +73868,8 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerStepStepper = F4(
 		var isFormDisabled = _Gizra$circuit_bid$Item_Utils$isClosed(itemStatus) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(itemStatus) || _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading));
 		var isSubmitDisabled = isFormDisabled || _elm_lang$core$Native_Utils.eq(model.manualStepInput, _elm_lang$core$Maybe$Nothing);
 		var formAttrs = function () {
-			var _p81 = {ctor: '_Tuple2', _0: model.manualStepInput, _1: isFormDisabled};
-			if (((_p81.ctor === '_Tuple2') && (_p81._0.ctor === 'Just')) && (_p81._1 === false)) {
+			var _p72 = {ctor: '_Tuple2', _0: model.manualStepInput, _1: isFormDisabled};
+			if (((_p72.ctor === '_Tuple2') && (_p72._0.ctor === 'Just')) && (_p72._1 === false)) {
 				return {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$class('side-step'),
@@ -75149,7 +73879,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerStepStepper = F4(
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Events$onSubmit(
-								A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetBidStep, itemId, _p81._0._0)),
+								A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetBidStep, itemId, _p72._0._0)),
 							_1: {ctor: '[]'}
 						}
 					}
@@ -75292,11 +74022,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerStepStepper = F4(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerSetToFloorButton = F5(
-	function (language, model, saleUuid, _p82, lastBidWasFloor) {
-		var _p83 = _p82;
-		var _p84 = _p83._1;
+	function (language, model, saleUuid, _p73, lastBidWasFloor) {
+		var _p74 = _p73;
+		var _p75 = _p74._1;
 		var lastBidLoading = _Gizra$circuit_bid$QueuedRequest_Utils$queuedRequestLoading(model.queuedSetToFloorRequestState);
-		var isDisabled = lastBidLoading || (A2(_Gizra$circuit_bid$Pages_Clerk_Utils$itemIsLoading, model, _p84.status) || (_Gizra$circuit_bid$Item_Utils$isClosed(_p84.status) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p84.status) || (lastBidWasFloor || (!_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p84))))));
+		var isDisabled = lastBidLoading || (A2(_Gizra$circuit_bid$Pages_Clerk_Utils$itemIsLoading, model, _p75.status) || (_Gizra$circuit_bid$Item_Utils$isClosed(_p75.status) || (_Gizra$circuit_bid$Item_Utils$isWithdrawn(_p75.status) || (lastBidWasFloor || (!_Gizra$circuit_bid$Item_Utils$hasWinningBid(_p75))))));
 		return A2(
 			_elm_lang$html$Html$button,
 			A2(
@@ -75326,7 +74056,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerSetToFloorButton = F5(
 				isDisabled ? {ctor: '[]'} : {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Events$onClick(
-						A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetItemLastToFloor, saleUuid, _p83._0)),
+						A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetItemLastToFloor, saleUuid, _p74._0)),
 					_1: {ctor: '[]'}
 				}),
 			{
@@ -75399,14 +74129,14 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerSetToFloorButton = F5(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
-	function (language, currency, saleUuid, model, _p85, bidAmount, lastBidWasFloor) {
-		var _p86 = _p85;
-		var _p92 = _p86._0;
-		var _p91 = _p86._1;
+	function (language, currency, saleUuid, model, _p76, bidAmount, lastBidWasFloor) {
+		var _p77 = _p76;
+		var _p83 = _p77._0;
+		var _p82 = _p77._1;
 		var currentBidStepFromCalculated = function () {
-			var _p87 = {ctor: '_Tuple2', _0: _p91.nextPrice, _1: _p91.currentPrice};
-			if (((_p87.ctor === '_Tuple2') && (_p87._0.ctor === 'Just')) && (_p87._1.ctor === 'Just')) {
-				return A2(_Gizra$circuit_bid$Amount$subtract, _p87._0._0, _p87._1._0);
+			var _p78 = {ctor: '_Tuple2', _0: _p82.nextPrice, _1: _p82.currentPrice};
+			if (((_p78.ctor === '_Tuple2') && (_p78._0.ctor === 'Just')) && (_p78._1.ctor === 'Just')) {
+				return A2(_Gizra$circuit_bid$Amount$subtract, _p78._0._0, _p78._1._0);
 			} else {
 				return _Gizra$circuit_bid$Amount$zero;
 			}
@@ -75426,12 +74156,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 		var nextBidAmount = A2(
 			_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
 			_elm_lang$core$Native_Utils.update(
-				_p91,
+				_p82,
 				{
 					currentPrice: _elm_lang$core$Maybe$Just(bidAmount)
 				}),
 			model);
-		var nextFloorBidButton = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$nextFloorBidButton, _p92, saleUuid, _p91.status, bidAmount, nextBidAmount);
+		var nextFloorBidButton = A5(_Gizra$circuit_bid$Pages_Clerk_Utils$nextFloorBidButton, _p83, saleUuid, _p82.status, bidAmount, nextBidAmount);
 		var placeBidAttrs = {
 			ctor: '::',
 			_0: _elm_lang$html$Html_Attributes$classList(
@@ -75449,11 +74179,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 					}
 				}),
 			_1: function () {
-				var _p88 = nextFloorBidButton.msg;
-				if (_p88.ctor === 'Just') {
+				var _p79 = nextFloorBidButton.msg;
+				if (_p79.ctor === 'Just') {
 					return {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onClick(_p88._0),
+						_0: _elm_lang$html$Html_Events$onClick(_p79._0),
 						_1: {ctor: '[]'}
 					};
 				} else {
@@ -75461,7 +74191,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 				}
 			}()
 		};
-		var _p89 = A2(
+		var _p80 = A2(
 			_elm_lang$core$Maybe$withDefault,
 			{ctor: '_Tuple2', _0: bidAmount, _1: nextBidAmount},
 			A2(
@@ -75473,7 +74203,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 						_1: A2(
 							_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk,
 							_elm_lang$core$Native_Utils.update(
-								_p91,
+								_p82,
 								{
 									currentPrice: _elm_lang$core$Maybe$Just(customBidInputAmount)
 								}),
@@ -75481,9 +74211,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 					};
 				},
 				model.customBidInput));
-		var customBidAmount = _p89._0;
-		var nextCustomBidAmount = _p89._1;
-		var customFloorBidButton = A6(_Gizra$circuit_bid$Pages_Clerk_Utils$customFloorBidButton, model, _p92, saleUuid, _p91.status, customBidAmount, nextCustomBidAmount);
+		var customBidAmount = _p80._0;
+		var nextCustomBidAmount = _p80._1;
+		var customFloorBidButton = A6(_Gizra$circuit_bid$Pages_Clerk_Utils$customFloorBidButton, model, _p83, saleUuid, _p82.status, customBidAmount, nextCustomBidAmount);
 		var bidAmountFormAttrs = A2(
 			_elm_lang$core$Basics_ops['++'],
 			{
@@ -75496,11 +74226,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 				}
 			},
 			function () {
-				var _p90 = customFloorBidButton.msg;
-				if (_p90.ctor === 'Just') {
+				var _p81 = customFloorBidButton.msg;
+				if (_p81.ctor === 'Just') {
 					return {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onSubmit(_p90._0),
+						_0: _elm_lang$html$Html_Events$onSubmit(_p81._0),
 						_1: {ctor: '[]'}
 					};
 				} else {
@@ -75767,11 +74497,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 									language,
 									model,
 									saleUuid,
-									{ctor: '_Tuple2', _0: _p92, _1: _p91},
+									{ctor: '_Tuple2', _0: _p83, _1: _p82},
 									lastBidWasFloor),
 								_1: {
 									ctor: '::',
-									_0: A4(_Gizra$circuit_bid$Pages_Clerk_View$controllerStepStepper, model, _p92, _p91.status, stepDisplayText),
+									_0: A4(_Gizra$circuit_bid$Pages_Clerk_View$controllerStepStepper, model, _p83, _p82.status, stepDisplayText),
 									_1: {ctor: '[]'}
 								}
 							}),
@@ -75781,14 +74511,14 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerBidStrip = F7(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerCurrentStrip = F9(
-	function (softBidderLimit, language, currency, modelBackend, saleUuid, _p93, calculated, currentPriceText, model) {
-		var _p94 = _p93;
+	function (softBidderLimit, language, currency, modelBackend, saleUuid, _p84, calculated, currentPriceText, model) {
+		var _p85 = _p84;
 		var stateLabel = _Gizra$circuit_bid$Item_Utils$hasWinningBid(calculated) ? A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$CurrentPrice) : A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$OpeningPrice);
 		var winningPill = function () {
-			var _p95 = _Gizra$circuit_bid$Item_Utils$getWinningBid(calculated);
-			if (_p95.ctor === 'Just') {
-				var _p96 = _p95._0;
-				var sourceLabel = A2(_Gizra$circuit_bid$Bid_Utils$getBidTypeAsString, language, _p96);
+			var _p86 = _Gizra$circuit_bid$Item_Utils$getWinningBid(calculated);
+			if (_p86.ctor === 'Just') {
+				var _p87 = _p86._0;
+				var sourceLabel = A2(_Gizra$circuit_bid$Bid_Utils$getBidTypeAsString, language, _p87);
 				return A2(
 					_elm_lang$html$Html$div,
 					{
@@ -75845,7 +74575,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerCurrentStrip = F9(
 										},
 										{
 											ctor: '::',
-											_0: A7(_Gizra$circuit_bid$Bid_View$bidUser, softBidderLimit, language, currency, modelBackend, saleUuid, _p94._0, _p96),
+											_0: A7(_Gizra$circuit_bid$Bid_View$bidUser, softBidderLimit, language, currency, modelBackend, saleUuid, _p85._0, _p87),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -75947,8 +74677,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerCurrentStrip = F9(
 								}),
 							_1: {
 								ctor: '::',
-								_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$openingPriceEditor, language, calculated, currency, model.openingPriceForm, model.itemChangeRequest),
-								_1: {ctor: '[]'}
+								_0: _Gizra$circuit_bid$Pages_Clerk_Utils$viewRallyBadge(calculated),
+								_1: {
+									ctor: '::',
+									_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$openingPriceEditor, language, calculated, currency, model.openingPriceForm, model.itemChangeRequest),
+									_1: {ctor: '[]'}
+								}
 							}
 						}),
 					_1: {
@@ -75960,12 +74694,12 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerCurrentStrip = F9(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$controllerThemeClass = function (status) {
-	var _p97 = status;
-	if (_p97.ctor === 'EditableStatus') {
-		if (_p97._0.ctor === 'LiveOnly') {
-			var _p98 = _stoeffel$editable$Editable$value(
-				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p97._0._0));
-			switch (_p98.ctor) {
+	var _p88 = status;
+	if (_p88.ctor === 'EditableStatus') {
+		if (_p88._0.ctor === 'LiveOnly') {
+			var _p89 = _stoeffel$editable$Editable$value(
+				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(_p88._0._0));
+			switch (_p89.ctor) {
 				case 'Going':
 					return 'is-going';
 				case 'GoneTransition':
@@ -75979,7 +74713,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerThemeClass = function (status)
 			return 'is-standby';
 		}
 	} else {
-		if (_p97._0.ctor === 'ItemClosed') {
+		if (_p88._0.ctor === 'ItemClosed') {
 			return 'is-gone';
 		} else {
 			return 'is-standby';
@@ -75987,10 +74721,10 @@ var _Gizra$circuit_bid$Pages_Clerk_View$controllerThemeClass = function (status)
 	}
 };
 var _Gizra$circuit_bid$Pages_Clerk_View$sessionMenuItem = F2(
-	function (currentSelectionId, _p99) {
-		var _p100 = _p99;
-		var _p101 = _p100._0;
-		var isCurrent = _elm_lang$core$Native_Utils.eq(currentSelectionId, _p101);
+	function (currentSelectionId, _p90) {
+		var _p91 = _p90;
+		var _p92 = _p91._0;
+		var isCurrent = _elm_lang$core$Native_Utils.eq(currentSelectionId, _p92);
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -75999,7 +74733,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$sessionMenuItem = F2(
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Events$onClick(
-						_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSessionSelection(_p101)),
+						_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSessionSelection(_p92)),
 					_1: {ctor: '[]'}
 				}
 			},
@@ -76024,7 +74758,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$sessionMenuItem = F2(
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text(_p100._1.name),
+							_0: _elm_lang$html$Html$text(_p91._1.name),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -76064,9 +74798,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F7(
 			_Gizra$elm_dictlist$EveryDictList$toList(dict));
 		var currentSessionIsLoaded = A2(_Gizra$elm_dictlist$EveryDictList$member, currentSessionId, dict);
 		var applyAttr = function () {
-			var _p102 = currentId;
-			if (_p102.ctor === 'Just') {
-				var _p103 = _p102._0;
+			var _p93 = currentId;
+			if (_p93.ctor === 'Just') {
+				var _p94 = _p93._0;
 				return {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$classList(
@@ -76078,7 +74812,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F7(
 								_0: {
 									ctor: '_Tuple2',
 									_0: 'disabled',
-									_1: saleBeingUpdated || _elm_lang$core$Native_Utils.eq(currentSessionId, _p103)
+									_1: saleBeingUpdated || _elm_lang$core$Native_Utils.eq(currentSessionId, _p94)
 								},
 								_1: {
 									ctor: '::',
@@ -76090,7 +74824,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession = F7(
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onClick(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSession, saleUuid, _p103)),
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentSession, saleUuid, _p94)),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -76269,8 +75003,8 @@ var _Gizra$circuit_bid$Pages_Clerk_View$decodeTargetStatus = A2(
 	},
 	_Gizra$circuit_bid$Sale_Decoder$decodeStatus);
 var _Gizra$circuit_bid$Pages_Clerk_View$statusToToneClass = function (status) {
-	var _p104 = status;
-	switch (_p104.ctor) {
+	var _p95 = status;
+	switch (_p95.ctor) {
 		case 'LiveAuctionOpen':
 			return 'tone-open';
 		case 'PausedStartingSoon':
@@ -76351,10 +75085,10 @@ var _Gizra$circuit_bid$Pages_Clerk_View$statusMenuItem = F3(
 var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus = F6(
 	function (language, saleUuid, currentStatus, isAutoClerkOn, isMenuOpen, currentSelection) {
 		var applyAttrs = function () {
-			var _p105 = currentSelection;
-			if (_p105.ctor === 'Just') {
-				var _p106 = _p105._0;
-				return _elm_lang$core$Native_Utils.eq(_p106, currentStatus) ? {
+			var _p96 = currentSelection;
+			if (_p96.ctor === 'Just') {
+				var _p97 = _p96._0;
+				return _elm_lang$core$Native_Utils.eq(_p97, currentStatus) ? {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$classList(
 						{
@@ -76374,7 +75108,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus = F6(
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onClick(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetSaleStatus, saleUuid, _p106)),
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetSaleStatus, saleUuid, _p97)),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -76572,9 +75306,9 @@ var _Gizra$circuit_bid$Pages_Clerk_View$decodeTargetSessionId = A2(
 	},
 	_Gizra$elm_restful$Restful_Endpoint$decodeEntityId);
 var _Gizra$circuit_bid$Pages_Clerk_View$sessionOption = F2(
-	function (currentSessionId, _p107) {
-		var _p108 = _p107;
-		var _p109 = _p108._0;
+	function (currentSessionId, _p98) {
+		var _p99 = _p98;
+		var _p100 = _p99._0;
 		return A2(
 			_elm_lang$html$Html$option,
 			{
@@ -76584,18 +75318,18 @@ var _Gizra$circuit_bid$Pages_Clerk_View$sessionOption = F2(
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$value(
 						_elm_lang$core$Basics$toString(
-							_Gizra$elm_restful$Restful_Endpoint$fromEntityId(_p109))),
+							_Gizra$elm_restful$Restful_Endpoint$fromEntityId(_p100))),
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$selected(
-							_elm_lang$core$Native_Utils.eq(currentSessionId, _p109)),
+							_elm_lang$core$Native_Utils.eq(currentSessionId, _p100)),
 						_1: {ctor: '[]'}
 					}
 				}
 			},
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html$text(_p108._1.name),
+				_0: _elm_lang$html$Html$text(_p99._1.name),
 				_1: {ctor: '[]'}
 			});
 	});
@@ -76936,24 +75670,24 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 				return function (saleUuid) {
 					return function (sale) {
 						return function (items) {
-							return function (_p110) {
+							return function (_p101) {
 								return function (calculated) {
 									return function (bidAmount) {
 										return function (currentBidStepAmount) {
 											return function (lastBidWasFloor) {
 												return function (isAutoClerkOn) {
 													return function (model) {
-														var _p111 = _p110;
-														var _p114 = _p111._0;
+														var _p102 = _p101;
+														var _p105 = _p102._0;
 														var errorPill = function () {
-															var _p112 = model.itemChangeRequest;
-															if (_p112.ctor === 'Failure') {
+															var _p103 = model.itemChangeRequest;
+															if (_p103.ctor === 'Failure') {
 																var body = function () {
-																	var _p113 = _p112._0;
-																	if (_p113.ctor === 'Http') {
-																		return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p113._0);
+																	var _p104 = _p103._0;
+																	if (_p104.ctor === 'Http') {
+																		return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p104._0);
 																	} else {
-																		return _elm_lang$html$Html$text(_p113._0);
+																		return _elm_lang$html$Html$text(_p104._0);
 																	}
 																}();
 																return A2(
@@ -77131,11 +75865,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 																						_1: {
 																							ctor: '::',
 																							_0: _elm_lang$html$Html_Attributes$disabled(
-																								_elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading) || (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasNextLot, _p114, items))),
+																								_elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading) || (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasNextLot, _p105, items))),
 																							_1: {
 																								ctor: '::',
 																								_0: _elm_lang$html$Html_Events$onClick(
-																									A3(_Gizra$circuit_bid$Pages_Clerk_Model$SetEditableItemStatus, saleUuid, _p114, _Gizra$circuit_bid$Item_Model$GoneTransition)),
+																									A3(_Gizra$circuit_bid$Pages_Clerk_Model$SetEditableItemStatus, saleUuid, _p105, _Gizra$circuit_bid$Item_Model$GoneTransition)),
 																								_1: {ctor: '[]'}
 																							}
 																						}
@@ -77181,7 +75915,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 																	currency,
 																	modelBackend,
 																	saleUuid,
-																	{ctor: '_Tuple2', _0: _p114, _1: _p111._1},
+																	{ctor: '_Tuple2', _0: _p105, _1: _p102._1},
 																	calculated,
 																	currentPriceText,
 																	model),
@@ -77193,7 +75927,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 																		currency,
 																		saleUuid,
 																		model,
-																		{ctor: '_Tuple2', _0: _p114, _1: calculated},
+																		{ctor: '_Tuple2', _0: _p105, _1: calculated},
 																		bidAmount,
 																		lastBidWasFloor),
 																	_1: {
@@ -77210,7 +75944,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 																					},
 																					{
 																						ctor: '::',
-																						_0: A4(_Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip, currency, _p114, calculated.currentPrice, reserve),
+																						_0: A4(_Gizra$circuit_bid$Pages_Auctioneer_View$viewReserveStrip, currency, _p105, calculated.currentPrice, reserve),
 																						_1: {ctor: '[]'}
 																					});
 																			},
@@ -77236,7 +75970,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 																							{ctor: '_Tuple2', _0: saleUuid, _1: sale},
 																							items),
 																						_1: {ctor: '[]'}
-																					}) : A6(_Gizra$circuit_bid$Pages_Clerk_View$controllerStateStrip, language, model, saleUuid, _p114, calculated.status, lastBidWasFloor),
+																					}) : A6(_Gizra$circuit_bid$Pages_Clerk_View$controllerStateStrip, language, model, saleUuid, _p105, calculated.status, lastBidWasFloor),
 																				_1: {ctor: '[]'}
 																			}
 																		}
@@ -77258,18 +75992,18 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkController = function (softBidderLi
 	};
 };
 var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
-	function (language, model, _p116, _p115) {
-		var _p117 = _p116;
-		var _p127 = _p117._0;
-		var _p126 = _p117._1;
-		var _p118 = _p115;
-		var _p125 = _p118._0;
+	function (language, model, _p107, _p106) {
+		var _p108 = _p107;
+		var _p118 = _p108._0;
+		var _p117 = _p108._1;
+		var _p109 = _p106;
+		var _p116 = _p109._0;
 		var maybeErrorMessage = function () {
-			var _p119 = model.itemChangeRequest;
-			if (_p119.ctor === 'Failure') {
-				var _p120 = _p119._0;
-				if (_p120.ctor === 'Http') {
-					return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p120._0);
+			var _p110 = model.itemChangeRequest;
+			if (_p110.ctor === 'Failure') {
+				var _p111 = _p110._0;
+				if (_p111.ctor === 'Http') {
+					return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p111._0);
 				} else {
 					return A2(
 						_elm_lang$html$Html$div,
@@ -77280,7 +76014,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text(_p120._0),
+							_0: _elm_lang$html$Html$text(_p111._0),
 							_1: {ctor: '[]'}
 						});
 				}
@@ -77288,44 +76022,44 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
 				return _Gizra$circuit_bid$Utils_Html$emptyNode;
 			}
 		}();
-		var _p121 = _krisajenkins$remotedata$RemoteData$toMaybe(_p118._1.calculated);
-		if (_p121.ctor === 'Nothing') {
+		var _p112 = _krisajenkins$remotedata$RemoteData$toMaybe(_p109._1.calculated);
+		if (_p112.ctor === 'Nothing') {
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		} else {
-			var _p124 = _p121._0;
+			var _p115 = _p112._0;
 			var lastBidWasFloor = A2(
 				_elm_lang$core$Maybe$withDefault,
 				false,
 				A2(
 					_elm_lang$core$Maybe$map,
 					_Gizra$circuit_bid$Bid_Utils$isFloorBid,
-					_Gizra$circuit_bid$Item_Utils$getWinningBid(_p124)));
+					_Gizra$circuit_bid$Item_Utils$getWinningBid(_p115)));
 			var isLoading = _elm_lang$core$Native_Utils.eq(model.itemChangeRequest, _krisajenkins$remotedata$RemoteData$Loading);
-			var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p124, model);
+			var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p115, model);
 			var currentBidStepAmount = function () {
-				var _p122 = {ctor: '_Tuple2', _0: _p124.nextPrice, _1: _p124.currentPrice};
-				if (((_p122.ctor === '_Tuple2') && (_p122._0.ctor === 'Just')) && (_p122._1.ctor === 'Just')) {
-					return A2(_Gizra$circuit_bid$Amount$subtract, _p122._0._0, _p122._1._0);
+				var _p113 = {ctor: '_Tuple2', _0: _p115.nextPrice, _1: _p115.currentPrice};
+				if (((_p113.ctor === '_Tuple2') && (_p113._0.ctor === 'Just')) && (_p113._1.ctor === 'Just')) {
+					return A2(_Gizra$circuit_bid$Amount$subtract, _p113._0._0, _p113._1._0);
 				} else {
 					return _Gizra$circuit_bid$Amount$zero;
 				}
 			}();
-			var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p124, model);
+			var highestPrice = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$getPriceForClerk, _p115, model);
 			var lastBidAmount = function () {
-				var _p123 = highestPrice;
-				if (_p123.ctor === 'Opening') {
+				var _p114 = highestPrice;
+				if (_p114.ctor === 'Opening') {
 					return _Gizra$circuit_bid$Amount$zero;
 				} else {
-					return _p123._0;
+					return _p114._0;
 				}
 			}();
 			var addStep = function (bid) {
 				return A2(
 					_Gizra$circuit_bid$Amount$add,
 					bid,
-					A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, _p124.bidSteps, bid));
+					A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, _p115.bidSteps, bid));
 			};
-			return _Gizra$circuit_bid$Item_Utils$isWithdrawn(_p124.status) ? A2(
+			return _Gizra$circuit_bid$Item_Utils$isWithdrawn(_p115.status) ? A2(
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
@@ -77379,11 +76113,11 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Attributes$disabled(
-													isLoading || (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasNextLot, _p125, model.item.items))),
+													isLoading || (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasNextLot, _p116, model.item.items))),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Events$onClick(
-														A3(_Gizra$circuit_bid$Pages_Clerk_Model$SetEditableItemStatus, _p127, _p125, _Gizra$circuit_bid$Item_Model$GoneTransition)),
+														A3(_Gizra$circuit_bid$Pages_Clerk_Model$SetEditableItemStatus, _p118, _p116, _Gizra$circuit_bid$Item_Model$GoneTransition)),
 													_1: {ctor: '[]'}
 												}
 											}
@@ -77443,10 +76177,10 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
 						A7(
 							_Gizra$circuit_bid$Pages_Clerk_View$floorBidView,
 							language,
-							_p126.currency,
-							_p126.uuid,
+							_p117.currency,
+							_p117.uuid,
 							model,
-							{ctor: '_Tuple2', _0: _p125, _1: _p124},
+							{ctor: '_Tuple2', _0: _p116, _1: _p115},
 							bidAmount,
 							lastBidWasFloor)),
 					_1: {
@@ -77460,10 +76194,10 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewBidButtons = F4(
 							},
 							{
 								ctor: '::',
-								_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$itemStatusButtonsView, language, model, _p127, _p125, _p124.status, lastBidWasFloor),
+								_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$itemStatusButtonsView, language, model, _p118, _p116, _p115.status, lastBidWasFloor),
 								_1: {
 									ctor: '::',
-									_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$bidStepView, language, _p126.currency, model, _p125, _p124.status, currentBidStepAmount),
+									_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$bidStepView, language, _p117.currency, model, _p116, _p115.status, currentBidStepAmount),
 									_1: {ctor: '[]'}
 								}
 							}),
@@ -77506,22 +76240,22 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftNavCard = F7(
 					A2(
 						_Gizra$elm_dictlist$EveryDictList$filter,
 						F2(
-							function (_p128, it) {
+							function (_p119, it) {
 								return _elm_lang$core$Native_Utils.eq(it.lotId, v);
 							}),
 						items));
 			},
 			model.currentItemSelection);
-		var _p129 = function () {
-			var _p130 = maybePicked;
-			if (_p130.ctor === 'Just') {
+		var _p120 = function () {
+			var _p121 = maybePicked;
+			if (_p121.ctor === 'Just') {
 				return {
 					ctor: '_Tuple2',
 					_0: saleBeingUpdated || itemBeingUpdated,
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onSubmit(
-							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p130._0._0)),
+							A2(_Gizra$circuit_bid$Pages_Clerk_Model$SetCurrentItem, saleUuid, _p121._0._0)),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -77533,8 +76267,8 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftNavCard = F7(
 				};
 			}
 		}();
-		var jumpDisabled = _p129._0;
-		var jumpFormAttrs = _p129._1;
+		var jumpDisabled = _p120._0;
+		var jumpFormAttrs = _p120._1;
 		var lotInputValue = A2(_elm_lang$core$Maybe$withDefault, '', model.currentItemSelection);
 		var nextDisabled = (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasNextLot, currentItemId, items)) || (saleBeingUpdated || itemBeingUpdated);
 		var prevDisabled = (!A2(_Gizra$circuit_bid$Pages_Clerk_View$hasPreviousLot, currentItemId, items)) || (saleBeingUpdated || itemBeingUpdated);
@@ -77745,35 +76479,35 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftNavCard = F7(
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
-	function (language, currency, saleUuid, sale, items, saleBeingUpdated, itemBeingUpdated, _p131, model) {
-		var _p132 = _p131;
-		var _p138 = _p132._0;
-		var _p137 = _p132._1;
+	function (language, currency, saleUuid, sale, items, saleBeingUpdated, itemBeingUpdated, _p122, model) {
+		var _p123 = _p122;
+		var _p129 = _p123._0;
+		var _p128 = _p123._1;
 		var showAmt = function (amt) {
 			return A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, amt, currency);
 		};
 		var estimateText = function () {
-			var _p133 = {ctor: '_Tuple2', _0: _p137.estimatedLow, _1: _p137.estimatedHigh};
-			if (_p133._0.ctor === 'Just') {
-				if (_p133._1.ctor === 'Just') {
+			var _p124 = {ctor: '_Tuple2', _0: _p128.estimatedLow, _1: _p128.estimatedHigh};
+			if (_p124._0.ctor === 'Just') {
+				if (_p124._1.ctor === 'Just') {
 					return _elm_lang$core$Maybe$Just(
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							showAmt(_p133._0._0),
+							showAmt(_p124._0._0),
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								' – ',
-								showAmt(_p133._1._0))));
+								showAmt(_p124._1._0))));
 				} else {
 					return _elm_lang$core$Maybe$Just(
-						showAmt(_p133._0._0));
+						showAmt(_p124._0._0));
 				}
 			} else {
-				if (_p133._1.ctor === 'Just') {
+				if (_p124._1.ctor === 'Just') {
 					return _elm_lang$core$Maybe$Just(
-						showAmt(_p133._1._0));
+						showAmt(_p124._1._0));
 				} else {
-					return A2(_elm_lang$core$Maybe$map, showAmt, _p137.estimatedPrice);
+					return A2(_elm_lang$core$Maybe$map, showAmt, _p128.estimatedPrice);
 				}
 			}
 		}();
@@ -77782,34 +76516,34 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 			function (_) {
 				return _.minimumPrice;
 			},
-			_krisajenkins$remotedata$RemoteData$toMaybe(_p137.calculated));
+			_krisajenkins$remotedata$RemoteData$toMaybe(_p128.calculated));
 		var openingAmount = A2(
 			_elm_lang$core$Maybe$map,
 			function (_) {
 				return _.openingPrice;
 			},
-			_krisajenkins$remotedata$RemoteData$toMaybe(_p137.calculated));
+			_krisajenkins$remotedata$RemoteData$toMaybe(_p128.calculated));
 		var startAmount = A2(
 			_elm_lang$core$Maybe$map,
 			function (_) {
 				return _.startingPrice;
 			},
-			_krisajenkins$remotedata$RemoteData$toMaybe(_p137.calculated));
+			_krisajenkins$remotedata$RemoteData$toMaybe(_p128.calculated));
 		var statePillLabel = function () {
-			var _p134 = _p137.calculated;
-			if (_p134.ctor === 'Success') {
+			var _p125 = _p128.calculated;
+			if (_p125.ctor === 'Success') {
 				return A2(
 					_elm_lang$core$Basics$always,
-					_Gizra$circuit_bid$Pages_Clerk_View$lotStatePillLabel(_p134._0.status),
+					_Gizra$circuit_bid$Pages_Clerk_View$lotStatePillLabel(_p125._0.status),
 					A2(_Gizra$circuit_bid$Sale_View$statusToString, language, sale.status));
 			} else {
 				return 'Standby';
 			}
 		}();
 		var statePillTone = function () {
-			var _p135 = _p137.calculated;
-			if (_p135.ctor === 'Success') {
-				return _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillClass(_p135._0.status);
+			var _p126 = _p128.calculated;
+			if (_p126.ctor === 'Success') {
+				return _Gizra$circuit_bid$Pages_Clerk_View$lotStatePillClass(_p126._0.status);
 			} else {
 				return 'st-standby';
 			}
@@ -77824,7 +76558,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 					function (x, y) {
 						return x + y;
 					})(1),
-				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p138, items)));
+				A2(_Gizra$elm_dictlist$EveryDictList$indexOfKey, _p129, items)));
 		var progressPct = _elm_lang$core$Native_Utils.eq(totalCount, 0) ? 0 : ((_elm_lang$core$Basics$toFloat(currentIndex) / _elm_lang$core$Basics$toFloat(totalCount)) * 100);
 		return A2(
 			_elm_lang$html$Html$aside,
@@ -77895,7 +76629,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text(_p137.lotId),
+															_0: _elm_lang$html$Html$text(_p128.lotId),
 															_1: {ctor: '[]'}
 														}),
 													_1: {ctor: '[]'}
@@ -77963,7 +76697,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(_p137.name),
+											_0: _elm_lang$html$Html$text(_p128.name),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -77979,7 +76713,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$core$String$isEmpty(_p137.image.big) ? A2(
+										_0: _elm_lang$core$String$isEmpty(_p128.image.big) ? A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
@@ -78004,7 +76738,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 												_0: _elm_lang$html$Html_Attributes$class('lot-svg'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$src(_p137.image.big),
+													_0: _elm_lang$html$Html_Attributes$src(_p128.image.big),
 													_1: {ctor: '[]'}
 												}
 											},
@@ -78120,8 +76854,8 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 														_1: {
 															ctor: '::',
 															_0: function () {
-																var _p136 = minimumAmount;
-																if (_p136.ctor === 'Just') {
+																var _p127 = minimumAmount;
+																if (_p127.ctor === 'Just') {
 																	return A2(
 																		_elm_lang$html$Html$div,
 																		{
@@ -78155,7 +76889,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 																					{
 																						ctor: '::',
 																						_0: _elm_lang$html$Html$text(
-																							showAmt(_p136._0)),
+																							showAmt(_p127._0)),
 																						_1: {ctor: '[]'}
 																					}),
 																				_1: {ctor: '[]'}
@@ -78287,17 +77021,17 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn = F9(
 						}),
 					_1: {
 						ctor: '::',
-						_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkLeftNavCard, saleUuid, sale, items, saleBeingUpdated, itemBeingUpdated, _p138, model),
+						_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkLeftNavCard, saleUuid, sale, items, saleBeingUpdated, itemBeingUpdated, _p129, model),
 						_1: {ctor: '[]'}
 					}
 				}
 			});
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
-	function (config, currentDate, language, user, modelBackend, model, _p139) {
-		var _p140 = _p139;
-		var _p161 = _p140._0;
-		var _p160 = _p140._1;
+	function (config, currentDate, language, user, modelBackend, model, _p130) {
+		var _p131 = _p130;
+		var _p152 = _p131._0;
+		var _p151 = _p131._1;
 		var stream = A2(
 			_Gizra$circuit_bid$Utils_Html$showMaybe,
 			A5(
@@ -78305,44 +77039,44 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 				language,
 				user,
 				modelBackend,
-				{ctor: '_Tuple2', _0: _p161, _1: _p160},
+				{ctor: '_Tuple2', _0: _p152, _1: _p151},
 				model.item.items),
 			_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages));
-		var isAutoClerkOn = _Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p160.autoClerk);
+		var isAutoClerkOn = _Gizra$circuit_bid$Sale_Utils$isAutoClerkEnabled(_p151.autoClerk);
 		var saleBeingUpdated = _Gizra$circuit_bid$QueuedRequest_Utils$queuedRequestLoading(model.queuedSaleUpdateRequestState);
 		var itemBeingUpdated = _krisajenkins$remotedata$RemoteData$isLoading(model.itemChangeRequest) || _Gizra$circuit_bid$QueuedRequest_Utils$queuedRequestLoading(model.queuedItemUpdateRequestState);
 		var items = model.item.items;
 		var clerkLeftCol = A3(
 			_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-			_p160,
+			_p151,
 			items,
-			function (_p141) {
-				var _p142 = _p141;
+			function (_p132) {
+				var _p133 = _p132;
 				return A9(
 					_Gizra$circuit_bid$Pages_Clerk_View$clerkLeftColumn,
 					language,
-					_p160.currency,
-					_p161,
-					_p160,
+					_p151.currency,
+					_p152,
+					_p151,
 					items,
 					saleBeingUpdated,
 					itemBeingUpdated,
-					{ctor: '_Tuple2', _0: _p142._0, _1: _p142._1},
+					{ctor: '_Tuple2', _0: _p133._0, _1: _p133._1},
 					model);
 			});
 		var autoClerkBanner = isAutoClerkOn ? A3(
 			_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-			_p160,
+			_p151,
 			items,
-			function (_p143) {
-				var _p144 = _p143;
-				var _p145 = _krisajenkins$remotedata$RemoteData$toMaybe(_p144._1.calculated);
-				if (_p145.ctor === 'Just') {
-					var _p147 = _p145._0;
+			function (_p134) {
+				var _p135 = _p134;
+				var _p136 = _krisajenkins$remotedata$RemoteData$toMaybe(_p135._1.calculated);
+				if (_p136.ctor === 'Just') {
+					var _p138 = _p136._0;
 					var bannerClass = function () {
-						var _p146 = _p147.autoClerk;
-						if (_p146.ctor === 'Just') {
-							if (_p146._0.ctor === 'Round') {
+						var _p137 = _p138.autoClerk;
+						if (_p137.ctor === 'Just') {
+							if (_p137._0.ctor === 'Round') {
 								return 'autoclerk-banner round';
 							} else {
 								return 'autoclerk-banner bump';
@@ -78383,7 +77117,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 									},
 									{
 										ctor: '::',
-										_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p160, _p147),
+										_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p151, _p138),
 										_1: {ctor: '[]'}
 									}),
 								_1: {ctor: '[]'}
@@ -78422,13 +77156,13 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 			},
 			A2(
 				_elm_lang$core$Maybe$andThen,
-				function (_p148) {
+				function (_p139) {
 					return _krisajenkins$remotedata$RemoteData$toMaybe(
 						function (_) {
 							return _.calculated;
-						}(_p148));
+						}(_p139));
 				},
-				A2(_Gizra$elm_dictlist$EveryDictList$get, _p160.item, items)));
+				A2(_Gizra$elm_dictlist$EveryDictList$get, _p151.item, items)));
 		var clerkMsgPanel = A2(
 			_elm_lang$html$Html$div,
 			{
@@ -78438,28 +77172,28 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 			},
 			{
 				ctor: '::',
-				_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewPublicMessageInput, language, _p160.currency, model.publicMessagesSendRequest, model.publicMessageInput, currentItemPublicMessage),
+				_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$viewPublicMessageInput, language, _p151.currency, model.publicMessagesSendRequest, model.publicMessageInput, currentItemPublicMessage),
 				_1: {ctor: '[]'}
 			});
 		var softBidderLimit = config.siteConfig.softBidderLimit;
 		var clerkappView = A3(
 			_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-			_p160,
+			_p151,
 			items,
-			function (_p149) {
-				var _p150 = _p149;
-				var _p156 = _p150._1;
-				var _p151 = _krisajenkins$remotedata$RemoteData$toMaybe(_p156.calculated);
-				if (_p151.ctor === 'Nothing') {
+			function (_p140) {
+				var _p141 = _p140;
+				var _p147 = _p141._1;
+				var _p142 = _krisajenkins$remotedata$RemoteData$toMaybe(_p147.calculated);
+				if (_p142.ctor === 'Nothing') {
 					return _Gizra$circuit_bid$Utils_Html$emptyNode;
 				} else {
-					var _p155 = _p151._0;
+					var _p146 = _p142._0;
 					var errorMessage = function () {
-						var _p152 = model.itemChangeRequest;
-						if (_p152.ctor === 'Failure') {
-							var _p153 = _p152._0;
-							if (_p153.ctor === 'Http') {
-								return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p153._0);
+						var _p143 = model.itemChangeRequest;
+						if (_p143.ctor === 'Failure') {
+							var _p144 = _p143._0;
+							if (_p144.ctor === 'Http') {
+								return A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p144._0);
 							} else {
 								return A2(
 									_elm_lang$html$Html$div,
@@ -78470,7 +77204,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p153._0),
+										_0: _elm_lang$html$Html$text(_p144._0),
 										_1: {ctor: '[]'}
 									});
 							}
@@ -78484,16 +77218,16 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 						A2(
 							_elm_lang$core$Maybe$map,
 							_Gizra$circuit_bid$Bid_Utils$isFloorBid,
-							_Gizra$circuit_bid$Item_Utils$getWinningBid(_p155)));
+							_Gizra$circuit_bid$Item_Utils$getWinningBid(_p146)));
 					var currentBidStepAmount = function () {
-						var _p154 = {ctor: '_Tuple2', _0: _p155.nextPrice, _1: _p155.currentPrice};
-						if (((_p154.ctor === '_Tuple2') && (_p154._0.ctor === 'Just')) && (_p154._1.ctor === 'Just')) {
-							return A2(_Gizra$circuit_bid$Amount$subtract, _p154._0._0, _p154._1._0);
+						var _p145 = {ctor: '_Tuple2', _0: _p146.nextPrice, _1: _p146.currentPrice};
+						if (((_p145.ctor === '_Tuple2') && (_p145._0.ctor === 'Just')) && (_p145._1.ctor === 'Just')) {
+							return A2(_Gizra$circuit_bid$Amount$subtract, _p145._0._0, _p145._1._0);
 						} else {
 							return _Gizra$circuit_bid$Amount$zero;
 						}
 					}();
-					var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p155, model);
+					var bidAmount = A2(_Gizra$circuit_bid$Pages_Clerk_Utils$nextBidAmountForClerk, _p146, model);
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -78503,15 +77237,15 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 						},
 						{
 							ctor: '::',
-							_0: _Gizra$circuit_bid$Pages_Clerk_View$clerkController(softBidderLimit)(language)(_p160.currency)(modelBackend)(_p161)(_p160)(items)(
-								{ctor: '_Tuple2', _0: _p150._0, _1: _p156})(_p155)(bidAmount)(currentBidStepAmount)(lastBidWasFloor)(isAutoClerkOn)(model),
+							_0: _Gizra$circuit_bid$Pages_Clerk_View$clerkController(softBidderLimit)(language)(_p151.currency)(modelBackend)(_p152)(_p151)(items)(
+								{ctor: '_Tuple2', _0: _p141._0, _1: _p147})(_p146)(bidAmount)(currentBidStepAmount)(lastBidWasFloor)(isAutoClerkOn)(model),
 							_1: {ctor: '[]'}
 						});
 				}
 			});
 		var bidsList = A3(
 			_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-			_p160,
+			_p151,
 			items,
 			A5(
 				_Gizra$circuit_bid$Pages_Clerk_Utils$viewItemBidsList,
@@ -78519,15 +77253,15 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 				model.queuedBids,
 				language,
 				modelBackend,
-				{ctor: '_Tuple2', _0: _p161, _1: _p160}));
+				{ctor: '_Tuple2', _0: _p152, _1: _p151}));
 		var bookBidsCard = config.siteConfig.hideBookBidsOnClerk ? _Gizra$circuit_bid$Utils_Html$emptyNode : A3(
 			_Gizra$circuit_bid$Sale_View$showMaybeItemTuple,
-			_p160,
+			_p151,
 			items,
-			function (_p157) {
-				var _p158 = _p157;
-				var _p159 = _krisajenkins$remotedata$RemoteData$toMaybe(_p158._1.calculated);
-				if (_p159.ctor === 'Just') {
+			function (_p148) {
+				var _p149 = _p148;
+				var _p150 = _krisajenkins$remotedata$RemoteData$toMaybe(_p149._1.calculated);
+				if (_p150.ctor === 'Just') {
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -78573,7 +77307,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 								}),
 							_1: {
 								ctor: '::',
-								_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p160.currency, modelBackend, _p161, _p160.item, _p159._0.bookBids),
+								_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p151.currency, modelBackend, _p152, _p151.item, _p150._0.bookBids),
 								_1: {ctor: '[]'}
 							}
 						});
@@ -78635,7 +77369,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 									},
 									{
 										ctor: '::',
-										_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus, language, _p161, _p160.status, isAutoClerkOn, model.statusMenuOpen, model.currentStatusSelection),
+										_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus, language, _p152, _p151.status, isAutoClerkOn, model.statusMenuOpen, model.currentStatusSelection),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -78649,7 +77383,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 										},
 										{
 											ctor: '::',
-											_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession, language, saleBeingUpdated, _p161, model.currentSessionSelection, _p160.session, _p160.sessions, model.sessionMenuOpen),
+											_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession, language, saleBeingUpdated, _p152, model.currentSessionSelection, _p151.session, _p151.sessions, model.sessionMenuOpen),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -78667,7 +77401,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 													_Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus,
 													language,
 													model,
-													{ctor: '_Tuple2', _0: _p161, _1: _p160},
+													{ctor: '_Tuple2', _0: _p152, _1: _p151},
 													items),
 												_1: {ctor: '[]'}
 											}),
@@ -78686,7 +77420,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 								},
 								{
 									ctor: '::',
-									_0: A3(_Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor, language, _p160.status, model.pausedMessageInput),
+									_0: A3(_Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor, language, _p151.status, model.pausedMessageInput),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
@@ -78838,7 +77572,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 																					}),
 																				_1: {
 																					ctor: '::',
-																					_0: A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p160.currency, modelBackend, _p161, items, _p160.item, model.editableBidderIds),
+																					_0: A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p151.currency, modelBackend, _p152, items, _p151.item, model.editableBidderIds),
 																					_1: {ctor: '[]'}
 																				}
 																			}),
@@ -78859,13 +77593,13 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 														},
 														{
 															ctor: '::',
-															_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p160.currency, _p161, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend),
+															_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p151.currency, _p152, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend),
 															_1: {
 																ctor: '::',
-																_0: A6(_Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard, language, modelBackend, _p161, model, clerkMsgPanel, stream),
+																_0: A6(_Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard, language, modelBackend, _p152, model, clerkMsgPanel, stream),
 																_1: {
 																	ctor: '::',
-																	_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkBroadcastCard, currentDate, softBidderLimit, language, _p160.currency, modelBackend, _p161, model.connectedUsersSearch),
+																	_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkBroadcastCard, currentDate, softBidderLimit, language, _p151.currency, modelBackend, _p152, model.connectedUsersSearch),
 																	_1: {ctor: '[]'}
 																}
 															}
@@ -78879,7 +77613,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 										_0: A3(
 											_Gizra$circuit_bid$Pages_Clerk_View$viewDebug,
 											config,
-											{ctor: '_Tuple2', _0: _p161, _1: _p160},
+											{ctor: '_Tuple2', _0: _p152, _1: _p151},
 											model),
 										_1: {ctor: '[]'}
 									}
@@ -78892,13 +77626,13 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 	});
 var _Gizra$circuit_bid$Pages_Clerk_View$view = F8(
 	function (config, date, language, user, modelBackend, saleUuid, isClerkPage, model) {
-		var _p162 = model.sale;
-		if (_p162.ctor === 'Success') {
-			var _p163 = _p162._0;
+		var _p153 = model.sale;
+		if (_p153.ctor === 'Success') {
+			var _p154 = _p153._0;
 			var pageRender = isClerkPage ? _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView : _Gizra$circuit_bid$Pages_Auctioneer_View$view;
 			return A2(
 				_Gizra$circuit_bid$Utils_Html$showIf,
-				A2(_elm_lang$core$List$member, language, _p163.languages),
+				A2(_elm_lang$core$List$member, language, _p154.languages),
 				A7(
 					pageRender,
 					config,
@@ -78907,7 +77641,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$view = F8(
 					user,
 					modelBackend,
 					model,
-					{ctor: '_Tuple2', _0: saleUuid, _1: _p163}));
+					{ctor: '_Tuple2', _0: saleUuid, _1: _p154}));
 		} else {
 			return _Gizra$circuit_bid$Utils_Html$emptyNode;
 		}
@@ -82132,7 +80866,7 @@ var _Gizra$circuit_bid$Pages_AuctioneerV1_View$viewSaleInfo = F7(
 											_elm_lang$html$Html$audio,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$src('https://cdn.circuitauction.com/stable/live/assets/audio/ping.mp3'),
+												_0: _elm_lang$html$Html_Attributes$src(_Gizra$circuit_bid$Audio_PingSound$pingDataUri),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$controls(false),
@@ -85922,7 +84656,7 @@ var _Gizra$circuit_bid$Pages_Room_View$sidebar = F3(
 										}),
 									_1: {
 										ctor: '::',
-										_0: hasPrice ? A2(
+										_0: _Gizra$circuit_bid$Item_Utils$isPaused(_p13.status) ? _Gizra$circuit_bid$Utils_Html$emptyNode : (hasPrice ? A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
@@ -85964,7 +84698,7 @@ var _Gizra$circuit_bid$Pages_Room_View$sidebar = F3(
 															ctor: '::',
 															_0: A2(
 																_Gizra$circuit_bid$Utils_Html$showIf,
-																(!_Gizra$circuit_bid$Item_Utils$isPaused(_p13.status)) && (!_elm_lang$core$String$isEmpty(bidderType)),
+																!_elm_lang$core$String$isEmpty(bidderType),
 																A2(
 																	_elm_lang$html$Html$div,
 																	{
@@ -85981,7 +84715,7 @@ var _Gizra$circuit_bid$Pages_Room_View$sidebar = F3(
 														}
 													}
 												}
-											}) : (_Gizra$circuit_bid$Item_Utils$isPaused(_p13.status) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+											}) : A2(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
