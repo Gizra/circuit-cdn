@@ -5,18 +5,25 @@
 // may live on the same page (desktop sidebar + mobile copy on the bidder
 // sale view), so each instance gets its own unique target-div id.
 //
-// Visibility-gated mount: the bidder Sale view renders both copies into the
+// Display-gated mount: the bidder Sale view renders both copies into the
 // DOM unconditionally; CSS `display: none` hides the inactive one based on
 // viewport width. We mount the underlying NanoPlayer only while the host
-// element is actually visible — otherwise both players initialize and we
-// get double audio when one is unmuted. Visibility is observed via
-// IntersectionObserver: a `display: none` element reports
-// `isIntersecting: false`, and CSS-driven flips re-fire the observer.
+// element is laid out (has a non-zero box) — otherwise both players
+// initialize and we get double audio when one is unmuted.
+//
+// "Laid out" deliberately means `display: none` or not, NOT "in the
+// viewport". An earlier version used IntersectionObserver, which also
+// reports not-intersecting when the element is merely scrolled off
+// screen — so the stream was torn down every time a bidder scrolled past
+// the video and reconnected when they scrolled back. Bidders must keep
+// hearing the auctioneer while reading the page, so the gate is a
+// ResizeObserver: it fires on CSS display flips (box goes to 0x0 and
+// back) and on breakpoint changes, but never on scroll.
 //
 // Lifecycle:
 //   connectedCallback        — create target div, start observing.
-//   IntersectionObserver     — setup when visible, destroy when hidden.
-//   attributeChangedCallback — destroy current player; rebuild iff visible.
+//   ResizeObserver           — setup when laid out, destroy when display:none.
+//   attributeChangedCallback — destroy current player; rebuild iff laid out.
 //   disconnectedCallback     — destroy + stop observing.
 //
 // Player config is fixed: every value is a deliberate latency / autoplay
@@ -87,17 +94,13 @@
       target.style.height = '100%';
       this.appendChild(target);
 
-      this._observer = new IntersectionObserver((entries) => {
+      this._observer = new ResizeObserver((entries) => {
         // Use the latest entry — under rapid layout changes the callback
-        // can be invoked with multiple coalesced entries.
-        const visible = entries[entries.length - 1].isIntersecting;
-        if (visible === this._isVisible) return;
-        this._isVisible = visible;
-        if (visible) {
-          this._setup();
-        } else {
-          this._destroyPlayer();
-        }
+        // can be invoked with multiple coalesced entries. A `display:
+        // none` host reports a 0x0 content box; anything else is laid
+        // out and should have a live player, on screen or not.
+        const rect = entries[entries.length - 1].contentRect;
+        this._applyVisibility(rect.width > 0 && rect.height > 0);
       });
       this._observer.observe(this);
     }
@@ -124,6 +127,16 @@
       this._destroyPlayer();
       if (this._isVisible) {
         this._setup();
+      }
+    }
+
+    _applyVisibility(visible) {
+      if (visible === this._isVisible) return;
+      this._isVisible = visible;
+      if (visible) {
+        this._setup();
+      } else {
+        this._destroyPlayer();
       }
     }
 
