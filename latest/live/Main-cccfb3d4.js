@@ -62618,23 +62618,15 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																_2: {ctor: '[]'}
 															};
 														case 'ItemUpdate':
-															var _p142 = _p123._0;
-															var _p134 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p142, model.item.lotMap);
+															var _p141 = _p123._0;
+															var _p134 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p141, model.item.lotMap);
 															if (_p134.ctor === 'Nothing') {
-																var _p135 = A3(_Gizra$circuit_bid$Pages_Clerk_Update$fetchSaleFromBackend, backendUrl, saleUuid, model);
-																var newModel = _p135._0;
-																var cmd = _p135._1;
-																return {
-																	ctor: '_Tuple3',
-																	_0: newModel,
-																	_1: cmd,
-																	_2: {ctor: '[]'}
-																};
+																return noChange;
 															} else {
 																var item = A4(
 																	_Gizra$circuit_bid$ItemManager_Utils$insertCalcultedItem,
 																	_Gizra$circuit_bid$User_Model$Authenticated(user),
-																	_p142,
+																	_p141,
 																	_p123._1,
 																	model.item);
 																var editableBidderIds = function () {
@@ -62643,31 +62635,31 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																		function (_) {
 																			return _.itemId;
 																		},
-																		A2(_Gizra$elm_dictlist$EveryDictList$get, _p142, model.item.lotMap));
-																	var _p136 = maybeItemId;
-																	if (_p136.ctor === 'Just') {
-																		var _p141 = _p136._0;
-																		var _p137 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p141, model.item.items);
-																		if (_p137.ctor === 'Just') {
+																		A2(_Gizra$elm_dictlist$EveryDictList$get, _p141, model.item.lotMap));
+																	var _p135 = maybeItemId;
+																	if (_p135.ctor === 'Just') {
+																		var _p140 = _p135._0;
+																		var _p136 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p140, model.item.items);
+																		if (_p136.ctor === 'Just') {
 																			return A3(
 																				_elm_community$maybe_extra$Maybe_Extra$unwrap,
 																				model.editableBidderIds,
 																				function (calculated) {
-																					var _p138 = {
+																					var _p137 = {
 																						ctor: '_Tuple2',
 																						_0: calculated.winningBid,
 																						_1: _Gizra$circuit_bid$Item_Utils$getWinningBid(calculated)
 																					};
-																					if (((_p138.ctor === '_Tuple2') && (_p138._0.ctor === 'Just')) && (_p138._1.ctor === 'Just')) {
-																						var _p140 = _p138._1._0;
-																						var _p139 = _Gizra$circuit_bid$Bid_Utils$getBidderNumber(_p140);
-																						if (_p139.ctor === 'Just') {
-																							return _Gizra$circuit_bid$Bid_Utils$isFloorBid(_p140) ? A3(
+																					if (((_p137.ctor === '_Tuple2') && (_p137._0.ctor === 'Just')) && (_p137._1.ctor === 'Just')) {
+																						var _p139 = _p137._1._0;
+																						var _p138 = _Gizra$circuit_bid$Bid_Utils$getBidderNumber(_p139);
+																						if (_p138.ctor === 'Just') {
+																							return _Gizra$circuit_bid$Bid_Utils$isFloorBid(_p139) ? A3(
 																								_eeue56$elm_all_dict$EveryDict$insert,
-																								{ctor: '_Tuple2', _0: _p141, _1: _p138._0._0},
+																								{ctor: '_Tuple2', _0: _p140, _1: _p137._0._0},
 																								_Gizra$elm_editable_webdata$Editable_WebData$create(
 																									_elm_lang$core$Result$Ok(
-																										_elm_lang$core$Basics$toString(_p139._0))),
+																										_elm_lang$core$Basics$toString(_p138._0))),
 																								model.editableBidderIds) : model.editableBidderIds;
 																						} else {
 																							return model.editableBidderIds;
@@ -62676,7 +62668,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																						return model.editableBidderIds;
 																					}
 																				},
-																				_krisajenkins$remotedata$RemoteData$toMaybe(_p137._0.calculated));
+																				_krisajenkins$remotedata$RemoteData$toMaybe(_p136._0.calculated));
 																		} else {
 																			return model.editableBidderIds;
 																		}
@@ -62694,12 +62686,12 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																};
 															}
 														case 'MessageCreate':
-															var _p145 = _p123._0;
-															var _p144 = _p123._1;
-															if (_Gizra$circuit_bid$Message_Utils$isPrivate(_p144.messageType)) {
+															var _p144 = _p123._0;
+															var _p143 = _p123._1;
+															if (_Gizra$circuit_bid$Message_Utils$isPrivate(_p143.messageType)) {
 																var privateUnread = function () {
-																	var _p143 = _p144.messageType;
-																	if (_p143.ctor === 'PrivateByBidder') {
+																	var _p142 = _p143.messageType;
+																	if (_p142.ctor === 'PrivateByBidder') {
 																		return _elm_lang$core$Native_Utils.eq(model.messagesTab, _Gizra$circuit_bid$Pages_Clerk_Model$TabPrivate) ? model.privateUnread : (model.privateUnread + 1);
 																	} else {
 																		return model.privateUnread;
@@ -62712,7 +62704,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																		{
 																			privateMessages: A2(
 																				_krisajenkins$remotedata$RemoteData$map,
-																				A2(_Gizra$circuit_bid$Message_Update$addMessage, _p145, _p144),
+																				A2(_Gizra$circuit_bid$Message_Update$addMessage, _p144, _p143),
 																				model.privateMessages),
 																			privateUnread: privateUnread
 																		}),
@@ -62722,7 +62714,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 															} else {
 																var publicMessages = A2(
 																	_krisajenkins$remotedata$RemoteData$map,
-																	A2(_Gizra$circuit_bid$Message_Update$addMessage, _p145, _p144),
+																	A2(_Gizra$circuit_bid$Message_Update$addMessage, _p144, _p143),
 																	model.publicMessages);
 																return {
 																	ctor: '_Tuple3',
@@ -62745,24 +62737,24 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																_2: {ctor: '[]'}
 															};
 														case 'BidUpdate':
-															var _p153 = _p123._0;
-															var _p152 = _p123._1;
-															var _p151 = _p123._2;
+															var _p152 = _p123._0;
+															var _p151 = _p123._1;
+															var _p150 = _p123._2;
 															var editableBidderIds = function () {
-																var _p146 = A2(
+																var _p145 = A2(
 																	_eeue56$elm_all_dict$EveryDict$get,
-																	{ctor: '_Tuple2', _0: _p153, _1: _p152},
+																	{ctor: '_Tuple2', _0: _p152, _1: _p151},
 																	model.editableBidderIds);
-																if (_p146.ctor === 'Just') {
-																	var _p147 = {
+																if (_p145.ctor === 'Just') {
+																	var _p146 = {
 																		ctor: '_Tuple2',
-																		_0: _Gizra$circuit_bid$Bid_Utils$getBidderNumber(_p151),
-																		_1: _Gizra$circuit_bid$Bid_Utils$isFloorBid(_p151)
+																		_0: _Gizra$circuit_bid$Bid_Utils$getBidderNumber(_p150),
+																		_1: _Gizra$circuit_bid$Bid_Utils$isFloorBid(_p150)
 																	};
-																	if (((_p147.ctor === '_Tuple2') && (_p147._0.ctor === 'Just')) && (_p147._1 === true)) {
+																	if (((_p146.ctor === '_Tuple2') && (_p146._0.ctor === 'Just')) && (_p146._1 === true)) {
 																		return A2(
 																			_eeue56$elm_all_dict$EveryDict$remove,
-																			{ctor: '_Tuple2', _0: _p153, _1: _p152},
+																			{ctor: '_Tuple2', _0: _p152, _1: _p151},
 																			model.editableBidderIds);
 																	} else {
 																		return model.editableBidderIds;
@@ -62780,20 +62772,20 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																		_elm_lang$core$Platform_Cmd$none,
 																		A2(
 																			_elm_lang$core$Maybe$map,
-																			function (_p148) {
-																				var _p149 = _p148;
-																				return _elm_lang$core$Native_Utils.eq(_p149._0, _p153) ? A3(
+																			function (_p147) {
+																				var _p148 = _p147;
+																				return _elm_lang$core$Native_Utils.eq(_p148._0, _p152) ? A3(
 																					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 																					_elm_lang$core$Platform_Cmd$none,
 																					function (calculated) {
-																						var _p150 = _Gizra$circuit_bid$Bid_Utils$getHighestBidWithKey(calculated.bids);
-																						if (_p150.ctor === 'Just') {
-																							return _elm_lang$core$Native_Utils.eq(_p150._0._0, _p152) ? A2(_Gizra$circuit_bid$Pages_Clerk_Update$getPlaySoundCmd, calculated, _p151) : _elm_lang$core$Platform_Cmd$none;
+																						var _p149 = _Gizra$circuit_bid$Bid_Utils$getHighestBidWithKey(calculated.bids);
+																						if (_p149.ctor === 'Just') {
+																							return _elm_lang$core$Native_Utils.eq(_p149._0._0, _p151) ? A2(_Gizra$circuit_bid$Pages_Clerk_Update$getPlaySoundCmd, calculated, _p150) : _elm_lang$core$Platform_Cmd$none;
 																						} else {
-																							return A2(_Gizra$circuit_bid$Pages_Clerk_Update$getPlaySoundCmd, calculated, _p151);
+																							return A2(_Gizra$circuit_bid$Pages_Clerk_Update$getPlaySoundCmd, calculated, _p150);
 																						}
 																					},
-																					_krisajenkins$remotedata$RemoteData$toMaybe(_p149._1.calculated)) : _elm_lang$core$Platform_Cmd$none;
+																					_krisajenkins$remotedata$RemoteData$toMaybe(_p148._1.calculated)) : _elm_lang$core$Platform_Cmd$none;
 																			},
 																			function (id) {
 																				return A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, id, model.item.items);
@@ -62805,7 +62797,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																_0: _elm_lang$core$Native_Utils.update(
 																	model,
 																	{
-																		item: A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p153, _p152, _p151, model.item),
+																		item: A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p152, _p151, _p150, model.item),
 																		editableBidderIds: editableBidderIds
 																	}),
 																_1: cmd,
@@ -62869,30 +62861,30 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																}
 															};
 														case 'LiveQueuePostExecute':
-															var _p166 = _p123._0;
+															var _p165 = _p123._0;
 															var verifyQueuedTaskAndProcess = F2(
 																function (requestState, result) {
-																	var _p154 = requestState;
-																	if (_p154.ctor === 'QueuedRequestQueued') {
-																		return _elm_lang$core$Native_Utils.eq(_p154._0, _p166.taskId) ? result : noChange;
+																	var _p153 = requestState;
+																	if (_p153.ctor === 'QueuedRequestQueued') {
+																		return _elm_lang$core$Native_Utils.eq(_p153._0, _p165.taskId) ? result : noChange;
 																	} else {
 																		return noChange;
 																	}
 																});
-															var _p155 = _p166.result;
-															switch (_p155.ctor) {
+															var _p154 = _p165.result;
+															switch (_p154.ctor) {
 																case 'LiveQueuePostExecutePlaceBidSuccess':
 																	var queuedBids = _eeue56$elm_all_dict$EveryDict$fromList(
 																		A2(
 																			_elm_lang$core$List$filter,
-																			function (_p156) {
-																				var _p157 = _p156;
+																			function (_p155) {
+																				var _p156 = _p155;
 																				return !_elm_lang$core$Native_Utils.eq(
-																					_p157._0._1,
-																					_elm_lang$core$Maybe$Just(_p155._0));
+																					_p156._0._1,
+																					_elm_lang$core$Maybe$Just(_p154._0));
 																			},
 																			_eeue56$elm_all_dict$EveryDict$toList(model.queuedBids)));
-																	var _p158 = A2(
+																	var _p157 = A2(
 																		verifyQueuedTaskAndProcess,
 																		model.queuedBidRequestState,
 																		{
@@ -62908,9 +62900,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																			_1: _elm_lang$core$Platform_Cmd$none,
 																			_2: {ctor: '[]'}
 																		});
-																	var updatedModel = _p158._0;
-																	var cmd = _p158._1;
-																	var appMsgs = _p158._2;
+																	var updatedModel = _p157._0;
+																	var cmd = _p157._1;
+																	var appMsgs = _p157._2;
 																	return {
 																		ctor: '_Tuple3',
 																		_0: _elm_lang$core$Native_Utils.update(
@@ -62920,18 +62912,18 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																		_2: appMsgs
 																	};
 																case 'LiveQueuePostExecutePlaceBidFailure':
-																	var _p162 = _p155._1;
+																	var _p161 = _p154._1;
 																	var queuedBids = _eeue56$elm_all_dict$EveryDict$fromList(
 																		A2(
 																			_elm_lang$core$List$filter,
-																			function (_p159) {
-																				var _p160 = _p159;
+																			function (_p158) {
+																				var _p159 = _p158;
 																				return !_elm_lang$core$Native_Utils.eq(
-																					_p160._0._1,
-																					_elm_lang$core$Maybe$Just(_p155._0));
+																					_p159._0._1,
+																					_elm_lang$core$Maybe$Just(_p154._0));
 																			},
 																			_eeue56$elm_all_dict$EveryDict$toList(model.queuedBids)));
-																	var _p161 = A2(
+																	var _p160 = A2(
 																		verifyQueuedTaskAndProcess,
 																		model.queuedBidRequestState,
 																		{
@@ -62940,16 +62932,16 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				model,
 																				{
 																					queuedBidRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestFailed(
-																						_elm_lang$http$Http$BadUrl(_p162)),
+																						_elm_lang$http$Http$BadUrl(_p161)),
 																					itemChangeRequest: _krisajenkins$remotedata$RemoteData$Failure(
-																						_Gizra$circuit_bid$Error_Model$Plain(_p162))
+																						_Gizra$circuit_bid$Error_Model$Plain(_p161))
 																				}),
 																			_1: _elm_lang$core$Platform_Cmd$none,
 																			_2: {ctor: '[]'}
 																		});
-																	var updatedModel = _p161._0;
-																	var cmd = _p161._1;
-																	var appMsgs = _p161._2;
+																	var updatedModel = _p160._0;
+																	var cmd = _p160._1;
+																	var appMsgs = _p160._2;
 																	return {
 																		ctor: '_Tuple3',
 																		_0: _elm_lang$core$Native_Utils.update(
@@ -62975,7 +62967,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																			_2: {ctor: '[]'}
 																		});
 																case 'LiveQueuePostExecuteLastToFloorFailure':
-																	var _p163 = _p155._0;
+																	var _p162 = _p154._0;
 																	return A2(
 																		verifyQueuedTaskAndProcess,
 																		model.queuedSetToFloorRequestState,
@@ -62985,9 +62977,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				model,
 																				{
 																					queuedSetToFloorRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestFailed(
-																						_elm_lang$http$Http$BadUrl(_p163)),
+																						_elm_lang$http$Http$BadUrl(_p162)),
 																					itemChangeRequest: _krisajenkins$remotedata$RemoteData$Failure(
-																						_Gizra$circuit_bid$Error_Model$Plain(_p163))
+																						_Gizra$circuit_bid$Error_Model$Plain(_p162))
 																				}),
 																			_1: _elm_lang$core$Platform_Cmd$none,
 																			_2: {ctor: '[]'}
@@ -62997,12 +62989,12 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																		verifyQueuedTaskAndProcess,
 																		model.queuedItemUpdateRequestState,
 																		function () {
-																			var _p164 = _Gizra$circuit_bid$Pages_Clerk_Update$handleItemUpdateSuccess(currentDate)(backendUrl)(backofficeUrl)(
+																			var _p163 = _Gizra$circuit_bid$Pages_Clerk_Update$handleItemUpdateSuccess(currentDate)(backendUrl)(backofficeUrl)(
 																				{ctor: '_Tuple2', _0: _p122._0, _1: _p122._1})(isDebug)(accessToken)(language)(user)(modelBackend)(model)(
-																				{ctor: '_Tuple2', _0: _p155._0._0, _1: _p155._0._1});
-																			var updatedModel = _p164._0;
-																			var cmds = _p164._1;
-																			var appMsgs = _p164._3;
+																				{ctor: '_Tuple2', _0: _p154._0._0, _1: _p154._0._1});
+																			var updatedModel = _p163._0;
+																			var cmds = _p163._1;
+																			var appMsgs = _p163._3;
 																			return {
 																				ctor: '_Tuple3',
 																				_0: _elm_lang$core$Native_Utils.update(
@@ -63017,14 +63009,14 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																			};
 																		}());
 																case 'LiveQueuePostExecuteUpdateItemStatusFailure':
-																	var _p165 = _p155._0;
+																	var _p164 = _p154._0;
 																	return A2(
 																		verifyQueuedTaskAndProcess,
 																		model.queuedItemUpdateRequestState,
 																		function () {
 																			var updatedModel = A3(
 																				_Gizra$circuit_bid$Pages_Clerk_Update$handleItemUpdateFailure,
-																				_elm_lang$http$Http$BadUrl(_p165),
+																				_elm_lang$http$Http$BadUrl(_p164),
 																				user,
 																				model);
 																			return {
@@ -63033,9 +63025,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																					updatedModel,
 																					{
 																						queuedItemUpdateRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestFailed(
-																							_elm_lang$http$Http$BadUrl(_p165)),
+																							_elm_lang$http$Http$BadUrl(_p164)),
 																						itemChangeRequest: _krisajenkins$remotedata$RemoteData$Failure(
-																							_Gizra$circuit_bid$Error_Model$Plain(_p165))
+																							_Gizra$circuit_bid$Error_Model$Plain(_p164))
 																					}),
 																				_1: _elm_lang$core$Platform_Cmd$none,
 																				_2: {ctor: '[]'}
@@ -63051,7 +63043,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				model,
 																				{
 																					queuedSaleUpdateRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestCompleted,
-																					currentSessionSelection: _elm_lang$core$Maybe$Just(_p155._0.session),
+																					currentSessionSelection: _elm_lang$core$Maybe$Just(_p154._0.session),
 																					currentItemSelection: _elm_lang$core$Maybe$Nothing,
 																					itemChangeRequest: _krisajenkins$remotedata$RemoteData$NotAsked
 																				}),
@@ -63092,7 +63084,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$updateFromPusher = function (currentDa
 																				model,
 																				{
 																					queuedSaleUpdateRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestFailed(
-																						_elm_lang$http$Http$BadUrl(_p155._0)),
+																						_elm_lang$http$Http$BadUrl(_p154._0)),
 																					currentItemSelection: _elm_lang$core$Maybe$Nothing
 																				}),
 																			_1: _elm_lang$core$Platform_Cmd$none,
@@ -63407,12 +63399,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 				var _p17 = _p11._0;
 				var _p14 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p17, model.item.lotMap);
 				if (_p14.ctor === 'Nothing') {
-					return {
-						ctor: '_Tuple3',
-						_0: model,
-						_1: A3(_Gizra$circuit_bid$Pages_Sale_Update$fetchSale, backendUrl, accessToken, saleUuid),
-						_2: {ctor: '[]'}
-					};
+					return noChange;
 				} else {
 					var item = A4(_Gizra$circuit_bid$ItemManager_Utils$insertCalcultedItem, user, _p17, _p11._1, model.item);
 					var debug = true;
