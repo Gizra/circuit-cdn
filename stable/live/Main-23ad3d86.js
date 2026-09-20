@@ -44631,7 +44631,9 @@ var _Gizra$circuit_bid$App_Model$Model = function (a) {
 																			return function (t) {
 																				return function (u) {
 																					return function (v) {
-																						return {accessToken: a, activePage: b, backend: c, config: d, currentDate: e, errors: f, health: g, language: h, offline: i, pageAuctioneer: j, pageClerk: k, pageItem: l, pageRoom: m, pageSale: n, pusher: o, parentBaseUrl: p, redirectUrl: q, siteShortName: r, theme: s, user: t, login: u, appVersion: v};
+																						return function (w) {
+																							return {accessToken: a, activePage: b, backend: c, config: d, currentDate: e, errors: f, health: g, language: h, offline: i, pageAuctioneer: j, pageClerk: k, pageItem: l, pageRoom: m, pageSale: n, pusher: o, parentBaseUrl: p, bootUrl: q, redirectUrl: r, siteShortName: s, theme: t, user: u, login: v, appVersion: w};
+																						};
 																					};
 																				};
 																			};
@@ -44741,6 +44743,7 @@ var _Gizra$circuit_bid$App_Model$emptyModel = {
 	pageItem: _Gizra$circuit_bid$ItemManager_Model$emptyModel,
 	pusher: _Gizra$circuit_bid$Pusher_Model$emptyModel,
 	parentBaseUrl: '',
+	bootUrl: '',
 	redirectUrl: _elm_lang$core$Maybe$Nothing,
 	siteShortName: '',
 	theme: _Gizra$circuit_bid$App_Model$Light,
@@ -68722,6 +68725,7 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 				language: _Gizra$circuit_bid$App_Utils$decodeLanguageCode(flags.languageCode),
 				theme: _Gizra$circuit_bid$App_Model$themeFromString(flags.themeCode),
 				parentBaseUrl: parentBaseUrl,
+				bootUrl: flags.parentBaseUrl,
 				redirectUrl: redirectUrl,
 				appVersion: flags.appVersion
 			}),
@@ -69346,7 +69350,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$pill = function (model) {
 			}
 		});
 };
-var _Gizra$circuit_bid$Pusher_Health_View$strip = function (model) {
+var _Gizra$circuit_bid$Pusher_Health_View$notice = function (model) {
 	var _p13 = {
 		ctor: '_Tuple2',
 		_0: _Gizra$circuit_bid$Pusher_Health_Model$level(model),
@@ -69359,6 +69363,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$strip = function (model) {
 				return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 			} else {
 				if (_p13._1.ctor === 'Just') {
+					var _p14 = _p13._1._0;
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -69366,9 +69371,13 @@ var _Gizra$circuit_bid$Pusher_Health_View$strip = function (model) {
 							_0: _elm_lang$html$Html_Attributes$class(
 								A2(
 									_elm_lang$core$Basics_ops['++'],
-									'health-strip ',
+									'health-notice ',
 									_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p13._0))),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$title(_p14),
+								_1: {ctor: '[]'}
+							}
 						},
 						{
 							ctor: '::',
@@ -69382,35 +69391,42 @@ var _Gizra$circuit_bid$Pusher_Health_View$strip = function (model) {
 								{ctor: '[]'}),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html$text(' '),
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('hn-text'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(_p14),
+										_1: {ctor: '[]'}
+									}),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(_p13._1._0),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$button,
-											{
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('button'),
+											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$type_('button'),
+												_0: _elm_lang$html$Html_Attributes$class('ch-btn'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('ch-btn'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onClick(
-															A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _Gizra$circuit_bid$Pusher_Health_Model$Manual)),
-														_1: {ctor: '[]'}
-													}
+													_0: _elm_lang$html$Html_Events$onClick(
+														A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _Gizra$circuit_bid$Pusher_Health_Model$Manual)),
+													_1: {ctor: '[]'}
 												}
-											},
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html$text('Resync'),
-												_1: {ctor: '[]'}
-											}),
-										_1: {ctor: '[]'}
-									}
+											}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Resync'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
 								}
 							}
 						});
@@ -69425,11 +69441,11 @@ var _Gizra$circuit_bid$Pusher_Health_View$strip = function (model) {
 	return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 };
 var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
-	var _p14 = _Gizra$circuit_bid$Pusher_Health_Model$level(model);
-	if (_p14.ctor === 'Green') {
+	var _p15 = _Gizra$circuit_bid$Pusher_Health_Model$level(model);
+	if (_p15.ctor === 'Green') {
 		return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 	} else {
-		var _p15 = _p14;
+		var _p16 = _p15;
 		var redForLong = A2(
 			_elm_lang$core$Maybe$withDefault,
 			false,
@@ -69447,7 +69463,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						'room-health ',
-						_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p15))),
+						_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p16))),
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$title(
@@ -69472,7 +69488,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
 					ctor: '::',
 					_0: A2(
 						_Gizra$elm_essentials$Gizra_Html$showIf,
-						_elm_lang$core$Native_Utils.eq(_p15, _Gizra$circuit_bid$Pusher_Health_Model$Red) && redForLong,
+						_elm_lang$core$Native_Utils.eq(_p16, _Gizra$circuit_bid$Pusher_Health_Model$Red) && redForLong,
 						A2(
 							_elm_lang$html$Html$span,
 							{
@@ -69605,6 +69621,890 @@ var _Gizra$circuit_bid$Config_View$error = A2(
 			}),
 		_1: {ctor: '[]'}
 	});
+
+var _Gizra$circuit_bid$E2E_Probe$maybeEncode = F2(
+	function (encoder, maybeValue) {
+		var _p0 = maybeValue;
+		if (_p0.ctor === 'Just') {
+			return encoder(_p0._0);
+		} else {
+			return _elm_lang$core$Json_Encode$null;
+		}
+	});
+var _Gizra$circuit_bid$E2E_Probe$encodeLastResync = function (_p1) {
+	var _p2 = _p1;
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'level',
+				_1: _elm_lang$core$Json_Encode$string(
+					_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(_p2._1))
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'ok',
+					_1: _elm_lang$core$Json_Encode$bool(
+						_elm_lang$core$Native_Utils.eq(
+							_p2._2,
+							_elm_lang$core$Result$Ok(
+								{ctor: '_Tuple0'})))
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'at',
+						_1: _elm_lang$core$Json_Encode$float(_p2._0)
+					},
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeResync = function (resync) {
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'level',
+				_1: _elm_lang$core$Json_Encode$string(
+					_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(resync.level))
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'reason',
+					_1: _elm_lang$core$Json_Encode$string(
+						_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(resync.reason))
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'startedAt',
+						_1: _elm_lang$core$Json_Encode$float(resync.startedAt)
+					},
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeChannels = function (channels) {
+	return _elm_lang$core$Json_Encode$object(
+		A2(
+			_elm_lang$core$List$map,
+			function (_p3) {
+				var _p4 = _p3;
+				return {
+					ctor: '_Tuple2',
+					_0: _p4._0,
+					_1: _elm_lang$core$Json_Encode$bool(_p4._1.subscribed)
+				};
+			},
+			_elm_lang$core$Dict$toList(channels)));
+};
+var _Gizra$circuit_bid$E2E_Probe$pusherErrorToString = function (error) {
+	var message = A2(_elm_lang$core$Maybe$withDefault, 'unknown error', error.message);
+	var _p5 = error.code;
+	if (_p5.ctor === 'Just') {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			message,
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				' (',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(_p5._0),
+					')')));
+	} else {
+		return message;
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$levelToString = function (healthLevel) {
+	var _p6 = healthLevel;
+	switch (_p6.ctor) {
+		case 'Green':
+			return 'green';
+		case 'Yellow':
+			return 'yellow';
+		default:
+			return 'red';
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$connectionStateToString = function (state) {
+	var _p7 = state;
+	switch (_p7.ctor) {
+		case 'Initialized':
+			return 'initialized';
+		case 'Connecting':
+			return 'connecting';
+		case 'Connected':
+			return 'connected';
+		case 'Unavailable':
+			return 'unavailable';
+		case 'Failed':
+			return 'failed';
+		default:
+			return 'disconnected';
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeHealth = function (health) {
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'connection',
+				_1: _elm_lang$core$Json_Encode$string(
+					_Gizra$circuit_bid$E2E_Probe$connectionStateToString(health.connection))
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'level',
+					_1: _elm_lang$core$Json_Encode$string(
+						_Gizra$circuit_bid$E2E_Probe$levelToString(
+							_Gizra$circuit_bid$Pusher_Health_Model$level(health)))
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'lastError',
+						_1: A2(
+							_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+							function (_p8) {
+								return _elm_lang$core$Json_Encode$string(
+									_Gizra$circuit_bid$E2E_Probe$pusherErrorToString(_p8));
+							},
+							health.lastError)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'everConnected',
+							_1: _elm_lang$core$Json_Encode$bool(health.everConnected)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'reconnects',
+								_1: _elm_lang$core$Json_Encode$int(health.reconnects)
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'missedEvents',
+									_1: _elm_lang$core$Json_Encode$int(health.missedEvents)
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'droppedStale',
+										_1: _elm_lang$core$Json_Encode$int(health.droppedStale)
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'divergences',
+											_1: _elm_lang$core$Json_Encode$int(health.divergences)
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'lagMs',
+												_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.lagMs)
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: 'lagSamples',
+													_1: _elm_lang$core$Json_Encode$int(health.lagSamples)
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: 'wsRttMs',
+														_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.wsRttMs)
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '_Tuple2',
+															_0: 'httpRttMs',
+															_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.httpRttMs)
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '_Tuple2',
+																_0: 'channels',
+																_1: _Gizra$circuit_bid$E2E_Probe$encodeChannels(health.channels)
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '_Tuple2',
+																	_0: 'lastEventType',
+																	_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$string, health.lastEventType)
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		ctor: '_Tuple2',
+																		_0: 'lastEventAt',
+																		_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.lastEventAt)
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			ctor: '_Tuple2',
+																			_0: 'resync',
+																			_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _Gizra$circuit_bid$E2E_Probe$encodeResync, health.resync)
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				ctor: '_Tuple2',
+																				_0: 'lastResync',
+																				_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _Gizra$circuit_bid$E2E_Probe$encodeLastResync, health.lastResync)
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					ctor: '_Tuple2',
+																					_0: 'unhealthySince',
+																					_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.unhealthySince)
+																				},
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState = function (state) {
+	var _p9 = function () {
+		var _p10 = state;
+		switch (_p10.ctor) {
+			case 'NoQueuedRequest':
+				return {ctor: '_Tuple2', _0: 'none', _1: _elm_lang$core$Maybe$Nothing};
+			case 'QueuedRequestSent':
+				return {ctor: '_Tuple2', _0: 'sent', _1: _elm_lang$core$Maybe$Nothing};
+			case 'QueuedRequestQueued':
+				return {
+					ctor: '_Tuple2',
+					_0: 'queued',
+					_1: _elm_lang$core$Maybe$Just(_p10._0)
+				};
+			case 'QueuedRequestCompleted':
+				return {ctor: '_Tuple2', _0: 'completed', _1: _elm_lang$core$Maybe$Nothing};
+			default:
+				return {ctor: '_Tuple2', _0: 'failed', _1: _elm_lang$core$Maybe$Nothing};
+		}
+	}();
+	var name = _p9._0;
+	var taskId = _p9._1;
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'state',
+				_1: _elm_lang$core$Json_Encode$string(name)
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'taskId',
+					_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$string, taskId)
+				},
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeQueuedClerk = function (model) {
+	if (!_Gizra$circuit_bid$App_Utils$isClerkPage(model.activePage)) {
+		return _elm_lang$core$Json_Encode$null;
+	} else {
+		var page = model.pageClerk;
+		return _elm_lang$core$Json_Encode$object(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'bid',
+					_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState(page.queuedBidRequestState)
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'lastToFloor',
+						_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState(page.queuedSetToFloorRequestState)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'itemUpdate',
+							_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState(page.queuedItemUpdateRequestState)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'saleUpdate',
+								_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState(page.queuedSaleUpdateRequestState)
+							},
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			});
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeQueuedBidder = function (model) {
+	return _Gizra$circuit_bid$App_Utils$isClerkPage(model.activePage) ? _elm_lang$core$Json_Encode$null : _Gizra$circuit_bid$E2E_Probe$encodeQueuedRequestState(model.pageSale.queuedRequestState);
+};
+var _Gizra$circuit_bid$E2E_Probe$itemStatusToString = function (status) {
+	var _p11 = status;
+	if (_p11.ctor === 'EditableStatus') {
+		var _p12 = _Gizra$circuit_bid$Item_Utils$getClerkStatus(_p11._0);
+		if (_p12.ctor === 'Just') {
+			switch (_p12._0.ctor) {
+				case 'Paused':
+					return 'paused';
+				case 'Open':
+					return 'open';
+				case 'Going':
+					return 'going';
+				default:
+					return 'gone_transition';
+			}
+		} else {
+			return 'mail_only';
+		}
+	} else {
+		var _p13 = _p11._0;
+		switch (_p13.ctor) {
+			case 'ItemClosed':
+				if (_p13._0.ctor === 'Sold') {
+					return 'sold';
+				} else {
+					return 'unsold';
+				}
+			case 'SaleNotStarted':
+				return 'sale_not_started';
+			case 'SaleClosed':
+				return 'sale_closed';
+			case 'Withdrawn':
+				return 'withdrawn';
+			default:
+				return 'not_active_with_live_bids';
+		}
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeAmount = function (_p14) {
+	return _elm_lang$core$Json_Encode$int(
+		_Gizra$circuit_bid$Amount$extract(_p14));
+};
+var _Gizra$circuit_bid$E2E_Probe$bidKeyToString = function (_p15) {
+	var _p16 = _p15;
+	return _p16._0;
+};
+var _Gizra$circuit_bid$E2E_Probe$itemUuidToString = function (_p17) {
+	var _p18 = _p17;
+	return _p18._0;
+};
+var _Gizra$circuit_bid$E2E_Probe$itemIdToInt = function (_p19) {
+	var _p20 = _p19;
+	return _p20._0;
+};
+var _Gizra$circuit_bid$E2E_Probe$winningBidAnywhere = function (calculated) {
+	var _p21 = _Gizra$circuit_bid$Item_Utils$getWinningBid(calculated);
+	if (_p21.ctor === 'Just') {
+		return _elm_lang$core$Maybe$Just(_p21._0);
+	} else {
+		return A2(
+			_elm_lang$core$Maybe$andThen,
+			function (bidKey) {
+				return _elm_lang$core$List$head(
+					A2(
+						_elm_lang$core$List$filterMap,
+						_Gizra$elm_dictlist$EveryDictList$get(bidKey),
+						{
+							ctor: '::',
+							_0: calculated.bids,
+							_1: {
+								ctor: '::',
+								_0: calculated.bookBids,
+								_1: {
+									ctor: '::',
+									_0: calculated.agentBids,
+									_1: {ctor: '[]'}
+								}
+							}
+						}));
+			},
+			calculated.winningBid);
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$encodeActiveItem = F2(
+	function (itemManager, sale) {
+		var maybeItem = A2(_Gizra$elm_dictlist$EveryDictList$get, sale.item, itemManager.items);
+		var maybeCalculated = A2(
+			_elm_lang$core$Maybe$andThen,
+			function (_p22) {
+				return _krisajenkins$remotedata$RemoteData$toMaybe(
+					function (_) {
+						return _.calculated;
+					}(_p22));
+			},
+			maybeItem);
+		var maybeWinningBid = A2(_elm_lang$core$Maybe$andThen, _Gizra$circuit_bid$E2E_Probe$winningBidAnywhere, maybeCalculated);
+		var bidDictSize = function (accessor) {
+			return A2(
+				_elm_lang$core$Maybe$withDefault,
+				0,
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (_p23) {
+						return _Gizra$elm_dictlist$EveryDictList$size(
+							accessor(_p23));
+					},
+					maybeCalculated));
+		};
+		return _elm_lang$core$Json_Encode$object(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'nid',
+					_1: _elm_lang$core$Json_Encode$int(
+						_Gizra$circuit_bid$E2E_Probe$itemIdToInt(sale.item))
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'uuid',
+						_1: A2(
+							_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+							function (_p24) {
+								return _elm_lang$core$Json_Encode$string(
+									_Gizra$circuit_bid$E2E_Probe$itemUuidToString(
+										function (_) {
+											return _.uuid;
+										}(_p24)));
+							},
+							maybeItem)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'lot',
+							_1: A2(
+								_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+								function (_p25) {
+									return _elm_lang$core$Json_Encode$string(
+										function (_) {
+											return _.lotId;
+										}(_p25));
+								},
+								maybeItem)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'status',
+								_1: _elm_lang$core$Json_Encode$string(
+									A2(
+										_elm_lang$core$Maybe$withDefault,
+										'loading',
+										A2(
+											_elm_lang$core$Maybe$map,
+											function (_p26) {
+												return _Gizra$circuit_bid$E2E_Probe$itemStatusToString(
+													function (_) {
+														return _.status;
+													}(_p26));
+											},
+											maybeCalculated)))
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'statusPending',
+									_1: _elm_lang$core$Json_Encode$bool(
+										A2(
+											_elm_lang$core$Maybe$withDefault,
+											false,
+											A2(
+												_elm_lang$core$Maybe$map,
+												function (_p27) {
+													return _Gizra$circuit_bid$Item_Utils$clerkStatusIsLoading(
+														function (_) {
+															return _.status;
+														}(_p27));
+												},
+												maybeCalculated)))
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'currentPrice',
+										_1: A2(
+											_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+											_Gizra$circuit_bid$E2E_Probe$encodeAmount,
+											A2(
+												_elm_lang$core$Maybe$andThen,
+												function (_) {
+													return _.currentPrice;
+												},
+												maybeCalculated))
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'nextPrice',
+											_1: A2(
+												_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+												_Gizra$circuit_bid$E2E_Probe$encodeAmount,
+												A2(
+													_elm_lang$core$Maybe$andThen,
+													function (_) {
+														return _.nextPrice;
+													},
+													maybeCalculated))
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'openingPrice',
+												_1: A2(
+													_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+													_Gizra$circuit_bid$E2E_Probe$encodeAmount,
+													A2(
+														_elm_lang$core$Maybe$map,
+														function (_) {
+															return _.openingPrice;
+														},
+														maybeCalculated))
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: 'startingPrice',
+													_1: A2(
+														_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+														_Gizra$circuit_bid$E2E_Probe$encodeAmount,
+														A2(
+															_elm_lang$core$Maybe$map,
+															function (_) {
+																return _.startingPrice;
+															},
+															maybeCalculated))
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: 'bidCount',
+														_1: _elm_lang$core$Json_Encode$int(
+															bidDictSize(
+																function (_) {
+																	return _.bids;
+																}))
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '_Tuple2',
+															_0: 'bookBidCount',
+															_1: _elm_lang$core$Json_Encode$int(
+																bidDictSize(
+																	function (_) {
+																		return _.bookBids;
+																	}))
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '_Tuple2',
+																_0: 'agentBidCount',
+																_1: _elm_lang$core$Json_Encode$int(
+																	bidDictSize(
+																		function (_) {
+																			return _.agentBids;
+																		}))
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '_Tuple2',
+																	_0: 'winningBid',
+																	_1: A2(
+																		_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+																		function (_p28) {
+																			return _elm_lang$core$Json_Encode$string(
+																				_Gizra$circuit_bid$E2E_Probe$bidKeyToString(_p28));
+																		},
+																		A2(
+																			_elm_lang$core$Maybe$andThen,
+																			function (_) {
+																				return _.winningBid;
+																			},
+																			maybeCalculated))
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		ctor: '_Tuple2',
+																		_0: 'winningBidAmount',
+																		_1: A2(
+																			_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+																			function (_p29) {
+																				return _Gizra$circuit_bid$E2E_Probe$encodeAmount(
+																					function (_) {
+																						return _.amount;
+																					}(_p29));
+																			},
+																			maybeWinningBid)
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			ctor: '_Tuple2',
+																			_0: 'winningBidType',
+																			_1: A2(
+																				_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+																				function (_p30) {
+																					return _Gizra$circuit_bid$Bid_Encoder$encodeBidType(
+																						function (_) {
+																							return _.bidType;
+																						}(_p30));
+																				},
+																				maybeWinningBid)
+																		},
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			});
+	});
+var _Gizra$circuit_bid$E2E_Probe$activeItemManager = function (model) {
+	return _Gizra$circuit_bid$App_Utils$isClerkPage(model.activePage) ? model.pageClerk.item : model.pageSale.item;
+};
+var _Gizra$circuit_bid$E2E_Probe$pageToString = function (page) {
+	var _p31 = page;
+	switch (_p31.ctor) {
+		case 'Sale':
+			return 'sale';
+		case 'SaleV1':
+			return 'sale';
+		case 'SaleClerk':
+			return 'clerk';
+		case 'SaleClerkV1':
+			return 'clerk';
+		case 'SaleAuctioneer':
+			return 'auctioneer';
+		case 'SaleAuctioneerV1':
+			return 'auctioneer';
+		case 'SaleRoom':
+			return 'room';
+		case 'SaleRoomV1':
+			return 'room';
+		default:
+			return 'other';
+	}
+};
+var _Gizra$circuit_bid$E2E_Probe$snapshot = function (model) {
+	var itemManager = _Gizra$circuit_bid$E2E_Probe$activeItemManager(model);
+	var maybeSale = _Gizra$circuit_bid$App_Utils$currentSale(model);
+	return _elm_lang$core$Json_Encode$object(
+		{
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: 'page',
+				_1: _elm_lang$core$Json_Encode$string(
+					_Gizra$circuit_bid$E2E_Probe$pageToString(model.activePage))
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'saleUuid',
+					_1: A2(
+						_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+						function (_p32) {
+							return _elm_lang$core$Json_Encode$string(
+								_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p32));
+						},
+						_Gizra$circuit_bid$App_Utils$currentSaleUuid(model.activePage))
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'saleStatus',
+						_1: A2(
+							_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+							function (_p33) {
+								return _elm_lang$core$Json_Encode$string(
+									_Gizra$circuit_bid$Sale_Encoder$statusToEncodingString(
+										function (_) {
+											return _.status;
+										}(_p33)));
+							},
+							maybeSale)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'saleSession',
+							_1: A2(
+								_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+								function (_p34) {
+									return _elm_lang$core$Json_Encode$int(
+										_Gizra$elm_restful$Restful_Endpoint$fromEntityId(
+											function (_) {
+												return _.session;
+											}(_p34)));
+								},
+								maybeSale)
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'activeItem',
+								_1: A2(
+									_Gizra$circuit_bid$E2E_Probe$maybeEncode,
+									_Gizra$circuit_bid$E2E_Probe$encodeActiveItem(itemManager),
+									maybeSale)
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'queued',
+									_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedBidder(model)
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'queuedClerk',
+										_1: _Gizra$circuit_bid$E2E_Probe$encodeQueuedClerk(model)
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'health',
+											_1: _Gizra$circuit_bid$E2E_Probe$encodeHealth(model.health)
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'renderedAt',
+												_1: _elm_lang$core$Json_Encode$float(
+													_elm_lang$core$Date$toTime(model.currentDate))
+											},
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+};
+var _Gizra$circuit_bid$E2E_Probe$gateToken = 'e2e=1';
+var _Gizra$circuit_bid$E2E_Probe$probeId = 'e2e-probe';
+var _Gizra$circuit_bid$E2E_Probe$view = function (model) {
+	return (!A2(_elm_lang$core$String$contains, _Gizra$circuit_bid$E2E_Probe$gateToken, model.bootUrl)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$id(_Gizra$circuit_bid$E2E_Probe$probeId),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$style(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'display', _1: 'none'},
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html_Attributes$attribute,
+						'data-state',
+						A2(
+							_elm_lang$core$Json_Encode$encode,
+							0,
+							_Gizra$circuit_bid$E2E_Probe$snapshot(model))),
+					_1: {ctor: '[]'}
+				}
+			}
+		},
+		{ctor: '[]'});
+};
 
 var _Gizra$circuit_bid$Error_View$viewError = F2(
 	function (language, error) {
@@ -96868,17 +97768,6 @@ var _Gizra$circuit_bid$Pages_SaleV1_View$view = F9(
 		}
 	});
 
-var _Gizra$circuit_bid$App_View$isRoomPage_ = function (page) {
-	var _p0 = page;
-	switch (_p0.ctor) {
-		case 'SaleRoom':
-			return true;
-		case 'SaleRoomV1':
-			return true;
-		default:
-			return false;
-	}
-};
 var _Gizra$circuit_bid$App_View$currencyMenuItem = F2(
 	function (selected, currency) {
 		return A2(
@@ -97110,8 +97999,8 @@ var _Gizra$circuit_bid$App_View$viewConnectionStatus = F2(
 			});
 	});
 var _Gizra$circuit_bid$App_View$pageHasAppFooter = function (page) {
-	var _p1 = page;
-	switch (_p1.ctor) {
+	var _p0 = page;
+	switch (_p0.ctor) {
 		case 'Sale':
 			return true;
 		case 'SaleAuctioneer':
@@ -97189,16 +98078,16 @@ var _Gizra$circuit_bid$App_View$appFooter = F2(
 	});
 var _Gizra$circuit_bid$App_View$roomThemeToggle = function (theme) {
 	var isActive = _elm_lang$core$Native_Utils.eq(theme, _Gizra$circuit_bid$App_Model$Dark);
-	var _p2 = function () {
-		var _p3 = theme;
-		if (_p3.ctor === 'Light') {
+	var _p1 = function () {
+		var _p2 = theme;
+		if (_p2.ctor === 'Light') {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Dark, _1: 'Switch to dark theme'};
 		} else {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Light, _1: 'Switch to light theme'};
 		}
 	}();
-	var nextTheme = _p2._0;
-	var ariaLabel = _p2._1;
+	var nextTheme = _p1._0;
+	var ariaLabel = _p1._1;
 	return A2(
 		_elm_lang$html$Html$span,
 		{
@@ -97254,16 +98143,16 @@ var _Gizra$circuit_bid$App_View$roomThemeToggle = function (theme) {
 };
 var _Gizra$circuit_bid$App_View$viewThemeToggle = function (theme) {
 	var isActive = _elm_lang$core$Native_Utils.eq(theme, _Gizra$circuit_bid$App_Model$Dark);
-	var _p4 = function () {
-		var _p5 = theme;
-		if (_p5.ctor === 'Light') {
+	var _p3 = function () {
+		var _p4 = theme;
+		if (_p4.ctor === 'Light') {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Dark, _1: 'Switch to dark theme'};
 		} else {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Light, _1: 'Switch to light theme'};
 		}
 	}();
-	var nextTheme = _p4._0;
-	var ariaLabel = _p4._1;
+	var nextTheme = _p3._0;
+	var ariaLabel = _p3._1;
 	return A2(
 		_elm_lang$html$Html$span,
 		{
@@ -97383,19 +98272,19 @@ var _Gizra$circuit_bid$App_View$viewLanguages = F3(
 var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F5(
 	function (language, siteName, user, modelBackend, maybeSale) {
 		var context = function () {
-			var _p6 = maybeSale;
-			if (_p6.ctor === 'Just') {
+			var _p5 = maybeSale;
+			if (_p5.ctor === 'Just') {
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					siteName,
-					A2(_elm_lang$core$Basics_ops['++'], ' - ', _p6._0.label));
+					A2(_elm_lang$core$Basics_ops['++'], ' - ', _p5._0.label));
 			} else {
 				return siteName;
 			}
 		}();
-		var _p7 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
-		if ((_p7.ctor === '_Tuple2') && (_p7._0.ctor === 'Authenticated')) {
-			if (_p7._1.ctor === 'Just') {
+		var _p6 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
+		if ((_p6.ctor === '_Tuple2') && (_p6._0.ctor === 'Authenticated')) {
+			if (_p6._1.ctor === 'Just') {
 				return A3(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					_elm_lang$html$Html$text('Bidder info not loaded correctly, please refresh.'),
@@ -97417,13 +98306,13 @@ var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F5(
 											' #',
 											_elm_lang$core$Basics$toString(bidderNumber))))));
 					},
-					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p7._1._0.uuid));
+					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p6._1._0.uuid));
 			} else {
 				return _elm_lang$html$Html$text(
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						context,
-						A2(_elm_lang$core$Basics_ops['++'], ' · ', _p7._0._0.name)));
+						A2(_elm_lang$core$Basics_ops['++'], ' · ', _p6._0._0.name)));
 			}
 		} else {
 			return A2(
@@ -97460,12 +98349,12 @@ var _Gizra$circuit_bid$App_View$roomTopBar = F4(
 							_1: {ctor: '[]'}
 						});
 				}(
-					function (_p8) {
-						var _p9 = _p8;
+					function (_p7) {
+						var _p8 = _p7;
 						return A2(
 							_elm_lang$core$Basics_ops['++'],
-							_p9.siteLabel,
-							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p9.label));
+							_p8.siteLabel,
+							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p8.label));
 					}(sale));
 			},
 			maybeSale);
@@ -97537,8 +98426,8 @@ var _Gizra$circuit_bid$App_View$clerkLoginPrompt = F2(
 var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 	function (config, model) {
 		var wrapWithMainContent = function () {
-			var _p10 = model.activePage;
-			switch (_p10.ctor) {
+			var _p9 = model.activePage;
+			switch (_p9.ctor) {
 				case 'SaleRoom':
 					return false;
 				case 'SaleRoomV1':
@@ -97548,8 +98437,8 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 			}
 		}();
 		var wrapWithContainer = function () {
-			var _p11 = model.activePage;
-			switch (_p11.ctor) {
+			var _p10 = model.activePage;
+			switch (_p10.ctor) {
 				case 'Sale':
 					return true;
 				case 'SaleV1':
@@ -97559,11 +98448,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 			}
 		}();
 		var content = function () {
-			var _p12 = model.user;
-			if (_p12.ctor === 'Just') {
-				var _p14 = _p12._0;
-				var _p13 = model.activePage;
-				switch (_p13.ctor) {
+			var _p11 = model.user;
+			if (_p11.ctor === 'Just') {
+				var _p13 = _p11._0;
+				var _p12 = model.activePage;
+				switch (_p12.ctor) {
 					case 'AccessDenied':
 						return A2(
 							_elm_lang$html$Html$div,
@@ -97594,22 +98483,22 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p14, model.backend, _p13._0, true, model.pageSale));
+							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p13, model.backend, _p12._0, true, model.pageSale));
 					case 'SaleClerk':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p14) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p14, model.backend, _p13._0, true, model.pageClerk));
+							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, true, model.pageClerk));
 					case 'SaleRoom':
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p13._0, false, model.pageSale));
+							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p12._0, false, model.pageSale));
 					case 'SaleAuctioneer':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p14) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p14, model.backend, _p13._0, false, model.pageClerk));
+							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, false, model.pageClerk));
 					case 'SaleV1':
 						return A2(
 							_elm_lang$html$Html$div,
@@ -97623,11 +98512,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesSale,
-									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p14, model.backend, _p13._0, true, model.pageSale)),
+									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p13, model.backend, _p12._0, true, model.pageSale)),
 								_1: {ctor: '[]'}
 							});
 					case 'SaleClerkV1':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p14) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
@@ -97639,7 +98528,7 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p14, model.backend, _p13._0, true, model.pageClerk)),
+									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, true, model.pageClerk)),
 								_1: {ctor: '[]'}
 							});
 					case 'SaleRoomV1':
@@ -97655,11 +98544,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesSale,
-									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p13._0, false, model.pageSale)),
+									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p12._0, false, model.pageSale)),
 								_1: {ctor: '[]'}
 							});
 					default:
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p14) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
@@ -97671,13 +98560,13 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p14, model.backend, _p13._0, false, model.pageClerk)),
+									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, false, model.pageClerk)),
 								_1: {ctor: '[]'}
 							});
 				}
 			} else {
-				var _p15 = model.login.status;
-				if (_p15.ctor === 'Failure') {
+				var _p14 = model.login.status;
+				if (_p14.ctor === 'Failure') {
 					return _Gizra$circuit_bid$Config_View$error;
 				} else {
 					return A2(
@@ -97702,12 +98591,12 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 		return {ctor: '_Tuple2', _0: content, _1: loadCssCmd};
 	});
 var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
-	function (language, _p16, siteShortName, backOfficeUrl) {
-		var _p17 = _p16;
-		var _p19 = _p17.status;
-		var _p18 = _p17.loginForm;
-		var hasError = _krisajenkins$remotedata$RemoteData$isFailure(_p19);
-		var isLoading = _krisajenkins$remotedata$RemoteData$isLoading(_p19);
+	function (language, _p15, siteShortName, backOfficeUrl) {
+		var _p16 = _p15;
+		var _p18 = _p16.status;
+		var _p17 = _p16.loginForm;
+		var hasError = _krisajenkins$remotedata$RemoteData$isFailure(_p18);
+		var isLoading = _krisajenkins$remotedata$RemoteData$isLoading(_p18);
 		return A2(
 			_elm_lang$html$Html$form,
 			{
@@ -97754,7 +98643,7 @@ var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
 									A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$UsernameEmail)),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$value(_p18.name),
+									_0: _elm_lang$html$Html_Attributes$value(_p17.name),
 									_1: {
 										ctor: '::',
 										_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetName),
@@ -97785,7 +98674,7 @@ var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
 										A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$value(_p18.pass),
+										_0: _elm_lang$html$Html_Attributes$value(_p17.pass),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
@@ -97909,21 +98798,25 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																var themeToggle = _Gizra$circuit_bid$App_View$viewThemeToggle(theme);
 																var languages = A3(_Gizra$circuit_bid$App_View$viewLanguages, language, availableLanguages, activePage);
 																var currencySelect = function () {
-																	var _p20 = {ctor: '_Tuple2', _0: activePage, _1: maybeSale};
-																	if (((_p20.ctor === '_Tuple2') && (_p20._0.ctor === 'Sale')) && (_p20._1.ctor === 'Just')) {
-																		return A3(_Gizra$circuit_bid$App_View$viewCurrencySelect, selectedCurrency, currencyMenuOpen, _p20._1._0);
+																	var _p19 = {ctor: '_Tuple2', _0: activePage, _1: maybeSale};
+																	if (((_p19.ctor === '_Tuple2') && (_p19._0.ctor === 'Sale')) && (_p19._1.ctor === 'Just')) {
+																		return A3(_Gizra$circuit_bid$App_View$viewCurrencySelect, selectedCurrency, currencyMenuOpen, _p19._1._0);
 																	} else {
 																		return _Gizra$circuit_bid$Utils_Html$emptyNode;
 																	}
 																}();
+																var healthNotice = showHealth ? A2(
+																	_elm_lang$html$Html$map,
+																	_Gizra$circuit_bid$App_Model$MsgHealth,
+																	_Gizra$circuit_bid$Pusher_Health_View$notice(health)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 																var pusherDown = health.everConnected && (!_elm_lang$core$Native_Utils.eq(health.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected));
 																var connection = showHealth ? A2(
 																	_elm_lang$html$Html$map,
 																	_Gizra$circuit_bid$App_Model$MsgHealth,
 																	_Gizra$circuit_bid$Pusher_Health_View$pill(health)) : A2(_Gizra$circuit_bid$App_View$viewConnectionStatus, language, offline || pusherDown);
 																var content = function () {
-																	var _p21 = maybeUser;
-																	if ((_p21.ctor === 'Just') && (_p21._0.ctor === 'Authenticated')) {
+																	var _p20 = maybeUser;
+																	if ((_p20.ctor === 'Just') && (_p20._0.ctor === 'Authenticated')) {
 																		var user = A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$User_Model$Anonymous, maybeUser);
 																		return {
 																			ctor: '::',
@@ -97941,51 +98834,55 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																				}),
 																			_1: {
 																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$div,
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('top-controls'),
-																						_1: {ctor: '[]'}
-																					},
-																					{
-																						ctor: '::',
-																						_0: currencySelect,
-																						_1: {
+																				_0: healthNotice,
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$div,
+																						{
 																							ctor: '::',
-																							_0: connection,
+																							_0: _elm_lang$html$Html_Attributes$class('top-controls'),
+																							_1: {ctor: '[]'}
+																						},
+																						{
+																							ctor: '::',
+																							_0: currencySelect,
 																							_1: {
 																								ctor: '::',
-																								_0: languages,
+																								_0: connection,
 																								_1: {
 																									ctor: '::',
-																									_0: themeToggle,
+																									_0: languages,
 																									_1: {
 																										ctor: '::',
-																										_0: A2(
-																											_elm_lang$html$Html$a,
-																											{
-																												ctor: '::',
-																												_0: _elm_lang$html$Html_Attributes$class('log-out'),
-																												_1: {
+																										_0: themeToggle,
+																										_1: {
+																											ctor: '::',
+																											_0: A2(
+																												_elm_lang$html$Html$a,
+																												{
 																													ctor: '::',
-																													_0: _elm_lang$html$Html_Events$onClick(
-																														_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
+																													_0: _elm_lang$html$Html_Attributes$class('log-out'),
+																													_1: {
+																														ctor: '::',
+																														_0: _elm_lang$html$Html_Events$onClick(
+																															_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
+																														_1: {ctor: '[]'}
+																													}
+																												},
+																												{
+																													ctor: '::',
+																													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
 																													_1: {ctor: '[]'}
-																												}
-																											},
-																											{
-																												ctor: '::',
-																												_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
-																												_1: {ctor: '[]'}
-																											}),
-																										_1: {ctor: '[]'}
+																												}),
+																											_1: {ctor: '[]'}
+																										}
 																									}
 																								}
 																							}
-																						}
-																					}),
-																				_1: {ctor: '[]'}
+																						}),
+																					_1: {ctor: '[]'}
+																				}
 																			}
 																		};
 																	} else {
@@ -98075,12 +98972,12 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 	return A2(
 		_elm_lang$core$Json_Decode$andThen,
-		function (_p22) {
-			var _p23 = _p22;
-			var _p27 = _p23._2;
+		function (_p21) {
+			var _p22 = _p21;
+			var _p26 = _p22._2;
 			var isInFormField = A2(
 				_elm_lang$core$List$member,
-				_p23._0,
+				_p22._0,
 				{
 					ctor: '::',
 					_0: 'INPUT',
@@ -98098,22 +98995,22 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 				if (!isInFormField) {
 					return false;
 				} else {
-					var _p24 = _p27.keyCode;
-					switch (_p24.ctor) {
+					var _p23 = _p26.keyCode;
+					switch (_p23.ctor) {
 						case 'Right':
 							return false;
 						case 'Left':
 							return false;
 						case 'Spacebar':
-							return !_elm_lang$core$Native_Utils.eq(_p23._1, 'opening-price-input');
+							return !_elm_lang$core$Native_Utils.eq(_p22._1, 'opening-price-input');
 						default:
 							return true;
 					}
 				}
 			}();
 			var isOwnedKey = function () {
-				var _p25 = _p27.keyCode;
-				switch (_p25.ctor) {
+				var _p24 = _p26.keyCode;
+				switch (_p24.ctor) {
 					case 'Spacebar':
 						return true;
 					case 'Up':
@@ -98131,9 +99028,9 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 			if ((!isOwnedKey) || skipForFormField) {
 				return _elm_lang$core$Json_Decode$fail('ignored: not an owned shortcut key');
 			} else {
-				var _p26 = A2(_Gizra$circuit_bid$App_Utils$dispatchKeyboardEvent, model, _p27);
-				if (_p26.ctor === 'Just') {
-					return _elm_lang$core$Json_Decode$succeed(_p26._0);
+				var _p25 = A2(_Gizra$circuit_bid$App_Utils$dispatchKeyboardEvent, model, _p26);
+				if (_p25.ctor === 'Just') {
+					return _elm_lang$core$Json_Decode$succeed(_p25._0);
 				} else {
 					return _elm_lang$core$Json_Decode$fail('ignored: not on a shortcut-aware page');
 				}
@@ -98181,20 +99078,16 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 			_Gizra$elm_keyboard_event$Keyboard_Event$decodeKeyboardEvent));
 };
 var _Gizra$circuit_bid$App_View$view = function (model) {
-	var _p28 = model.config;
-	switch (_p28.ctor) {
+	var _p27 = model.config;
+	switch (_p27.ctor) {
 		case 'Failure':
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Config_View$error, _1: _elm_lang$core$Platform_Cmd$none};
 		case 'Success':
-			var _p31 = _p28._0;
-			var _p29 = A2(_Gizra$circuit_bid$App_View$viewMainContent, _p31, model);
-			var mainContent = _p29._0;
-			var mainContentCmd = _p29._1;
+			var _p30 = _p27._0;
+			var _p28 = A2(_Gizra$circuit_bid$App_View$viewMainContent, _p30, model);
+			var mainContent = _p28._0;
+			var mainContentCmd = _p28._1;
 			var footer = _Gizra$circuit_bid$App_View$pageHasAppFooter(model.activePage) ? A2(_Gizra$circuit_bid$App_View$appFooter, model.appVersion, model.currentDate) : _Gizra$circuit_bid$Utils_Html$emptyNode;
-			var healthStrip = (_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage) && (!_Gizra$circuit_bid$App_View$isRoomPage_(model.activePage))) ? A2(
-				_elm_lang$html$Html$map,
-				_Gizra$circuit_bid$App_Model$MsgHealth,
-				_Gizra$circuit_bid$Pusher_Health_View$strip(model.health)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 			var roomTools = A2(
 				_elm_lang$html$Html$div,
 				{
@@ -98216,7 +99109,7 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 				});
 			var debugErrors = A2(
 				_Gizra$circuit_bid$Utils_Html$showIf,
-				_p31.debug,
+				_p30.debug,
 				A2(_Gizra$circuit_bid$Error_View$view, _Gizra$circuit_bid$Translate$English, model.errors));
 			var page = A2(_Gizra$circuit_bid$App_Utils$pageAfterLogout, model.activePage, model.siteShortName);
 			var maybeSale = _Gizra$circuit_bid$App_Utils$currentSale(model);
@@ -98230,14 +99123,14 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 					},
 					maybeSale));
 			var header = function () {
-				var _p30 = model.activePage;
-				switch (_p30.ctor) {
+				var _p29 = model.activePage;
+				switch (_p29.ctor) {
 					case 'SaleRoom':
 						return roomTools;
 					case 'SaleRoomV1':
 						return roomTools;
 					default:
-						return _Gizra$circuit_bid$App_View$topBar(_p31)(availableLanguages)(model.language)(model.theme)(model.offline)(model.health)(
+						return _Gizra$circuit_bid$App_View$topBar(_p30)(availableLanguages)(model.language)(model.theme)(model.offline)(model.health)(
 							_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage))(model.user)(model.login)(model.siteShortName)(model.backend)(maybeSale)(model.pageSale.selectedCurrency)(model.pageSale.currencyMenuOpen)(model.activePage)(page);
 				}
 			}();
@@ -98296,13 +99189,13 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 							_0: header,
 							_1: {
 								ctor: '::',
-								_0: healthStrip,
+								_0: mainContent,
 								_1: {
 									ctor: '::',
-									_0: mainContent,
+									_0: footer,
 									_1: {
 										ctor: '::',
-										_0: footer,
+										_0: _Gizra$circuit_bid$E2E_Probe$view(model),
 										_1: {ctor: '[]'}
 									}
 								}
