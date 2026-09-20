@@ -107,33 +107,46 @@ elmApp.ports.pusherLogin.subscribe(function(config) {
             });
         });
 
-        config.eventNames.forEach(function(eventName) {
-            channel.bind(eventName, function(data) {
-                // Add a local timestamp of this specific client.
-                data.clientTimestamp = Date.now();
+        // Every event of the channel goes to Elm, not only the names in
+        // config.eventNames: the bridge numbers ALL the events it sends on a
+        // channel (`data._cseq`), and Elm counts the missed ones from that
+        // numbering, so an unbound event would look like a lost one. Elm
+        // routes the names its pages know and only records the others.
+        channel.bind_global(function(eventName, data) {
+            if (typeof eventName !== 'string' || eventName.indexOf('pusher:') === 0 || eventName.indexOf('pusher_internal:') === 0) {
+                // Protocol events (subscription succeeded, member added...).
+                return;
+            }
 
-                var event = {
-                    eventType: eventName,
-                    channel: channelName,
-                    data: data
-                };
+            if (eventName == 'force_reload') {
+                // Reload a page, after a random delay -- so all the reloading clients will
+                // not hit the server on the exact same time.
+                var seconds = Math.floor((Math.random() * 20) + 1);
+                setTimeout(function() {
+                    location.reload();
+                }, seconds * 1000);
+                return;
+            }
 
-                // Uncomment to debug.
-                // console.log(data, eventName);
+            if (data === null || typeof data !== 'object') {
+                // Not a JSON object payload (nothing the app decodes): keep the
+                // envelope shape Elm expects.
+                data = { value: data };
+            }
 
-                if (eventName == 'force_reload') {
-                    // Reload a page, after a random delay -- so all the reloading clients will
-                    // not hit the server on the exact same time.
-                    var seconds = Math.floor((Math.random() * 20) + 1);
-                    setTimeout(function() {
-                        location.reload();
-                    }, seconds * 1000);
+            // Add a local timestamp of this specific client.
+            data.clientTimestamp = Date.now();
 
-                } else {
-                    elmApp.ports.pusherIncomingEvents.send(event);
-                }
+            var event = {
+                eventType: eventName,
+                channel: channelName,
+                data: data
+            };
 
-            });
+            // Uncomment to debug.
+            // console.log(data, eventName);
+
+            elmApp.ports.pusherIncomingEvents.send(event);
         });
     });
 
