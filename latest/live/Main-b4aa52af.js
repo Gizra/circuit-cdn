@@ -34749,7 +34749,7 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 				case 'Going':
 					return {english: 'Going', dutch: 'Gaan', german: 'zum ersten...zum zweiten...', hebrew: 'עומד להיסגר', russian: 'Текущая ставка', chinese: '进行中', french: 'En cours'};
 				case 'Gone':
-					return {english: 'Gone', dutch: 'Weg', german: 'Verkauft', hebrew: 'סגור', russian: 'Продано', chinese: '已售', french: 'Vendu'};
+					return {english: 'Gone', dutch: 'Weg', german: 'zum dritten', hebrew: 'סגור', russian: 'Продано', chinese: '已售', french: 'Vendu'};
 				case 'Hours':
 					return {english: 'Hours', dutch: 'Uren', german: 'Stunden', hebrew: 'שעות', russian: 'Часы', chinese: '小时', french: 'Heures'};
 				case 'IHaveAcceptedTheAuctioneersTerms':
@@ -46418,6 +46418,14 @@ var _Gizra$circuit_bid$ItemManager_Utils$updateBidDictWith = F5(
 								_p12,
 								{bookBids: bids});
 						}
+					} : (_Gizra$circuit_bid$Bid_Utils$isAgentBid(incomingBid) ? {
+						ctor: '_Tuple2',
+						_0: _p12.agentBids,
+						_1: function (bids) {
+							return _elm_lang$core$Native_Utils.update(
+								_p12,
+								{agentBids: bids});
+						}
 					} : {
 						ctor: '_Tuple2',
 						_0: _p12.bids,
@@ -46426,7 +46434,7 @@ var _Gizra$circuit_bid$ItemManager_Utils$updateBidDictWith = F5(
 								_p12,
 								{bids: bids});
 						}
-					};
+					});
 					var dict = _p11._0;
 					var setDict = _p11._1;
 					var existing = A2(_Gizra$elm_dictlist$EveryDictList$get, bidKey, dict);
@@ -74522,7 +74530,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('note-line'),
+							_0: _elm_lang$html$Html_Attributes$class('note-line note-line--public'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -74558,7 +74566,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerConsole = F7(
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('note-line'),
+							_0: _elm_lang$html$Html_Attributes$class('note-line note-line--notes'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -76669,13 +76677,14 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerBroadcastCard = F7(
 				}
 			});
 	});
-var _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard = F2(
-	function (title, content) {
+var _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCardWith = F3(
+	function (extraClass, title, content) {
 		return A2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('card rc-card'),
+				_0: _elm_lang$html$Html_Attributes$class(
+					A2(_elm_lang$core$Basics_ops['++'], 'card rc-card ', extraClass)),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -76721,6 +76730,7 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard = F2(
 				}
 			});
 	});
+var _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard = _Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCardWith('');
 var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 	function (softBidderLimit, currentDate, language, user, modelBackend, model, _p100, item) {
 		var _p101 = _p100;
@@ -76812,32 +76822,25 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$core$List$isEmpty(_p103.callRequests) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+															_0: A2(
 																_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard,
-																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$CallRequests),
-																A6(_Gizra$circuit_bid$Pages_Auctioneer_View$callRequestTable, softBidderLimit, language, _p104.currency, modelBackend, _p105, _p103.callRequests)),
+																A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$BookBids),
+																A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p104.currency, modelBackend, _p105, _p104.item, _p103.bookBids)),
 															_1: {
 																ctor: '::',
 																_0: A2(
-																	_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCard,
-																	A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$BookBids),
-																	A7(_Gizra$circuit_bid$Pages_Auctioneer_View$bookBidTable, softBidderLimit, language, _p104.currency, modelBackend, _p105, _p104.item, _p103.bookBids)),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('auct-or-col auct-or-col--narrow'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p104.currency, modelBackend, _p105, item, _p103.bookBids),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {ctor: '[]'}
-																}
+																	_elm_lang$html$Html$div,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('auct-or-col auct-or-col--narrow'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A6(_Gizra$circuit_bid$Pages_Auctioneer_View$viewOrGroups, language, _p104.currency, modelBackend, _p105, item, _p103.bookBids),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
 															}
 														}),
 													_1: {
@@ -76891,14 +76894,22 @@ var _Gizra$circuit_bid$Pages_Auctioneer_View$viewSaleInfo = F8(
 										},
 										{
 											ctor: '::',
-											_0: creditRequests,
+											_0: _elm_lang$core$List$isEmpty(_p103.callRequests) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A3(
+												_Gizra$circuit_bid$Pages_Auctioneer_View$wrapAuctioneerCardWith,
+												'call-card',
+												A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$CallRequests),
+												A6(_Gizra$circuit_bid$Pages_Auctioneer_View$callRequestTable, softBidderLimit, language, _p104.currency, modelBackend, _p105, _p103.callRequests)),
 											_1: {
 												ctor: '::',
-												_0: messagesCard,
+												_0: creditRequests,
 												_1: {
 													ctor: '::',
-													_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerBroadcastCard, currentDate, softBidderLimit, language, _p104.currency, modelBackend, _p105, model.connectedUsersSearch),
-													_1: {ctor: '[]'}
+													_0: messagesCard,
+													_1: {
+														ctor: '::',
+														_0: A7(_Gizra$circuit_bid$Pages_Auctioneer_View$auctioneerBroadcastCard, currentDate, softBidderLimit, language, _p104.currency, modelBackend, _p105, model.connectedUsersSearch),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}),
