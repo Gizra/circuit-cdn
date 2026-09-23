@@ -44486,6 +44486,18 @@ var _Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy = {
 	telemetryEvery: 1,
 	escalationTelemetryEvery: 1
 };
+var _Gizra$circuit_bid$Pusher_Health_Model$probeRttFreshMs = 60000;
+var _Gizra$circuit_bid$Pusher_Health_Model$probeIsFresh = function (model) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		true,
+		A2(
+			_elm_lang$core$Maybe$map,
+			function (t) {
+				return _elm_lang$core$Native_Utils.cmp(model.now - t, _Gizra$circuit_bid$Pusher_Health_Model$probeRttFreshMs) < 1;
+			},
+			model.lastProbeAt));
+};
 var _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs = 1500;
 var _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs = 500;
 var _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs = 1500;
@@ -44810,17 +44822,23 @@ var _Gizra$circuit_bid$Pusher_Health_Model$level = function (model) {
 			},
 			model.lastEventAt));
 	var wsRtt = A2(_elm_lang$core$Maybe$withDefault, 0, model.wsRttMs);
-	var httpRtt = A2(_elm_lang$core$Maybe$withDefault, 0, model.httpRttMs);
+	var httpRtt = _Gizra$circuit_bid$Pusher_Health_Model$probeIsFresh(model) ? A2(_elm_lang$core$Maybe$withDefault, 0, model.httpRttMs) : 0;
 	var lag = A2(_elm_lang$core$Maybe$withDefault, 0, model.lagMs);
-	var channelBroken = model.everConnected && A2(
-		_elm_lang$core$List$any,
-		function (_p30) {
-			return !function (_) {
-				return _.subscribed;
-			}(_p30);
-		},
-		_elm_lang$core$Dict$values(model.channels));
-	return ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && model.everConnected) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (channelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs) > -1) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (missedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1) || (_elm_lang$core$Native_Utils.cmp(wsRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : _Gizra$circuit_bid$Pusher_Health_Model$Green)))))))));
+	var broken = function (concerns) {
+		return model.everConnected && A2(
+			_elm_lang$core$List$any,
+			function (_p30) {
+				var _p31 = _p30;
+				return (!_p31._1.subscribed) && concerns(_p31._0);
+			},
+			_elm_lang$core$Dict$toList(model.channels));
+	};
+	var saleChannelBroken = broken(
+		function (_p32) {
+			return !_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p32);
+		});
+	var privateChannelBroken = broken(_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel);
+	return ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && model.everConnected) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (saleChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs) > -1) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (missedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1) || (_elm_lang$core$Native_Utils.cmp(wsRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (privateChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : _Gizra$circuit_bid$Pusher_Health_Model$Green))))))))));
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$Reload = {ctor: 'Reload'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Reconnect = {ctor: 'Reconnect'};
@@ -44858,17 +44876,17 @@ var _Gizra$circuit_bid$Pusher_Health_Model$cancelReconnectResync = F5(
 			false,
 			A2(
 				_elm_lang$core$Maybe$map,
-				function (_p31) {
-					return !_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p31);
+				function (_p33) {
+					return !_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p33);
 				},
 				meta.channel));
 		var pendingReconnectResync = function () {
-			var _p32 = model.resync;
-			if (_p32.ctor === 'Just') {
-				var _p34 = _p32._0;
-				return _elm_lang$core$Native_Utils.eq(_p34.level, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && function () {
-					var _p33 = _p34.reason;
-					switch (_p33.ctor) {
+			var _p34 = model.resync;
+			if (_p34.ctor === 'Just') {
+				var _p36 = _p34._0;
+				return _elm_lang$core$Native_Utils.eq(_p36.level, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && function () {
+					var _p35 = _p36.reason;
+					switch (_p35.ctor) {
 						case 'Reconnected':
 							return true;
 						case 'Resumed':
@@ -44909,8 +44927,8 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteVisibility = F2(
 				_1: _elm_lang$core$Maybe$Nothing
 			};
 		} else {
-			var _p35 = model.hiddenSince;
-			if (_p35.ctor === 'Nothing') {
+			var _p37 = model.hiddenSince;
+			if (_p37.ctor === 'Nothing') {
 				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Maybe$Nothing};
 			} else {
 				var back = _elm_lang$core$Native_Utils.update(
@@ -44919,7 +44937,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteVisibility = F2(
 						hiddenSince: _elm_lang$core$Maybe$Nothing,
 						now: A2(_elm_lang$core$Basics$max, model.now, change.at)
 					});
-				var hiddenMs = change.at - _p35._0;
+				var hiddenMs = change.at - _p37._0;
 				return (_elm_lang$core$Native_Utils.cmp(hiddenMs, _Gizra$circuit_bid$Pusher_Health_Model$suspendAfterMs) < 0) ? {ctor: '_Tuple2', _0: back, _1: _elm_lang$core$Maybe$Nothing} : {
 					ctor: '_Tuple2',
 					_0: A2(
@@ -45062,16 +45080,16 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteState = F2(
 			{
 				connection: state,
 				socketId: function () {
-					var _p36 = change.socketId;
-					if (_p36.ctor === 'Just') {
-						return _elm_lang$core$Maybe$Just(_p36._0);
+					var _p38 = change.socketId;
+					if (_p38.ctor === 'Just') {
+						return _elm_lang$core$Maybe$Just(_p38._0);
 					} else {
 						return model.socketId;
 					}
 				}()
 			});
-		var _p37 = state;
-		if (_p37.ctor === 'Connected') {
+		var _p39 = state;
+		if (_p39.ctor === 'Connected') {
 			return (model.everConnected && ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && ((!expectedRebuild) && (!_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(model))))) ? {
 				ctor: '_Tuple2',
 				_0: A2(
@@ -45098,9 +45116,9 @@ var _Gizra$circuit_bid$Pusher_Health_Model$decideLadderWith = F4(
 		var reloadAllowed = (!_elm_lang$core$Native_Utils.eq(policy.autoReloadAfterMs, _elm_lang$core$Maybe$Nothing)) || _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$Manual);
 		var lastSoftAt = _elm_lang$core$List$head(model.softResyncsAt);
 		var debounced = function () {
-			var _p38 = lastSoftAt;
-			if (_p38.ctor === 'Just') {
-				return _elm_lang$core$Native_Utils.cmp(model.now - _p38._0, policy.softDebounceMs) < 0;
+			var _p40 = lastSoftAt;
+			if (_p40.ctor === 'Just') {
+				return _elm_lang$core$Native_Utils.cmp(model.now - _p40._0, policy.softDebounceMs) < 0;
 			} else {
 				return false;
 			}
@@ -45120,8 +45138,8 @@ var _Gizra$circuit_bid$Pusher_Health_Model$decideLadderWith = F4(
 				},
 				model.softResyncsAt));
 		var escalated = function () {
-			var _p39 = requested;
-			switch (_p39.ctor) {
+			var _p41 = requested;
+			switch (_p41.ctor) {
 				case 'Soft':
 					return ((_elm_lang$core$Native_Utils.cmp(recentSoft, _Gizra$circuit_bid$Pusher_Health_Model$escalateSoftCount) > -1) && _elm_lang$core$Native_Utils.eq(
 						_Gizra$circuit_bid$Pusher_Health_Model$level(model),
@@ -45164,25 +45182,25 @@ var _Gizra$circuit_bid$Pusher_Health_Model$throttled = F2(
 var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
 	function (policy, model) {
 		var capture = F2(
-			function (_p41, _p40) {
-				var _p42 = _p41;
-				var _p46 = _p42._1;
-				var _p43 = _p40;
-				var _p45 = _p43._1;
-				var _p44 = _p43._0;
-				return A2(_Gizra$circuit_bid$Pusher_Health_Model$throttled, _p46, _p44) ? {ctor: '_Tuple2', _0: _p44, _1: _p45} : {
+			function (_p43, _p42) {
+				var _p44 = _p43;
+				var _p48 = _p44._1;
+				var _p45 = _p42;
+				var _p47 = _p45._1;
+				var _p46 = _p45._0;
+				return A2(_Gizra$circuit_bid$Pusher_Health_Model$throttled, _p48, _p46) ? {ctor: '_Tuple2', _0: _p46, _1: _p47} : {
 					ctor: '_Tuple2',
 					_0: A3(
 						_Gizra$circuit_bid$Pusher_Health_Model$noteReported,
-						_p46,
-						_p44.now,
-						_p42._0(_p44)),
+						_p48,
+						_p46.now,
+						_p44._0(_p46)),
 					_1: A2(
 						_elm_lang$core$Basics_ops['++'],
-						_p45,
+						_p47,
 						{
 							ctor: '::',
-							_0: _p46,
+							_0: _p48,
 							_1: {ctor: '[]'}
 						})
 				};
@@ -45213,19 +45231,19 @@ var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
 					})
 			}) : _elm_lang$core$Maybe$Nothing;
 		var outage = function () {
-			var _p47 = model.unhealthySince;
-			if (_p47.ctor === 'Just') {
-				var _p48 = _p47._0;
-				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p48, _Gizra$circuit_bid$Pusher_Health_Model$disconnectedReportAfterMs) > 0) && (!_elm_lang$core$Native_Utils.eq(
+			var _p49 = model.unhealthySince;
+			if (_p49.ctor === 'Just') {
+				var _p50 = _p49._0;
+				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p50, _Gizra$circuit_bid$Pusher_Health_Model$disconnectedReportAfterMs) > 0) && (!_elm_lang$core$Native_Utils.eq(
 					model.outageReportedFor,
-					_elm_lang$core$Maybe$Just(_p48)))) ? _elm_lang$core$Maybe$Just(
+					_elm_lang$core$Maybe$Just(_p50)))) ? _elm_lang$core$Maybe$Just(
 					{
 						ctor: '_Tuple2',
 						_0: function (m) {
 							return _elm_lang$core$Native_Utils.update(
 								m,
 								{
-									outageReportedFor: _elm_lang$core$Maybe$Just(_p48)
+									outageReportedFor: _elm_lang$core$Maybe$Just(_p50)
 								});
 						},
 						_1: A3(
@@ -45237,7 +45255,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
 								_0: {
 									ctor: '_Tuple2',
 									_0: 'downForMs',
-									_1: _elm_lang$core$Json_Encode$float(model.now - _p48)
+									_1: _elm_lang$core$Json_Encode$float(model.now - _p50)
 								},
 								_1: {ctor: '[]'}
 							})
@@ -45247,19 +45265,19 @@ var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
 			}
 		}();
 		var stillBehind = function () {
-			var _p49 = model.staleSince;
-			if (_p49.ctor === 'Just') {
-				var _p50 = _p49._0;
-				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p50, _Gizra$circuit_bid$Pusher_Health_Model$staleReportAfterMs) > 0) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && (!_elm_lang$core$Native_Utils.eq(
+			var _p51 = model.staleSince;
+			if (_p51.ctor === 'Just') {
+				var _p52 = _p51._0;
+				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p52, _Gizra$circuit_bid$Pusher_Health_Model$staleReportAfterMs) > 0) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && (!_elm_lang$core$Native_Utils.eq(
 					model.staleReportedFor,
-					_elm_lang$core$Maybe$Just(_p50))))) ? _elm_lang$core$Maybe$Just(
+					_elm_lang$core$Maybe$Just(_p52))))) ? _elm_lang$core$Maybe$Just(
 					{
 						ctor: '_Tuple2',
 						_0: function (m) {
 							return _elm_lang$core$Native_Utils.update(
 								m,
 								{
-									staleReportedFor: _elm_lang$core$Maybe$Just(_p50)
+									staleReportedFor: _elm_lang$core$Maybe$Just(_p52)
 								});
 						},
 						_1: A3(
@@ -45271,7 +45289,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
 								_0: {
 									ctor: '_Tuple2',
 									_0: 'staleForMs',
-									_1: _elm_lang$core$Json_Encode$float(model.now - _p50)
+									_1: _elm_lang$core$Json_Encode$float(model.now - _p52)
 								},
 								_1: {
 									ctor: '::',
@@ -45330,8 +45348,8 @@ var _Gizra$circuit_bid$Pusher_Health_Model$breadcrumb = F3(
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$startReport = F2(
 	function (reason, resyncLevel) {
-		var _p51 = resyncLevel;
-		switch (_p51.ctor) {
+		var _p53 = resyncLevel;
+		switch (_p53.ctor) {
 			case 'Soft':
 				return A3(
 					_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
@@ -45392,8 +45410,8 @@ var _Gizra$circuit_bid$Pusher_Health_Model$resyncReport = F3(
 					_1: {ctor: '[]'}
 				}
 			});
-		var _p52 = result;
-		if (_p52.ctor === 'Err') {
+		var _p54 = result;
+		if (_p54.ctor === 'Err') {
 			return A3(
 				_Gizra$circuit_bid$Pusher_Health_Model$warning,
 				'resync',
@@ -45409,7 +45427,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$resyncReport = F3(
 						_0: {
 							ctor: '_Tuple2',
 							_0: 'error',
-							_1: _elm_lang$core$Json_Encode$string(_p52._0)
+							_1: _elm_lang$core$Json_Encode$string(_p54._0)
 						},
 						_1: {ctor: '[]'}
 					}));
@@ -45421,9 +45439,9 @@ var _Gizra$circuit_bid$Pusher_Health_Model$DropStale = {ctor: 'DropStale'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Apply = {ctor: 'Apply'};
 var _Gizra$circuit_bid$Pusher_Health_Model$noteEvent = F2(
 	function (meta, model) {
-		var _p53 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannelSeq, meta, model);
-		var withGap = _p53._0;
-		var gap = _p53._1;
+		var _p55 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannelSeq, meta, model);
+		var withGap = _p55._0;
+		var gap = _p55._1;
 		if (_Gizra$circuit_bid$Pusher_Health_Model$isConnectedUsersEvent(meta.eventType)) {
 			return {ctor: '_Tuple3', _0: withGap, _1: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _2: gap};
 		} else {
@@ -45437,35 +45455,35 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteEvent = F2(
 						lastEventType: _elm_lang$core$Maybe$Just(meta.eventType),
 						now: A2(_elm_lang$core$Basics$max, withGap.now, meta.clientMs)
 					}));
-			var _p54 = function () {
-				var _p55 = {
+			var _p56 = function () {
+				var _p57 = {
 					ctor: '_Tuple2',
 					_0: meta.seq,
 					_1: _Gizra$circuit_bid$Pusher_Health_Model$entityKey(meta)
 				};
-				if (((_p55.ctor === '_Tuple2') && (_p55._0.ctor === 'Just')) && (_p55._1.ctor === 'Just')) {
-					var _p58 = _p55._0._0;
-					var _p57 = _p55._1._0;
-					var _p56 = A2(_elm_lang$core$Dict$get, _p57, withEvent.lastSeqByEntity);
-					if (_p56.ctor === 'Just') {
-						return (_elm_lang$core$Native_Utils.cmp(_p58, _p56._0) < 0) ? {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$DropStale, _1: withEvent.lastSeqByEntity} : {
+				if (((_p57.ctor === '_Tuple2') && (_p57._0.ctor === 'Just')) && (_p57._1.ctor === 'Just')) {
+					var _p60 = _p57._0._0;
+					var _p59 = _p57._1._0;
+					var _p58 = A2(_elm_lang$core$Dict$get, _p59, withEvent.lastSeqByEntity);
+					if (_p58.ctor === 'Just') {
+						return (_elm_lang$core$Native_Utils.cmp(_p60, _p58._0) < 0) ? {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$DropStale, _1: withEvent.lastSeqByEntity} : {
 							ctor: '_Tuple2',
 							_0: _Gizra$circuit_bid$Pusher_Health_Model$Apply,
-							_1: A3(_elm_lang$core$Dict$insert, _p57, _p58, withEvent.lastSeqByEntity)
+							_1: A3(_elm_lang$core$Dict$insert, _p59, _p60, withEvent.lastSeqByEntity)
 						};
 					} else {
 						return {
 							ctor: '_Tuple2',
 							_0: _Gizra$circuit_bid$Pusher_Health_Model$Apply,
-							_1: A3(_elm_lang$core$Dict$insert, _p57, _p58, withEvent.lastSeqByEntity)
+							_1: A3(_elm_lang$core$Dict$insert, _p59, _p60, withEvent.lastSeqByEntity)
 						};
 					}
 				} else {
 					return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _1: withEvent.lastSeqByEntity};
 				}
 			}();
-			var verdict = _p54._0;
-			var lastSeqByEntity = _p54._1;
+			var verdict = _p56._0;
+			var lastSeqByEntity = _p56._1;
 			return {
 				ctor: '_Tuple3',
 				_0: _elm_lang$core$Native_Utils.update(
@@ -45535,9 +45553,9 @@ var _Gizra$circuit_bid$Pusher_Health_Model$liveFeedState = function (model) {
 			model.openedAt));
 	var saleChannelBroken = model.everConnected && A2(
 		_elm_lang$core$List$any,
-		function (_p59) {
-			var _p60 = _p59;
-			return (!_p60._1.subscribed) && (!_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p60._0));
+		function (_p61) {
+			var _p62 = _p61;
+			return (!_p62._1.subscribed) && (!_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p62._0));
 		},
 		_elm_lang$core$Dict$toList(model.channels));
 	return (model.everConnected && (!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected))) ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : (saleChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : (neverConnectedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Degraded : ((model.everConnected && (!_elm_lang$core$Native_Utils.eq(
