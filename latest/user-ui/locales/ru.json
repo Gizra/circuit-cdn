@@ -516,7 +516,9 @@
     "notConnected": "Нет соединения — переподключение…",
     "autoClerkCountdown": "Молоток через {{seconds}} с",
     "unlimited": "Без ограничений",
-    "liveNow": "Идут живые торги"
+    "liveNow": "Идут живые торги",
+    "liveFeedCatchingUp": "Обновляем данные… Ставки возобновятся, как только соединение восстановится.",
+    "liveFeedUpToDate": "Данные актуальны — прямое соединение восстановлено."
   },
   "livebidform": {
     "lot": "Лот",
@@ -614,10 +616,10 @@
   "item": {
     "noImage": "Запросить фотографии лота",
     "photos": "Фотографии",
-    "noMedia": "[NEEDS_TRANSLATION]No Image available",
+    "noMedia": "Изображение отсутствует",
     "gallery": {
-      "showAll": "[NEEDS_TRANSLATION]Show all {{total}} images",
-      "showFewer": "[NEEDS_TRANSLATION]Show fewer"
+      "showAll": "Показать все {{total}} изображений",
+      "showFewer": "Показать меньше"
     }
   },
   "myFavorites": {
@@ -784,7 +786,7 @@
     "close": "Закрыть",
     "dateAndLocation": "Дата и место",
     "noResults": "Ничего не найдено",
-    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
+    "resetSearchFilters": "Сбросить фильтры поиска"
   },
   "itempage": {
     "error": "Ошибка",
@@ -848,10 +850,10 @@
     "itemNotFoundTitle": "Лот не найден",
     "saleInformation": "Информация об аукционе",
     "tryAgain": "Попробовать снова",
-    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
-    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)",
-    "requestImages": "[NEEDS_TRANSLATION]Request images",
-    "requestImagesPrefill": "[NEEDS_TRANSLATION]I would like you to add images to this item"
+    "addToCalendar": "Добавить в мой календарь",
+    "addToCalendarIcs": "Apple / Outlook (.ics)",
+    "requestImages": "Запросить изображения",
+    "requestImagesPrefill": "Прошу вас добавить изображения к этому лоту"
   },
   "sales": {
     "searchPlaceholder": "Поиск аукционов...",
@@ -928,121 +930,121 @@
     "noSaleNid": "Укажите NID аукциона для просмотра избранных лотов."
   },
   "clerk": {
-    "noSales": "[NEEDS_TRANSLATION]No ongoing sales right now.",
+    "noSales": "Сейчас нет текущих аукционов.",
     "tabs": {
-      "credit": "[NEEDS_TRANSLATION]Credit",
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "registrations": "[NEEDS_TRANSLATION]Registrations",
-      "account": "[NEEDS_TRANSLATION]Account"
+      "credit": "Лимит",
+      "bids": "Ставки",
+      "registrations": "Регистрации",
+      "account": "Аккаунт"
     },
     "credit": {
-      "title": "[NEEDS_TRANSLATION]Credit Requests",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No pending credit requests.",
-      "emptySale": "[NEEDS_TRANSLATION]No pending requests for this sale.",
-      "approve": "[NEEDS_TRANSLATION]Approve",
-      "decline": "[NEEDS_TRANSLATION]Decline",
-      "cancel": "[NEEDS_TRANSLATION]Cancel",
-      "current": "[NEEDS_TRANSLATION]Current",
-      "requested": "[NEEDS_TRANSLATION]Requested",
-      "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-      "none": "[NEEDS_TRANSLATION]None",
-      "showHandled": "[NEEDS_TRANSLATION]Show handled",
-      "confirmApprove": "[NEEDS_TRANSLATION]Approve {{amount}} credit for {{name}}?",
-      "confirmDecline": "[NEEDS_TRANSLATION]Decline the {{amount}} credit request from {{name}}?",
-      "actionFailed": "[NEEDS_TRANSLATION]Could not update the request. Please try again.",
-      "unknownBidder": "[NEEDS_TRANSLATION]User #{{uid}}",
+      "title": "Запросы лимита ставок",
+      "loading": "Загрузка…",
+      "empty": "Нет ожидающих запросов лимита.",
+      "emptySale": "Нет ожидающих запросов для этого аукциона.",
+      "approve": "Одобрить",
+      "decline": "Отклонить",
+      "cancel": "Отмена",
+      "current": "Текущий",
+      "requested": "Запрошено",
+      "unlimited": "Без ограничений",
+      "none": "Нет",
+      "showHandled": "Показать обработанные",
+      "confirmApprove": "Одобрить лимит {{amount}} для {{name}}?",
+      "confirmDecline": "Отклонить запрос лимита {{amount}} от {{name}}?",
+      "actionFailed": "Не удалось обновить запрос. Пожалуйста, попробуйте ещё раз.",
+      "unknownBidder": "Пользователь №{{uid}}",
       "status": {
-        "approved": "[NEEDS_TRANSLATION]Approved",
-        "rejected": "[NEEDS_TRANSLATION]Declined"
+        "approved": "Одобрено",
+        "rejected": "Отклонено"
       }
     },
     "bids": {
-      "title": "[NEEDS_TRANSLATION]Mail & Agent Bids",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No mail or agent bids yet.",
-      "emptySale": "[NEEDS_TRANSLATION]No mail or agent bids for this sale.",
-      "lot": "[NEEDS_TRANSLATION]Lot",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "bidderNumber": "[NEEDS_TRANSLATION]Bidder #{{number}}",
-      "showDeleted": "[NEEDS_TRANSLATION]Show deleted",
-      "orderNewest": "[NEEDS_TRANSLATION]Newest first",
-      "orderLot": "[NEEDS_TRANSLATION]Lot order",
+      "title": "Заочные и агентские ставки",
+      "loading": "Загрузка…",
+      "empty": "Заочных или агентских ставок пока нет.",
+      "emptySale": "Нет заочных или агентских ставок для этого аукциона.",
+      "lot": "Лот",
+      "agent": "Агент",
+      "bidderNumber": "Участник №{{number}}",
+      "showDeleted": "Показать удалённые",
+      "orderNewest": "Сначала новые",
+      "orderLot": "По номеру лота",
       "type": {
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "agent": "[NEEDS_TRANSLATION]Agent"
+        "mail": "Заочная",
+        "agent": "Агент"
       },
-      "searchPlaceholder": "[NEEDS_TRANSLATION]Search bidder # or name",
-      "results": "[NEEDS_TRANSLATION]{{count}} bids",
-      "noMatches": "[NEEDS_TRANSLATION]No bids match the current filters."
+      "searchPlaceholder": "Поиск по № участника или имени",
+      "results": "Ставок: {{count}}",
+      "noMatches": "Нет ставок, соответствующих текущим фильтрам."
     },
     "registrations": {
-      "title": "[NEEDS_TRANSLATION]Registrations",
-      "empty": "[NEEDS_TRANSLATION]New registrations will appear here live while the app is open.",
-      "paddle": "[NEEDS_TRANSLATION]Paddle",
-      "unknown": "[NEEDS_TRANSLATION]New bidder"
+      "title": "Регистрации",
+      "empty": "Новые регистрации будут появляться здесь в реальном времени, пока приложение открыто.",
+      "paddle": "Номер участника",
+      "unknown": "Новый участник"
     },
     "notAuthorized": {
-      "title": "[NEEDS_TRANSLATION]Staff only",
-      "body": "[NEEDS_TRANSLATION]This app is for auction staff. Your account does not have clerk access on this site.",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "title": "Только для сотрудников",
+      "body": "Это приложение предназначено для сотрудников аукциона. У вашего аккаунта нет доступа клерка на этом сайте.",
+      "logout": "Выйти"
     },
     "account": {
-      "site": "[NEEDS_TRANSLATION]Site",
-      "role": "[NEEDS_TRANSLATION]Role",
-      "clerk": "[NEEDS_TRANSLATION]Clerk",
-      "changePassword": "[NEEDS_TRANSLATION]Change password",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "site": "Сайт",
+      "role": "Роль",
+      "clerk": "Клерк",
+      "changePassword": "Изменить пароль",
+      "logout": "Выйти"
     },
     "connection": {
-      "offline": "[NEEDS_TRANSLATION]Connection lost — live updates paused. Reconnecting…"
+      "offline": "Соединение потеряно — обновления в реальном времени приостановлены. Переподключение…"
     },
     "saleStatus": {
-      "open_mail": "[NEEDS_TRANSLATION]Mail bidding",
-      "open_live": "[NEEDS_TRANSLATION]Live",
-      "paused_starting_soon": "[NEEDS_TRANSLATION]Starting soon",
-      "paused_back_shortly": "[NEEDS_TRANSLATION]Back shortly",
-      "closed_not_started": "[NEEDS_TRANSLATION]Not started",
-      "closed_ended": "[NEEDS_TRANSLATION]Ended"
+      "open_mail": "Заочные ставки",
+      "open_live": "В эфире",
+      "paused_starting_soon": "Скоро начнётся",
+      "paused_back_shortly": "Скоро продолжим",
+      "closed_not_started": "Не начат",
+      "closed_ended": "Завершён"
     },
     "stats": {
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "mailBids": "[NEEDS_TRANSLATION]Mail bids",
-      "bidders": "[NEEDS_TRANSLATION]Bidders",
-      "lotsWithBids": "[NEEDS_TRANSLATION]Lots w/ bids",
-      "soldUnsold": "[NEEDS_TRANSLATION]Sold / Unsold",
-      "totalWinning": "[NEEDS_TRANSLATION]Total winning",
-      "startValueWithBids": "[NEEDS_TRANSLATION]Start value (lots w/ bids)",
+      "bids": "Ставки",
+      "mailBids": "Заочные ставки",
+      "bidders": "Участники",
+      "lotsWithBids": "Лоты со ставками",
+      "soldUnsold": "Продано / Не продано",
+      "totalWinning": "Сумма выигрышных ставок",
+      "startValueWithBids": "Стартовая стоимость (лоты со ставками)",
       "bidderType": {
-        "external": "[NEEDS_TRANSLATION]External",
-        "floor": "[NEEDS_TRANSLATION]Floor",
-        "floor_by_agent": "[NEEDS_TRANSLATION]Agent floor",
-        "phone": "[NEEDS_TRANSLATION]Phone",
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "website": "[NEEDS_TRANSLATION]Website"
+        "external": "Внешний",
+        "floor": "Зал",
+        "floor_by_agent": "Зал (агент)",
+        "phone": "Телефон",
+        "mail": "Заочно",
+        "website": "Веб-сайт"
       }
     },
     "bidderSheet": {
-      "bidsCount": "[NEEDS_TRANSLATION]Bids",
-      "bidsSum": "[NEEDS_TRANSLATION]Bid total",
-      "paddles": "[NEEDS_TRANSLATION]Paddles",
-      "type": "[NEEDS_TRANSLATION]Bidder type",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "liveCredit": "[NEEDS_TRANSLATION]Live credit",
-      "mailCredit": "[NEEDS_TRANSLATION]Mail credit",
-      "maxBid": "[NEEDS_TRANSLATION]Max bid",
-      "totalSpent": "[NEEDS_TRANSLATION]Total spent",
-      "close": "[NEEDS_TRANSLATION]Close",
-      "error": "[NEEDS_TRANSLATION]Could not load bidder statistics."
+      "bidsCount": "Ставки",
+      "bidsSum": "Сумма ставок",
+      "paddles": "Номера участника",
+      "type": "Тип участника",
+      "agent": "Агент",
+      "liveCredit": "Лимит (live)",
+      "mailCredit": "Лимит (заочно)",
+      "maxBid": "Макс. ставка",
+      "totalSpent": "Всего потрачено",
+      "close": "Закрыть",
+      "error": "Не удалось загрузить статистику участника."
     },
     "filter": {
-      "allSales": "[NEEDS_TRANSLATION]All sales"
+      "allSales": "Все аукционы"
     }
   },
   "errorReport": {
-    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
-    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
-    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
-    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
+    "title": "Упс — произошла ошибка",
+    "body": "Часть данных на этой странице не удалось загрузить. Технические сведения ниже помогут нашей службе поддержки решить проблему.",
+    "emailButton": "Отправить этот отчёт в поддержку",
+    "dismiss": "Закрыть"
   }
 }

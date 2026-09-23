@@ -162,23 +162,6 @@ elmApp.ports.pusherReconnect.subscribe(function() {
     }
 });
 
-// A tab coming back from the background may hold a socket the browser
-// starved or dropped. Ask it right away: a ping makes pusher-js notice a
-// dead socket within its pong timeout (10s) instead of the activity
-// timeout (40s), and a socket already known to be down is reconnected.
-// No teardown of a live socket -- hundreds of phones unlock at once.
-document.addEventListener('visibilitychange', function() {
-    if (document.hidden || !pusherInstance) {
-        return;
-    }
-    if (pusherInstance.connection.state === 'connected') {
-        pingSentAt = performance.now();
-        pusherInstance.send_event('pusher:ping', {});
-    } else {
-        pusherInstance.connect();
-    }
-});
-
 function unbindPusherChannels() {
     clearInterval(pingTimer);
     pingTimer = null;

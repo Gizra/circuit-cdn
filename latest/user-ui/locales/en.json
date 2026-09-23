@@ -522,7 +522,9 @@
     "notConnected": "Not connected — reconnecting…",
     "autoClerkCountdown": "Hammer in {{seconds}}s",
     "unlimited": "Unlimited",
-    "liveNow": "Live auction in progress"
+    "liveNow": "Live auction in progress",
+    "liveFeedCatchingUp": "Catching up with the live feed… Bidding resumes as soon as the feed is back.",
+    "liveFeedUpToDate": "Up to date — the live feed caught up."
   },
   "livebidform": {
     "lot": "Lot",

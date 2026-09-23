@@ -516,7 +516,9 @@
     "notConnected": "Geen verbinding — opnieuw verbinden…",
     "autoClerkCountdown": "Hamer over {{seconds}}s",
     "unlimited": "Onbeperkt",
-    "liveNow": "Liveveiling bezig"
+    "liveNow": "Liveveiling bezig",
+    "liveFeedCatchingUp": "De liveverbinding wordt bijgewerkt… Bieden gaat verder zodra de verbinding terug is.",
+    "liveFeedUpToDate": "Bijgewerkt — de liveverbinding is weer actueel."
   },
   "livebidform": {
     "lot": "Kavel",
@@ -614,10 +616,10 @@
   "item": {
     "noImage": "Verzoek toesturen scans van kavel",
     "photos": "scans",
-    "noMedia": "[NEEDS_TRANSLATION]No Image available",
+    "noMedia": "Geen afbeelding beschikbaar",
     "gallery": {
-      "showAll": "[NEEDS_TRANSLATION]Show all {{total}} images",
-      "showFewer": "[NEEDS_TRANSLATION]Show fewer"
+      "showAll": "Alle {{total}} afbeeldingen tonen",
+      "showFewer": "Minder tonen"
     }
   },
   "myFavorites": {
@@ -784,7 +786,7 @@
     "close": "Sluiten",
     "dateAndLocation": "Datum & locatie",
     "noResults": "Geen resultaten gevonden",
-    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
+    "resetSearchFilters": "Zoekfilters wissen"
   },
   "itempage": {
     "error": "Fout",
@@ -848,10 +850,10 @@
     "itemNotFoundTitle": "Kavel niet gevonden",
     "saleInformation": "Veilinginformatie",
     "tryAgain": "Opnieuw proberen",
-    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
-    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)",
-    "requestImages": "[NEEDS_TRANSLATION]Request images",
-    "requestImagesPrefill": "[NEEDS_TRANSLATION]I would like you to add images to this item"
+    "addToCalendar": "Toevoegen aan mijn agenda",
+    "addToCalendarIcs": "Apple / Outlook (.ics)",
+    "requestImages": "Afbeeldingen aanvragen",
+    "requestImagesPrefill": "Ik zou graag willen dat u afbeeldingen aan deze kavel toevoegt"
   },
   "sales": {
     "searchPlaceholder": "Veilingen zoeken...",
@@ -928,121 +930,121 @@
     "noSaleNid": "Geef een veiling-NID op om uitgelichte kavels te bekijken."
   },
   "clerk": {
-    "noSales": "[NEEDS_TRANSLATION]No ongoing sales right now.",
+    "noSales": "Momenteel geen lopende veilingen.",
     "tabs": {
-      "credit": "[NEEDS_TRANSLATION]Credit",
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "registrations": "[NEEDS_TRANSLATION]Registrations",
-      "account": "[NEEDS_TRANSLATION]Account"
+      "credit": "Biedlimiet",
+      "bids": "Boden",
+      "registrations": "Registraties",
+      "account": "Account"
     },
     "credit": {
-      "title": "[NEEDS_TRANSLATION]Credit Requests",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No pending credit requests.",
-      "emptySale": "[NEEDS_TRANSLATION]No pending requests for this sale.",
-      "approve": "[NEEDS_TRANSLATION]Approve",
-      "decline": "[NEEDS_TRANSLATION]Decline",
-      "cancel": "[NEEDS_TRANSLATION]Cancel",
-      "current": "[NEEDS_TRANSLATION]Current",
-      "requested": "[NEEDS_TRANSLATION]Requested",
-      "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-      "none": "[NEEDS_TRANSLATION]None",
-      "showHandled": "[NEEDS_TRANSLATION]Show handled",
-      "confirmApprove": "[NEEDS_TRANSLATION]Approve {{amount}} credit for {{name}}?",
-      "confirmDecline": "[NEEDS_TRANSLATION]Decline the {{amount}} credit request from {{name}}?",
-      "actionFailed": "[NEEDS_TRANSLATION]Could not update the request. Please try again.",
-      "unknownBidder": "[NEEDS_TRANSLATION]User #{{uid}}",
+      "title": "Biedlimietaanvragen",
+      "loading": "Laden…",
+      "empty": "Geen openstaande biedlimietaanvragen.",
+      "emptySale": "Geen openstaande aanvragen voor deze veiling.",
+      "approve": "Goedkeuren",
+      "decline": "Afwijzen",
+      "cancel": "Annuleren",
+      "current": "Huidig",
+      "requested": "Aangevraagd",
+      "unlimited": "Onbeperkt",
+      "none": "Geen",
+      "showHandled": "Afgehandelde tonen",
+      "confirmApprove": "Biedlimiet van {{amount}} goedkeuren voor {{name}}?",
+      "confirmDecline": "De biedlimietaanvraag van {{amount}} van {{name}} afwijzen?",
+      "actionFailed": "De aanvraag kon niet worden bijgewerkt. Probeer het opnieuw.",
+      "unknownBidder": "Gebruiker #{{uid}}",
       "status": {
-        "approved": "[NEEDS_TRANSLATION]Approved",
-        "rejected": "[NEEDS_TRANSLATION]Declined"
+        "approved": "Goedgekeurd",
+        "rejected": "Afgewezen"
       }
     },
     "bids": {
-      "title": "[NEEDS_TRANSLATION]Mail & Agent Bids",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No mail or agent bids yet.",
-      "emptySale": "[NEEDS_TRANSLATION]No mail or agent bids for this sale.",
-      "lot": "[NEEDS_TRANSLATION]Lot",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "bidderNumber": "[NEEDS_TRANSLATION]Bidder #{{number}}",
-      "showDeleted": "[NEEDS_TRANSLATION]Show deleted",
-      "orderNewest": "[NEEDS_TRANSLATION]Newest first",
-      "orderLot": "[NEEDS_TRANSLATION]Lot order",
+      "title": "Schriftelijke & agentboden",
+      "loading": "Laden…",
+      "empty": "Nog geen schriftelijke of agentboden.",
+      "emptySale": "Geen schriftelijke of agentboden voor deze veiling.",
+      "lot": "Kavel",
+      "agent": "Agent",
+      "bidderNumber": "Bieder nr. {{number}}",
+      "showDeleted": "Verwijderde tonen",
+      "orderNewest": "Nieuwste eerst",
+      "orderLot": "Op kavelnummer",
       "type": {
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "agent": "[NEEDS_TRANSLATION]Agent"
+        "mail": "Schriftelijk",
+        "agent": "Agent"
       },
-      "searchPlaceholder": "[NEEDS_TRANSLATION]Search bidder # or name",
-      "results": "[NEEDS_TRANSLATION]{{count}} bids",
-      "noMatches": "[NEEDS_TRANSLATION]No bids match the current filters."
+      "searchPlaceholder": "Zoek op biedernr. of naam",
+      "results": "{{count}} boden",
+      "noMatches": "Geen boden komen overeen met de huidige filters."
     },
     "registrations": {
-      "title": "[NEEDS_TRANSLATION]Registrations",
-      "empty": "[NEEDS_TRANSLATION]New registrations will appear here live while the app is open.",
-      "paddle": "[NEEDS_TRANSLATION]Paddle",
-      "unknown": "[NEEDS_TRANSLATION]New bidder"
+      "title": "Registraties",
+      "empty": "Nieuwe registraties verschijnen hier live zolang de app geopend is.",
+      "paddle": "Biednummer",
+      "unknown": "Nieuwe bieder"
     },
     "notAuthorized": {
-      "title": "[NEEDS_TRANSLATION]Staff only",
-      "body": "[NEEDS_TRANSLATION]This app is for auction staff. Your account does not have clerk access on this site.",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "title": "Alleen voor medewerkers",
+      "body": "Deze app is bedoeld voor veilingmedewerkers. Uw account heeft geen clerk-toegang op deze site.",
+      "logout": "Uitloggen"
     },
     "account": {
-      "site": "[NEEDS_TRANSLATION]Site",
-      "role": "[NEEDS_TRANSLATION]Role",
-      "clerk": "[NEEDS_TRANSLATION]Clerk",
-      "changePassword": "[NEEDS_TRANSLATION]Change password",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "site": "Site",
+      "role": "Rol",
+      "clerk": "Clerk",
+      "changePassword": "Wachtwoord wijzigen",
+      "logout": "Uitloggen"
     },
     "connection": {
-      "offline": "[NEEDS_TRANSLATION]Connection lost — live updates paused. Reconnecting…"
+      "offline": "Verbinding verbroken — live-updates gepauzeerd. Opnieuw verbinden…"
     },
     "saleStatus": {
-      "open_mail": "[NEEDS_TRANSLATION]Mail bidding",
-      "open_live": "[NEEDS_TRANSLATION]Live",
-      "paused_starting_soon": "[NEEDS_TRANSLATION]Starting soon",
-      "paused_back_shortly": "[NEEDS_TRANSLATION]Back shortly",
-      "closed_not_started": "[NEEDS_TRANSLATION]Not started",
-      "closed_ended": "[NEEDS_TRANSLATION]Ended"
+      "open_mail": "Schriftelijk bieden",
+      "open_live": "Live",
+      "paused_starting_soon": "Begint binnenkort",
+      "paused_back_shortly": "Zo terug",
+      "closed_not_started": "Nog niet gestart",
+      "closed_ended": "Beëindigd"
     },
     "stats": {
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "mailBids": "[NEEDS_TRANSLATION]Mail bids",
-      "bidders": "[NEEDS_TRANSLATION]Bidders",
-      "lotsWithBids": "[NEEDS_TRANSLATION]Lots w/ bids",
-      "soldUnsold": "[NEEDS_TRANSLATION]Sold / Unsold",
-      "totalWinning": "[NEEDS_TRANSLATION]Total winning",
-      "startValueWithBids": "[NEEDS_TRANSLATION]Start value (lots w/ bids)",
+      "bids": "Boden",
+      "mailBids": "Schriftelijke boden",
+      "bidders": "Bieders",
+      "lotsWithBids": "Kavels met boden",
+      "soldUnsold": "Verkocht / Onverkocht",
+      "totalWinning": "Totaal winnende boden",
+      "startValueWithBids": "Startwaarde (kavels met boden)",
       "bidderType": {
-        "external": "[NEEDS_TRANSLATION]External",
-        "floor": "[NEEDS_TRANSLATION]Floor",
-        "floor_by_agent": "[NEEDS_TRANSLATION]Agent floor",
-        "phone": "[NEEDS_TRANSLATION]Phone",
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "website": "[NEEDS_TRANSLATION]Website"
+        "external": "Extern",
+        "floor": "Zaal",
+        "floor_by_agent": "Zaal (agent)",
+        "phone": "Telefoon",
+        "mail": "Schriftelijk",
+        "website": "Website"
       }
     },
     "bidderSheet": {
-      "bidsCount": "[NEEDS_TRANSLATION]Bids",
-      "bidsSum": "[NEEDS_TRANSLATION]Bid total",
-      "paddles": "[NEEDS_TRANSLATION]Paddles",
-      "type": "[NEEDS_TRANSLATION]Bidder type",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "liveCredit": "[NEEDS_TRANSLATION]Live credit",
-      "mailCredit": "[NEEDS_TRANSLATION]Mail credit",
-      "maxBid": "[NEEDS_TRANSLATION]Max bid",
-      "totalSpent": "[NEEDS_TRANSLATION]Total spent",
-      "close": "[NEEDS_TRANSLATION]Close",
-      "error": "[NEEDS_TRANSLATION]Could not load bidder statistics."
+      "bidsCount": "Boden",
+      "bidsSum": "Totaal boden",
+      "paddles": "Biednummers",
+      "type": "Type bieder",
+      "agent": "Agent",
+      "liveCredit": "Biedlimiet live",
+      "mailCredit": "Biedlimiet schriftelijk",
+      "maxBid": "Maximumbod",
+      "totalSpent": "Totaal besteed",
+      "close": "Sluiten",
+      "error": "Biederstatistieken konden niet worden geladen."
     },
     "filter": {
-      "allSales": "[NEEDS_TRANSLATION]All sales"
+      "allSales": "Alle veilingen"
     }
   },
   "errorReport": {
-    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
-    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
-    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
-    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
+    "title": "Oeps — er is een fout opgetreden",
+    "body": "Sommige gegevens op deze pagina konden niet worden geladen. De technische details hieronder kunnen ons supportteam helpen het probleem op te lossen.",
+    "emailButton": "Dit rapport naar support e-mailen",
+    "dismiss": "Sluiten"
   }
 }

@@ -516,7 +516,9 @@
     "notConnected": "连接已断开，正在重新连接…",
     "autoClerkCountdown": "{{seconds}} 秒后落槌",
     "unlimited": "无限额",
-    "liveNow": "现场拍卖进行中"
+    "liveNow": "现场拍卖进行中",
+    "liveFeedCatchingUp": "正在同步实时数据… 连接恢复后即可继续出价。",
+    "liveFeedUpToDate": "已同步——实时数据已更新。"
   },
   "livebidform": {
     "lot": "拍品",
@@ -614,10 +616,10 @@
   "item": {
     "noImage": "Request item photos",
     "photos": "Photos",
-    "noMedia": "[NEEDS_TRANSLATION]No Image available",
+    "noMedia": "暂无图片",
     "gallery": {
-      "showAll": "[NEEDS_TRANSLATION]Show all {{total}} images",
-      "showFewer": "[NEEDS_TRANSLATION]Show fewer"
+      "showAll": "显示全部 {{total}} 张图片",
+      "showFewer": "收起"
     }
   },
   "myFavorites": {
@@ -784,7 +786,7 @@
     "close": "关闭",
     "dateAndLocation": "日期与地点",
     "noResults": "未找到结果",
-    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
+    "resetSearchFilters": "重置搜索筛选"
   },
   "itempage": {
     "error": "错误",
@@ -848,10 +850,10 @@
     "itemNotFoundTitle": "未找到拍品",
     "saleInformation": "拍卖会信息",
     "tryAgain": "重试",
-    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
-    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)",
-    "requestImages": "[NEEDS_TRANSLATION]Request images",
-    "requestImagesPrefill": "[NEEDS_TRANSLATION]I would like you to add images to this item"
+    "addToCalendar": "添加到我的日历",
+    "addToCalendarIcs": "Apple / Outlook (.ics)",
+    "requestImages": "索取图片",
+    "requestImagesPrefill": "希望您能为此拍品添加图片"
   },
   "sales": {
     "searchPlaceholder": "搜索拍卖...",
@@ -928,121 +930,121 @@
     "noSaleNid": "请提供拍卖会 NID 以查看精选拍品。"
   },
   "clerk": {
-    "noSales": "[NEEDS_TRANSLATION]No ongoing sales right now.",
+    "noSales": "当前没有进行中的拍卖会。",
     "tabs": {
-      "credit": "[NEEDS_TRANSLATION]Credit",
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "registrations": "[NEEDS_TRANSLATION]Registrations",
-      "account": "[NEEDS_TRANSLATION]Account"
+      "credit": "信用额度",
+      "bids": "出价",
+      "registrations": "登记",
+      "account": "账户"
     },
     "credit": {
-      "title": "[NEEDS_TRANSLATION]Credit Requests",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No pending credit requests.",
-      "emptySale": "[NEEDS_TRANSLATION]No pending requests for this sale.",
-      "approve": "[NEEDS_TRANSLATION]Approve",
-      "decline": "[NEEDS_TRANSLATION]Decline",
-      "cancel": "[NEEDS_TRANSLATION]Cancel",
-      "current": "[NEEDS_TRANSLATION]Current",
-      "requested": "[NEEDS_TRANSLATION]Requested",
-      "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-      "none": "[NEEDS_TRANSLATION]None",
-      "showHandled": "[NEEDS_TRANSLATION]Show handled",
-      "confirmApprove": "[NEEDS_TRANSLATION]Approve {{amount}} credit for {{name}}?",
-      "confirmDecline": "[NEEDS_TRANSLATION]Decline the {{amount}} credit request from {{name}}?",
-      "actionFailed": "[NEEDS_TRANSLATION]Could not update the request. Please try again.",
-      "unknownBidder": "[NEEDS_TRANSLATION]User #{{uid}}",
+      "title": "信用额度申请",
+      "loading": "加载中…",
+      "empty": "没有待处理的信用额度申请。",
+      "emptySale": "此拍卖会没有待处理的申请。",
+      "approve": "批准",
+      "decline": "拒绝",
+      "cancel": "取消",
+      "current": "当前",
+      "requested": "申请",
+      "unlimited": "无限额",
+      "none": "无",
+      "showHandled": "显示已处理",
+      "confirmApprove": "批准 {{name}} 的 {{amount}} 信用额度？",
+      "confirmDecline": "拒绝 {{name}} 的 {{amount}} 信用额度申请？",
+      "actionFailed": "无法更新申请，请重试。",
+      "unknownBidder": "用户 #{{uid}}",
       "status": {
-        "approved": "[NEEDS_TRANSLATION]Approved",
-        "rejected": "[NEEDS_TRANSLATION]Declined"
+        "approved": "已批准",
+        "rejected": "已拒绝"
       }
     },
     "bids": {
-      "title": "[NEEDS_TRANSLATION]Mail & Agent Bids",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No mail or agent bids yet.",
-      "emptySale": "[NEEDS_TRANSLATION]No mail or agent bids for this sale.",
-      "lot": "[NEEDS_TRANSLATION]Lot",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "bidderNumber": "[NEEDS_TRANSLATION]Bidder #{{number}}",
-      "showDeleted": "[NEEDS_TRANSLATION]Show deleted",
-      "orderNewest": "[NEEDS_TRANSLATION]Newest first",
-      "orderLot": "[NEEDS_TRANSLATION]Lot order",
+      "title": "委托与代理出价",
+      "loading": "加载中…",
+      "empty": "暂无委托或代理出价。",
+      "emptySale": "此拍卖会没有委托或代理出价。",
+      "lot": "拍品",
+      "agent": "代理",
+      "bidderNumber": "竞买人 #{{number}}",
+      "showDeleted": "显示已删除",
+      "orderNewest": "最新优先",
+      "orderLot": "按拍品顺序",
       "type": {
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "agent": "[NEEDS_TRANSLATION]Agent"
+        "mail": "委托",
+        "agent": "代理"
       },
-      "searchPlaceholder": "[NEEDS_TRANSLATION]Search bidder # or name",
-      "results": "[NEEDS_TRANSLATION]{{count}} bids",
-      "noMatches": "[NEEDS_TRANSLATION]No bids match the current filters."
+      "searchPlaceholder": "搜索竞买人编号或姓名",
+      "results": "{{count}} 条出价",
+      "noMatches": "没有符合当前筛选条件的出价。"
     },
     "registrations": {
-      "title": "[NEEDS_TRANSLATION]Registrations",
-      "empty": "[NEEDS_TRANSLATION]New registrations will appear here live while the app is open.",
-      "paddle": "[NEEDS_TRANSLATION]Paddle",
-      "unknown": "[NEEDS_TRANSLATION]New bidder"
+      "title": "登记",
+      "empty": "应用打开期间，新的登记将实时显示在此处。",
+      "paddle": "号牌",
+      "unknown": "新竞买人"
     },
     "notAuthorized": {
-      "title": "[NEEDS_TRANSLATION]Staff only",
-      "body": "[NEEDS_TRANSLATION]This app is for auction staff. Your account does not have clerk access on this site.",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "title": "仅限工作人员",
+      "body": "此应用仅供拍卖工作人员使用。您的账户在此站点没有记录员权限。",
+      "logout": "退出登录"
     },
     "account": {
-      "site": "[NEEDS_TRANSLATION]Site",
-      "role": "[NEEDS_TRANSLATION]Role",
-      "clerk": "[NEEDS_TRANSLATION]Clerk",
-      "changePassword": "[NEEDS_TRANSLATION]Change password",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "site": "站点",
+      "role": "角色",
+      "clerk": "记录员",
+      "changePassword": "更改密码",
+      "logout": "退出登录"
     },
     "connection": {
-      "offline": "[NEEDS_TRANSLATION]Connection lost — live updates paused. Reconnecting…"
+      "offline": "连接已断开 — 实时更新已暂停。正在重新连接…"
     },
     "saleStatus": {
-      "open_mail": "[NEEDS_TRANSLATION]Mail bidding",
-      "open_live": "[NEEDS_TRANSLATION]Live",
-      "paused_starting_soon": "[NEEDS_TRANSLATION]Starting soon",
-      "paused_back_shortly": "[NEEDS_TRANSLATION]Back shortly",
-      "closed_not_started": "[NEEDS_TRANSLATION]Not started",
-      "closed_ended": "[NEEDS_TRANSLATION]Ended"
+      "open_mail": "委托出价",
+      "open_live": "直播中",
+      "paused_starting_soon": "即将开始",
+      "paused_back_shortly": "稍后继续",
+      "closed_not_started": "未开始",
+      "closed_ended": "已结束"
     },
     "stats": {
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "mailBids": "[NEEDS_TRANSLATION]Mail bids",
-      "bidders": "[NEEDS_TRANSLATION]Bidders",
-      "lotsWithBids": "[NEEDS_TRANSLATION]Lots w/ bids",
-      "soldUnsold": "[NEEDS_TRANSLATION]Sold / Unsold",
-      "totalWinning": "[NEEDS_TRANSLATION]Total winning",
-      "startValueWithBids": "[NEEDS_TRANSLATION]Start value (lots w/ bids)",
+      "bids": "出价",
+      "mailBids": "委托出价",
+      "bidders": "竞买人",
+      "lotsWithBids": "有出价的拍品",
+      "soldUnsold": "成交 / 流拍",
+      "totalWinning": "领先出价总额",
+      "startValueWithBids": "起拍总值（有出价的拍品）",
       "bidderType": {
-        "external": "[NEEDS_TRANSLATION]External",
-        "floor": "[NEEDS_TRANSLATION]Floor",
-        "floor_by_agent": "[NEEDS_TRANSLATION]Agent floor",
-        "phone": "[NEEDS_TRANSLATION]Phone",
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "website": "[NEEDS_TRANSLATION]Website"
+        "external": "外部",
+        "floor": "现场",
+        "floor_by_agent": "现场（代理）",
+        "phone": "电话",
+        "mail": "委托",
+        "website": "网站"
       }
     },
     "bidderSheet": {
-      "bidsCount": "[NEEDS_TRANSLATION]Bids",
-      "bidsSum": "[NEEDS_TRANSLATION]Bid total",
-      "paddles": "[NEEDS_TRANSLATION]Paddles",
-      "type": "[NEEDS_TRANSLATION]Bidder type",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "liveCredit": "[NEEDS_TRANSLATION]Live credit",
-      "mailCredit": "[NEEDS_TRANSLATION]Mail credit",
-      "maxBid": "[NEEDS_TRANSLATION]Max bid",
-      "totalSpent": "[NEEDS_TRANSLATION]Total spent",
-      "close": "[NEEDS_TRANSLATION]Close",
-      "error": "[NEEDS_TRANSLATION]Could not load bidder statistics."
+      "bidsCount": "出价",
+      "bidsSum": "出价总额",
+      "paddles": "号牌",
+      "type": "竞买人类型",
+      "agent": "代理",
+      "liveCredit": "现场信用额度",
+      "mailCredit": "委托信用额度",
+      "maxBid": "最高出价",
+      "totalSpent": "总花费",
+      "close": "关闭",
+      "error": "无法加载竞买人统计数据。"
     },
     "filter": {
-      "allSales": "[NEEDS_TRANSLATION]All sales"
+      "allSales": "全部拍卖会"
     }
   },
   "errorReport": {
-    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
-    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
-    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
-    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
+    "title": "哎呀 — 发生了错误",
+    "body": "此页面的部分数据无法加载。下方的技术详情可帮助我们的支持团队解决问题。",
+    "emailButton": "将此报告发送给支持团队",
+    "dismiss": "关闭"
   }
 }

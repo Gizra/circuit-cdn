@@ -244,22 +244,6 @@ elmApp.ports.clearAccessToken.subscribe(function() {
 
 elmApp.ports.reportError.subscribe(function (payload) {
     if (!errorDsn || !window.Sentry) return;
-    var title = payload.module + '.' + payload.location + ': ' + payload.message;
-    var extras = Object.assign(
-        { httpUrl: payload.httpUrl || null, locationHash: window.location.hash },
-        payload.extra || {}
-    );
-    if (payload.breadcrumb) {
-        // Context for the next captured event, not an issue of its own
-        // (the health reports of a normal sale are all breadcrumbs).
-        Sentry.addBreadcrumb({
-            category: 'health',
-            message: title,
-            level: payload.level || 'info',
-            data: extras
-        });
-        return;
-    }
     Sentry.withScope(function (scope) {
         scope.setTag('elmModule', payload.module);
         scope.setTag('elmLocation', payload.location);
@@ -267,16 +251,14 @@ elmApp.ports.reportError.subscribe(function (payload) {
         if (payload.httpStatus !== null && payload.httpStatus !== undefined) {
             scope.setTag('httpStatus', String(payload.httpStatus));
         }
-        Object.keys(payload.tags || {}).forEach(function (key) {
-            scope.setTag(key, String(payload.tags[key]));
+        scope.setExtras({
+            httpUrl: payload.httpUrl || null,
+            locationHash: window.location.hash
         });
-        // One issue per class: the title carries no numbers (they are in
-        // the extras) and the fingerprint pins the grouping, so GlitchTip
-        // counts events instead of creating -- and alerting on -- a new
-        // issue for every lag value.
-        if (payload.fingerprint) scope.setFingerprint(payload.fingerprint);
-        scope.setExtras(extras);
-        Sentry.captureMessage(title, payload.level || 'error');
+        Sentry.captureMessage(
+            payload.module + '.' + payload.location + ': ' + payload.message,
+            payload.level || 'error'
+        );
     });
 });
 
@@ -310,51 +292,12 @@ elmApp.ports.saveTheme.subscribe(function(theme) {
 });
 
 
-// --- Page visibility → live feed health ------------------------------------
-// A tab in the background is throttled, may be frozen and may lose its
-// socket; Elm treats it as suspended (nothing that happens meanwhile is
-// the feed's fault) and resyncs on its own when the page is visible
-// again. `at` is the browser clock: the Elm tick stalls while hidden.
-// No network is the same situation, so Offline.js feeds the same port.
-function sendVisibility(visible, source) {
-    elmApp.ports.pageVisibility.send({ visible: visible, at: Date.now(), source: source });
-}
-
-document.addEventListener('visibilitychange', function () {
-    sendVisibility(!document.hidden, document.hidden ? 'hidden' : 'visible');
-});
-
-// Page lifecycle (Chrome): frozen tabs get no events at all until resumed.
-document.addEventListener('freeze', function () {
-    sendVisibility(false, 'freeze');
-});
-
-document.addEventListener('resume', function () {
-    sendVisibility(!document.hidden, 'resume');
-});
-
-// Restored from the back-forward cache: the page is as old as when it left.
-window.addEventListener('pageshow', function (event) {
-    if (event.persisted) {
-        sendVisibility(!document.hidden, 'pageshow');
-    }
-});
-
-// A tab opened in the background starts hidden.
-setTimeout(function () {
-    if (document.hidden) {
-        sendVisibility(false, 'initial');
-    }
-}, 0);
-
 Offline.on('down', function() {
     elmApp.ports.offline.send(true);
-    sendVisibility(false, 'offline');
 });
 
 Offline.on('up', function() {
     elmApp.ports.offline.send(false);
-    sendVisibility(!document.hidden, 'online');
 });
 
 var sendSignalOnUserLoggedIn = false;

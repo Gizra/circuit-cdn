@@ -516,7 +516,9 @@
     "notConnected": "Non connecté — reconnexion…",
     "autoClerkCountdown": "Marteau dans {{seconds}} s",
     "unlimited": "Illimitée",
-    "liveNow": "Vente en direct en cours"
+    "liveNow": "Vente en direct en cours",
+    "liveFeedCatchingUp": "Mise à jour du direct… Les enchères reprennent dès que la connexion est rétablie.",
+    "liveFeedUpToDate": "À jour — le direct a rattrapé son retard."
   },
   "livebidform": {
     "lot": "Lot",
@@ -614,10 +616,10 @@
   "item": {
     "noImage": "Demander des photos de l'article",
     "photos": "Photos",
-    "noMedia": "[NEEDS_TRANSLATION]No Image available",
+    "noMedia": "Aucune image disponible",
     "gallery": {
-      "showAll": "[NEEDS_TRANSLATION]Show all {{total}} images",
-      "showFewer": "[NEEDS_TRANSLATION]Show fewer"
+      "showAll": "Afficher les {{total}} images",
+      "showFewer": "Afficher moins"
     }
   },
   "myFavorites": {
@@ -784,7 +786,7 @@
     "close": "Fermer",
     "dateAndLocation": "Date et lieu",
     "noResults": "Aucun résultat trouvé",
-    "resetSearchFilters": "[NEEDS_TRANSLATION]Reset search filters"
+    "resetSearchFilters": "Réinitialiser les filtres de recherche"
   },
   "itempage": {
     "error": "Erreur",
@@ -848,10 +850,10 @@
     "itemNotFoundTitle": "Lot introuvable",
     "saleInformation": "Informations sur la vente",
     "tryAgain": "Réessayer",
-    "addToCalendar": "[NEEDS_TRANSLATION]Add to my calendar",
-    "addToCalendarIcs": "[NEEDS_TRANSLATION]Apple / Outlook (.ics)",
-    "requestImages": "[NEEDS_TRANSLATION]Request images",
-    "requestImagesPrefill": "[NEEDS_TRANSLATION]I would like you to add images to this item"
+    "addToCalendar": "Ajouter à mon calendrier",
+    "addToCalendarIcs": "Apple / Outlook (.ics)",
+    "requestImages": "Demander des images",
+    "requestImagesPrefill": "Je souhaiterais que vous ajoutiez des images à ce lot"
   },
   "sales": {
     "searchPlaceholder": "Rechercher des ventes...",
@@ -928,121 +930,121 @@
     "noSaleNid": "Veuillez fournir un NID de vente pour afficher les lots en vedette."
   },
   "clerk": {
-    "noSales": "[NEEDS_TRANSLATION]No ongoing sales right now.",
+    "noSales": "Aucune vente en cours pour le moment.",
     "tabs": {
-      "credit": "[NEEDS_TRANSLATION]Credit",
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "registrations": "[NEEDS_TRANSLATION]Registrations",
-      "account": "[NEEDS_TRANSLATION]Account"
+      "credit": "Crédit",
+      "bids": "Enchères",
+      "registrations": "Inscriptions",
+      "account": "Compte"
     },
     "credit": {
-      "title": "[NEEDS_TRANSLATION]Credit Requests",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No pending credit requests.",
-      "emptySale": "[NEEDS_TRANSLATION]No pending requests for this sale.",
-      "approve": "[NEEDS_TRANSLATION]Approve",
-      "decline": "[NEEDS_TRANSLATION]Decline",
-      "cancel": "[NEEDS_TRANSLATION]Cancel",
-      "current": "[NEEDS_TRANSLATION]Current",
-      "requested": "[NEEDS_TRANSLATION]Requested",
-      "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-      "none": "[NEEDS_TRANSLATION]None",
-      "showHandled": "[NEEDS_TRANSLATION]Show handled",
-      "confirmApprove": "[NEEDS_TRANSLATION]Approve {{amount}} credit for {{name}}?",
-      "confirmDecline": "[NEEDS_TRANSLATION]Decline the {{amount}} credit request from {{name}}?",
-      "actionFailed": "[NEEDS_TRANSLATION]Could not update the request. Please try again.",
-      "unknownBidder": "[NEEDS_TRANSLATION]User #{{uid}}",
+      "title": "Demandes de crédit",
+      "loading": "Chargement…",
+      "empty": "Aucune demande de crédit en attente.",
+      "emptySale": "Aucune demande en attente pour cette vente.",
+      "approve": "Approuver",
+      "decline": "Refuser",
+      "cancel": "Annuler",
+      "current": "Actuel",
+      "requested": "Demandé",
+      "unlimited": "Illimité",
+      "none": "Aucun",
+      "showHandled": "Afficher les demandes traitées",
+      "confirmApprove": "Approuver un crédit de {{amount}} pour {{name}} ?",
+      "confirmDecline": "Refuser la demande de crédit de {{amount}} de {{name}} ?",
+      "actionFailed": "Impossible de mettre à jour la demande. Veuillez réessayer.",
+      "unknownBidder": "Utilisateur n°{{uid}}",
       "status": {
-        "approved": "[NEEDS_TRANSLATION]Approved",
-        "rejected": "[NEEDS_TRANSLATION]Declined"
+        "approved": "Approuvée",
+        "rejected": "Refusée"
       }
     },
     "bids": {
-      "title": "[NEEDS_TRANSLATION]Mail & Agent Bids",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No mail or agent bids yet.",
-      "emptySale": "[NEEDS_TRANSLATION]No mail or agent bids for this sale.",
-      "lot": "[NEEDS_TRANSLATION]Lot",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "bidderNumber": "[NEEDS_TRANSLATION]Bidder #{{number}}",
-      "showDeleted": "[NEEDS_TRANSLATION]Show deleted",
-      "orderNewest": "[NEEDS_TRANSLATION]Newest first",
-      "orderLot": "[NEEDS_TRANSLATION]Lot order",
+      "title": "Ordres d'achat & enchères d'agents",
+      "loading": "Chargement…",
+      "empty": "Aucun ordre d'achat ni enchère d'agent pour l'instant.",
+      "emptySale": "Aucun ordre d'achat ni enchère d'agent pour cette vente.",
+      "lot": "Lot",
+      "agent": "Agent",
+      "bidderNumber": "Enchérisseur n°{{number}}",
+      "showDeleted": "Afficher les enchères supprimées",
+      "orderNewest": "Plus récentes d'abord",
+      "orderLot": "Par numéro de lot",
       "type": {
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "agent": "[NEEDS_TRANSLATION]Agent"
+        "mail": "Ordre d'achat",
+        "agent": "Agent"
       },
-      "searchPlaceholder": "[NEEDS_TRANSLATION]Search bidder # or name",
-      "results": "[NEEDS_TRANSLATION]{{count}} bids",
-      "noMatches": "[NEEDS_TRANSLATION]No bids match the current filters."
+      "searchPlaceholder": "Rechercher un n° d'enchérisseur ou un nom",
+      "results": "{{count}} enchères",
+      "noMatches": "Aucune enchère ne correspond aux filtres actuels."
     },
     "registrations": {
-      "title": "[NEEDS_TRANSLATION]Registrations",
-      "empty": "[NEEDS_TRANSLATION]New registrations will appear here live while the app is open.",
-      "paddle": "[NEEDS_TRANSLATION]Paddle",
-      "unknown": "[NEEDS_TRANSLATION]New bidder"
+      "title": "Inscriptions",
+      "empty": "Les nouvelles inscriptions s'afficheront ici en direct tant que l'application est ouverte.",
+      "paddle": "N° d'enchérisseur",
+      "unknown": "Nouvel enchérisseur"
     },
     "notAuthorized": {
-      "title": "[NEEDS_TRANSLATION]Staff only",
-      "body": "[NEEDS_TRANSLATION]This app is for auction staff. Your account does not have clerk access on this site.",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "title": "Réservé au personnel",
+      "body": "Cette application est réservée au personnel de la maison de ventes. Votre compte n'a pas d'accès clerc sur ce site.",
+      "logout": "Se déconnecter"
     },
     "account": {
-      "site": "[NEEDS_TRANSLATION]Site",
-      "role": "[NEEDS_TRANSLATION]Role",
-      "clerk": "[NEEDS_TRANSLATION]Clerk",
-      "changePassword": "[NEEDS_TRANSLATION]Change password",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "site": "Site",
+      "role": "Rôle",
+      "clerk": "Clerc",
+      "changePassword": "Changer le mot de passe",
+      "logout": "Se déconnecter"
     },
     "connection": {
-      "offline": "[NEEDS_TRANSLATION]Connection lost — live updates paused. Reconnecting…"
+      "offline": "Connexion perdue — mises à jour en direct suspendues. Reconnexion…"
     },
     "saleStatus": {
-      "open_mail": "[NEEDS_TRANSLATION]Mail bidding",
-      "open_live": "[NEEDS_TRANSLATION]Live",
-      "paused_starting_soon": "[NEEDS_TRANSLATION]Starting soon",
-      "paused_back_shortly": "[NEEDS_TRANSLATION]Back shortly",
-      "closed_not_started": "[NEEDS_TRANSLATION]Not started",
-      "closed_ended": "[NEEDS_TRANSLATION]Ended"
+      "open_mail": "Ordres d'achat",
+      "open_live": "En direct",
+      "paused_starting_soon": "Commence bientôt",
+      "paused_back_shortly": "De retour dans un instant",
+      "closed_not_started": "Pas encore commencée",
+      "closed_ended": "Terminée"
     },
     "stats": {
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "mailBids": "[NEEDS_TRANSLATION]Mail bids",
-      "bidders": "[NEEDS_TRANSLATION]Bidders",
-      "lotsWithBids": "[NEEDS_TRANSLATION]Lots w/ bids",
-      "soldUnsold": "[NEEDS_TRANSLATION]Sold / Unsold",
-      "totalWinning": "[NEEDS_TRANSLATION]Total winning",
-      "startValueWithBids": "[NEEDS_TRANSLATION]Start value (lots w/ bids)",
+      "bids": "Enchères",
+      "mailBids": "Ordres d'achat",
+      "bidders": "Enchérisseurs",
+      "lotsWithBids": "Lots avec enchères",
+      "soldUnsold": "Vendus / Invendus",
+      "totalWinning": "Total des enchères gagnantes",
+      "startValueWithBids": "Valeur de départ (lots avec enchères)",
       "bidderType": {
-        "external": "[NEEDS_TRANSLATION]External",
-        "floor": "[NEEDS_TRANSLATION]Floor",
-        "floor_by_agent": "[NEEDS_TRANSLATION]Agent floor",
-        "phone": "[NEEDS_TRANSLATION]Phone",
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "website": "[NEEDS_TRANSLATION]Website"
+        "external": "Externe",
+        "floor": "Salle",
+        "floor_by_agent": "Salle (agent)",
+        "phone": "Téléphone",
+        "mail": "Ordre d'achat",
+        "website": "Site web"
       }
     },
     "bidderSheet": {
-      "bidsCount": "[NEEDS_TRANSLATION]Bids",
-      "bidsSum": "[NEEDS_TRANSLATION]Bid total",
-      "paddles": "[NEEDS_TRANSLATION]Paddles",
-      "type": "[NEEDS_TRANSLATION]Bidder type",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "liveCredit": "[NEEDS_TRANSLATION]Live credit",
-      "mailCredit": "[NEEDS_TRANSLATION]Mail credit",
-      "maxBid": "[NEEDS_TRANSLATION]Max bid",
-      "totalSpent": "[NEEDS_TRANSLATION]Total spent",
-      "close": "[NEEDS_TRANSLATION]Close",
-      "error": "[NEEDS_TRANSLATION]Could not load bidder statistics."
+      "bidsCount": "Enchères",
+      "bidsSum": "Total des enchères",
+      "paddles": "N° d'enchérisseur",
+      "type": "Type d'enchérisseur",
+      "agent": "Agent",
+      "liveCredit": "Crédit en direct",
+      "mailCredit": "Crédit ordres d'achat",
+      "maxBid": "Enchère maximale",
+      "totalSpent": "Total dépensé",
+      "close": "Fermer",
+      "error": "Impossible de charger les statistiques de l'enchérisseur."
     },
     "filter": {
-      "allSales": "[NEEDS_TRANSLATION]All sales"
+      "allSales": "Toutes les ventes"
     }
   },
   "errorReport": {
-    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
-    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
-    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
-    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
+    "title": "Oups — une erreur est survenue",
+    "body": "Certaines données de cette page n'ont pas pu être chargées. Les détails techniques ci-dessous peuvent aider notre équipe d'assistance à résoudre le problème.",
+    "emailButton": "Envoyer ce rapport à l'assistance",
+    "dismiss": "Fermer"
   }
 }

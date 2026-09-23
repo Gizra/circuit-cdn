@@ -516,7 +516,9 @@
     "notConnected": "Keine Verbindung — Verbindung wird wiederhergestellt…",
     "autoClerkCountdown": "Zuschlag in {{seconds}}s",
     "unlimited": "Unbegrenzt",
-    "liveNow": "Live-Auktion läuft"
+    "liveNow": "Live-Auktion läuft",
+    "liveFeedCatchingUp": "Live-Daten werden nachgeladen… Das Bieten geht weiter, sobald die Verbindung wieder steht.",
+    "liveFeedUpToDate": "Auf dem neuesten Stand — der Live-Feed hat aufgeholt."
   },
   "livebidform": {
     "lot": "Los",
@@ -928,121 +930,121 @@
     "noSaleNid": "Bitte geben Sie eine Auktions-NID an, um hervorgehobene Lose anzuzeigen."
   },
   "clerk": {
-    "noSales": "[NEEDS_TRANSLATION]No ongoing sales right now.",
+    "noSales": "Derzeit keine laufenden Auktionen.",
     "tabs": {
-      "credit": "[NEEDS_TRANSLATION]Credit",
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "registrations": "[NEEDS_TRANSLATION]Registrations",
-      "account": "[NEEDS_TRANSLATION]Account"
+      "credit": "Kreditrahmen",
+      "bids": "Gebote",
+      "registrations": "Anmeldungen",
+      "account": "Konto"
     },
     "credit": {
-      "title": "[NEEDS_TRANSLATION]Credit Requests",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No pending credit requests.",
-      "emptySale": "[NEEDS_TRANSLATION]No pending requests for this sale.",
-      "approve": "[NEEDS_TRANSLATION]Approve",
-      "decline": "[NEEDS_TRANSLATION]Decline",
-      "cancel": "[NEEDS_TRANSLATION]Cancel",
-      "current": "[NEEDS_TRANSLATION]Current",
-      "requested": "[NEEDS_TRANSLATION]Requested",
-      "unlimited": "[NEEDS_TRANSLATION]Unlimited",
-      "none": "[NEEDS_TRANSLATION]None",
-      "showHandled": "[NEEDS_TRANSLATION]Show handled",
-      "confirmApprove": "[NEEDS_TRANSLATION]Approve {{amount}} credit for {{name}}?",
-      "confirmDecline": "[NEEDS_TRANSLATION]Decline the {{amount}} credit request from {{name}}?",
-      "actionFailed": "[NEEDS_TRANSLATION]Could not update the request. Please try again.",
-      "unknownBidder": "[NEEDS_TRANSLATION]User #{{uid}}",
+      "title": "Kreditrahmen-Anfragen",
+      "loading": "Wird geladen…",
+      "empty": "Keine offenen Kreditrahmen-Anfragen.",
+      "emptySale": "Keine offenen Anfragen für diese Auktion.",
+      "approve": "Genehmigen",
+      "decline": "Ablehnen",
+      "cancel": "Abbrechen",
+      "current": "Aktuell",
+      "requested": "Angefragt",
+      "unlimited": "Unbegrenzt",
+      "none": "Keiner",
+      "showHandled": "Bearbeitete anzeigen",
+      "confirmApprove": "Kreditrahmen von {{amount}} für {{name}} genehmigen?",
+      "confirmDecline": "Die Kreditrahmen-Anfrage über {{amount}} von {{name}} ablehnen?",
+      "actionFailed": "Die Anfrage konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
+      "unknownBidder": "Benutzer #{{uid}}",
       "status": {
-        "approved": "[NEEDS_TRANSLATION]Approved",
-        "rejected": "[NEEDS_TRANSLATION]Declined"
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt"
       }
     },
     "bids": {
-      "title": "[NEEDS_TRANSLATION]Mail & Agent Bids",
-      "loading": "[NEEDS_TRANSLATION]Loading…",
-      "empty": "[NEEDS_TRANSLATION]No mail or agent bids yet.",
-      "emptySale": "[NEEDS_TRANSLATION]No mail or agent bids for this sale.",
-      "lot": "[NEEDS_TRANSLATION]Lot",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "bidderNumber": "[NEEDS_TRANSLATION]Bidder #{{number}}",
-      "showDeleted": "[NEEDS_TRANSLATION]Show deleted",
-      "orderNewest": "[NEEDS_TRANSLATION]Newest first",
-      "orderLot": "[NEEDS_TRANSLATION]Lot order",
+      "title": "Schriftliche & Agenten-Gebote",
+      "loading": "Wird geladen…",
+      "empty": "Noch keine schriftlichen oder Agenten-Gebote.",
+      "emptySale": "Keine schriftlichen oder Agenten-Gebote für diese Auktion.",
+      "lot": "Los",
+      "agent": "Agent",
+      "bidderNumber": "Bieter Nr. {{number}}",
+      "showDeleted": "Gelöschte anzeigen",
+      "orderNewest": "Neueste zuerst",
+      "orderLot": "Nach Losnummer",
       "type": {
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "agent": "[NEEDS_TRANSLATION]Agent"
+        "mail": "Schriftlich",
+        "agent": "Agent"
       },
-      "searchPlaceholder": "[NEEDS_TRANSLATION]Search bidder # or name",
-      "results": "[NEEDS_TRANSLATION]{{count}} bids",
-      "noMatches": "[NEEDS_TRANSLATION]No bids match the current filters."
+      "searchPlaceholder": "Bieter-Nr. oder Name suchen",
+      "results": "{{count}} Gebote",
+      "noMatches": "Keine Gebote entsprechen den aktuellen Filtern."
     },
     "registrations": {
-      "title": "[NEEDS_TRANSLATION]Registrations",
-      "empty": "[NEEDS_TRANSLATION]New registrations will appear here live while the app is open.",
-      "paddle": "[NEEDS_TRANSLATION]Paddle",
-      "unknown": "[NEEDS_TRANSLATION]New bidder"
+      "title": "Anmeldungen",
+      "empty": "Neue Anmeldungen erscheinen hier live, solange die App geöffnet ist.",
+      "paddle": "Bieternummer",
+      "unknown": "Neuer Bieter"
     },
     "notAuthorized": {
-      "title": "[NEEDS_TRANSLATION]Staff only",
-      "body": "[NEEDS_TRANSLATION]This app is for auction staff. Your account does not have clerk access on this site.",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "title": "Nur für Mitarbeiter",
+      "body": "Diese App ist für Auktionsmitarbeiter bestimmt. Ihr Konto hat auf dieser Website keinen Clerk-Zugang.",
+      "logout": "Abmelden"
     },
     "account": {
-      "site": "[NEEDS_TRANSLATION]Site",
-      "role": "[NEEDS_TRANSLATION]Role",
-      "clerk": "[NEEDS_TRANSLATION]Clerk",
-      "changePassword": "[NEEDS_TRANSLATION]Change password",
-      "logout": "[NEEDS_TRANSLATION]Log out"
+      "site": "Website",
+      "role": "Rolle",
+      "clerk": "Clerk",
+      "changePassword": "Passwort ändern",
+      "logout": "Abmelden"
     },
     "connection": {
-      "offline": "[NEEDS_TRANSLATION]Connection lost — live updates paused. Reconnecting…"
+      "offline": "Verbindung unterbrochen — Live-Updates pausiert. Verbindung wird wiederhergestellt…"
     },
     "saleStatus": {
-      "open_mail": "[NEEDS_TRANSLATION]Mail bidding",
-      "open_live": "[NEEDS_TRANSLATION]Live",
-      "paused_starting_soon": "[NEEDS_TRANSLATION]Starting soon",
-      "paused_back_shortly": "[NEEDS_TRANSLATION]Back shortly",
-      "closed_not_started": "[NEEDS_TRANSLATION]Not started",
-      "closed_ended": "[NEEDS_TRANSLATION]Ended"
+      "open_mail": "Schriftliche Gebote",
+      "open_live": "Live",
+      "paused_starting_soon": "Beginnt in Kürze",
+      "paused_back_shortly": "Gleich zurück",
+      "closed_not_started": "Nicht begonnen",
+      "closed_ended": "Beendet"
     },
     "stats": {
-      "bids": "[NEEDS_TRANSLATION]Bids",
-      "mailBids": "[NEEDS_TRANSLATION]Mail bids",
-      "bidders": "[NEEDS_TRANSLATION]Bidders",
-      "lotsWithBids": "[NEEDS_TRANSLATION]Lots w/ bids",
-      "soldUnsold": "[NEEDS_TRANSLATION]Sold / Unsold",
-      "totalWinning": "[NEEDS_TRANSLATION]Total winning",
-      "startValueWithBids": "[NEEDS_TRANSLATION]Start value (lots w/ bids)",
+      "bids": "Gebote",
+      "mailBids": "Schriftliche Gebote",
+      "bidders": "Bieter",
+      "lotsWithBids": "Lose m. Geboten",
+      "soldUnsold": "Verkauft / Unverkauft",
+      "totalWinning": "Summe Höchstgebote",
+      "startValueWithBids": "Startwert (Lose m. Geboten)",
       "bidderType": {
-        "external": "[NEEDS_TRANSLATION]External",
-        "floor": "[NEEDS_TRANSLATION]Floor",
-        "floor_by_agent": "[NEEDS_TRANSLATION]Agent floor",
-        "phone": "[NEEDS_TRANSLATION]Phone",
-        "mail": "[NEEDS_TRANSLATION]Mail",
-        "website": "[NEEDS_TRANSLATION]Website"
+        "external": "Extern",
+        "floor": "Saal",
+        "floor_by_agent": "Saal (Agent)",
+        "phone": "Telefon",
+        "mail": "Schriftlich",
+        "website": "Website"
       }
     },
     "bidderSheet": {
-      "bidsCount": "[NEEDS_TRANSLATION]Bids",
-      "bidsSum": "[NEEDS_TRANSLATION]Bid total",
-      "paddles": "[NEEDS_TRANSLATION]Paddles",
-      "type": "[NEEDS_TRANSLATION]Bidder type",
-      "agent": "[NEEDS_TRANSLATION]Agent",
-      "liveCredit": "[NEEDS_TRANSLATION]Live credit",
-      "mailCredit": "[NEEDS_TRANSLATION]Mail credit",
-      "maxBid": "[NEEDS_TRANSLATION]Max bid",
-      "totalSpent": "[NEEDS_TRANSLATION]Total spent",
-      "close": "[NEEDS_TRANSLATION]Close",
-      "error": "[NEEDS_TRANSLATION]Could not load bidder statistics."
+      "bidsCount": "Gebote",
+      "bidsSum": "Gebotssumme",
+      "paddles": "Bieternummern",
+      "type": "Bietertyp",
+      "agent": "Agent",
+      "liveCredit": "Kreditrahmen Live",
+      "mailCredit": "Kreditrahmen schriftlich",
+      "maxBid": "Maximalgebot",
+      "totalSpent": "Gesamtausgaben",
+      "close": "Schließen",
+      "error": "Bieterstatistik konnte nicht geladen werden."
     },
     "filter": {
-      "allSales": "[NEEDS_TRANSLATION]All sales"
+      "allSales": "Alle Auktionen"
     }
   },
   "errorReport": {
-    "title": "[NEEDS_TRANSLATION]Oops — an error occurred",
-    "body": "[NEEDS_TRANSLATION]Some data on this page could not be loaded. The technical details below can help our support team resolve it.",
-    "emailButton": "[NEEDS_TRANSLATION]Email this report to support",
-    "dismiss": "[NEEDS_TRANSLATION]Dismiss"
+    "title": "Hoppla — ein Fehler ist aufgetreten",
+    "body": "Einige Daten auf dieser Seite konnten nicht geladen werden. Die technischen Details unten helfen unserem Support-Team bei der Behebung.",
+    "emailButton": "Diesen Bericht an den Support senden",
+    "dismiss": "Schließen"
   }
 }

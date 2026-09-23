@@ -35301,6 +35301,12 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'Requested', dutch: '', german: '', hebrew: '', russian: '', chinese: '', french: ''};
 				case 'References':
 					return {english: 'References/Areas of interest', dutch: 'Referenties/Interessegebieden', german: 'Referenzen/Interessengebiete', hebrew: 'הפניות', russian: 'Рекомендации/Области интереса', chinese: '参考/感兴趣的领域', french: 'Références/Zones d\'intérêt'};
+				case 'ReloadClients':
+					return {english: 'Reload clients', dutch: 'Clients herladen', german: 'Clients neu laden', hebrew: 'טען מחדש את הלקוחות', russian: 'Перезагрузить клиентов', chinese: '重新加载客户端', french: 'Recharger les clients'};
+				case 'ReloadClientsConfirm':
+					return {english: 'Reload every connected client? All bidder, clerk and room pages of this sale will reload within ~20 seconds — including this one.', dutch: 'Alle verbonden clients herladen? Alle bieder-, clerk- en zaalpagina\'s van deze veiling worden binnen ~20 seconden herladen — ook deze.', german: 'Alle verbundenen Clients neu laden? Alle Bieter-, Clerk- und Saalseiten dieser Auktion werden innerhalb von ~20 Sekunden neu geladen — auch diese.', hebrew: 'לטעון מחדש את כל הלקוחות המחוברים? כל דפי המציעים, הפקידים והאולם של מכירה זו ייטענו מחדש תוך כ-20 שניות — כולל דף זה.', russian: 'Перезагрузить всех подключённых клиентов? Все страницы участников, клерков и зала этой продажи перезагрузятся в течение ~20 секунд — включая эту.', chinese: '重新加载所有已连接的客户端？此销售的所有竞买人、记录员和拍卖厅页面将在约 20 秒内重新加载——包括本页面。', french: 'Recharger tous les clients connectés ? Toutes les pages enchérisseur, clerc et salle de cette vente seront rechargées sous ~20 secondes — y compris celle-ci.'};
+				case 'ReloadClientsConfirmYes':
+					return {english: 'Yes, reload all', dutch: 'Ja, alles herladen', german: 'Ja, alle neu laden', hebrew: 'כן, טען הכל מחדש', russian: 'Да, перезагрузить все', chinese: '是，全部重新加载', french: 'Oui, tout recharger'};
 				case 'ReloadSale':
 					return {english: 'Re-load Sale', dutch: 'Uitverkoop opnieuw laden', german: 'Auktion neu laden', hebrew: 'טען מכירה מחדש', russian: 'Перезагрузить продажу', chinese: '重新加载销售', french: 'Recharger la vente'};
 				case 'RequestMoreCredit':
@@ -39982,6 +39988,9 @@ var _Gizra$circuit_bid$Translate$Retry = {ctor: 'Retry'};
 var _Gizra$circuit_bid$Translate$ResetPassword = {ctor: 'ResetPassword'};
 var _Gizra$circuit_bid$Translate$RequestMoreCredit = {ctor: 'RequestMoreCredit'};
 var _Gizra$circuit_bid$Translate$ReloadSale = {ctor: 'ReloadSale'};
+var _Gizra$circuit_bid$Translate$ReloadClientsConfirmYes = {ctor: 'ReloadClientsConfirmYes'};
+var _Gizra$circuit_bid$Translate$ReloadClientsConfirm = {ctor: 'ReloadClientsConfirm'};
+var _Gizra$circuit_bid$Translate$ReloadClients = {ctor: 'ReloadClients'};
 var _Gizra$circuit_bid$Translate$Requested = {ctor: 'Requested'};
 var _Gizra$circuit_bid$Translate$RejectedCreditLimit = {ctor: 'RejectedCreditLimit'};
 var _Gizra$circuit_bid$Translate$RejectedBidderMax = {ctor: 'RejectedBidderMax'};
@@ -41617,6 +41626,7 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_Model$ConnectedUser = F3(
 var _Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseLeave = {ctor: 'PlaceBidMouseLeave'};
 var _Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseEnter = {ctor: 'PlaceBidMouseEnter'};
 var _Gizra$circuit_bid$Backend_ConnectedUser_Model$HeartBeat = {ctor: 'HeartBeat'};
+var _Gizra$circuit_bid$Backend_ConnectedUser_Model$ForceReload = {ctor: 'ForceReload'};
 var _Gizra$circuit_bid$Backend_ConnectedUser_Model$ActiveToGoingUpdate = {ctor: 'ActiveToGoingUpdate'};
 var _Gizra$circuit_bid$Backend_ConnectedUser_Model$QueuedBidsUpdate = function (a) {
 	return {ctor: 'QueuedBidsUpdate', _0: a};
@@ -42971,7 +42981,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Model$Model = function (a) {
 																																	return function (_8) {
 																																		return function (_9) {
 																																			return function (_10) {
-																																				return {queuedBids: a, queuedBidRequestState: b, manualStepInput: c, customBidInput: d, customBidSubmitCount: e, manualStepSubmitCount: f, editableBidderIds: g, floorBidBeingPlaced: h, item: i, queuedItemUpdateRequestState: j, queuedSetToFloorRequestState: k, openingPriceForm: l, publicMessages: m, pausedMessageInput: n, sale: o, publicMessageInput: p, connectedUsersSearch: q, publicMessagesSendRequest: r, privateMessages: s, messagesTab: t, selectedRecipient: u, privateMessageInput: v, privateMessagesSendRequest: w, privateUnread: x, recipientMenuOpen: y, publicMessageJustSent: z, manualBumpRequestState: _1, currentItemSelection: _2, itemChangeRequest: _3, currentSessionSelection: _4, queuedSaleUpdateRequestState: _5, autoClerkConfirm: _6, statusMenuOpen: _7, sessionMenuOpen: _8, currentStatusSelection: _9, lotInfoOpen: _10};
+																																				return function (_11) {
+																																					return {queuedBids: a, queuedBidRequestState: b, manualStepInput: c, customBidInput: d, customBidSubmitCount: e, manualStepSubmitCount: f, editableBidderIds: g, floorBidBeingPlaced: h, item: i, queuedItemUpdateRequestState: j, queuedSetToFloorRequestState: k, openingPriceForm: l, publicMessages: m, pausedMessageInput: n, sale: o, publicMessageInput: p, connectedUsersSearch: q, publicMessagesSendRequest: r, privateMessages: s, messagesTab: t, selectedRecipient: u, privateMessageInput: v, privateMessagesSendRequest: w, privateUnread: x, recipientMenuOpen: y, publicMessageJustSent: z, manualBumpRequestState: _1, currentItemSelection: _2, itemChangeRequest: _3, currentSessionSelection: _4, queuedSaleUpdateRequestState: _5, autoClerkConfirm: _6, reloadClientsConfirm: _7, statusMenuOpen: _8, sessionMenuOpen: _9, currentStatusSelection: _10, lotInfoOpen: _11};
+																																				};
 																																			};
 																																		};
 																																	};
@@ -43049,6 +43061,7 @@ var _Gizra$circuit_bid$Pages_Clerk_Model$emptyModel = {
 	queuedSaleUpdateRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest,
 	manualBumpRequestState: _krisajenkins$remotedata$RemoteData$NotAsked,
 	autoClerkConfirm: _elm_lang$core$Maybe$Nothing,
+	reloadClientsConfirm: false,
 	statusMenuOpen: false,
 	sessionMenuOpen: false,
 	currentStatusSelection: _elm_lang$core$Maybe$Nothing,
@@ -43061,6 +43074,9 @@ var _Gizra$circuit_bid$Pages_Clerk_Model$CloseAllMenus = {ctor: 'CloseAllMenus'}
 var _Gizra$circuit_bid$Pages_Clerk_Model$ToggleLotInfo = {ctor: 'ToggleLotInfo'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$ToggleSessionMenu = {ctor: 'ToggleSessionMenu'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$ToggleStatusMenu = {ctor: 'ToggleStatusMenu'};
+var _Gizra$circuit_bid$Pages_Clerk_Model$CancelReloadClientsConfirm = {ctor: 'CancelReloadClientsConfirm'};
+var _Gizra$circuit_bid$Pages_Clerk_Model$ConfirmReloadClients = {ctor: 'ConfirmReloadClients'};
+var _Gizra$circuit_bid$Pages_Clerk_Model$ShowReloadClientsConfirm = {ctor: 'ShowReloadClientsConfirm'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$CancelAutoClerkConfirm = {ctor: 'CancelAutoClerkConfirm'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$ConfirmAutoClerkToggle = {ctor: 'ConfirmAutoClerkToggle'};
 var _Gizra$circuit_bid$Pages_Clerk_Model$ShowAutoClerkConfirm = F2(
@@ -53541,41 +53557,48 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_Encoder$encodeClerkEvent = F3(
 	function (env, event, saleUuid) {
 		var _p6 = function () {
 			var _p7 = event;
-			if (_p7.ctor === 'QueuedBidsUpdate') {
-				var _p8 = _p7._0;
-				return {
-					ctor: '_Tuple2',
-					_0: 'clerk__sale__queued_bids_update',
-					_1: {
-						ctor: '::',
-						_0: {
-							ctor: '_Tuple2',
-							_0: 'bid',
-							_1: A2(
-								_elm_lang$core$Maybe$withDefault,
-								_elm_lang$core$Json_Encode$null,
-								A2(_elm_lang$core$Maybe$map, _elm_lang$core$Json_Encode$int, _p8.bid))
-						},
+			switch (_p7.ctor) {
+				case 'QueuedBidsUpdate':
+					var _p8 = _p7._0;
+					return {
+						ctor: '_Tuple2',
+						_0: 'clerk__sale__queued_bids_update',
 						_1: {
 							ctor: '::',
 							_0: {
 								ctor: '_Tuple2',
-								_0: 'next_bid',
+								_0: 'bid',
 								_1: A2(
 									_elm_lang$core$Maybe$withDefault,
 									_elm_lang$core$Json_Encode$null,
-									A2(_elm_lang$core$Maybe$map, _elm_lang$core$Json_Encode$int, _p8.nextBid))
+									A2(_elm_lang$core$Maybe$map, _elm_lang$core$Json_Encode$int, _p8.bid))
 							},
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'next_bid',
+									_1: A2(
+										_elm_lang$core$Maybe$withDefault,
+										_elm_lang$core$Json_Encode$null,
+										A2(_elm_lang$core$Maybe$map, _elm_lang$core$Json_Encode$int, _p8.nextBid))
+								},
+								_1: {ctor: '[]'}
+							}
 						}
-					}
-				};
-			} else {
-				return {
-					ctor: '_Tuple2',
-					_0: 'clerk__sale__active_to_going_update',
-					_1: {ctor: '[]'}
-				};
+					};
+				case 'ActiveToGoingUpdate':
+					return {
+						ctor: '_Tuple2',
+						_0: 'clerk__sale__active_to_going_update',
+						_1: {ctor: '[]'}
+					};
+				default:
+					return {
+						ctor: '_Tuple2',
+						_0: 'force_reload',
+						_1: {ctor: '[]'}
+					};
 			}
 		}();
 		var eventName = _p6._0;
@@ -63917,22 +63940,26 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$fetchSaleFromBackend = F3(
 								_Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(saleUuid))))))
 		};
 	});
-var _Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent = F3(
-	function (_p17, webData, event) {
+var _Gizra$circuit_bid$Pages_Clerk_Update$postClerkEvent = F3(
+	function (_p17, sale, event) {
 		var _p18 = _p17;
+		return A2(
+			_lukewestby$elm_http_builder$HttpBuilder$send,
+			_Gizra$circuit_bid$Pages_Clerk_Model$HandleClerkEvent,
+			A2(
+				_lukewestby$elm_http_builder$HttpBuilder$withJsonBody,
+				A3(_Gizra$circuit_bid$Backend_ConnectedUser_Encoder$encodeClerkEvent, _p18._1, event, sale.uuid),
+				_lukewestby$elm_http_builder$HttpBuilder$post(_p18._0)));
+	});
+var _Gizra$circuit_bid$Pages_Clerk_Update$sendClerkEvent = F3(
+	function (serverlessEnv, webData, event) {
 		return A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			_elm_lang$core$Platform_Cmd$none,
 			function (sale) {
 				var _p19 = sale.status;
 				if (_p19.ctor === 'LiveAuctionOpen') {
-					return A2(
-						_lukewestby$elm_http_builder$HttpBuilder$send,
-						_Gizra$circuit_bid$Pages_Clerk_Model$HandleClerkEvent,
-						A2(
-							_lukewestby$elm_http_builder$HttpBuilder$withJsonBody,
-							A3(_Gizra$circuit_bid$Backend_ConnectedUser_Encoder$encodeClerkEvent, _p18._1, event, sale.uuid),
-							_lukewestby$elm_http_builder$HttpBuilder$post(_p18._0)));
+					return A3(_Gizra$circuit_bid$Pages_Clerk_Update$postClerkEvent, serverlessEnv, sale, event);
 				} else {
 					return _elm_lang$core$Platform_Cmd$none;
 				}
@@ -65924,12 +65951,52 @@ var _Gizra$circuit_bid$Pages_Clerk_Update$update = function (currentDate) {
 																_3: {ctor: '[]'}
 															};
 														}
-													default:
+													case 'CancelAutoClerkConfirm':
 														return {
 															ctor: '_Tuple4',
 															_0: _elm_lang$core$Native_Utils.update(
 																model,
 																{autoClerkConfirm: _elm_lang$core$Maybe$Nothing}),
+															_1: _elm_lang$core$Platform_Cmd$none,
+															_2: _Gizra$circuit_bid$Error_Utils$noError,
+															_3: {ctor: '[]'}
+														};
+													case 'ShowReloadClientsConfirm':
+														return {
+															ctor: '_Tuple4',
+															_0: _elm_lang$core$Native_Utils.update(
+																model,
+																{reloadClientsConfirm: true}),
+															_1: _elm_lang$core$Platform_Cmd$none,
+															_2: _Gizra$circuit_bid$Error_Utils$noError,
+															_3: {ctor: '[]'}
+														};
+													case 'ConfirmReloadClients':
+														return {
+															ctor: '_Tuple4',
+															_0: _elm_lang$core$Native_Utils.update(
+																model,
+																{reloadClientsConfirm: false}),
+															_1: A3(
+																_elm_community$maybe_extra$Maybe_Extra$unwrap,
+																_elm_lang$core$Platform_Cmd$none,
+																function (sale) {
+																	return A3(
+																		_Gizra$circuit_bid$Pages_Clerk_Update$postClerkEvent,
+																		{ctor: '_Tuple2', _0: _p114, _1: _p113},
+																		sale,
+																		_Gizra$circuit_bid$Backend_ConnectedUser_Model$ForceReload);
+																},
+																_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)),
+															_2: _Gizra$circuit_bid$Error_Utils$noError,
+															_3: {ctor: '[]'}
+														};
+													default:
+														return {
+															ctor: '_Tuple4',
+															_0: _elm_lang$core$Native_Utils.update(
+																model,
+																{reloadClientsConfirm: false}),
 															_1: _elm_lang$core$Platform_Cmd$none,
 															_2: _Gizra$circuit_bid$Error_Utils$noError,
 															_3: {ctor: '[]'}
@@ -78457,6 +78524,150 @@ var _Gizra$circuit_bid$Pages_Clerk_View$manualBumpButton = F4(
 				}
 			});
 	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewReloadClientsConfirm = F2(
+	function (language, model) {
+		return model.reloadClientsConfirm ? A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('autoclerk-confirm-overlay reload-clients-confirm'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('autoclerk-confirm-dialog'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('autoclerk-confirm-icon'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$i,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-refresh'),
+										_1: {ctor: '[]'}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('autoclerk-confirm-text'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ReloadClientsConfirm),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('autoclerk-confirm-actions'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$button,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('btn confirm-yes'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$ConfirmReloadClients),
+													_1: {ctor: '[]'}
+												}
+											},
+											{
+												ctor: '::',
+												_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ReloadClientsConfirmYes),
+												_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$button,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('btn confirm-no'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$CancelReloadClientsConfirm),
+														_1: {ctor: '[]'}
+													}
+												},
+												{
+													ctor: '::',
+													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Cancel),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}) : _Gizra$circuit_bid$Utils_Html$emptyNode;
+	});
+var _Gizra$circuit_bid$Pages_Clerk_View$viewReloadClientsButton = function (language) {
+	return A2(
+		_elm_lang$html$Html$button,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('btn reload-clients-btn'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$ShowReloadClientsConfirm),
+				_1: {ctor: '[]'}
+			}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$i,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('fa fa-refresh'),
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$span,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ReloadClients),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
 var _Gizra$circuit_bid$Pages_Clerk_View$viewAutoClerkConfirm = function (model) {
 	var _p54 = model.autoClerkConfirm;
 	if (_p54.ctor === 'Just') {
@@ -82493,53 +82704,42 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 				_0: _Gizra$circuit_bid$Pages_Clerk_View$viewAutoClerkConfirm(model),
 				_1: {
 					ctor: '::',
-					_0: anyMenuOpen ? A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('menu-backdrop'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$CloseAllMenus),
-								_1: {ctor: '[]'}
-							}
-						},
-						{ctor: '[]'}) : _Gizra$circuit_bid$Utils_Html$emptyNode,
+					_0: A2(_Gizra$circuit_bid$Pages_Clerk_View$viewReloadClientsConfirm, language, model),
 					_1: {
 						ctor: '::',
-						_0: A2(
+						_0: anyMenuOpen ? A2(
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('topbar'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('tb-left'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus, language, _p152, _p151.status, isAutoClerkOn, model.statusMenuOpen, model.currentStatusSelection),
-										_1: {ctor: '[]'}
-									}),
+								_0: _elm_lang$html$Html_Attributes$class('menu-backdrop'),
 								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$CloseAllMenus),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}) : _Gizra$circuit_bid$Utils_Html$emptyNode,
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('topbar'),
+									_1: {ctor: '[]'}
+								},
+								{
 									ctor: '::',
 									_0: A2(
 										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('tb-center'),
+											_0: _elm_lang$html$Html_Attributes$class('tb-left'),
 											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
-											_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession, language, saleBeingUpdated, _p152, model.currentSessionSelection, _p151.session, _p151.sessions, model.sessionMenuOpen),
+											_0: A6(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleStatus, language, _p152, _p151.status, isAutoClerkOn, model.statusMenuOpen, model.currentStatusSelection),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -82548,89 +82748,164 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('tb-right'),
+												_0: _elm_lang$html$Html_Attributes$class('tb-center'),
 												_1: {ctor: '[]'}
 											},
 											{
 												ctor: '::',
-												_0: A4(
-													_Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus,
-													language,
-													model,
-													{ctor: '_Tuple2', _0: _p152, _1: _p151},
-													items),
+												_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$selectSaleSession, language, saleBeingUpdated, _p152, model.currentSessionSelection, _p151.session, _p151.sessions, model.sessionMenuOpen),
 												_1: {ctor: '[]'}
 											}),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('tb-right'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: A4(
+														_Gizra$circuit_bid$Pages_Clerk_View$setAutoClerkStatus,
+														language,
+														model,
+														{ctor: '_Tuple2', _0: _p152, _1: _p151},
+														items),
+													_1: {
+														ctor: '::',
+														_0: _Gizra$circuit_bid$Pages_Clerk_View$viewReloadClientsButton(language),
+														_1: {ctor: '[]'}
+													}
+												}),
+											_1: {ctor: '[]'}
+										}
 									}
-								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('clerk-paused-row'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A3(_Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor, language, _p151.status, model.pausedMessageInput),
-									_1: {ctor: '[]'}
 								}),
 							_1: {
 								ctor: '::',
-								_0: autoClerkBanner,
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('clerk-paused-row'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: A3(_Gizra$circuit_bid$Pages_Clerk_View$pausedMessageEditor, language, _p151.status, model.pausedMessageInput),
+										_1: {ctor: '[]'}
+									}),
 								_1: {
 									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('clerk-grid'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: clerkLeftCol,
-											_1: {
+									_0: autoClerkBanner,
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
 												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('clerk-mid-col'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: clerkappView,
-														_1: {
+												_0: _elm_lang$html$Html_Attributes$class('clerk-grid'),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: clerkLeftCol,
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{
 															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('clerk-mid-bottom'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('clerk-bids-stack'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
+															_0: _elm_lang$html$Html_Attributes$class('clerk-mid-col'),
+															_1: {ctor: '[]'}
+														},
+														{
+															ctor: '::',
+															_0: clerkappView,
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$div,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('clerk-mid-bottom'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$div,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('clerk-bids-stack'),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$div,
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html_Attributes$class('card rc-card mid-card bids-wrap'),
+																						_1: {ctor: '[]'}
+																					},
+																					{
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$div,
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$class('card-head'),
+																								_1: {ctor: '[]'}
+																							},
+																							{
+																								ctor: '::',
+																								_0: A2(
+																									_elm_lang$html$Html$span,
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Attributes$class('stripe stripe-gold'),
+																										_1: {ctor: '[]'}
+																									},
+																									{ctor: '[]'}),
+																								_1: {
+																									ctor: '::',
+																									_0: A2(
+																										_elm_lang$html$Html$span,
+																										{
+																											ctor: '::',
+																											_0: _elm_lang$html$Html_Attributes$class('card-title'),
+																											_1: {ctor: '[]'}
+																										},
+																										{
+																											ctor: '::',
+																											_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Bids),
+																											_1: {ctor: '[]'}
+																										}),
+																									_1: {ctor: '[]'}
+																								}
+																							}),
+																						_1: {
+																							ctor: '::',
+																							_0: bidsList,
+																							_1: {ctor: '[]'}
+																						}
+																					}),
+																				_1: {
+																					ctor: '::',
+																					_0: bookBidsCard,
+																					_1: {ctor: '[]'}
+																				}
+																			}),
+																		_1: {
 																			ctor: '::',
 																			_0: A2(
 																				_elm_lang$html$Html$div,
 																				{
 																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class('card rc-card mid-card bids-wrap'),
+																					_0: _elm_lang$html$Html_Attributes$class('card rc-card mid-card closed-wrap'),
 																					_1: {ctor: '[]'}
 																				},
 																				{
@@ -82663,7 +82938,7 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 																									},
 																									{
 																										ctor: '::',
-																										_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Bids),
+																										_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Closed),
 																										_1: {ctor: '[]'}
 																									}),
 																								_1: {ctor: '[]'}
@@ -82671,107 +82946,51 @@ var _Gizra$circuit_bid$Pages_Clerk_View$clerkSaleView = F7(
 																						}),
 																					_1: {
 																						ctor: '::',
-																						_0: bidsList,
+																						_0: A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p151.currency, modelBackend, _p152, items, _p151.item, model.editableBidderIds),
 																						_1: {ctor: '[]'}
 																					}
 																				}),
-																			_1: {
-																				ctor: '::',
-																				_0: bookBidsCard,
-																				_1: {ctor: '[]'}
-																			}
-																		}),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$div,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('card rc-card mid-card closed-wrap'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$div,
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('card-head'),
-																						_1: {ctor: '[]'}
-																					},
-																					{
-																						ctor: '::',
-																						_0: A2(
-																							_elm_lang$html$Html$span,
-																							{
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('stripe stripe-gold'),
-																								_1: {ctor: '[]'}
-																							},
-																							{ctor: '[]'}),
-																						_1: {
-																							ctor: '::',
-																							_0: A2(
-																								_elm_lang$html$Html$span,
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Attributes$class('card-title'),
-																									_1: {ctor: '[]'}
-																								},
-																								{
-																									ctor: '::',
-																									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Closed),
-																									_1: {ctor: '[]'}
-																								}),
-																							_1: {ctor: '[]'}
-																						}
-																					}),
-																				_1: {
-																					ctor: '::',
-																					_0: A8(_Gizra$circuit_bid$Pages_Clerk_Utils$closedItems, softBidderLimit, language, _p151.currency, modelBackend, _p152, items, _p151.item, model.editableBidderIds),
-																					_1: {ctor: '[]'}
-																				}
-																			}),
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_1: {ctor: '[]'}
-														}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('clerk-right-col'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p151.currency, _p152, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend),
-															_1: {
-																ctor: '::',
-																_0: A6(_Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard, language, modelBackend, _p152, model, clerkMsgPanel, stream),
-																_1: {
-																	ctor: '::',
-																	_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkBroadcastCard, currentDate, softBidderLimit, language, _p151.currency, modelBackend, _p152, model.connectedUsersSearch),
-																	_1: {ctor: '[]'}
-																}
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_1: {ctor: '[]'}
 															}
 														}),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('clerk-right-col'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A5(_Gizra$circuit_bid$Pages_Clerk_Utils$creditRequestTable, language, _p151.currency, _p152, _Gizra$circuit_bid$Pages_Clerk_Model$UpdateCreditRequestStatus, modelBackend),
+																_1: {
+																	ctor: '::',
+																	_0: A6(_Gizra$circuit_bid$Pages_Clerk_Utils$viewMessagesCard, language, modelBackend, _p152, model, clerkMsgPanel, stream),
+																	_1: {
+																		ctor: '::',
+																		_0: A7(_Gizra$circuit_bid$Pages_Clerk_View$clerkBroadcastCard, currentDate, softBidderLimit, language, _p151.currency, modelBackend, _p152, model.connectedUsersSearch),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}),
+														_1: {ctor: '[]'}
+													}
 												}
-											}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A3(
-											_Gizra$circuit_bid$Pages_Clerk_View$viewDebug,
-											config,
-											{ctor: '_Tuple2', _0: _p152, _1: _p151},
-											model),
-										_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A3(
+												_Gizra$circuit_bid$Pages_Clerk_View$viewDebug,
+												config,
+												{ctor: '_Tuple2', _0: _p152, _1: _p151},
+												model),
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
