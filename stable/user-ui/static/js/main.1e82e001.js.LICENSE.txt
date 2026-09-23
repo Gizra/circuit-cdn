@@ -19,11 +19,11 @@
  */
 
 /*!
-* tabbable 6.3.0
+* tabbable 6.2.0
 * @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
 */
 
-/*! js-cookie v3.0.8 | MIT */
+/*! js-cookie v3.0.5 | MIT */
 
 /**
  * @license React
