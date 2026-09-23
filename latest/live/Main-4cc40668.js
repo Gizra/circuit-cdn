@@ -44729,6 +44729,10 @@ var _Gizra$circuit_bid$Pusher_Health_Model$shouldProbe = F2(
 			{isLive: isLive, lotOpen: true},
 			model);
 	});
+var _Gizra$circuit_bid$Pusher_Health_Model$retryDue = F2(
+	function (policy, model) {
+		return policy.probeFirst && (_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) || (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0))));
+	});
 var _Gizra$circuit_bid$Pusher_Health_Model$tick = F2(
 	function (now, model) {
 		var updated = _elm_lang$core$Native_Utils.update(
@@ -44812,7 +44816,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$Red = {ctor: 'Red'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Yellow = {ctor: 'Yellow'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Green = {ctor: 'Green'};
 var _Gizra$circuit_bid$Pusher_Health_Model$level = function (model) {
-	var missedForLong = (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) && A2(
+	var missedForLong = (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) && ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) && A2(
 		_elm_lang$core$Maybe$withDefault,
 		false,
 		A2(
@@ -44820,7 +44824,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$level = function (model) {
 			function (t) {
 				return _elm_lang$core$Native_Utils.cmp(model.now - t, 10000) > 0;
 			},
-			model.lastEventAt));
+			model.lastEventAt)));
 	var wsRtt = A2(_elm_lang$core$Maybe$withDefault, 0, model.wsRttMs);
 	var httpRtt = _Gizra$circuit_bid$Pusher_Health_Model$probeIsFresh(model) ? A2(_elm_lang$core$Maybe$withDefault, 0, model.httpRttMs) : 0;
 	var lag = A2(_elm_lang$core$Maybe$withDefault, 0, model.lagMs);
@@ -51742,7 +51746,7 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 											})
 									}),
 								_1: probe(modelTicked)
-							} : ((_p21.probeFirst && ((!_elm_lang$core$Native_Utils.eq(ticked.staleSince, _elm_lang$core$Maybe$Nothing)) && (_elm_lang$core$Native_Utils.eq(ticked.resync, _elm_lang$core$Maybe$Nothing) && _elm_lang$core$Native_Utils.eq(ticked.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)))) ? A4(
+							} : (A2(_Gizra$circuit_bid$Pusher_Health_Model$retryDue, _p21, ticked) ? A4(
 								_Gizra$circuit_bid$App_Health$updateHealth,
 								updater,
 								backendUrl,
