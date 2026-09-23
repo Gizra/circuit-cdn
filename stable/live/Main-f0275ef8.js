@@ -35108,6 +35108,56 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'No selected item', dutch: 'Geen geselecteerd item', german: 'No selected item', hebrew: 'אין פריט נבחר', russian: 'Пункт не выбран', chinese: '未选择的项目', french: 'Aucun article sélectionné'};
 				case 'NotConnected':
 					return {english: 'Not Connected', dutch: 'Niet verbonden', german: 'nicht verbunden', hebrew: 'לא מחובר', russian: 'Не подключен', chinese: '未连接', french: 'Non connecté'};
+				case 'BidNotSentLiveFeedStale':
+					return {english: 'Your bid was not sent: the live feed is reconnecting. Please try again in a moment.', dutch: 'Uw bod is niet verzonden: de liveverbinding wordt hersteld. Probeer het zo opnieuw.', german: 'Ihr Gebot wurde nicht gesendet: die Live-Verbindung wird wiederhergestellt. Bitte versuchen Sie es gleich noch einmal.', hebrew: 'הצעתך לא נשלחה: החיבור החי מתחבר מחדש. נסו שוב בעוד רגע.', russian: 'Ваша ставка не отправлена: восстанавливается прямое соединение. Повторите попытку через мгновение.', chinese: '您的出价未发送：正在重新连接实时数据。请稍后再试。', french: 'Votre offre n\'a pas été envoyée : la connexion en direct se rétablit. Veuillez réessayer dans un instant.'};
+				case 'BidOutcomeCheckingMessage':
+					return {english: 'We have not received a confirmation for your bid yet. Checking with the server…', dutch: 'We hebben nog geen bevestiging van uw bod ontvangen. We controleren het bij de server…', german: 'Wir haben noch keine Bestätigung für Ihr Gebot erhalten. Wir prüfen beim Server…', hebrew: 'טרם התקבל אישור להצעתך. בודקים מול השרת…', russian: 'Подтверждение вашей ставки ещё не получено. Проверяем на сервере…', chinese: '尚未收到您出价的确认。正在向服务器核实…', french: 'Nous n\'avons pas encore reçu de confirmation pour votre offre. Vérification auprès du serveur…'};
+				case 'BidOutcomeUnknownMessage':
+					var amountWithCurrency = A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p4._0, _p4._1);
+					return {
+						english: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'We could not confirm your bid of ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, '. Please check the current price and bid again if needed.')),
+						dutch: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'We konden uw bod van ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' niet bevestigen. Controleer de huidige prijs en bied zo nodig opnieuw.')),
+						german: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'Wir konnten Ihr Gebot von ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' nicht bestätigen. Bitte prüfen Sie den aktuellen Preis und bieten Sie gegebenenfalls erneut.')),
+						hebrew: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'לא הצלחנו לאשר את הצעתך בסך ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, '. בדקו את המחיר הנוכחי והציעו שוב במידת הצורך.')),
+						russian: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'Не удалось подтвердить вашу ставку ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, '. Проверьте текущую цену и при необходимости сделайте ставку снова.')),
+						chinese: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'我们无法确认您 ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, ' 的出价。请查看当前价格，如有需要请重新出价。')),
+						french: A2(
+							_elm_lang$core$Basics_ops['++'],
+							'Nous n\'avons pas pu confirmer votre offre de ',
+							A2(_elm_lang$core$Basics_ops['++'], amountWithCurrency, '. Vérifiez le prix actuel et enchérissez de nouveau si nécessaire.'))
+					};
+				case 'BiddingPausedLiveFeed':
+					return {english: 'Bidding is paused while we reconnect to the live feed', dutch: 'Bieden is gepauzeerd terwijl we de liveverbinding herstellen', german: 'Das Bieten ist pausiert, während die Live-Verbindung wiederhergestellt wird', hebrew: 'ההצעות מושהות בזמן שהחיבור החי מתחבר מחדש', russian: 'Ставки приостановлены, пока восстанавливается прямое соединение', chinese: '正在重新连接实时数据，出价暂停', french: 'Les enchères sont en pause pendant le rétablissement de la connexion en direct'};
+				case 'BiddingResumesShortly':
+					return {english: 'Bidding resumes as soon as the feed is back.', dutch: 'Bieden gaat verder zodra de verbinding terug is.', german: 'Das Bieten geht weiter, sobald die Verbindung wieder steht.', hebrew: 'ההצעות יתחדשו ברגע שהחיבור יחזור.', russian: 'Ставки возобновятся, как только соединение восстановится.', chinese: '连接恢复后即可继续出价。', french: 'Les enchères reprennent dès que la connexion est rétablie.'};
+				case 'LiveFeedCatchingUp':
+					return {english: 'Catching up with the live feed…', dutch: 'De liveverbinding wordt bijgewerkt…', german: 'Live-Daten werden nachgeladen…', hebrew: 'מתעדכנים מהשידור החי…', russian: 'Обновляем данные…', chinese: '正在同步实时数据…', french: 'Mise à jour du direct…'};
+				case 'LiveFeedReconnecting':
+					return {english: 'Reconnecting to the live feed…', dutch: 'Opnieuw verbinden met de liveverbinding…', german: 'Verbindung zum Live-Feed wird wiederhergestellt…', hebrew: 'מתחברים מחדש לשידור החי…', russian: 'Восстанавливаем прямое соединение…', chinese: '正在重新连接实时数据…', french: 'Reconnexion au direct…'};
+				case 'LiveFeedSlow':
+					return {english: 'The live feed is slow right now. Bids may take longer to be confirmed.', dutch: 'De liveverbinding is nu traag. Het bevestigen van biedingen kan langer duren.', german: 'Die Live-Verbindung ist gerade langsam. Gebote werden möglicherweise später bestätigt.', hebrew: 'השידור החי איטי כרגע. אישור ההצעות עשוי להתעכב.', russian: 'Прямое соединение сейчас работает медленно. Подтверждение ставок может занять больше времени.', chinese: '实时数据目前较慢，出价确认可能需要更长时间。', french: 'Le direct est lent en ce moment. La confirmation des offres peut prendre plus de temps.'};
+				case 'LiveFeedUpToDate':
+					return {english: 'Up to date — the live feed caught up.', dutch: 'Bijgewerkt — de liveverbinding is weer actueel.', german: 'Auf dem neuesten Stand — der Live-Feed hat aufgeholt.', hebrew: 'מעודכן — השידור החי הדביק את הפער.', russian: 'Данные актуальны — прямое соединение восстановлено.', chinese: '已同步——实时数据已更新。', french: 'À jour — le direct a rattrapé son retard.'};
+				case 'LiveFeedSlowTitle':
+					return {english: 'Live feed: slow connection', dutch: 'Liveverbinding: trage verbinding', german: 'Live-Verbindung: langsame Verbindung', hebrew: 'שידור חי: חיבור איטי', russian: 'Прямое соединение: медленная связь', chinese: '实时数据：连接缓慢', french: 'Direct : connexion lente'};
 				case 'NotSold':
 					return {english: 'Not Sold', dutch: 'Niet verkocht', german: 'Nicht verkauft', hebrew: 'לא נמכר', russian: 'Не продано', chinese: '未出售', french: 'Non vendu'};
 				case 'NowBidding':
@@ -35307,6 +35357,8 @@ var _Gizra$circuit_bid$Translate$translateString = F2(
 					return {english: 'Reload every connected client? All bidder, clerk and room pages of this sale will reload within ~20 seconds — including this one.', dutch: 'Alle verbonden clients herladen? Alle bieder-, clerk- en zaalpagina\'s van deze veiling worden binnen ~20 seconden herladen — ook deze.', german: 'Alle verbundenen Clients neu laden? Alle Bieter-, Clerk- und Saalseiten dieser Auktion werden innerhalb von ~20 Sekunden neu geladen — auch diese.', hebrew: 'לטעון מחדש את כל הלקוחות המחוברים? כל דפי המציעים, הפקידים והאולם של מכירה זו ייטענו מחדש תוך כ-20 שניות — כולל דף זה.', russian: 'Перезагрузить всех подключённых клиентов? Все страницы участников, клерков и зала этой продажи перезагрузятся в течение ~20 секунд — включая эту.', chinese: '重新加载所有已连接的客户端？此销售的所有竞买人、记录员和拍卖厅页面将在约 20 秒内重新加载——包括本页面。', french: 'Recharger tous les clients connectés ? Toutes les pages enchérisseur, clerc et salle de cette vente seront rechargées sous ~20 secondes — y compris celle-ci.'};
 				case 'ReloadClientsConfirmYes':
 					return {english: 'Yes, reload all', dutch: 'Ja, alles herladen', german: 'Ja, alle neu laden', hebrew: 'כן, טען הכל מחדש', russian: 'Да, перезагрузить все', chinese: '是，全部重新加载', french: 'Oui, tout recharger'};
+				case 'ReloadClientsTooltip':
+					return {english: 'Reloads every bidder, clerk and room page of this sale within about 20 seconds — including this one.', dutch: 'Herlaadt elke bieder-, clerk- en zaalpagina van deze veiling binnen ongeveer 20 seconden — ook deze.', german: 'Lädt jede Bieter-, Clerk- und Saalseite dieser Auktion innerhalb von etwa 20 Sekunden neu — auch diese.', hebrew: 'טוען מחדש כל דף מציע, פקיד ואולם של מכירה זו תוך כ-20 שניות — כולל דף זה.', russian: 'Перезагружает каждую страницу участника, клерка и зала этой продажи примерно за 20 секунд — включая эту.', chinese: '约 20 秒内重新加载此销售的所有竞买人、记录员和拍卖厅页面——包括本页面。', french: 'Recharge chaque page enchérisseur, clerc et salle de cette vente en environ 20 secondes — y compris celle-ci.'};
 				case 'ReloadSale':
 					return {english: 'Re-load Sale', dutch: 'Uitverkoop opnieuw laden', german: 'Auktion neu laden', hebrew: 'טען מכירה מחדש', russian: 'Перезагрузить продажу', chinese: '重新加载销售', french: 'Recharger la vente'};
 				case 'RequestMoreCredit':
@@ -39988,6 +40040,7 @@ var _Gizra$circuit_bid$Translate$Retry = {ctor: 'Retry'};
 var _Gizra$circuit_bid$Translate$ResetPassword = {ctor: 'ResetPassword'};
 var _Gizra$circuit_bid$Translate$RequestMoreCredit = {ctor: 'RequestMoreCredit'};
 var _Gizra$circuit_bid$Translate$ReloadSale = {ctor: 'ReloadSale'};
+var _Gizra$circuit_bid$Translate$ReloadClientsTooltip = {ctor: 'ReloadClientsTooltip'};
 var _Gizra$circuit_bid$Translate$ReloadClientsConfirmYes = {ctor: 'ReloadClientsConfirmYes'};
 var _Gizra$circuit_bid$Translate$ReloadClientsConfirm = {ctor: 'ReloadClientsConfirm'};
 var _Gizra$circuit_bid$Translate$ReloadClients = {ctor: 'ReloadClients'};
@@ -40232,6 +40285,19 @@ var _Gizra$circuit_bid$Translate$BidRejectedDuplicateAmountMessage = F2(
 	function (a, b) {
 		return {ctor: 'BidRejectedDuplicateAmountMessage', _0: a, _1: b};
 	});
+var _Gizra$circuit_bid$Translate$LiveFeedSlowTitle = {ctor: 'LiveFeedSlowTitle'};
+var _Gizra$circuit_bid$Translate$LiveFeedUpToDate = {ctor: 'LiveFeedUpToDate'};
+var _Gizra$circuit_bid$Translate$LiveFeedSlow = {ctor: 'LiveFeedSlow'};
+var _Gizra$circuit_bid$Translate$LiveFeedReconnecting = {ctor: 'LiveFeedReconnecting'};
+var _Gizra$circuit_bid$Translate$LiveFeedCatchingUp = {ctor: 'LiveFeedCatchingUp'};
+var _Gizra$circuit_bid$Translate$BiddingResumesShortly = {ctor: 'BiddingResumesShortly'};
+var _Gizra$circuit_bid$Translate$BiddingPausedLiveFeed = {ctor: 'BiddingPausedLiveFeed'};
+var _Gizra$circuit_bid$Translate$BidOutcomeUnknownMessage = F2(
+	function (a, b) {
+		return {ctor: 'BidOutcomeUnknownMessage', _0: a, _1: b};
+	});
+var _Gizra$circuit_bid$Translate$BidOutcomeCheckingMessage = {ctor: 'BidOutcomeCheckingMessage'};
+var _Gizra$circuit_bid$Translate$BidNotSentLiveFeedStale = {ctor: 'BidNotSentLiveFeedStale'};
 var _Gizra$circuit_bid$Translate$BidRejectedOwnMessage = F2(
 	function (a, b) {
 		return {ctor: 'BidRejectedOwnMessage', _0: a, _1: b};
@@ -40306,6 +40372,11 @@ var _Gizra$circuit_bid$Translate$AccountPendingApproval = {ctor: 'AccountPending
 var _Gizra$circuit_bid$Translate$AccessDenied = {ctor: 'AccessDenied'};
 var _Gizra$circuit_bid$Translate$AcceptTerms = {ctor: 'AcceptTerms'};
 
+var _Gizra$circuit_bid$Alert$BidOutcomeUnknown = function (a) {
+	return {ctor: 'BidOutcomeUnknown', _0: a};
+};
+var _Gizra$circuit_bid$Alert$BidOutcomeChecking = {ctor: 'BidOutcomeChecking'};
+var _Gizra$circuit_bid$Alert$BidNotSentFeedStale = {ctor: 'BidNotSentFeedStale'};
 var _Gizra$circuit_bid$Alert$UnrecognizedCredentials = {ctor: 'UnrecognizedCredentials'};
 var _Gizra$circuit_bid$Alert$OwnBidRevokedToFloor = function (a) {
 	return {ctor: 'OwnBidRevokedToFloor', _0: a};
@@ -40427,8 +40498,17 @@ var _Gizra$circuit_bid$Alert$viewAlert = F3(
 					viewAlertHelper,
 					_Gizra$circuit_bid$Alert$Error,
 					A2(_Gizra$circuit_bid$Translate$OwnBidRevokedToFloorMessage, _p2._0, currency));
-			default:
+			case 'UnrecognizedCredentials':
 				return A2(viewAlertHelper, _Gizra$circuit_bid$Alert$Error, _Gizra$circuit_bid$Translate$UnrecognizedCredentialsMessage);
+			case 'BidNotSentFeedStale':
+				return A2(viewAlertHelper, _Gizra$circuit_bid$Alert$Notice, _Gizra$circuit_bid$Translate$BidNotSentLiveFeedStale);
+			case 'BidOutcomeChecking':
+				return A2(viewAlertHelper, _Gizra$circuit_bid$Alert$Notice, _Gizra$circuit_bid$Translate$BidOutcomeCheckingMessage);
+			default:
+				return A2(
+					viewAlertHelper,
+					_Gizra$circuit_bid$Alert$Error,
+					A2(_Gizra$circuit_bid$Translate$BidOutcomeUnknownMessage, _p2._0, currency));
 		}
 	});
 
@@ -43710,6 +43790,8 @@ var _Gizra$circuit_bid$Pages_Sale_Model$emptyModel = {
 	numberOfCarouselItems: 5,
 	queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest,
 	queuedRequestStartTime: _elm_lang$core$Maybe$Nothing,
+	queuedBid: _elm_lang$core$Maybe$Nothing,
+	bidOutcomePending: _elm_lang$core$Maybe$Nothing,
 	clerkHighestQueuedBidData: _Gizra$circuit_bid$Pusher_Model$emptyClerkQueuedBidsUpdateData,
 	asyncGoingItemStatus: false,
 	publicMessages: _krisajenkins$remotedata$RemoteData$NotAsked,
@@ -43764,7 +43846,11 @@ var _Gizra$circuit_bid$Pages_Sale_Model$Model = function (a) {
 																											return function (_2) {
 																												return function (_3) {
 																													return function (_4) {
-																														return {sale: a, item: b, nextBidIncrements: c, carouselPosition: d, numberOfCarouselItems: e, queuedRequestState: f, queuedRequestStartTime: g, clerkHighestQueuedBidData: h, asyncGoingItemStatus: i, publicMessages: j, privateMessages: k, privateMessageInput: l, privateMessagesSendRequest: m, privateUnread: n, alert: o, login: p, browserInfo: q, itemDetailsPopupOpen: r, itemDetailsPopupHovered: s, itemDetailsPopupOpenItemId: t, sliderPopupPinned: u, imageCarouselIndex: v, imageCarouselPrev: w, imageCarouselItemId: x, imageCarouselPaused: y, descriptionPopupOpen: z, loginFormExpanded: _1, selectedCurrency: _2, currencyMenuOpen: _3, pendingSaleUpdate: _4};
+																														return function (_5) {
+																															return function (_6) {
+																																return {sale: a, item: b, nextBidIncrements: c, carouselPosition: d, numberOfCarouselItems: e, queuedRequestState: f, queuedRequestStartTime: g, clerkHighestQueuedBidData: h, asyncGoingItemStatus: i, publicMessages: j, privateMessages: k, privateMessageInput: l, privateMessagesSendRequest: m, privateUnread: n, alert: o, login: p, browserInfo: q, itemDetailsPopupOpen: r, itemDetailsPopupHovered: s, itemDetailsPopupOpenItemId: t, sliderPopupPinned: u, imageCarouselIndex: v, imageCarouselPrev: w, imageCarouselItemId: x, imageCarouselPaused: y, descriptionPopupOpen: z, loginFormExpanded: _1, selectedCurrency: _2, currencyMenuOpen: _3, pendingSaleUpdate: _4, queuedBid: _5, bidOutcomePending: _6};
+																															};
+																														};
 																													};
 																												};
 																											};
@@ -43795,6 +43881,10 @@ var _Gizra$circuit_bid$Pages_Sale_Model$Model = function (a) {
 		};
 	};
 };
+var _Gizra$circuit_bid$Pages_Sale_Model$PendingBidOutcome = F3(
+	function (a, b, c) {
+		return {taskId: a, itemId: b, amount: c};
+	});
 var _Gizra$circuit_bid$Pages_Sale_Model$PrivateChatSeen = {ctor: 'PrivateChatSeen'};
 var _Gizra$circuit_bid$Pages_Sale_Model$HandleSubmittedPrivateMessage = function (a) {
 	return {ctor: 'HandleSubmittedPrivateMessage', _0: a};
@@ -43913,17 +44003,29 @@ var _Gizra$circuit_bid$Pusher_Health_Model$finishResync = F3(
 	function (result, now, model) {
 		var _p0 = model.resync;
 		if (_p0.ctor === 'Just') {
+			var _p2 = _p0._0;
 			return _elm_lang$core$Native_Utils.update(
 				model,
 				{
 					resync: _elm_lang$core$Maybe$Nothing,
 					lastResync: _elm_lang$core$Maybe$Just(
-						{ctor: '_Tuple3', _0: now, _1: _p0._0.level, _2: result}),
+						{ctor: '_Tuple3', _0: now, _1: _p2.level, _2: result}),
 					missedEvents: _elm_lang$core$Native_Utils.eq(
 						result,
 						_elm_lang$core$Result$Ok(
 							{ctor: '_Tuple0'})) ? 0 : model.missedEvents,
-					staleAgeStreak: 0
+					staleSince: _elm_lang$core$Native_Utils.eq(
+						result,
+						_elm_lang$core$Result$Ok(
+							{ctor: '_Tuple0'})) ? _elm_lang$core$Maybe$Nothing : model.staleSince,
+					lastResumeSyncedAt: function () {
+						var _p1 = {ctor: '_Tuple2', _0: _p2.reason, _1: result};
+						if ((((_p1.ctor === '_Tuple2') && (_p1._0.ctor === 'Resumed')) && (_p1._1.ctor === 'Ok')) && (_p1._1._0.ctor === '_Tuple0')) {
+							return _elm_lang$core$Maybe$Just(now);
+						} else {
+							return model.lastResumeSyncedAt;
+						}
+					}()
 				});
 		} else {
 			return model;
@@ -43937,6 +44039,65 @@ var _Gizra$circuit_bid$Pusher_Health_Model$secondsSinceLastEvent = function (mod
 		},
 		model.lastEventAt);
 };
+var _Gizra$circuit_bid$Pusher_Health_Model$jitterMaxFor = F2(
+	function (policy, reason) {
+		var _p3 = reason;
+		switch (_p3.ctor) {
+			case 'Reconnected':
+				return policy.reconnectJitterMaxMs;
+			case 'Resumed':
+				return policy.reconnectJitterMaxMs;
+			default:
+				return policy.gapJitterMaxMs;
+		}
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$clientSeed = function (model) {
+	return A2(
+		_elm_lang$core$Maybe$map,
+		_elm_lang$core$Basics$abs,
+		A2(
+			_elm_lang$core$Maybe$andThen,
+			function (_p4) {
+				return _elm_lang$core$Result$toMaybe(
+					_elm_lang$core$String$toInt(_p4));
+			},
+			A2(
+				_elm_lang$core$Maybe$andThen,
+				function (_p5) {
+					return _elm_lang$core$List$head(
+						A2(_elm_lang$core$String$split, '.', _p5));
+				},
+				model.socketId)));
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$sampled = F2(
+	function (every, model) {
+		return (_elm_lang$core$Native_Utils.cmp(every, 1) < 1) || A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (seed) {
+					return _elm_lang$core$Native_Utils.eq(
+						A2(_elm_lang$core$Basics_ops['%'], seed, every),
+						0);
+				},
+				_Gizra$circuit_bid$Pusher_Health_Model$clientSeed(model)));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$quietDither = F2(
+	function (policy, model) {
+		var _p6 = {
+			ctor: '_Tuple2',
+			_0: _Gizra$circuit_bid$Pusher_Health_Model$clientSeed(model),
+			_1: _elm_lang$core$Basics$round(policy.quietDitherMaxMs)
+		};
+		if ((_p6.ctor === '_Tuple2') && (_p6._0.ctor === 'Just')) {
+			var _p7 = _p6._1;
+			return (_elm_lang$core$Native_Utils.cmp(_p7, 0) > 0) ? _elm_lang$core$Basics$toFloat(
+				A2(_elm_lang$core$Basics_ops['%'], _p6._0._0, _p7)) : 0;
+		} else {
+			return 0;
+		}
+	});
 var _Gizra$circuit_bid$Pusher_Health_Model$notePong = F2(
 	function (rtt, model) {
 		return _elm_lang$core$Native_Utils.update(
@@ -43953,49 +44114,77 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteError = F2(
 				lastError: _elm_lang$core$Maybe$Just(error)
 			});
 	});
+var _Gizra$circuit_bid$Pusher_Health_Model$isSuspended = function (model) {
+	return !_elm_lang$core$Native_Utils.eq(model.hiddenSince, _elm_lang$core$Maybe$Nothing);
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$markStale = F2(
+	function (at, model) {
+		var _p8 = model.staleSince;
+		if (_p8.ctor === 'Just') {
+			return model;
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{
+					staleSince: _elm_lang$core$Maybe$Just(at)
+				});
+		}
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel = function (channel) {
+	return A2(_elm_lang$core$String$startsWith, 'private-user-', channel);
+};
 var _Gizra$circuit_bid$Pusher_Health_Model$noteChannelSeq = F2(
 	function (meta, model) {
-		var _p1 = {ctor: '_Tuple2', _0: meta.channel, _1: meta.cseq};
-		if (((_p1.ctor === '_Tuple2') && (_p1._0.ctor === 'Just')) && (_p1._1.ctor === 'Just')) {
-			var _p7 = _p1._1._0;
-			var _p6 = _p1._0._0;
+		var _p9 = {ctor: '_Tuple2', _0: meta.channel, _1: meta.cseq};
+		if (((_p9.ctor === '_Tuple2') && (_p9._0.ctor === 'Just')) && (_p9._1.ctor === 'Just')) {
+			var _p15 = _p9._1._0;
+			var _p14 = _p9._0._0;
 			var epoch = A2(_elm_lang$core$Maybe$withDefault, 0, meta.epoch);
-			var _p2 = function () {
-				var _p3 = A2(_elm_lang$core$Dict$get, _p6, model.lastCseqByChannel);
-				if (_p3.ctor === 'Just') {
-					var _p5 = _p3._0._0;
-					var _p4 = _p3._0._1;
-					return (!_elm_lang$core$Native_Utils.eq(epoch, _p5)) ? {
-						ctor: '_Tuple2',
-						_0: _p7 - 1,
-						_1: {ctor: '_Tuple2', _0: epoch, _1: _p7}
-					} : ((_elm_lang$core$Native_Utils.cmp(_p7, _p4) > 0) ? {
-						ctor: '_Tuple2',
-						_0: (_p7 - _p4) - 1,
-						_1: {ctor: '_Tuple2', _0: epoch, _1: _p7}
-					} : {
-						ctor: '_Tuple2',
+			var _p10 = function () {
+				var _p11 = A2(_elm_lang$core$Dict$get, _p14, model.lastCseqByChannel);
+				if (_p11.ctor === 'Just') {
+					var _p13 = _p11._0._0;
+					var _p12 = _p11._0._1;
+					return (!_elm_lang$core$Native_Utils.eq(epoch, _p13)) ? {
+						ctor: '_Tuple3',
 						_0: 0,
-						_1: {ctor: '_Tuple2', _0: _p5, _1: _p4}
+						_1: {ctor: '_Tuple2', _0: epoch, _1: _p15},
+						_2: true
+					} : ((_elm_lang$core$Native_Utils.cmp(_p15, _p12) > 0) ? {
+						ctor: '_Tuple3',
+						_0: (_p15 - _p12) - 1,
+						_1: {ctor: '_Tuple2', _0: epoch, _1: _p15},
+						_2: false
+					} : {
+						ctor: '_Tuple3',
+						_0: 0,
+						_1: {ctor: '_Tuple2', _0: _p13, _1: _p12},
+						_2: false
 					});
 				} else {
 					return {
-						ctor: '_Tuple2',
+						ctor: '_Tuple3',
 						_0: 0,
-						_1: {ctor: '_Tuple2', _0: epoch, _1: _p7}
+						_1: {ctor: '_Tuple2', _0: epoch, _1: _p15},
+						_2: false
 					};
 				}
 			}();
-			var gap = _p2._0;
-			var watermark = _p2._1;
+			var gap = _p10._0;
+			var watermark = _p10._1;
+			var restarted = _p10._2;
+			var behind = ((_elm_lang$core$Native_Utils.cmp(gap, 0) > 0) || restarted) && (!_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p14));
 			return {
 				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{
-						lastCseqByChannel: A3(_elm_lang$core$Dict$insert, _p6, watermark, model.lastCseqByChannel),
-						missedEvents: model.missedEvents + gap
-					}),
+				_0: (behind ? _Gizra$circuit_bid$Pusher_Health_Model$markStale(meta.clientMs) : _elm_lang$core$Basics$identity)(
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							lastCseqByChannel: A3(_elm_lang$core$Dict$insert, _p14, watermark, model.lastCseqByChannel),
+							missedEvents: model.missedEvents + gap,
+							bridgeRestarts: restarted ? (model.bridgeRestarts + 1) : model.bridgeRestarts,
+							lastEpochGap: restarted ? (_p15 - 1) : model.lastEpochGap
+						})),
 				_1: gap
 			};
 		} else {
@@ -44056,9 +44245,70 @@ var _Gizra$circuit_bid$Pusher_Health_Model$entityKey = function (meta) {
 var _Gizra$circuit_bid$Pusher_Health_Model$isConnectedUsersEvent = function (eventType) {
 	return A2(_elm_lang$core$String$startsWith, 'connected_users__', eventType);
 };
+var _Gizra$circuit_bid$Pusher_Health_Model$severityToString = function (severity) {
+	var _p16 = severity;
+	switch (_p16.ctor) {
+		case 'Breadcrumb':
+			return 'info';
+		case 'Info':
+			return 'info';
+		case 'Warning':
+			return 'warning';
+		default:
+			return 'error';
+	}
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$reasonDetail = function (reason) {
+	var _p17 = reason;
+	switch (_p17.ctor) {
+		case 'SeqGap':
+			return {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'gap',
+					_1: _elm_lang$core$Json_Encode$int(_p17._0)
+				},
+				_1: {ctor: '[]'}
+			};
+		case 'SubscriptionError':
+			return {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'error',
+					_1: _elm_lang$core$Json_Encode$string(_p17._0)
+				},
+				_1: {ctor: '[]'}
+			};
+		case 'Resumed':
+			return {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'hiddenMs',
+					_1: _elm_lang$core$Json_Encode$float(_p17._0)
+				},
+				_1: {ctor: '[]'}
+			};
+		default:
+			return {ctor: '[]'};
+	}
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$isExpectedReason = function (reason) {
+	var _p18 = reason;
+	switch (_p18.ctor) {
+		case 'BridgeRestart':
+			return true;
+		case 'Resumed':
+			return true;
+		default:
+			return false;
+	}
+};
 var _Gizra$circuit_bid$Pusher_Health_Model$reasonToString = function (reason) {
-	var _p8 = reason;
-	switch (_p8.ctor) {
+	var _p19 = reason;
+	switch (_p19.ctor) {
 		case 'Manual':
 			return 'manual';
 		case 'Reconnected':
@@ -44067,29 +44317,46 @@ var _Gizra$circuit_bid$Pusher_Health_Model$reasonToString = function (reason) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				'seq gap ',
-				_elm_lang$core$Basics$toString(_p8._0));
-		case 'StaleAge':
-			return A2(
-				_elm_lang$core$Basics_ops['++'],
-				'stale event ',
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$core$Basics$toString(
-						_elm_lang$core$Basics$round(_p8._0)),
-					'ms'));
-		case 'Quiet':
-			return 'quiet';
+				_elm_lang$core$Basics$toString(_p19._0));
 		case 'ProbeDivergence':
 			return 'probe divergence';
 		case 'SubscriptionError':
-			return A2(_elm_lang$core$Basics_ops['++'], 'subscription error ', _p8._0);
-		default:
+			return A2(_elm_lang$core$Basics_ops['++'], 'subscription error ', _p19._0);
+		case 'ConnectionFailed':
 			return 'connection failed';
+		case 'BidTimeout':
+			return 'bid timeout';
+		case 'StaleRetry':
+			return 'stale retry';
+		case 'BridgeRestart':
+			return 'bridge restart';
+		default:
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				'resumed after ',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$core$Basics$toString(
+						_elm_lang$core$Basics$round(_p19._0 / 1000)),
+					's'));
+	}
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$reasonClass = function (reason) {
+	var _p20 = reason;
+	switch (_p20.ctor) {
+		case 'SeqGap':
+			return 'seq gap';
+		case 'SubscriptionError':
+			return 'subscription error';
+		case 'Resumed':
+			return 'resumed';
+		default:
+			return _Gizra$circuit_bid$Pusher_Health_Model$reasonToString(reason);
 	}
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString = function (resyncLevel) {
-	var _p9 = resyncLevel;
-	switch (_p9.ctor) {
+	var _p21 = resyncLevel;
+	switch (_p21.ctor) {
 		case 'Soft':
 			return 'soft';
 		case 'Reconnect':
@@ -44098,6 +44365,53 @@ var _Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString = function (resyn
 			return 'reload';
 	}
 };
+var _Gizra$circuit_bid$Pusher_Health_Model$bidderPolicy = {
+	tickMs: 5000,
+	quietProbeAfterMs: _elm_lang$core$Maybe$Just(60000),
+	quietDitherMaxMs: 60000,
+	quietProbeSpacingMs: 120000,
+	regularProbeMs: _elm_lang$core$Maybe$Nothing,
+	softDebounceMs: 20000,
+	gapJitterMaxMs: 3000,
+	reconnectJitterMaxMs: 15000,
+	cancelOnContiguousEvent: true,
+	probeFirst: true,
+	autoReloadAfterMs: _elm_lang$core$Maybe$Nothing,
+	ignorePrivateUserChannelErrors: true,
+	telemetryEvery: 20,
+	escalationTelemetryEvery: 4
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$divergenceConfirmMs = 3000;
+var _Gizra$circuit_bid$Pusher_Health_Model$resumeNoticeMs = 4000;
+var _Gizra$circuit_bid$Pusher_Health_Model$resumeNoticeActive = function (model) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		false,
+		A2(
+			_elm_lang$core$Maybe$map,
+			function (at) {
+				return _elm_lang$core$Native_Utils.cmp(model.now - at, _Gizra$circuit_bid$Pusher_Health_Model$resumeNoticeMs) < 0;
+			},
+			model.lastResumeSyncedAt));
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$resumeQuietMs = 5000;
+var _Gizra$circuit_bid$Pusher_Health_Model$suspendAfterMs = 3000;
+var _Gizra$circuit_bid$Pusher_Health_Model$expectedRebuildWindowMs = 30000;
+var _Gizra$circuit_bid$Pusher_Health_Model$noteSocketRebuild = F2(
+	function (now, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				expectedRebuildUntil: _elm_lang$core$Maybe$Just(now + _Gizra$circuit_bid$Pusher_Health_Model$expectedRebuildWindowMs)
+			});
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$reportThrottleMs = 300000;
+var _Gizra$circuit_bid$Pusher_Health_Model$resyncStormWindowMs = 600000;
+var _Gizra$circuit_bid$Pusher_Health_Model$resyncStormCount = 5;
+var _Gizra$circuit_bid$Pusher_Health_Model$disconnectedReportAfterMs = 30000;
+var _Gizra$circuit_bid$Pusher_Health_Model$staleReportAfterMs = 60000;
+var _Gizra$circuit_bid$Pusher_Health_Model$gapNoticeThreshold = 20;
+var _Gizra$circuit_bid$Pusher_Health_Model$neverConnectedGraceMs = 10000;
 var _Gizra$circuit_bid$Pusher_Health_Model$calibrationSamples = 5;
 var _Gizra$circuit_bid$Pusher_Health_Model$isCalibrated = function (model) {
 	return _elm_lang$core$Native_Utils.cmp(model.lagSamples, _Gizra$circuit_bid$Pusher_Health_Model$calibrationSamples) > -1;
@@ -44108,47 +44422,138 @@ var _Gizra$circuit_bid$Pusher_Health_Model$escalateReconnectCount = 2;
 var _Gizra$circuit_bid$Pusher_Health_Model$escalateSoftWindowMs = 120000;
 var _Gizra$circuit_bid$Pusher_Health_Model$escalateSoftCount = 2;
 var _Gizra$circuit_bid$Pusher_Health_Model$softDebounceMs = 10000;
-var _Gizra$circuit_bid$Pusher_Health_Model$staleAgeResyncMs = 5000;
+var _Gizra$circuit_bid$Pusher_Health_Model$lagOutlierMs = 60000;
 var _Gizra$circuit_bid$Pusher_Health_Model$noteLag = F2(
 	function (meta, model) {
-		var _p10 = meta.sentMs;
-		if (_p10.ctor === 'Nothing') {
+		var _p22 = meta.sentMs;
+		if (_p22.ctor === 'Nothing') {
 			return model;
 		} else {
-			var skew = meta.clientMs - _p10._0;
-			var minSkew = function () {
-				var _p11 = model.minSkew;
-				if (_p11.ctor === 'Just') {
-					return A2(_elm_lang$core$Basics$min, _p11._0, skew);
+			var notDeliveryTime = _Gizra$circuit_bid$Pusher_Health_Model$isSuspended(model) || A2(
+				_elm_lang$core$Maybe$withDefault,
+				false,
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (at) {
+						return _elm_lang$core$Native_Utils.cmp(meta.clientMs - at, _Gizra$circuit_bid$Pusher_Health_Model$resumeQuietMs) < 0;
+					},
+					model.resumedAt));
+			var skew = meta.clientMs - _p22._0;
+			var outlier = A2(
+				_elm_lang$core$Maybe$withDefault,
+				false,
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (current) {
+						return _elm_lang$core$Native_Utils.cmp(skew - current, _Gizra$circuit_bid$Pusher_Health_Model$lagOutlierMs) > 0;
+					},
+					model.minSkew));
+			if (notDeliveryTime) {
+				return model;
+			} else {
+				if (outlier) {
+					var streak = model.lagOutlierStreak + 1;
+					return (_elm_lang$core$Native_Utils.cmp(streak, _Gizra$circuit_bid$Pusher_Health_Model$calibrationSamples) > -1) ? _elm_lang$core$Native_Utils.update(
+						model,
+						{minSkew: _elm_lang$core$Maybe$Nothing, lagMs: _elm_lang$core$Maybe$Nothing, lagSamples: 0, lagOutliers: model.lagOutliers + 1, lagOutlierStreak: 0}) : _elm_lang$core$Native_Utils.update(
+						model,
+						{lagOutliers: model.lagOutliers + 1, lagOutlierStreak: streak});
 				} else {
-					return skew;
+					var minSkew = function () {
+						var _p23 = model.minSkew;
+						if (_p23.ctor === 'Just') {
+							return A2(_elm_lang$core$Basics$min, _p23._0, skew);
+						} else {
+							return skew;
+						}
+					}();
+					var lag = A2(_elm_lang$core$Basics$max, 0, skew - minSkew);
+					var lagMs = function () {
+						var _p24 = model.lagMs;
+						if (_p24.ctor === 'Just') {
+							return (_p24._0 * 0.7) + (lag * 0.3);
+						} else {
+							return lag;
+						}
+					}();
+					return _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							minSkew: _elm_lang$core$Maybe$Just(minSkew),
+							lagMs: _elm_lang$core$Maybe$Just(lagMs),
+							lagSamples: model.lagSamples + 1,
+							lagOutlierStreak: 0
+						});
 				}
-			}();
-			var lag = A2(_elm_lang$core$Basics$max, 0, skew - minSkew);
-			var lagMs = function () {
-				var _p12 = model.lagMs;
-				if (_p12.ctor === 'Just') {
-					return (_p12._0 * 0.7) + (lag * 0.3);
-				} else {
-					return lag;
-				}
-			}();
-			var staleAgeStreak = (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$staleAgeResyncMs) > 0) ? (model.staleAgeStreak + 1) : 0;
-			return _elm_lang$core$Native_Utils.update(
-				model,
-				{
-					minSkew: _elm_lang$core$Maybe$Just(minSkew),
-					lagMs: _elm_lang$core$Maybe$Just(lagMs),
-					lagSamples: model.lagSamples + 1,
-					staleAgeStreak: staleAgeStreak
-				});
+			}
 		}
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs = 15000;
+var _Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy = {
+	tickMs: 2000,
+	quietProbeAfterMs: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs),
+	quietDitherMaxMs: 0,
+	quietProbeSpacingMs: _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs,
+	regularProbeMs: _elm_lang$core$Maybe$Just(30000),
+	softDebounceMs: _Gizra$circuit_bid$Pusher_Health_Model$softDebounceMs,
+	gapJitterMaxMs: 1500,
+	reconnectJitterMaxMs: 1500,
+	cancelOnContiguousEvent: false,
+	probeFirst: false,
+	autoReloadAfterMs: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$failedReloadAfterMs),
+	ignorePrivateUserChannelErrors: false,
+	telemetryEvery: 1,
+	escalationTelemetryEvery: 1
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$probeRttFreshMs = 60000;
+var _Gizra$circuit_bid$Pusher_Health_Model$probeIsFresh = function (model) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		true,
+		A2(
+			_elm_lang$core$Maybe$map,
+			function (t) {
+				return _elm_lang$core$Native_Utils.cmp(model.now - t, _Gizra$circuit_bid$Pusher_Health_Model$probeRttFreshMs) < 1;
+			},
+			model.lastProbeAt));
+};
 var _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs = 1500;
 var _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs = 500;
 var _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs = 1500;
 var _Gizra$circuit_bid$Pusher_Health_Model$lagYellowMs = 500;
+var _Gizra$circuit_bid$Pusher_Health_Model$Policy = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return function (n) {
+														return {tickMs: a, quietProbeAfterMs: b, quietDitherMaxMs: c, quietProbeSpacingMs: d, regularProbeMs: e, softDebounceMs: f, gapJitterMaxMs: g, reconnectJitterMaxMs: h, cancelOnContiguousEvent: i, probeFirst: j, autoReloadAfterMs: k, ignorePrivateUserChannelErrors: l, telemetryEvery: m, escalationTelemetryEvery: n};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$Report = F4(
+	function (a, b, c, d) {
+		return {location: a, $class: b, severity: c, detail: d};
+	});
 var _Gizra$circuit_bid$Pusher_Health_Model$EventMeta = F9(
 	function (a, b, c, d, e, f, g, h, i) {
 		return {eventType: a, channel: b, entityId: c, seq: d, cseq: e, epoch: f, enqueuedMs: g, sentMs: h, clientMs: i};
@@ -44160,6 +44565,10 @@ var _Gizra$circuit_bid$Pusher_Health_Model$ChannelStatus = F2(
 var _Gizra$circuit_bid$Pusher_Health_Model$StateChange = F3(
 	function (a, b, c) {
 		return {previous: a, current: b, socketId: c};
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$VisibilityChange = F3(
+	function (a, b, c) {
+		return {visible: a, at: b, source: c};
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$ChannelState = F4(
 	function (a, b, c, d) {
@@ -44201,7 +44610,37 @@ var _Gizra$circuit_bid$Pusher_Health_Model$Model = function (a) {
 																									return function (z) {
 																										return function (_1) {
 																											return function (_2) {
-																												return {connection: a, everConnected: b, reconnects: c, lastError: d, socketId: e, channels: f, lastEventAt: g, lastEventType: h, lastCseqByChannel: i, lastSeqByEntity: j, missedEvents: k, droppedStale: l, staleAgeStreak: m, minSkew: n, lagMs: o, lagSamples: p, wsRttMs: q, httpRttMs: r, lastProbeAt: s, probeInFlight: t, divergences: u, resync: v, softResyncsAt: w, reconnectsRequestedAt: x, lastResync: y, unhealthySince: z, now: _1, panelOpen: _2};
+																												return function (_3) {
+																													return function (_4) {
+																														return function (_5) {
+																															return function (_6) {
+																																return function (_7) {
+																																	return function (_8) {
+																																		return function (_9) {
+																																			return function (_10) {
+																																				return function (_11) {
+																																					return function (_12) {
+																																						return function (_13) {
+																																							return function (_14) {
+																																								return function (_15) {
+																																									return function (_16) {
+																																										return function (_17) {
+																																											return {connection: a, everConnected: b, reconnects: c, expectedRebuildUntil: d, lastError: e, socketId: f, channels: g, lastEventAt: h, lastEventType: i, lastCseqByChannel: j, lastSeqByEntity: k, missedEvents: l, droppedStale: m, bridgeRestarts: n, lastEpochGap: o, minSkew: p, lagMs: q, lagSamples: r, lagOutliers: s, lagOutlierStreak: t, wsRttMs: u, httpRttMs: v, lastProbeAt: w, probeInFlight: x, pendingDivergence: y, divergences: z, resync: _1, softResyncsAt: _2, reconnectsRequestedAt: _3, lastResync: _4, unhealthySince: _5, staleSince: _6, openedAt: _7, reportedAt: _8, staleReportedFor: _9, outageReportedFor: _10, hiddenSince: _11, lastHiddenMs: _12, resumedAt: _13, resumes: _14, lastResumeSyncedAt: _15, now: _16, panelOpen: _17};
+																																										};
+																																									};
+																																								};
+																																							};
+																																						};
+																																					};
+																																				};
+																																			};
+																																		};
+																																	};
+																																};
+																															};
+																														};
+																													};
+																												};
 																											};
 																										};
 																									};
@@ -44234,22 +44673,43 @@ var _Gizra$circuit_bid$Pusher_Health_Model$Disconnected = {ctor: 'Disconnected'}
 var _Gizra$circuit_bid$Pusher_Health_Model$Failed = {ctor: 'Failed'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Unavailable = {ctor: 'Unavailable'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Connected = {ctor: 'Connected'};
-var _Gizra$circuit_bid$Pusher_Health_Model$shouldProbe = F2(
-	function (isLive, model) {
+var _Gizra$circuit_bid$Pusher_Health_Model$shouldProbeWith = F3(
+	function (policy, _p25, model) {
+		var _p26 = _p25;
+		var confirmDue = A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (at) {
+					return _elm_lang$core$Native_Utils.cmp(model.now - at, _Gizra$circuit_bid$Pusher_Health_Model$divergenceConfirmMs) > -1;
+				},
+				model.pendingDivergence));
 		var sinceLastProbe = A2(
 			_elm_lang$core$Maybe$map,
 			function (t) {
 				return model.now - t;
 			},
 			model.lastProbeAt);
+		var spacedOut = A2(
+			_elm_lang$core$Maybe$withDefault,
+			true,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (probe) {
+					return _elm_lang$core$Native_Utils.cmp(probe, policy.quietProbeSpacingMs) > 0;
+				},
+				sinceLastProbe));
 		var regular = A2(
 			_elm_lang$core$Maybe$withDefault,
 			false,
-			A2(
-				_elm_lang$core$Maybe$map,
-				function (elapsed) {
-					return _elm_lang$core$Native_Utils.cmp(elapsed, 30000) > 0;
-				},
+			A3(
+				_elm_lang$core$Maybe$map2,
+				F2(
+					function (every, elapsed) {
+						return _elm_lang$core$Native_Utils.cmp(elapsed, every) > 0;
+					}),
+				policy.regularProbeMs,
 				sinceLastProbe));
 		var sinceLastEvent = A2(
 			_elm_lang$core$Maybe$map,
@@ -44258,41 +44718,60 @@ var _Gizra$circuit_bid$Pusher_Health_Model$shouldProbe = F2(
 			},
 			model.lastEventAt);
 		var quiet = function () {
-			var _p13 = {ctor: '_Tuple2', _0: sinceLastEvent, _1: sinceLastProbe};
-			if (_p13._0.ctor === 'Just') {
-				if (_p13._1.ctor === 'Just') {
-					return (_elm_lang$core$Native_Utils.cmp(_p13._0._0, _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs) > 0) && (_elm_lang$core$Native_Utils.cmp(_p13._1._0, _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs) > 0);
-				} else {
-					return _elm_lang$core$Native_Utils.cmp(_p13._0._0, _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs) > 0;
-				}
+			var _p27 = policy.quietProbeAfterMs;
+			if (_p27.ctor === 'Nothing') {
+				return false;
 			} else {
-				if (_p13._1.ctor === 'Just') {
-					return _elm_lang$core$Native_Utils.cmp(_p13._1._0, _Gizra$circuit_bid$Pusher_Health_Model$quietProbeAfterMs) > 0;
-				} else {
-					return (_elm_lang$core$Native_Utils.cmp(model.now, 0) > 0) && model.everConnected;
-				}
+				var threshold = _p27._0 + A2(_Gizra$circuit_bid$Pusher_Health_Model$quietDither, policy, model);
+				var silent = function () {
+					var _p28 = {ctor: '_Tuple2', _0: sinceLastEvent, _1: sinceLastProbe};
+					if (_p28._0.ctor === 'Just') {
+						return _elm_lang$core$Native_Utils.cmp(_p28._0._0, threshold) > 0;
+					} else {
+						if (_p28._1.ctor === 'Just') {
+							return _elm_lang$core$Native_Utils.cmp(_p28._1._0, threshold) > 0;
+						} else {
+							return (_elm_lang$core$Native_Utils.cmp(model.now, 0) > 0) && model.everConnected;
+						}
+					}
+				}();
+				return _p26.lotOpen && (spacedOut && silent);
 			}
 		}();
-		return isLive && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && (_elm_lang$core$Native_Utils.eq(model.probeInFlight, _elm_lang$core$Maybe$Nothing) && (_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing) && (quiet || regular))));
+		return _p26.isLive && ((!_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(model)) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && (_elm_lang$core$Native_Utils.eq(model.probeInFlight, _elm_lang$core$Maybe$Nothing) && (_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing) && (quiet || (regular || confirmDue))))));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$shouldProbe = F2(
+	function (isLive, model) {
+		return A3(
+			_Gizra$circuit_bid$Pusher_Health_Model$shouldProbeWith,
+			_Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy,
+			{isLive: isLive, lotOpen: true},
+			model);
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$retryDue = F2(
+	function (policy, model) {
+		return policy.probeFirst && (_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) || (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0))));
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$tick = F2(
 	function (now, model) {
 		var updated = _elm_lang$core$Native_Utils.update(
 			model,
 			{now: now});
-		var unhealthy = updated.everConnected && (!_elm_lang$core$Native_Utils.eq(updated.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected));
+		var unhealthy = updated.everConnected && ((!_elm_lang$core$Native_Utils.eq(updated.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && (!_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(updated)));
 		return _elm_lang$core$Native_Utils.update(
 			updated,
 			{
 				unhealthySince: unhealthy ? _elm_lang$core$Maybe$Just(
-					A2(_elm_lang$core$Maybe$withDefault, now, model.unhealthySince)) : _elm_lang$core$Maybe$Nothing
+					A2(_elm_lang$core$Maybe$withDefault, now, model.unhealthySince)) : _elm_lang$core$Maybe$Nothing,
+				openedAt: _elm_lang$core$Maybe$Just(
+					A2(_elm_lang$core$Maybe$withDefault, now, model.openedAt))
 			});
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$Connecting = {ctor: 'Connecting'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Initialized = {ctor: 'Initialized'};
 var _Gizra$circuit_bid$Pusher_Health_Model$connectionStateFromString = function (state) {
-	var _p14 = state;
-	switch (_p14) {
+	var _p29 = state;
+	switch (_p29) {
 		case 'connecting':
 			return _Gizra$circuit_bid$Pusher_Health_Model$Connecting;
 		case 'connected':
@@ -44311,6 +44790,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$emptyModel = {
 	connection: _Gizra$circuit_bid$Pusher_Health_Model$Initialized,
 	everConnected: false,
 	reconnects: 0,
+	expectedRebuildUntil: _elm_lang$core$Maybe$Nothing,
 	lastError: _elm_lang$core$Maybe$Nothing,
 	socketId: _elm_lang$core$Maybe$Nothing,
 	channels: _elm_lang$core$Dict$empty,
@@ -44320,20 +44800,34 @@ var _Gizra$circuit_bid$Pusher_Health_Model$emptyModel = {
 	lastSeqByEntity: _elm_lang$core$Dict$empty,
 	missedEvents: 0,
 	droppedStale: 0,
-	staleAgeStreak: 0,
+	bridgeRestarts: 0,
+	lastEpochGap: 0,
 	minSkew: _elm_lang$core$Maybe$Nothing,
 	lagMs: _elm_lang$core$Maybe$Nothing,
 	lagSamples: 0,
+	lagOutliers: 0,
+	lagOutlierStreak: 0,
 	wsRttMs: _elm_lang$core$Maybe$Nothing,
 	httpRttMs: _elm_lang$core$Maybe$Nothing,
 	lastProbeAt: _elm_lang$core$Maybe$Nothing,
 	probeInFlight: _elm_lang$core$Maybe$Nothing,
+	pendingDivergence: _elm_lang$core$Maybe$Nothing,
 	divergences: 0,
 	resync: _elm_lang$core$Maybe$Nothing,
 	softResyncsAt: {ctor: '[]'},
 	reconnectsRequestedAt: {ctor: '[]'},
 	lastResync: _elm_lang$core$Maybe$Nothing,
 	unhealthySince: _elm_lang$core$Maybe$Nothing,
+	staleSince: _elm_lang$core$Maybe$Nothing,
+	openedAt: _elm_lang$core$Maybe$Nothing,
+	reportedAt: _elm_lang$core$Dict$empty,
+	staleReportedFor: _elm_lang$core$Maybe$Nothing,
+	outageReportedFor: _elm_lang$core$Maybe$Nothing,
+	hiddenSince: _elm_lang$core$Maybe$Nothing,
+	lastHiddenMs: _elm_lang$core$Maybe$Nothing,
+	resumedAt: _elm_lang$core$Maybe$Nothing,
+	resumes: 0,
+	lastResumeSyncedAt: _elm_lang$core$Maybe$Nothing,
 	now: 0,
 	panelOpen: false
 };
@@ -44341,7 +44835,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$Red = {ctor: 'Red'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Yellow = {ctor: 'Yellow'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Green = {ctor: 'Green'};
 var _Gizra$circuit_bid$Pusher_Health_Model$level = function (model) {
-	var missedForLong = (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) && A2(
+	var missedForLong = (_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) && ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) && A2(
 		_elm_lang$core$Maybe$withDefault,
 		false,
 		A2(
@@ -44349,19 +44843,25 @@ var _Gizra$circuit_bid$Pusher_Health_Model$level = function (model) {
 			function (t) {
 				return _elm_lang$core$Native_Utils.cmp(model.now - t, 10000) > 0;
 			},
-			model.lastEventAt));
+			model.lastEventAt)));
 	var wsRtt = A2(_elm_lang$core$Maybe$withDefault, 0, model.wsRttMs);
-	var httpRtt = A2(_elm_lang$core$Maybe$withDefault, 0, model.httpRttMs);
+	var httpRtt = _Gizra$circuit_bid$Pusher_Health_Model$probeIsFresh(model) ? A2(_elm_lang$core$Maybe$withDefault, 0, model.httpRttMs) : 0;
 	var lag = A2(_elm_lang$core$Maybe$withDefault, 0, model.lagMs);
-	var channelBroken = model.everConnected && A2(
-		_elm_lang$core$List$any,
-		function (_p15) {
-			return !function (_) {
-				return _.subscribed;
-			}(_p15);
-		},
-		_elm_lang$core$Dict$values(model.channels));
-	return ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && model.everConnected) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (channelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs) > -1) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (missedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1) || (_elm_lang$core$Native_Utils.cmp(wsRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : _Gizra$circuit_bid$Pusher_Health_Model$Green)))))))));
+	var broken = function (concerns) {
+		return model.everConnected && A2(
+			_elm_lang$core$List$any,
+			function (_p30) {
+				var _p31 = _p30;
+				return (!_p31._1.subscribed) && concerns(_p31._0);
+			},
+			_elm_lang$core$Dict$toList(model.channels));
+	};
+	var saleChannelBroken = broken(
+		function (_p32) {
+			return !_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p32);
+		});
+	var privateChannelBroken = broken(_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel);
+	return ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && model.everConnected) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (saleChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagRedMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttRedMs) > -1) ? _Gizra$circuit_bid$Pusher_Health_Model$Red : (missedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Red : ((_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model) && (_elm_lang$core$Native_Utils.cmp(lag, _Gizra$circuit_bid$Pusher_Health_Model$lagYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (((_elm_lang$core$Native_Utils.cmp(httpRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1) || (_elm_lang$core$Native_Utils.cmp(wsRtt, _Gizra$circuit_bid$Pusher_Health_Model$rttYellowMs) > -1)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : (privateChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) ? _Gizra$circuit_bid$Pusher_Health_Model$Yellow : _Gizra$circuit_bid$Pusher_Health_Model$Green))))))))));
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$Reload = {ctor: 'Reload'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Reconnect = {ctor: 'Reconnect'};
@@ -44379,10 +44879,10 @@ var _Gizra$circuit_bid$Pusher_Health_Model$startResync = F4(
 			{
 				resync: _elm_lang$core$Maybe$Just(
 					{level: resyncLevel, reason: reason, startedAt: now}),
-				softResyncsAt: _elm_lang$core$Native_Utils.eq(resyncLevel, _Gizra$circuit_bid$Pusher_Health_Model$Soft) ? {
+				softResyncsAt: (_elm_lang$core$Native_Utils.eq(resyncLevel, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && (!_Gizra$circuit_bid$Pusher_Health_Model$isExpectedReason(reason))) ? {
 					ctor: '::',
 					_0: now,
-					_1: A2(prune, _Gizra$circuit_bid$Pusher_Health_Model$escalateSoftWindowMs, model.softResyncsAt)
+					_1: A2(prune, _Gizra$circuit_bid$Pusher_Health_Model$resyncStormWindowMs, model.softResyncsAt)
 				} : model.softResyncsAt,
 				reconnectsRequestedAt: _elm_lang$core$Native_Utils.eq(resyncLevel, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect) ? {
 					ctor: '::',
@@ -44392,6 +44892,100 @@ var _Gizra$circuit_bid$Pusher_Health_Model$startResync = F4(
 				now: A2(_elm_lang$core$Basics$max, model.now, now)
 			});
 	});
+var _Gizra$circuit_bid$Pusher_Health_Model$cancelReconnectResync = F5(
+	function (policy, meta, gap, sameEpochWatermark, model) {
+		var saleChannel = A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (_p33) {
+					return !_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p33);
+				},
+				meta.channel));
+		var pendingReconnectResync = function () {
+			var _p34 = model.resync;
+			if (_p34.ctor === 'Just') {
+				var _p36 = _p34._0;
+				return _elm_lang$core$Native_Utils.eq(_p36.level, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && function () {
+					var _p35 = _p36.reason;
+					switch (_p35.ctor) {
+						case 'Reconnected':
+							return true;
+						case 'Resumed':
+							return true;
+						default:
+							return false;
+					}
+				}();
+			} else {
+				return false;
+			}
+		}();
+		return (policy.cancelOnContiguousEvent && (pendingReconnectResync && (_elm_lang$core$Native_Utils.eq(model.probeInFlight, _elm_lang$core$Maybe$Nothing) && (_elm_lang$core$Native_Utils.eq(gap, 0) && (sameEpochWatermark && ((!_elm_lang$core$Native_Utils.eq(meta.cseq, _elm_lang$core$Maybe$Nothing)) && saleChannel)))))) ? {
+			ctor: '_Tuple2',
+			_0: A3(
+				_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+				_elm_lang$core$Result$Ok(
+					{ctor: '_Tuple0'}),
+				meta.clientMs,
+				model),
+			_1: true
+		} : {ctor: '_Tuple2', _0: model, _1: false};
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$Resumed = function (a) {
+	return {ctor: 'Resumed', _0: a};
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$noteVisibility = F2(
+	function (change, model) {
+		if (!change.visible) {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						hiddenSince: _elm_lang$core$Maybe$Just(
+							A2(_elm_lang$core$Maybe$withDefault, change.at, model.hiddenSince))
+					}),
+				_1: _elm_lang$core$Maybe$Nothing
+			};
+		} else {
+			var _p37 = model.hiddenSince;
+			if (_p37.ctor === 'Nothing') {
+				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Maybe$Nothing};
+			} else {
+				var back = _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						hiddenSince: _elm_lang$core$Maybe$Nothing,
+						now: A2(_elm_lang$core$Basics$max, model.now, change.at)
+					});
+				var hiddenMs = change.at - _p37._0;
+				return (_elm_lang$core$Native_Utils.cmp(hiddenMs, _Gizra$circuit_bid$Pusher_Health_Model$suspendAfterMs) < 0) ? {ctor: '_Tuple2', _0: back, _1: _elm_lang$core$Maybe$Nothing} : {
+					ctor: '_Tuple2',
+					_0: A2(
+						_Gizra$circuit_bid$Pusher_Health_Model$markStale,
+						change.at,
+						_elm_lang$core$Native_Utils.update(
+							back,
+							{
+								lastHiddenMs: _elm_lang$core$Maybe$Just(hiddenMs),
+								resumedAt: _elm_lang$core$Maybe$Just(change.at),
+								resumes: model.resumes + 1,
+								minSkew: _elm_lang$core$Maybe$Nothing,
+								lagMs: _elm_lang$core$Maybe$Nothing,
+								lagSamples: 0,
+								lagOutlierStreak: 0
+							})),
+					_1: _elm_lang$core$Maybe$Just(
+						_Gizra$circuit_bid$Pusher_Health_Model$Resumed(hiddenMs))
+				};
+			}
+		}
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$BridgeRestart = {ctor: 'BridgeRestart'};
+var _Gizra$circuit_bid$Pusher_Health_Model$StaleRetry = {ctor: 'StaleRetry'};
+var _Gizra$circuit_bid$Pusher_Health_Model$BidTimeout = {ctor: 'BidTimeout'};
 var _Gizra$circuit_bid$Pusher_Health_Model$ConnectionFailed = {ctor: 'ConnectionFailed'};
 var _Gizra$circuit_bid$Pusher_Health_Model$SubscriptionError = function (a) {
 	return {ctor: 'SubscriptionError', _0: a};
@@ -44419,18 +45013,19 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteChannel = F2(
 						state.code)));
 			return {
 				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{
-						channels: A3(
-							_elm_lang$core$Dict$insert,
-							state.channel,
-							{
-								subscribed: false,
-								lastError: _elm_lang$core$Maybe$Just(message)
-							},
-							model.channels)
-					}),
+				_0: (_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(state.channel) ? _elm_lang$core$Basics$identity : _Gizra$circuit_bid$Pusher_Health_Model$markStale(model.now))(
+					_elm_lang$core$Native_Utils.update(
+						model,
+						{
+							channels: A3(
+								_elm_lang$core$Dict$insert,
+								state.channel,
+								{
+									subscribed: false,
+									lastError: _elm_lang$core$Maybe$Just(message)
+								},
+								model.channels)
+						})),
 				_1: _elm_lang$core$Maybe$Just(
 					_Gizra$circuit_bid$Pusher_Health_Model$SubscriptionError(message))
 			};
@@ -44453,6 +45048,7 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteChannel = F2(
 var _Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence = {ctor: 'ProbeDivergence'};
 var _Gizra$circuit_bid$Pusher_Health_Model$noteProbe = F2(
 	function (outcome, model) {
+		var disagrees = outcome.divergent && ((!outcome.eventSinceSent) && (!outcome.failed));
 		var updated = _elm_lang$core$Native_Utils.update(
 			model,
 			{
@@ -44460,51 +45056,77 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteProbe = F2(
 				lastProbeAt: _elm_lang$core$Maybe$Just(outcome.receivedAt),
 				httpRttMs: outcome.failed ? model.httpRttMs : _elm_lang$core$Maybe$Just(outcome.receivedAt - outcome.sentAt)
 			});
-		return (outcome.divergent && ((!outcome.eventSinceSent) && (!outcome.failed))) ? {
+		var confirmed = A2(
+			_Gizra$circuit_bid$Pusher_Health_Model$markStale,
+			outcome.receivedAt,
+			_elm_lang$core$Native_Utils.update(
+				updated,
+				{divergences: model.divergences + 1, pendingDivergence: _elm_lang$core$Maybe$Nothing}));
+		return (disagrees && ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) || (!_elm_lang$core$Native_Utils.eq(model.pendingDivergence, _elm_lang$core$Maybe$Nothing)))) ? {
+			ctor: '_Tuple2',
+			_0: confirmed,
+			_1: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence)
+		} : (disagrees ? {
 			ctor: '_Tuple2',
 			_0: _elm_lang$core$Native_Utils.update(
 				updated,
-				{divergences: model.divergences + 1}),
-			_1: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence)
-		} : {ctor: '_Tuple2', _0: updated, _1: _elm_lang$core$Maybe$Nothing};
+				{
+					pendingDivergence: _elm_lang$core$Maybe$Just(outcome.receivedAt)
+				}),
+			_1: _elm_lang$core$Maybe$Nothing
+		} : {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.update(
+				updated,
+				{pendingDivergence: _elm_lang$core$Maybe$Nothing}),
+			_1: _elm_lang$core$Maybe$Nothing
+		});
 	});
-var _Gizra$circuit_bid$Pusher_Health_Model$Quiet = {ctor: 'Quiet'};
-var _Gizra$circuit_bid$Pusher_Health_Model$StaleAge = function (a) {
-	return {ctor: 'StaleAge', _0: a};
-};
 var _Gizra$circuit_bid$Pusher_Health_Model$SeqGap = function (a) {
 	return {ctor: 'SeqGap', _0: a};
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$Reconnected = {ctor: 'Reconnected'};
 var _Gizra$circuit_bid$Pusher_Health_Model$noteState = F2(
 	function (change, model) {
+		var expectedRebuild = A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (until) {
+					return _elm_lang$core$Native_Utils.cmp(model.now, until) < 1;
+				},
+				model.expectedRebuildUntil));
 		var state = _Gizra$circuit_bid$Pusher_Health_Model$connectionStateFromString(change.current);
 		var updated = _elm_lang$core$Native_Utils.update(
 			model,
 			{
 				connection: state,
 				socketId: function () {
-					var _p16 = change.socketId;
-					if (_p16.ctor === 'Just') {
-						return _elm_lang$core$Maybe$Just(_p16._0);
+					var _p38 = change.socketId;
+					if (_p38.ctor === 'Just') {
+						return _elm_lang$core$Maybe$Just(_p38._0);
 					} else {
 						return model.socketId;
 					}
 				}()
 			});
-		var _p17 = state;
-		if (_p17.ctor === 'Connected') {
-			return (model.everConnected && (!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected))) ? {
+		var _p39 = state;
+		if (_p39.ctor === 'Connected') {
+			return (model.everConnected && ((!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected)) && ((!expectedRebuild) && (!_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(model))))) ? {
 				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					updated,
-					{everConnected: true, reconnects: model.reconnects + 1}),
+				_0: A2(
+					_Gizra$circuit_bid$Pusher_Health_Model$markStale,
+					model.now,
+					_elm_lang$core$Native_Utils.update(
+						updated,
+						{everConnected: true, reconnects: model.reconnects + 1, expectedRebuildUntil: _elm_lang$core$Maybe$Nothing})),
 				_1: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$Reconnected)
 			} : {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
 					updated,
-					{everConnected: true}),
+					{everConnected: true, expectedRebuildUntil: _elm_lang$core$Maybe$Nothing}),
 				_1: _elm_lang$core$Maybe$Nothing
 			};
 		} else {
@@ -44512,13 +45134,14 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteState = F2(
 		}
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$Manual = {ctor: 'Manual'};
-var _Gizra$circuit_bid$Pusher_Health_Model$decideLadder = F3(
-	function (reason, requested, model) {
+var _Gizra$circuit_bid$Pusher_Health_Model$decideLadderWith = F4(
+	function (policy, reason, requested, model) {
+		var reloadAllowed = (!_elm_lang$core$Native_Utils.eq(policy.autoReloadAfterMs, _elm_lang$core$Maybe$Nothing)) || _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$Manual);
 		var lastSoftAt = _elm_lang$core$List$head(model.softResyncsAt);
 		var debounced = function () {
-			var _p18 = lastSoftAt;
-			if (_p18.ctor === 'Just') {
-				return _elm_lang$core$Native_Utils.cmp(model.now - _p18._0, _Gizra$circuit_bid$Pusher_Health_Model$softDebounceMs) < 0;
+			var _p40 = lastSoftAt;
+			if (_p40.ctor === 'Just') {
+				return _elm_lang$core$Native_Utils.cmp(model.now - _p40._0, policy.softDebounceMs) < 0;
 			} else {
 				return false;
 			}
@@ -44538,27 +45161,310 @@ var _Gizra$circuit_bid$Pusher_Health_Model$decideLadder = F3(
 				},
 				model.softResyncsAt));
 		var escalated = function () {
-			var _p19 = requested;
-			switch (_p19.ctor) {
+			var _p41 = requested;
+			switch (_p41.ctor) {
 				case 'Soft':
 					return ((_elm_lang$core$Native_Utils.cmp(recentSoft, _Gizra$circuit_bid$Pusher_Health_Model$escalateSoftCount) > -1) && _elm_lang$core$Native_Utils.eq(
 						_Gizra$circuit_bid$Pusher_Health_Model$level(model),
 						_Gizra$circuit_bid$Pusher_Health_Model$Red)) ? _Gizra$circuit_bid$Pusher_Health_Model$Reconnect : _Gizra$circuit_bid$Pusher_Health_Model$Soft;
 				case 'Reconnect':
-					return (_elm_lang$core$Native_Utils.cmp(recentReconnect, _Gizra$circuit_bid$Pusher_Health_Model$escalateReconnectCount) > -1) ? _Gizra$circuit_bid$Pusher_Health_Model$Reload : _Gizra$circuit_bid$Pusher_Health_Model$Reconnect;
+					return ((_elm_lang$core$Native_Utils.cmp(recentReconnect, _Gizra$circuit_bid$Pusher_Health_Model$escalateReconnectCount) > -1) && reloadAllowed) ? _Gizra$circuit_bid$Pusher_Health_Model$Reload : _Gizra$circuit_bid$Pusher_Health_Model$Reconnect;
 				default:
-					return _Gizra$circuit_bid$Pusher_Health_Model$Reload;
+					return reloadAllowed ? _Gizra$circuit_bid$Pusher_Health_Model$Reload : _Gizra$circuit_bid$Pusher_Health_Model$Reconnect;
 			}
 		}();
-		return _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$Manual) ? _elm_lang$core$Maybe$Just(escalated) : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _elm_lang$core$Maybe$Nothing : ((_elm_lang$core$Native_Utils.eq(escalated, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && debounced) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(escalated)));
+		return _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$Manual) ? _elm_lang$core$Maybe$Just(escalated) : ((!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) ? _elm_lang$core$Maybe$Nothing : ((_elm_lang$core$Native_Utils.eq(escalated, _Gizra$circuit_bid$Pusher_Health_Model$Soft) && (debounced && (!_Gizra$circuit_bid$Pusher_Health_Model$isExpectedReason(reason)))) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(escalated)));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$decideLadder = _Gizra$circuit_bid$Pusher_Health_Model$decideLadderWith(_Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy);
+var _Gizra$circuit_bid$Pusher_Health_Model$Error = {ctor: 'Error'};
+var _Gizra$circuit_bid$Pusher_Health_Model$Warning = {ctor: 'Warning'};
+var _Gizra$circuit_bid$Pusher_Health_Model$warning = F3(
+	function (location, $class, detail) {
+		return {location: location, $class: $class, severity: _Gizra$circuit_bid$Pusher_Health_Model$Warning, detail: detail};
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$noteReported = F3(
+	function (report, now, model) {
+		return (_elm_lang$core$Native_Utils.eq(report.severity, _Gizra$circuit_bid$Pusher_Health_Model$Warning) || _elm_lang$core$Native_Utils.eq(report.severity, _Gizra$circuit_bid$Pusher_Health_Model$Error)) ? _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				reportedAt: A3(_elm_lang$core$Dict$insert, report.$class, now, model.reportedAt)
+			}) : model;
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$throttled = F2(
+	function (report, model) {
+		return (_elm_lang$core$Native_Utils.eq(report.severity, _Gizra$circuit_bid$Pusher_Health_Model$Warning) || _elm_lang$core$Native_Utils.eq(report.severity, _Gizra$circuit_bid$Pusher_Health_Model$Error)) && A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (at) {
+					return _elm_lang$core$Native_Utils.cmp(model.now - at, _Gizra$circuit_bid$Pusher_Health_Model$reportThrottleMs) < 0;
+				},
+				A2(_elm_lang$core$Dict$get, report.$class, model.reportedAt)));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$tickReports = F2(
+	function (policy, model) {
+		var capture = F2(
+			function (_p43, _p42) {
+				var _p44 = _p43;
+				var _p48 = _p44._1;
+				var _p45 = _p42;
+				var _p47 = _p45._1;
+				var _p46 = _p45._0;
+				return A2(_Gizra$circuit_bid$Pusher_Health_Model$throttled, _p48, _p46) ? {ctor: '_Tuple2', _0: _p46, _1: _p47} : {
+					ctor: '_Tuple2',
+					_0: A3(
+						_Gizra$circuit_bid$Pusher_Health_Model$noteReported,
+						_p48,
+						_p46.now,
+						_p44._0(_p46)),
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						_p47,
+						{
+							ctor: '::',
+							_0: _p48,
+							_1: {ctor: '[]'}
+						})
+				};
+			});
+		var recentSoft = _elm_lang$core$List$length(
+			A2(
+				_elm_lang$core$List$filter,
+				function (t) {
+					return _elm_lang$core$Native_Utils.cmp(model.now - t, _Gizra$circuit_bid$Pusher_Health_Model$resyncStormWindowMs) < 0;
+				},
+				model.softResyncsAt));
+		var storm = (_elm_lang$core$Native_Utils.cmp(recentSoft, _Gizra$circuit_bid$Pusher_Health_Model$resyncStormCount) > -1) ? _elm_lang$core$Maybe$Just(
+			{
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Basics$identity,
+				_1: A3(
+					_Gizra$circuit_bid$Pusher_Health_Model$warning,
+					'resync',
+					'resync storm',
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'softResyncs',
+							_1: _elm_lang$core$Json_Encode$int(recentSoft)
+						},
+						_1: {ctor: '[]'}
+					})
+			}) : _elm_lang$core$Maybe$Nothing;
+		var outage = function () {
+			var _p49 = model.unhealthySince;
+			if (_p49.ctor === 'Just') {
+				var _p50 = _p49._0;
+				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p50, _Gizra$circuit_bid$Pusher_Health_Model$disconnectedReportAfterMs) > 0) && (!_elm_lang$core$Native_Utils.eq(
+					model.outageReportedFor,
+					_elm_lang$core$Maybe$Just(_p50)))) ? _elm_lang$core$Maybe$Just(
+					{
+						ctor: '_Tuple2',
+						_0: function (m) {
+							return _elm_lang$core$Native_Utils.update(
+								m,
+								{
+									outageReportedFor: _elm_lang$core$Maybe$Just(_p50)
+								});
+						},
+						_1: A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$warning,
+							'connection',
+							'disconnected for long',
+							{
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'downForMs',
+									_1: _elm_lang$core$Json_Encode$float(model.now - _p50)
+								},
+								_1: {ctor: '[]'}
+							})
+					}) : _elm_lang$core$Maybe$Nothing;
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		}();
+		var stillBehind = function () {
+			var _p51 = model.staleSince;
+			if (_p51.ctor === 'Just') {
+				var _p52 = _p51._0;
+				return ((_elm_lang$core$Native_Utils.cmp(model.now - _p52, _Gizra$circuit_bid$Pusher_Health_Model$staleReportAfterMs) > 0) && (_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected) && (!_elm_lang$core$Native_Utils.eq(
+					model.staleReportedFor,
+					_elm_lang$core$Maybe$Just(_p52))))) ? _elm_lang$core$Maybe$Just(
+					{
+						ctor: '_Tuple2',
+						_0: function (m) {
+							return _elm_lang$core$Native_Utils.update(
+								m,
+								{
+									staleReportedFor: _elm_lang$core$Maybe$Just(_p52)
+								});
+						},
+						_1: A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$warning,
+							'resync',
+							'still behind after resync',
+							{
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'staleForMs',
+									_1: _elm_lang$core$Json_Encode$float(model.now - _p52)
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'softResyncs',
+										_1: _elm_lang$core$Json_Encode$int(
+											_elm_lang$core$List$length(model.softResyncsAt))
+									},
+									_1: {ctor: '[]'}
+								}
+							})
+					}) : _elm_lang$core$Maybe$Nothing;
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		}();
+		return _Gizra$circuit_bid$Pusher_Health_Model$isSuspended(model) ? {
+			ctor: '_Tuple2',
+			_0: model,
+			_1: {ctor: '[]'}
+		} : A3(
+			_elm_lang$core$List$foldl,
+			capture,
+			{
+				ctor: '_Tuple2',
+				_0: model,
+				_1: {ctor: '[]'}
+			},
+			A2(
+				_elm_lang$core$List$filterMap,
+				_elm_lang$core$Basics$identity,
+				{
+					ctor: '::',
+					_0: stillBehind,
+					_1: {
+						ctor: '::',
+						_0: outage,
+						_1: {
+							ctor: '::',
+							_0: storm,
+							_1: {ctor: '[]'}
+						}
+					}
+				}));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$Info = {ctor: 'Info'};
+var _Gizra$circuit_bid$Pusher_Health_Model$info = F3(
+	function (location, $class, detail) {
+		return {location: location, $class: $class, severity: _Gizra$circuit_bid$Pusher_Health_Model$Info, detail: detail};
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$Breadcrumb = {ctor: 'Breadcrumb'};
+var _Gizra$circuit_bid$Pusher_Health_Model$breadcrumb = F3(
+	function (location, $class, detail) {
+		return {location: location, $class: $class, severity: _Gizra$circuit_bid$Pusher_Health_Model$Breadcrumb, detail: detail};
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$startReport = F2(
+	function (reason, resyncLevel) {
+		var _p53 = resyncLevel;
+		switch (_p53.ctor) {
+			case 'Soft':
+				return A3(
+					_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+					'resync',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'resync started: ',
+						_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(reason)),
+					_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(reason));
+			case 'Reconnect':
+				return A3(
+					_Gizra$circuit_bid$Pusher_Health_Model$warning,
+					'resync',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						'reconnect: ',
+						_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(reason)),
+					_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(reason));
+			default:
+				return {
+					location: 'resync',
+					$class: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'reload: ',
+						_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(reason)),
+					severity: _Gizra$circuit_bid$Pusher_Health_Model$Error,
+					detail: _Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(reason)
+				};
+		}
+	});
+var _Gizra$circuit_bid$Pusher_Health_Model$resyncReport = F3(
+	function (reason, result, model) {
+		var detail = A2(
+			_elm_lang$core$Basics_ops['++'],
+			_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(reason),
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'missed',
+					_1: _elm_lang$core$Json_Encode$int(model.missedEvents)
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'durationMs',
+						_1: A2(
+							_elm_lang$core$Maybe$withDefault,
+							_elm_lang$core$Json_Encode$null,
+							A2(
+								_elm_lang$core$Maybe$map,
+								function (resync) {
+									return _elm_lang$core$Json_Encode$float(model.now - resync.startedAt);
+								},
+								model.resync))
+					},
+					_1: {ctor: '[]'}
+				}
+			});
+		var _p54 = result;
+		if (_p54.ctor === 'Err') {
+			return A3(
+				_Gizra$circuit_bid$Pusher_Health_Model$warning,
+				'resync',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'resync failed: ',
+					_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(reason)),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					detail,
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'error',
+							_1: _elm_lang$core$Json_Encode$string(_p54._0)
+						},
+						_1: {ctor: '[]'}
+					}));
+		} else {
+			return _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence) ? A3(_Gizra$circuit_bid$Pusher_Health_Model$warning, 'resync', 'resync ok: divergence confirmed', detail) : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, _Gizra$circuit_bid$Pusher_Health_Model$gapNoticeThreshold) > 0) ? A3(_Gizra$circuit_bid$Pusher_Health_Model$warning, 'resync', 'resync ok: repaired large gap', detail) : ((_elm_lang$core$Native_Utils.cmp(model.missedEvents, 0) > 0) ? A3(_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb, 'resync', 'resync ok: repaired gap', detail) : A3(_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb, 'resync', 'resync ok: nothing missed', detail)));
+		}
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$DropStale = {ctor: 'DropStale'};
 var _Gizra$circuit_bid$Pusher_Health_Model$Apply = {ctor: 'Apply'};
 var _Gizra$circuit_bid$Pusher_Health_Model$noteEvent = F2(
 	function (meta, model) {
-		var _p20 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannelSeq, meta, model);
-		var withGap = _p20._0;
-		var gap = _p20._1;
+		var _p55 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannelSeq, meta, model);
+		var withGap = _p55._0;
+		var gap = _p55._1;
 		if (_Gizra$circuit_bid$Pusher_Health_Model$isConnectedUsersEvent(meta.eventType)) {
 			return {ctor: '_Tuple3', _0: withGap, _1: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _2: gap};
 		} else {
@@ -44572,35 +45478,35 @@ var _Gizra$circuit_bid$Pusher_Health_Model$noteEvent = F2(
 						lastEventType: _elm_lang$core$Maybe$Just(meta.eventType),
 						now: A2(_elm_lang$core$Basics$max, withGap.now, meta.clientMs)
 					}));
-			var _p21 = function () {
-				var _p22 = {
+			var _p56 = function () {
+				var _p57 = {
 					ctor: '_Tuple2',
 					_0: meta.seq,
 					_1: _Gizra$circuit_bid$Pusher_Health_Model$entityKey(meta)
 				};
-				if (((_p22.ctor === '_Tuple2') && (_p22._0.ctor === 'Just')) && (_p22._1.ctor === 'Just')) {
-					var _p25 = _p22._0._0;
-					var _p24 = _p22._1._0;
-					var _p23 = A2(_elm_lang$core$Dict$get, _p24, withEvent.lastSeqByEntity);
-					if (_p23.ctor === 'Just') {
-						return (_elm_lang$core$Native_Utils.cmp(_p25, _p23._0) < 0) ? {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$DropStale, _1: withEvent.lastSeqByEntity} : {
+				if (((_p57.ctor === '_Tuple2') && (_p57._0.ctor === 'Just')) && (_p57._1.ctor === 'Just')) {
+					var _p60 = _p57._0._0;
+					var _p59 = _p57._1._0;
+					var _p58 = A2(_elm_lang$core$Dict$get, _p59, withEvent.lastSeqByEntity);
+					if (_p58.ctor === 'Just') {
+						return (_elm_lang$core$Native_Utils.cmp(_p60, _p58._0) < 0) ? {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$DropStale, _1: withEvent.lastSeqByEntity} : {
 							ctor: '_Tuple2',
 							_0: _Gizra$circuit_bid$Pusher_Health_Model$Apply,
-							_1: A3(_elm_lang$core$Dict$insert, _p24, _p25, withEvent.lastSeqByEntity)
+							_1: A3(_elm_lang$core$Dict$insert, _p59, _p60, withEvent.lastSeqByEntity)
 						};
 					} else {
 						return {
 							ctor: '_Tuple2',
 							_0: _Gizra$circuit_bid$Pusher_Health_Model$Apply,
-							_1: A3(_elm_lang$core$Dict$insert, _p24, _p25, withEvent.lastSeqByEntity)
+							_1: A3(_elm_lang$core$Dict$insert, _p59, _p60, withEvent.lastSeqByEntity)
 						};
 					}
 				} else {
 					return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _1: withEvent.lastSeqByEntity};
 				}
 			}();
-			var verdict = _p21._0;
-			var lastSeqByEntity = _p21._1;
+			var verdict = _p56._0;
+			var lastSeqByEntity = _p56._1;
 			return {
 				ctor: '_Tuple3',
 				_0: _elm_lang$core$Native_Utils.update(
@@ -44620,6 +45526,12 @@ var _Gizra$circuit_bid$Pusher_Health_Model$ProbeResult = F2(
 	});
 var _Gizra$circuit_bid$Pusher_Health_Model$SaleResult = function (a) {
 	return {ctor: 'SaleResult', _0: a};
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$HandleVisibility = function (a) {
+	return {ctor: 'HandleVisibility', _0: a};
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$RequestProbe = function (a) {
+	return {ctor: 'RequestProbe', _0: a};
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$ResyncJitterElapsed = F2(
 	function (a, b) {
@@ -44648,6 +45560,30 @@ var _Gizra$circuit_bid$Pusher_Health_Model$HandleState = function (a) {
 };
 var _Gizra$circuit_bid$Pusher_Health_Model$HealthTick = function (a) {
 	return {ctor: 'HealthTick', _0: a};
+};
+var _Gizra$circuit_bid$Pusher_Health_Model$Stale = {ctor: 'Stale'};
+var _Gizra$circuit_bid$Pusher_Health_Model$Degraded = {ctor: 'Degraded'};
+var _Gizra$circuit_bid$Pusher_Health_Model$Live = {ctor: 'Live'};
+var _Gizra$circuit_bid$Pusher_Health_Model$liveFeedState = function (model) {
+	var neverConnectedForLong = (!model.everConnected) && A2(
+		_elm_lang$core$Maybe$withDefault,
+		false,
+		A2(
+			_elm_lang$core$Maybe$map,
+			function (t) {
+				return _elm_lang$core$Native_Utils.cmp(model.now - t, _Gizra$circuit_bid$Pusher_Health_Model$neverConnectedGraceMs) > 0;
+			},
+			model.openedAt));
+	var saleChannelBroken = model.everConnected && A2(
+		_elm_lang$core$List$any,
+		function (_p61) {
+			var _p62 = _p61;
+			return (!_p62._1.subscribed) && (!_Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p62._0));
+		},
+		_elm_lang$core$Dict$toList(model.channels));
+	return (model.everConnected && (!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected))) ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : (saleChannelBroken ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : ((!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing)) ? _Gizra$circuit_bid$Pusher_Health_Model$Stale : (neverConnectedForLong ? _Gizra$circuit_bid$Pusher_Health_Model$Degraded : ((model.everConnected && (!_elm_lang$core$Native_Utils.eq(
+		_Gizra$circuit_bid$Pusher_Health_Model$level(model),
+		_Gizra$circuit_bid$Pusher_Health_Model$Green))) ? _Gizra$circuit_bid$Pusher_Health_Model$Degraded : _Gizra$circuit_bid$Pusher_Health_Model$Live))));
 };
 
 var _Gizra$circuit_bid$App_Model$themeToString = function (theme) {
@@ -45503,12 +46439,23 @@ var _Gizra$circuit_bid$App_Utils$isClerkPage = function (page) {
 			return false;
 	}
 };
+var _Gizra$circuit_bid$App_Utils$isBidderPage = function (page) {
+	var _p2 = page;
+	switch (_p2.ctor) {
+		case 'Sale':
+			return true;
+		case 'SaleV1':
+			return true;
+		default:
+			return false;
+	}
+};
 var _Gizra$circuit_bid$App_Utils$isHealthPage = function (page) {
 	return _Gizra$circuit_bid$App_Utils$isClerkPage(page) || _Gizra$circuit_bid$App_Utils$isRoomPage(page);
 };
 var _Gizra$circuit_bid$App_Utils$isSalePage = function (page) {
-	var _p2 = page;
-	switch (_p2.ctor) {
+	var _p3 = page;
+	switch (_p3.ctor) {
 		case 'Sale':
 			return true;
 		case 'SaleV1':
@@ -45518,8 +46465,8 @@ var _Gizra$circuit_bid$App_Utils$isSalePage = function (page) {
 	}
 };
 var _Gizra$circuit_bid$App_Utils$decodeLanguageCode = function (langCode) {
-	var _p3 = langCode;
-	switch (_p3) {
+	var _p4 = langCode;
+	switch (_p4) {
 		case 'en':
 			return _Gizra$circuit_bid$Translate$English;
 		case 'de':
@@ -45549,8 +46496,8 @@ var _Gizra$circuit_bid$App_Utils$getTickFrequency = function (model) {
 				},
 				_krisajenkins$remotedata$RemoteData$toMaybe(page.sale));
 		});
-	var _p4 = model.activePage;
-	switch (_p4.ctor) {
+	var _p5 = model.activePage;
+	switch (_p5.ctor) {
 		case 'Sale':
 			return A2(getFrequency, model.pageSale, 3);
 		case 'SaleAuctioneer':
@@ -45573,7 +46520,7 @@ var _Gizra$circuit_bid$App_Utils$handleErrors = F2(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			model.errors,
 			function (error) {
-				var _p5 = _Gizra$circuit_bid$Error_Utils$debugLog(error);
+				var _p6 = _Gizra$circuit_bid$Error_Utils$debugLog(error);
 				return {ctor: '::', _0: error, _1: model.errors};
 			},
 			maybeError);
@@ -45583,63 +46530,63 @@ var _Gizra$circuit_bid$App_Utils$handleErrors = F2(
 	});
 var _Gizra$circuit_bid$App_Utils$pageAfterLogout = F2(
 	function (activePage, siteShortName) {
-		var _p6 = activePage;
-		switch (_p6.ctor) {
+		var _p7 = activePage;
+		switch (_p7.ctor) {
 			case 'Sale':
-				return _Gizra$circuit_bid$App_PageType$Sale(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$Sale(_p7._0);
 			case 'SaleAuctioneer':
-				return _Gizra$circuit_bid$App_PageType$Sale(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$Sale(_p7._0);
 			case 'SaleClerk':
-				return _Gizra$circuit_bid$App_PageType$Sale(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$Sale(_p7._0);
 			case 'SaleRoom':
-				return _Gizra$circuit_bid$App_PageType$Sale(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$Sale(_p7._0);
 			case 'SaleV1':
-				return _Gizra$circuit_bid$App_PageType$SaleV1(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$SaleV1(_p7._0);
 			case 'SaleAuctioneerV1':
-				return _Gizra$circuit_bid$App_PageType$SaleV1(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$SaleV1(_p7._0);
 			case 'SaleClerkV1':
-				return _Gizra$circuit_bid$App_PageType$SaleV1(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$SaleV1(_p7._0);
 			case 'SaleRoomV1':
-				return _Gizra$circuit_bid$App_PageType$SaleV1(_p6._0);
+				return _Gizra$circuit_bid$App_PageType$SaleV1(_p7._0);
 			default:
 				return _Gizra$circuit_bid$App_PageType$Dashboard;
 		}
 	});
 var _Gizra$circuit_bid$App_Utils$dispatchKeyboardEvent = F2(
 	function (model, keyEvent) {
-		var _p7 = model.activePage;
-		switch (_p7.ctor) {
+		var _p8 = model.activePage;
+		switch (_p8.ctor) {
 			case 'SaleClerk':
 				return _elm_lang$core$Maybe$Just(
 					_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-						A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleKeyboardEvent, _p7._0, keyEvent)));
+						A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleKeyboardEvent, _p8._0, keyEvent)));
 			case 'SaleClerkV1':
 				return _elm_lang$core$Maybe$Just(
 					_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-						A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleKeyboardEvent, _p7._0, keyEvent)));
+						A2(_Gizra$circuit_bid$Pages_Clerk_Model$HandleKeyboardEvent, _p8._0, keyEvent)));
 			default:
 				return _elm_lang$core$Maybe$Nothing;
 		}
 	});
 var _Gizra$circuit_bid$App_Utils$currentSaleUuid = function (activePage) {
-	var _p8 = activePage;
-	switch (_p8.ctor) {
+	var _p9 = activePage;
+	switch (_p9.ctor) {
 		case 'Sale':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleClerk':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleRoom':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleAuctioneer':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleV1':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleClerkV1':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleRoomV1':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		case 'SaleAuctioneerV1':
-			return _elm_lang$core$Maybe$Just(_p8._0);
+			return _elm_lang$core$Maybe$Just(_p9._0);
 		default:
 			return _elm_lang$core$Maybe$Nothing;
 	}
@@ -45647,8 +46594,8 @@ var _Gizra$circuit_bid$App_Utils$currentSaleUuid = function (activePage) {
 var _Gizra$circuit_bid$App_Utils$currentSale = function (model) {
 	return _krisajenkins$remotedata$RemoteData$toMaybe(
 		function () {
-			var _p9 = model.activePage;
-			switch (_p9.ctor) {
+			var _p10 = model.activePage;
+			switch (_p10.ctor) {
 				case 'Sale':
 					return model.pageSale.sale;
 				case 'SaleAuctioneer':
@@ -46251,6 +47198,219 @@ var _Gizra$circuit_bid$Bid_Utils$getBidTypeAsString = F2(
 			default:
 				return A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$PostSale);
 		}
+	});
+
+var _Gizra$circuit_bid$Item_Utils$getStaticItem = function (item) {
+	return {name: item.name, image: item.image, galleryImages: item.galleryImages, description: item.description, estimatedPrice: item.estimatedPrice, estimatedLow: item.estimatedLow, estimatedHigh: item.estimatedHigh, lotId: item.lotId, openingPrice: item.openingPrice, subtitle: item.subtitle, webUrl: item.webUrl};
+};
+var _Gizra$circuit_bid$Item_Utils$withPrice = F2(
+	function (func, price) {
+		var _p0 = price;
+		if (_p0.ctor === 'Current') {
+			return func(_p0._0);
+		} else {
+			return func(_p0._0);
+		}
+	});
+var _Gizra$circuit_bid$Item_Utils$getNextPriceAmount = function (calculated) {
+	var _p1 = calculated.nextPrice;
+	if (_p1.ctor === 'Just') {
+		return _p1._0;
+	} else {
+		return _Gizra$circuit_bid$Amount$zero;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$getAmountFromPrice = function (price) {
+	var _p2 = price;
+	if (_p2.ctor === 'Opening') {
+		return _p2._0;
+	} else {
+		return _p2._0;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$hasLiveBids = function (calculated) {
+	return _elm_community$maybe_extra$Maybe_Extra$isJust(
+		_Gizra$circuit_bid$Bid_Utils$getHighestBid(calculated.bids));
+};
+var _Gizra$circuit_bid$Item_Utils$clerkStatusIsLoading = function (status) {
+	var isLoading = function (clerkStatus) {
+		return _krisajenkins$remotedata$RemoteData$isLoading(
+			_Gizra$elm_editable_webdata$Editable_WebData$toWebData(clerkStatus));
+	};
+	var _p3 = status;
+	if (_p3.ctor === 'EditableStatus') {
+		var _p4 = _p3._0;
+		if (_p4.ctor === 'LiveOnly') {
+			return isLoading(_p4._0);
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$getClerkStatus = function (editableStatus) {
+	var extractValue = function (val) {
+		return _elm_lang$core$Maybe$Just(
+			_stoeffel$editable$Editable$value(
+				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(val)));
+	};
+	var _p5 = editableStatus;
+	if (_p5.ctor === 'LiveOnly') {
+		return extractValue(_p5._0);
+	} else {
+		return _elm_lang$core$Maybe$Nothing;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$getEditableItemStatus = function (status) {
+	var _p6 = status;
+	if (_p6.ctor === 'EditableStatus') {
+		return _elm_lang$core$Maybe$Just(_p6._0);
+	} else {
+		return _elm_lang$core$Maybe$Nothing;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isItemNotActiveButAlreadyHasLiveBids = function (status) {
+	return _elm_lang$core$Native_Utils.eq(
+		status,
+		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(_Gizra$circuit_bid$Item_Model$ItemNotActiveButAlreadyHasLiveBids));
+};
+var _Gizra$circuit_bid$Item_Utils$isMailAllowed = function (status) {
+	return _elm_lang$core$Native_Utils.eq(
+		status,
+		_Gizra$circuit_bid$Item_Model$EditableStatus(_Gizra$circuit_bid$Item_Model$MailOnly));
+};
+var _Gizra$circuit_bid$Item_Utils$isLiveAllowed = function (status) {
+	var _p7 = status;
+	if ((_p7.ctor === 'EditableStatus') && (_p7._0.ctor === 'LiveOnly')) {
+		return true;
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isUnsold = function (status) {
+	return _elm_lang$core$Native_Utils.eq(
+		status,
+		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(
+			_Gizra$circuit_bid$Item_Model$ItemClosed(_Gizra$circuit_bid$Item_Model$Unsold)));
+};
+var _Gizra$circuit_bid$Item_Utils$isSold = function (status) {
+	return _elm_lang$core$Native_Utils.eq(
+		status,
+		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(
+			_Gizra$circuit_bid$Item_Model$ItemClosed(_Gizra$circuit_bid$Item_Model$Sold)));
+};
+var _Gizra$circuit_bid$Item_Utils$isWithdrawn = function (status) {
+	return _elm_lang$core$Native_Utils.eq(
+		status,
+		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(_Gizra$circuit_bid$Item_Model$Withdrawn));
+};
+var _Gizra$circuit_bid$Item_Utils$isPaused = function (status) {
+	var _p8 = status;
+	if (_p8.ctor === 'EditableStatus') {
+		return _elm_lang$core$Native_Utils.eq(
+			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p8._0),
+			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Paused));
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isGoneTransition = function (status) {
+	var _p9 = status;
+	if (_p9.ctor === 'EditableStatus') {
+		return _elm_lang$core$Native_Utils.eq(
+			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p9._0),
+			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$GoneTransition));
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isGoing = function (status) {
+	var _p10 = status;
+	if (_p10.ctor === 'EditableStatus') {
+		return _elm_lang$core$Native_Utils.eq(
+			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p10._0),
+			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Going));
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isOpen = function (status) {
+	var _p11 = status;
+	if (_p11.ctor === 'EditableStatus') {
+		return _elm_lang$core$Native_Utils.eq(
+			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p11._0),
+			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Open));
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isOpenOrGoing = function (status) {
+	return _Gizra$circuit_bid$Item_Utils$isOpen(status) || _Gizra$circuit_bid$Item_Utils$isGoing(status);
+};
+var _Gizra$circuit_bid$Item_Utils$isLiveOpenOrGoing = function (status) {
+	return _Gizra$circuit_bid$Item_Utils$isOpenOrGoing(status) && _Gizra$circuit_bid$Item_Utils$isLiveAllowed(status);
+};
+var _Gizra$circuit_bid$Item_Utils$isAvailable = function (status) {
+	var _p12 = status;
+	if (_p12.ctor === 'EditableStatus') {
+		return true;
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$isClosed = function (status) {
+	var _p13 = status;
+	if (_p13.ctor === 'ReadOnlyStatus') {
+		var _p14 = _p13._0;
+		if (_p14.ctor === 'ItemClosed') {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+};
+var _Gizra$circuit_bid$Item_Utils$getWinningBid = function (calculated) {
+	return A3(
+		_elm_community$maybe_extra$Maybe_Extra$unwrap,
+		_elm_lang$core$Maybe$Nothing,
+		function (winningBid) {
+			var maybeMailBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bookBids);
+			var maybeLiveBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bids);
+			return A2(
+				_elm_community$maybe_extra$Maybe_Extra$filter,
+				_Gizra$circuit_bid$Bid_Utils$isValid,
+				A2(_elm_community$maybe_extra$Maybe_Extra$or, maybeLiveBid, maybeMailBid));
+		},
+		calculated.winningBid);
+};
+var _Gizra$circuit_bid$Item_Utils$hasWinningBid = function (calculated) {
+	return _elm_community$maybe_extra$Maybe_Extra$isJust(calculated.winningBid);
+};
+var _Gizra$circuit_bid$Item_Utils$getPrice = function (calculated) {
+	return _Gizra$circuit_bid$Item_Utils$hasWinningBid(calculated) ? _Gizra$circuit_bid$Item_Model$Current(
+		A2(_elm_lang$core$Maybe$withDefault, calculated.openingPrice, calculated.currentPrice)) : _Gizra$circuit_bid$Item_Model$Opening(calculated.openingPrice);
+};
+var _Gizra$circuit_bid$Item_Utils$isWinningUser = F4(
+	function (user, modelBackend, saleUuid, calculated) {
+		return A3(
+			_elm_community$maybe_extra$Maybe_Extra$unwrap,
+			false,
+			function (bidKey) {
+				var hasOwnBid = function (bidDict) {
+					var _p15 = A2(_Gizra$elm_dictlist$EveryDictList$get, bidKey, bidDict);
+					if (_p15.ctor === 'Nothing') {
+						return false;
+					} else {
+						var _p16 = _p15._0;
+						return _Gizra$circuit_bid$Bid_Utils$isValid(_p16) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p16);
+					}
+				};
+				return hasOwnBid(calculated.bids) || hasOwnBid(calculated.bookBids);
+			},
+			calculated.winningBid);
 	});
 
 var _Gizra$circuit_bid$ItemManager_Utils$getTrimmedItemsList = F5(
@@ -49635,79 +50795,215 @@ var _Gizra$circuit_bid$Pusher_Decoder$decodePusherEvent = F2(
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_Gizra$circuit_bid$Pusher_Model$PusherEvent));
 	});
 
-var _Gizra$circuit_bid$Pusher_Health_Update$reportCmd = F3(
-	function (location, message, model) {
+var _Gizra$circuit_bid$Pusher_Health_Update$reportPayload = F2(
+	function (report, model) {
 		var number = function (maybe) {
 			return A2(
 				_elm_lang$core$Maybe$withDefault,
-				'-',
+				_elm_lang$core$Json_Encode$null,
 				A2(
 					_elm_lang$core$Maybe$map,
 					function (_p0) {
-						return _elm_lang$core$Basics$toString(
+						return _elm_lang$core$Json_Encode$int(
 							_elm_lang$core$Basics$round(_p0));
 					},
 					maybe));
 		};
-		var details = A2(
-			_elm_lang$core$String$join,
-			' ',
+		var extra = A2(
+			_elm_lang$core$Basics_ops['++'],
 			{
 				ctor: '::',
-				_0: message,
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'level',
+					_1: _elm_lang$core$Json_Encode$string(
+						_elm_lang$core$Basics$toString(
+							_Gizra$circuit_bid$Pusher_Health_Model$level(model)))
+				},
 				_1: {
 					ctor: '::',
-					_0: A2(
-						_elm_lang$core$Basics_ops['++'],
-						'level=',
-						_elm_lang$core$Basics$toString(
-							_Gizra$circuit_bid$Pusher_Health_Model$level(model))),
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'lag',
+						_1: number(model.lagMs)
+					},
 					_1: {
 						ctor: '::',
-						_0: A2(
-							_elm_lang$core$Basics_ops['++'],
-							'lag=',
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								number(model.lagMs),
-								'ms')),
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'http',
+							_1: number(model.httpRttMs)
+						},
 						_1: {
 							ctor: '::',
-							_0: A2(
-								_elm_lang$core$Basics_ops['++'],
-								'http=',
-								A2(
-									_elm_lang$core$Basics_ops['++'],
-									number(model.httpRttMs),
-									'ms')),
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'ws',
+								_1: number(model.wsRttMs)
+							},
 							_1: {
 								ctor: '::',
-								_0: A2(
-									_elm_lang$core$Basics_ops['++'],
-									'ws=',
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										number(model.wsRttMs),
-										'ms')),
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'missed',
+									_1: _elm_lang$core$Json_Encode$int(model.missedEvents)
+								},
 								_1: {
 									ctor: '::',
-									_0: A2(
-										_elm_lang$core$Basics_ops['++'],
-										'missed=',
-										_elm_lang$core$Basics$toString(model.missedEvents)),
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'stale',
+										_1: _elm_lang$core$Json_Encode$int(model.droppedStale)
+									},
 									_1: {
 										ctor: '::',
-										_0: A2(
-											_elm_lang$core$Basics_ops['++'],
-											'stale=',
-											_elm_lang$core$Basics$toString(model.droppedStale)),
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'reconnects',
+											_1: _elm_lang$core$Json_Encode$int(model.reconnects)
+										},
 										_1: {
 											ctor: '::',
-											_0: A2(
-												_elm_lang$core$Basics_ops['++'],
-												'reconnects=',
-												_elm_lang$core$Basics$toString(model.reconnects)),
-											_1: {ctor: '[]'}
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'divergences',
+												_1: _elm_lang$core$Json_Encode$int(model.divergences)
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: 'bridgeRestarts',
+													_1: _elm_lang$core$Json_Encode$int(model.bridgeRestarts)
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: 'epochGap',
+														_1: _elm_lang$core$Json_Encode$int(model.lastEpochGap)
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '_Tuple2',
+															_0: 'lagOutliers',
+															_1: _elm_lang$core$Json_Encode$int(model.lagOutliers)
+														},
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			report.detail);
+		return _elm_lang$core$Json_Encode$object(
+			{
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: 'module',
+					_1: _elm_lang$core$Json_Encode$string('Pusher.Health')
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: 'location',
+						_1: _elm_lang$core$Json_Encode$string(report.location)
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: 'level',
+							_1: _elm_lang$core$Json_Encode$string(
+								_Gizra$circuit_bid$Pusher_Health_Model$severityToString(report.severity))
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: 'type',
+								_1: _elm_lang$core$Json_Encode$string('Health')
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'message',
+									_1: _elm_lang$core$Json_Encode$string(report.$class)
+								},
+								_1: {
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'httpStatus', _1: _elm_lang$core$Json_Encode$null},
+									_1: {
+										ctor: '::',
+										_0: {ctor: '_Tuple2', _0: 'httpUrl', _1: _elm_lang$core$Json_Encode$null},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '_Tuple2',
+												_0: 'breadcrumb',
+												_1: _elm_lang$core$Json_Encode$bool(
+													_elm_lang$core$Native_Utils.eq(report.severity, _Gizra$circuit_bid$Pusher_Health_Model$Breadcrumb))
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: 'fingerprint',
+													_1: _elm_lang$core$Json_Encode$list(
+														A2(
+															_elm_lang$core$List$map,
+															_elm_lang$core$Json_Encode$string,
+															{
+																ctor: '::',
+																_0: 'Pusher.Health',
+																_1: {
+																	ctor: '::',
+																	_0: report.location,
+																	_1: {
+																		ctor: '::',
+																		_0: report.$class,
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}))
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '_Tuple2',
+														_0: 'tags',
+														_1: _elm_lang$core$Json_Encode$object(
+															{
+																ctor: '::',
+																_0: {
+																	ctor: '_Tuple2',
+																	_0: 'healthClass',
+																	_1: _elm_lang$core$Json_Encode$string(report.$class)
+																},
+																_1: {ctor: '[]'}
+															})
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '_Tuple2',
+															_0: 'extra',
+															_1: _elm_lang$core$Json_Encode$object(extra)
+														},
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
 								}
@@ -49716,60 +51012,18 @@ var _Gizra$circuit_bid$Pusher_Health_Update$reportCmd = F3(
 					}
 				}
 			});
-		return _Gizra$circuit_bid$Ports$reportError(
-			_elm_lang$core$Json_Encode$object(
-				{
-					ctor: '::',
-					_0: {
-						ctor: '_Tuple2',
-						_0: 'module',
-						_1: _elm_lang$core$Json_Encode$string('Pusher.Health')
-					},
-					_1: {
-						ctor: '::',
-						_0: {
-							ctor: '_Tuple2',
-							_0: 'location',
-							_1: _elm_lang$core$Json_Encode$string(location)
-						},
-						_1: {
-							ctor: '::',
-							_0: {
-								ctor: '_Tuple2',
-								_0: 'level',
-								_1: _elm_lang$core$Json_Encode$string('warning')
-							},
-							_1: {
-								ctor: '::',
-								_0: {
-									ctor: '_Tuple2',
-									_0: 'type',
-									_1: _elm_lang$core$Json_Encode$string('Health')
-								},
-								_1: {
-									ctor: '::',
-									_0: {
-										ctor: '_Tuple2',
-										_0: 'message',
-										_1: _elm_lang$core$Json_Encode$string(details)
-									},
-									_1: {
-										ctor: '::',
-										_0: {ctor: '_Tuple2', _0: 'httpStatus', _1: _elm_lang$core$Json_Encode$null},
-										_1: {
-											ctor: '::',
-											_0: {ctor: '_Tuple2', _0: 'httpUrl', _1: _elm_lang$core$Json_Encode$null},
-											_1: {ctor: '[]'}
-										}
-									}
-								}
-							}
-						}
-					}
-				}));
 	});
-var _Gizra$circuit_bid$Pusher_Health_Update$jitterCmd = F2(
-	function (resyncLevel, reason) {
+var _Gizra$circuit_bid$Pusher_Health_Update$reportCmd = F2(
+	function (report, model) {
+		return _Gizra$circuit_bid$Ports$reportError(
+			A2(_Gizra$circuit_bid$Pusher_Health_Update$reportPayload, report, model));
+	});
+var _Gizra$circuit_bid$Pusher_Health_Update$reportSampled = F3(
+	function (every, report, model) {
+		return A2(_Gizra$circuit_bid$Pusher_Health_Model$sampled, every, model) ? A2(_Gizra$circuit_bid$Pusher_Health_Update$reportCmd, report, model) : _elm_lang$core$Platform_Cmd$none;
+	});
+var _Gizra$circuit_bid$Pusher_Health_Update$jitterCmd = F3(
+	function (maxMs, resyncLevel, reason) {
 		return _elm_lang$core$Native_Utils.eq(reason, _Gizra$circuit_bid$Pusher_Health_Model$Manual) ? A2(
 			_elm_lang$core$Task$perform,
 			_elm_lang$core$Basics$identity,
@@ -49782,7 +51036,7 @@ var _Gizra$circuit_bid$Pusher_Health_Update$jitterCmd = F2(
 			A2(
 				_elm_lang$core$Random$generate,
 				_elm_lang$core$Basics$identity,
-				A2(_elm_lang$core$Random$float, 0, 1500)));
+				A2(_elm_lang$core$Random$float, 0, maxMs)));
 	});
 var _Gizra$circuit_bid$Pusher_Health_Update$resyncSaleCmd = F4(
 	function (backendUrl, accessToken, saleUuid, tagger) {
@@ -50148,8 +51402,57 @@ var _Gizra$circuit_bid$Pusher_Update$pusherReconnect = _elm_lang$core$Native_Pla
 	function (v) {
 		return null;
 	});
+var _Gizra$circuit_bid$Pusher_Update$pageVisibility = _elm_lang$core$Native_Platform.incomingPort(
+	'pageVisibility',
+	A2(
+		_elm_lang$core$Json_Decode$andThen,
+		function (visible) {
+			return A2(
+				_elm_lang$core$Json_Decode$andThen,
+				function (at) {
+					return A2(
+						_elm_lang$core$Json_Decode$andThen,
+						function (source) {
+							return _elm_lang$core$Json_Decode$succeed(
+								{visible: visible, at: at, source: source});
+						},
+						A2(_elm_lang$core$Json_Decode$field, 'source', _elm_lang$core$Json_Decode$string));
+				},
+				A2(_elm_lang$core$Json_Decode$field, 'at', _elm_lang$core$Json_Decode$float));
+		},
+		A2(_elm_lang$core$Json_Decode$field, 'visible', _elm_lang$core$Json_Decode$bool)));
 var _Gizra$circuit_bid$Pusher_Update$pusherIncomingEvents = _elm_lang$core$Native_Platform.incomingPort('pusherIncomingEvents', _elm_lang$core$Json_Decode$value);
 
+var _Gizra$circuit_bid$App_Health$captureWith = F3(
+	function (every, r, health) {
+		return A2(_Gizra$circuit_bid$Pusher_Health_Model$throttled, r, health) ? {ctor: '_Tuple2', _0: health, _1: _elm_lang$core$Platform_Cmd$none} : {
+			ctor: '_Tuple2',
+			_0: A3(_Gizra$circuit_bid$Pusher_Health_Model$noteReported, r, health.now, health),
+			_1: A3(_Gizra$circuit_bid$Pusher_Health_Update$reportSampled, every, r, health)
+		};
+	});
+var _Gizra$circuit_bid$App_Health$outcomeReport = F2(
+	function (health, result) {
+		var _p0 = health.resync;
+		if (_p0.ctor === 'Just') {
+			return A3(_Gizra$circuit_bid$Pusher_Health_Model$resyncReport, _p0._0.reason, result, health);
+		} else {
+			var _p1 = result;
+			if (_p1.ctor === 'Err') {
+				return A3(
+					_Gizra$circuit_bid$Pusher_Health_Model$warning,
+					'resync',
+					A2(_elm_lang$core$Basics_ops['++'], 'resync failed: ', _p1._0),
+					{ctor: '[]'});
+			} else {
+				return A3(
+					_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+					'resync',
+					'resync ok: nothing missed',
+					{ctor: '[]'});
+			}
+		}
+	});
 var _Gizra$circuit_bid$App_Health$liveBidCount = function (calculated) {
 	return _elm_lang$core$List$length(
 		A2(
@@ -50159,43 +51462,43 @@ var _Gizra$circuit_bid$App_Health$liveBidCount = function (calculated) {
 			},
 			_Gizra$elm_dictlist$EveryDictList$values(calculated.bids)));
 };
-var _Gizra$circuit_bid$App_Health$probeDiverges = F3(
-	function (maybeSale, maybeItemManager, fetched) {
-		var _p0 = {ctor: '_Tuple2', _0: maybeSale, _1: maybeItemManager};
-		if (((_p0.ctor === '_Tuple2') && (_p0._0.ctor === 'Just')) && (_p0._1.ctor === 'Just')) {
-			var _p7 = _p0._0._0;
-			var _p6 = _p0._1._0;
+var _Gizra$circuit_bid$App_Health$probeDiverges = F4(
+	function (countBids, maybeSale, maybeItemManager, fetched) {
+		var _p2 = {ctor: '_Tuple2', _0: maybeSale, _1: maybeItemManager};
+		if (((_p2.ctor === '_Tuple2') && (_p2._0.ctor === 'Just')) && (_p2._1.ctor === 'Just')) {
+			var _p9 = _p2._0._0;
+			var _p8 = _p2._1._0;
 			var local = A2(
 				_elm_lang$core$Maybe$andThen,
-				function (_p1) {
+				function (_p3) {
 					return _krisajenkins$remotedata$RemoteData$toMaybe(
 						function (_) {
 							return _.calculated;
-						}(_p1));
+						}(_p3));
 				},
-				A2(_Gizra$elm_dictlist$EveryDictList$get, _p7.item, _p6.items));
+				A2(_Gizra$elm_dictlist$EveryDictList$get, _p9.item, _p8.items));
 			var uuid = _elm_lang$core$List$head(
 				_Gizra$elm_dictlist$EveryDictList$keys(
 					A2(
 						_Gizra$elm_dictlist$EveryDictList$filter,
 						F2(
-							function (_p2, lotMap) {
-								return _elm_lang$core$Native_Utils.eq(lotMap.itemId, _p7.item);
+							function (_p4, lotMap) {
+								return _elm_lang$core$Native_Utils.eq(lotMap.itemId, _p9.item);
 							}),
-						_p6.lotMap)));
+						_p8.lotMap)));
 			var remote = A2(
 				_elm_lang$core$Maybe$andThen,
 				function (key) {
 					return A2(_Gizra$elm_dictlist$EveryDictList$get, key, fetched);
 				},
 				uuid);
-			var _p3 = {ctor: '_Tuple2', _0: local, _1: remote};
-			if (((_p3.ctor === '_Tuple2') && (_p3._0.ctor === 'Just')) && (_p3._1.ctor === 'Just')) {
-				var _p5 = _p3._1._0;
-				var _p4 = _p3._0._0;
-				return (!_elm_lang$core$Native_Utils.eq(_p4.currentPrice, _p5.currentPrice)) || ((!_elm_lang$core$Native_Utils.eq(_p4.status, _p5.status)) || ((!_elm_lang$core$Native_Utils.eq(_p4.winningBid, _p5.winningBid)) || (!_elm_lang$core$Native_Utils.eq(
-					_Gizra$circuit_bid$App_Health$liveBidCount(_p4),
-					_Gizra$circuit_bid$App_Health$liveBidCount(_p5)))));
+			var _p5 = {ctor: '_Tuple2', _0: local, _1: remote};
+			if (((_p5.ctor === '_Tuple2') && (_p5._0.ctor === 'Just')) && (_p5._1.ctor === 'Just')) {
+				var _p7 = _p5._1._0;
+				var _p6 = _p5._0._0;
+				return (!_elm_lang$core$Native_Utils.eq(_p6.currentPrice, _p7.currentPrice)) || ((!_elm_lang$core$Native_Utils.eq(_p6.status, _p7.status)) || ((!_elm_lang$core$Native_Utils.eq(_p6.winningBid, _p7.winningBid)) || (countBids && (!_elm_lang$core$Native_Utils.eq(
+					_Gizra$circuit_bid$App_Health$liveBidCount(_p6),
+					_Gizra$circuit_bid$App_Health$liveBidCount(_p7))))));
 			} else {
 				return false;
 			}
@@ -50205,15 +51508,15 @@ var _Gizra$circuit_bid$App_Health$probeDiverges = F3(
 	});
 var _Gizra$circuit_bid$App_Health$probeCmd = F6(
 	function (backendUrl, currentDate, accessToken, maybeUser, maybeSale, maybeItemManager) {
-		var _p8 = {ctor: '_Tuple3', _0: maybeSale, _1: maybeItemManager, _2: maybeUser};
-		if ((((_p8.ctor === '_Tuple3') && (_p8._0.ctor === 'Just')) && (_p8._1.ctor === 'Just')) && (_p8._2.ctor === 'Just')) {
+		var _p10 = {ctor: '_Tuple3', _0: maybeSale, _1: maybeItemManager, _2: maybeUser};
+		if ((((_p10.ctor === '_Tuple3') && (_p10._0.ctor === 'Just')) && (_p10._1.ctor === 'Just')) && (_p10._2.ctor === 'Just')) {
 			return A6(
 				_Gizra$circuit_bid$Pusher_Health_Update$probeCmd,
 				currentDate,
 				backendUrl,
 				accessToken,
-				_p8._2._0,
-				A2(_Gizra$circuit_bid$ItemManager_Utils$getCurrentAndNextItemIds, _p8._1._0, _p8._0._0.item),
+				_p10._2._0,
+				A2(_Gizra$circuit_bid$ItemManager_Utils$getCurrentAndNextItemIds, _p10._1._0, _p10._0._0.item),
 				_Gizra$circuit_bid$App_Model$HandleProbe);
 		} else {
 			return _elm_lang$core$Platform_Cmd$none;
@@ -50221,6 +51524,89 @@ var _Gizra$circuit_bid$App_Health$probeCmd = F6(
 	});
 var _Gizra$circuit_bid$App_Health$saleToUpdateData = function (sale) {
 	return {label: sale.label, status: sale.status, autoClerk: sale.autoClerk, pausedMessage: sale.pausedMessage, item: sale.item, session: sale.session, messageClearId: sale.messageClearId, currenciesInfo: sale.currenciesInfo};
+};
+var _Gizra$circuit_bid$App_Health$currentLot = F3(
+	function (maybeSale, maybeItemManager, fetched) {
+		var _p11 = {ctor: '_Tuple2', _0: maybeSale, _1: maybeItemManager};
+		if (((_p11.ctor === '_Tuple2') && (_p11._0.ctor === 'Just')) && (_p11._1.ctor === 'Just')) {
+			var _p16 = _p11._0._0;
+			var _p15 = _p11._1._0;
+			var _p12 = fetched;
+			if (_p12.ctor === 'Nothing') {
+				return A2(
+					_elm_lang$core$Maybe$andThen,
+					function (_p13) {
+						return _krisajenkins$remotedata$RemoteData$toMaybe(
+							function (_) {
+								return _.calculated;
+							}(_p13));
+					},
+					A2(_Gizra$elm_dictlist$EveryDictList$get, _p16.item, _p15.items));
+			} else {
+				return A2(
+					_elm_lang$core$Maybe$andThen,
+					function (key) {
+						return A2(_Gizra$elm_dictlist$EveryDictList$get, key, _p12._0);
+					},
+					_elm_lang$core$List$head(
+						_Gizra$elm_dictlist$EveryDictList$keys(
+							A2(
+								_Gizra$elm_dictlist$EveryDictList$filter,
+								F2(
+									function (_p14, lotMap) {
+										return _elm_lang$core$Native_Utils.eq(lotMap.itemId, _p16.item);
+									}),
+								_p15.lotMap))));
+			}
+		} else {
+			return _elm_lang$core$Maybe$Nothing;
+		}
+	});
+var _Gizra$circuit_bid$App_Health$lotIsOpen = F2(
+	function (maybeSale, maybeItemManager) {
+		return A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (lot) {
+					return _Gizra$circuit_bid$Item_Utils$isOpenOrGoing(lot.status) || _Gizra$circuit_bid$Item_Utils$isPaused(lot.status);
+				},
+				A3(_Gizra$circuit_bid$App_Health$currentLot, maybeSale, maybeItemManager, _elm_lang$core$Maybe$Nothing)));
+	});
+var _Gizra$circuit_bid$App_Health$lotLooksEnded = F3(
+	function (maybeSale, maybeItemManager, fetched) {
+		return A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (lot) {
+					return !(_Gizra$circuit_bid$Item_Utils$isOpenOrGoing(lot.status) || _Gizra$circuit_bid$Item_Utils$isPaused(lot.status));
+				},
+				A3(
+					_Gizra$circuit_bid$App_Health$currentLot,
+					maybeSale,
+					maybeItemManager,
+					_elm_lang$core$Maybe$Just(fetched))));
+	});
+var _Gizra$circuit_bid$App_Health$policyFor = function (page) {
+	return _Gizra$circuit_bid$App_Utils$isHealthPage(page) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy) : (_Gizra$circuit_bid$App_Utils$isBidderPage(page) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Pusher_Health_Model$bidderPolicy) : _elm_lang$core$Maybe$Nothing);
+};
+var _Gizra$circuit_bid$App_Health$telemetryEvery = function (page) {
+	return A2(
+		_elm_lang$core$Maybe$withDefault,
+		1,
+		A2(
+			_elm_lang$core$Maybe$map,
+			function (_) {
+				return _.telemetryEvery;
+			},
+			_Gizra$circuit_bid$App_Health$policyFor(page)));
+};
+var _Gizra$circuit_bid$App_Health$capture = function (page) {
+	return _Gizra$circuit_bid$App_Health$captureWith(
+		_Gizra$circuit_bid$App_Health$telemetryEvery(page));
 };
 var _Gizra$circuit_bid$App_Health$saleIsLive = function (maybeSale) {
 	return A2(
@@ -50255,16 +51641,84 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 					_Gizra$circuit_bid$App_Utils$currentSale(m),
 					A3(_Gizra$circuit_bid$App_Health$currentItemManager, m.activePage, m.pageClerk.item, m.pageSale.item));
 			};
-			var report = F3(
-				function (location, message, health_) {
-					return A3(_Gizra$circuit_bid$Pusher_Health_Update$reportCmd, location, message, health_);
+			var startProbe = F2(
+				function (m, reason) {
+					var h = m.health;
+					var cmd = probe(m);
+					return _elm_lang$core$Native_Utils.eq(cmd, _elm_lang$core$Platform_Cmd$none) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
+						{
+							ctor: '_Tuple2',
+							_0: _elm_lang$core$Native_Utils.update(
+								m,
+								{
+									health: _elm_lang$core$Native_Utils.update(
+										h,
+										{
+											probeInFlight: _elm_lang$core$Maybe$Just(h.now)
+										})
+								}),
+							_1: cmd
+						});
+				});
+			var policy = _Gizra$circuit_bid$App_Health$policyFor(model.activePage);
+			var report = F2(
+				function (r, health_) {
+					return A3(
+						_Gizra$circuit_bid$Pusher_Health_Update$reportSampled,
+						A2(
+							_elm_lang$core$Maybe$withDefault,
+							1,
+							A2(
+								_elm_lang$core$Maybe$map,
+								function (_) {
+									return _.telemetryEvery;
+								},
+								policy)),
+						r,
+						health_);
+				});
+			var captureEscalation = F2(
+				function (r, health_) {
+					return A3(
+						_Gizra$circuit_bid$App_Health$captureWith,
+						A2(
+							_elm_lang$core$Maybe$withDefault,
+							1,
+							A2(
+								_elm_lang$core$Maybe$map,
+								function (_) {
+									return _.escalationTelemetryEvery;
+								},
+								policy)),
+						r,
+						health_);
 				});
 			var health = model.health;
-			var _p9 = subMsg;
-			switch (_p9.ctor) {
+			var _p17 = subMsg;
+			switch (_p17.ctor) {
 				case 'HealthTick':
-					var _p10 = _p9._0;
-					var ticked = A2(_Gizra$circuit_bid$Pusher_Health_Model$tick, _p10, health);
+					var _p22 = _p17._0;
+					var lot = {
+						isLive: _Gizra$circuit_bid$App_Health$saleIsLive(
+							_Gizra$circuit_bid$App_Utils$currentSale(model)),
+						lotOpen: A2(
+							_Gizra$circuit_bid$App_Health$lotIsOpen,
+							_Gizra$circuit_bid$App_Utils$currentSale(model),
+							A3(_Gizra$circuit_bid$App_Health$currentItemManager, model.activePage, model.pageClerk.item, model.pageSale.item))
+					};
+					var _p18 = A2(
+						_Gizra$circuit_bid$Pusher_Health_Model$tickReports,
+						A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy, policy),
+						A2(_Gizra$circuit_bid$Pusher_Health_Model$tick, _p22, health));
+					var ticked = _p18._0;
+					var dueReports = _p18._1;
+					var reportsCmd = _elm_lang$core$Platform_Cmd$batch(
+						A2(
+							_elm_lang$core$List$map,
+							function (r) {
+								return A2(report, r, ticked);
+							},
+							dueReports));
 					var modelTicked = _elm_lang$core$Native_Utils.update(
 						model,
 						{health: ticked});
@@ -50274,70 +51728,98 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 						A2(
 							_elm_lang$core$Maybe$map,
 							function (since) {
-								return _p10 - since;
+								return _p22 - since;
 							},
 							ticked.unhealthySince));
-					if (!_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage)) {
-						return {ctor: '_Tuple2', _0: modelTicked, _1: _elm_lang$core$Platform_Cmd$none};
-					} else {
-						if (_elm_lang$core$Native_Utils.cmp(unhealthyFor, _Gizra$circuit_bid$Pusher_Health_Model$failedReloadAfterMs) > 0) {
-							var _v4 = updater,
-								_v5 = backendUrl,
-								_v6 = A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Reload, _Gizra$circuit_bid$Pusher_Health_Model$ConnectionFailed),
-								_v7 = modelTicked;
-							updater = _v4;
-							backendUrl = _v5;
-							subMsg = _v6;
-							model = _v7;
-							continue updateHealth;
+					var reloadDue = function (p) {
+						return A2(
+							_elm_lang$core$Maybe$withDefault,
+							false,
+							A2(
+								_elm_lang$core$Maybe$map,
+								function (limit) {
+									return _elm_lang$core$Native_Utils.cmp(unhealthyFor, limit) > 0;
+								},
+								p.autoReloadAfterMs));
+					};
+					var _p19 = function () {
+						var _p20 = policy;
+						if (_p20.ctor === 'Nothing') {
+							return {ctor: '_Tuple2', _0: modelTicked, _1: _elm_lang$core$Platform_Cmd$none};
 						} else {
-							if (A2(
-								_Gizra$circuit_bid$Pusher_Health_Model$shouldProbe,
-								_Gizra$circuit_bid$App_Health$saleIsLive(
-									_Gizra$circuit_bid$App_Utils$currentSale(model)),
-								ticked)) {
-								return {
-									ctor: '_Tuple2',
-									_0: _elm_lang$core$Native_Utils.update(
-										modelTicked,
-										{
-											health: _elm_lang$core$Native_Utils.update(
-												ticked,
-												{
-													probeInFlight: _elm_lang$core$Maybe$Just(_p10)
-												})
-										}),
-									_1: probe(modelTicked)
-								};
-							} else {
-								return {ctor: '_Tuple2', _0: modelTicked, _1: _elm_lang$core$Platform_Cmd$none};
-							}
+							var _p21 = _p20._0;
+							return reloadDue(_p21) ? A4(
+								_Gizra$circuit_bid$App_Health$updateHealth,
+								updater,
+								backendUrl,
+								A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Reload, _Gizra$circuit_bid$Pusher_Health_Model$ConnectionFailed),
+								modelTicked) : (A3(_Gizra$circuit_bid$Pusher_Health_Model$shouldProbeWith, _p21, lot, ticked) ? {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.update(
+									modelTicked,
+									{
+										health: _elm_lang$core$Native_Utils.update(
+											ticked,
+											{
+												probeInFlight: _elm_lang$core$Maybe$Just(_p22)
+											})
+									}),
+								_1: probe(modelTicked)
+							} : (A2(_Gizra$circuit_bid$Pusher_Health_Model$retryDue, _p21, ticked) ? A4(
+								_Gizra$circuit_bid$App_Health$updateHealth,
+								updater,
+								backendUrl,
+								A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _Gizra$circuit_bid$Pusher_Health_Model$StaleRetry),
+								modelTicked) : {ctor: '_Tuple2', _0: modelTicked, _1: _elm_lang$core$Platform_Cmd$none}));
 						}
-					}
+					}();
+					var afterTick = _p19._0;
+					var tickCmd = _p19._1;
+					return {
+						ctor: '_Tuple2',
+						_0: afterTick,
+						_1: _elm_lang$core$Platform_Cmd$batch(
+							{
+								ctor: '::',
+								_0: tickCmd,
+								_1: {
+									ctor: '::',
+									_0: reportsCmd,
+									_1: {ctor: '[]'}
+								}
+							})
+					};
 				case 'HandleState':
-					var _p11 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteState, _p9._0, health);
-					var updated = _p11._0;
-					var reason = _p11._1;
+					var _p23 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteState, _p17._0, health);
+					var updated = _p23._0;
+					var reason = _p23._1;
 					var modelUpdated = _elm_lang$core$Native_Utils.update(
 						model,
 						{health: updated});
-					var _p12 = reason;
-					if (_p12.ctor === 'Just') {
-						if (_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage)) {
-							var _v9 = updater,
-								_v10 = backendUrl,
-								_v11 = A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p12._0),
-								_v12 = modelUpdated;
-							updater = _v9;
-							backendUrl = _v10;
-							subMsg = _v11;
-							model = _v12;
+					var _p24 = {ctor: '_Tuple2', _0: reason, _1: policy};
+					if (_p24._0.ctor === 'Just') {
+						if (_p24._1.ctor === 'Just') {
+							var _v10 = updater,
+								_v11 = backendUrl,
+								_v12 = A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p24._0._0),
+								_v13 = modelUpdated;
+							updater = _v10;
+							backendUrl = _v11;
+							subMsg = _v12;
+							model = _v13;
 							continue updateHealth;
 						} else {
 							return {
 								ctor: '_Tuple2',
 								_0: modelUpdated,
-								_1: A3(report, 'reconnected', 'reconnected', updated)
+								_1: A2(
+									report,
+									A3(
+										_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+										'reconnected',
+										'reconnected',
+										{ctor: '[]'}),
+									updated)
 							};
 						}
 					} else {
@@ -50349,39 +51831,130 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								health: A2(_Gizra$circuit_bid$Pusher_Health_Model$noteError, _p9._0, health)
+								health: A2(_Gizra$circuit_bid$Pusher_Health_Model$noteError, _p17._0, health)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
+				case 'HandleVisibility':
+					var _p29 = _p17._0;
+					var _p25 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteVisibility, _p29, health);
+					var noted = _p25._0;
+					var reason = _p25._1;
+					var modelNoted = _elm_lang$core$Native_Utils.update(
+						model,
+						{health: noted});
+					var crumb = F2(
+						function ($class, detail) {
+							return A2(
+								report,
+								A3(
+									_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+									'connection',
+									$class,
+									{
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: 'source',
+											_1: _elm_lang$core$Json_Encode$string(_p29.source)
+										},
+										_1: detail
+									}),
+								noted);
+						});
+					var _p26 = reason;
+					if (_p26.ctor === 'Just') {
+						var _p28 = _p26._0;
+						var _p27 = (!_elm_lang$core$Native_Utils.eq(policy, _elm_lang$core$Maybe$Nothing)) ? A4(
+							_Gizra$circuit_bid$App_Health$updateHealth,
+							updater,
+							backendUrl,
+							A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p28),
+							modelNoted) : {ctor: '_Tuple2', _0: modelNoted, _1: _elm_lang$core$Platform_Cmd$none};
+						var after = _p27._0;
+						var cmd = _p27._1;
+						return {
+							ctor: '_Tuple2',
+							_0: after,
+							_1: _elm_lang$core$Platform_Cmd$batch(
+								{
+									ctor: '::',
+									_0: A2(
+										crumb,
+										'resumed',
+										_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(_p28)),
+									_1: {
+										ctor: '::',
+										_0: cmd,
+										_1: {ctor: '[]'}
+									}
+								})
+						};
+					} else {
+						return ((!_p29.visible) && (!_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(health))) ? {
+							ctor: '_Tuple2',
+							_0: modelNoted,
+							_1: A2(
+								crumb,
+								'suspended',
+								{ctor: '[]'})
+						} : {ctor: '_Tuple2', _0: modelNoted, _1: _elm_lang$core$Platform_Cmd$none};
+					}
 				case 'HandleChannelState':
-					var _p13 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannel, _p9._0, health);
-					var updated = _p13._0;
-					var reason = _p13._1;
+					var _p35 = _p17._0;
+					var _p30 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteChannel, _p35, health);
+					var updated = _p30._0;
+					var reason = _p30._1;
 					var modelUpdated = _elm_lang$core$Native_Utils.update(
 						model,
 						{health: updated});
-					var _p14 = reason;
-					if (_p14.ctor === 'Just') {
-						var _p15 = _p14._0;
-						if (_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage)) {
-							var _v14 = updater,
-								_v15 = backendUrl,
-								_v16 = A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect, _p15),
-								_v17 = modelUpdated;
-							updater = _v14;
-							backendUrl = _v15;
-							subMsg = _v16;
-							model = _v17;
-							continue updateHealth;
+					var _p31 = {ctor: '_Tuple2', _0: reason, _1: policy};
+					if (_p31._0.ctor === 'Just') {
+						if (_p31._1.ctor === 'Just') {
+							var _p32 = _p31._0._0;
+							if (_p31._1._0.ignorePrivateUserChannelErrors && _Gizra$circuit_bid$Pusher_Health_Model$isPrivateUserChannel(_p35.channel)) {
+								return {
+									ctor: '_Tuple2',
+									_0: modelUpdated,
+									_1: A2(
+										report,
+										A3(
+											_Gizra$circuit_bid$Pusher_Health_Model$info,
+											'channel',
+											_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(_p32),
+											_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(_p32)),
+										updated)
+								};
+							} else {
+								var _v16 = updater,
+									_v17 = backendUrl,
+									_v18 = A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect, _p32),
+									_v19 = modelUpdated;
+								updater = _v16;
+								backendUrl = _v17;
+								subMsg = _v18;
+								model = _v19;
+								continue updateHealth;
+							}
 						} else {
+							var _p34 = _p31._0._0;
+							var _p33 = A3(
+								_Gizra$circuit_bid$App_Health$capture,
+								model.activePage,
+								A3(
+									_Gizra$circuit_bid$Pusher_Health_Model$warning,
+									'channel',
+									_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(_p34),
+									_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(_p34)),
+								updated);
+							var noted = _p33._0;
+							var cmd = _p33._1;
 							return {
 								ctor: '_Tuple2',
-								_0: modelUpdated,
-								_1: A3(
-									report,
-									'channel',
-									_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p15),
-									updated)
+								_0: _elm_lang$core$Native_Utils.update(
+									model,
+									{health: noted}),
+								_1: cmd
 							};
 						}
 					} else {
@@ -50393,7 +51966,7 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								health: A2(_Gizra$circuit_bid$Pusher_Health_Model$notePong, _p9._0, health)
+								health: A2(_Gizra$circuit_bid$Pusher_Health_Model$notePong, _p17._0, health)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
@@ -50410,14 +51983,15 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				case 'RequestResync':
-					var _p17 = _p9._1;
-					var _p16 = A3(_Gizra$circuit_bid$Pusher_Health_Model$decideLadder, _p17, _p9._0, health);
-					if (_p16.ctor === 'Nothing') {
+					var _p39 = _p17._1;
+					var p = A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy, policy);
+					var _p36 = A4(_Gizra$circuit_bid$Pusher_Health_Model$decideLadderWith, p, _p39, _p17._0, health);
+					if (_p36.ctor === 'Nothing') {
 						return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 					} else {
-						switch (_p16._0.ctor) {
+						switch (_p36._0.ctor) {
 							case 'Soft':
-								var started = A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p17, health.now, health);
+								var started = A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p39, health.now, health);
 								return {
 									ctor: '_Tuple2',
 									_0: _elm_lang$core$Native_Utils.update(
@@ -50429,28 +52003,33 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 											_0: A2(
 												_elm_lang$core$Platform_Cmd$map,
 												_Gizra$circuit_bid$App_Model$MsgHealth,
-												A2(_Gizra$circuit_bid$Pusher_Health_Update$jitterCmd, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p17)),
+												A3(
+													_Gizra$circuit_bid$Pusher_Health_Update$jitterCmd,
+													A2(_Gizra$circuit_bid$Pusher_Health_Model$jitterMaxFor, p, _p39),
+													_Gizra$circuit_bid$Pusher_Health_Model$Soft,
+													_p39)),
 											_1: {
 												ctor: '::',
-												_0: A3(
+												_0: A2(
 													report,
-													'resync',
-													A2(
-														_elm_lang$core$Basics_ops['++'],
-														'soft resync: ',
-														_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p17)),
+													A2(_Gizra$circuit_bid$Pusher_Health_Model$startReport, _p39, _Gizra$circuit_bid$Pusher_Health_Model$Soft),
 													started),
 												_1: {ctor: '[]'}
 											}
 										})
 								};
 							case 'Reconnect':
-								var started = A3(
-									_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
-									_elm_lang$core$Result$Ok(
-										{ctor: '_Tuple0'}),
-									health.now,
-									A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect, _p17, health.now, health));
+								var _p37 = A2(
+									captureEscalation,
+									A2(_Gizra$circuit_bid$Pusher_Health_Model$startReport, _p39, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect),
+									A3(
+										_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+										_elm_lang$core$Result$Ok(
+											{ctor: '_Tuple0'}),
+										health.now,
+										A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Reconnect, _p39, health.now, health)));
+								var started = _p37._0;
+								var reportCmd = _p37._1;
 								return {
 									ctor: '_Tuple2',
 									_0: _elm_lang$core$Native_Utils.update(
@@ -50463,20 +52042,18 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 												{ctor: '_Tuple0'}),
 											_1: {
 												ctor: '::',
-												_0: A3(
-													report,
-													'resync',
-													A2(
-														_elm_lang$core$Basics_ops['++'],
-														'reconnect: ',
-														_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p17)),
-													started),
+												_0: reportCmd,
 												_1: {ctor: '[]'}
 											}
 										})
 								};
 							default:
-								var started = A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Reload, _p17, health.now, health);
+								var _p38 = A2(
+									captureEscalation,
+									A2(_Gizra$circuit_bid$Pusher_Health_Model$startReport, _p39, _Gizra$circuit_bid$Pusher_Health_Model$Reload),
+									A4(_Gizra$circuit_bid$Pusher_Health_Model$startResync, _Gizra$circuit_bid$Pusher_Health_Model$Reload, _p39, health.now, health));
+								var started = _p38._0;
+								var reportCmd = _p38._1;
 								return {
 									ctor: '_Tuple2',
 									_0: _elm_lang$core$Native_Utils.update(
@@ -50489,14 +52066,7 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 												{ctor: '_Tuple0'}),
 											_1: {
 												ctor: '::',
-												_0: A3(
-													report,
-													'resync',
-													A2(
-														_elm_lang$core$Basics_ops['++'],
-														'reload: ',
-														_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p17)),
-													started),
+												_0: reportCmd,
 												_1: {ctor: '[]'}
 											}
 										})
@@ -50509,42 +52079,125 @@ var _Gizra$circuit_bid$App_Health$updateHealth = F4(
 						_0: model,
 						_1: A2(
 							_elm_lang$core$Task$perform,
-							function (_p18) {
+							function (_p40) {
 								return _Gizra$circuit_bid$App_Model$MsgHealth(
-									A2(_Gizra$circuit_bid$Pusher_Health_Model$ResyncJitterElapsed, _p9._1, _p9._2));
+									A2(_Gizra$circuit_bid$Pusher_Health_Model$ResyncJitterElapsed, _p17._1, _p17._2));
 							},
-							_elm_lang$core$Process$sleep(_p9._0))
+							_elm_lang$core$Process$sleep(_p17._0))
 					};
-				default:
-					var _p19 = _Gizra$circuit_bid$App_Utils$currentSaleUuid(model.activePage);
-					if (_p19.ctor === 'Just') {
-						return {
-							ctor: '_Tuple2',
-							_0: model,
-							_1: A4(_Gizra$circuit_bid$Pusher_Health_Update$resyncSaleCmd, backendUrl, model.accessToken, _p19._0, _Gizra$circuit_bid$App_Model$HandleResyncSale)
-						};
+				case 'ResyncJitterElapsed':
+					var _p45 = _p17._1;
+					var fetchSale = function () {
+						var _p41 = _Gizra$circuit_bid$App_Utils$currentSaleUuid(model.activePage);
+						if (_p41.ctor === 'Just') {
+							return {
+								ctor: '_Tuple2',
+								_0: model,
+								_1: A4(_Gizra$circuit_bid$Pusher_Health_Update$resyncSaleCmd, backendUrl, model.accessToken, _p41._0, _Gizra$circuit_bid$App_Model$HandleResyncSale)
+							};
+						} else {
+							return {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.update(
+									model,
+									{
+										health: A3(
+											_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+											_elm_lang$core$Result$Err('no sale'),
+											health.now,
+											health)
+									}),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						}
+					}();
+					var probeFirst = A2(
+						_elm_lang$core$Maybe$withDefault,
+						false,
+						A2(
+							_elm_lang$core$Maybe$map,
+							function (_) {
+								return _.probeFirst;
+							},
+							policy));
+					var stillPending = function () {
+						var _p42 = health.resync;
+						if (_p42.ctor === 'Just') {
+							var _p43 = _p42._0;
+							return _elm_lang$core$Native_Utils.eq(_p43.level, _p17._0) && _elm_lang$core$Native_Utils.eq(_p43.reason, _p45);
+						} else {
+							return false;
+						}
+					}();
+					if ((!stillPending) || (!_elm_lang$core$Native_Utils.eq(health.probeInFlight, _elm_lang$core$Maybe$Nothing))) {
+						return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 					} else {
-						return {
-							ctor: '_Tuple2',
-							_0: _elm_lang$core$Native_Utils.update(
-								model,
-								{
-									health: A3(
-										_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
-										_elm_lang$core$Result$Err('no sale'),
-										health.now,
-										health)
-								}),
-							_1: _elm_lang$core$Platform_Cmd$none
-						};
+						if (probeFirst && (!_elm_lang$core$Native_Utils.eq(_p45, _Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence))) {
+							var _p44 = A2(startProbe, model, _p45);
+							if (_p44.ctor === 'Just') {
+								return _p44._0;
+							} else {
+								return {
+									ctor: '_Tuple2',
+									_0: _elm_lang$core$Native_Utils.update(
+										model,
+										{
+											health: A3(
+												_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+												_elm_lang$core$Result$Err('no sale'),
+												health.now,
+												health)
+										}),
+									_1: _elm_lang$core$Platform_Cmd$none
+								};
+							}
+						} else {
+							return fetchSale;
+						}
+					}
+				default:
+					var _p48 = _p17._0;
+					if (!_elm_lang$core$Native_Utils.eq(health.probeInFlight, _elm_lang$core$Maybe$Nothing)) {
+						return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						var _p46 = A2(startProbe, model, _p48);
+						if (_p46.ctor === 'Just') {
+							var _p47 = _p46._0._0;
+							return {
+								ctor: '_Tuple2',
+								_0: _p47,
+								_1: _elm_lang$core$Platform_Cmd$batch(
+									{
+										ctor: '::',
+										_0: _p46._0._1,
+										_1: {
+											ctor: '::',
+											_0: A2(
+												report,
+												A3(
+													_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+													'probe',
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														'probe: ',
+														_Gizra$circuit_bid$Pusher_Health_Model$reasonClass(_p48)),
+													_Gizra$circuit_bid$Pusher_Health_Model$reasonDetail(_p48)),
+												_p47.health),
+											_1: {ctor: '[]'}
+										}
+									})
+							};
+						} else {
+							return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+						}
 					}
 			}
 		}
 	});
 var _Gizra$circuit_bid$App_Health$handleResyncSale = F5(
-	function (_p20, backendUrl, sentAt, result, model) {
-		var _p21 = _p20;
-		var _p27 = _p21._0;
+	function (_p49, backendUrl, sentAt, result, model) {
+		var _p50 = _p49;
+		var _p59 = _p50._0;
 		var applySaleUpdate = F2(
 			function (updateData, m) {
 				var event = _elm_lang$core$Result$Ok(
@@ -50552,32 +52205,42 @@ var _Gizra$circuit_bid$App_Health$handleResyncSale = F5(
 						data: _Gizra$circuit_bid$Pusher_Model$SaleUpdate(updateData)
 					});
 				return _Gizra$circuit_bid$App_Utils$isClerkPage(m.activePage) ? A2(
-					_p27,
+					_p59,
 					_Gizra$circuit_bid$App_Model$MsgPagesClerk(
 						_Gizra$circuit_bid$Pages_Clerk_Model$HandlePusherEvent(event)),
 					m) : (_Gizra$circuit_bid$App_Utils$isSalePage(m.activePage) ? A2(
-					_p27,
+					_p59,
 					_Gizra$circuit_bid$App_Model$MsgPagesSale(
 						_Gizra$circuit_bid$Pages_Sale_Model$HandlePusherEvent(event)),
 					m) : {ctor: '_Tuple2', _0: m, _1: _elm_lang$core$Platform_Cmd$none});
 			});
 		var health = model.health;
-		var _p22 = result;
-		if (_p22.ctor === 'Err') {
+		var _p51 = result;
+		if (_p51.ctor === 'Err') {
+			var _p52 = A3(
+				_Gizra$circuit_bid$App_Health$capture,
+				model.activePage,
+				A2(
+					_Gizra$circuit_bid$App_Health$outcomeReport,
+					health,
+					_elm_lang$core$Result$Err('sale fetch failed')),
+				health);
+			var noted = _p52._0;
+			var reportCmd = _p52._1;
 			var finished = A3(
 				_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
 				_elm_lang$core$Result$Err('sale fetch failed'),
 				health.now,
-				health);
+				noted);
 			return {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
 					model,
 					{health: finished}),
-				_1: A3(_Gizra$circuit_bid$Pusher_Health_Update$reportCmd, 'resync', 'soft resync: sale fetch failed', finished)
+				_1: reportCmd
 			};
 		} else {
-			var _p26 = _p22._0._0;
+			var _p58 = _p51._0._0;
 			var eventSinceSent = A2(
 				_elm_lang$core$Maybe$withDefault,
 				false,
@@ -50587,29 +52250,29 @@ var _Gizra$circuit_bid$App_Health$handleResyncSale = F5(
 						return _elm_lang$core$Native_Utils.cmp(at, sentAt) > 0;
 					},
 					health.lastEventAt));
-			var _p23 = function () {
-				var _p24 = _Gizra$circuit_bid$App_Utils$currentSale(model);
-				if (_p24.ctor === 'Just') {
-					var _p25 = _p24._0;
-					return (!_elm_lang$core$Native_Utils.eq(_p25.session, _p26.session)) ? (_Gizra$circuit_bid$App_Utils$isClerkPage(model.activePage) ? A2(
-						_p27,
+			var _p53 = function () {
+				var _p54 = _Gizra$circuit_bid$App_Utils$currentSale(model);
+				if (_p54.ctor === 'Just') {
+					var _p55 = _p54._0;
+					return (!_elm_lang$core$Native_Utils.eq(_p55.session, _p58.session)) ? (_Gizra$circuit_bid$App_Utils$isClerkPage(model.activePage) ? A2(
+						_p59,
 						_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-							_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p26.uuid)),
+							_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p58.uuid)),
 						model) : {
 						ctor: '_Tuple2',
 						_0: model,
 						_1: _Gizra$circuit_bid$Ports$delayedReload(
 							{ctor: '_Tuple0'})
-					}) : (((!_elm_lang$core$Native_Utils.eq(_p25.item, _p26.item)) && (!eventSinceSent)) ? A2(
+					}) : (((!_elm_lang$core$Native_Utils.eq(_p55.item, _p58.item)) && (!eventSinceSent)) ? A2(
 						applySaleUpdate,
-						_Gizra$circuit_bid$App_Health$saleToUpdateData(_p26),
+						_Gizra$circuit_bid$App_Health$saleToUpdateData(_p58),
 						model) : {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none});
 				} else {
 					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 				}
 			}();
-			var modelWithSale = _p23._0;
-			var saleCmd = _p23._1;
+			var modelWithSale = _p53._0;
+			var saleCmd = _p53._1;
 			var probe = A6(
 				_Gizra$circuit_bid$App_Health$probeCmd,
 				backendUrl,
@@ -50618,23 +52281,44 @@ var _Gizra$circuit_bid$App_Health$handleResyncSale = F5(
 				A2(_Gizra$circuit_bid$App_Health$currentPageUser, modelWithSale.activePage, modelWithSale.user),
 				_Gizra$circuit_bid$App_Utils$currentSale(modelWithSale),
 				A3(_Gizra$circuit_bid$App_Health$currentItemManager, modelWithSale.activePage, modelWithSale.pageClerk.item, modelWithSale.pageSale.item));
-			var healthAfter = function () {
+			var _p56 = function () {
 				if (_elm_lang$core$Native_Utils.eq(probe, _elm_lang$core$Platform_Cmd$none)) {
-					return A3(
-						_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
-						_elm_lang$core$Result$Ok(
-							{ctor: '_Tuple0'}),
-						health.now,
+					var _p57 = A3(
+						_Gizra$circuit_bid$App_Health$capture,
+						modelWithSale.activePage,
+						A2(
+							_Gizra$circuit_bid$App_Health$outcomeReport,
+							modelWithSale.health,
+							_elm_lang$core$Result$Ok(
+								{ctor: '_Tuple0'})),
 						modelWithSale.health);
+					var noted = _p57._0;
+					var cmd = _p57._1;
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+							_elm_lang$core$Result$Ok(
+								{ctor: '_Tuple0'}),
+							health.now,
+							noted),
+						_1: cmd
+					};
 				} else {
 					var h = modelWithSale.health;
-					return _elm_lang$core$Native_Utils.update(
-						h,
-						{
-							probeInFlight: _elm_lang$core$Maybe$Just(health.now)
-						});
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							h,
+							{
+								probeInFlight: _elm_lang$core$Maybe$Just(health.now)
+							}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
 				}
 			}();
+			var healthAfter = _p56._0;
+			var outcomeCmd = _p56._1;
 			return {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
@@ -50647,16 +52331,20 @@ var _Gizra$circuit_bid$App_Health$handleResyncSale = F5(
 						_1: {
 							ctor: '::',
 							_0: probe,
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: outcomeCmd,
+								_1: {ctor: '[]'}
+							}
 						}
 					})
 			};
 		}
 	});
 var _Gizra$circuit_bid$App_Health$handleProbe = F7(
-	function (_p28, backendUrl, sentAt, receivedAt, itemIds, result, model) {
-		var _p29 = _p28;
-		var _p37 = _p29._0;
+	function (_p60, backendUrl, sentAt, receivedAt, itemIds, result, model) {
+		var _p61 = _p60;
+		var _p74 = _p61._0;
 		var forwardCalculatedItems = F2(
 			function (fetched, m) {
 				var itemMsg = A2(
@@ -50664,15 +52352,16 @@ var _Gizra$circuit_bid$App_Health$handleProbe = F7(
 					itemIds,
 					_elm_lang$core$Result$Ok(fetched));
 				return _Gizra$circuit_bid$App_Utils$isClerkPage(m.activePage) ? A2(
-					_p37,
+					_p74,
 					_Gizra$circuit_bid$App_Model$MsgPagesClerk(
 						_Gizra$circuit_bid$Pages_Clerk_Model$MsgItemManager(itemMsg)),
 					m) : (_Gizra$circuit_bid$App_Utils$isSalePage(m.activePage) ? A2(
-					_p37,
+					_p74,
 					_Gizra$circuit_bid$App_Model$MsgPagesSale(
 						_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(itemMsg)),
 					m) : {ctor: '_Tuple2', _0: m, _1: _elm_lang$core$Platform_Cmd$none});
 			});
+		var every = _Gizra$circuit_bid$App_Health$telemetryEvery(model.activePage);
 		var health = model.health;
 		var eventSinceSent = A2(
 			_elm_lang$core$Maybe$withDefault,
@@ -50692,54 +52381,156 @@ var _Gizra$circuit_bid$App_Health$handleProbe = F7(
 					return _elm_lang$core$Native_Utils.eq(resync.level, _Gizra$circuit_bid$Pusher_Health_Model$Soft);
 				},
 				health.resync));
-		var _p30 = result;
-		if (_p30.ctor === 'Err') {
-			var _p31 = A2(
+		var probeFirstStep = inSoftResync && (A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (_) {
+					return _.probeFirst;
+				},
+				_Gizra$circuit_bid$App_Health$policyFor(model.activePage))) && A2(
+			_elm_lang$core$Maybe$withDefault,
+			false,
+			A2(
+				_elm_lang$core$Maybe$map,
+				function (resync) {
+					return !_elm_lang$core$Native_Utils.eq(resync.reason, _Gizra$circuit_bid$Pusher_Health_Model$ProbeDivergence);
+				},
+				health.resync)));
+		var _p62 = result;
+		if (_p62.ctor === 'Err') {
+			var _p63 = A2(
 				_Gizra$circuit_bid$Pusher_Health_Model$noteProbe,
 				{sentAt: sentAt, receivedAt: receivedAt, divergent: false, eventSinceSent: eventSinceSent, failed: true},
 				health);
-			var noted = _p31._0;
-			var finished = inSoftResync ? A3(
-				_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
-				_elm_lang$core$Result$Err('probe failed'),
-				receivedAt,
-				noted) : noted;
+			var noted = _p63._0;
+			var _p64 = function () {
+				if (inSoftResync) {
+					var _p65 = A3(
+						_Gizra$circuit_bid$App_Health$capture,
+						model.activePage,
+						A2(
+							_Gizra$circuit_bid$App_Health$outcomeReport,
+							noted,
+							_elm_lang$core$Result$Err('probe failed')),
+						noted);
+					var reported = _p65._0;
+					var cmd = _p65._1;
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+							_elm_lang$core$Result$Err('probe failed'),
+							receivedAt,
+							reported),
+						_1: cmd
+					};
+				} else {
+					return A3(
+						_Gizra$circuit_bid$App_Health$capture,
+						model.activePage,
+						A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$warning,
+							'probe',
+							'probe failed',
+							{ctor: '[]'}),
+						noted);
+				}
+			}();
+			var finished = _p64._0;
+			var reportCmd = _p64._1;
 			return {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
 					model,
 					{health: finished}),
-				_1: A3(_Gizra$circuit_bid$Pusher_Health_Update$reportCmd, 'probe', 'probe failed', finished)
+				_1: reportCmd
 			};
 		} else {
-			var _p36 = _p30._0;
-			var divergent = A3(
-				_Gizra$circuit_bid$App_Health$probeDiverges,
+			var _p73 = _p62._0;
+			var saleFetch = (probeFirstStep && A3(
+				_Gizra$circuit_bid$App_Health$lotLooksEnded,
 				_Gizra$circuit_bid$App_Utils$currentSale(model),
 				A3(_Gizra$circuit_bid$App_Health$currentItemManager, model.activePage, model.pageClerk.item, model.pageSale.item),
-				_p36);
-			var _p32 = A2(
+				_p73)) ? A2(
+				_elm_lang$core$Maybe$map,
+				function (saleUuid) {
+					return A4(_Gizra$circuit_bid$Pusher_Health_Update$resyncSaleCmd, backendUrl, model.accessToken, saleUuid, _Gizra$circuit_bid$App_Model$HandleResyncSale);
+				},
+				_Gizra$circuit_bid$App_Utils$currentSaleUuid(model.activePage)) : _elm_lang$core$Maybe$Nothing;
+			var countBids = A2(
+				_elm_lang$core$Maybe$withDefault,
+				true,
+				A2(
+					_elm_lang$core$Maybe$map,
+					function (_p66) {
+						return !function (_) {
+							return _.probeFirst;
+						}(_p66);
+					},
+					_Gizra$circuit_bid$App_Health$policyFor(model.activePage)));
+			var divergent = A4(
+				_Gizra$circuit_bid$App_Health$probeDiverges,
+				countBids,
+				_Gizra$circuit_bid$App_Utils$currentSale(model),
+				A3(_Gizra$circuit_bid$App_Health$currentItemManager, model.activePage, model.pageClerk.item, model.pageSale.item),
+				_p73);
+			var _p67 = A2(
 				_Gizra$circuit_bid$Pusher_Health_Model$noteProbe,
 				{sentAt: sentAt, receivedAt: receivedAt, divergent: divergent, eventSinceSent: eventSinceSent, failed: false},
 				health);
-			var noted = _p32._0;
-			var reason = _p32._1;
-			var finished = inSoftResync ? A3(
-				_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
-				_elm_lang$core$Result$Ok(
-					{ctor: '_Tuple0'}),
-				receivedAt,
-				noted) : noted;
-			var _p33 = A2(
+			var noted = _p67._0;
+			var reason = _p67._1;
+			var _p68 = function () {
+				if (inSoftResync && _elm_lang$core$Native_Utils.eq(saleFetch, _elm_lang$core$Maybe$Nothing)) {
+					var _p69 = A3(
+						_Gizra$circuit_bid$App_Health$capture,
+						model.activePage,
+						A2(
+							_Gizra$circuit_bid$App_Health$outcomeReport,
+							noted,
+							_elm_lang$core$Result$Ok(
+								{ctor: '_Tuple0'})),
+						noted);
+					var reported = _p69._0;
+					var cmd = _p69._1;
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_Gizra$circuit_bid$Pusher_Health_Model$finishResync,
+							_elm_lang$core$Result$Ok(
+								{ctor: '_Tuple0'}),
+							receivedAt,
+							reported),
+						_1: cmd
+					};
+				} else {
+					return {ctor: '_Tuple2', _0: noted, _1: _elm_lang$core$Platform_Cmd$none};
+				}
+			}();
+			var finished = _p68._0;
+			var outcomeCmd = _p68._1;
+			var _p70 = A2(
 				forwardCalculatedItems,
-				_p36,
+				_p73,
 				_elm_lang$core$Native_Utils.update(
 					model,
 					{health: finished}));
-			var merged = _p33._0;
-			var mergeCmd = _p33._1;
-			var _p34 = reason;
-			if (_p34.ctor === 'Just') {
+			var merged = _p70._0;
+			var mergeCmd = _p70._1;
+			var followUp = _elm_lang$core$Platform_Cmd$batch(
+				{
+					ctor: '::',
+					_0: A2(_elm_lang$core$Maybe$withDefault, _elm_lang$core$Platform_Cmd$none, saleFetch),
+					_1: {
+						ctor: '::',
+						_0: outcomeCmd,
+						_1: {ctor: '[]'}
+					}
+				});
+			var _p71 = reason;
+			if (_p71.ctor === 'Just') {
 				if (inSoftResync) {
 					return {
 						ctor: '_Tuple2',
@@ -50750,20 +52541,32 @@ var _Gizra$circuit_bid$App_Health$handleProbe = F7(
 								_0: mergeCmd,
 								_1: {
 									ctor: '::',
-									_0: A3(_Gizra$circuit_bid$Pusher_Health_Update$reportCmd, 'probe', 'divergence fixed by resync', finished),
-									_1: {ctor: '[]'}
+									_0: followUp,
+									_1: {
+										ctor: '::',
+										_0: A3(
+											_Gizra$circuit_bid$Pusher_Health_Update$reportSampled,
+											every,
+											A3(
+												_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+												'probe',
+												'divergence fixed by resync',
+												{ctor: '[]'}),
+											finished),
+										_1: {ctor: '[]'}
+									}
 								}
 							})
 					};
 				} else {
-					var _p35 = A4(
+					var _p72 = A4(
 						_Gizra$circuit_bid$App_Health$updateHealth,
-						_p29,
+						_p61,
 						backendUrl,
-						A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p34._0),
+						A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _p71._0),
 						merged);
-					var afterRequest = _p35._0;
-					var requestCmd = _p35._1;
+					var afterRequest = _p72._0;
+					var requestCmd = _p72._1;
 					return {
 						ctor: '_Tuple2',
 						_0: afterRequest,
@@ -50780,15 +52583,41 @@ var _Gizra$circuit_bid$App_Health$handleProbe = F7(
 					};
 				}
 			} else {
-				return {ctor: '_Tuple2', _0: merged, _1: mergeCmd};
+				var $transient = ((!_elm_lang$core$Native_Utils.eq(health.pendingDivergence, _elm_lang$core$Maybe$Nothing)) && _elm_lang$core$Native_Utils.eq(noted.pendingDivergence, _elm_lang$core$Maybe$Nothing)) ? A3(
+					_Gizra$circuit_bid$Pusher_Health_Update$reportSampled,
+					every,
+					A3(
+						_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+						'probe',
+						'probe divergence transient',
+						{ctor: '[]'}),
+					noted) : _elm_lang$core$Platform_Cmd$none;
+				return {
+					ctor: '_Tuple2',
+					_0: merged,
+					_1: _elm_lang$core$Platform_Cmd$batch(
+						{
+							ctor: '::',
+							_0: mergeCmd,
+							_1: {
+								ctor: '::',
+								_0: followUp,
+								_1: {
+									ctor: '::',
+									_0: $transient,
+									_1: {ctor: '[]'}
+								}
+							}
+						})
+				};
 			}
 		}
 	});
 var _Gizra$circuit_bid$App_Health$isPublicSaleChannel = function (maybeChannel) {
-	var _p38 = maybeChannel;
-	if (_p38.ctor === 'Just') {
-		var _p39 = _p38._0;
-		return A2(_elm_lang$core$String$startsWith, 'sale-', _p39) && (!A2(_elm_lang$core$String$startsWith, 'private-sale-', _p39));
+	var _p75 = maybeChannel;
+	if (_p75.ctor === 'Just') {
+		var _p76 = _p75._0;
+		return A2(_elm_lang$core$String$startsWith, 'sale-', _p76) && (!A2(_elm_lang$core$String$startsWith, 'private-sale-', _p76));
 	} else {
 		return false;
 	}
@@ -50811,10 +52640,10 @@ var _Gizra$circuit_bid$App_Health$shouldIgnorePublicLiveState = F2(
 		if (!_Gizra$circuit_bid$App_Utils$isClerkPage(activePage)) {
 			return false;
 		} else {
-			var _p40 = A2(_elm_lang$core$Json_Decode$decodeValue, _Gizra$circuit_bid$Pusher_Decoder$decodeEventMeta, value);
-			if (_p40.ctor === 'Ok') {
-				var _p41 = _p40._0;
-				return _Gizra$circuit_bid$App_Health$isPublicSaleChannel(_p41.channel) && A2(_elm_lang$core$List$member, _p41.eventType, _Gizra$circuit_bid$App_Health$publicLiveStateEventTypes);
+			var _p77 = A2(_elm_lang$core$Json_Decode$decodeValue, _Gizra$circuit_bid$Pusher_Decoder$decodeEventMeta, value);
+			if (_p77.ctor === 'Ok') {
+				var _p78 = _p77._0;
+				return _Gizra$circuit_bid$App_Health$isPublicSaleChannel(_p78.channel) && A2(_elm_lang$core$List$member, _p78.eventType, _Gizra$circuit_bid$App_Health$publicLiveStateEventTypes);
 			} else {
 				return false;
 			}
@@ -50822,12 +52651,12 @@ var _Gizra$circuit_bid$App_Health$shouldIgnorePublicLiveState = F2(
 	});
 var _Gizra$circuit_bid$App_Health$stampLotTickSource = F2(
 	function (channel, tick) {
-		var _p42 = channel;
-		if (_p42.ctor === 'Just') {
-			var _p43 = _p42._0;
-			return A2(_elm_lang$core$String$startsWith, 'private-sale-', _p43) ? _elm_lang$core$Native_Utils.update(
+		var _p79 = channel;
+		if (_p79.ctor === 'Just') {
+			var _p80 = _p79._0;
+			return A2(_elm_lang$core$String$startsWith, 'private-sale-', _p80) ? _elm_lang$core$Native_Utils.update(
 				tick,
-				{source: _Gizra$circuit_bid$Pusher_Model$PrivilegedTick}) : (A2(_elm_lang$core$String$startsWith, 'sale-', _p43) ? _elm_lang$core$Native_Utils.update(
+				{source: _Gizra$circuit_bid$Pusher_Model$PrivilegedTick}) : (A2(_elm_lang$core$String$startsWith, 'sale-', _p80) ? _elm_lang$core$Native_Utils.update(
 				tick,
 				{source: _Gizra$circuit_bid$Pusher_Model$PublicTick}) : tick);
 		} else {
@@ -50844,7 +52673,7 @@ var _Gizra$circuit_bid$App_Health$routePusherValue = F5(
 			_elm_lang$core$Result$toMaybe(
 				A2(_elm_lang$core$Json_Decode$decodeValue, _Gizra$circuit_bid$Pusher_Decoder$decodeEventMeta, value)));
 		var decoded = function (user) {
-			var _p44 = {
+			var _p81 = {
 				ctor: '_Tuple2',
 				_0: A2(
 					_elm_lang$core$Json_Decode$decodeValue,
@@ -50852,44 +52681,44 @@ var _Gizra$circuit_bid$App_Health$routePusherValue = F5(
 					value),
 				_1: verdict
 			};
-			if (_p44._0.ctor === 'Err') {
-				if (_p44._1.ctor === 'DropStale') {
+			if (_p81._0.ctor === 'Err') {
+				if (_p81._1.ctor === 'DropStale') {
 					return _elm_lang$core$Maybe$Nothing;
 				} else {
 					return _elm_lang$core$Maybe$Just(
-						_elm_lang$core$Result$Err(_p44._0._0));
+						_elm_lang$core$Result$Err(_p81._0._0));
 				}
 			} else {
-				var _p47 = _p44._0._0;
-				var _p45 = {ctor: '_Tuple2', _0: _p47.data, _1: verdict};
-				if (_p45._1.ctor === 'Apply') {
-					if (_p45._0.ctor === 'LotTick') {
+				var _p84 = _p81._0._0;
+				var _p82 = {ctor: '_Tuple2', _0: _p84.data, _1: verdict};
+				if (_p82._1.ctor === 'Apply') {
+					if (_p82._0.ctor === 'LotTick') {
 						return _elm_lang$core$Maybe$Just(
 							_elm_lang$core$Result$Ok(
 								_elm_lang$core$Native_Utils.update(
-									_p47,
+									_p84,
 									{
 										data: _Gizra$circuit_bid$Pusher_Model$LotTick(
-											A2(_Gizra$circuit_bid$App_Health$stampLotTickSource, channel, _p45._0._0))
+											A2(_Gizra$circuit_bid$App_Health$stampLotTickSource, channel, _p82._0._0))
 									})));
 					} else {
 						return _elm_lang$core$Maybe$Just(
-							_elm_lang$core$Result$Ok(_p47));
+							_elm_lang$core$Result$Ok(_p84));
 					}
 				} else {
-					if (_p45._0.ctor === 'LotTick') {
-						var _p46 = _p45._0._0;
-						return _elm_lang$core$Native_Utils.eq(_p46.bid, _elm_lang$core$Maybe$Nothing) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
+					if (_p82._0.ctor === 'LotTick') {
+						var _p83 = _p82._0._0;
+						return _elm_lang$core$Native_Utils.eq(_p83.bid, _elm_lang$core$Maybe$Nothing) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just(
 							_elm_lang$core$Result$Ok(
 								_elm_lang$core$Native_Utils.update(
-									_p47,
+									_p84,
 									{
 										data: _Gizra$circuit_bid$Pusher_Model$LotTick(
 											A2(
 												_Gizra$circuit_bid$App_Health$stampLotTickSource,
 												channel,
 												_elm_lang$core$Native_Utils.update(
-													_p46,
+													_p83,
 													{item: _elm_lang$core$Maybe$Nothing, overlay: _elm_lang$core$Maybe$Nothing})))
 									})));
 					} else {
@@ -50901,27 +52730,27 @@ var _Gizra$circuit_bid$App_Health$routePusherValue = F5(
 		var saleMsg = function (user) {
 			return A2(
 				_elm_lang$core$Maybe$map,
-				function (_p48) {
+				function (_p85) {
 					return _Gizra$circuit_bid$App_Model$MsgPagesSale(
-						_Gizra$circuit_bid$Pages_Sale_Model$HandlePusherEvent(_p48));
+						_Gizra$circuit_bid$Pages_Sale_Model$HandlePusherEvent(_p85));
 				},
 				decoded(user));
 		};
 		var clerkMsg = function (user) {
 			return A2(
 				_elm_lang$core$Maybe$map,
-				function (_p49) {
+				function (_p86) {
 					return _Gizra$circuit_bid$App_Model$MsgPagesClerk(
-						_Gizra$circuit_bid$Pages_Clerk_Model$HandlePusherEvent(_p49));
+						_Gizra$circuit_bid$Pages_Clerk_Model$HandlePusherEvent(_p86));
 				},
 				decoded(user));
 		};
 		var getUserAsRegularBidder = function (user) {
-			var _p50 = user;
-			if (_p50.ctor === 'Authenticated') {
+			var _p87 = user;
+			if (_p87.ctor === 'Authenticated') {
 				return _Gizra$circuit_bid$User_Model$Authenticated(
 					_elm_lang$core$Native_Utils.update(
-						_p50._0,
+						_p87._0,
 						{userType: _Gizra$circuit_bid$User_Model$Bidder}));
 			} else {
 				return user;
@@ -50930,34 +52759,34 @@ var _Gizra$circuit_bid$App_Health$routePusherValue = F5(
 		if (A2(_Gizra$circuit_bid$App_Health$shouldIgnorePublicLiveState, activePage, value)) {
 			return _elm_lang$core$Maybe$Nothing;
 		} else {
-			var _p51 = {ctor: '_Tuple2', _0: activePage, _1: maybeUser};
-			_v32_8:
+			var _p88 = {ctor: '_Tuple2', _0: activePage, _1: maybeUser};
+			_v37_8:
 			do {
-				if ((_p51.ctor === '_Tuple2') && (_p51._1.ctor === 'Just')) {
-					switch (_p51._0.ctor) {
+				if ((_p88.ctor === '_Tuple2') && (_p88._1.ctor === 'Just')) {
+					switch (_p88._0.ctor) {
 						case 'Sale':
 							return saleMsg(
-								getUserAsRegularBidder(_p51._1._0));
+								getUserAsRegularBidder(_p88._1._0));
 						case 'SaleV1':
 							return saleMsg(
-								getUserAsRegularBidder(_p51._1._0));
+								getUserAsRegularBidder(_p88._1._0));
 						case 'SaleRoom':
 							return saleMsg(_Gizra$circuit_bid$User_Model$Anonymous);
 						case 'SaleRoomV1':
 							return saleMsg(_Gizra$circuit_bid$User_Model$Anonymous);
 						case 'SaleAuctioneer':
-							return clerkMsg(_p51._1._0);
+							return clerkMsg(_p88._1._0);
 						case 'SaleClerk':
-							return clerkMsg(_p51._1._0);
+							return clerkMsg(_p88._1._0);
 						case 'SaleAuctioneerV1':
-							return clerkMsg(_p51._1._0);
+							return clerkMsg(_p88._1._0);
 						case 'SaleClerkV1':
-							return clerkMsg(_p51._1._0);
+							return clerkMsg(_p88._1._0);
 						default:
-							break _v32_8;
+							break _v37_8;
 					}
 				} else {
-					break _v32_8;
+					break _v37_8;
 				}
 			} while(false);
 			return _elm_lang$core$Maybe$Nothing;
@@ -56869,219 +58698,6 @@ var _Gizra$circuit_bid$BidderId_Utils$validateFloorBidderId = F2(
 				return {ctor: '_Tuple2', _0: input, _1: err};
 			},
 			_elm_lang$core$String$isEmpty(input) ? _elm_lang$core$Result$Err(_Gizra$circuit_bid$BidderId_Model$NoInput) : _elm_lang$core$Result$Ok(input));
-	});
-
-var _Gizra$circuit_bid$Item_Utils$getStaticItem = function (item) {
-	return {name: item.name, image: item.image, galleryImages: item.galleryImages, description: item.description, estimatedPrice: item.estimatedPrice, estimatedLow: item.estimatedLow, estimatedHigh: item.estimatedHigh, lotId: item.lotId, openingPrice: item.openingPrice, subtitle: item.subtitle, webUrl: item.webUrl};
-};
-var _Gizra$circuit_bid$Item_Utils$withPrice = F2(
-	function (func, price) {
-		var _p0 = price;
-		if (_p0.ctor === 'Current') {
-			return func(_p0._0);
-		} else {
-			return func(_p0._0);
-		}
-	});
-var _Gizra$circuit_bid$Item_Utils$getNextPriceAmount = function (calculated) {
-	var _p1 = calculated.nextPrice;
-	if (_p1.ctor === 'Just') {
-		return _p1._0;
-	} else {
-		return _Gizra$circuit_bid$Amount$zero;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$getAmountFromPrice = function (price) {
-	var _p2 = price;
-	if (_p2.ctor === 'Opening') {
-		return _p2._0;
-	} else {
-		return _p2._0;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$hasLiveBids = function (calculated) {
-	return _elm_community$maybe_extra$Maybe_Extra$isJust(
-		_Gizra$circuit_bid$Bid_Utils$getHighestBid(calculated.bids));
-};
-var _Gizra$circuit_bid$Item_Utils$clerkStatusIsLoading = function (status) {
-	var isLoading = function (clerkStatus) {
-		return _krisajenkins$remotedata$RemoteData$isLoading(
-			_Gizra$elm_editable_webdata$Editable_WebData$toWebData(clerkStatus));
-	};
-	var _p3 = status;
-	if (_p3.ctor === 'EditableStatus') {
-		var _p4 = _p3._0;
-		if (_p4.ctor === 'LiveOnly') {
-			return isLoading(_p4._0);
-		} else {
-			return false;
-		}
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$getClerkStatus = function (editableStatus) {
-	var extractValue = function (val) {
-		return _elm_lang$core$Maybe$Just(
-			_stoeffel$editable$Editable$value(
-				_Gizra$elm_editable_webdata$Editable_WebData$toEditable(val)));
-	};
-	var _p5 = editableStatus;
-	if (_p5.ctor === 'LiveOnly') {
-		return extractValue(_p5._0);
-	} else {
-		return _elm_lang$core$Maybe$Nothing;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$getEditableItemStatus = function (status) {
-	var _p6 = status;
-	if (_p6.ctor === 'EditableStatus') {
-		return _elm_lang$core$Maybe$Just(_p6._0);
-	} else {
-		return _elm_lang$core$Maybe$Nothing;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isItemNotActiveButAlreadyHasLiveBids = function (status) {
-	return _elm_lang$core$Native_Utils.eq(
-		status,
-		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(_Gizra$circuit_bid$Item_Model$ItemNotActiveButAlreadyHasLiveBids));
-};
-var _Gizra$circuit_bid$Item_Utils$isMailAllowed = function (status) {
-	return _elm_lang$core$Native_Utils.eq(
-		status,
-		_Gizra$circuit_bid$Item_Model$EditableStatus(_Gizra$circuit_bid$Item_Model$MailOnly));
-};
-var _Gizra$circuit_bid$Item_Utils$isLiveAllowed = function (status) {
-	var _p7 = status;
-	if ((_p7.ctor === 'EditableStatus') && (_p7._0.ctor === 'LiveOnly')) {
-		return true;
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isUnsold = function (status) {
-	return _elm_lang$core$Native_Utils.eq(
-		status,
-		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(
-			_Gizra$circuit_bid$Item_Model$ItemClosed(_Gizra$circuit_bid$Item_Model$Unsold)));
-};
-var _Gizra$circuit_bid$Item_Utils$isSold = function (status) {
-	return _elm_lang$core$Native_Utils.eq(
-		status,
-		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(
-			_Gizra$circuit_bid$Item_Model$ItemClosed(_Gizra$circuit_bid$Item_Model$Sold)));
-};
-var _Gizra$circuit_bid$Item_Utils$isWithdrawn = function (status) {
-	return _elm_lang$core$Native_Utils.eq(
-		status,
-		_Gizra$circuit_bid$Item_Model$ReadOnlyStatus(_Gizra$circuit_bid$Item_Model$Withdrawn));
-};
-var _Gizra$circuit_bid$Item_Utils$isPaused = function (status) {
-	var _p8 = status;
-	if (_p8.ctor === 'EditableStatus') {
-		return _elm_lang$core$Native_Utils.eq(
-			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p8._0),
-			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Paused));
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isGoneTransition = function (status) {
-	var _p9 = status;
-	if (_p9.ctor === 'EditableStatus') {
-		return _elm_lang$core$Native_Utils.eq(
-			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p9._0),
-			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$GoneTransition));
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isGoing = function (status) {
-	var _p10 = status;
-	if (_p10.ctor === 'EditableStatus') {
-		return _elm_lang$core$Native_Utils.eq(
-			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p10._0),
-			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Going));
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isOpen = function (status) {
-	var _p11 = status;
-	if (_p11.ctor === 'EditableStatus') {
-		return _elm_lang$core$Native_Utils.eq(
-			_Gizra$circuit_bid$Item_Utils$getClerkStatus(_p11._0),
-			_elm_lang$core$Maybe$Just(_Gizra$circuit_bid$Item_Model$Open));
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isOpenOrGoing = function (status) {
-	return _Gizra$circuit_bid$Item_Utils$isOpen(status) || _Gizra$circuit_bid$Item_Utils$isGoing(status);
-};
-var _Gizra$circuit_bid$Item_Utils$isLiveOpenOrGoing = function (status) {
-	return _Gizra$circuit_bid$Item_Utils$isOpenOrGoing(status) && _Gizra$circuit_bid$Item_Utils$isLiveAllowed(status);
-};
-var _Gizra$circuit_bid$Item_Utils$isAvailable = function (status) {
-	var _p12 = status;
-	if (_p12.ctor === 'EditableStatus') {
-		return true;
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$isClosed = function (status) {
-	var _p13 = status;
-	if (_p13.ctor === 'ReadOnlyStatus') {
-		var _p14 = _p13._0;
-		if (_p14.ctor === 'ItemClosed') {
-			return true;
-		} else {
-			return false;
-		}
-	} else {
-		return false;
-	}
-};
-var _Gizra$circuit_bid$Item_Utils$getWinningBid = function (calculated) {
-	return A3(
-		_elm_community$maybe_extra$Maybe_Extra$unwrap,
-		_elm_lang$core$Maybe$Nothing,
-		function (winningBid) {
-			var maybeMailBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bookBids);
-			var maybeLiveBid = A2(_Gizra$elm_dictlist$EveryDictList$get, winningBid, calculated.bids);
-			return A2(
-				_elm_community$maybe_extra$Maybe_Extra$filter,
-				_Gizra$circuit_bid$Bid_Utils$isValid,
-				A2(_elm_community$maybe_extra$Maybe_Extra$or, maybeLiveBid, maybeMailBid));
-		},
-		calculated.winningBid);
-};
-var _Gizra$circuit_bid$Item_Utils$hasWinningBid = function (calculated) {
-	return _elm_community$maybe_extra$Maybe_Extra$isJust(calculated.winningBid);
-};
-var _Gizra$circuit_bid$Item_Utils$getPrice = function (calculated) {
-	return _Gizra$circuit_bid$Item_Utils$hasWinningBid(calculated) ? _Gizra$circuit_bid$Item_Model$Current(
-		A2(_elm_lang$core$Maybe$withDefault, calculated.openingPrice, calculated.currentPrice)) : _Gizra$circuit_bid$Item_Model$Opening(calculated.openingPrice);
-};
-var _Gizra$circuit_bid$Item_Utils$isWinningUser = F4(
-	function (user, modelBackend, saleUuid, calculated) {
-		return A3(
-			_elm_community$maybe_extra$Maybe_Extra$unwrap,
-			false,
-			function (bidKey) {
-				var hasOwnBid = function (bidDict) {
-					var _p15 = A2(_Gizra$elm_dictlist$EveryDictList$get, bidKey, bidDict);
-					if (_p15.ctor === 'Nothing') {
-						return false;
-					} else {
-						var _p16 = _p15._0;
-						return _Gizra$circuit_bid$Bid_Utils$isValid(_p16) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p16);
-					}
-				};
-				return hasOwnBid(calculated.bids) || hasOwnBid(calculated.bookBids);
-			},
-			calculated.winningBid);
 	});
 
 var _Gizra$circuit_bid$Message_Update$sendClerkPrivateMessage = F6(
@@ -67263,17 +68879,132 @@ var _Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate = F2(
 		} : {ctor: '[]'};
 		return {ctor: '_Tuple3', _0: finalModel, _1: cmd, _2: preloadMsgs};
 	});
+var _Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor = F2(
+	function (itemId, model) {
+		return _elm_lang$core$Native_Utils.eq(
+			model.imageCarouselItemId,
+			_elm_lang$core$Maybe$Just(itemId)) ? model.imageCarouselIndex : 0;
+	});
+var _Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt = F2(
+	function (carouselIndex, model) {
+		var _p9 = A2(_Gizra$elm_dictlist$EveryDictList$getAt, carouselIndex, model.item.items);
+		if (_p9.ctor === 'Just') {
+			return {
+				ctor: '::',
+				_0: _Gizra$circuit_bid$App_Model$MsgPagesSale(
+					_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
+						A2(_Gizra$circuit_bid$ItemManager_Model$FetchStaticItemsWindow, model.numberOfCarouselItems + _Gizra$circuit_bid$ItemManager_Update$staticLookaheadCount, _p9._0._0))),
+				_1: {ctor: '[]'}
+			};
+		} else {
+			return {ctor: '[]'};
+		}
+	});
+var _Gizra$circuit_bid$Pages_Sale_Update$bidOutcomeAlert = F6(
+	function (user, modelBackend, saleUuid, itemManager, pending, fetched) {
+		var lot = A2(
+			_elm_lang$core$Maybe$andThen,
+			function (uuid) {
+				return A2(_Gizra$elm_dictlist$EveryDictList$get, uuid, fetched);
+			},
+			_elm_lang$core$List$head(
+				_Gizra$elm_dictlist$EveryDictList$keys(
+					A2(
+						_Gizra$elm_dictlist$EveryDictList$filter,
+						F2(
+							function (_p10, lotMap) {
+								return _elm_lang$core$Native_Utils.eq(lotMap.itemId, pending.itemId);
+							}),
+						itemManager.lotMap))));
+		var ownBid = _elm_lang$core$List$head(
+			A2(
+				_elm_lang$core$List$filter,
+				function (bid) {
+					return _elm_lang$core$Native_Utils.eq(bid.deletedStatus, _Gizra$circuit_bid$Bid_Model$NotDeleted) && (_elm_lang$core$Native_Utils.eq(bid.amount, pending.amount) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, bid));
+				},
+				A2(
+					_elm_lang$core$Maybe$withDefault,
+					{ctor: '[]'},
+					A2(
+						_elm_lang$core$Maybe$map,
+						function (_p11) {
+							return _Gizra$elm_dictlist$EveryDictList$values(
+								function (_) {
+									return _.bids;
+								}(_p11));
+						},
+						lot))));
+		var _p12 = A2(
+			_elm_lang$core$Maybe$map,
+			function (_) {
+				return _.status;
+			},
+			ownBid);
+		_v7_5:
+		do {
+			if (_p12.ctor === 'Just') {
+				switch (_p12._0.ctor) {
+					case 'Accepted':
+						return _Gizra$circuit_bid$Alert$BidAccepted(pending.amount);
+					case 'Outbid':
+						return _Gizra$circuit_bid$Alert$Outbid(pending.amount);
+					case 'RejectedCreditLimit':
+						return _Gizra$circuit_bid$Alert$BidRejectedCreditLimit(pending.amount);
+					case 'RejectedBidderMax':
+						return _Gizra$circuit_bid$Alert$BidRejectedBidderMaxLimit(pending.amount);
+					case 'Rejected':
+						return _Gizra$circuit_bid$Alert$BidRejected(pending.amount);
+					default:
+						break _v7_5;
+				}
+			} else {
+				break _v7_5;
+			}
+		} while(false);
+		return _Gizra$circuit_bid$Alert$BidOutcomeUnknown(pending.amount);
+	});
+var _Gizra$circuit_bid$Pages_Sale_Update$giveUpOnQueuedBid = F2(
+	function (currentDate, model) {
+		var pending = function () {
+			var _p13 = {ctor: '_Tuple2', _0: model.queuedRequestState, _1: model.queuedBid};
+			if ((((_p13.ctor === '_Tuple2') && (_p13._0.ctor === 'QueuedRequestQueued')) && (_p13._1.ctor === 'Just')) && (_p13._1._0.ctor === '_Tuple2')) {
+				return _elm_lang$core$Maybe$Just(
+					{taskId: _p13._0._0, itemId: _p13._1._0._0, amount: _p13._1._0._1});
+			} else {
+				return _elm_lang$core$Maybe$Nothing;
+			}
+		}();
+		return {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.update(
+				model,
+				{
+					queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest,
+					queuedRequestStartTime: _elm_lang$core$Maybe$Nothing,
+					queuedBid: _elm_lang$core$Maybe$Nothing,
+					bidOutcomePending: pending,
+					alert: (!_elm_lang$core$Native_Utils.eq(pending, _elm_lang$core$Maybe$Nothing)) ? _elm_lang$core$Maybe$Just(
+						{ctor: '_Tuple2', _0: currentDate, _1: _Gizra$circuit_bid$Alert$BidOutcomeChecking}) : model.alert
+				}),
+			_1: (!_elm_lang$core$Native_Utils.eq(pending, _elm_lang$core$Maybe$Nothing)) ? {
+				ctor: '::',
+				_0: _Gizra$circuit_bid$App_Model$MsgHealth(
+					_Gizra$circuit_bid$Pusher_Health_Model$RequestProbe(_Gizra$circuit_bid$Pusher_Health_Model$BidTimeout)),
+				_1: {ctor: '[]'}
+			} : {ctor: '[]'}
+		};
+	});
 var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
-	function (currentDate, backendUrl, _p9, accessToken, user, modelBackend, saleUuid, event, model) {
-		var _p10 = _p9;
+	function (currentDate, backendUrl, _p14, accessToken, user, modelBackend, saleUuid, event, model) {
+		var _p15 = _p14;
 		var noChange = {
 			ctor: '_Tuple3',
 			_0: model,
 			_1: _elm_lang$core$Platform_Cmd$none,
 			_2: {ctor: '[]'}
 		};
-		var _p11 = event.data;
-		switch (_p11.ctor) {
+		var _p16 = event.data;
+		switch (_p16.ctor) {
 			case 'ConnectedUsersSaleHeartbeat':
 				return noChange;
 			case 'ConnectedUsersSalePlaceBidMouseEnter':
@@ -67281,7 +69012,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 			case 'ConnectedUsersSalePlaceBidMouseLeave':
 				return noChange;
 			case 'SaleUpdate':
-				var _p13 = _p11._0;
+				var _p18 = _p16._0;
 				var currentItem = A2(
 					_elm_lang$core$Maybe$map,
 					function (_) {
@@ -67290,38 +69021,38 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
 				var isItemChanging = (!_elm_lang$core$Native_Utils.eq(currentItem, _elm_lang$core$Maybe$Nothing)) && (!_elm_lang$core$Native_Utils.eq(
 					currentItem,
-					_elm_lang$core$Maybe$Just(_p13.item)));
+					_elm_lang$core$Maybe$Just(_p18.item)));
 				return isItemChanging ? {
 					ctor: '_Tuple3',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							pendingSaleUpdate: _elm_lang$core$Maybe$Just(_p13)
+							pendingSaleUpdate: _elm_lang$core$Maybe$Just(_p18)
 						}),
 					_1: A2(
 						_elm_lang$core$Task$perform,
-						function (_p12) {
+						function (_p17) {
 							return _Gizra$circuit_bid$Pages_Sale_Model$ApplyPendingSaleUpdate;
 						},
 						_elm_lang$core$Process$sleep(2 * _elm_lang$core$Time$second)),
 					_2: {ctor: '[]'}
-				} : A2(_Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate, _p13, model);
+				} : A2(_Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate, _p18, model);
 			case 'ItemUpdate':
-				var _p17 = _p11._0;
-				var _p14 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p17, model.item.lotMap);
-				if (_p14.ctor === 'Nothing') {
+				var _p23 = _p16._0;
+				var _p19 = A2(_Gizra$elm_dictlist$EveryDictList$get, _p23, model.item.lotMap);
+				if (_p19.ctor === 'Nothing') {
 					return noChange;
 				} else {
-					var item = A4(_Gizra$circuit_bid$ItemManager_Utils$insertCalcultedItem, user, _p17, _p11._1, model.item);
+					var item = A4(_Gizra$circuit_bid$ItemManager_Utils$insertCalcultedItem, user, _p23, _p16._1, model.item);
 					var debug = true;
 					var shouldResetFromHeartbeat = function () {
-						var _p15 = {ctor: '_Tuple2', _0: model.queuedRequestState, _1: model.queuedRequestStartTime};
-						if (((_p15.ctor === '_Tuple2') && (_p15._0.ctor === 'QueuedRequestQueued')) && (_p15._1.ctor === 'Just')) {
+						var _p20 = {ctor: '_Tuple2', _0: model.queuedRequestState, _1: model.queuedRequestStartTime};
+						if (((_p20.ctor === '_Tuple2') && (_p20._0.ctor === 'QueuedRequestQueued')) && (_p20._1.ctor === 'Just')) {
 							var heartbeatThreshold = 5 * _elm_lang$core$Time$second;
 							var currentTime = _elm_lang$core$Date$toTime(currentDate);
-							var elapsedTime = currentTime - _p15._1._0;
+							var elapsedTime = currentTime - _p20._1._0;
 							if (_elm_lang$core$Native_Utils.cmp(elapsedTime, heartbeatThreshold) > 0) {
-								var _p16 = debug ? A2(
+								var _p21 = debug ? A2(
 									_elm_lang$core$Debug$log,
 									'💔 HEARTBEAT RESET',
 									A2(
@@ -67339,15 +69070,20 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							return false;
 						}
 					}();
-					var newQueuedRequestState = shouldResetFromHeartbeat ? _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest : model.queuedRequestState;
-					var newQueuedRequestStartTime = shouldResetFromHeartbeat ? _elm_lang$core$Maybe$Nothing : model.queuedRequestStartTime;
+					var _p22 = shouldResetFromHeartbeat ? A2(_Gizra$circuit_bid$Pages_Sale_Update$giveUpOnQueuedBid, currentDate, model) : {
+						ctor: '_Tuple2',
+						_0: model,
+						_1: {ctor: '[]'}
+					};
+					var afterHeartbeat = _p22._0;
+					var heartbeatMsgs = _p22._1;
 					return {
 						ctor: '_Tuple3',
 						_0: _elm_lang$core$Native_Utils.update(
-							model,
-							{item: item, asyncGoingItemStatus: false, queuedRequestState: newQueuedRequestState, queuedRequestStartTime: newQueuedRequestStartTime}),
+							afterHeartbeat,
+							{item: item, asyncGoingItemStatus: false}),
 						_1: _elm_lang$core$Platform_Cmd$none,
-						_2: {ctor: '[]'}
+						_2: heartbeatMsgs
 					};
 				}
 			case 'ItemUnpublished':
@@ -67356,35 +69092,35 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							item: A2(_Gizra$circuit_bid$ItemManager_Utils$removeItemByUuid, _p11._0, model.item)
+							item: A2(_Gizra$circuit_bid$ItemManager_Utils$removeItemByUuid, _p16._0, model.item)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none,
 					_2: {ctor: '[]'}
 				};
 			case 'ItemPublished':
-				var _p18 = _p11._1;
+				var _p24 = _p16._1;
 				return {
 					ctor: '_Tuple3',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							item: A4(_Gizra$circuit_bid$ItemManager_Utils$restoreItemByUuid, _p11._0, _p18, _p11._2, model.item)
+							item: A4(_Gizra$circuit_bid$ItemManager_Utils$restoreItemByUuid, _p16._0, _p24, _p16._2, model.item)
 						}),
 					_1: A2(
 						_elm_lang$core$Task$perform,
 						_elm_lang$core$Basics$identity,
 						_elm_lang$core$Task$succeed(
 							_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
-								A2(_Gizra$circuit_bid$ItemManager_Model$FetchStaticItemsWindow, 1, _p18)))),
+								A2(_Gizra$circuit_bid$ItemManager_Model$FetchStaticItemsWindow, 1, _p24)))),
 					_2: {ctor: '[]'}
 				};
 			case 'MessageCreate':
-				var _p23 = _p11._0;
-				var _p22 = _p11._1;
-				if (_Gizra$circuit_bid$Message_Utils$isPrivate(_p22.messageType)) {
+				var _p29 = _p16._0;
+				var _p28 = _p16._1;
+				if (_Gizra$circuit_bid$Message_Utils$isPrivate(_p28.messageType)) {
 					var privateUnread = function () {
-						var _p19 = _p22.messageType;
-						if (_p19.ctor === 'PrivateByClerk') {
+						var _p25 = _p28.messageType;
+						if (_p25.ctor === 'PrivateByClerk') {
 							return model.privateUnread + 1;
 						} else {
 							return model.privateUnread;
@@ -67397,7 +69133,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							{
 								privateMessages: A2(
 									_krisajenkins$remotedata$RemoteData$map,
-									A2(_Gizra$circuit_bid$Message_Update$addMessage, _p23, _p22),
+									A2(_Gizra$circuit_bid$Message_Update$addMessage, _p29, _p28),
 									model.privateMessages),
 								privateUnread: privateUnread
 							}),
@@ -67406,24 +69142,24 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					};
 				} else {
 					var withoutSyntheticTwin = function () {
-						var _p20 = _p22.messageType;
-						switch (_p20.ctor) {
+						var _p26 = _p28.messageType;
+						switch (_p26.ctor) {
 							case 'BidDeleted':
-								return _Gizra$circuit_bid$Message_Utils$dropSyntheticDeletionFor(_p20._1);
+								return _Gizra$circuit_bid$Message_Utils$dropSyntheticDeletionFor(_p26._1);
 							case 'BidChangedToFloor':
-								return _Gizra$circuit_bid$Message_Utils$dropSyntheticDeletionFor(_p20._1);
+								return _Gizra$circuit_bid$Message_Utils$dropSyntheticDeletionFor(_p26._1);
 							default:
 								return _elm_lang$core$Basics$identity;
 						}
 					}();
 					var publicMessages = A2(
 						_krisajenkins$remotedata$RemoteData$map,
-						function (_p21) {
+						function (_p27) {
 							return A3(
 								_Gizra$circuit_bid$Message_Update$addMessage,
-								_p23,
-								_p22,
-								withoutSyntheticTwin(_p21));
+								_p29,
+								_p28,
+								withoutSyntheticTwin(_p27));
 						},
 						model.publicMessages);
 					return {
@@ -67436,20 +69172,20 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					};
 				}
 			case 'BidDelete':
-				var _p30 = _p11._1;
-				var _p29 = _p11._0;
-				var _p28 = _p11._2;
-				var _p27 = _p11._3;
+				var _p36 = _p16._1;
+				var _p35 = _p16._0;
+				var _p34 = _p16._2;
+				var _p33 = _p16._3;
 				return A3(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					noChange,
 					function (sale) {
 						var publicMessages = function () {
-							var _p24 = _p29;
-							if (_p24.ctor === 'Delete') {
+							var _p30 = _p35;
+							if (_p30.ctor === 'Delete') {
 								var syntheticMessage = {
 									timestamp: currentDate,
-									messageType: A2(_Gizra$circuit_bid$Message_Model$BidDeleted, _p30, _p28)
+									messageType: A2(_Gizra$circuit_bid$Message_Model$BidDeleted, _p36, _p34)
 								};
 								var syntheticId = _Gizra$circuit_bid$Message_Model$MessageId(
 									A2(
@@ -67461,7 +69197,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 								return A2(
 									_krisajenkins$remotedata$RemoteData$map,
 									function (messages) {
-										return A2(_Gizra$circuit_bid$Message_Utils$publicStreamHasBidDeletion, _p28, messages) ? messages : A3(_Gizra$circuit_bid$Message_Update$addMessage, syntheticId, syntheticMessage, messages);
+										return A2(_Gizra$circuit_bid$Message_Utils$publicStreamHasBidDeletion, _p34, messages) ? messages : A3(_Gizra$circuit_bid$Message_Update$addMessage, syntheticId, syntheticMessage, messages);
 									},
 									model.publicMessages);
 							} else {
@@ -67469,22 +69205,22 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							}
 						}();
 						var ownBidRevokedAlert = function () {
-							var _p25 = _p29;
-							if (_p25.ctor === 'Delete') {
+							var _p31 = _p35;
+							if (_p31.ctor === 'Delete') {
 								return _Gizra$circuit_bid$Alert$OwnBidRevoked;
 							} else {
 								return _Gizra$circuit_bid$Alert$OwnBidRevokedToFloor;
 							}
 						}();
-						var item = A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p30, _p28, _p27, model.item);
+						var item = A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p36, _p34, _p33, model.item);
 						var alert = function () {
-							var _p26 = A3(_Gizra$circuit_bid$ItemManager_Utils$getBid, _p30, _p28, item);
-							if (_p26.ctor === 'Just') {
-								return A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, sale.uuid, _p26._0) ? _elm_lang$core$Maybe$Just(
+							var _p32 = A3(_Gizra$circuit_bid$ItemManager_Utils$getBid, _p36, _p34, item);
+							if (_p32.ctor === 'Just') {
+								return A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, sale.uuid, _p32._0) ? _elm_lang$core$Maybe$Just(
 									{
 										ctor: '_Tuple2',
 										_0: currentDate,
-										_1: ownBidRevokedAlert(_p27.amount)
+										_1: ownBidRevokedAlert(_p33.amount)
 									}) : model.alert;
 							} else {
 								return model.alert;
@@ -67502,25 +69238,25 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
 			case 'LotTick':
 				var merge = F2(
-					function (_p32, _p31) {
-						var _p33 = _p32;
-						var _p36 = _p33._1;
-						var _p34 = _p31;
-						var _p35 = _p34._1;
+					function (_p38, _p37) {
+						var _p39 = _p38;
+						var _p42 = _p39._1;
+						var _p40 = _p37;
+						var _p41 = _p40._1;
 						return {
 							ctor: '_Tuple3',
-							_0: _p34._0,
-							_1: _elm_lang$core$Native_Utils.eq(_p36, _elm_lang$core$Platform_Cmd$none) ? _p35 : (_elm_lang$core$Native_Utils.eq(_p35, _elm_lang$core$Platform_Cmd$none) ? _p36 : _elm_lang$core$Platform_Cmd$batch(
+							_0: _p40._0,
+							_1: _elm_lang$core$Native_Utils.eq(_p42, _elm_lang$core$Platform_Cmd$none) ? _p41 : (_elm_lang$core$Native_Utils.eq(_p41, _elm_lang$core$Platform_Cmd$none) ? _p42 : _elm_lang$core$Platform_Cmd$batch(
 								{
 									ctor: '::',
-									_0: _p36,
+									_0: _p42,
 									_1: {
 										ctor: '::',
-										_0: _p35,
+										_0: _p41,
 										_1: {ctor: '[]'}
 									}
 								})),
-							_2: A2(_elm_lang$core$Basics_ops['++'], _p33._2, _p34._2)
+							_2: A2(_elm_lang$core$Basics_ops['++'], _p39._2, _p40._2)
 						};
 					});
 				var nested = F2(
@@ -67529,7 +69265,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							_Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher,
 							currentDate,
 							backendUrl,
-							{ctor: '_Tuple2', _0: _p10._0, _1: _p10._1},
+							{ctor: '_Tuple2', _0: _p15._0, _1: _p15._1},
 							accessToken,
 							user,
 							modelBackend,
@@ -67538,11 +69274,11 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							currentModel);
 					});
 				var afterItem = function () {
-					var _p37 = _p11._0.item;
-					if (_p37.ctor === 'Just') {
+					var _p43 = _p16._0.item;
+					if (_p43.ctor === 'Just') {
 						return A2(
 							nested,
-							A2(_Gizra$circuit_bid$Pusher_Model$ItemUpdate, _p37._0._0, _p37._0._1),
+							A2(_Gizra$circuit_bid$Pusher_Model$ItemUpdate, _p43._0._0, _p43._0._1),
 							model);
 					} else {
 						return {
@@ -67553,24 +69289,24 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 						};
 					}
 				}();
-				var _p38 = afterItem;
-				var modelAfterItem = _p38._0;
+				var _p44 = afterItem;
+				var modelAfterItem = _p44._0;
 				var afterBid = function () {
-					var _p39 = _p11._0.bid;
-					if (_p39.ctor === 'Just') {
-						var _p43 = _p39._0._0;
-						var _p42 = _p39._0._2;
-						var _p41 = _p39._0._1;
-						var _p40 = _p42.deletedStatus;
-						if (_p40.ctor === 'Deleted') {
+					var _p45 = _p16._0.bid;
+					if (_p45.ctor === 'Just') {
+						var _p49 = _p45._0._0;
+						var _p48 = _p45._0._2;
+						var _p47 = _p45._0._1;
+						var _p46 = _p48.deletedStatus;
+						if (_p46.ctor === 'Deleted') {
 							return A2(
 								nested,
-								A4(_Gizra$circuit_bid$Pusher_Model$BidDelete, _p39._0._3, _p43, _p41, _p42),
+								A4(_Gizra$circuit_bid$Pusher_Model$BidDelete, _p45._0._3, _p49, _p47, _p48),
 								modelAfterItem);
 						} else {
 							return A2(
 								nested,
-								A3(_Gizra$circuit_bid$Pusher_Model$BidUpdate, _p43, _p41, _p42),
+								A3(_Gizra$circuit_bid$Pusher_Model$BidUpdate, _p49, _p47, _p48),
 								modelAfterItem);
 						}
 					} else {
@@ -67584,24 +69320,24 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 				}();
 				return A2(merge, afterItem, afterBid);
 			case 'BidUpdate':
-				var _p48 = _p11._0;
-				var _p47 = _p11._1;
-				var _p46 = _p11._2;
+				var _p54 = _p16._0;
+				var _p53 = _p16._1;
+				var _p52 = _p16._2;
 				var publicMessages = function () {
-					var _p44 = A4(_Gizra$circuit_bid$Message_Utils$syntheticBidStreamRow, currentDate, _p48, _p47, _p46);
-					if (_p44.ctor === 'Nothing') {
+					var _p50 = A4(_Gizra$circuit_bid$Message_Utils$syntheticBidStreamRow, currentDate, _p54, _p53, _p52);
+					if (_p50.ctor === 'Nothing') {
 						return model.publicMessages;
 					} else {
-						var _p45 = _p44._0._0;
+						var _p51 = _p50._0._0;
 						return A2(
 							_krisajenkins$remotedata$RemoteData$map,
 							function (messages) {
-								return (A2(_Gizra$elm_dictlist$EveryDictList$member, _p45, messages) || A2(_Gizra$circuit_bid$Message_Utils$publicStreamHasBidKey, _p47, messages)) ? messages : A3(_Gizra$circuit_bid$Message_Update$addMessage, _p45, _p44._0._1, messages);
+								return (A2(_Gizra$elm_dictlist$EveryDictList$member, _p51, messages) || A2(_Gizra$circuit_bid$Message_Utils$publicStreamHasBidKey, _p53, messages)) ? messages : A3(_Gizra$circuit_bid$Message_Update$addMessage, _p51, _p50._0._1, messages);
 							},
 							model.publicMessages);
 					}
 				}();
-				var item = A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p48, _p47, _p46, model.item);
+				var item = A4(_Gizra$circuit_bid$ItemManager_Utils$updateBidDict, _p54, _p53, _p52, model.item);
 				return {
 					ctor: '_Tuple3',
 					_0: _elm_lang$core$Native_Utils.update(
@@ -67622,7 +69358,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 								A2(
 									_Gizra$circuit_bid$Backend_BidderInfo_Model$Update,
 									saleUuid,
-									{ctor: '_Tuple2', _0: _p11._0._0, _1: _p11._0._1}))),
+									{ctor: '_Tuple2', _0: _p16._0._0, _1: _p16._0._1}))),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -67644,7 +69380,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
 								_Gizra$circuit_bid$Backend_CreditRequest_Model$HandleCreate(
 									_krisajenkins$remotedata$RemoteData$Success(
-										{ctor: '_Tuple2', _0: _p11._0._0, _1: _p11._0._1})))),
+										{ctor: '_Tuple2', _0: _p16._0._0, _1: _p16._0._1})))),
 						_1: {ctor: '[]'}
 					}
 				};
@@ -67659,28 +69395,47 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 							_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
 								A2(
 									_Gizra$circuit_bid$Backend_CreditRequest_Model$HandleUpdate,
-									_Gizra$elm_storage_key$StorageKey$Existing(_p11._0._0),
-									_krisajenkins$remotedata$RemoteData$Success(_p11._0._1)))),
+									_Gizra$elm_storage_key$StorageKey$Existing(_p16._0._0),
+									_krisajenkins$remotedata$RemoteData$Success(_p16._0._1)))),
 						_1: {ctor: '[]'}
 					}
 				};
 			case 'LiveQueuePostExecute':
-				var _p60 = _p11._0;
+				var _p69 = _p16._0;
+				var settle = function (_p55) {
+					var _p56 = _p55;
+					return {
+						ctor: '_Tuple3',
+						_0: _elm_lang$core$Native_Utils.update(
+							_p56._0,
+							{queuedBid: _elm_lang$core$Maybe$Nothing, bidOutcomePending: _elm_lang$core$Maybe$Nothing}),
+						_1: _p56._1,
+						_2: _p56._2
+					};
+				};
+				var lateConfirmation = function () {
+					var _p57 = model.bidOutcomePending;
+					if (_p57.ctor === 'Just') {
+						return _elm_lang$core$Native_Utils.eq(_p57._0.taskId, _p69.taskId);
+					} else {
+						return false;
+					}
+				}();
 				var debug = true;
-				var _p49 = debug ? A2(
+				var _p58 = debug ? A2(
 					_elm_lang$core$Debug$log,
 					'🔍 PUSHER LiveQueuePostExecute',
-					A2(_elm_lang$core$Basics_ops['++'], 'Received task_id: ', _p60.taskId)) : '';
+					A2(_elm_lang$core$Basics_ops['++'], 'Received task_id: ', _p69.taskId)) : '';
 				var verifyQueuedTaskAndProcess = function (result) {
-					var _p50 = model.queuedRequestState;
-					if (_p50.ctor === 'QueuedRequestQueued') {
-						var _p53 = _p50._0;
-						var match = _elm_lang$core$Native_Utils.eq(_p53, _p60.taskId);
-						var _p51 = debug ? A2(
+					var _p59 = model.queuedRequestState;
+					if (_p59.ctor === 'QueuedRequestQueued') {
+						var _p62 = _p59._0;
+						var match = _elm_lang$core$Native_Utils.eq(_p62, _p69.taskId);
+						var _p60 = debug ? A2(
 							_elm_lang$core$Debug$log,
 							'🔍 MATCH?',
 							_elm_lang$core$Basics$toString(match)) : '';
-						var _p52 = debug ? A2(
+						var _p61 = debug ? A2(
 							_elm_lang$core$Debug$log,
 							'🔍 COMPARING',
 							A2(
@@ -67688,70 +69443,70 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 								'Stored: ',
 								A2(
 									_elm_lang$core$Basics_ops['++'],
-									_p53,
-									A2(_elm_lang$core$Basics_ops['++'], ' vs Received: ', _p60.taskId)))) : '';
-						return match ? result : noChange;
+									_p62,
+									A2(_elm_lang$core$Basics_ops['++'], ' vs Received: ', _p69.taskId)))) : '';
+						return match ? settle(result) : noChange;
 					} else {
-						var _p54 = debug ? A2(
+						var _p63 = debug ? A2(
 							_elm_lang$core$Debug$log,
 							'🔍 SKIPPED',
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								'Current state is not QueuedRequestQueued, it\'s: ',
 								_elm_lang$core$Basics$toString(model.queuedRequestState))) : '';
-						return noChange;
+						return lateConfirmation ? settle(result) : noChange;
 					}
 				};
-				var _p55 = _p60.result;
-				_v22_2:
+				var _p64 = _p69.result;
+				_v27_2:
 				do {
-					switch (_p55.ctor) {
+					switch (_p64.ctor) {
 						case 'LiveQueuePostExecutePlaceBidSuccess':
-							if (_p55._1.ctor === '_Tuple2') {
-								var _p57 = _p55._1._1;
+							if (_p64._1.ctor === '_Tuple2') {
+								var _p66 = _p64._1._1;
 								return verifyQueuedTaskAndProcess(
 									A3(
 										_elm_community$maybe_extra$Maybe_Extra$unwrap,
 										noChange,
 										function (sale) {
 											var alert = function () {
-												if (A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, sale.uuid, _p57)) {
-													var _p56 = _p57.status;
-													switch (_p56.ctor) {
+												if (A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, sale.uuid, _p66)) {
+													var _p65 = _p66.status;
+													switch (_p65.ctor) {
 														case 'Accepted':
 															return _elm_lang$core$Maybe$Just(
 																{
 																	ctor: '_Tuple2',
 																	_0: currentDate,
-																	_1: _Gizra$circuit_bid$Alert$BidAccepted(_p57.amount)
+																	_1: _Gizra$circuit_bid$Alert$BidAccepted(_p66.amount)
 																});
 														case 'Rejected':
 															return _elm_lang$core$Maybe$Just(
 																{
 																	ctor: '_Tuple2',
 																	_0: currentDate,
-																	_1: _Gizra$circuit_bid$Alert$BidRejected(_p57.amount)
+																	_1: _Gizra$circuit_bid$Alert$BidRejected(_p66.amount)
 																});
 														case 'RejectedCreditLimit':
 															return _elm_lang$core$Maybe$Just(
 																{
 																	ctor: '_Tuple2',
 																	_0: currentDate,
-																	_1: _Gizra$circuit_bid$Alert$BidRejectedCreditLimit(_p57.amount)
+																	_1: _Gizra$circuit_bid$Alert$BidRejectedCreditLimit(_p66.amount)
 																});
 														case 'RejectedBidderMax':
 															return _elm_lang$core$Maybe$Just(
 																{
 																	ctor: '_Tuple2',
 																	_0: currentDate,
-																	_1: _Gizra$circuit_bid$Alert$BidRejectedBidderMaxLimit(_p57.amount)
+																	_1: _Gizra$circuit_bid$Alert$BidRejectedBidderMaxLimit(_p66.amount)
 																});
 														case 'Outbid':
 															return _elm_lang$core$Maybe$Just(
 																{
 																	ctor: '_Tuple2',
 																	_0: currentDate,
-																	_1: _Gizra$circuit_bid$Alert$Outbid(_p57.amount)
+																	_1: _Gizra$circuit_bid$Alert$Outbid(_p66.amount)
 																});
 														default:
 															return _elm_lang$core$Maybe$Nothing;
@@ -67776,11 +69531,11 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 										},
 										_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
 							} else {
-								break _v22_2;
+								break _v27_2;
 							}
 						case 'LiveQueuePostExecutePlaceBidFailure':
-							var _p59 = _p55._1;
-							var alert = A2(_elm_lang$core$String$startsWith, 'Cannot have duplicated amount', _p59) ? A2(
+							var _p68 = _p64._1;
+							var alert = A2(_elm_lang$core$String$startsWith, 'Cannot have duplicated amount', _p68) ? A2(
 								_elm_lang$core$Maybe$map,
 								function (amount) {
 									return {
@@ -67792,15 +69547,15 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 								},
 								A2(
 									_elm_lang$core$Maybe$andThen,
-									function (_p58) {
+									function (_p67) {
 										return _elm_lang$core$Result$toMaybe(
-											_elm_lang$core$String$toInt(_p58));
+											_elm_lang$core$String$toInt(_p67));
 									},
 									_elm_lang$core$List$head(
 										A2(
 											_elm_lang$core$List$drop,
 											4,
-											_elm_lang$core$String$words(_p59))))) : model.alert;
+											_elm_lang$core$String$words(_p68))))) : model.alert;
 							return verifyQueuedTaskAndProcess(
 								{
 									ctor: '_Tuple3',
@@ -67808,7 +69563,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 										model,
 										{
 											queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestFailed(
-												_elm_lang$http$Http$BadUrl(_p59)),
+												_elm_lang$http$Http$BadUrl(_p68)),
 											queuedRequestStartTime: _elm_lang$core$Maybe$Nothing,
 											alert: alert
 										}),
@@ -67816,7 +69571,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 									_2: {ctor: '[]'}
 								});
 						default:
-							break _v22_2;
+							break _v27_2;
 					}
 				} while(false);
 				return noChange;
@@ -67825,7 +69580,7 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 					ctor: '_Tuple3',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{clerkHighestQueuedBidData: _p11._0}),
+						{clerkHighestQueuedBidData: _p16._0}),
 					_1: _elm_lang$core$Platform_Cmd$none,
 					_2: {ctor: '[]'}
 				};
@@ -67840,702 +69595,715 @@ var _Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher = F9(
 				};
 		}
 	});
-var _Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor = F2(
-	function (itemId, model) {
-		return _elm_lang$core$Native_Utils.eq(
-			model.imageCarouselItemId,
-			_elm_lang$core$Maybe$Just(itemId)) ? model.imageCarouselIndex : 0;
-	});
-var _Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt = F2(
-	function (carouselIndex, model) {
-		var _p61 = A2(_Gizra$elm_dictlist$EveryDictList$getAt, carouselIndex, model.item.items);
-		if (_p61.ctor === 'Just') {
+var _Gizra$circuit_bid$Pages_Sale_Update$placeBidRequest = F9(
+	function (backendUrl, accessToken, user, modelBackend, saleUuid, model, itemId, amount, isCut) {
+		var _p70 = user;
+		if (_p70.ctor === 'Authenticated') {
+			var downgradedUser = _elm_lang$core$Native_Utils.update(
+				_p70._0,
+				{userType: _Gizra$circuit_bid$User_Model$Bidder});
+			var cmd = _Gizra$circuit_bid$Bid_Update$placeBid(backendUrl)(accessToken)(
+				_Gizra$circuit_bid$User_Model$Authenticated(downgradedUser))(modelBackend)(saleUuid)(itemId)(_Gizra$circuit_bid$Bid_Model$Internet)(amount)(isCut)(
+				_Gizra$circuit_bid$Pages_Sale_Model$HandleBidPlaced(itemId));
 			return {
-				ctor: '::',
-				_0: _Gizra$circuit_bid$App_Model$MsgPagesSale(
-					_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
-						A2(_Gizra$circuit_bid$ItemManager_Model$FetchStaticItemsWindow, model.numberOfCarouselItems + _Gizra$circuit_bid$ItemManager_Update$staticLookaheadCount, _p61._0._0))),
-				_1: {ctor: '[]'}
+				ctor: '_Tuple4',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestCompleted,
+						queuedBid: _elm_lang$core$Maybe$Just(
+							{ctor: '_Tuple2', _0: itemId, _1: amount})
+					}),
+				_1: cmd,
+				_2: _Gizra$circuit_bid$Error_Utils$noError,
+				_3: {ctor: '[]'}
 			};
 		} else {
-			return {ctor: '[]'};
+			return {
+				ctor: '_Tuple4',
+				_0: model,
+				_1: _elm_lang$core$Platform_Cmd$none,
+				_2: _Gizra$circuit_bid$Error_Utils$noError,
+				_3: {ctor: '[]'}
+			};
 		}
 	});
-var _Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper = F8(
-	function (backendUrl, accessToken, user, modelBackend, model, itemId, amount, isCut) {
-		var noChange = {
-			ctor: '_Tuple4',
-			_0: model,
-			_1: _elm_lang$core$Platform_Cmd$none,
-			_2: _Gizra$circuit_bid$Error_Utils$noError,
-			_3: {ctor: '[]'}
-		};
-		return A3(
-			_elm_community$maybe_extra$Maybe_Extra$unwrap,
-			noChange,
-			function (sale) {
-				var _p62 = user;
-				if (_p62.ctor === 'Authenticated') {
-					var downgradedUser = _elm_lang$core$Native_Utils.update(
-						_p62._0,
-						{userType: _Gizra$circuit_bid$User_Model$Bidder});
-					var cmd = _Gizra$circuit_bid$Bid_Update$placeBid(backendUrl)(accessToken)(
-						_Gizra$circuit_bid$User_Model$Authenticated(downgradedUser))(modelBackend)(sale.uuid)(itemId)(_Gizra$circuit_bid$Bid_Model$Internet)(amount)(isCut)(
-						_Gizra$circuit_bid$Pages_Sale_Model$HandleBidPlaced(itemId));
-					return {
-						ctor: '_Tuple4',
-						_0: _elm_lang$core$Native_Utils.update(
-							model,
-							{queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestCompleted}),
-						_1: cmd,
-						_2: _Gizra$circuit_bid$Error_Utils$noError,
-						_3: {ctor: '[]'}
+var _Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper = function (currentDate) {
+	return function (backendUrl) {
+		return function (accessToken) {
+			return function (user) {
+				return function (modelBackend) {
+					return function (liveFeed) {
+						return function (model) {
+							return function (itemId) {
+								return function (amount) {
+									return function (isCut) {
+										var noChange = {
+											ctor: '_Tuple4',
+											_0: model,
+											_1: _elm_lang$core$Platform_Cmd$none,
+											_2: _Gizra$circuit_bid$Error_Utils$noError,
+											_3: {ctor: '[]'}
+										};
+										return A3(
+											_elm_community$maybe_extra$Maybe_Extra$unwrap,
+											noChange,
+											function (sale) {
+												var _p71 = user;
+												if (_p71.ctor === 'Authenticated') {
+													return _elm_lang$core$Native_Utils.eq(liveFeed, _Gizra$circuit_bid$Pusher_Health_Model$Stale) ? {
+														ctor: '_Tuple4',
+														_0: _elm_lang$core$Native_Utils.update(
+															model,
+															{
+																alert: _elm_lang$core$Maybe$Just(
+																	{ctor: '_Tuple2', _0: currentDate, _1: _Gizra$circuit_bid$Alert$BidNotSentFeedStale})
+															}),
+														_1: _elm_lang$core$Platform_Cmd$none,
+														_2: _Gizra$circuit_bid$Error_Utils$noError,
+														_3: {ctor: '[]'}
+													} : A9(_Gizra$circuit_bid$Pages_Sale_Update$placeBidRequest, backendUrl, accessToken, user, modelBackend, sale.uuid, model, itemId, amount, isCut);
+												} else {
+													return noChange;
+												}
+											},
+											_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
+									};
+								};
+							};
+						};
 					};
-				} else {
-					return noChange;
-				}
-			},
-			_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
-	});
+				};
+			};
+		};
+	};
+};
 var _Gizra$circuit_bid$Pages_Sale_Update$update = function (currentDate) {
 	return function (backendUrl) {
 		return function (backofficeUrl) {
-			return function (_p63) {
+			return function (_p72) {
 				return function (isDebug) {
 					return function (accessToken) {
 						return function (language) {
 							return function (user) {
 								return function (modelBackend) {
-									return function (msg) {
-										return function (model) {
-											update:
-											while (true) {
-												var _p64 = _p63;
-												var _p108 = _p64._0;
-												var _p107 = _p64._1;
-												var noChange = {
-													ctor: '_Tuple4',
-													_0: model,
-													_1: _elm_lang$core$Platform_Cmd$none,
-													_2: _Gizra$circuit_bid$Error_Utils$noError,
-													_3: {ctor: '[]'}
-												};
-												var _p65 = msg;
-												switch (_p65.ctor) {
-													case 'BidAmountIncrement':
-														var newModel = _elm_lang$core$Native_Utils.update(
-															model,
-															{
-																nextBidIncrements: {ctor: '::', _0: _p65._0, _1: model.nextBidIncrements}
-															});
-														return {
-															ctor: '_Tuple4',
-															_0: newModel,
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'BidAmountDecrement':
-														var newModel = _elm_lang$core$Native_Utils.update(
-															model,
-															{
-																nextBidIncrements: A2(
-																	_elm_lang$core$Maybe$withDefault,
-																	{ctor: '[]'},
-																	_elm_lang$core$List$tail(model.nextBidIncrements))
-															});
-														return {
-															ctor: '_Tuple4',
-															_0: newModel,
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'CheckQueuedRequestTimeout':
-														var _p66 = {ctor: '_Tuple2', _0: model.queuedRequestState, _1: model.queuedRequestStartTime};
-														if (((_p66.ctor === '_Tuple2') && (_p66._0.ctor === 'QueuedRequestQueued')) && (_p66._1.ctor === 'Just')) {
-															var timeoutThreshold = 15 * _elm_lang$core$Time$second;
-															var elapsedTime = _p65._0 - _p66._1._0;
-															var _p67 = isDebug ? A2(
-																_elm_lang$core$Debug$log,
-																'⏱️ TIMEOUT CHECK',
-																A2(
-																	_elm_lang$core$Basics_ops['++'],
-																	'Elapsed: ',
-																	A2(
-																		_elm_lang$core$Basics_ops['++'],
-																		_elm_lang$core$Basics$toString(elapsedTime / 1000),
-																		's, Threshold: 15s'))) : '';
-															if (_elm_lang$core$Native_Utils.cmp(elapsedTime, timeoutThreshold) > 0) {
-																var _p68 = isDebug ? A2(
+									return function (liveFeed) {
+										return function (msg) {
+											return function (model) {
+												update:
+												while (true) {
+													var _p73 = _p72;
+													var _p122 = _p73._0;
+													var _p121 = _p73._1;
+													var noChange = {
+														ctor: '_Tuple4',
+														_0: model,
+														_1: _elm_lang$core$Platform_Cmd$none,
+														_2: _Gizra$circuit_bid$Error_Utils$noError,
+														_3: {ctor: '[]'}
+													};
+													var _p74 = msg;
+													switch (_p74.ctor) {
+														case 'BidAmountIncrement':
+															var newModel = _elm_lang$core$Native_Utils.update(
+																model,
+																{
+																	nextBidIncrements: {ctor: '::', _0: _p74._0, _1: model.nextBidIncrements}
+																});
+															return {
+																ctor: '_Tuple4',
+																_0: newModel,
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'BidAmountDecrement':
+															var newModel = _elm_lang$core$Native_Utils.update(
+																model,
+																{
+																	nextBidIncrements: A2(
+																		_elm_lang$core$Maybe$withDefault,
+																		{ctor: '[]'},
+																		_elm_lang$core$List$tail(model.nextBidIncrements))
+																});
+															return {
+																ctor: '_Tuple4',
+																_0: newModel,
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'CheckQueuedRequestTimeout':
+															var _p75 = {ctor: '_Tuple2', _0: model.queuedRequestState, _1: model.queuedRequestStartTime};
+															if (((_p75.ctor === '_Tuple2') && (_p75._0.ctor === 'QueuedRequestQueued')) && (_p75._1.ctor === 'Just')) {
+																var timeoutThreshold = 15 * _elm_lang$core$Time$second;
+																var elapsedTime = _p74._0 - _p75._1._0;
+																var _p76 = isDebug ? A2(
 																	_elm_lang$core$Debug$log,
-																	'⚠️ TIMEOUT RESET',
+																	'⏱️ TIMEOUT CHECK',
 																	A2(
 																		_elm_lang$core$Basics_ops['++'],
-																		'Request timed out after ',
+																		'Elapsed: ',
 																		A2(
 																			_elm_lang$core$Basics_ops['++'],
 																			_elm_lang$core$Basics$toString(elapsedTime / 1000),
-																			' seconds'))) : '';
+																			's, Threshold: 15s'))) : '';
+																if (_elm_lang$core$Native_Utils.cmp(elapsedTime, timeoutThreshold) > 0) {
+																	var _p77 = A2(_Gizra$circuit_bid$Pages_Sale_Update$giveUpOnQueuedBid, currentDate, model);
+																	var givenUp = _p77._0;
+																	var appMsgs = _p77._1;
+																	var _p78 = isDebug ? A2(
+																		_elm_lang$core$Debug$log,
+																		'⚠️ TIMEOUT RESET',
+																		A2(
+																			_elm_lang$core$Basics_ops['++'],
+																			'Request timed out after ',
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				_elm_lang$core$Basics$toString(elapsedTime / 1000),
+																				' seconds'))) : '';
+																	return {ctor: '_Tuple4', _0: givenUp, _1: _elm_lang$core$Platform_Cmd$none, _2: _Gizra$circuit_bid$Error_Utils$noError, _3: appMsgs};
+																} else {
+																	return noChange;
+																}
+															} else {
+																return noChange;
+															}
+														case 'CreditRequestSave':
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {
+																	ctor: '::',
+																	_0: _Gizra$circuit_bid$App_Model$MsgBackend(
+																		_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
+																			A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$Save, _p74._0, _p74._1))),
+																	_1: {ctor: '[]'}
+																}
+															};
+														case 'CreditRequestSetAmount':
+															var _p82 = _p74._0;
+															var _p81 = _p74._1;
+															var maybeInt = _elm_lang$core$Result$toMaybe(
+																_elm_lang$core$String$toInt(_p81));
+															var _p79 = maybeInt;
+															if (_p79.ctor === 'Just') {
+																var _p80 = _p79._0;
+																return ((_elm_lang$core$Native_Utils.cmp(_p80, 0) > 0) && (_elm_lang$core$Native_Utils.cmp(_p80, _Gizra$circuit_bid$Utils_Number$maximalInt) < 1)) ? {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {
+																		ctor: '::',
+																		_0: _Gizra$circuit_bid$App_Model$MsgBackend(
+																			_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
+																				A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$SetAmount, _p82, _p80))),
+																		_1: {ctor: '[]'}
+																	}
+																} : noChange;
+															} else {
+																return _elm_lang$core$Native_Utils.eq(_p81, '') ? {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {
+																		ctor: '::',
+																		_0: _Gizra$circuit_bid$App_Model$MsgBackend(
+																			_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
+																				A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$SetAmount, _p82, 0))),
+																		_1: {ctor: '[]'}
+																	}
+																} : noChange;
+															}
+														case 'ConnectedUserHeartbeat':
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: A5(
+																	_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
+																	{ctor: '_Tuple2', _0: _p122, _1: _p121},
+																	user,
+																	modelBackend,
+																	model.sale,
+																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$HeartBeat),
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'FetchItems':
+															var fetchItemsByUserTypeCmd = A2(
+																_elm_lang$core$Maybe$withDefault,
+																_elm_lang$core$Platform_Cmd$none,
+																A2(
+																	_elm_lang$core$Maybe$map,
+																	_elm_lang$core$Platform_Cmd$map(_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager),
+																	A2(
+																		_elm_lang$core$Maybe$map,
+																		A6(_Gizra$circuit_bid$ItemManager_Update$fetchItemsByUserType, currentDate, backendUrl, isDebug, accessToken, language, user),
+																		A2(
+																			_elm_lang$core$Maybe$map,
+																			function (_) {
+																				return _.uuid;
+																			},
+																			_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)))));
+															var fetchCurrentItemsCmd = A2(
+																_elm_lang$core$Maybe$withDefault,
+																_elm_lang$core$Platform_Cmd$none,
+																A2(
+																	_elm_lang$core$Maybe$map,
+																	_elm_lang$core$Platform_Cmd$map(_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager),
+																	A2(
+																		_elm_lang$core$Maybe$map,
+																		A6(_Gizra$circuit_bid$ItemManager_Update$fetchItems, currentDate, backendUrl, isDebug, accessToken, language, user),
+																		A2(
+																			_elm_lang$core$Maybe$map,
+																			_Gizra$circuit_bid$ItemManager_Utils$getCurrentAndNextItemIds(model.item),
+																			A2(
+																				_elm_lang$core$Maybe$map,
+																				function (_) {
+																					return _.item;
+																				},
+																				_krisajenkins$remotedata$RemoteData$toMaybe(model.sale))))));
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: _elm_lang$core$Platform_Cmd$batch(
+																	{
+																		ctor: '::',
+																		_0: fetchCurrentItemsCmd,
+																		_1: {
+																			ctor: '::',
+																			_0: fetchItemsByUserTypeCmd,
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'HandleBidPlaced':
+															if (_p74._1.ctor === 'Ok') {
+																var _p84 = _p74._1._0;
+																var _p83 = isDebug ? A2(
+																	_elm_lang$core$Debug$log,
+																	'🎯 BID PLACED HTTP RESPONSE',
+																	A2(_elm_lang$core$Basics_ops['++'], 'Stored task_id: ', _p84)) : '';
 																return {
 																	ctor: '_Tuple4',
 																	_0: _elm_lang$core$Native_Utils.update(
 																		model,
-																		{queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest, queuedRequestStartTime: _elm_lang$core$Maybe$Nothing}),
+																		{
+																			queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestQueued(_p84),
+																			queuedRequestStartTime: _elm_lang$core$Maybe$Just(
+																				_elm_lang$core$Date$toTime(currentDate))
+																		}),
 																	_1: _elm_lang$core$Platform_Cmd$none,
 																	_2: _Gizra$circuit_bid$Error_Utils$noError,
 																	_3: {ctor: '[]'}
 																};
 															} else {
-																return noChange;
-															}
-														} else {
-															return noChange;
-														}
-													case 'CreditRequestSave':
-														return {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {
-																ctor: '::',
-																_0: _Gizra$circuit_bid$App_Model$MsgBackend(
-																	_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
-																		A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$Save, _p65._0, _p65._1))),
-																_1: {ctor: '[]'}
-															}
-														};
-													case 'CreditRequestSetAmount':
-														var _p72 = _p65._0;
-														var _p71 = _p65._1;
-														var maybeInt = _elm_lang$core$Result$toMaybe(
-															_elm_lang$core$String$toInt(_p71));
-														var _p69 = maybeInt;
-														if (_p69.ctor === 'Just') {
-															var _p70 = _p69._0;
-															return ((_elm_lang$core$Native_Utils.cmp(_p70, 0) > 0) && (_elm_lang$core$Native_Utils.cmp(_p70, _Gizra$circuit_bid$Utils_Number$maximalInt) < 1)) ? {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {
-																	ctor: '::',
-																	_0: _Gizra$circuit_bid$App_Model$MsgBackend(
-																		_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
-																			A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$SetAmount, _p72, _p70))),
-																	_1: {ctor: '[]'}
-																}
-															} : noChange;
-														} else {
-															return _elm_lang$core$Native_Utils.eq(_p71, '') ? {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {
-																	ctor: '::',
-																	_0: _Gizra$circuit_bid$App_Model$MsgBackend(
-																		_Gizra$circuit_bid$Backend_Model$MsgCreditRequest(
-																			A2(_Gizra$circuit_bid$Backend_CreditRequest_Model$SetAmount, _p72, 0))),
-																	_1: {ctor: '[]'}
-																}
-															} : noChange;
-														}
-													case 'ConnectedUserHeartbeat':
-														return {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: A5(
-																_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
-																{ctor: '_Tuple2', _0: _p108, _1: _p107},
-																user,
-																modelBackend,
-																model.sale,
-																_Gizra$circuit_bid$Backend_ConnectedUser_Model$HeartBeat),
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'FetchItems':
-														var fetchItemsByUserTypeCmd = A2(
-															_elm_lang$core$Maybe$withDefault,
-															_elm_lang$core$Platform_Cmd$none,
-															A2(
-																_elm_lang$core$Maybe$map,
-																_elm_lang$core$Platform_Cmd$map(_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager),
-																A2(
-																	_elm_lang$core$Maybe$map,
-																	A6(_Gizra$circuit_bid$ItemManager_Update$fetchItemsByUserType, currentDate, backendUrl, isDebug, accessToken, language, user),
-																	A2(
-																		_elm_lang$core$Maybe$map,
-																		function (_) {
-																			return _.uuid;
-																		},
-																		_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)))));
-														var fetchCurrentItemsCmd = A2(
-															_elm_lang$core$Maybe$withDefault,
-															_elm_lang$core$Platform_Cmd$none,
-															A2(
-																_elm_lang$core$Maybe$map,
-																_elm_lang$core$Platform_Cmd$map(_Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager),
-																A2(
-																	_elm_lang$core$Maybe$map,
-																	A6(_Gizra$circuit_bid$ItemManager_Update$fetchItems, currentDate, backendUrl, isDebug, accessToken, language, user),
-																	A2(
-																		_elm_lang$core$Maybe$map,
-																		_Gizra$circuit_bid$ItemManager_Utils$getCurrentAndNextItemIds(model.item),
-																		A2(
-																			_elm_lang$core$Maybe$map,
-																			function (_) {
-																				return _.item;
-																			},
-																			_krisajenkins$remotedata$RemoteData$toMaybe(model.sale))))));
-														return {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: _elm_lang$core$Platform_Cmd$batch(
-																{
-																	ctor: '::',
-																	_0: fetchCurrentItemsCmd,
-																	_1: {
-																		ctor: '::',
-																		_0: fetchItemsByUserTypeCmd,
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'HandleBidPlaced':
-														if (_p65._1.ctor === 'Ok') {
-															var _p74 = _p65._1._0;
-															var _p73 = isDebug ? A2(
-																_elm_lang$core$Debug$log,
-																'🎯 BID PLACED HTTP RESPONSE',
-																A2(_elm_lang$core$Basics_ops['++'], 'Stored task_id: ', _p74)) : '';
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$QueuedRequestQueued(_p74),
-																		queuedRequestStartTime: _elm_lang$core$Maybe$Just(
-																			_elm_lang$core$Date$toTime(currentDate))
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest, queuedRequestStartTime: _elm_lang$core$Maybe$Nothing, alert: _elm_lang$core$Maybe$Nothing}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleBidPlaced', _p65._1._0),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleConnectedUserEvent':
-														if (_p65._0.ctor === 'Ok') {
-															return noChange;
-														} else {
-															return {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleConnectedUserEvent', _p65._0._0),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleFetchedSale':
-														if (_p65._0.ctor === 'Ok') {
-															var _p75 = _p65._0._0._0;
-															var itemManager = _Gizra$circuit_bid$ItemManager_Utils$emptyItemManagerFromLotMap(_p65._0._0._1);
-															return A3(
-																_Gizra$circuit_bid$Utils_Update$sequenceExtra,
-																A9(
-																	_Gizra$circuit_bid$Pages_Sale_Update$update,
-																	currentDate,
-																	backendUrl,
-																	backofficeUrl,
-																	{ctor: '_Tuple2', _0: _p108, _1: _p107},
-																	isDebug,
-																	accessToken,
-																	language,
-																	user,
-																	modelBackend),
-																{
-																	ctor: '::',
-																	_0: _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
-																		_Gizra$circuit_bid$ItemManager_Model$FetchAllBySale(
-																			{ctor: '_Tuple2', _0: _p75.uuid, _1: _p75})),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '_Tuple4',
-																	_0: _elm_lang$core$Native_Utils.update(
-																		model,
-																		{
-																			item: itemManager,
-																			sale: _krisajenkins$remotedata$RemoteData$Success(_p75),
-																			selectedCurrency: _elm_lang$core$Maybe$Nothing,
-																			currencyMenuOpen: false
-																		}),
-																	_1: A2(_elm_lang$core$Task$perform, _Gizra$circuit_bid$Pages_Sale_Model$ConnectedUserHeartbeat, _elm_lang$core$Time$now),
-																	_2: _elm_lang$core$Maybe$Nothing,
-																	_3: {ctor: '[]'}
-																});
-														} else {
-															var _p76 = _p65._0._0;
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		sale: _krisajenkins$remotedata$RemoteData$Failure(_p76)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedSale', _p76),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleFetchedSaleTitleFromJson':
-														if (_p65._0.ctor === 'Ok') {
-															var updatedSale = A2(
-																_elm_lang$core$Maybe$withDefault,
-																model.sale,
-																A2(
-																	_elm_lang$core$Maybe$andThen,
-																	function (sale) {
-																		return _elm_lang$core$Maybe$Just(
-																			_krisajenkins$remotedata$RemoteData$Success(
-																				_elm_lang$core$Native_Utils.update(
-																					sale,
-																					{label: _p65._0._0})));
-																	},
-																	_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{sale: updatedSale}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															return {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedSaleTitleFromJson', _p65._0._0),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleFetchedCurrenciesInfoFromJson':
-														if (_p65._0.ctor === 'Ok') {
-															var updatedSale = A2(
-																_elm_lang$core$Maybe$withDefault,
-																model.sale,
-																A2(
-																	_elm_lang$core$Maybe$andThen,
-																	function (sale) {
-																		return _elm_lang$core$Maybe$Just(
-																			_krisajenkins$remotedata$RemoteData$Success(
-																				_elm_lang$core$Native_Utils.update(
-																					sale,
-																					{currenciesInfo: _p65._0._0})));
-																	},
-																	_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{sale: updatedSale}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															return {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedCurrenciesInfoFromJson', _p65._0._0),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleFetchedMessages':
-														if (_p65._0.ctor === 'Ok') {
-															var _p77 = _p65._0._0;
-															var itemIds = _Gizra$circuit_bid$Message_Utils$getItemsIds(_p77);
-															var _v30 = currentDate,
-																_v31 = backendUrl,
-																_v32 = backofficeUrl,
-																_v33 = {ctor: '_Tuple2', _0: _p108, _1: _p107},
-																_v34 = isDebug,
-																_v35 = accessToken,
-																_v36 = language,
-																_v37 = user,
-																_v38 = modelBackend,
-																_v39 = _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
-																_Gizra$circuit_bid$ItemManager_Model$FetchCalculatedItems(itemIds)),
-																_v40 = _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	publicMessages: _krisajenkins$remotedata$RemoteData$Success(_p77)
-																});
-															currentDate = _v30;
-															backendUrl = _v31;
-															backofficeUrl = _v32;
-															_p63 = _v33;
-															isDebug = _v34;
-															accessToken = _v35;
-															language = _v36;
-															user = _v37;
-															modelBackend = _v38;
-															msg = _v39;
-															model = _v40;
-															continue update;
-														} else {
-															var _p78 = _p65._0._0;
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		publicMessages: _krisajenkins$remotedata$RemoteData$Failure(_p78)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleFetchedMessages', _p78),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandleFetchedPrivateMessages':
-														if (_p65._0.ctor === 'Ok') {
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		privateMessages: _krisajenkins$remotedata$RemoteData$Success(_p65._0._0)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															var _p79 = _p65._0._0;
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		privateMessages: _krisajenkins$remotedata$RemoteData$Failure(_p79)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleFetchedPrivateMessages', _p79),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'SetPrivateMessageInput':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{privateMessageInput: _p65._0}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'SubmitPrivateMessage':
-														var textToSend = _elm_lang$core$String$trim(model.privateMessageInput);
-														return _elm_lang$core$String$isEmpty(textToSend) ? noChange : A3(
-															_elm_community$maybe_extra$Maybe_Extra$unwrap,
-															noChange,
-															function (sale) {
 																return {
 																	ctor: '_Tuple4',
 																	_0: _elm_lang$core$Native_Utils.update(
 																		model,
-																		{privateMessageInput: '', privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Loading}),
-																	_1: A5(_Gizra$circuit_bid$Message_Update$sendBidderPrivateMessage, backendUrl, accessToken, sale.uuid, textToSend, _Gizra$circuit_bid$Pages_Sale_Model$HandleSubmittedPrivateMessage),
+																		{queuedRequestState: _Gizra$circuit_bid$QueuedRequest_Model$NoQueuedRequest, queuedRequestStartTime: _elm_lang$core$Maybe$Nothing, queuedBid: _elm_lang$core$Maybe$Nothing, alert: _elm_lang$core$Maybe$Nothing}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleBidPlaced', _p74._1._0),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandleConnectedUserEvent':
+															if (_p74._0.ctor === 'Ok') {
+																return noChange;
+															} else {
+																return {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleConnectedUserEvent', _p74._0._0),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandleFetchedSale':
+															if (_p74._0.ctor === 'Ok') {
+																var _p85 = _p74._0._0._0;
+																var itemManager = _Gizra$circuit_bid$ItemManager_Utils$emptyItemManagerFromLotMap(_p74._0._0._1);
+																return A3(
+																	_Gizra$circuit_bid$Utils_Update$sequenceExtra,
+																	_Gizra$circuit_bid$Pages_Sale_Update$update(currentDate)(backendUrl)(backofficeUrl)(
+																		{ctor: '_Tuple2', _0: _p122, _1: _p121})(isDebug)(accessToken)(language)(user)(modelBackend)(liveFeed),
+																	{
+																		ctor: '::',
+																		_0: _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
+																			_Gizra$circuit_bid$ItemManager_Model$FetchAllBySale(
+																				{ctor: '_Tuple2', _0: _p85.uuid, _1: _p85})),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '_Tuple4',
+																		_0: _elm_lang$core$Native_Utils.update(
+																			model,
+																			{
+																				item: itemManager,
+																				sale: _krisajenkins$remotedata$RemoteData$Success(_p85),
+																				selectedCurrency: _elm_lang$core$Maybe$Nothing,
+																				currencyMenuOpen: false
+																			}),
+																		_1: A2(_elm_lang$core$Task$perform, _Gizra$circuit_bid$Pages_Sale_Model$ConnectedUserHeartbeat, _elm_lang$core$Time$now),
+																		_2: _elm_lang$core$Maybe$Nothing,
+																		_3: {ctor: '[]'}
+																	});
+															} else {
+																var _p86 = _p74._0._0;
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			sale: _krisajenkins$remotedata$RemoteData$Failure(_p86)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedSale', _p86),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandleFetchedSaleTitleFromJson':
+															if (_p74._0.ctor === 'Ok') {
+																var updatedSale = A2(
+																	_elm_lang$core$Maybe$withDefault,
+																	model.sale,
+																	A2(
+																		_elm_lang$core$Maybe$andThen,
+																		function (sale) {
+																			return _elm_lang$core$Maybe$Just(
+																				_krisajenkins$remotedata$RemoteData$Success(
+																					_elm_lang$core$Native_Utils.update(
+																						sale,
+																						{label: _p74._0._0})));
+																		},
+																		_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{sale: updatedSale}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
 																	_2: _Gizra$circuit_bid$Error_Utils$noError,
 																	_3: {ctor: '[]'}
 																};
-															},
-															_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
-													case 'HandleSubmittedPrivateMessage':
-														if (_p65._0.ctor === 'Ok') {
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Success(
-																			{ctor: '_Tuple0'})
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															var _p80 = _p65._0._0;
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Failure(_p80)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleSubmittedPrivateMessage', _p80),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'PrivateChatSeen':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{privateUnread: 0}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'HandleUpdatedCurrentPrice':
-														if (_p65._1.ctor === 'Ok') {
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{
-																		item: A3(_Gizra$circuit_bid$ItemManager_Utils$updateCurrentPrice, _p65._0, _p65._1._0, model.item)
-																	}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															return {
-																ctor: '_Tuple4',
-																_0: model,
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleUpdatedCurrentPrice', _p65._1._0),
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'HandlePusherEvent':
-														return A3(
-															_elm_community$maybe_extra$Maybe_Extra$unwrap,
-															noChange,
-															function (sale) {
-																var _p81 = function () {
-																	var _p82 = _p65._0;
-																	if (_p82.ctor === 'Ok') {
-																		var alert = A2(
-																			_elm_lang$core$Maybe$andThen,
-																			function (_p83) {
-																				var _p84 = _p83;
-																				return (_elm_lang$core$Native_Utils.cmp(
-																					_elm_lang$core$Date$toTime(currentDate) - _elm_lang$core$Date$toTime(_p84._0),
-																					3 * 1000) < 0) ? model.alert : _elm_lang$core$Maybe$Nothing;
-																			},
-																			model.alert);
-																		return {
-																			ctor: '_Tuple2',
-																			_0: A9(
-																				_Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher,
-																				currentDate,
-																				backendUrl,
-																				{ctor: '_Tuple2', _0: _p108, _1: _p107},
-																				accessToken,
-																				user,
-																				modelBackend,
-																				sale.uuid,
-																				_p82._0,
-																				_elm_lang$core$Native_Utils.update(
-																					model,
-																					{alert: alert})),
-																			_1: _elm_lang$core$Maybe$Nothing
-																		};
-																	} else {
-																		return {
-																			ctor: '_Tuple2',
-																			_0: {
-																				ctor: '_Tuple3',
-																				_0: model,
-																				_1: _elm_lang$core$Platform_Cmd$none,
-																				_2: {ctor: '[]'}
-																			},
-																			_1: A3(_Gizra$circuit_bid$Error_Utils$plainError, 'Pages.Sale.Update', 'HandlePusherEvent', _p82._0)
-																		};
-																	}
-																}();
-																var newModel = _p81._0._0;
-																var cmd = _p81._0._1;
-																var appMsgs = _p81._0._2;
-																var maybeError = _p81._1;
-																return {ctor: '_Tuple4', _0: newModel, _1: cmd, _2: maybeError, _3: appMsgs};
-															},
-															_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
-													case 'ItemsNext':
-														var nextCarouselPosition = A2(_Gizra$circuit_bid$Pages_Sale_Update$incrementItemSlider, model.item, model.carouselPosition);
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{carouselPosition: nextCarouselPosition, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: A2(_Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt, nextCarouselPosition, model)
-														};
-													case 'ItemsPrevious':
-														var nextCarouselPosition = A2(_Gizra$circuit_bid$Pages_Sale_Update$decrementItemSlider, model.item, model.carouselPosition);
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{carouselPosition: nextCarouselPosition, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: A2(_Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt, nextCarouselPosition, model)
-														};
-													case 'MsgItemManager':
-														var _p92 = _p65._0;
-														var _p85 = function () {
-															if (_Gizra$circuit_bid$User_Utils$isAuthenticated(user) && _elm_lang$core$Native_Utils.eq(model.privateMessages, _krisajenkins$remotedata$RemoteData$NotAsked)) {
-																var _p86 = _krisajenkins$remotedata$RemoteData$toMaybe(model.sale);
-																if (_p86.ctor === 'Just') {
-																	return A2(
-																		F2(
-																			function (v0, v1) {
-																				return {ctor: '_Tuple2', _0: v0, _1: v1};
-																			}),
-																		_krisajenkins$remotedata$RemoteData$Loading,
-																		A2(
-																			_elm_lang$core$Task$attempt,
-																			_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedPrivateMessages,
-																			A3(_Gizra$circuit_bid$Message_Update$fetchPrivateMessages, backendUrl, accessToken, _p86._0.uuid)));
-																} else {
-																	return {ctor: '_Tuple2', _0: model.privateMessages, _1: _elm_lang$core$Platform_Cmd$none};
-																}
 															} else {
-																return {ctor: '_Tuple2', _0: model.privateMessages, _1: _elm_lang$core$Platform_Cmd$none};
+																return {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedSaleTitleFromJson', _p74._0._0),
+																	_3: {ctor: '[]'}
+																};
 															}
-														}();
-														var privateMessages = _p85._0;
-														var privateCmd = _p85._1;
-														var _p87 = function () {
-															var _p88 = _p92;
-															if (_p88.ctor === 'FetchAllBySale') {
-																return {ctor: '_Tuple2', _0: model.publicMessages, _1: _elm_lang$core$Platform_Cmd$none};
+														case 'HandleFetchedCurrenciesInfoFromJson':
+															if (_p74._0.ctor === 'Ok') {
+																var updatedSale = A2(
+																	_elm_lang$core$Maybe$withDefault,
+																	model.sale,
+																	A2(
+																		_elm_lang$core$Maybe$andThen,
+																		function (sale) {
+																			return _elm_lang$core$Maybe$Just(
+																				_krisajenkins$remotedata$RemoteData$Success(
+																					_elm_lang$core$Native_Utils.update(
+																						sale,
+																						{currenciesInfo: _p74._0._0})));
+																		},
+																		_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{sale: updatedSale}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
 															} else {
-																if (_elm_lang$core$Native_Utils.eq(model.publicMessages, _krisajenkins$remotedata$RemoteData$NotAsked)) {
-																	var _p89 = _krisajenkins$remotedata$RemoteData$toMaybe(model.sale);
-																	if (_p89.ctor === 'Just') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale', 'HandleFetchedCurrenciesInfoFromJson', _p74._0._0),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandleFetchedMessages':
+															if (_p74._0.ctor === 'Ok') {
+																var _p87 = _p74._0._0;
+																var itemIds = _Gizra$circuit_bid$Message_Utils$getItemsIds(_p87);
+																var _v35 = currentDate,
+																	_v36 = backendUrl,
+																	_v37 = backofficeUrl,
+																	_v38 = {ctor: '_Tuple2', _0: _p122, _1: _p121},
+																	_v39 = isDebug,
+																	_v40 = accessToken,
+																	_v41 = language,
+																	_v42 = user,
+																	_v43 = modelBackend,
+																	_v44 = liveFeed,
+																	_v45 = _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager(
+																	_Gizra$circuit_bid$ItemManager_Model$FetchCalculatedItems(itemIds)),
+																	_v46 = _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		publicMessages: _krisajenkins$remotedata$RemoteData$Success(_p87)
+																	});
+																currentDate = _v35;
+																backendUrl = _v36;
+																backofficeUrl = _v37;
+																_p72 = _v38;
+																isDebug = _v39;
+																accessToken = _v40;
+																language = _v41;
+																user = _v42;
+																modelBackend = _v43;
+																liveFeed = _v44;
+																msg = _v45;
+																model = _v46;
+																continue update;
+															} else {
+																var _p88 = _p74._0._0;
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			publicMessages: _krisajenkins$remotedata$RemoteData$Failure(_p88)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleFetchedMessages', _p88),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandleFetchedPrivateMessages':
+															if (_p74._0.ctor === 'Ok') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			privateMessages: _krisajenkins$remotedata$RemoteData$Success(_p74._0._0)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															} else {
+																var _p89 = _p74._0._0;
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			privateMessages: _krisajenkins$remotedata$RemoteData$Failure(_p89)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleFetchedPrivateMessages', _p89),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'SetPrivateMessageInput':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{privateMessageInput: _p74._0}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'SubmitPrivateMessage':
+															var textToSend = _elm_lang$core$String$trim(model.privateMessageInput);
+															return _elm_lang$core$String$isEmpty(textToSend) ? noChange : A3(
+																_elm_community$maybe_extra$Maybe_Extra$unwrap,
+																noChange,
+																function (sale) {
+																	return {
+																		ctor: '_Tuple4',
+																		_0: _elm_lang$core$Native_Utils.update(
+																			model,
+																			{privateMessageInput: '', privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Loading}),
+																		_1: A5(_Gizra$circuit_bid$Message_Update$sendBidderPrivateMessage, backendUrl, accessToken, sale.uuid, textToSend, _Gizra$circuit_bid$Pages_Sale_Model$HandleSubmittedPrivateMessage),
+																		_2: _Gizra$circuit_bid$Error_Utils$noError,
+																		_3: {ctor: '[]'}
+																	};
+																},
+																_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
+														case 'HandleSubmittedPrivateMessage':
+															if (_p74._0.ctor === 'Ok') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Success(
+																				{ctor: '_Tuple0'})
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															} else {
+																var _p90 = _p74._0._0;
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			privateMessagesSendRequest: _krisajenkins$remotedata$RemoteData$Failure(_p90)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleSubmittedPrivateMessage', _p90),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'PrivateChatSeen':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{privateUnread: 0}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'HandleUpdatedCurrentPrice':
+															if (_p74._1.ctor === 'Ok') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			item: A3(_Gizra$circuit_bid$ItemManager_Utils$updateCurrentPrice, _p74._0, _p74._1._0, model.item)
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															} else {
+																return {
+																	ctor: '_Tuple4',
+																	_0: model,
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: A3(_Gizra$circuit_bid$Error_Utils$httpError, 'Pages.Sale.Update', 'HandleUpdatedCurrentPrice', _p74._1._0),
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'HandlePusherEvent':
+															return A3(
+																_elm_community$maybe_extra$Maybe_Extra$unwrap,
+																noChange,
+																function (sale) {
+																	var _p91 = function () {
+																		var _p92 = _p74._0;
+																		if (_p92.ctor === 'Ok') {
+																			var alert = A2(
+																				_elm_lang$core$Maybe$andThen,
+																				function (_p93) {
+																					var _p94 = _p93;
+																					return (_elm_lang$core$Native_Utils.cmp(
+																						_elm_lang$core$Date$toTime(currentDate) - _elm_lang$core$Date$toTime(_p94._0),
+																						3 * 1000) < 0) ? model.alert : _elm_lang$core$Maybe$Nothing;
+																				},
+																				model.alert);
+																			return {
+																				ctor: '_Tuple2',
+																				_0: A9(
+																					_Gizra$circuit_bid$Pages_Sale_Update$updateFromPusher,
+																					currentDate,
+																					backendUrl,
+																					{ctor: '_Tuple2', _0: _p122, _1: _p121},
+																					accessToken,
+																					user,
+																					modelBackend,
+																					sale.uuid,
+																					_p92._0,
+																					_elm_lang$core$Native_Utils.update(
+																						model,
+																						{alert: alert})),
+																				_1: _elm_lang$core$Maybe$Nothing
+																			};
+																		} else {
+																			return {
+																				ctor: '_Tuple2',
+																				_0: {
+																					ctor: '_Tuple3',
+																					_0: model,
+																					_1: _elm_lang$core$Platform_Cmd$none,
+																					_2: {ctor: '[]'}
+																				},
+																				_1: A3(_Gizra$circuit_bid$Error_Utils$plainError, 'Pages.Sale.Update', 'HandlePusherEvent', _p92._0)
+																			};
+																		}
+																	}();
+																	var newModel = _p91._0._0;
+																	var cmd = _p91._0._1;
+																	var appMsgs = _p91._0._2;
+																	var maybeError = _p91._1;
+																	return {ctor: '_Tuple4', _0: newModel, _1: cmd, _2: maybeError, _3: appMsgs};
+																},
+																_krisajenkins$remotedata$RemoteData$toMaybe(model.sale));
+														case 'ItemsNext':
+															var nextCarouselPosition = A2(_Gizra$circuit_bid$Pages_Sale_Update$incrementItemSlider, model.item, model.carouselPosition);
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{carouselPosition: nextCarouselPosition, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: A2(_Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt, nextCarouselPosition, model)
+															};
+														case 'ItemsPrevious':
+															var nextCarouselPosition = A2(_Gizra$circuit_bid$Pages_Sale_Update$decrementItemSlider, model.item, model.carouselPosition);
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{carouselPosition: nextCarouselPosition, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: A2(_Gizra$circuit_bid$Pages_Sale_Update$fetchStaticWindowAt, nextCarouselPosition, model)
+															};
+														case 'MsgItemManager':
+															var _p106 = _p74._0;
+															var _p95 = function () {
+																var _p96 = {
+																	ctor: '_Tuple3',
+																	_0: _p106,
+																	_1: model.bidOutcomePending,
+																	_2: _krisajenkins$remotedata$RemoteData$toMaybe(model.sale)
+																};
+																if (((((_p96.ctor === '_Tuple3') && (_p96._0.ctor === 'HandleFetchedCalculatedItems')) && (_p96._0._1.ctor === 'Ok')) && (_p96._1.ctor === 'Just')) && (_p96._2.ctor === 'Just')) {
+																	var _p97 = _p96._1._0;
+																	return A2(_elm_lang$core$List$member, _p97.itemId, _p96._0._0) ? {
+																		ctor: '_Tuple2',
+																		_0: _elm_lang$core$Maybe$Just(
+																			{
+																				ctor: '_Tuple2',
+																				_0: currentDate,
+																				_1: A6(_Gizra$circuit_bid$Pages_Sale_Update$bidOutcomeAlert, user, modelBackend, _p96._2._0.uuid, model.item, _p97, _p96._0._1._0)
+																			}),
+																		_1: _elm_lang$core$Maybe$Nothing
+																	} : {ctor: '_Tuple2', _0: _elm_lang$core$Maybe$Nothing, _1: model.bidOutcomePending};
+																} else {
+																	return {ctor: '_Tuple2', _0: _elm_lang$core$Maybe$Nothing, _1: model.bidOutcomePending};
+																}
+															}();
+															var outcomeAlert = _p95._0;
+															var bidOutcomePending = _p95._1;
+															var _p98 = function () {
+																if (_Gizra$circuit_bid$User_Utils$isAuthenticated(user) && _elm_lang$core$Native_Utils.eq(model.privateMessages, _krisajenkins$remotedata$RemoteData$NotAsked)) {
+																	var _p99 = _krisajenkins$remotedata$RemoteData$toMaybe(model.sale);
+																	if (_p99.ctor === 'Just') {
 																		return A2(
 																			F2(
 																				function (v0, v1) {
@@ -68544,411 +70312,453 @@ var _Gizra$circuit_bid$Pages_Sale_Update$update = function (currentDate) {
 																			_krisajenkins$remotedata$RemoteData$Loading,
 																			A2(
 																				_elm_lang$core$Task$attempt,
-																				_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedMessages,
-																				A3(_Gizra$circuit_bid$Message_Update$fetchMessages, backendUrl, accessToken, _p89._0.uuid)));
+																				_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedPrivateMessages,
+																				A3(_Gizra$circuit_bid$Message_Update$fetchPrivateMessages, backendUrl, accessToken, _p99._0.uuid)));
+																	} else {
+																		return {ctor: '_Tuple2', _0: model.privateMessages, _1: _elm_lang$core$Platform_Cmd$none};
+																	}
+																} else {
+																	return {ctor: '_Tuple2', _0: model.privateMessages, _1: _elm_lang$core$Platform_Cmd$none};
+																}
+															}();
+															var privateMessages = _p98._0;
+															var privateCmd = _p98._1;
+															var _p100 = function () {
+																var _p101 = _p106;
+																if (_p101.ctor === 'FetchAllBySale') {
+																	return {ctor: '_Tuple2', _0: model.publicMessages, _1: _elm_lang$core$Platform_Cmd$none};
+																} else {
+																	if (_elm_lang$core$Native_Utils.eq(model.publicMessages, _krisajenkins$remotedata$RemoteData$NotAsked)) {
+																		var _p102 = _krisajenkins$remotedata$RemoteData$toMaybe(model.sale);
+																		if (_p102.ctor === 'Just') {
+																			return A2(
+																				F2(
+																					function (v0, v1) {
+																						return {ctor: '_Tuple2', _0: v0, _1: v1};
+																					}),
+																				_krisajenkins$remotedata$RemoteData$Loading,
+																				A2(
+																					_elm_lang$core$Task$attempt,
+																					_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedMessages,
+																					A3(_Gizra$circuit_bid$Message_Update$fetchMessages, backendUrl, accessToken, _p102._0.uuid)));
+																		} else {
+																			return {ctor: '_Tuple2', _0: model.publicMessages, _1: _elm_lang$core$Platform_Cmd$none};
+																		}
 																	} else {
 																		return {ctor: '_Tuple2', _0: model.publicMessages, _1: _elm_lang$core$Platform_Cmd$none};
 																	}
-																} else {
-																	return {ctor: '_Tuple2', _0: model.publicMessages, _1: _elm_lang$core$Platform_Cmd$none};
 																}
-															}
-														}();
-														var publicMessages = _p87._0;
-														var cmd = _p87._1;
-														var _p90 = A9(_Gizra$circuit_bid$ItemManager_Update$update, currentDate, backendUrl, backofficeUrl, isDebug, accessToken, language, user, _p92, model.item);
-														var item = _p90._0;
-														var itemManagerCmds = _p90._1;
-														var maybeError = _p90._2;
-														var appMsgs = _p90._3;
-														var newCarouselPosition = function () {
-															var _p91 = _p92;
-															if (_p91.ctor === 'FetchAllBySale') {
-																return A3(
-																	_elm_community$maybe_extra$Maybe_Extra$unwrap,
-																	0,
-																	function (itemId) {
-																		return A3(_Gizra$circuit_bid$Pages_Sale_Update$calculateCarouselPosition, model.numberOfCarouselItems, itemId, item.items);
-																	},
-																	A2(
-																		_elm_lang$core$Maybe$map,
-																		function (_) {
-																			return _.item;
+															}();
+															var publicMessages = _p100._0;
+															var cmd = _p100._1;
+															var _p103 = A9(_Gizra$circuit_bid$ItemManager_Update$update, currentDate, backendUrl, backofficeUrl, isDebug, accessToken, language, user, _p106, model.item);
+															var item = _p103._0;
+															var itemManagerCmds = _p103._1;
+															var maybeError = _p103._2;
+															var appMsgs = _p103._3;
+															var newCarouselPosition = function () {
+																var _p104 = _p106;
+																if (_p104.ctor === 'FetchAllBySale') {
+																	return A3(
+																		_elm_community$maybe_extra$Maybe_Extra$unwrap,
+																		0,
+																		function (itemId) {
+																			return A3(_Gizra$circuit_bid$Pages_Sale_Update$calculateCarouselPosition, model.numberOfCarouselItems, itemId, item.items);
 																		},
-																		_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
-															} else {
-																return model.carouselPosition;
-															}
-														}();
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{item: item, carouselPosition: newCarouselPosition, publicMessages: publicMessages, privateMessages: privateMessages}),
-															_1: _elm_lang$core$Platform_Cmd$batch(
-																{
-																	ctor: '::',
-																	_0: cmd,
-																	_1: {
-																		ctor: '::',
-																		_0: privateCmd,
-																		_1: {
-																			ctor: '::',
-																			_0: A2(_elm_lang$core$Platform_Cmd$map, _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager, itemManagerCmds),
-																			_1: {ctor: '[]'}
-																		}
-																	}
-																}),
-															_2: maybeError,
-															_3: appMsgs
-														};
-													case 'MsgLogin':
-														var _p93 = A3(_Gizra$circuit_bid$Login_Update$update, backendUrl, _p65._0, model.login);
-														var val = _p93._0;
-														var cmds = _p93._1;
-														var maybeLoginError = _p93._2;
-														var maybeAuthenticationDetails = _p93._3;
-														var maybeError = A2(
-															_elm_lang$core$Maybe$andThen,
-															function (error) {
-																var _p94 = error.error;
-																if (_p94.ctor === 'Http') {
-																	return _Gizra$circuit_bid$Error_Utils$is401(_p94._0) ? _Gizra$circuit_bid$Error_Utils$noError : maybeLoginError;
+																		A2(
+																			_elm_lang$core$Maybe$map,
+																			function (_) {
+																				return _.item;
+																			},
+																			_krisajenkins$remotedata$RemoteData$toMaybe(model.sale)));
 																} else {
-																	return maybeLoginError;
+																	return model.carouselPosition;
 																}
-															},
-															maybeLoginError);
-														var appMsgs = A3(
-															_elm_community$maybe_extra$Maybe_Extra$unwrap,
-															{ctor: '[]'},
-															function (_p95) {
-																var _p96 = _p95;
-																return {
-																	ctor: '::',
-																	_0: _Gizra$circuit_bid$App_Model$SetAuthentication(
-																		{ctor: '_Tuple2', _0: _p96._0, _1: _p96._1}),
-																	_1: {ctor: '[]'}
-																};
-															},
-															maybeAuthenticationDetails);
-														var privateFetchCmd = function () {
-															var _p97 = {
-																ctor: '_Tuple2',
-																_0: maybeAuthenticationDetails,
-																_1: _krisajenkins$remotedata$RemoteData$toMaybe(model.sale)
-															};
-															if ((((_p97.ctor === '_Tuple2') && (_p97._0.ctor === 'Just')) && (_p97._0._0.ctor === '_Tuple2')) && (_p97._1.ctor === 'Just')) {
-																return _elm_lang$core$Native_Utils.eq(model.privateMessages, _krisajenkins$remotedata$RemoteData$NotAsked) ? A2(
-																	_elm_lang$core$Task$attempt,
-																	_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedPrivateMessages,
-																	A3(_Gizra$circuit_bid$Message_Update$fetchPrivateMessages, backendUrl, _p97._0._0._0, _p97._1._0.uuid)) : _elm_lang$core$Platform_Cmd$none;
-															} else {
-																return _elm_lang$core$Platform_Cmd$none;
-															}
-														}();
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{login: val}),
-															_1: _elm_lang$core$Platform_Cmd$batch(
-																{
-																	ctor: '::',
-																	_0: A2(_elm_lang$core$Platform_Cmd$map, _Gizra$circuit_bid$Pages_Sale_Model$MsgLogin, cmds),
-																	_1: {
-																		ctor: '::',
-																		_0: privateFetchCmd,
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_2: maybeError,
-															_3: appMsgs
-														};
-													case 'PlaceBid':
-														return A8(_Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper, backendUrl, accessToken, user, modelBackend, model, _p65._0, _p65._1, false);
-													case 'PlaceCutBid':
-														return A8(_Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper, backendUrl, accessToken, user, modelBackend, model, _p65._0, _p65._1, true);
-													case 'PlaceBidMouseEnter':
-														return {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: A5(
-																_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
-																{ctor: '_Tuple2', _0: _p108, _1: _p107},
-																user,
-																modelBackend,
-																model.sale,
-																_Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseEnter),
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'PlaceBidMouseLeave':
-														return {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: A5(
-																_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
-																{ctor: '_Tuple2', _0: _p108, _1: _p107},
-																user,
-																modelBackend,
-																model.sale,
-																_Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseLeave),
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'Subscribe':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{alert: _elm_lang$core$Maybe$Nothing, sale: _krisajenkins$remotedata$RemoteData$Loading}),
-															_1: _elm_lang$core$Platform_Cmd$batch(
-																{
-																	ctor: '::',
-																	_0: A3(_Gizra$circuit_bid$Pages_Sale_Update$fetchSale, backendUrl, accessToken, _p65._0),
-																	_1: {
-																		ctor: '::',
-																		_0: _Gizra$circuit_bid$Ports$getUserAgent(
-																			{ctor: '_Tuple0'}),
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'SetBrowserInfo':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	browserInfo: _elm_lang$core$Maybe$Just(_p65._0)
-																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ToggleItemDetailsPopup':
-														var _p98 = _p65._0;
-														if (_p98.ctor === 'Nothing') {
+															}();
 															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{itemDetailsPopupOpen: !model.itemDetailsPopupOpen, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															var _p100 = _p98._0;
-															var isPinned = model.sliderPopupPinned && _elm_lang$core$Native_Utils.eq(
-																model.itemDetailsPopupOpenItemId,
-																_elm_lang$core$Maybe$Just(_p100));
-															var _p99 = isPinned ? {ctor: '_Tuple2', _0: _elm_lang$core$Maybe$Nothing, _1: false} : {
-																ctor: '_Tuple2',
-																_0: _elm_lang$core$Maybe$Just(_p100),
-																_1: true
-															};
-															var newOpenItemId = _p99._0;
-															var newPinned = _p99._1;
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{itemDetailsPopupOpenItemId: newOpenItemId, sliderPopupPinned: newPinned, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														}
-													case 'ItemDetailsPopupMouseEnter':
-														var _p101 = _p65._0;
-														if (_p101.ctor === 'Nothing') {
-															return {
-																ctor: '_Tuple4',
-																_0: _elm_lang$core$Native_Utils.update(
-																	model,
-																	{itemDetailsPopupHovered: true, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
-																_1: _elm_lang$core$Platform_Cmd$none,
-																_2: _Gizra$circuit_bid$Error_Utils$noError,
-																_3: {ctor: '[]'}
-															};
-														} else {
-															var _p102 = _p101._0;
-															return (model.sliderPopupPinned && _elm_lang$core$Native_Utils.eq(
-																model.itemDetailsPopupOpenItemId,
-																_elm_lang$core$Maybe$Just(_p102))) ? noChange : {
 																ctor: '_Tuple4',
 																_0: _elm_lang$core$Native_Utils.update(
 																	model,
 																	{
-																		itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Just(_p102),
-																		sliderPopupPinned: false,
-																		itemDetailsPopupOpen: false,
-																		itemDetailsPopupHovered: false
+																		item: item,
+																		carouselPosition: newCarouselPosition,
+																		publicMessages: publicMessages,
+																		privateMessages: privateMessages,
+																		bidOutcomePending: bidOutcomePending,
+																		alert: function () {
+																			var _p105 = outcomeAlert;
+																			if (_p105.ctor === 'Just') {
+																				return _elm_lang$core$Maybe$Just(_p105._0);
+																			} else {
+																				return model.alert;
+																			}
+																		}()
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$batch(
+																	{
+																		ctor: '::',
+																		_0: cmd,
+																		_1: {
+																			ctor: '::',
+																			_0: privateCmd,
+																			_1: {
+																				ctor: '::',
+																				_0: A2(_elm_lang$core$Platform_Cmd$map, _Gizra$circuit_bid$Pages_Sale_Model$MsgItemManager, itemManagerCmds),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}),
+																_2: maybeError,
+																_3: appMsgs
+															};
+														case 'MsgLogin':
+															var _p107 = A3(_Gizra$circuit_bid$Login_Update$update, backendUrl, _p74._0, model.login);
+															var val = _p107._0;
+															var cmds = _p107._1;
+															var maybeLoginError = _p107._2;
+															var maybeAuthenticationDetails = _p107._3;
+															var maybeError = A2(
+																_elm_lang$core$Maybe$andThen,
+																function (error) {
+																	var _p108 = error.error;
+																	if (_p108.ctor === 'Http') {
+																		return _Gizra$circuit_bid$Error_Utils$is401(_p108._0) ? _Gizra$circuit_bid$Error_Utils$noError : maybeLoginError;
+																	} else {
+																		return maybeLoginError;
+																	}
+																},
+																maybeLoginError);
+															var appMsgs = A3(
+																_elm_community$maybe_extra$Maybe_Extra$unwrap,
+																{ctor: '[]'},
+																function (_p109) {
+																	var _p110 = _p109;
+																	return {
+																		ctor: '::',
+																		_0: _Gizra$circuit_bid$App_Model$SetAuthentication(
+																			{ctor: '_Tuple2', _0: _p110._0, _1: _p110._1}),
+																		_1: {ctor: '[]'}
+																	};
+																},
+																maybeAuthenticationDetails);
+															var privateFetchCmd = function () {
+																var _p111 = {
+																	ctor: '_Tuple2',
+																	_0: maybeAuthenticationDetails,
+																	_1: _krisajenkins$remotedata$RemoteData$toMaybe(model.sale)
+																};
+																if ((((_p111.ctor === '_Tuple2') && (_p111._0.ctor === 'Just')) && (_p111._0._0.ctor === '_Tuple2')) && (_p111._1.ctor === 'Just')) {
+																	return _elm_lang$core$Native_Utils.eq(model.privateMessages, _krisajenkins$remotedata$RemoteData$NotAsked) ? A2(
+																		_elm_lang$core$Task$attempt,
+																		_Gizra$circuit_bid$Pages_Sale_Model$HandleFetchedPrivateMessages,
+																		A3(_Gizra$circuit_bid$Message_Update$fetchPrivateMessages, backendUrl, _p111._0._0._0, _p111._1._0.uuid)) : _elm_lang$core$Platform_Cmd$none;
+																} else {
+																	return _elm_lang$core$Platform_Cmd$none;
+																}
+															}();
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{login: val}),
+																_1: _elm_lang$core$Platform_Cmd$batch(
+																	{
+																		ctor: '::',
+																		_0: A2(_elm_lang$core$Platform_Cmd$map, _Gizra$circuit_bid$Pages_Sale_Model$MsgLogin, cmds),
+																		_1: {
+																			ctor: '::',
+																			_0: privateFetchCmd,
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_2: maybeError,
+																_3: appMsgs
+															};
+														case 'PlaceBid':
+															return _Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper(currentDate)(backendUrl)(accessToken)(user)(modelBackend)(liveFeed)(model)(_p74._0)(_p74._1)(false);
+														case 'PlaceCutBid':
+															return _Gizra$circuit_bid$Pages_Sale_Update$placeBidHelper(currentDate)(backendUrl)(accessToken)(user)(modelBackend)(liveFeed)(model)(_p74._0)(_p74._1)(true);
+														case 'PlaceBidMouseEnter':
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: A5(
+																	_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
+																	{ctor: '_Tuple2', _0: _p122, _1: _p121},
+																	user,
+																	modelBackend,
+																	model.sale,
+																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseEnter),
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'PlaceBidMouseLeave':
+															return {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: A5(
+																	_Gizra$circuit_bid$Pages_Sale_Update$sendConnectedUserEvent,
+																	{ctor: '_Tuple2', _0: _p122, _1: _p121},
+																	user,
+																	modelBackend,
+																	model.sale,
+																	_Gizra$circuit_bid$Backend_ConnectedUser_Model$PlaceBidMouseLeave),
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'Subscribe':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{alert: _elm_lang$core$Maybe$Nothing, sale: _krisajenkins$remotedata$RemoteData$Loading}),
+																_1: _elm_lang$core$Platform_Cmd$batch(
+																	{
+																		ctor: '::',
+																		_0: A3(_Gizra$circuit_bid$Pages_Sale_Update$fetchSale, backendUrl, accessToken, _p74._0),
+																		_1: {
+																			ctor: '::',
+																			_0: _Gizra$circuit_bid$Ports$getUserAgent(
+																				{ctor: '_Tuple0'}),
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'SetBrowserInfo':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		browserInfo: _elm_lang$core$Maybe$Just(_p74._0)
 																	}),
 																_1: _elm_lang$core$Platform_Cmd$none,
 																_2: _Gizra$circuit_bid$Error_Utils$noError,
 																_3: {ctor: '[]'}
 															};
-														}
-													case 'ItemDetailsPopupMouseLeave':
-														return model.sliderPopupPinned ? {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{itemDetailsPopupHovered: false}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														} : {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ImageCarouselNext':
-														var _p103 = _p65._0;
-														var cur = A2(_Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor, _p103, model);
-														var next = A2(
-															_elm_lang$core$Basics_ops['%'],
-															cur + 1,
-															A2(_elm_lang$core$Basics$max, _p65._1, 1));
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	imageCarouselIndex: next,
-																	imageCarouselPrev: _elm_lang$core$Maybe$Just(cur),
-																	imageCarouselItemId: _elm_lang$core$Maybe$Just(_p103)
-																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ImageCarouselPrev':
-														var _p104 = _p65._0;
-														var cur = A2(_Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor, _p104, model);
-														var t = A2(_elm_lang$core$Basics$max, _p65._1, 1);
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	imageCarouselIndex: A2(_elm_lang$core$Basics_ops['%'], (cur - 1) + t, t),
-																	imageCarouselPrev: _elm_lang$core$Maybe$Just(cur),
-																	imageCarouselItemId: _elm_lang$core$Maybe$Just(_p104)
-																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ImageCarouselTick':
-														return model.imageCarouselPaused ? {
-															ctor: '_Tuple4',
-															_0: model,
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														} : {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	imageCarouselIndex: model.imageCarouselIndex + 1,
-																	imageCarouselPrev: _elm_lang$core$Maybe$Just(model.imageCarouselIndex)
-																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ImageCarouselTogglePause':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{imageCarouselPaused: !model.imageCarouselPaused}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'SetImageCarouselPaused':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{imageCarouselPaused: _p65._0}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ToggleDescriptionPopup':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{descriptionPopupOpen: !model.descriptionPopupOpen}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ToggleLoginForm':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{loginFormExpanded: !model.loginFormExpanded}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'SetSelectedCurrency':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{
-																	selectedCurrency: _elm_lang$core$Maybe$Just(_p65._0),
-																	currencyMenuOpen: false
-																}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													case 'ToggleCurrencyMenu':
-														return {
-															ctor: '_Tuple4',
-															_0: _elm_lang$core$Native_Utils.update(
-																model,
-																{currencyMenuOpen: !model.currencyMenuOpen}),
-															_1: _elm_lang$core$Platform_Cmd$none,
-															_2: _Gizra$circuit_bid$Error_Utils$noError,
-															_3: {ctor: '[]'}
-														};
-													default:
-														var _p105 = model.pendingSaleUpdate;
-														if (_p105.ctor === 'Just') {
-															var _p106 = A2(
-																_Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate,
-																_p105._0,
-																_elm_lang$core$Native_Utils.update(
+														case 'ToggleItemDetailsPopup':
+															var _p112 = _p74._0;
+															if (_p112.ctor === 'Nothing') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{itemDetailsPopupOpen: !model.itemDetailsPopupOpen, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															} else {
+																var _p114 = _p112._0;
+																var isPinned = model.sliderPopupPinned && _elm_lang$core$Native_Utils.eq(
+																	model.itemDetailsPopupOpenItemId,
+																	_elm_lang$core$Maybe$Just(_p114));
+																var _p113 = isPinned ? {ctor: '_Tuple2', _0: _elm_lang$core$Maybe$Nothing, _1: false} : {
+																	ctor: '_Tuple2',
+																	_0: _elm_lang$core$Maybe$Just(_p114),
+																	_1: true
+																};
+																var newOpenItemId = _p113._0;
+																var newPinned = _p113._1;
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{itemDetailsPopupOpenItemId: newOpenItemId, sliderPopupPinned: newPinned, itemDetailsPopupOpen: false, itemDetailsPopupHovered: false}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'ItemDetailsPopupMouseEnter':
+															var _p115 = _p74._0;
+															if (_p115.ctor === 'Nothing') {
+																return {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{itemDetailsPopupHovered: true, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing, sliderPopupPinned: false}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															} else {
+																var _p116 = _p115._0;
+																return (model.sliderPopupPinned && _elm_lang$core$Native_Utils.eq(
+																	model.itemDetailsPopupOpenItemId,
+																	_elm_lang$core$Maybe$Just(_p116))) ? noChange : {
+																	ctor: '_Tuple4',
+																	_0: _elm_lang$core$Native_Utils.update(
+																		model,
+																		{
+																			itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Just(_p116),
+																			sliderPopupPinned: false,
+																			itemDetailsPopupOpen: false,
+																			itemDetailsPopupHovered: false
+																		}),
+																	_1: _elm_lang$core$Platform_Cmd$none,
+																	_2: _Gizra$circuit_bid$Error_Utils$noError,
+																	_3: {ctor: '[]'}
+																};
+															}
+														case 'ItemDetailsPopupMouseLeave':
+															return model.sliderPopupPinned ? {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
 																	model,
-																	{pendingSaleUpdate: _elm_lang$core$Maybe$Nothing}));
-															var newModel = _p106._0;
-															var cmd = _p106._1;
-															var appMsgs = _p106._2;
-															return {ctor: '_Tuple4', _0: newModel, _1: cmd, _2: _Gizra$circuit_bid$Error_Utils$noError, _3: appMsgs};
-														} else {
-															return noChange;
-														}
+																	{itemDetailsPopupHovered: false}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															} : {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{itemDetailsPopupHovered: false, itemDetailsPopupOpenItemId: _elm_lang$core$Maybe$Nothing}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ImageCarouselNext':
+															var _p117 = _p74._0;
+															var cur = A2(_Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor, _p117, model);
+															var next = A2(
+																_elm_lang$core$Basics_ops['%'],
+																cur + 1,
+																A2(_elm_lang$core$Basics$max, _p74._1, 1));
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		imageCarouselIndex: next,
+																		imageCarouselPrev: _elm_lang$core$Maybe$Just(cur),
+																		imageCarouselItemId: _elm_lang$core$Maybe$Just(_p117)
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ImageCarouselPrev':
+															var _p118 = _p74._0;
+															var cur = A2(_Gizra$circuit_bid$Pages_Sale_Update$resetIndexFor, _p118, model);
+															var t = A2(_elm_lang$core$Basics$max, _p74._1, 1);
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		imageCarouselIndex: A2(_elm_lang$core$Basics_ops['%'], (cur - 1) + t, t),
+																		imageCarouselPrev: _elm_lang$core$Maybe$Just(cur),
+																		imageCarouselItemId: _elm_lang$core$Maybe$Just(_p118)
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ImageCarouselTick':
+															return model.imageCarouselPaused ? {
+																ctor: '_Tuple4',
+																_0: model,
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															} : {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		imageCarouselIndex: model.imageCarouselIndex + 1,
+																		imageCarouselPrev: _elm_lang$core$Maybe$Just(model.imageCarouselIndex)
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ImageCarouselTogglePause':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{imageCarouselPaused: !model.imageCarouselPaused}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'SetImageCarouselPaused':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{imageCarouselPaused: _p74._0}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ToggleDescriptionPopup':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{descriptionPopupOpen: !model.descriptionPopupOpen}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ToggleLoginForm':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{loginFormExpanded: !model.loginFormExpanded}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'SetSelectedCurrency':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{
+																		selectedCurrency: _elm_lang$core$Maybe$Just(_p74._0),
+																		currencyMenuOpen: false
+																	}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														case 'ToggleCurrencyMenu':
+															return {
+																ctor: '_Tuple4',
+																_0: _elm_lang$core$Native_Utils.update(
+																	model,
+																	{currencyMenuOpen: !model.currencyMenuOpen}),
+																_1: _elm_lang$core$Platform_Cmd$none,
+																_2: _Gizra$circuit_bid$Error_Utils$noError,
+																_3: {ctor: '[]'}
+															};
+														default:
+															var _p119 = model.pendingSaleUpdate;
+															if (_p119.ctor === 'Just') {
+																var _p120 = A2(
+																	_Gizra$circuit_bid$Pages_Sale_Update$applySaleUpdate,
+																	_p119._0,
+																	_elm_lang$core$Native_Utils.update(
+																		model,
+																		{pendingSaleUpdate: _elm_lang$core$Maybe$Nothing}));
+																var newModel = _p120._0;
+																var cmd = _p120._1;
+																var appMsgs = _p120._2;
+																return {ctor: '_Tuple4', _0: newModel, _1: cmd, _2: _Gizra$circuit_bid$Error_Utils$noError, _3: appMsgs};
+															} else {
+																return noChange;
+															}
+													}
 												}
-											}
+											};
 										};
 									};
 								};
@@ -68998,6 +70808,10 @@ var _Gizra$circuit_bid$App_Update$updateSubModel = F6(
 					}
 				})
 		};
+	});
+var _Gizra$circuit_bid$App_Update$expectRebuild = F2(
+	function (rebuild, health) {
+		return rebuild ? A2(_Gizra$circuit_bid$Pusher_Health_Model$noteSocketRebuild, health.now, health) : health;
 	});
 var _Gizra$circuit_bid$App_Update$anonymousClerkUpdate = F3(
 	function (backendUrl, subMsg, model) {
@@ -69158,14 +70972,29 @@ var _Gizra$circuit_bid$App_Update$subscriptions = function (model) {
 							}),
 						_1: {
 							ctor: '::',
-							_0: _Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage) ? A2(
-								_elm_lang$core$Time$every,
-								2 * _elm_lang$core$Time$second,
+							_0: _Gizra$circuit_bid$Pusher_Update$pageVisibility(
 								function (_p10) {
 									return _Gizra$circuit_bid$App_Model$MsgHealth(
-										_Gizra$circuit_bid$Pusher_Health_Model$HealthTick(_p10));
-								}) : _elm_lang$core$Platform_Sub$none,
-							_1: {ctor: '[]'}
+										_Gizra$circuit_bid$Pusher_Health_Model$HandleVisibility(_p10));
+								}),
+							_1: {
+								ctor: '::',
+								_0: function () {
+									var _p11 = _Gizra$circuit_bid$App_Health$policyFor(model.activePage);
+									if (_p11.ctor === 'Just') {
+										return A2(
+											_elm_lang$core$Time$every,
+											_p11._0.tickMs,
+											function (_p12) {
+												return _Gizra$circuit_bid$App_Model$MsgHealth(
+													_Gizra$circuit_bid$Pusher_Health_Model$HealthTick(_p12));
+											});
+									} else {
+										return _elm_lang$core$Platform_Sub$none;
+									}
+								}(),
+								_1: {ctor: '[]'}
+							}
 						}
 					}
 				}
@@ -69182,9 +71011,9 @@ var _Gizra$circuit_bid$App_Update$subscriptions = function (model) {
 			_1: {
 				ctor: '::',
 				_0: _Gizra$circuit_bid$Ports$offline(
-					function (_p11) {
+					function (_p13) {
 						return _Gizra$circuit_bid$App_Model$HandleOfflineEvent(
-							A2(_elm_lang$core$Json_Decode$decodeValue, _elm_lang$core$Json_Decode$bool, _p11));
+							A2(_elm_lang$core$Json_Decode$decodeValue, _elm_lang$core$Json_Decode$bool, _p13));
 					}),
 				_1: {
 					ctor: '::',
@@ -69208,11 +71037,11 @@ var _Gizra$circuit_bid$App_Update$subscriptions = function (model) {
 };
 var _Gizra$circuit_bid$App_Update$setClerkPageAccess = F2(
 	function (userType, page) {
-		var _p12 = {ctor: '_Tuple2', _0: page, _1: userType};
-		_v3_4:
+		var _p14 = {ctor: '_Tuple2', _0: page, _1: userType};
+		_v4_4:
 		do {
-			if ((_p12.ctor === '_Tuple2') && (_p12._1.ctor === 'Bidder')) {
-				switch (_p12._0.ctor) {
+			if ((_p14.ctor === '_Tuple2') && (_p14._1.ctor === 'Bidder')) {
+				switch (_p14._0.ctor) {
 					case 'SaleAuctioneer':
 						return _Gizra$circuit_bid$App_PageType$AccessDenied;
 					case 'SaleClerk':
@@ -69222,23 +71051,23 @@ var _Gizra$circuit_bid$App_Update$setClerkPageAccess = F2(
 					case 'SaleClerkV1':
 						return _Gizra$circuit_bid$App_PageType$AccessDenied;
 					default:
-						break _v3_4;
+						break _v4_4;
 				}
 			} else {
-				break _v3_4;
+				break _v4_4;
 			}
 		} while(false);
 		return page;
 	});
 var _Gizra$circuit_bid$App_Update$setActivePageAccess = F2(
 	function (wrappedUser, page) {
-		var _p13 = wrappedUser;
-		if (_p13.ctor === 'Just') {
-			if (_p13._0.ctor === 'Authenticated') {
-				return A2(_Gizra$circuit_bid$App_Update$setClerkPageAccess, _p13._0._0.userType, page);
+		var _p15 = wrappedUser;
+		if (_p15.ctor === 'Just') {
+			if (_p15._0.ctor === 'Authenticated') {
+				return A2(_Gizra$circuit_bid$App_Update$setClerkPageAccess, _p15._0._0.userType, page);
 			} else {
-				var _p14 = page;
-				switch (_p14.ctor) {
+				var _p16 = page;
+				switch (_p16.ctor) {
 					case 'PageNotFound':
 						return page;
 					case 'Sale':
@@ -69271,33 +71100,33 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 		while (true) {
 			var noChange = {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 			var backofficeUrl = function () {
-				var _p15 = model.config;
-				if (_p15.ctor === 'Success') {
-					return _p15._0.siteConfig.backofficeUrl;
+				var _p17 = model.config;
+				if (_p17.ctor === 'Success') {
+					return _p17._0.siteConfig.backofficeUrl;
 				} else {
 					return '';
 				}
 			}();
-			var _p16 = function () {
-				var _p17 = model.config;
-				if (_p17.ctor === 'Success') {
-					var _p18 = _p17._0;
-					return {ctor: '_Tuple4', _0: _p18.backendUrl, _1: _p18.debug, _2: _p18.serverless, _3: _p18.name};
+			var _p18 = function () {
+				var _p19 = model.config;
+				if (_p19.ctor === 'Success') {
+					var _p20 = _p19._0;
+					return {ctor: '_Tuple4', _0: _p20.backendUrl, _1: _p20.debug, _2: _p20.serverless, _3: _p20.name};
 				} else {
 					return {ctor: '_Tuple4', _0: '', _1: false, _2: '', _3: ''};
 				}
 			}();
-			var backendUrl = _p16._0;
-			var isDebug = _p16._1;
-			var serverless = _p16._2;
-			var env = _p16._3;
-			var _p19 = msg;
-			switch (_p19.ctor) {
+			var backendUrl = _p18._0;
+			var isDebug = _p18._1;
+			var serverless = _p18._2;
+			var env = _p18._3;
+			var _p21 = msg;
+			switch (_p21.ctor) {
 				case 'HandleFetchConfig':
-					var effectiveConfig = _p19._0;
+					var effectiveConfig = _p21._0;
 					var rerunActivePage = function () {
-						var _p20 = effectiveConfig;
-						if (_p20.ctor === 'Success') {
+						var _p22 = effectiveConfig;
+						if (_p22.ctor === 'Success') {
 							return A2(
 								_elm_lang$core$Task$perform,
 								_elm_lang$core$Basics$identity,
@@ -69308,12 +71137,12 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						}
 					}();
 					var loginCmd = function () {
-						var _p21 = effectiveConfig;
-						if (_p21.ctor === 'Success') {
+						var _p23 = effectiveConfig;
+						if (_p23.ctor === 'Success') {
 							return _elm_lang$core$String$isEmpty(model.accessToken) ? _elm_lang$core$Platform_Cmd$none : A2(
 								_elm_lang$core$Platform_Cmd$map,
 								_Gizra$circuit_bid$App_Model$MsgLogin,
-								A2(_Gizra$circuit_bid$Login_Update$fetchUserFromBackend, _p21._0.backendUrl, model.accessToken));
+								A2(_Gizra$circuit_bid$Login_Update$fetchUserFromBackend, _p23._0.backendUrl, model.accessToken));
 						} else {
 							return _elm_lang$core$Platform_Cmd$none;
 						}
@@ -69335,12 +71164,12 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							})
 					};
 				case 'HandleOfflineEvent':
-					if (_p19._0.ctor === 'Ok') {
+					if (_p21._0.ctor === 'Ok') {
 						return A2(
 							_elm_lang$core$Platform_Cmd_ops['!'],
 							_elm_lang$core$Native_Utils.update(
 								model,
-								{offline: _p19._0._0}),
+								{offline: _p21._0._0}),
 							{ctor: '[]'});
 					} else {
 						return A2(
@@ -69349,48 +71178,87 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							{ctor: '[]'});
 					}
 				case 'HandlePusherIncoming':
-					var _p32 = _p19._0;
+					var _p39 = _p21._0;
+					var policy = A2(
+						_elm_lang$core$Maybe$withDefault,
+						_Gizra$circuit_bid$Pusher_Health_Model$clerkPolicy,
+						_Gizra$circuit_bid$App_Health$policyFor(model.activePage));
 					var maybeMeta = _elm_lang$core$Result$toMaybe(
-						A2(_elm_lang$core$Json_Decode$decodeValue, _Gizra$circuit_bid$Pusher_Decoder$decodeEventMeta, _p32));
-					var _p22 = function () {
-						var _p23 = maybeMeta;
-						if (_p23.ctor === 'Just') {
-							var _p25 = _p23._0;
-							var _p24 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteEvent, _p25, model.health);
-							var noted = _p24._0;
-							var verdict_ = _p24._1;
-							var gap_ = _p24._2;
-							return {
-								ctor: '_Tuple4',
-								_0: noted,
-								_1: verdict_,
-								_2: gap_,
-								_3: A2(_elm_lang$core$List$member, _p25.eventType, _Gizra$circuit_bid$Pusher_Model$eventNames)
-							};
+						A2(_elm_lang$core$Json_Decode$decodeValue, _Gizra$circuit_bid$Pusher_Decoder$decodeEventMeta, _p39));
+					var sameEpochWatermark = function () {
+						var _p24 = A2(
+							_elm_lang$core$Maybe$andThen,
+							function (meta) {
+								return A2(
+									_elm_lang$core$Maybe$map,
+									function (channel) {
+										return {ctor: '_Tuple2', _0: meta, _1: channel};
+									},
+									meta.channel);
+							},
+							maybeMeta);
+						if (_p24.ctor === 'Just') {
+							return A2(
+								_elm_lang$core$Maybe$withDefault,
+								false,
+								A2(
+									_elm_lang$core$Maybe$map,
+									function (_p25) {
+										var _p26 = _p25;
+										return _elm_lang$core$Native_Utils.eq(
+											_elm_lang$core$Maybe$Just(_p26._0),
+											_p24._0._0.epoch);
+									},
+									A2(_elm_lang$core$Dict$get, _p24._0._1, model.health.lastCseqByChannel)));
 						} else {
-							return {ctor: '_Tuple4', _0: model.health, _1: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _2: 0, _3: true};
+							return false;
 						}
 					}();
-					var health = _p22._0;
-					var verdict = _p22._1;
-					var gap = _p22._2;
-					var known = _p22._3;
-					var pageMsg = A5(_Gizra$circuit_bid$App_Health$routePusherValue, model.activePage, model.user, model.currentDate, verdict, _p32);
-					var logEntry = function (_p26) {
-						var _p27 = _p26;
+					var _p27 = function () {
+						var _p28 = maybeMeta;
+						if (_p28.ctor === 'Just') {
+							var _p31 = _p28._0;
+							var _p29 = A2(_Gizra$circuit_bid$Pusher_Health_Model$noteEvent, _p31, model.health);
+							var noted = _p29._0;
+							var verdict_ = _p29._1;
+							var gap_ = _p29._2;
+							var _p30 = A5(_Gizra$circuit_bid$Pusher_Health_Model$cancelReconnectResync, policy, _p31, gap_, sameEpochWatermark, noted);
+							var afterCancel = _p30._0;
+							var cancelled = _p30._1;
+							return {
+								ctor: '_Tuple5',
+								_0: afterCancel,
+								_1: verdict_,
+								_2: gap_,
+								_3: A2(_elm_lang$core$List$member, _p31.eventType, _Gizra$circuit_bid$Pusher_Model$eventNames),
+								_4: cancelled
+							};
+						} else {
+							return {ctor: '_Tuple5', _0: model.health, _1: _Gizra$circuit_bid$Pusher_Health_Model$Apply, _2: 0, _3: true, _4: false};
+						}
+					}();
+					var health = _p27._0;
+					var verdict = _p27._1;
+					var gap = _p27._2;
+					var known = _p27._3;
+					var cancelledResync = _p27._4;
+					var bridgeRestarted = _elm_lang$core$Native_Utils.cmp(health.bridgeRestarts, model.health.bridgeRestarts) > 0;
+					var pageMsg = A5(_Gizra$circuit_bid$App_Health$routePusherValue, model.activePage, model.user, model.currentDate, verdict, _p39);
+					var logEntry = function (_p32) {
+						var _p33 = _p32;
 						var outcome = function () {
-							var _p28 = {ctor: '_Tuple3', _0: known, _1: pageMsg, _2: verdict};
-							if (_p28._0 === false) {
+							var _p34 = {ctor: '_Tuple3', _0: known, _1: pageMsg, _2: verdict};
+							if (_p34._0 === false) {
 								return 'ignored (unknown event)';
 							} else {
-								if (_p28._1.ctor === 'Nothing') {
-									if (_p28._2.ctor === 'DropStale') {
+								if (_p34._1.ctor === 'Nothing') {
+									if (_p34._2.ctor === 'DropStale') {
 										return 'dropped as stale';
 									} else {
 										return 'not routed';
 									}
 								} else {
-									if (_p28._2.ctor === 'DropStale') {
+									if (_p34._2.ctor === 'DropStale') {
 										return 'applied (bid only, lot state stale)';
 									} else {
 										return (_elm_lang$core$Native_Utils.cmp(gap, 0) > 0) ? A2(
@@ -69445,7 +71313,7 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 								},
 								maybeMeta),
 							outcome: outcome,
-							payload: A2(_elm_lang$core$Json_Encode$encode, 0, _p32)
+							payload: A2(_elm_lang$core$Json_Encode$encode, 0, _p39)
 						};
 					};
 					var modelWithHealth = _elm_lang$core$Native_Utils.update(
@@ -69462,18 +71330,18 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 									_1: model.pusherLog
 								}) : model.pusherLog
 						});
-					var _p29 = function () {
-						var _p30 = {ctor: '_Tuple2', _0: known, _1: pageMsg};
-						if (((_p30.ctor === '_Tuple2') && (_p30._0 === true)) && (_p30._1.ctor === 'Just')) {
-							return A2(_Gizra$circuit_bid$App_Update$update, _p30._1._0, modelWithHealth);
+					var _p35 = function () {
+						var _p36 = {ctor: '_Tuple2', _0: known, _1: pageMsg};
+						if (((_p36.ctor === '_Tuple2') && (_p36._0 === true)) && (_p36._1.ctor === 'Just')) {
+							return A2(_Gizra$circuit_bid$App_Update$update, _p36._1._0, modelWithHealth);
 						} else {
 							return {ctor: '_Tuple2', _0: modelWithHealth, _1: _elm_lang$core$Platform_Cmd$none};
 						}
 					}();
-					var routedModel = _p29._0;
-					var routedCmd = _p29._1;
+					var routedModel = _p35._0;
+					var routedCmd = _p35._1;
 					if (_elm_lang$core$Native_Utils.cmp(gap, 0) > 0) {
-						var _p31 = A2(
+						var _p37 = A2(
 							_Gizra$circuit_bid$App_Update$update,
 							_Gizra$circuit_bid$App_Model$MsgHealth(
 								A2(
@@ -69481,8 +71349,8 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 									_Gizra$circuit_bid$Pusher_Health_Model$Soft,
 									_Gizra$circuit_bid$Pusher_Health_Model$SeqGap(gap))),
 							routedModel);
-						var afterGap = _p31._0;
-						var gapCmd = _p31._1;
+						var afterGap = _p37._0;
+						var gapCmd = _p37._1;
 						return {
 							ctor: '_Tuple2',
 							_0: afterGap,
@@ -69498,45 +71366,94 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 								})
 						};
 					} else {
-						return {ctor: '_Tuple2', _0: routedModel, _1: routedCmd};
+						if (bridgeRestarted) {
+							var _p38 = A2(
+								_Gizra$circuit_bid$App_Update$update,
+								_Gizra$circuit_bid$App_Model$MsgHealth(
+									A2(_Gizra$circuit_bid$Pusher_Health_Model$RequestResync, _Gizra$circuit_bid$Pusher_Health_Model$Soft, _Gizra$circuit_bid$Pusher_Health_Model$BridgeRestart)),
+								routedModel);
+							var afterRestart = _p38._0;
+							var restartCmd = _p38._1;
+							return {
+								ctor: '_Tuple2',
+								_0: afterRestart,
+								_1: _elm_lang$core$Platform_Cmd$batch(
+									{
+										ctor: '::',
+										_0: routedCmd,
+										_1: {
+											ctor: '::',
+											_0: restartCmd,
+											_1: {ctor: '[]'}
+										}
+									})
+							};
+						} else {
+							if (cancelledResync) {
+								return {
+									ctor: '_Tuple2',
+									_0: routedModel,
+									_1: _elm_lang$core$Platform_Cmd$batch(
+										{
+											ctor: '::',
+											_0: routedCmd,
+											_1: {
+												ctor: '::',
+												_0: A3(
+													_Gizra$circuit_bid$Pusher_Health_Update$reportSampled,
+													policy.telemetryEvery,
+													A3(
+														_Gizra$circuit_bid$Pusher_Health_Model$breadcrumb,
+														'resync',
+														'reconnect: nothing missed',
+														{ctor: '[]'}),
+													routedModel.health),
+												_1: {ctor: '[]'}
+											}
+										})
+								};
+							} else {
+								return {ctor: '_Tuple2', _0: routedModel, _1: routedCmd};
+							}
+						}
 					}
 				case 'MsgHealth':
 					return A4(
 						_Gizra$circuit_bid$App_Health$updateHealth,
 						_Gizra$circuit_bid$App_Health$Update(_Gizra$circuit_bid$App_Update$update),
 						backendUrl,
-						_p19._0,
+						_p21._0,
 						model);
 				case 'HandleResyncSale':
 					return A5(
 						_Gizra$circuit_bid$App_Health$handleResyncSale,
 						_Gizra$circuit_bid$App_Health$Update(_Gizra$circuit_bid$App_Update$update),
 						backendUrl,
-						_p19._0,
-						_p19._1._0,
+						_p21._0,
+						_p21._1._0,
 						model);
 				case 'HandleProbe':
 					return A7(
 						_Gizra$circuit_bid$App_Health$handleProbe,
 						_Gizra$circuit_bid$App_Health$Update(_Gizra$circuit_bid$App_Update$update),
 						backendUrl,
-						_p19._0,
-						_p19._1,
-						_p19._2._0,
-						_p19._2._1,
+						_p21._0,
+						_p21._1,
+						_p21._2._0,
+						_p21._2._1,
 						model);
 				case 'Logout':
 					var setPageCmd = A2(
 						_elm_lang$core$Task$perform,
 						_elm_lang$core$Basics$identity,
 						_elm_lang$core$Task$succeed(
-							A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, _p19._0)));
-					var _p33 = A2(
+							A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, _p21._0)));
+					var _p40 = A2(
 						_Gizra$circuit_bid$App_Update$update,
 						_Gizra$circuit_bid$App_Model$MsgPusher(_Gizra$circuit_bid$Pusher_Model$Logout),
 						model);
-					var modelUpdated = _p33._0;
-					var pusherLogoutCmd = _p33._1;
+					var modelUpdated = _p40._0;
+					var pusherLogoutCmd = _p40._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -69573,15 +71490,15 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							})
 					};
 				case 'MsgBackend':
-					var _p34 = model.user;
-					if (_p34.ctor === 'Just') {
+					var _p41 = model.user;
+					if (_p41.ctor === 'Just') {
 						return A6(
 							_Gizra$circuit_bid$App_Update$updateSubModel,
-							_p19._0,
+							_p21._0,
 							model.backend,
 							F2(
 								function (subMsg, subModel) {
-									return A6(_Gizra$circuit_bid$Backend_Update$updateBackend, model.currentDate, backendUrl, model.accessToken, _p34._0, subMsg, subModel);
+									return A6(_Gizra$circuit_bid$Backend_Update$updateBackend, model.currentDate, backendUrl, model.accessToken, _p41._0, subMsg, subModel);
 								}),
 							F2(
 								function (subModel, model) {
@@ -69606,7 +71523,7 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						function (user) {
 							return A6(
 								_Gizra$circuit_bid$App_Update$updateSubModel,
-								_p19._0,
+								_p21._0,
 								model.pageItem,
 								F2(
 									function (subMsg, subModel) {
@@ -69625,29 +71542,30 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						},
 						model.user);
 				case 'MsgPagesClerk':
-					var _p39 = _p19._0;
+					var _p46 = _p21._0;
 					return A3(
 						_elm_community$maybe_extra$Maybe_Extra$unwrap,
 						noChange,
 						function (user) {
-							var _p35 = user;
-							if (_p35.ctor === 'Authenticated') {
-								var _p38 = _p35._0;
-								var _p36 = A3(
+							var _p42 = user;
+							if (_p42.ctor === 'Authenticated') {
+								var _p45 = _p42._0;
+								var _p43 = A3(
 									_Gizra$circuit_bid$App_Update$pusherLogin,
-									_Gizra$circuit_bid$User_Model$Authenticated(_p38),
+									_Gizra$circuit_bid$User_Model$Authenticated(_p45),
 									model,
 									model.pageClerk.sale);
-								var pusherModel = _p36._0;
-								var pusherCmd = _p36._1;
-								var _p37 = A6(
+								var pusherModel = _p43._0;
+								var rebuild = _p43._1;
+								var pusherCmd = _p43._2;
+								var _p44 = A6(
 									_Gizra$circuit_bid$App_Update$updateSubModel,
-									_p39,
+									_p46,
 									model.pageClerk,
 									F2(
 										function (subMsg, subModel) {
 											return _Gizra$circuit_bid$Pages_Clerk_Update$update(model.currentDate)(backendUrl)(backofficeUrl)(
-												{ctor: '_Tuple2', _0: serverless, _1: env})(isDebug)(model.accessToken)(model.language)(_p38)(model.backend)(subMsg)(model.pageClerk);
+												{ctor: '_Tuple2', _0: serverless, _1: env})(isDebug)(model.accessToken)(model.language)(_p45)(model.backend)(subMsg)(model.pageClerk);
 										}),
 									F2(
 										function (subModel, model) {
@@ -69659,13 +71577,16 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 										return _Gizra$circuit_bid$App_Model$MsgPagesClerk(subCmds);
 									},
 									model);
-								var modelUpdated = _p37._0;
-								var cmds = _p37._1;
+								var modelUpdated = _p44._0;
+								var cmds = _p44._1;
 								return {
 									ctor: '_Tuple2',
 									_0: _elm_lang$core$Native_Utils.update(
 										modelUpdated,
-										{pusher: pusherModel}),
+										{
+											pusher: pusherModel,
+											health: A2(_Gizra$circuit_bid$App_Update$expectRebuild, rebuild, modelUpdated.health)
+										}),
 									_1: _elm_lang$core$Platform_Cmd$batch(
 										{
 											ctor: '::',
@@ -69678,14 +71599,14 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 										})
 								};
 							} else {
-								return A3(_Gizra$circuit_bid$App_Update$anonymousClerkUpdate, backendUrl, _p39, model);
+								return A3(_Gizra$circuit_bid$App_Update$anonymousClerkUpdate, backendUrl, _p46, model);
 							}
 						},
 						model.user);
 				case 'MsgPagesSale':
-					var _p40 = function () {
-						var _p41 = model.activePage;
-						switch (_p41.ctor) {
+					var _p47 = function () {
+						var _p48 = model.activePage;
+						switch (_p48.ctor) {
 							case 'SaleRoom':
 								return {
 									ctor: '_Tuple2',
@@ -69706,29 +71627,34 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 								};
 						}
 					}();
-					var modifiedUser = _p40._0;
-					var modifiedUserForPusher = _p40._1;
-					var _p42 = A3(_Gizra$circuit_bid$App_Update$pusherLogin, modifiedUserForPusher, model, model.pageSale.sale);
-					var pusherModel = _p42._0;
-					var pusherCmd = _p42._1;
+					var modifiedUser = _p47._0;
+					var modifiedUserForPusher = _p47._1;
+					var _p49 = A3(_Gizra$circuit_bid$App_Update$pusherLogin, modifiedUserForPusher, model, model.pageSale.sale);
+					var pusherModel = _p49._0;
+					var rebuild = _p49._1;
+					var pusherCmd = _p49._2;
 					return A3(
 						_elm_community$maybe_extra$Maybe_Extra$unwrap,
 						{
 							ctor: '_Tuple2',
 							_0: _elm_lang$core$Native_Utils.update(
 								model,
-								{pusher: pusherModel}),
+								{
+									pusher: pusherModel,
+									health: A2(_Gizra$circuit_bid$App_Update$expectRebuild, rebuild, model.health)
+								}),
 							_1: pusherCmd
 						},
 						function (user) {
-							var _p43 = A6(
+							var _p50 = A6(
 								_Gizra$circuit_bid$App_Update$updateSubModel,
-								_p19._0,
+								_p21._0,
 								model.pageSale,
 								F2(
 									function (subMsg, subModel) {
 										return _Gizra$circuit_bid$Pages_Sale_Update$update(model.currentDate)(backendUrl)(backofficeUrl)(
-											{ctor: '_Tuple2', _0: serverless, _1: env})(isDebug)(model.accessToken)(model.language)(user)(model.backend)(subMsg)(model.pageSale);
+											{ctor: '_Tuple2', _0: serverless, _1: env})(isDebug)(model.accessToken)(model.language)(user)(model.backend)(
+											_Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(model.health))(subMsg)(model.pageSale);
 									}),
 								F2(
 									function (subModel, model) {
@@ -69740,13 +71666,16 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 									return _Gizra$circuit_bid$App_Model$MsgPagesSale(subCmds);
 								},
 								model);
-							var modelUpdated = _p43._0;
-							var cmds = _p43._1;
+							var modelUpdated = _p50._0;
+							var cmds = _p50._1;
 							return {
 								ctor: '_Tuple2',
 								_0: _elm_lang$core$Native_Utils.update(
 									modelUpdated,
-									{pusher: pusherModel}),
+									{
+										pusher: pusherModel,
+										health: A2(_Gizra$circuit_bid$App_Update$expectRebuild, rebuild, modelUpdated.health)
+									}),
 								_1: _elm_lang$core$Platform_Cmd$batch(
 									{
 										ctor: '::',
@@ -69761,22 +71690,22 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						},
 						model.user);
 				case 'MsgPusher':
-					var _p44 = model.user;
-					if (_p44.ctor === 'Just') {
+					var _p51 = model.user;
+					if (_p51.ctor === 'Just') {
 						var userOrAnon = function () {
-							var _p45 = model.activePage;
-							switch (_p45.ctor) {
+							var _p52 = model.activePage;
+							switch (_p52.ctor) {
 								case 'SaleRoom':
 									return _Gizra$circuit_bid$User_Model$Anonymous;
 								case 'SaleRoomV1':
 									return _Gizra$circuit_bid$User_Model$Anonymous;
 								default:
-									return _p44._0;
+									return _p51._0;
 							}
 						}();
-						var _p46 = A4(_Gizra$circuit_bid$Pusher_Update$update, backendUrl, userOrAnon, _p19._0, model.pusher);
-						var val = _p46._0;
-						var cmd = _p46._1;
+						var _p53 = A4(_Gizra$circuit_bid$Pusher_Update$update, backendUrl, userOrAnon, _p21._0, model.pusher);
+						var val = _p53._0;
+						var cmd = _p53._1;
 						return {
 							ctor: '_Tuple2',
 							_0: _elm_lang$core$Native_Utils.update(
@@ -69796,22 +71725,22 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						model,
 						{ctor: '[]'});
 				case 'MsgLogin':
-					var _p47 = A3(_Gizra$circuit_bid$Login_Update$update, backendUrl, _p19._0, model.login);
-					var loginModel = _p47._0;
-					var cmds = _p47._1;
-					var maybeError = _p47._2;
-					var authenticationDetails = _p47._3;
-					var _p48 = function () {
-						var _p49 = authenticationDetails;
-						if (_p49.ctor === 'Just') {
-							if (_p49._0._1.ctor === 'Authenticated') {
+					var _p54 = A3(_Gizra$circuit_bid$Login_Update$update, backendUrl, _p21._0, model.login);
+					var loginModel = _p54._0;
+					var cmds = _p54._1;
+					var maybeError = _p54._2;
+					var authenticationDetails = _p54._3;
+					var _p55 = function () {
+						var _p56 = authenticationDetails;
+						if (_p56.ctor === 'Just') {
+							if (_p56._0._1.ctor === 'Authenticated') {
 								return {
 									ctor: '_Tuple3',
 									_0: _elm_lang$core$Native_Utils.update(
 										model,
 										{
-											accessToken: _p49._0._0,
-											user: _elm_lang$core$Maybe$Just(_p49._0._1),
+											accessToken: _p56._0._0,
+											user: _elm_lang$core$Maybe$Just(_p56._0._1),
 											login: _Gizra$circuit_bid$Login_Model$emptyModel
 										}),
 									_1: A2(
@@ -69821,7 +71750,7 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 											A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, model.activePage))),
 									_2: _Gizra$circuit_bid$Ports$setSentryUser(
 										{
-											id: _Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p49._0._1._0.uuid)
+											id: _Gizra$elm_restful$Restful_Endpoint$fromEntityUuid(_p56._0._1._0.uuid)
 										})
 								};
 							} else {
@@ -69830,7 +71759,7 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 									_0: _elm_lang$core$Native_Utils.update(
 										model,
 										{
-											accessToken: _p49._0._0,
+											accessToken: _p56._0._0,
 											user: _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$User_Model$Anonymous),
 											login: loginModel
 										}),
@@ -69850,9 +71779,9 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							};
 						}
 					}();
-					var modelWithRedirect = _p48._0;
-					var redirectCmd = _p48._1;
-					var sentryUserCmd = _p48._2;
+					var modelWithRedirect = _p55._0;
+					var redirectCmd = _p55._1;
+					var sentryUserCmd = _p55._2;
 					var modelWithError = A2(_Gizra$circuit_bid$App_Utils$handleErrors, maybeError, modelWithRedirect);
 					return {
 						ctor: '_Tuple2',
@@ -69886,60 +71815,60 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 						_elm_lang$core$Basics$always(_Gizra$circuit_bid$App_Model$NoOp),
 						_elm_lang$dom$Dom$focus('app'));
 					var configReady = _krisajenkins$remotedata$RemoteData$isSuccess(model.config);
-					var activePage = A2(_Gizra$circuit_bid$App_Update$setActivePageAccess, model.user, _p19._1);
-					var _p50 = function () {
+					var activePage = A2(_Gizra$circuit_bid$App_Update$setActivePageAccess, model.user, _p21._1);
+					var _p57 = function () {
 						if (!configReady) {
 							return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 						} else {
-							var _p51 = activePage;
-							switch (_p51.ctor) {
+							var _p58 = activePage;
+							switch (_p58.ctor) {
 								case 'Sale':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesSale(
-											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleAuctioneer':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleClerk':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleRoom':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesSale(
-											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleV1':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesSale(
-											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleAuctioneerV1':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleClerkV1':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesClerk(
-											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Clerk_Model$Subscribe(_p58._0)),
 										model);
 								case 'SaleRoomV1':
 									return A2(
 										_Gizra$circuit_bid$App_Update$update,
 										_Gizra$circuit_bid$App_Model$MsgPagesSale(
-											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p51._0)),
+											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(_p58._0)),
 										model);
 								case 'Logout':
 									return A2(
@@ -69951,14 +71880,14 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							}
 						}
 					}();
-					var modelUpdated = _p50._0;
-					var pageInitCmds = _p50._1;
-					var _p52 = function () {
-						var _p53 = _p19._0;
-						if (_p53.ctor === 'Just') {
+					var modelUpdated = _p57._0;
+					var pageInitCmds = _p57._1;
+					var _p59 = function () {
+						var _p60 = _p21._0;
+						if (_p60.ctor === 'Just') {
 							return A2(
 								_Gizra$circuit_bid$App_Update$update,
-								_Gizra$circuit_bid$App_Model$SetLanguage(_p53._0),
+								_Gizra$circuit_bid$App_Model$SetLanguage(_p60._0),
 								modelUpdated);
 						} else {
 							return A2(
@@ -69967,8 +71896,8 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 								{ctor: '[]'});
 						}
 					}();
-					var modelUpdatedWithLanguage = _p52._0;
-					var languageCmds = _p52._1;
+					var modelUpdatedWithLanguage = _p59._0;
+					var languageCmds = _p59._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -69990,43 +71919,43 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 							})
 					};
 				case 'SetAuthentication':
-					var _p54 = _p19._0._0;
+					var _p61 = _p21._0._0;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								accessToken: _p54,
-								user: _elm_lang$core$Maybe$Just(_p19._0._1)
+								accessToken: _p61,
+								user: _elm_lang$core$Maybe$Just(_p21._0._1)
 							}),
-						_1: _Gizra$circuit_bid$Ports$saveAccessToken(_p54)
+						_1: _Gizra$circuit_bid$Ports$saveAccessToken(_p61)
 					};
 				case 'SetCurrentDate':
 					return A2(
 						_elm_lang$core$Platform_Cmd_ops['!'],
 						_elm_lang$core$Native_Utils.update(
 							model,
-							{currentDate: _p19._0}),
+							{currentDate: _p21._0}),
 						{ctor: '[]'});
 				case 'SetLanguage':
-					var _v23 = A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, model.activePage),
-						_v24 = _elm_lang$core$Native_Utils.update(
+					var _v26 = A2(_Gizra$circuit_bid$App_Model$SetActivePage, _elm_lang$core$Maybe$Nothing, model.activePage),
+						_v27 = _elm_lang$core$Native_Utils.update(
 						model,
-						{language: _p19._0});
-					msg = _v23;
-					model = _v24;
+						{language: _p21._0});
+					msg = _v26;
+					model = _v27;
 					continue update;
 				case 'SetTheme':
-					var _p55 = _p19._0;
+					var _p62 = _p21._0;
 					return A2(
 						_elm_lang$core$Platform_Cmd_ops['!'],
 						_elm_lang$core$Native_Utils.update(
 							model,
-							{theme: _p55}),
+							{theme: _p62}),
 						{
 							ctor: '::',
 							_0: _Gizra$circuit_bid$Ports$saveTheme(
-								_Gizra$circuit_bid$App_Model$themeToString(_p55)),
+								_Gizra$circuit_bid$App_Model$themeToString(_p62)),
 							_1: {ctor: '[]'}
 						});
 				default:
@@ -70044,8 +71973,8 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 	function (user, model, sale) {
 		var getChannel = function (uuid) {
-			var _p56 = model.activePage;
-			switch (_p56.ctor) {
+			var _p63 = model.activePage;
+			switch (_p63.ctor) {
 				case 'SaleAuctioneer':
 					return _Gizra$circuit_bid$Pusher_Model$Privileged(uuid);
 				case 'SaleClerk':
@@ -70078,14 +72007,19 @@ var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 								A2(pusherLoginMsg, config.pusherKey, user));
 						},
 						_krisajenkins$remotedata$RemoteData$toMaybe(model.config)));
-				var _p57 = A2(_Gizra$circuit_bid$App_Update$update, msg, model);
-				var updatedModel = _p57._0;
-				var pusherLoginCmd = _p57._1;
-				return {ctor: '_Tuple2', _0: updatedModel.pusher, _1: pusherLoginCmd};
+				var _p64 = A2(_Gizra$circuit_bid$App_Update$update, msg, model);
+				var updatedModel = _p64._0;
+				var pusherLoginCmd = _p64._1;
+				return {
+					ctor: '_Tuple3',
+					_0: updatedModel.pusher,
+					_1: !_elm_lang$core$Native_Utils.eq(model.pusher.currentChannel, _elm_lang$core$Maybe$Nothing),
+					_2: pusherLoginCmd
+				};
 			});
-		var _p58 = sale;
-		if (_p58.ctor === 'Success') {
-			var channel = getChannel(_p58._0.uuid);
+		var _p65 = sale;
+		if (_p65.ctor === 'Success') {
+			var channel = getChannel(_p65._0.uuid);
 			return (!_elm_lang$core$Native_Utils.eq(
 				model.pusher.currentChannel,
 				_elm_lang$core$Maybe$Just(
@@ -70093,26 +72027,20 @@ var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 						ctor: '_Tuple2',
 						_0: channel,
 						_1: _Gizra$circuit_bid$User_Utils$isAuthenticated(user)
-					}))) ? A2(pusherLogin_, model, channel) : A2(
-				_elm_lang$core$Platform_Cmd_ops['!'],
-				model.pusher,
-				{ctor: '[]'});
+					}))) ? A2(pusherLogin_, model, channel) : {ctor: '_Tuple3', _0: model.pusher, _1: false, _2: _elm_lang$core$Platform_Cmd$none};
 		} else {
-			return A2(
-				_elm_lang$core$Platform_Cmd_ops['!'],
-				model.pusher,
-				{ctor: '[]'});
+			return {ctor: '_Tuple3', _0: model.pusher, _1: false, _2: _elm_lang$core$Platform_Cmd$none};
 		}
 	});
 var _Gizra$circuit_bid$App_Update$init = function (flags) {
 	var configCmd = function () {
-		var _p59 = _Gizra$circuit_bid$Config_Fetch$jbullBypass(flags.hostname);
-		if (_p59.ctor === 'Just') {
+		var _p66 = _Gizra$circuit_bid$Config_Fetch$jbullBypass(flags.hostname);
+		if (_p66.ctor === 'Just') {
 			return A2(
 				_elm_lang$core$Task$perform,
 				_Gizra$circuit_bid$App_Model$HandleFetchConfig,
 				_elm_lang$core$Task$succeed(
-					_krisajenkins$remotedata$RemoteData$Success(_p59._0)));
+					_krisajenkins$remotedata$RemoteData$Success(_p66._0)));
 		} else {
 			return A2(
 				_Gizra$circuit_bid$Config_Fetch$fetchConfig,
@@ -70137,15 +72065,15 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 			var queryParams = A3(
 				_elm_lang$core$List$foldl,
 				F2(
-					function (_p60, accum) {
-						var _p61 = _p60;
-						var _p62 = _p61._0;
-						return (_elm_lang$core$Native_Utils.eq(_p62, 'redirect') || _elm_lang$core$Native_Utils.eq(_p62, 'origin')) ? accum : {
+					function (_p67, accum) {
+						var _p68 = _p67;
+						var _p69 = _p68._0;
+						return (_elm_lang$core$Native_Utils.eq(_p69, 'redirect') || _elm_lang$core$Native_Utils.eq(_p69, 'origin')) ? accum : {
 							ctor: '::',
 							_0: A2(
 								_elm_lang$core$Basics_ops['++'],
-								_p62,
-								A2(_elm_lang$core$Basics_ops['++'], '=', _p61._1)),
+								_p69,
+								A2(_elm_lang$core$Basics_ops['++'], '=', _p68._1)),
 							_1: accum
 						};
 					}),
@@ -70197,6 +72125,267 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 	};
 };
 
+var _Gizra$circuit_bid$Pusher_Health_View$hiddenText = function (model) {
+	var _p0 = model.lastHiddenMs;
+	if (_p0.ctor === 'Just') {
+		var _p1 = _p0._0;
+		return (_elm_lang$core$Native_Utils.cmp(_p1, 60000) > -1) ? A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(
+				_elm_lang$core$Basics$round(_p1 / 60000)),
+			' min') : A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$core$Basics$toString(
+				_elm_lang$core$Basics$round(_p1 / 1000)),
+			' s');
+	} else {
+		return 'a while';
+	}
+};
+var _Gizra$circuit_bid$Pusher_Health_View$bidderNotice = F2(
+	function (language, model) {
+		var resyncing = (!_elm_lang$core$Native_Utils.eq(model.resync, _elm_lang$core$Maybe$Nothing)) || (!_elm_lang$core$Native_Utils.eq(model.staleSince, _elm_lang$core$Maybe$Nothing));
+		var state = _Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(model);
+		var slow = _elm_lang$core$Native_Utils.eq(
+			_Gizra$circuit_bid$Pusher_Health_Model$level(model),
+			_Gizra$circuit_bid$Pusher_Health_Model$Red) && (!_elm_lang$core$Native_Utils.eq(state, _Gizra$circuit_bid$Pusher_Health_Model$Stale));
+		var _p2 = state;
+		if (_p2.ctor === 'Stale') {
+			var message = (model.everConnected && (!_elm_lang$core$Native_Utils.eq(model.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected))) ? _Gizra$circuit_bid$Translate$LiveFeedReconnecting : (resyncing ? _Gizra$circuit_bid$Translate$LiveFeedCatchingUp : _Gizra$circuit_bid$Translate$LiveFeedReconnecting);
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('health-notice bad bidder-notice'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$title(
+							A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$BiddingResumesShortly)),
+						_1: {ctor: '[]'}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-exclamation-triangle'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('hn-text'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(_Gizra$circuit_bid$Translate$translateText, language, message),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(' '),
+									_1: {
+										ctor: '::',
+										_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$BiddingResumesShortly),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					}
+				});
+		} else {
+			return slow ? A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('health-notice warn bidder-notice'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-exclamation-triangle'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('hn-text'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LiveFeedSlow),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}) : (_Gizra$circuit_bid$Pusher_Health_Model$resumeNoticeActive(model) ? A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('health-notice ok bidder-notice'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-check'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('hn-text'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LiveFeedUpToDate),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}) : _Gizra$elm_essentials$Gizra_Html$emptyNode);
+		}
+	});
+var _Gizra$circuit_bid$Pusher_Health_View$liveFeedIndicator = F4(
+	function (language, offline, state, model) {
+		var _p3 = function () {
+			if (offline) {
+				return {ctor: '_Tuple2', _0: true, _1: _Gizra$circuit_bid$Translate$NotConnected};
+			} else {
+				var _p4 = state;
+				if (_p4.ctor === 'Stale') {
+					return {ctor: '_Tuple2', _0: true, _1: _Gizra$circuit_bid$Translate$LiveFeedReconnecting};
+				} else {
+					return {ctor: '_Tuple2', _0: false, _1: _Gizra$circuit_bid$Translate$NotConnected};
+				}
+			}
+		}();
+		var down = _p3._0;
+		var label = _p3._1;
+		var degraded = (!down) && _elm_lang$core$Native_Utils.eq(state, _Gizra$circuit_bid$Pusher_Health_Model$Degraded);
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$classList(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'connection-status', _1: true},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'disconnected', _1: down},
+							_1: {
+								ctor: '::',
+								_0: {ctor: '_Tuple2', _0: 'degraded', _1: degraded},
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$title(
+						degraded ? A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$LiveFeedSlowTitle) : ''),
+					_1: {ctor: '[]'}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$span,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('connected'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$classList(
+								{
+									ctor: '::',
+									_0: {ctor: '_Tuple2', _0: 'hidden', _1: !down},
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$i,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('fa fa-exclamation-triangle'),
+								_1: {ctor: '[]'}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(' '),
+							_1: {
+								ctor: '::',
+								_0: A2(_Gizra$circuit_bid$Translate$translateText, language, label),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-wifi'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$classList(
+									{
+										ctor: '::',
+										_0: {ctor: '_Tuple2', _0: 'disabled', _1: down},
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_Gizra$elm_essentials$Gizra_Html$showIf,
+							degraded,
+							A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('lf-dot'),
+									_1: {ctor: '[]'}
+								},
+								{ctor: '[]'})),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	});
 var _Gizra$circuit_bid$Pusher_Health_View$shortChannel = function (name) {
 	return A2(_elm_lang$core$String$startsWith, 'private-sale-', name) ? 'private-sale' : (A2(_elm_lang$core$String$startsWith, 'private-user-', name) ? 'private-user' : (A2(_elm_lang$core$String$startsWith, 'sale-', name) ? 'sale' : name));
 };
@@ -70223,8 +72412,8 @@ var _Gizra$circuit_bid$Pusher_Health_View$lagText = function (model) {
 	return _elm_lang$core$Native_Utils.eq(model.lagMs, _elm_lang$core$Maybe$Nothing) ? '—' : ((!_Gizra$circuit_bid$Pusher_Health_Model$isCalibrated(model)) ? 'cal…' : _Gizra$circuit_bid$Pusher_Health_View$ms(model.lagMs));
 };
 var _Gizra$circuit_bid$Pusher_Health_View$connectionLabel = function (state) {
-	var _p0 = state;
-	switch (_p0.ctor) {
+	var _p5 = state;
+	switch (_p5.ctor) {
 		case 'Initialized':
 			return 'not connected yet';
 		case 'Connecting':
@@ -70241,21 +72430,21 @@ var _Gizra$circuit_bid$Pusher_Health_View$connectionLabel = function (state) {
 };
 var _Gizra$circuit_bid$Pusher_Health_View$summary = function (model) {
 	var resyncing = function () {
-		var _p1 = model.resync;
-		if (_p1.ctor === 'Just') {
-			var _p2 = _p1._0;
+		var _p6 = model.resync;
+		if (_p6.ctor === 'Just') {
+			var _p7 = _p6._0;
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				' — ',
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(_p2.level),
+					_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(_p7.level),
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						' resync (',
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p2.reason),
+							_Gizra$circuit_bid$Pusher_Health_Model$reasonToString(_p7.reason),
 							')'))));
 		} else {
 			return '';
@@ -70274,10 +72463,10 @@ var _Gizra$circuit_bid$Pusher_Health_View$summary = function (model) {
 				_Gizra$circuit_bid$Pusher_Health_View$connectionLabel(model.connection),
 				resyncing))) : (A2(
 		_elm_lang$core$List$any,
-		function (_p3) {
+		function (_p8) {
 			return !function (_) {
 				return _.subscribed;
-			}(_p3);
+			}(_p8);
 		},
 		_elm_lang$core$Dict$values(model.channels)) ? _elm_lang$core$Maybe$Just(
 		A2(_elm_lang$core$Basics_ops['++'], 'A live feed channel failed to subscribe', resyncing)) : ((_elm_lang$core$Native_Utils.eq(
@@ -70373,17 +72562,17 @@ var _Gizra$circuit_bid$Pusher_Health_View$panel = function (model) {
 				' · reconnects ',
 				_elm_lang$core$Basics$toString(model.reconnects))));
 	var lastResync = function () {
-		var _p4 = model.lastResync;
-		if (_p4.ctor === 'Just') {
+		var _p9 = model.lastResync;
+		if (_p9.ctor === 'Just') {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
-				_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(_p4._0._1),
+				_Gizra$circuit_bid$Pusher_Health_Model$resyncLevelToString(_p9._0._1),
 				function () {
-					var _p5 = _p4._0._2;
-					if (_p5.ctor === 'Ok') {
+					var _p10 = _p9._0._2;
+					if (_p10.ctor === 'Ok') {
 						return ' · ok';
 					} else {
-						return A2(_elm_lang$core$Basics_ops['++'], ' · ', _p5._0);
+						return A2(_elm_lang$core$Basics_ops['++'], ' · ', _p10._0);
 					}
 				}());
 		} else {
@@ -70391,16 +72580,16 @@ var _Gizra$circuit_bid$Pusher_Health_View$panel = function (model) {
 		}
 	}();
 	var lastEvent = function () {
-		var _p6 = {
+		var _p11 = {
 			ctor: '_Tuple2',
 			_0: _Gizra$circuit_bid$Pusher_Health_Model$secondsSinceLastEvent(model),
 			_1: model.lastEventType
 		};
-		if (((_p6.ctor === '_Tuple2') && (_p6._0.ctor === 'Just')) && (_p6._1.ctor === 'Just')) {
+		if (((_p11.ctor === '_Tuple2') && (_p11._0.ctor === 'Just')) && (_p11._1.ctor === 'Just')) {
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(_p6._0._0),
-				A2(_elm_lang$core$Basics_ops['++'], ' s ago · ', _p6._1._0));
+				_elm_lang$core$Basics$toString(_p11._0._0),
+				A2(_elm_lang$core$Basics_ops['++'], ' s ago · ', _p11._1._0));
 		} else {
 			return '—';
 		}
@@ -70410,16 +72599,16 @@ var _Gizra$circuit_bid$Pusher_Health_View$panel = function (model) {
 		'   ',
 		A2(
 			_elm_lang$core$List$map,
-			function (_p7) {
-				var _p8 = _p7;
-				var _p9 = _p8._1;
+			function (_p12) {
+				var _p13 = _p12;
+				var _p14 = _p13._1;
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
-					_Gizra$circuit_bid$Pusher_Health_View$shortChannel(_p8._0),
-					_p9.subscribed ? ' ✓' : A2(
+					_Gizra$circuit_bid$Pusher_Health_View$shortChannel(_p13._0),
+					_p14.subscribed ? ' ✓' : A2(
 						_elm_lang$core$Basics_ops['++'],
 						' ✗ ',
-						A2(_elm_lang$core$Maybe$withDefault, '', _p9.lastError)));
+						A2(_elm_lang$core$Maybe$withDefault, '', _p14.lastError)));
 			},
 			_elm_lang$core$Dict$toList(model.channels)));
 	var row = F2(
@@ -70621,8 +72810,8 @@ var _Gizra$circuit_bid$Pusher_Health_View$panel = function (model) {
 		});
 };
 var _Gizra$circuit_bid$Pusher_Health_View$levelClass = function (level_) {
-	var _p10 = level_;
-	switch (_p10.ctor) {
+	var _p15 = level_;
+	switch (_p15.ctor) {
 		case 'Green':
 			return 'ok';
 		case 'Yellow':
@@ -70721,12 +72910,12 @@ var _Gizra$circuit_bid$Pusher_Health_View$pill = function (model) {
 							_1: {
 								ctor: '::',
 								_0: function () {
-									var _p11 = age;
-									if (_p11.ctor === 'Just') {
-										var _p12 = _p11._0;
+									var _p16 = age;
+									if (_p16.ctor === 'Just') {
+										var _p17 = _p16._0;
 										return A2(
 											_Gizra$elm_essentials$Gizra_Html$showIf,
-											(_elm_lang$core$Native_Utils.cmp(_p12, 5) > 0) && (!_elm_lang$core$Native_Utils.eq(level_, _Gizra$circuit_bid$Pusher_Health_Model$Green)),
+											(_elm_lang$core$Native_Utils.cmp(_p17, 5) > 0) && (!_elm_lang$core$Native_Utils.eq(level_, _Gizra$circuit_bid$Pusher_Health_Model$Green)),
 											A2(
 												_elm_lang$html$Html$span,
 												{
@@ -70739,7 +72928,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$pill = function (model) {
 													_0: _elm_lang$html$Html$text(
 														A2(
 															_elm_lang$core$Basics_ops['++'],
-															_elm_lang$core$Basics$toString(_p12),
+															_elm_lang$core$Basics$toString(_p17),
 															' s')),
 													_1: {ctor: '[]'}
 												}));
@@ -70799,19 +72988,59 @@ var _Gizra$circuit_bid$Pusher_Health_View$pill = function (model) {
 		});
 };
 var _Gizra$circuit_bid$Pusher_Health_View$notice = function (model) {
-	var _p13 = {
+	var _p18 = {
 		ctor: '_Tuple2',
 		_0: _Gizra$circuit_bid$Pusher_Health_Model$level(model),
 		_1: _Gizra$circuit_bid$Pusher_Health_View$summary(model)
 	};
-	_v8_2:
+	_v11_2:
 	do {
-		if (_p13.ctor === '_Tuple2') {
-			if (_p13._0.ctor === 'Green') {
-				return _Gizra$elm_essentials$Gizra_Html$emptyNode;
+		if (_p18.ctor === '_Tuple2') {
+			if (_p18._0.ctor === 'Green') {
+				return _Gizra$circuit_bid$Pusher_Health_Model$resumeNoticeActive(model) ? A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('health-notice ok'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$i,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('fa fa-check'),
+								_1: {ctor: '[]'}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('hn-text'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'Back after ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												_Gizra$circuit_bid$Pusher_Health_View$hiddenText(model),
+												' in the background — resynced'))),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}) : _Gizra$elm_essentials$Gizra_Html$emptyNode;
 			} else {
-				if (_p13._1.ctor === 'Just') {
-					var _p14 = _p13._1._0;
+				if (_p18._1.ctor === 'Just') {
+					var _p19 = _p18._1._0;
 					return A2(
 						_elm_lang$html$Html$div,
 						{
@@ -70820,10 +73049,10 @@ var _Gizra$circuit_bid$Pusher_Health_View$notice = function (model) {
 								A2(
 									_elm_lang$core$Basics_ops['++'],
 									'health-notice ',
-									_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p13._0))),
+									_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p18._0))),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$title(_p14),
+								_0: _elm_lang$html$Html_Attributes$title(_p19),
 								_1: {ctor: '[]'}
 							}
 						},
@@ -70848,7 +73077,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$notice = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(_p14),
+										_0: _elm_lang$html$Html$text(_p19),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -70879,21 +73108,21 @@ var _Gizra$circuit_bid$Pusher_Health_View$notice = function (model) {
 							}
 						});
 				} else {
-					break _v8_2;
+					break _v11_2;
 				}
 			}
 		} else {
-			break _v8_2;
+			break _v11_2;
 		}
 	} while(false);
 	return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 };
 var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
-	var _p15 = _Gizra$circuit_bid$Pusher_Health_Model$level(model);
-	if (_p15.ctor === 'Green') {
+	var _p20 = _Gizra$circuit_bid$Pusher_Health_Model$level(model);
+	if (_p20.ctor === 'Green') {
 		return _Gizra$elm_essentials$Gizra_Html$emptyNode;
 	} else {
-		var _p16 = _p15;
+		var _p21 = _p20;
 		var redForLong = A2(
 			_elm_lang$core$Maybe$withDefault,
 			false,
@@ -70911,7 +73140,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						'room-health ',
-						_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p16))),
+						_Gizra$circuit_bid$Pusher_Health_View$levelClass(_p21))),
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html_Attributes$title(
@@ -70936,7 +73165,7 @@ var _Gizra$circuit_bid$Pusher_Health_View$roomDot = function (model) {
 					ctor: '::',
 					_0: A2(
 						_Gizra$elm_essentials$Gizra_Html$showIf,
-						_elm_lang$core$Native_Utils.eq(_p16, _Gizra$circuit_bid$Pusher_Health_Model$Red) && redForLong,
+						_elm_lang$core$Native_Utils.eq(_p21, _Gizra$circuit_bid$Pusher_Health_Model$Red) && redForLong,
 						A2(
 							_elm_lang$html$Html$span,
 							{
@@ -71340,7 +73569,60 @@ var _Gizra$circuit_bid$E2E_Probe$encodeHealth = function (health) {
 																					_0: 'unhealthySince',
 																					_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.unhealthySince)
 																				},
-																				_1: {ctor: '[]'}
+																				_1: {
+																					ctor: '::',
+																					_0: {
+																						ctor: '_Tuple2',
+																						_0: 'capturedClasses',
+																						_1: _elm_lang$core$Json_Encode$list(
+																							A2(
+																								_elm_lang$core$List$map,
+																								_elm_lang$core$Json_Encode$string,
+																								_elm_lang$core$Dict$keys(health.reportedAt)))
+																					},
+																					_1: {
+																						ctor: '::',
+																						_0: {
+																							ctor: '_Tuple2',
+																							_0: 'bridgeRestarts',
+																							_1: _elm_lang$core$Json_Encode$int(health.bridgeRestarts)
+																						},
+																						_1: {
+																							ctor: '::',
+																							_0: {
+																								ctor: '_Tuple2',
+																								_0: 'lagOutliers',
+																								_1: _elm_lang$core$Json_Encode$int(health.lagOutliers)
+																							},
+																							_1: {
+																								ctor: '::',
+																								_0: {
+																									ctor: '_Tuple2',
+																									_0: 'resumes',
+																									_1: _elm_lang$core$Json_Encode$int(health.resumes)
+																								},
+																								_1: {
+																									ctor: '::',
+																									_0: {
+																										ctor: '_Tuple2',
+																										_0: 'lastHiddenMs',
+																										_1: A2(_Gizra$circuit_bid$E2E_Probe$maybeEncode, _elm_lang$core$Json_Encode$float, health.lastHiddenMs)
+																									},
+																									_1: {
+																										ctor: '::',
+																										_0: {
+																											ctor: '_Tuple2',
+																											_0: 'suspended',
+																											_1: _elm_lang$core$Json_Encode$bool(
+																												_Gizra$circuit_bid$Pusher_Health_Model$isSuspended(health))
+																										},
+																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
 																			}
 																		}
 																	}
@@ -78640,8 +80922,13 @@ var _Gizra$circuit_bid$Pages_Clerk_View$viewReloadClientsButton = function (lang
 			_0: _elm_lang$html$Html_Attributes$class('btn reload-clients-btn'),
 			_1: {
 				ctor: '::',
-				_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$ShowReloadClientsConfirm),
-				_1: {ctor: '[]'}
+				_0: _elm_lang$html$Html_Attributes$title(
+					A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$ReloadClientsTooltip)),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Clerk_Model$ShowReloadClientsConfirm),
+					_1: {ctor: '[]'}
+				}
 			}
 		},
 		{
@@ -94305,70 +96592,446 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 			return function (language) {
 				return function (user) {
 					return function (modelBackend) {
-						return function (model) {
-							return function (_p62) {
-								return function (_p61) {
-									return function (calculated) {
-										var _p63 = _p62;
-										var _p75 = _p63._0;
-										var _p74 = _p63._1;
-										var _p64 = _p61;
-										var _p73 = _p64._0;
-										var _p72 = _p64._1;
-										var popup = function () {
-											var _p65 = model.alert;
-											if (_p65.ctor === 'Just') {
-												var _p67 = _p65._0._1;
-												var displayedAlert = function () {
-													var _p66 = _p67;
-													if (_p66.ctor === 'BidRejectedBidderMaxLimit') {
-														return config.siteConfig.noPersonalLimit ? _Gizra$circuit_bid$Alert$BidRejected(_p66._0) : _p67;
+						return function (liveFeed) {
+							return function (model) {
+								return function (_p62) {
+									return function (_p61) {
+										return function (calculated) {
+											var _p63 = _p62;
+											var _p75 = _p63._0;
+											var _p74 = _p63._1;
+											var _p64 = _p61;
+											var _p73 = _p64._0;
+											var _p72 = _p64._1;
+											var popup = function () {
+												var _p65 = model.alert;
+												if (_p65.ctor === 'Just') {
+													var _p67 = _p65._0._1;
+													var displayedAlert = function () {
+														var _p66 = _p67;
+														if (_p66.ctor === 'BidRejectedBidderMaxLimit') {
+															return config.siteConfig.noPersonalLimit ? _Gizra$circuit_bid$Alert$BidRejected(_p66._0) : _p67;
+														} else {
+															return _p67;
+														}
+													}();
+													return A3(_Gizra$circuit_bid$Alert$viewAlert, language, _p74.currency, displayedAlert);
+												} else {
+													return _Gizra$circuit_bid$Utils_Html$emptyNode;
+												}
+											}();
+											var displayCurrency = A2(_elm_lang$core$Maybe$withDefault, _p74.currency, model.selectedCurrency);
+											var mainButton = function () {
+												var itemStatus = model.asyncGoingItemStatus ? _Gizra$circuit_bid$Item_Model$EditableStatus(
+													_Gizra$circuit_bid$Item_Model$LiveOnly(
+														_Gizra$elm_editable_webdata$Editable_WebData$create(_Gizra$circuit_bid$Item_Model$Going))) : calculated.status;
+												var messageBlock = function (message) {
+													return A2(
+														_elm_lang$html$Html$div,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('place-bids'),
+															_1: {
+																ctor: '::',
+																_0: _Gizra$circuit_bid$Pages_Sale_View$statusClasses(itemStatus),
+																_1: {ctor: '[]'}
+															}
+														},
+														{
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$button,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$type_('button'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('bid-place bid-place-message message-block disabled'),
+																		_1: {ctor: '[]'}
+																	}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$span,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('fx-aurora'),
+																			_1: {ctor: '[]'}
+																		},
+																		{ctor: '[]'}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$span,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('bp-message'),
+																				_1: {ctor: '[]'}
+																			},
+																			message),
+																		_1: {ctor: '[]'}
+																	}
+																}),
+															_1: {ctor: '[]'}
+														});
+												};
+												var activeUserButton = function () {
+													var isWinner = A4(_Gizra$circuit_bid$Item_Utils$isWinningUser, user, modelBackend, _p75, calculated);
+													if (_Gizra$circuit_bid$Item_Utils$isSold(itemStatus)) {
+														var lablelTransId = isWinner ? _Gizra$circuit_bid$Translate$YouWon : _Gizra$circuit_bid$Translate$SoldFor;
+														var highestBidAmount = A2(
+															_elm_lang$core$Maybe$withDefault,
+															calculated.openingPrice,
+															A2(
+																_elm_lang$core$Maybe$map,
+																function (_) {
+																	return _.amount;
+																},
+																_Gizra$circuit_bid$Bid_Utils$getHighestLiveBid(calculated)));
+														var amountInSelectedCurrency = _elm_lang$core$Native_Utils.eq(displayCurrency, _p74.currency) ? '' : A3(_Gizra$circuit_bid$Pages_Sale_Utils$showAmountInCurrency, _p74, displayCurrency, highestBidAmount);
+														return messageBlock(
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$div,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('message'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_Gizra$circuit_bid$Translate$translateText,
+																			language,
+																			A2(lablelTransId, highestBidAmount, _p74.currency)),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_Gizra$circuit_bid$Utils_Html$showIf,
+																		!_elm_lang$core$String$isEmpty(amountInSelectedCurrency),
+																		A2(
+																			_elm_lang$html$Html$div,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('other-currencies'),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text(amountInSelectedCurrency),
+																				_1: {ctor: '[]'}
+																			})),
+																	_1: {ctor: '[]'}
+																}
+															});
 													} else {
-														return _p67;
+														if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(itemStatus)) {
+															return messageBlock(
+																{
+																	ctor: '::',
+																	_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotWithdrawnFromSale),
+																	_1: {ctor: '[]'}
+																});
+														} else {
+															if (_Gizra$circuit_bid$Item_Utils$isUnsold(itemStatus)) {
+																return messageBlock(
+																	{
+																		ctor: '::',
+																		_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Unsold),
+																		_1: {ctor: '[]'}
+																	});
+															} else {
+																if (_Gizra$circuit_bid$Item_Utils$isPaused(itemStatus)) {
+																	return messageBlock(
+																		{
+																			ctor: '::',
+																			_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Standby),
+																			_1: {ctor: '[]'}
+																		});
+																} else {
+																	if (isWinner) {
+																		var maxBidLine = function () {
+																			var _p68 = A4(_Gizra$circuit_bid$Bid_Utils$getOwnWinningMailBid, user, modelBackend, _p75, calculated);
+																			if (_p68.ctor === 'Just') {
+																				var _p69 = _p68._0;
+																				var converted = _elm_lang$core$Native_Utils.eq(displayCurrency, _p74.currency) ? '' : A3(_Gizra$circuit_bid$Pages_Sale_Utils$showAmountInCurrency, _p74, displayCurrency, _p69.amount);
+																				return A2(
+																					_elm_lang$html$Html$div,
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html_Attributes$class('your-max-bid'),
+																						_1: {ctor: '[]'}
+																					},
+																					{
+																						ctor: '::',
+																						_0: A2(
+																							_Gizra$circuit_bid$Translate$translateText,
+																							language,
+																							A2(_Gizra$circuit_bid$Translate$YourMaxBid, _p69.amount, _p74.currency)),
+																						_1: {
+																							ctor: '::',
+																							_0: A2(
+																								_Gizra$circuit_bid$Utils_Html$showIf,
+																								!_elm_lang$core$String$isEmpty(converted),
+																								A2(
+																									_elm_lang$html$Html$span,
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Attributes$class('other-currencies'),
+																										_1: {ctor: '[]'}
+																									},
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html$text(
+																											A2(
+																												_elm_lang$core$Basics_ops['++'],
+																												' (',
+																												A2(_elm_lang$core$Basics_ops['++'], converted, ')'))),
+																										_1: {ctor: '[]'}
+																									})),
+																							_1: {ctor: '[]'}
+																						}
+																					});
+																			} else {
+																				return _Gizra$circuit_bid$Utils_Html$emptyNode;
+																			}
+																		}();
+																		return A2(
+																			_elm_lang$html$Html$div,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('place-bids'),
+																				_1: {
+																					ctor: '::',
+																					_0: _Gizra$circuit_bid$Pages_Sale_View$statusClasses(itemStatus),
+																					_1: {ctor: '[]'}
+																				}
+																			},
+																			{
+																				ctor: '::',
+																				_0: maxBidLine,
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$button,
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html_Attributes$type_('button'),
+																							_1: {
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$class('bid-place bid-place-message message-block disabled is-pressed'),
+																								_1: {ctor: '[]'}
+																							}
+																						},
+																						{
+																							ctor: '::',
+																							_0: A2(
+																								_elm_lang$html$Html$span,
+																								{
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Attributes$class('fx-aurora'),
+																									_1: {ctor: '[]'}
+																								},
+																								{ctor: '[]'}),
+																							_1: {
+																								ctor: '::',
+																								_0: A2(
+																									_elm_lang$html$Html$span,
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Attributes$class('bp-message'),
+																										_1: {ctor: '[]'}
+																									},
+																									{
+																										ctor: '::',
+																										_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$YouAreTheHighestBidder),
+																										_1: {ctor: '[]'}
+																									}),
+																								_1: {ctor: '[]'}
+																							}
+																						}),
+																					_1: {ctor: '[]'}
+																				}
+																			});
+																	} else {
+																		if (A4(_Gizra$circuit_bid$Bid_Utils$hasOwnCutBid, user, modelBackend, _p75, calculated.bids)) {
+																			return messageBlock(
+																				{
+																					ctor: '::',
+																					_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$CutBidUsed),
+																					_1: {ctor: '[]'}
+																				});
+																		} else {
+																			if (_elm_lang$core$Native_Utils.eq(liveFeed, _Gizra$circuit_bid$Pusher_Health_Model$Stale)) {
+																				return A2(
+																					_elm_lang$html$Html$div,
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html_Attributes$class('place-bids feed-stale'),
+																						_1: {
+																							ctor: '::',
+																							_0: _Gizra$circuit_bid$Pages_Sale_View$statusClasses(itemStatus),
+																							_1: {ctor: '[]'}
+																						}
+																					},
+																					{
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$button,
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$type_('button'),
+																								_1: {
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Attributes$class('bid-place bid-place-message message-block disabled'),
+																									_1: {ctor: '[]'}
+																								}
+																							},
+																							{
+																								ctor: '::',
+																								_0: A2(
+																									_elm_lang$html$Html$span,
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Attributes$class('fx-aurora'),
+																										_1: {ctor: '[]'}
+																									},
+																									{ctor: '[]'}),
+																								_1: {
+																									ctor: '::',
+																									_0: A2(
+																										_elm_lang$html$Html$span,
+																										{
+																											ctor: '::',
+																											_0: _elm_lang$html$Html_Attributes$class('bp-message'),
+																											_1: {ctor: '[]'}
+																										},
+																										{
+																											ctor: '::',
+																											_0: A2(
+																												_elm_lang$html$Html$i,
+																												{
+																													ctor: '::',
+																													_0: _elm_lang$html$Html_Attributes$class('fa fa-refresh fa-spin'),
+																													_1: {ctor: '[]'}
+																												},
+																												{ctor: '[]'}),
+																											_1: {
+																												ctor: '::',
+																												_0: _elm_lang$html$Html$text(' '),
+																												_1: {
+																													ctor: '::',
+																													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$BiddingPausedLiveFeed),
+																													_1: {ctor: '[]'}
+																												}
+																											}
+																										}),
+																									_1: {ctor: '[]'}
+																								}
+																							}),
+																						_1: {ctor: '[]'}
+																					});
+																			} else {
+																				var cutBidNode = function () {
+																					var _p70 = A2(_Gizra$circuit_bid$Pages_Sale_Utils$getPriceForBidder, calculated, model);
+																					if (_p70.ctor === 'Current') {
+																						var _p71 = _p70._0;
+																						if (!config.siteConfig.cutBidEnabled) {
+																							return _Gizra$circuit_bid$Utils_Html$emptyNode;
+																						} else {
+																							if (_Gizra$circuit_bid$Bid_Utils$winningBidIsCut(calculated)) {
+																								return _Gizra$circuit_bid$Pages_Sale_View$cutBidTakenButton(language);
+																							} else {
+																								var cutAmount = A2(_Gizra$circuit_bid$BidStep_Utils$getCutBidAmount, calculated.bidSteps, _p71);
+																								var eligible = (_elm_lang$core$Native_Utils.cmp(
+																									_Gizra$circuit_bid$Amount$extract(_p71),
+																									config.siteConfig.cutBidThreshold) > -1) && A3(
+																									_Gizra$circuit_bid$Amount$compareInfix,
+																									cutAmount,
+																									F2(
+																										function (x, y) {
+																											return _elm_lang$core$Native_Utils.cmp(x, y) > 0;
+																										}),
+																									_p71);
+																								return A2(
+																									_Gizra$circuit_bid$Utils_Html$showIf,
+																									eligible,
+																									A6(
+																										_Gizra$circuit_bid$Pages_Sale_View$cutBidButton,
+																										language,
+																										_p74,
+																										displayCurrency,
+																										cutAmount,
+																										_Gizra$circuit_bid$Bid_Utils$bidBeingPlaced(model.queuedRequestState),
+																										_p73));
+																							}
+																						}
+																					} else {
+																						return _Gizra$circuit_bid$Utils_Html$emptyNode;
+																					}
+																				}();
+																				var isBidAmountMinimum = _elm_community$maybe_extra$Maybe_Extra$isNothing(model.clerkHighestQueuedBidData.bid) && _elm_lang$core$List$isEmpty(model.nextBidIncrements);
+																				var nextAmount = A2(_Gizra$circuit_bid$Pages_Sale_Utils$nextBidAmountForBidder, calculated, model);
+																				var bidAmount = A2(
+																					_Gizra$circuit_bid$Amount$add,
+																					A3(_elm_lang$core$List$foldr, _Gizra$circuit_bid$Amount$add, _Gizra$circuit_bid$Amount$zero, model.nextBidIncrements),
+																					nextAmount);
+																				var nextBidIncrement = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculated.bidSteps, bidAmount);
+																				return _Gizra$circuit_bid$Pages_Sale_View$bidButton(language)(_p74)(displayCurrency)(bidAmount)(isBidAmountMinimum)(nextBidIncrement)(
+																					_Gizra$circuit_bid$Bid_Utils$bidBeingPlaced(model.queuedRequestState))(itemStatus)(_p73)(cutBidNode);
+																			}
+																		}
+																	}
+																}
+															}
+														}
 													}
 												}();
-												return A3(_Gizra$circuit_bid$Alert$viewAlert, language, _p74.currency, displayedAlert);
-											} else {
-												return _Gizra$circuit_bid$Utils_Html$emptyNode;
-											}
-										}();
-										var displayCurrency = A2(_elm_lang$core$Maybe$withDefault, _p74.currency, model.selectedCurrency);
-										var mainButton = function () {
-											var itemStatus = model.asyncGoingItemStatus ? _Gizra$circuit_bid$Item_Model$EditableStatus(
-												_Gizra$circuit_bid$Item_Model$LiveOnly(
-													_Gizra$elm_editable_webdata$Editable_WebData$create(_Gizra$circuit_bid$Item_Model$Going))) : calculated.status;
-											var messageBlock = function (message) {
-												return A2(
+												return _Gizra$circuit_bid$User_Utils$isAuthenticated(user) ? (_Gizra$circuit_bid$User_Utils$isActive(user) ? (_elm_lang$core$Native_Utils.eq(_p74.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen) ? activeUserButton : _Gizra$circuit_bid$Utils_Html$emptyNode) : messageBlock(
+													{
+														ctor: '::',
+														_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$AccountPendingApproval),
+														_1: {ctor: '[]'}
+													})) : A2(
 													_elm_lang$html$Html$div,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('place-bids'),
-														_1: {
-															ctor: '::',
-															_0: _Gizra$circuit_bid$Pages_Sale_View$statusClasses(itemStatus),
-															_1: {ctor: '[]'}
-														}
+														_0: _elm_lang$html$Html_Attributes$classList(
+															{
+																ctor: '::',
+																_0: {ctor: '_Tuple2', _0: 'bidder-login-prompt bidder-login-card', _1: true},
+																_1: {
+																	ctor: '::',
+																	_0: {ctor: '_Tuple2', _0: 'is-open', _1: model.loginFormExpanded},
+																	_1: {ctor: '[]'}
+																}
+															}),
+														_1: {ctor: '[]'}
 													},
 													{
 														ctor: '::',
 														_0: A2(
-															_elm_lang$html$Html$button,
+															_elm_lang$html$Html$div,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$type_('button'),
+																_0: _elm_lang$html$Html_Attributes$class('bidder-login-card-title'),
 																_1: {
 																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('bid-place bid-place-message message-block disabled'),
+																	_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Sale_Model$ToggleLoginForm),
 																	_1: {ctor: '[]'}
 																}
 															},
 															{
 																ctor: '::',
 																_0: A2(
-																	_elm_lang$html$Html$span,
+																	_elm_lang$html$Html$i,
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('fx-aurora'),
+																		_0: _elm_lang$html$Html_Attributes$class('fa fa-lock'),
 																		_1: {ctor: '[]'}
 																	},
 																	{ctor: '[]'}),
@@ -94376,417 +97039,81 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																	ctor: '::',
 																	_0: A2(
 																		_elm_lang$html$Html$span,
+																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('bp-message'),
+																			_0: _elm_lang$html$Html$text('Log in to place a bid'),
 																			_1: {ctor: '[]'}
-																		},
-																		message),
-																	_1: {ctor: '[]'}
+																		}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$i,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-up bidder-login-card-chevron'),
+																				_1: {ctor: '[]'}
+																			},
+																			{ctor: '[]'}),
+																		_1: {ctor: '[]'}
+																	}
 																}
 															}),
-														_1: {ctor: '[]'}
-													});
-											};
-											var activeUserButton = function () {
-												var isWinner = A4(_Gizra$circuit_bid$Item_Utils$isWinningUser, user, modelBackend, _p75, calculated);
-												if (_Gizra$circuit_bid$Item_Utils$isSold(itemStatus)) {
-													var lablelTransId = isWinner ? _Gizra$circuit_bid$Translate$YouWon : _Gizra$circuit_bid$Translate$SoldFor;
-													var highestBidAmount = A2(
-														_elm_lang$core$Maybe$withDefault,
-														calculated.openingPrice,
-														A2(
-															_elm_lang$core$Maybe$map,
-															function (_) {
-																return _.amount;
-															},
-															_Gizra$circuit_bid$Bid_Utils$getHighestLiveBid(calculated)));
-													var amountInSelectedCurrency = _elm_lang$core$Native_Utils.eq(displayCurrency, _p74.currency) ? '' : A3(_Gizra$circuit_bid$Pages_Sale_Utils$showAmountInCurrency, _p74, displayCurrency, highestBidAmount);
-													return messageBlock(
-														{
+														_1: {
 															ctor: '::',
 															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('message'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_Gizra$circuit_bid$Translate$translateText,
-																		language,
-																		A2(lablelTransId, highestBidAmount, _p74.currency)),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_Gizra$circuit_bid$Utils_Html$showIf,
-																	!_elm_lang$core$String$isEmpty(amountInSelectedCurrency),
-																	A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('other-currencies'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text(amountInSelectedCurrency),
-																			_1: {ctor: '[]'}
-																		})),
-																_1: {ctor: '[]'}
-															}
-														});
-												} else {
-													if (_Gizra$circuit_bid$Item_Utils$isWithdrawn(itemStatus)) {
-														return messageBlock(
-															{
-																ctor: '::',
-																_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$LotWithdrawnFromSale),
-																_1: {ctor: '[]'}
-															});
-													} else {
-														if (_Gizra$circuit_bid$Item_Utils$isUnsold(itemStatus)) {
-															return messageBlock(
-																{
-																	ctor: '::',
-																	_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Unsold),
-																	_1: {ctor: '[]'}
-																});
-														} else {
-															if (_Gizra$circuit_bid$Item_Utils$isPaused(itemStatus)) {
-																return messageBlock(
+																_elm_lang$html$Html$map,
+																_Gizra$circuit_bid$Pages_Sale_Model$MsgLogin,
+																A2(
+																	_elm_lang$html$Html$form,
 																	{
 																		ctor: '::',
-																		_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Standby),
-																		_1: {ctor: '[]'}
-																	});
-															} else {
-																if (isWinner) {
-																	var maxBidLine = function () {
-																		var _p68 = A4(_Gizra$circuit_bid$Bid_Utils$getOwnWinningMailBid, user, modelBackend, _p75, calculated);
-																		if (_p68.ctor === 'Just') {
-																			var _p69 = _p68._0;
-																			var converted = _elm_lang$core$Native_Utils.eq(displayCurrency, _p74.currency) ? '' : A3(_Gizra$circuit_bid$Pages_Sale_Utils$showAmountInCurrency, _p74, displayCurrency, _p69.amount);
-																			return A2(
-																				_elm_lang$html$Html$div,
+																		_0: _elm_lang$html$Html_Attributes$class('bidder-login-form'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onSubmit(
+																				_Gizra$circuit_bid$Login_Model$TryLogin(_p74.siteShortName)),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_Gizra$circuit_bid$Utils_Html$showIf,
+																			_krisajenkins$remotedata$RemoteData$isFailure(model.login.status),
+																			A2(
+																				_elm_lang$html$Html$span,
 																				{
 																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class('your-max-bid'),
+																					_0: _elm_lang$html$Html_Attributes$class('login-error'),
 																					_1: {ctor: '[]'}
 																				},
 																				{
 																					ctor: '::',
-																					_0: A2(
-																						_Gizra$circuit_bid$Translate$translateText,
-																						language,
-																						A2(_Gizra$circuit_bid$Translate$YourMaxBid, _p69.amount, _p74.currency)),
-																					_1: {
-																						ctor: '::',
-																						_0: A2(
-																							_Gizra$circuit_bid$Utils_Html$showIf,
-																							!_elm_lang$core$String$isEmpty(converted),
-																							A2(
-																								_elm_lang$html$Html$span,
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Attributes$class('other-currencies'),
-																									_1: {ctor: '[]'}
-																								},
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html$text(
-																										A2(
-																											_elm_lang$core$Basics_ops['++'],
-																											' (',
-																											A2(_elm_lang$core$Basics_ops['++'], converted, ')'))),
-																									_1: {ctor: '[]'}
-																								})),
-																						_1: {ctor: '[]'}
-																					}
-																				});
-																		} else {
-																			return _Gizra$circuit_bid$Utils_Html$emptyNode;
-																		}
-																	}();
-																	return A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('place-bids'),
-																			_1: {
-																				ctor: '::',
-																				_0: _Gizra$circuit_bid$Pages_Sale_View$statusClasses(itemStatus),
-																				_1: {ctor: '[]'}
-																			}
-																		},
-																		{
-																			ctor: '::',
-																			_0: maxBidLine,
-																			_1: {
-																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$button,
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$type_('button'),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class('bid-place bid-place-message message-block disabled is-pressed'),
-																							_1: {ctor: '[]'}
-																						}
-																					},
-																					{
-																						ctor: '::',
-																						_0: A2(
-																							_elm_lang$html$Html$span,
-																							{
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('fx-aurora'),
-																								_1: {ctor: '[]'}
-																							},
-																							{ctor: '[]'}),
-																						_1: {
-																							ctor: '::',
-																							_0: A2(
-																								_elm_lang$html$Html$span,
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Attributes$class('bp-message'),
-																									_1: {ctor: '[]'}
-																								},
-																								{
-																									ctor: '::',
-																									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$YouAreTheHighestBidder),
-																									_1: {ctor: '[]'}
-																								}),
-																							_1: {ctor: '[]'}
-																						}
-																					}),
-																				_1: {ctor: '[]'}
-																			}
-																		});
-																} else {
-																	if (A4(_Gizra$circuit_bid$Bid_Utils$hasOwnCutBid, user, modelBackend, _p75, calculated.bids)) {
-																		return messageBlock(
-																			{
-																				ctor: '::',
-																				_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$CutBidUsed),
-																				_1: {ctor: '[]'}
-																			});
-																	} else {
-																		var cutBidNode = function () {
-																			var _p70 = A2(_Gizra$circuit_bid$Pages_Sale_Utils$getPriceForBidder, calculated, model);
-																			if (_p70.ctor === 'Current') {
-																				var _p71 = _p70._0;
-																				if (!config.siteConfig.cutBidEnabled) {
-																					return _Gizra$circuit_bid$Utils_Html$emptyNode;
-																				} else {
-																					if (_Gizra$circuit_bid$Bid_Utils$winningBidIsCut(calculated)) {
-																						return _Gizra$circuit_bid$Pages_Sale_View$cutBidTakenButton(language);
-																					} else {
-																						var cutAmount = A2(_Gizra$circuit_bid$BidStep_Utils$getCutBidAmount, calculated.bidSteps, _p71);
-																						var eligible = (_elm_lang$core$Native_Utils.cmp(
-																							_Gizra$circuit_bid$Amount$extract(_p71),
-																							config.siteConfig.cutBidThreshold) > -1) && A3(
-																							_Gizra$circuit_bid$Amount$compareInfix,
-																							cutAmount,
-																							F2(
-																								function (x, y) {
-																									return _elm_lang$core$Native_Utils.cmp(x, y) > 0;
-																								}),
-																							_p71);
-																						return A2(
-																							_Gizra$circuit_bid$Utils_Html$showIf,
-																							eligible,
-																							A6(
-																								_Gizra$circuit_bid$Pages_Sale_View$cutBidButton,
-																								language,
-																								_p74,
-																								displayCurrency,
-																								cutAmount,
-																								_Gizra$circuit_bid$Bid_Utils$bidBeingPlaced(model.queuedRequestState),
-																								_p73));
-																					}
-																				}
-																			} else {
-																				return _Gizra$circuit_bid$Utils_Html$emptyNode;
-																			}
-																		}();
-																		var isBidAmountMinimum = _elm_community$maybe_extra$Maybe_Extra$isNothing(model.clerkHighestQueuedBidData.bid) && _elm_lang$core$List$isEmpty(model.nextBidIncrements);
-																		var nextAmount = A2(_Gizra$circuit_bid$Pages_Sale_Utils$nextBidAmountForBidder, calculated, model);
-																		var bidAmount = A2(
-																			_Gizra$circuit_bid$Amount$add,
-																			A3(_elm_lang$core$List$foldr, _Gizra$circuit_bid$Amount$add, _Gizra$circuit_bid$Amount$zero, model.nextBidIncrements),
-																			nextAmount);
-																		var nextBidIncrement = A2(_Gizra$circuit_bid$BidStep_Utils$getBidStepAmount, calculated.bidSteps, bidAmount);
-																		return _Gizra$circuit_bid$Pages_Sale_View$bidButton(language)(_p74)(displayCurrency)(bidAmount)(isBidAmountMinimum)(nextBidIncrement)(
-																			_Gizra$circuit_bid$Bid_Utils$bidBeingPlaced(model.queuedRequestState))(itemStatus)(_p73)(cutBidNode);
-																	}
-																}
-															}
-														}
-													}
-												}
-											}();
-											return _Gizra$circuit_bid$User_Utils$isAuthenticated(user) ? (_Gizra$circuit_bid$User_Utils$isActive(user) ? (_elm_lang$core$Native_Utils.eq(_p74.status, _Gizra$circuit_bid$Sale_Model$LiveAuctionOpen) ? activeUserButton : _Gizra$circuit_bid$Utils_Html$emptyNode) : messageBlock(
-												{
-													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$AccountPendingApproval),
-													_1: {ctor: '[]'}
-												})) : A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$classList(
-														{
-															ctor: '::',
-															_0: {ctor: '_Tuple2', _0: 'bidder-login-prompt bidder-login-card', _1: true},
-															_1: {
-																ctor: '::',
-																_0: {ctor: '_Tuple2', _0: 'is-open', _1: model.loginFormExpanded},
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('bidder-login-card-title'),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html_Events$onClick(_Gizra$circuit_bid$Pages_Sale_Model$ToggleLoginForm),
-																_1: {ctor: '[]'}
-															}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$i,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('fa fa-lock'),
-																	_1: {ctor: '[]'}
-																},
-																{ctor: '[]'}),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$span,
-																	{ctor: '[]'},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Log in to place a bid'),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$i,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-up bidder-login-card-chevron'),
-																			_1: {ctor: '[]'}
-																		},
-																		{ctor: '[]'}),
-																	_1: {ctor: '[]'}
-																}
-															}
-														}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$map,
-															_Gizra$circuit_bid$Pages_Sale_Model$MsgLogin,
-															A2(
-																_elm_lang$html$Html$form,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('bidder-login-form'),
-																	_1: {
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Events$onSubmit(
-																			_Gizra$circuit_bid$Login_Model$TryLogin(_p74.siteShortName)),
-																		_1: {
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$action('javascript:void(0);'),
-																			_1: {ctor: '[]'}
-																		}
-																	}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_Gizra$circuit_bid$Utils_Html$showIf,
-																		_krisajenkins$remotedata$RemoteData$isFailure(model.login.status),
-																		A2(
-																			_elm_lang$html$Html$span,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('login-error'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$UnrecognizedCredentialsMessage),
-																				_1: {ctor: '[]'}
-																			})),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$input,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$type_('email'),
-																				_1: {
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$placeholder(
-																						A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$UsernameEmail)),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$value(model.login.loginForm.name),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetName),
-																							_1: {
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$disabled(
-																									_krisajenkins$remotedata$RemoteData$isLoading(model.login.status)),
-																								_1: {
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Attributes$class('login-input'),
-																									_1: {ctor: '[]'}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			},
-																			{ctor: '[]'}),
+																					_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$UnrecognizedCredentialsMessage),
+																					_1: {ctor: '[]'}
+																				})),
 																		_1: {
 																			ctor: '::',
 																			_0: A2(
 																				_elm_lang$html$Html$input,
 																				{
 																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$type_('password'),
+																					_0: _elm_lang$html$Html_Attributes$type_('email'),
 																					_1: {
 																						ctor: '::',
 																						_0: _elm_lang$html$Html_Attributes$placeholder(
-																							A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
+																							A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$UsernameEmail)),
 																						_1: {
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$value(model.login.loginForm.pass),
+																							_0: _elm_lang$html$Html_Attributes$value(model.login.loginForm.name),
 																							_1: {
 																								ctor: '::',
-																								_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
+																								_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetName),
 																								_1: {
 																									ctor: '::',
 																									_0: _elm_lang$html$Html_Attributes$disabled(
@@ -94805,190 +97132,223 @@ var _Gizra$circuit_bid$Pages_Sale_View$itemView = function (currentDate) {
 																			_1: {
 																				ctor: '::',
 																				_0: A2(
-																					_elm_lang$html$Html$button,
+																					_elm_lang$html$Html$input,
 																					{
 																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('login-btn'),
+																						_0: _elm_lang$html$Html_Attributes$type_('password'),
 																						_1: {
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$disabled(
-																								_krisajenkins$remotedata$RemoteData$isLoading(model.login.status)),
+																							_0: _elm_lang$html$Html_Attributes$placeholder(
+																								A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
 																							_1: {
 																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$classList(
-																									{
+																								_0: _elm_lang$html$Html_Attributes$value(model.login.loginForm.pass),
+																								_1: {
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
+																									_1: {
 																										ctor: '::',
-																										_0: {
-																											ctor: '_Tuple2',
-																											_0: 'loading',
-																											_1: _krisajenkins$remotedata$RemoteData$isLoading(model.login.status)
-																										},
-																										_1: {ctor: '[]'}
-																									}),
-																								_1: {ctor: '[]'}
+																										_0: _elm_lang$html$Html_Attributes$disabled(
+																											_krisajenkins$remotedata$RemoteData$isLoading(model.login.status)),
+																										_1: {
+																											ctor: '::',
+																											_0: _elm_lang$html$Html_Attributes$class('login-input'),
+																											_1: {ctor: '[]'}
+																										}
+																									}
+																								}
 																							}
 																						}
 																					},
-																					{
-																						ctor: '::',
-																						_0: _krisajenkins$remotedata$RemoteData$isLoading(model.login.status) ? A2(
-																							_elm_lang$html$Html$i,
-																							{
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('fa fa-spinner fa-spin'),
-																								_1: {ctor: '[]'}
-																							},
-																							{ctor: '[]'}) : _elm_lang$html$Html$text('Log In'),
-																						_1: {ctor: '[]'}
-																					}),
-																				_1: {ctor: '[]'}
-																			}
-																		}
-																	}
-																})),
-														_1: {ctor: '[]'}
-													}
-												});
-										}();
-										return {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('bidder-card current-item item-view'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: A2(_Gizra$circuit_bid$Pages_Sale_View$itemViewOverlay, language, _p74),
-													_1: {
-														ctor: '::',
-														_0: A2(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeaderTop, language, _p72),
-														_1: {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('bidder-card-body'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('bidder-card-left'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeader, language, _p74.currency, _p72, model),
-																			_1: {
-																				ctor: '::',
-																				_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p74, calculated),
+																					{ctor: '[]'}),
 																				_1: {
 																					ctor: '::',
 																					_0: A2(
-																						_Gizra$circuit_bid$Utils_Html$showIf,
-																						!_Gizra$circuit_bid$Pages_Sale_View$salePaused(_p74),
-																						A2(
-																							_elm_lang$html$Html$div,
-																							{
+																						_elm_lang$html$Html$button,
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html_Attributes$class('login-btn'),
+																							_1: {
 																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('bidder-action-bar'),
-																								_1: {ctor: '[]'}
-																							},
-																							{
-																								ctor: '::',
-																								_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderPriceBlock, language, _p74, displayCurrency, calculated),
+																								_0: _elm_lang$html$Html_Attributes$disabled(
+																									_krisajenkins$remotedata$RemoteData$isLoading(model.login.status)),
 																								_1: {
 																									ctor: '::',
-																									_0: A2(
-																										_elm_lang$html$Html$div,
+																									_0: _elm_lang$html$Html_Attributes$classList(
 																										{
 																											ctor: '::',
-																											_0: _elm_lang$html$Html_Attributes$class('bid-block'),
-																											_1: {ctor: '[]'}
-																										},
-																										{
-																											ctor: '::',
-																											_0: mainButton,
+																											_0: {
+																												ctor: '_Tuple2',
+																												_0: 'loading',
+																												_1: _krisajenkins$remotedata$RemoteData$isLoading(model.login.status)
+																											},
 																											_1: {ctor: '[]'}
 																										}),
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						},
+																						{
+																							ctor: '::',
+																							_0: _krisajenkins$remotedata$RemoteData$isLoading(model.login.status) ? A2(
+																								_elm_lang$html$Html$i,
+																								{
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Attributes$class('fa fa-spinner fa-spin'),
+																									_1: {ctor: '[]'}
+																								},
+																								{ctor: '[]'}) : _elm_lang$html$Html$text('Log In'),
+																							_1: {ctor: '[]'}
+																						}),
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	})),
+															_1: {ctor: '[]'}
+														}
+													});
+											}();
+											return {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('bidder-card current-item item-view'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(_Gizra$circuit_bid$Pages_Sale_View$itemViewOverlay, language, _p74),
+														_1: {
+															ctor: '::',
+															_0: A2(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeaderTop, language, _p72),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$div,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('bidder-card-body'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$div,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('bidder-card-left'),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderItemHeader, language, _p74.currency, _p72, model),
+																				_1: {
+																					ctor: '::',
+																					_0: A4(_Gizra$circuit_bid$Item_View$viewAutoClerk, currentDate, language, _p74, calculated),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(
+																							_Gizra$circuit_bid$Utils_Html$showIf,
+																							!_Gizra$circuit_bid$Pages_Sale_View$salePaused(_p74),
+																							A2(
+																								_elm_lang$html$Html$div,
+																								{
+																									ctor: '::',
+																									_0: _elm_lang$html$Html_Attributes$class('bidder-action-bar'),
+																									_1: {ctor: '[]'}
+																								},
+																								{
+																									ctor: '::',
+																									_0: A4(_Gizra$circuit_bid$Pages_Sale_View$bidderPriceBlock, language, _p74, displayCurrency, calculated),
 																									_1: {
 																										ctor: '::',
 																										_0: A2(
 																											_elm_lang$html$Html$div,
 																											{
 																												ctor: '::',
-																												_0: _elm_lang$html$Html_Attributes$class('bidder-popup-desktop'),
+																												_0: _elm_lang$html$Html_Attributes$class('bid-block'),
 																												_1: {ctor: '[]'}
 																											},
 																											{
 																												ctor: '::',
-																												_0: popup,
+																												_0: mainButton,
 																												_1: {ctor: '[]'}
 																											}),
-																										_1: {ctor: '[]'}
+																										_1: {
+																											ctor: '::',
+																											_0: A2(
+																												_elm_lang$html$Html$div,
+																												{
+																													ctor: '::',
+																													_0: _elm_lang$html$Html_Attributes$class('bidder-popup-desktop'),
+																													_1: {ctor: '[]'}
+																												},
+																												{
+																													ctor: '::',
+																													_0: popup,
+																													_1: {ctor: '[]'}
+																												}),
+																											_1: {ctor: '[]'}
+																										}
 																									}
-																								}
-																							})),
-																					_1: {ctor: '[]'}
-																				}
-																			}
-																		}),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$div,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('bidder-card-right'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: A4(
-																					_Gizra$circuit_bid$Pages_Sale_Carousel$view,
-																					{
-																						galleryStyle: config.siteConfig.imageGalleryStyle,
-																						urlOf: function (_) {
-																							return _.big;
-																						},
-																						containerClass: 'main-image',
-																						placeholder: _elm_lang$core$Maybe$Nothing
-																					},
-																					model,
-																					_p73,
-																					_p72),
-																				_1: {
-																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$div,
-																						{
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class('bidder-popup-mobile'),
-																							_1: {ctor: '[]'}
-																						},
-																						{
-																							ctor: '::',
-																							_0: popup,
-																							_1: {ctor: '[]'}
-																						}),
-																					_1: {ctor: '[]'}
+																								})),
+																						_1: {ctor: '[]'}
+																					}
 																				}
 																			}),
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_1: {ctor: '[]'}
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$div,
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$class('bidder-card-right'),
+																					_1: {ctor: '[]'}
+																				},
+																				{
+																					ctor: '::',
+																					_0: A4(
+																						_Gizra$circuit_bid$Pages_Sale_Carousel$view,
+																						{
+																							galleryStyle: config.siteConfig.imageGalleryStyle,
+																							urlOf: function (_) {
+																								return _.big;
+																							},
+																							containerClass: 'main-image',
+																							placeholder: _elm_lang$core$Maybe$Nothing
+																						},
+																						model,
+																						_p73,
+																						_p72),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$div,
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$class('bidder-popup-mobile'),
+																								_1: {ctor: '[]'}
+																							},
+																							{
+																								ctor: '::',
+																								_0: popup,
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {ctor: '[]'}
+																					}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_1: {ctor: '[]'}
+															}
 														}
-													}
-												}),
-											_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											};
 										};
 									};
 								};
@@ -95739,329 +98099,356 @@ var _Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning = F2(
 			return _elm_lang$html$Html$text('');
 		}
 	});
-var _Gizra$circuit_bid$Pages_Sale_View$saleView = F9(
-	function (currentDate, parentBaseUrl, config, language, user, modelBackend, _p100, model, maybePublicMessages) {
-		var _p101 = _p100;
-		var _p104 = _p101._0;
-		var _p103 = _p101._1;
-		var items = model.item.items;
-		var currentCalculated = A2(
-			_elm_lang$core$Maybe$andThen,
-			function (_p102) {
-				return _krisajenkins$remotedata$RemoteData$toMaybe(
-					function (_) {
-						return _.calculated;
-					}(_p102));
-			},
-			A2(
-				_elm_lang$core$Maybe$map,
-				_elm_lang$core$Tuple$second,
-				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p103.item, items)));
-		var nextBidAmount = A2(
-			_elm_lang$core$Maybe$map,
-			function (calculated) {
-				return A2(_Gizra$circuit_bid$Pages_Sale_Utils$nextBidAmountForBidder, calculated, model);
-			},
-			currentCalculated);
-		var itemViewOrPlaceholder = A2(
-			_elm_lang$core$Maybe$withDefault,
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('sale-loading-cell'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _Gizra$circuit_bid$Pages_Sale_View$saleFetchPlaceholder(language),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			},
-			A3(
-				_elm_lang$core$Maybe$map2,
-				A8(
-					_Gizra$circuit_bid$Pages_Sale_View$itemView,
-					currentDate,
-					parentBaseUrl,
-					config,
-					language,
-					user,
-					modelBackend,
-					model,
-					{ctor: '_Tuple2', _0: _p104, _1: _p103}),
-				A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p103.item, items),
-				currentCalculated));
-		var noPersonalLimit = config.siteConfig.noPersonalLimit;
-		var softBidderLimit = config.siteConfig.softBidderLimit;
-		return A2(
-			_elm_lang$html$Html$div,
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('sale-page'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('sale-browser-info'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: A2(_Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning, language, model.browserInfo),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('sale-main'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A7(
-										_Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock,
-										softBidderLimit,
-										noPersonalLimit,
-										nextBidAmount,
-										language,
-										user,
-										{ctor: '_Tuple2', _0: _p104, _1: _p103},
-										modelBackend),
-									_1: {
-										ctor: '::',
-										_0: A4(
-											_Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock,
-											language,
-											user,
-											{ctor: '_Tuple2', _0: _p104, _1: _p103},
-											modelBackend),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$div,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('sale-row sale-row-top'),
-													_1: {ctor: '[]'}
-												},
-												A2(
-													_elm_lang$core$Basics_ops['++'],
-													itemViewOrPlaceholder,
+var _Gizra$circuit_bid$Pages_Sale_View$saleView = function (currentDate) {
+	return function (parentBaseUrl) {
+		return function (config) {
+			return function (language) {
+				return function (user) {
+					return function (modelBackend) {
+						return function (liveFeed) {
+							return function (_p100) {
+								return function (model) {
+									return function (maybePublicMessages) {
+										var _p101 = _p100;
+										var _p104 = _p101._0;
+										var _p103 = _p101._1;
+										var items = model.item.items;
+										var currentCalculated = A2(
+											_elm_lang$core$Maybe$andThen,
+											function (_p102) {
+												return _krisajenkins$remotedata$RemoteData$toMaybe(
+													function (_) {
+														return _.calculated;
+													}(_p102));
+											},
+											A2(
+												_elm_lang$core$Maybe$map,
+												_elm_lang$core$Tuple$second,
+												A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p103.item, items)));
+										var nextBidAmount = A2(
+											_elm_lang$core$Maybe$map,
+											function (calculated) {
+												return A2(_Gizra$circuit_bid$Pages_Sale_Utils$nextBidAmountForBidder, calculated, model);
+											},
+											currentCalculated);
+										var itemViewOrPlaceholder = A2(
+											_elm_lang$core$Maybe$withDefault,
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
 													{
 														ctor: '::',
-														_0: A7(
-															_Gizra$circuit_bid$Pages_Sale_View$sidebar,
-															language,
-															user,
-															modelBackend,
-															{ctor: '_Tuple2', _0: _p104, _1: _p103},
-															items,
-															maybePublicMessages,
-															model),
+														_0: _elm_lang$html$Html_Attributes$class('sale-loading-cell'),
 														_1: {ctor: '[]'}
-													})),
-											_1: {
+													},
+													{
+														ctor: '::',
+														_0: _Gizra$circuit_bid$Pages_Sale_View$saleFetchPlaceholder(language),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											},
+											A3(
+												_elm_lang$core$Maybe$map2,
+												A9(
+													_Gizra$circuit_bid$Pages_Sale_View$itemView,
+													currentDate,
+													parentBaseUrl,
+													config,
+													language,
+													user,
+													modelBackend,
+													liveFeed,
+													model,
+													{ctor: '_Tuple2', _0: _p104, _1: _p103}),
+												A2(_Gizra$circuit_bid$Utils_EveryDictList$getKeyValuePair, _p103.item, items),
+												currentCalculated));
+										var noPersonalLimit = config.siteConfig.noPersonalLimit;
+										var softBidderLimit = config.siteConfig.softBidderLimit;
+										return A2(
+											_elm_lang$html$Html$div,
+											{ctor: '[]'},
+											{
 												ctor: '::',
-												_0: A4(_Gizra$circuit_bid$Pages_Sale_View$carousel, language, model, _p103, items),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('sale-row sale-row-bottom'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_Gizra$circuit_bid$Utils_Html$showIf,
-																_Gizra$circuit_bid$User_Utils$isAuthenticated(user),
-																A6(_Gizra$circuit_bid$Pages_Sale_View$bidHistory, language, _p103.currency, user, modelBackend, _p104, items)),
-															_1: {
-																ctor: '::',
-																_0: A5(
-																	_Gizra$circuit_bid$Pages_Sale_View$myCredit,
-																	noPersonalLimit,
-																	language,
-																	{ctor: '_Tuple2', _0: _p104, _1: _p103},
-																	user,
-																	modelBackend),
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('sale-page'),
+														_1: {ctor: '[]'}
+													},
+													{
 														ctor: '::',
 														_0: A2(
 															_elm_lang$html$Html$div,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('sale-mobile-video'),
+																_0: _elm_lang$html$Html_Attributes$class('sale-browser-info'),
 																_1: {ctor: '[]'}
 															},
 															{
 																ctor: '::',
-																_0: A2(
-																	_Gizra$circuit_bid$Utils_Html$showMaybe,
-																	function (streamname) {
-																		return A3(
-																			_elm_lang$html$Html$node,
-																			'nano-player',
-																			{
-																				ctor: '::',
-																				_0: A2(_elm_lang$html$Html_Attributes$attribute, 'streamname', streamname),
-																				_1: {ctor: '[]'}
-																			},
-																			{ctor: '[]'});
-																	},
-																	_p103.videoStream),
+																_0: A2(_Gizra$circuit_bid$Pages_Sale_View$viewBrowserWarning, language, model.browserInfo),
 																_1: {ctor: '[]'}
 															}),
-														_1: {ctor: '[]'}
-													}
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('sale-main'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A7(
+																		_Gizra$circuit_bid$Pages_Sale_View$viewNoCreditBlock,
+																		softBidderLimit,
+																		noPersonalLimit,
+																		nextBidAmount,
+																		language,
+																		user,
+																		{ctor: '_Tuple2', _0: _p104, _1: _p103},
+																		modelBackend),
+																	_1: {
+																		ctor: '::',
+																		_0: A4(
+																			_Gizra$circuit_bid$Pages_Sale_View$viewLowCreditBlock,
+																			language,
+																			user,
+																			{ctor: '_Tuple2', _0: _p104, _1: _p103},
+																			modelBackend),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$div,
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$class('sale-row sale-row-top'),
+																					_1: {ctor: '[]'}
+																				},
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					itemViewOrPlaceholder,
+																					{
+																						ctor: '::',
+																						_0: A7(
+																							_Gizra$circuit_bid$Pages_Sale_View$sidebar,
+																							language,
+																							user,
+																							modelBackend,
+																							{ctor: '_Tuple2', _0: _p104, _1: _p103},
+																							items,
+																							maybePublicMessages,
+																							model),
+																						_1: {ctor: '[]'}
+																					})),
+																			_1: {
+																				ctor: '::',
+																				_0: A4(_Gizra$circuit_bid$Pages_Sale_View$carousel, language, model, _p103, items),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$div,
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html_Attributes$class('sale-row sale-row-bottom'),
+																							_1: {ctor: '[]'}
+																						},
+																						{
+																							ctor: '::',
+																							_0: A2(
+																								_Gizra$circuit_bid$Utils_Html$showIf,
+																								_Gizra$circuit_bid$User_Utils$isAuthenticated(user),
+																								A6(_Gizra$circuit_bid$Pages_Sale_View$bidHistory, language, _p103.currency, user, modelBackend, _p104, items)),
+																							_1: {
+																								ctor: '::',
+																								_0: A5(
+																									_Gizra$circuit_bid$Pages_Sale_View$myCredit,
+																									noPersonalLimit,
+																									language,
+																									{ctor: '_Tuple2', _0: _p104, _1: _p103},
+																									user,
+																									modelBackend),
+																								_1: {ctor: '[]'}
+																							}
+																						}),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$div,
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$class('sale-mobile-video'),
+																								_1: {ctor: '[]'}
+																							},
+																							{
+																								ctor: '::',
+																								_0: A2(
+																									_Gizra$circuit_bid$Utils_Html$showMaybe,
+																									function (streamname) {
+																										return A3(
+																											_elm_lang$html$Html$node,
+																											'nano-player',
+																											{
+																												ctor: '::',
+																												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'streamname', streamname),
+																												_1: {ctor: '[]'}
+																											},
+																											{ctor: '[]'});
+																									},
+																									_p103.videoStream),
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}),
+															_1: {ctor: '[]'}
+														}
+													}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_Gizra$circuit_bid$Utils_Html$showIf,
+														config.debug,
+														A2(_Gizra$circuit_bid$Pages_Sale_View$debugWrapper, model, currentCalculated)),
+													_1: {ctor: '[]'}
 												}
-											}
+											});
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _Gizra$circuit_bid$Pages_Sale_View$view = function (currentDate) {
+	return function (parentBaseUrl) {
+		return function (config) {
+			return function (language) {
+				return function (user) {
+					return function (modelBackend) {
+						return function (saleUuid) {
+							return function (isSalePage) {
+								return function (liveFeed) {
+									return function (model) {
+										var _p105 = model.sale;
+										switch (_p105.ctor) {
+											case 'NotAsked':
+												return A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('ui button'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Events$onClick(
+																_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(saleUuid)),
+															_1: {ctor: '[]'}
+														}
+													},
+													{
+														ctor: '::',
+														_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ReloadSale),
+														_1: {ctor: '[]'}
+													});
+											case 'Loading':
+												return A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('sale-page'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _Gizra$circuit_bid$Pages_Sale_View$saleFetchPlaceholder(language),
+														_1: {ctor: '[]'}
+													});
+											case 'Failure':
+												return A2(
+													_elm_lang$html$Html$div,
+													{ctor: '[]'},
+													{
+														ctor: '::',
+														_0: A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p105._0),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('ui button'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Events$onClick(
+																			_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(saleUuid)),
+																		_1: {ctor: '[]'}
+																	}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Retry),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
+													});
+											default:
+												var _p106 = _p105._0;
+												return A2(
+													_Gizra$circuit_bid$Utils_Html$showIf,
+													A2(_elm_lang$core$List$member, language, _p106.languages),
+													isSalePage ? _Gizra$circuit_bid$Pages_Sale_View$saleView(currentDate)(parentBaseUrl)(config)(language)(user)(modelBackend)(liveFeed)(
+														{ctor: '_Tuple2', _0: saleUuid, _1: _p106})(model)(
+														_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)) : A2(
+														_elm_lang$html$Html$div,
+														{ctor: '[]'},
+														{
+															ctor: '::',
+															_0: A9(
+																_Gizra$circuit_bid$Pages_Room_View$view,
+																currentDate,
+																parentBaseUrl,
+																config.siteConfig.imageGalleryStyle,
+																language,
+																user,
+																modelBackend,
+																{ctor: '_Tuple2', _0: saleUuid, _1: _p106},
+																model,
+																_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_Gizra$circuit_bid$Utils_Html$showIf,
+																	config.debug,
+																	A2(
+																		_Gizra$circuit_bid$Pages_Sale_View$debugWrapper,
+																		model,
+																		A2(_Gizra$circuit_bid$Pages_Sale_View$currentCalculatedOf, _p106, model))),
+																_1: {ctor: '[]'}
+															}
+														}));
 										}
-									}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_Gizra$circuit_bid$Utils_Html$showIf,
-						config.debug,
-						A2(_Gizra$circuit_bid$Pages_Sale_View$debugWrapper, model, currentCalculated)),
-					_1: {ctor: '[]'}
-				}
-			});
-	});
-var _Gizra$circuit_bid$Pages_Sale_View$view = F9(
-	function (currentDate, parentBaseUrl, config, language, user, modelBackend, saleUuid, isSalePage, model) {
-		var _p105 = model.sale;
-		switch (_p105.ctor) {
-			case 'NotAsked':
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('ui button'),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(
-								_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(saleUuid)),
-							_1: {ctor: '[]'}
-						}
-					},
-					{
-						ctor: '::',
-						_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$ReloadSale),
-						_1: {ctor: '[]'}
-					});
-			case 'Loading':
-				return A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('sale-page'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _Gizra$circuit_bid$Pages_Sale_View$saleFetchPlaceholder(language),
-						_1: {ctor: '[]'}
-					});
-			case 'Failure':
-				return A2(
-					_elm_lang$html$Html$div,
-					{ctor: '[]'},
-					{
-						ctor: '::',
-						_0: A2(_Gizra$circuit_bid$Utils_WebData$viewError, language, _p105._0),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('ui button'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_Gizra$circuit_bid$Pages_Sale_Model$Subscribe(saleUuid)),
-										_1: {ctor: '[]'}
-									}
-								},
-								{
-									ctor: '::',
-									_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$Retry),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					});
-			default:
-				var _p106 = _p105._0;
-				return A2(
-					_Gizra$circuit_bid$Utils_Html$showIf,
-					A2(_elm_lang$core$List$member, language, _p106.languages),
-					isSalePage ? A9(
-						_Gizra$circuit_bid$Pages_Sale_View$saleView,
-						currentDate,
-						parentBaseUrl,
-						config,
-						language,
-						user,
-						modelBackend,
-						{ctor: '_Tuple2', _0: saleUuid, _1: _p106},
-						model,
-						_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)) : A2(
-						_elm_lang$html$Html$div,
-						{ctor: '[]'},
-						{
-							ctor: '::',
-							_0: A9(
-								_Gizra$circuit_bid$Pages_Room_View$view,
-								currentDate,
-								parentBaseUrl,
-								config.siteConfig.imageGalleryStyle,
-								language,
-								user,
-								modelBackend,
-								{ctor: '_Tuple2', _0: saleUuid, _1: _p106},
-								model,
-								_krisajenkins$remotedata$RemoteData$toMaybe(model.publicMessages)),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_Gizra$circuit_bid$Utils_Html$showIf,
-									config.debug,
-									A2(
-										_Gizra$circuit_bid$Pages_Sale_View$debugWrapper,
-										model,
-										A2(_Gizra$circuit_bid$Pages_Sale_View$currentCalculatedOf, _p106, model))),
-								_1: {ctor: '[]'}
-							}
-						}));
-		}
-	});
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
 
 var _Gizra$circuit_bid$Pages_RoomV1_View$sidebar = F3(
 	function (language, sale, item) {
@@ -100210,7 +102597,8 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p13, model.backend, _p12._0, true, model.pageSale));
+							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_p13)(model.backend)(_p12._0)(true)(
+								_Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(model.health))(model.pageSale));
 					case 'SaleClerk':
 						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
 							_elm_lang$html$Html$map,
@@ -100220,7 +102608,7 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							A9(_Gizra$circuit_bid$Pages_Sale_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p12._0, false, model.pageSale));
+							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_Gizra$circuit_bid$User_Model$Anonymous)(model.backend)(_p12._0)(false)(_Gizra$circuit_bid$Pusher_Health_Model$Live)(model.pageSale));
 					case 'SaleAuctioneer':
 						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
 							_elm_lang$html$Html$map,
@@ -100535,12 +102923,16 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																var healthNotice = showHealth ? A2(
 																	_elm_lang$html$Html$map,
 																	_Gizra$circuit_bid$App_Model$MsgHealth,
-																	_Gizra$circuit_bid$Pusher_Health_View$notice(health)) : _Gizra$circuit_bid$Utils_Html$emptyNode;
-																var pusherDown = health.everConnected && (!_elm_lang$core$Native_Utils.eq(health.connection, _Gizra$circuit_bid$Pusher_Health_Model$Connected));
+																	_Gizra$circuit_bid$Pusher_Health_View$notice(health)) : (_Gizra$circuit_bid$App_Utils$isBidderPage(activePage) ? A2(_Gizra$circuit_bid$Pusher_Health_View$bidderNotice, language, health) : _Gizra$circuit_bid$Utils_Html$emptyNode);
 																var connection = showHealth ? A2(
 																	_elm_lang$html$Html$map,
 																	_Gizra$circuit_bid$App_Model$MsgHealth,
-																	_Gizra$circuit_bid$Pusher_Health_View$pill(health)) : A2(_Gizra$circuit_bid$App_View$viewConnectionStatus, language, offline || pusherDown);
+																	_Gizra$circuit_bid$Pusher_Health_View$pill(health)) : A4(
+																	_Gizra$circuit_bid$Pusher_Health_View$liveFeedIndicator,
+																	language,
+																	offline,
+																	_Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(health),
+																	health);
 																var content = function () {
 																	var _p20 = maybeUser;
 																	if ((_p20.ctor === 'Just') && (_p20._0.ctor === 'Authenticated')) {
