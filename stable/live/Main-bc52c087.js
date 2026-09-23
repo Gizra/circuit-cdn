@@ -46934,17 +46934,6 @@ var _Gizra$circuit_bid$Bid_Utils$isOwnBid = F4(
 var _Gizra$circuit_bid$Bid_Utils$isDeleted = function (bid) {
 	return !_elm_lang$core$Native_Utils.eq(bid.deletedStatus, _Gizra$circuit_bid$Bid_Model$NotDeleted);
 };
-var _Gizra$circuit_bid$Bid_Utils$hasOwnCutBid = F4(
-	function (user, modelBackend, saleUuid, bids) {
-		return A2(
-			_elm_lang$core$List$any,
-			function (_p9) {
-				var _p10 = _p9;
-				var _p11 = _p10._1;
-				return _p11.isCut && ((!_Gizra$circuit_bid$Bid_Utils$isDeleted(_p11)) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p11));
-			},
-			_Gizra$elm_dictlist$EveryDictList$toList(bids));
-	});
 var _Gizra$circuit_bid$Bid_Utils$winningBidIsCut = function (calculated) {
 	return A2(
 		_elm_lang$core$Maybe$withDefault,
@@ -46962,24 +46951,24 @@ var _Gizra$circuit_bid$Bid_Utils$winningBidIsCut = function (calculated) {
 				calculated.winningBid)));
 };
 var _Gizra$circuit_bid$Bid_Utils$isOutbid = function (bid) {
-	var _p12 = bid.status;
-	if (_p12.ctor === 'Outbid') {
+	var _p9 = bid.status;
+	if (_p9.ctor === 'Outbid') {
 		return true;
 	} else {
 		return false;
 	}
 };
 var _Gizra$circuit_bid$Bid_Utils$isRejectedCreditLimit = function (bid) {
-	var _p13 = bid.status;
-	if (_p13.ctor === 'RejectedCreditLimit') {
+	var _p10 = bid.status;
+	if (_p10.ctor === 'RejectedCreditLimit') {
 		return true;
 	} else {
 		return false;
 	}
 };
 var _Gizra$circuit_bid$Bid_Utils$isRejectedBidderMax = function (bid) {
-	var _p14 = bid.status;
-	if (_p14.ctor === 'RejectedBidderMax') {
+	var _p11 = bid.status;
+	if (_p11.ctor === 'RejectedBidderMax') {
 		return true;
 	} else {
 		return false;
@@ -46989,21 +46978,35 @@ var _Gizra$circuit_bid$Bid_Utils$isReachedCreditLimit = function (bid) {
 	return _Gizra$circuit_bid$Bid_Utils$isRejectedBidderMax(bid) || _Gizra$circuit_bid$Bid_Utils$isRejectedCreditLimit(bid);
 };
 var _Gizra$circuit_bid$Bid_Utils$isAcceptedDuplicatedAmount = function (bid) {
-	var _p15 = bid.status;
-	if (_p15.ctor === 'AcceptedDuplicatedAmount') {
+	var _p12 = bid.status;
+	if (_p12.ctor === 'AcceptedDuplicatedAmount') {
 		return true;
 	} else {
 		return false;
 	}
 };
 var _Gizra$circuit_bid$Bid_Utils$isAccepted = function (bid) {
-	var _p16 = bid.status;
-	if (_p16.ctor === 'Accepted') {
+	var _p13 = bid.status;
+	if (_p13.ctor === 'Accepted') {
 		return true;
 	} else {
 		return false;
 	}
 };
+var _Gizra$circuit_bid$Bid_Utils$cutBidTaken = function (bid) {
+	return (_Gizra$circuit_bid$Bid_Utils$isAccepted(bid) || (_Gizra$circuit_bid$Bid_Utils$isAcceptedDuplicatedAmount(bid) || _Gizra$circuit_bid$Bid_Utils$isOutbid(bid))) && (!_Gizra$circuit_bid$Bid_Utils$isDeleted(bid));
+};
+var _Gizra$circuit_bid$Bid_Utils$hasOwnCutBid = F4(
+	function (user, modelBackend, saleUuid, bids) {
+		return A2(
+			_elm_lang$core$List$any,
+			function (_p14) {
+				var _p15 = _p14;
+				var _p16 = _p15._1;
+				return _p16.isCut && (_Gizra$circuit_bid$Bid_Utils$cutBidTaken(_p16) && A4(_Gizra$circuit_bid$Bid_Utils$isOwnBid, user, modelBackend, saleUuid, _p16));
+			},
+			_Gizra$elm_dictlist$EveryDictList$toList(bids));
+	});
 var _Gizra$circuit_bid$Bid_Utils$isValidOrAmountDuplicated = function (bid) {
 	return (_Gizra$circuit_bid$Bid_Utils$isAccepted(bid) || _Gizra$circuit_bid$Bid_Utils$isAcceptedDuplicatedAmount(bid)) && (!_Gizra$circuit_bid$Bid_Utils$isDeleted(bid));
 };
