@@ -41151,6 +41151,14 @@ var _Gizra$circuit_bid$PaginatedData$PaginatedData = F3(
 		return {data: a, pager: b, totalCount: c};
 	});
 
+var _Gizra$circuit_bid$Backend_BidderInfo_Model$bidderLimitDisplayToString = function (display) {
+	var _p0 = display;
+	if (_p0.ctor === 'LimitAlways') {
+		return 'always';
+	} else {
+		return 'half';
+	}
+};
 var _Gizra$circuit_bid$Backend_BidderInfo_Model$BidderInfo = F7(
 	function (a, b, c, d, e, f, g) {
 		return {bidderNumber: a, agent: b, agentName: c, amountRestrictions: d, totalSpent: e, userId: f, userName: g};
@@ -41201,6 +41209,11 @@ var _Gizra$circuit_bid$Backend_BidderInfo_Model$emptyBidderInfo = {
 	totalSpent: _Gizra$circuit_bid$Amount$zero,
 	userName: _elm_lang$core$Maybe$Nothing,
 	userId: _elm_lang$core$Maybe$Nothing
+};
+var _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed = {ctor: 'LimitFromHalfUsed'};
+var _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways = {ctor: 'LimitAlways'};
+var _Gizra$circuit_bid$Backend_BidderInfo_Model$bidderLimitDisplayFromString = function (s) {
+	return _elm_lang$core$Native_Utils.eq(s, 'half') ? _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed : _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways;
 };
 var _Gizra$circuit_bid$Backend_BidderInfo_Model$Update = F2(
 	function (a, b) {
@@ -41729,10 +41742,10 @@ var _Gizra$circuit_bid$Backend_ConnectedUser_Model$ProcessConnectedUserStatus = 
 		return {ctor: 'ProcessConnectedUserStatus', _0: a, _1: b};
 	});
 
-var _Gizra$circuit_bid$Backend_Model$emptyModelBackend = {bidderInfo: _eeue56$elm_all_dict$EveryDict$empty, bidderInfoByBidderNumber: _elm_lang$core$Dict$empty, connectedUsers: _eeue56$elm_all_dict$EveryDict$empty, consignerStats: _Gizra$circuit_bid$Backend_ConsignerStats_Model$emptyCache, creditRequests: _krisajenkins$remotedata$RemoteData$NotAsked};
-var _Gizra$circuit_bid$Backend_Model$ModelBackend = F5(
-	function (a, b, c, d, e) {
-		return {bidderInfo: a, bidderInfoByBidderNumber: b, connectedUsers: c, consignerStats: d, creditRequests: e};
+var _Gizra$circuit_bid$Backend_Model$emptyModelBackend = {bidderInfo: _eeue56$elm_all_dict$EveryDict$empty, bidderInfoByBidderNumber: _elm_lang$core$Dict$empty, connectedUsers: _eeue56$elm_all_dict$EveryDict$empty, consignerStats: _Gizra$circuit_bid$Backend_ConsignerStats_Model$emptyCache, creditRequests: _krisajenkins$remotedata$RemoteData$NotAsked, bidderLimitDisplay: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways};
+var _Gizra$circuit_bid$Backend_Model$ModelBackend = F6(
+	function (a, b, c, d, e, f) {
+		return {bidderInfo: a, bidderInfoByBidderNumber: b, connectedUsers: c, consignerStats: d, creditRequests: e, bidderLimitDisplay: f};
 	});
 var _Gizra$circuit_bid$Backend_Model$HandlePusherConsignerStatsUpdate = F2(
 	function (a, b) {
@@ -45643,10 +45656,27 @@ var _Gizra$circuit_bid$App_Model$Model = function (a) {
 		};
 	};
 };
-var _Gizra$circuit_bid$App_Model$Flags = F9(
-	function (a, b, c, d, e, f, g, h, i) {
-		return {accessToken: a, hostname: b, metaHostname: c, serverlessUrl: d, siteName: e, languageCode: f, parentBaseUrl: g, themeCode: h, appVersion: i};
-	});
+var _Gizra$circuit_bid$App_Model$Flags = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return {accessToken: a, hostname: b, metaHostname: c, serverlessUrl: d, siteName: e, languageCode: f, parentBaseUrl: g, themeCode: h, appVersion: i, bidderLimitDisplay: j};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
 var _Gizra$circuit_bid$App_Model$Tick = function (a) {
 	return {ctor: 'Tick', _0: a};
 };
@@ -45658,6 +45688,9 @@ var _Gizra$circuit_bid$App_Model$SetLanguage = function (a) {
 };
 var _Gizra$circuit_bid$App_Model$SetCurrentDate = function (a) {
 	return {ctor: 'SetCurrentDate', _0: a};
+};
+var _Gizra$circuit_bid$App_Model$SetBidderLimitDisplay = function (a) {
+	return {ctor: 'SetBidderLimitDisplay', _0: a};
 };
 var _Gizra$circuit_bid$App_Model$SetAuthentication = function (a) {
 	return {ctor: 'SetAuthentication', _0: a};
@@ -46304,6 +46337,11 @@ var _Gizra$circuit_bid$Ports$getUserAgent = _elm_lang$core$Native_Platform.outgo
 var _Gizra$circuit_bid$Ports$receiveUserAgent = _elm_lang$core$Native_Platform.incomingPort('receiveUserAgent', _elm_lang$core$Json_Decode$string);
 var _Gizra$circuit_bid$Ports$saveTheme = _elm_lang$core$Native_Platform.outgoingPort(
 	'saveTheme',
+	function (v) {
+		return v;
+	});
+var _Gizra$circuit_bid$Ports$saveBidderLimitDisplay = _elm_lang$core$Native_Platform.outgoingPort(
+	'saveBidderLimitDisplay',
 	function (v) {
 		return v;
 	});
@@ -59300,6 +59338,14 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 						A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, bidderInfo.totalSpent, currency))),
 				_1: {ctor: '[]'}
 			});
+		var limitShown = function (usageRatio) {
+			var _p1 = modelBackend.bidderLimitDisplay;
+			if (_p1.ctor === 'LimitAlways') {
+				return true;
+			} else {
+				return _elm_lang$core$Native_Utils.cmp(usageRatio, 0.5) > -1;
+			}
+		};
 		var remaining = function (amount) {
 			return A2(_Gizra$circuit_bid$Amount$subtract, amount, bidderInfo.totalSpent);
 		};
@@ -59322,16 +59368,16 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 			_Gizra$circuit_bid$Amount$Unlimited,
 			A2(_eeue56$elm_all_dict$EveryDict$get, _Gizra$circuit_bid$Backend_BidderInfo_Model$LiveCredit, bidderInfo.amountRestrictions));
 		var maybeValues = function () {
-			var _p1 = {ctor: '_Tuple2', _0: liveCredit, _1: maxBid};
-			_v1_2:
+			var _p2 = {ctor: '_Tuple2', _0: liveCredit, _1: maxBid};
+			_v2_2:
 			do {
-				switch (_p1._0.ctor) {
+				switch (_p2._0.ctor) {
 					case 'Unlimited':
-						switch (_p1._1.ctor) {
+						switch (_p2._1.ctor) {
 							case 'Unlimited':
 								return _elm_lang$core$Maybe$Nothing;
 							case 'Regular':
-								var _p2 = _p1._1._0;
+								var _p3 = _p2._1._0;
 								return _elm_lang$core$Maybe$Just(
 									{
 										ctor: '_Tuple3',
@@ -59343,20 +59389,20 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 												_0: {
 													ctor: '_Tuple2',
 													_0: 'over-credit',
-													_1: totalOverCredit(_p2)
+													_1: totalOverCredit(_p3)
 												},
 												_1: {ctor: '[]'}
 											}
 										},
-										_1: remaining(_p2),
-										_2: _p2
+										_1: remaining(_p3),
+										_2: _p3
 									});
 							default:
-								break _v1_2;
+								break _v2_2;
 						}
 					case 'None':
-						if (_p1._1.ctor === 'None') {
-							break _v1_2;
+						if (_p2._1.ctor === 'None') {
+							break _v2_2;
 						} else {
 							return _elm_lang$core$Maybe$Just(
 								{
@@ -59379,41 +59425,12 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 								});
 						}
 					default:
-						switch (_p1._1.ctor) {
+						switch (_p2._1.ctor) {
 							case 'None':
-								break _v1_2;
+								break _v2_2;
 							case 'Unlimited':
-								var _p3 = _p1._0._0;
+								var _p4 = _p2._0._0;
 								return _elm_lang$core$Maybe$Just(
-									{
-										ctor: '_Tuple3',
-										_0: {
-											ctor: '::',
-											_0: {ctor: '_Tuple2', _0: 'by-credit', _1: true},
-											_1: {
-												ctor: '::',
-												_0: {
-													ctor: '_Tuple2',
-													_0: 'over-credit',
-													_1: totalOverCredit(_p3)
-												},
-												_1: {ctor: '[]'}
-											}
-										},
-										_1: remaining(_p3),
-										_2: _p3
-									});
-							default:
-								var _p5 = _p1._1._0;
-								var _p4 = _p1._0._0;
-								return A3(
-									_Gizra$circuit_bid$Amount$compareInfix,
-									_p4,
-									F2(
-										function (x, y) {
-											return _elm_lang$core$Native_Utils.cmp(x, y) < 1;
-										}),
-									_p5) ? _elm_lang$core$Maybe$Just(
 									{
 										ctor: '_Tuple3',
 										_0: {
@@ -59431,12 +59448,23 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 										},
 										_1: remaining(_p4),
 										_2: _p4
-									}) : _elm_lang$core$Maybe$Just(
+									});
+							default:
+								var _p6 = _p2._1._0;
+								var _p5 = _p2._0._0;
+								return A3(
+									_Gizra$circuit_bid$Amount$compareInfix,
+									_p5,
+									F2(
+										function (x, y) {
+											return _elm_lang$core$Native_Utils.cmp(x, y) < 1;
+										}),
+									_p6) ? _elm_lang$core$Maybe$Just(
 									{
 										ctor: '_Tuple3',
 										_0: {
 											ctor: '::',
-											_0: {ctor: '_Tuple2', _0: 'by-bidder-max', _1: true},
+											_0: {ctor: '_Tuple2', _0: 'by-credit', _1: true},
 											_1: {
 												ctor: '::',
 												_0: {
@@ -59449,6 +59477,24 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 										},
 										_1: remaining(_p5),
 										_2: _p5
+									}) : _elm_lang$core$Maybe$Just(
+									{
+										ctor: '_Tuple3',
+										_0: {
+											ctor: '::',
+											_0: {ctor: '_Tuple2', _0: 'by-bidder-max', _1: true},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '_Tuple2',
+													_0: 'over-credit',
+													_1: totalOverCredit(_p6)
+												},
+												_1: {ctor: '[]'}
+											}
+										},
+										_1: remaining(_p6),
+										_2: _p6
 									});
 						}
 				}
@@ -59476,19 +59522,19 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 		var totalAmountByCredit = A3(
 			_elm_community$maybe_extra$Maybe_Extra$unwrap,
 			_Gizra$circuit_bid$Utils_Html$emptyNode,
-			function (_p6) {
-				var _p7 = _p6;
+			function (_p7) {
+				var _p8 = _p7;
 				var spentInt = _Gizra$circuit_bid$Amount$extract(bidderInfo.totalSpent);
-				var capInt = _Gizra$circuit_bid$Amount$extract(_p7._2);
+				var capInt = _Gizra$circuit_bid$Amount$extract(_p8._2);
 				var usageRatio = (_elm_lang$core$Native_Utils.cmp(capInt, 0) < 1) ? 1.0 : (_elm_lang$core$Basics$toFloat(spentInt) / _elm_lang$core$Basics$toFloat(capInt));
-				return (_elm_lang$core$Native_Utils.cmp(usageRatio, 0.5) < 0) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
+				return (!limitShown(usageRatio)) ? _Gizra$circuit_bid$Utils_Html$emptyNode : A2(
 					_elm_lang$html$Html$span,
 					{
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$classList(
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								_p7._0,
+								_p8._0,
 								{
 									ctor: '::',
 									_0: {
@@ -59506,7 +59552,7 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 							A2(
 								_elm_lang$core$Basics_ops['++'],
 								'Limit ',
-								A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p7._1, currency))),
+								A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p8._1, currency))),
 						_1: {ctor: '[]'}
 					});
 			},
@@ -71961,6 +72007,24 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 								_Gizra$circuit_bid$App_Model$themeToString(_p62)),
 							_1: {ctor: '[]'}
 						});
+				case 'SetBidderLimitDisplay':
+					var _p63 = _p21._0;
+					var backend = model.backend;
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						_elm_lang$core$Native_Utils.update(
+							model,
+							{
+								backend: _elm_lang$core$Native_Utils.update(
+									backend,
+									{bidderLimitDisplay: _p63})
+							}),
+						{
+							ctor: '::',
+							_0: _Gizra$circuit_bid$Ports$saveBidderLimitDisplay(
+								_Gizra$circuit_bid$Backend_BidderInfo_Model$bidderLimitDisplayToString(_p63)),
+							_1: {ctor: '[]'}
+						});
 				default:
 					return A2(
 						_elm_lang$core$Platform_Cmd_ops['!'],
@@ -71976,8 +72040,8 @@ var _Gizra$circuit_bid$App_Update$update = F2(
 var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 	function (user, model, sale) {
 		var getChannel = function (uuid) {
-			var _p63 = model.activePage;
-			switch (_p63.ctor) {
+			var _p64 = model.activePage;
+			switch (_p64.ctor) {
 				case 'SaleAuctioneer':
 					return _Gizra$circuit_bid$Pusher_Model$Privileged(uuid);
 				case 'SaleClerk':
@@ -72010,9 +72074,9 @@ var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 								A2(pusherLoginMsg, config.pusherKey, user));
 						},
 						_krisajenkins$remotedata$RemoteData$toMaybe(model.config)));
-				var _p64 = A2(_Gizra$circuit_bid$App_Update$update, msg, model);
-				var updatedModel = _p64._0;
-				var pusherLoginCmd = _p64._1;
+				var _p65 = A2(_Gizra$circuit_bid$App_Update$update, msg, model);
+				var updatedModel = _p65._0;
+				var pusherLoginCmd = _p65._1;
 				return {
 					ctor: '_Tuple3',
 					_0: updatedModel.pusher,
@@ -72020,9 +72084,9 @@ var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 					_2: pusherLoginCmd
 				};
 			});
-		var _p65 = sale;
-		if (_p65.ctor === 'Success') {
-			var channel = getChannel(_p65._0.uuid);
+		var _p66 = sale;
+		if (_p66.ctor === 'Success') {
+			var channel = getChannel(_p66._0.uuid);
 			return (!_elm_lang$core$Native_Utils.eq(
 				model.pusher.currentChannel,
 				_elm_lang$core$Maybe$Just(
@@ -72037,13 +72101,13 @@ var _Gizra$circuit_bid$App_Update$pusherLogin = F3(
 	});
 var _Gizra$circuit_bid$App_Update$init = function (flags) {
 	var configCmd = function () {
-		var _p66 = _Gizra$circuit_bid$Config_Fetch$jbullBypass(flags.hostname);
-		if (_p66.ctor === 'Just') {
+		var _p67 = _Gizra$circuit_bid$Config_Fetch$jbullBypass(flags.hostname);
+		if (_p67.ctor === 'Just') {
 			return A2(
 				_elm_lang$core$Task$perform,
 				_Gizra$circuit_bid$App_Model$HandleFetchConfig,
 				_elm_lang$core$Task$succeed(
-					_krisajenkins$remotedata$RemoteData$Success(_p66._0)));
+					_krisajenkins$remotedata$RemoteData$Success(_p67._0)));
 		} else {
 			return A2(
 				_Gizra$circuit_bid$Config_Fetch$fetchConfig,
@@ -72068,15 +72132,15 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 			var queryParams = A3(
 				_elm_lang$core$List$foldl,
 				F2(
-					function (_p67, accum) {
-						var _p68 = _p67;
-						var _p69 = _p68._0;
-						return (_elm_lang$core$Native_Utils.eq(_p69, 'redirect') || _elm_lang$core$Native_Utils.eq(_p69, 'origin')) ? accum : {
+					function (_p68, accum) {
+						var _p69 = _p68;
+						var _p70 = _p69._0;
+						return (_elm_lang$core$Native_Utils.eq(_p70, 'redirect') || _elm_lang$core$Native_Utils.eq(_p70, 'origin')) ? accum : {
 							ctor: '::',
 							_0: A2(
 								_elm_lang$core$Basics_ops['++'],
-								_p69,
-								A2(_elm_lang$core$Basics_ops['++'], '=', _p68._1)),
+								_p70,
+								A2(_elm_lang$core$Basics_ops['++'], '=', _p69._1)),
 							_1: accum
 						};
 					}),
@@ -72103,6 +72167,13 @@ var _Gizra$circuit_bid$App_Update$init = function (flags) {
 				user: _elm_lang$core$String$isEmpty(flags.accessToken) ? _elm_lang$core$Maybe$Just(_Gizra$circuit_bid$User_Model$Anonymous) : _elm_lang$core$Maybe$Nothing,
 				language: _Gizra$circuit_bid$App_Utils$decodeLanguageCode(flags.languageCode),
 				theme: _Gizra$circuit_bid$App_Model$themeFromString(flags.themeCode),
+				backend: function (backend) {
+					return _elm_lang$core$Native_Utils.update(
+						backend,
+						{
+							bidderLimitDisplay: _Gizra$circuit_bid$Backend_BidderInfo_Model$bidderLimitDisplayFromString(flags.bidderLimitDisplay)
+						});
+				}(_Gizra$circuit_bid$App_Model$emptyModel.backend),
 				parentBaseUrl: parentBaseUrl,
 				bootUrl: flags.parentBaseUrl,
 				redirectUrl: redirectUrl,
@@ -102258,18 +102329,87 @@ var _Gizra$circuit_bid$App_View$roomThemeToggle = function (theme) {
 			_1: {ctor: '[]'}
 		});
 };
+var _Gizra$circuit_bid$App_View$viewBidderLimitToggle = function (display) {
+	var _p3 = function () {
+		var _p4 = display;
+		if (_p4.ctor === 'LimitAlways') {
+			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed, _1: 'Limit: always', _2: 'The bidders\' remaining credit is always shown. Click to show it only once half of the credit is used.'};
+		} else {
+			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways, _1: 'Limit: 50%+', _2: 'The bidders\' remaining credit is shown once half of the credit is used. Click to always show it.'};
+		}
+	}();
+	var next = _p3._0;
+	var label = _p3._1;
+	var hint = _p3._2;
+	return A2(
+		_elm_lang$html$Html$span,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('limit-toggle'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$a,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$classList(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'limit-toggle-btn', _1: true},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'is-active',
+									_1: _elm_lang$core$Native_Utils.eq(display, _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed)
+								},
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(
+							_Gizra$circuit_bid$App_Model$SetBidderLimitDisplay(next)),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$title(hint),
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-credit-card'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(label),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
 var _Gizra$circuit_bid$App_View$viewThemeToggle = function (theme) {
 	var isActive = _elm_lang$core$Native_Utils.eq(theme, _Gizra$circuit_bid$App_Model$Dark);
-	var _p3 = function () {
-		var _p4 = theme;
-		if (_p4.ctor === 'Light') {
+	var _p5 = function () {
+		var _p6 = theme;
+		if (_p6.ctor === 'Light') {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Dark, _1: 'Switch to dark theme'};
 		} else {
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$App_Model$Light, _1: 'Switch to light theme'};
 		}
 	}();
-	var nextTheme = _p3._0;
-	var ariaLabel = _p3._1;
+	var nextTheme = _p5._0;
+	var ariaLabel = _p5._1;
 	return A2(
 		_elm_lang$html$Html$span,
 		{
@@ -102389,19 +102529,19 @@ var _Gizra$circuit_bid$App_View$viewLanguages = F3(
 var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F5(
 	function (language, siteName, user, modelBackend, maybeSale) {
 		var context = function () {
-			var _p5 = maybeSale;
-			if (_p5.ctor === 'Just') {
+			var _p7 = maybeSale;
+			if (_p7.ctor === 'Just') {
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					siteName,
-					A2(_elm_lang$core$Basics_ops['++'], ' - ', _p5._0.label));
+					A2(_elm_lang$core$Basics_ops['++'], ' - ', _p7._0.label));
 			} else {
 				return siteName;
 			}
 		}();
-		var _p6 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
-		if ((_p6.ctor === '_Tuple2') && (_p6._0.ctor === 'Authenticated')) {
-			if (_p6._1.ctor === 'Just') {
+		var _p8 = {ctor: '_Tuple2', _0: user, _1: maybeSale};
+		if ((_p8.ctor === '_Tuple2') && (_p8._0.ctor === 'Authenticated')) {
+			if (_p8._1.ctor === 'Just') {
 				return A3(
 					_elm_community$maybe_extra$Maybe_Extra$unwrap,
 					_elm_lang$html$Html$text('Bidder info not loaded correctly, please refresh.'),
@@ -102423,13 +102563,13 @@ var _Gizra$circuit_bid$App_View$viewWelcomeMessage = F5(
 											' #',
 											_elm_lang$core$Basics$toString(bidderNumber))))));
 					},
-					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p6._1._0.uuid));
+					A3(_Gizra$circuit_bid$User_Utils$getWebsiteBidderInfo, user, modelBackend, _p8._1._0.uuid));
 			} else {
 				return _elm_lang$html$Html$text(
 					A2(
 						_elm_lang$core$Basics_ops['++'],
 						context,
-						A2(_elm_lang$core$Basics_ops['++'], ' · ', _p6._0._0.name)));
+						A2(_elm_lang$core$Basics_ops['++'], ' · ', _p8._0._0.name)));
 			}
 		} else {
 			return A2(
@@ -102466,12 +102606,12 @@ var _Gizra$circuit_bid$App_View$roomTopBar = F4(
 							_1: {ctor: '[]'}
 						});
 				}(
-					function (_p7) {
-						var _p8 = _p7;
+					function (_p9) {
+						var _p10 = _p9;
 						return A2(
 							_elm_lang$core$Basics_ops['++'],
-							_p8.siteLabel,
-							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p8.label));
+							_p10.siteLabel,
+							A2(_elm_lang$core$Basics_ops['++'], ' - ', _p10.label));
 					}(sale));
 			},
 			maybeSale);
@@ -102543,8 +102683,8 @@ var _Gizra$circuit_bid$App_View$clerkLoginPrompt = F2(
 var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 	function (config, model) {
 		var wrapWithMainContent = function () {
-			var _p9 = model.activePage;
-			switch (_p9.ctor) {
+			var _p11 = model.activePage;
+			switch (_p11.ctor) {
 				case 'SaleRoom':
 					return false;
 				case 'SaleRoomV1':
@@ -102554,8 +102694,8 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 			}
 		}();
 		var wrapWithContainer = function () {
-			var _p10 = model.activePage;
-			switch (_p10.ctor) {
+			var _p12 = model.activePage;
+			switch (_p12.ctor) {
 				case 'Sale':
 					return true;
 				case 'SaleV1':
@@ -102565,11 +102705,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 			}
 		}();
 		var content = function () {
-			var _p11 = model.user;
-			if (_p11.ctor === 'Just') {
-				var _p13 = _p11._0;
-				var _p12 = model.activePage;
-				switch (_p12.ctor) {
+			var _p13 = model.user;
+			if (_p13.ctor === 'Just') {
+				var _p15 = _p13._0;
+				var _p14 = model.activePage;
+				switch (_p14.ctor) {
 					case 'AccessDenied':
 						return A2(
 							_elm_lang$html$Html$div,
@@ -102600,23 +102740,23 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_p13)(model.backend)(_p12._0)(true)(
+							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_p15)(model.backend)(_p14._0)(true)(
 								_Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(model.health))(model.pageSale));
 					case 'SaleClerk':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p15) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, true, model.pageClerk));
+							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p15, model.backend, _p14._0, true, model.pageClerk));
 					case 'SaleRoom':
 						return A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesSale,
-							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_Gizra$circuit_bid$User_Model$Anonymous)(model.backend)(_p12._0)(false)(_Gizra$circuit_bid$Pusher_Health_Model$Live)(model.pageSale));
+							_Gizra$circuit_bid$Pages_Sale_View$view(model.currentDate)(model.parentBaseUrl)(config)(model.language)(_Gizra$circuit_bid$User_Model$Anonymous)(model.backend)(_p14._0)(false)(_Gizra$circuit_bid$Pusher_Health_Model$Live)(model.pageSale));
 					case 'SaleAuctioneer':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p15) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
 							_elm_lang$html$Html$map,
 							_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, false, model.pageClerk));
+							A8(_Gizra$circuit_bid$Pages_Clerk_View$view, config, model.currentDate, model.language, _p15, model.backend, _p14._0, false, model.pageClerk));
 					case 'SaleV1':
 						return A2(
 							_elm_lang$html$Html$div,
@@ -102630,11 +102770,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesSale,
-									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p13, model.backend, _p12._0, true, model.pageSale)),
+									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _p15, model.backend, _p14._0, true, model.pageSale)),
 								_1: {ctor: '[]'}
 							});
 					case 'SaleClerkV1':
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p15) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, true) : A2(
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
@@ -102646,7 +102786,7 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, true, model.pageClerk)),
+									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p15, model.backend, _p14._0, true, model.pageClerk)),
 								_1: {ctor: '[]'}
 							});
 					case 'SaleRoomV1':
@@ -102662,11 +102802,11 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesSale,
-									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p12._0, false, model.pageSale)),
+									A9(_Gizra$circuit_bid$Pages_SaleV1_View$view, model.currentDate, model.parentBaseUrl, config, model.language, _Gizra$circuit_bid$User_Model$Anonymous, model.backend, _p14._0, false, model.pageSale)),
 								_1: {ctor: '[]'}
 							});
 					default:
-						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p13) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
+						return _Gizra$circuit_bid$User_Utils$isAnonymous(_p15) ? A2(_Gizra$circuit_bid$App_View$clerkLoginPrompt, model.language, false) : A2(
 							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
@@ -102678,13 +102818,13 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 								_0: A2(
 									_elm_lang$html$Html$map,
 									_Gizra$circuit_bid$App_Model$MsgPagesClerk,
-									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p13, model.backend, _p12._0, false, model.pageClerk)),
+									A8(_Gizra$circuit_bid$Pages_ClerkV1_View$view, config, model.currentDate, model.language, _p15, model.backend, _p14._0, false, model.pageClerk)),
 								_1: {ctor: '[]'}
 							});
 				}
 			} else {
-				var _p14 = model.login.status;
-				if (_p14.ctor === 'Failure') {
+				var _p16 = model.login.status;
+				if (_p16.ctor === 'Failure') {
 					return _Gizra$circuit_bid$Config_View$error;
 				} else {
 					return A2(
@@ -102709,12 +102849,12 @@ var _Gizra$circuit_bid$App_View$viewMainContent = F2(
 		return {ctor: '_Tuple2', _0: content, _1: loadCssCmd};
 	});
 var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
-	function (language, _p15, siteShortName, backOfficeUrl) {
-		var _p16 = _p15;
-		var _p18 = _p16.status;
-		var _p17 = _p16.loginForm;
-		var hasError = _krisajenkins$remotedata$RemoteData$isFailure(_p18);
-		var isLoading = _krisajenkins$remotedata$RemoteData$isLoading(_p18);
+	function (language, _p17, siteShortName, backOfficeUrl) {
+		var _p18 = _p17;
+		var _p20 = _p18.status;
+		var _p19 = _p18.loginForm;
+		var hasError = _krisajenkins$remotedata$RemoteData$isFailure(_p20);
+		var isLoading = _krisajenkins$remotedata$RemoteData$isLoading(_p20);
 		return A2(
 			_elm_lang$html$Html$form,
 			{
@@ -102761,7 +102901,7 @@ var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
 									A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$UsernameEmail)),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$value(_p17.name),
+									_0: _elm_lang$html$Html_Attributes$value(_p19.name),
 									_1: {
 										ctor: '::',
 										_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetName),
@@ -102792,7 +102932,7 @@ var _Gizra$circuit_bid$App_View$viewCompactLoginForm = F4(
 										A2(_Gizra$circuit_bid$Translate$translateString, language, _Gizra$circuit_bid$Translate$Password)),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$value(_p17.pass),
+										_0: _elm_lang$html$Html_Attributes$value(_p19.pass),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onInput(_Gizra$circuit_bid$Login_Model$SetPassword),
@@ -102913,12 +103053,13 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																			},
 																			maybeSale)));
 																var siteName = config.siteConfig.label;
+																var limitToggle = _Gizra$circuit_bid$App_Utils$isClerkPage(activePage) ? _Gizra$circuit_bid$App_View$viewBidderLimitToggle(modelBackend.bidderLimitDisplay) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 																var themeToggle = _Gizra$circuit_bid$App_View$viewThemeToggle(theme);
 																var languages = A3(_Gizra$circuit_bid$App_View$viewLanguages, language, availableLanguages, activePage);
 																var currencySelect = function () {
-																	var _p19 = {ctor: '_Tuple2', _0: activePage, _1: maybeSale};
-																	if (((_p19.ctor === '_Tuple2') && (_p19._0.ctor === 'Sale')) && (_p19._1.ctor === 'Just')) {
-																		return A3(_Gizra$circuit_bid$App_View$viewCurrencySelect, selectedCurrency, currencyMenuOpen, _p19._1._0);
+																	var _p21 = {ctor: '_Tuple2', _0: activePage, _1: maybeSale};
+																	if (((_p21.ctor === '_Tuple2') && (_p21._0.ctor === 'Sale')) && (_p21._1.ctor === 'Just')) {
+																		return A3(_Gizra$circuit_bid$App_View$viewCurrencySelect, selectedCurrency, currencyMenuOpen, _p21._1._0);
 																	} else {
 																		return _Gizra$circuit_bid$Utils_Html$emptyNode;
 																	}
@@ -102937,8 +103078,8 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																	_Gizra$circuit_bid$Pusher_Health_Model$liveFeedState(health),
 																	health);
 																var content = function () {
-																	var _p20 = maybeUser;
-																	if ((_p20.ctor === 'Just') && (_p20._0.ctor === 'Authenticated')) {
+																	var _p22 = maybeUser;
+																	if ((_p22.ctor === 'Just') && (_p22._0.ctor === 'Authenticated')) {
 																		var user = A2(_elm_lang$core$Maybe$withDefault, _Gizra$circuit_bid$User_Model$Anonymous, maybeUser);
 																		return {
 																			ctor: '::',
@@ -102980,24 +103121,28 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																										_0: themeToggle,
 																										_1: {
 																											ctor: '::',
-																											_0: A2(
-																												_elm_lang$html$Html$a,
-																												{
-																													ctor: '::',
-																													_0: _elm_lang$html$Html_Attributes$class('log-out'),
-																													_1: {
+																											_0: limitToggle,
+																											_1: {
+																												ctor: '::',
+																												_0: A2(
+																													_elm_lang$html$Html$a,
+																													{
 																														ctor: '::',
-																														_0: _elm_lang$html$Html_Events$onClick(
-																															_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
+																														_0: _elm_lang$html$Html_Attributes$class('log-out'),
+																														_1: {
+																															ctor: '::',
+																															_0: _elm_lang$html$Html_Events$onClick(
+																																_Gizra$circuit_bid$App_Model$Logout(pageAfterLogout)),
+																															_1: {ctor: '[]'}
+																														}
+																													},
+																													{
+																														ctor: '::',
+																														_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
 																														_1: {ctor: '[]'}
-																													}
-																												},
-																												{
-																													ctor: '::',
-																													_0: A2(_Gizra$circuit_bid$Translate$translateText, language, _Gizra$circuit_bid$Translate$SignOut),
-																													_1: {ctor: '[]'}
-																												}),
-																											_1: {ctor: '[]'}
+																													}),
+																												_1: {ctor: '[]'}
+																											}
 																										}
 																									}
 																								}
@@ -103056,7 +103201,11 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 																									_1: {
 																										ctor: '::',
 																										_0: themeToggle,
-																										_1: {ctor: '[]'}
+																										_1: {
+																											ctor: '::',
+																											_0: limitToggle,
+																											_1: {ctor: '[]'}
+																										}
 																									}
 																								}
 																							}
@@ -103094,12 +103243,12 @@ var _Gizra$circuit_bid$App_View$topBar = function (config) {
 var _Gizra$circuit_bid$App_View$pusherDebugLog = function (entries) {
 	var number = F2(
 		function (label, maybeN) {
-			var _p21 = maybeN;
-			if (_p21.ctor === 'Just') {
+			var _p23 = maybeN;
+			if (_p23.ctor === 'Just') {
 				return A2(
 					_elm_lang$core$Basics_ops['++'],
 					label,
-					_elm_lang$core$Basics$toString(_p21._0));
+					_elm_lang$core$Basics$toString(_p23._0));
 			} else {
 				return A2(_elm_lang$core$Basics_ops['++'], label, '-');
 			}
@@ -103395,12 +103544,12 @@ var _Gizra$circuit_bid$App_View$pusherDebugLog = function (entries) {
 var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 	return A2(
 		_elm_lang$core$Json_Decode$andThen,
-		function (_p22) {
-			var _p23 = _p22;
-			var _p27 = _p23._2;
+		function (_p24) {
+			var _p25 = _p24;
+			var _p29 = _p25._2;
 			var isInFormField = A2(
 				_elm_lang$core$List$member,
-				_p23._0,
+				_p25._0,
 				{
 					ctor: '::',
 					_0: 'INPUT',
@@ -103418,22 +103567,22 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 				if (!isInFormField) {
 					return false;
 				} else {
-					var _p24 = _p27.keyCode;
-					switch (_p24.ctor) {
+					var _p26 = _p29.keyCode;
+					switch (_p26.ctor) {
 						case 'Right':
 							return false;
 						case 'Left':
 							return false;
 						case 'Spacebar':
-							return !_elm_lang$core$Native_Utils.eq(_p23._1, 'opening-price-input');
+							return !_elm_lang$core$Native_Utils.eq(_p25._1, 'opening-price-input');
 						default:
 							return true;
 					}
 				}
 			}();
 			var isOwnedKey = function () {
-				var _p25 = _p27.keyCode;
-				switch (_p25.ctor) {
+				var _p27 = _p29.keyCode;
+				switch (_p27.ctor) {
 					case 'Spacebar':
 						return true;
 					case 'Up':
@@ -103451,9 +103600,9 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 			if ((!isOwnedKey) || skipForFormField) {
 				return _elm_lang$core$Json_Decode$fail('ignored: not an owned shortcut key');
 			} else {
-				var _p26 = A2(_Gizra$circuit_bid$App_Utils$dispatchKeyboardEvent, model, _p27);
-				if (_p26.ctor === 'Just') {
-					return _elm_lang$core$Json_Decode$succeed(_p26._0);
+				var _p28 = A2(_Gizra$circuit_bid$App_Utils$dispatchKeyboardEvent, model, _p29);
+				if (_p28.ctor === 'Just') {
+					return _elm_lang$core$Json_Decode$succeed(_p28._0);
 				} else {
 					return _elm_lang$core$Json_Decode$fail('ignored: not on a shortcut-aware page');
 				}
@@ -103501,15 +103650,15 @@ var _Gizra$circuit_bid$App_View$appKeyboardDecoder = function (model) {
 			_Gizra$elm_keyboard_event$Keyboard_Event$decodeKeyboardEvent));
 };
 var _Gizra$circuit_bid$App_View$view = function (model) {
-	var _p28 = model.config;
-	switch (_p28.ctor) {
+	var _p30 = model.config;
+	switch (_p30.ctor) {
 		case 'Failure':
 			return {ctor: '_Tuple2', _0: _Gizra$circuit_bid$Config_View$error, _1: _elm_lang$core$Platform_Cmd$none};
 		case 'Success':
-			var _p31 = _p28._0;
-			var _p29 = A2(_Gizra$circuit_bid$App_View$viewMainContent, _p31, model);
-			var mainContent = _p29._0;
-			var mainContentCmd = _p29._1;
+			var _p33 = _p30._0;
+			var _p31 = A2(_Gizra$circuit_bid$App_View$viewMainContent, _p33, model);
+			var mainContent = _p31._0;
+			var mainContentCmd = _p31._1;
 			var footer = _Gizra$circuit_bid$App_View$pageHasAppFooter(model.activePage) ? A2(_Gizra$circuit_bid$App_View$appFooter, model.appVersion, model.currentDate) : _Gizra$circuit_bid$Utils_Html$emptyNode;
 			var roomTools = A2(
 				_elm_lang$html$Html$div,
@@ -103532,7 +103681,7 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 				});
 			var debugErrors = A2(
 				_Gizra$circuit_bid$Utils_Html$showIf,
-				_p31.debug,
+				_p33.debug,
 				A2(_Gizra$circuit_bid$Error_View$view, _Gizra$circuit_bid$Translate$English, model.errors));
 			var page = A2(_Gizra$circuit_bid$App_Utils$pageAfterLogout, model.activePage, model.siteShortName);
 			var maybeSale = _Gizra$circuit_bid$App_Utils$currentSale(model);
@@ -103546,14 +103695,14 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 					},
 					maybeSale));
 			var header = function () {
-				var _p30 = model.activePage;
-				switch (_p30.ctor) {
+				var _p32 = model.activePage;
+				switch (_p32.ctor) {
 					case 'SaleRoom':
 						return roomTools;
 					case 'SaleRoomV1':
 						return roomTools;
 					default:
-						return _Gizra$circuit_bid$App_View$topBar(_p31)(availableLanguages)(model.language)(model.theme)(model.offline)(model.health)(
+						return _Gizra$circuit_bid$App_View$topBar(_p33)(availableLanguages)(model.language)(model.theme)(model.offline)(model.health)(
 							_Gizra$circuit_bid$App_Utils$isHealthPage(model.activePage))(model.user)(model.login)(model.siteShortName)(model.backend)(maybeSale)(model.pageSale.selectedCurrency)(model.pageSale.currencyMenuOpen)(model.activePage)(page);
 				}
 			}();
@@ -103617,7 +103766,7 @@ var _Gizra$circuit_bid$App_View$view = function (model) {
 									ctor: '::',
 									_0: A2(
 										_Gizra$circuit_bid$Utils_Html$showIf,
-										_p31.debug && _Gizra$circuit_bid$App_Utils$isSalePage(model.activePage),
+										_p33.debug && _Gizra$circuit_bid$App_Utils$isSalePage(model.activePage),
 										_Gizra$circuit_bid$App_View$pusherDebugLog(model.pusherLog)),
 									_1: {
 										ctor: '::',
@@ -103734,41 +103883,46 @@ var _Gizra$circuit_bid$Main$main = _rgrempel$elm_route_url$RouteUrl$programWithF
 				function (appVersion) {
 					return A2(
 						_elm_lang$core$Json_Decode$andThen,
-						function (hostname) {
+						function (bidderLimitDisplay) {
 							return A2(
 								_elm_lang$core$Json_Decode$andThen,
-								function (languageCode) {
+								function (hostname) {
 									return A2(
 										_elm_lang$core$Json_Decode$andThen,
-										function (metaHostname) {
+										function (languageCode) {
 											return A2(
 												_elm_lang$core$Json_Decode$andThen,
-												function (parentBaseUrl) {
+												function (metaHostname) {
 													return A2(
 														_elm_lang$core$Json_Decode$andThen,
-														function (serverlessUrl) {
+														function (parentBaseUrl) {
 															return A2(
 																_elm_lang$core$Json_Decode$andThen,
-																function (siteName) {
+																function (serverlessUrl) {
 																	return A2(
 																		_elm_lang$core$Json_Decode$andThen,
-																		function (themeCode) {
-																			return _elm_lang$core$Json_Decode$succeed(
-																				{accessToken: accessToken, appVersion: appVersion, hostname: hostname, languageCode: languageCode, metaHostname: metaHostname, parentBaseUrl: parentBaseUrl, serverlessUrl: serverlessUrl, siteName: siteName, themeCode: themeCode});
+																		function (siteName) {
+																			return A2(
+																				_elm_lang$core$Json_Decode$andThen,
+																				function (themeCode) {
+																					return _elm_lang$core$Json_Decode$succeed(
+																						{accessToken: accessToken, appVersion: appVersion, bidderLimitDisplay: bidderLimitDisplay, hostname: hostname, languageCode: languageCode, metaHostname: metaHostname, parentBaseUrl: parentBaseUrl, serverlessUrl: serverlessUrl, siteName: siteName, themeCode: themeCode});
+																				},
+																				A2(_elm_lang$core$Json_Decode$field, 'themeCode', _elm_lang$core$Json_Decode$string));
 																		},
-																		A2(_elm_lang$core$Json_Decode$field, 'themeCode', _elm_lang$core$Json_Decode$string));
+																		A2(_elm_lang$core$Json_Decode$field, 'siteName', _elm_lang$core$Json_Decode$string));
 																},
-																A2(_elm_lang$core$Json_Decode$field, 'siteName', _elm_lang$core$Json_Decode$string));
+																A2(_elm_lang$core$Json_Decode$field, 'serverlessUrl', _elm_lang$core$Json_Decode$string));
 														},
-														A2(_elm_lang$core$Json_Decode$field, 'serverlessUrl', _elm_lang$core$Json_Decode$string));
+														A2(_elm_lang$core$Json_Decode$field, 'parentBaseUrl', _elm_lang$core$Json_Decode$string));
 												},
-												A2(_elm_lang$core$Json_Decode$field, 'parentBaseUrl', _elm_lang$core$Json_Decode$string));
+												A2(_elm_lang$core$Json_Decode$field, 'metaHostname', _elm_lang$core$Json_Decode$string));
 										},
-										A2(_elm_lang$core$Json_Decode$field, 'metaHostname', _elm_lang$core$Json_Decode$string));
+										A2(_elm_lang$core$Json_Decode$field, 'languageCode', _elm_lang$core$Json_Decode$string));
 								},
-								A2(_elm_lang$core$Json_Decode$field, 'languageCode', _elm_lang$core$Json_Decode$string));
+								A2(_elm_lang$core$Json_Decode$field, 'hostname', _elm_lang$core$Json_Decode$string));
 						},
-						A2(_elm_lang$core$Json_Decode$field, 'hostname', _elm_lang$core$Json_Decode$string));
+						A2(_elm_lang$core$Json_Decode$field, 'bidderLimitDisplay', _elm_lang$core$Json_Decode$string));
 				},
 				A2(_elm_lang$core$Json_Decode$field, 'appVersion', _elm_lang$core$Json_Decode$string));
 		},
