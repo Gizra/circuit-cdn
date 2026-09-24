@@ -131,6 +131,9 @@ var elmApp = Elm.Main.fullscreen({
     languageCode: languageCode,
     themeCode: themeCode,
     appVersion: appVersion,
+    // Clerk / auctioneer: show a bidder's remaining credit always, or only
+    // once half of it is used ('always' / 'half').
+    bidderLimitDisplay: localStorage.getItem('bidderLimitDisplay') || 'always',
     // Pass the location, which might have an `origin` query string, that
     // indicates the base url of the host, in case the app is loaded as an
     // IFrame.
@@ -307,6 +310,13 @@ elmApp.ports.saveTheme.subscribe(function(theme) {
         document.body.classList.remove('theme-dark');
     }
     syncSiteCssWithTheme();
+});
+
+// Clerk / auctioneer preference: when a bidder's remaining credit shows
+// on the bidder lines. Read back on the next load via the
+// `bidderLimitDisplay` flag.
+elmApp.ports.saveBidderLimitDisplay.subscribe(function(value) {
+    localStorage.setItem('bidderLimitDisplay', value);
 });
 
 
