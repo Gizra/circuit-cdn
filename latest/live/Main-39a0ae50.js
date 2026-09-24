@@ -59551,7 +59551,7 @@ var _Gizra$circuit_bid$User_View$viewBidderNameAndInfoWithIcon = F6(
 						_0: _elm_lang$html$Html$text(
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								'Limit ',
+								'Left ',
 								A2(_Gizra$circuit_bid$Amount$showAmountWithCurrencyText, _p8._1, currency))),
 						_1: {ctor: '[]'}
 					});
@@ -102333,9 +102333,9 @@ var _Gizra$circuit_bid$App_View$viewBidderLimitToggle = function (display) {
 	var _p3 = function () {
 		var _p4 = display;
 		if (_p4.ctor === 'LimitAlways') {
-			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed, _1: 'Limit: always', _2: 'The bidders\' remaining credit is always shown. Click to show it only once half of the credit is used.'};
+			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitFromHalfUsed, _1: 'Credit left: always', _2: 'The credit each bidder has left is always shown. Click to show it only once half of the credit is used.'};
 		} else {
-			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways, _1: 'Limit: 50%+', _2: 'The bidders\' remaining credit is shown once half of the credit is used. Click to always show it.'};
+			return {ctor: '_Tuple3', _0: _Gizra$circuit_bid$Backend_BidderInfo_Model$LimitAlways, _1: 'Credit left: 50%+', _2: 'The credit each bidder has left is shown once half of the credit is used. Click to always show it.'};
 		}
 	}();
 	var next = _p3._0;
